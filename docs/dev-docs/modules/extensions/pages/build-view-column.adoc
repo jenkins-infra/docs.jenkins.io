@@ -1,0 +1,18 @@
+= Extension Points defined in Build View Column Plugin
+
+https://plugins.jenkins.io/build-view-column[Build View Column Plugin]
+
+== BuildViewColumn
+
+`jenkinsdoc:build-view-column:org.jenkinsci.plugins.build_view_column.BuildViewColumn]`
+
++++ Extension point for adding a column to a table rendering of+++ jenkinsdoc:Run] +++s.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/build-view-column[Build View Column Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++build_view_column.+++<wbr/>+++impl.+++<wbr/>+++**CauseColumn** (link:https://github.com/jenkinsci/build-view-column-plugin/search?q=CauseColumn&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-view-column[Build View Column Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++build_view_column.+++<wbr/>+++impl.+++<wbr/>+++**ConsoleColumn** (link:https://github.com/jenkinsci/build-view-column-plugin/search?q=ConsoleColumn&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-view-column[Build View Column Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++build_view_column.+++<wbr/>+++impl.+++<wbr/>+++**DurationColumn** (link:https://github.com/jenkinsci/build-view-column-plugin/search?q=DurationColumn&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-view-column[Build View Column Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++build_view_column.+++<wbr/>+++impl.+++<wbr/>+++**NodeColumn** (link:https://github.com/jenkinsci/build-view-column-plugin/search?q=NodeColumn&type=Code[view on GitHub])
+

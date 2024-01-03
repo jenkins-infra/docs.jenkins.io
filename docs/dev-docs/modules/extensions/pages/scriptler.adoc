@@ -1,0 +1,14 @@
+= Extension Points defined in Scriptler Plugin
+
+https://plugins.jenkins.io/scriptler[Scriptler Plugin]
+
+== ScriptInfoCatalog
+
+`jenkinsdoc:scriptler:org.jenkinsci.plugins.scriptler.share.ScriptInfoCatalog]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/scriptler[Scriptler Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptler.+++<wbr/>+++share.+++<wbr/>+++gh.+++<wbr/>+++**GHCatalog** (link:https://github.com/jenkinsci/scriptler-plugin/search?q=GHCatalog&type=Code[view on GitHub])
+

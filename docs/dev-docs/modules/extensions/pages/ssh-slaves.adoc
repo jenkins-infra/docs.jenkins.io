@@ -1,0 +1,15 @@
+= Extension Points defined in SSH Build Agents Plugin
+
+https://plugins.jenkins.io/ssh-slaves[SSH Build Agents Plugin]
+
+== JavaProvider
+
+`jenkinsdoc:ssh-slaves:hudson.plugins.sshslaves.JavaProvider]`
+
++++ Guess where Java is.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/ssh-slaves[SSH Build Agents Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sshslaves.+++<wbr/>+++**DefaultJavaProvider** (link:https://github.com/jenkinsci/ssh-slaves-plugin/search?q=DefaultJavaProvider&type=Code[view on GitHub])
+

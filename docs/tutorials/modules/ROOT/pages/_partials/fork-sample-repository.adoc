@@ -1,0 +1,12 @@
+== Fork the sample repository on GitHub
+
+Fork the simple "Welcome to React" Node.js and React application on GitHub into your own GitHub account.
+
+. Ensure you are signed in to your GitHub account.
+If you don't yet have a GitHub account, sign up for a free on the https://github.com/[GitHub website].
+. Fork the https://github.com/jenkins-docs/creating-a-pipeline-in-blue-ocean[`creating-a-pipeline-in-blue-ocean`]
+repository on GitHub into your local GitHub account.
+If you need help with this process, refer to the https://help.github.com/articles/fork-a-repo/[fork a repo] documentation on the GitHub website for more information.
+
+NOTE: This is a different repository than the one used in the xref:build-a-node-js-and-react-app-with-npm.adoc[build a Node.js and React app with npm] tutorial.
+Although these repositories contain the same application code, ensure you fork and use the correct one before continuing.

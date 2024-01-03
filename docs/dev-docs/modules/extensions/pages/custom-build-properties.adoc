@@ -1,0 +1,14 @@
+= Extension Points defined in Custom Build Properties Plugin
+
+https://plugins.jenkins.io/custom-build-properties[Custom Build Properties Plugin]
+
+== CustomBuildPropertiesListener
+
+`jenkinsdoc:custom-build-properties:org.jenkinsci.plugins.custombuildproperties.CustomBuildPropertiesListener]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/custom-build-properties[Custom Build Properties Plugin]: Anonymous class in org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++custombuildproperties.+++<wbr/>+++**WaitForCustomBuildPropertiesStep** (link:https://github.com/jenkinsci/custom-build-properties-plugin/search?q=WaitForCustomBuildPropertiesStep.Execution.installChangeEventListener.&type=Code[view on GitHub])
+

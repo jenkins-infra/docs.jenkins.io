@@ -1,0 +1,43 @@
+= Extension Points defined in SCM-Manager Plugin
+
+https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]
+
+== JobInformationResolverProvider
+
+`jenkinsdoc:scm-manager:com.cloudogu.scmmanager.info.JobInformationResolverProvider]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++info.+++<wbr/>+++**AbstractScmInformationResolverProvider** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=AbstractScmInformationResolverProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++info.+++<wbr/>+++**GitScmInformationResolverProvider** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=GitScmInformationResolverProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++info.+++<wbr/>+++**HgScmInformationResolverProvider** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=HgScmInformationResolverProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++info.+++<wbr/>+++**PullRequestJobInformationResolverProvider** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=PullRequestJobInformationResolverProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++info.+++<wbr/>+++**SvnScmInformationResolverProvider** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=SvnScmInformationResolverProvider&type=Code[view on GitHub])
+
+
+== NotifierProvider
+
+`jenkinsdoc:scm-manager:com.cloudogu.scmmanager.NotifierProvider]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++**ScmMigratedV1NotifierProvider** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=ScmMigratedV1NotifierProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++**ScmV2NotifierProvider** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=ScmV2NotifierProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++**ScmV2SshNotifierProvider** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=ScmV2SshNotifierProvider&type=Code[view on GitHub])
+
+
+== SCMBuilderProvider
+
+`jenkinsdoc:scm-manager:com.cloudogu.scmmanager.scm.SCMBuilderProvider]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++scm.+++<wbr/>+++**GitSCMBuilderProvider** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=GitSCMBuilderProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++scm.+++<wbr/>+++**MercurialSCMBuilderProvider** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=MercurialSCMBuilderProvider&type=Code[view on GitHub])
+

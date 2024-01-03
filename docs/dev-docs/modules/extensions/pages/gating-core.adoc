@@ -1,0 +1,15 @@
+= Extension Points defined in Gating Core Plugin
+
+https://plugins.jenkins.io/gating-core[Gating Core Plugin]
+
+== MetricsProvider
+
+`jenkinsdoc:gating-core:io.jenkins.plugins.gating.MetricsProvider]`
+
++++ Provider abstraction user are supposed to implement.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/statuspage-gating[StatusPage Gating Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++statuspage_gating.+++<wbr/>+++**StatusPage** (link:https://github.com/jenkinsci/statuspage-gating-plugin/search?q=StatusPage&type=Code[view on GitHub])
+

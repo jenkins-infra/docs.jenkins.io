@@ -1,0 +1,17 @@
+= Extension Points defined in Metrics Aggregation Plugin
+
+https://plugins.jenkins.io/metrics-aggregation[Metrics Aggregation Plugin]
+
+== MetricsProviderFactory
+
+`jenkinsdoc:metrics-aggregation:io.jenkins.plugins.metrics.extension.MetricsProviderFactory]`
+
++++ Extension point to support custom metrics.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/metrics-aggregation[Metrics Aggregation Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++metrics.+++<wbr/>+++extension.+++<wbr/>+++**CoverageMetricsProviderFactory** (link:https://github.com/jenkinsci/metrics-aggregation-plugin/search?q=CoverageMetricsProviderFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/metrics-aggregation[Metrics Aggregation Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++metrics.+++<wbr/>+++extension.+++<wbr/>+++**PMDMetricsProviderFactory** (link:https://github.com/jenkinsci/metrics-aggregation-plugin/search?q=PMDMetricsProviderFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/metrics-aggregation[Metrics Aggregation Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++metrics.+++<wbr/>+++extension.+++<wbr/>+++**WarningsMetricsProviderFactory** (link:https://github.com/jenkinsci/metrics-aggregation-plugin/search?q=WarningsMetricsProviderFactory&type=Code[view on GitHub])
+

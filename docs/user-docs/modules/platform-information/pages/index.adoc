@@ -1,0 +1,23 @@
+= Platform Information
+
+This chapter provides information about the operating systems, web browsers, Java versions, and other software components commonly used to run Jenkins.
+
+The content is suitable for users of all levels, especially those getting started with Jenkins.
+
+== Support policies
+
+The Jenkins project defines support levels for platform components such as Java versions, operating systems, web browsers, and servlet containers.
+Support levels provide guidance on the effort Jenkins project contributors generally apply to issues related to platform components.
+
+Details of the support policies are available in the specific support policy pages:
+
+* xref:platform-information:support-policy-java.adoc[Java]
+* xref:platform-information:support-policy-linux.adoc[Linux]
+* xref:platform-information:support-policy-windows.adoc[Windows]
+* xref:platform-information:support-policy-servlet-containers.adoc[Servlet containers]
+* xref:platform-information:support-policy-web-browsers.adoc[Web browsers]
+
+== Java support and upgrade information
+
+In addition to support policies, this chapter provides information on upgrading your Java version in Jenkins.
+Depending on your current Java version, there are instructions for xref:platform-information:upgrade-java-to-11.adoc[upgrading to Java 11] and xref:platform-information:upgrade-java-to-17.adoc[upgrading to Java 17].

@@ -1,0 +1,31 @@
+= Outreach Past Programs
+
+This page lists the community programs we've supported in the past.
+
+== Community Bridge
+
+In 2019 we have started evaluation of the link:https://communitybridge.org/[Community Bridge] portal
+provided by link:https://www.linuxfoundation.org/[Linux Foundation].
+This website provides ways to run internship programs and to fund them,
+and we would like to use it to run projects outside of the Google Summer of Code timeframe.
+You can find the Jenkins project page link:https://people.communitybridge.org/project/bce45251-1ff4-4131-9699-0a0017b31495[here].
+
+Our first project on Community Bridge is xref:projects:ROOT:index.adoc/jcasc/dev-tools/[Developer Tools for Jenkins Configuration-as-Code] (Aug-Nov 2019).
+We are interested in onboarding more projects, and we invite Jenkins contributors and potential mentees to reach out to us.
+
+To contact us regarding this program, send us a message on the
+link:https://app.gitter.im/#/room/#jenkinsci_advocacy-and-outreach-sig:gitter.im[Advocacy and Outreach Gitter channel].
+
+== Google Season of Docs
+
+[.float-group]
+--
+image:images:ROOT:gsod/gsod.png[Google Season of Docs, role=center, float=right,role=float-gap]
+The https://developers.google.com/season-of-docs/[Google Season of Docs] program brings together open source and technical writers communities for the benefit of both. The program raises awareness of open source, of docs, and of technical writing.
+--
+The Jenkins organization was accepted to Google Season of Docs in 2020.
+The xref:2.426.x@user-docs:installing-jenkins:kubernetes.adoc[Jenkins on Kubernetes project] created an installation guide for Jenkins on Kubernetes.
+See the link:https://www.jenkins.io/blog/2020/12/04/gsod-project-report/[project report] by link:https://www.jenkins.io/blog/authors/zaycodes/[Zainab Abubakar] for details of the 2020 project.
+We look forward to additional Jenkins project opportunities with Google Season of Docs.
+
+Please see the xref:sigs:docs:gsod:index.adoc[documentation SIG] page for more information and contacts.

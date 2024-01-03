@@ -1,0 +1,65 @@
+= GitHub Forked Repositories
+
+The canonical source code repository is in the `jenkinsci` GitHub organization to ensure source code access and project continuity in case previous maintainers move on.
+Some plugins we distribute are currently maintained outside the `jenkinsci` GitHub organization for historical reasons, but this is discouraged.
+
+This page lists all forked repositories in the `jenkinsci` GitHub organization and their source repositories.
+
+
+////
+Testing changes to the script below locally without major changes is difficult due to CORS set up on reports.jenkins.io to only allow access from jenkins.io.
+Starting Chrome with the arguments --disable-web-security --user-data-dir=<some dir> seems to be the easiest option.
+////
+++++
+
+ <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+
+    <script
+        src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#forks').DataTable({
+                ajax: {
+                    method: 'GET',
+                    url: 'https://reports.jenkins.io/github-jenkinsci-fork-report.json',
+                    dataSrc: '',
+                    dataType: 'json',
+                },
+                 columns: [
+            {
+                title: "Fork",
+                render: function(data, type, row, metadata) {
+                    return '<a href="https://github.com/' + data + '" target="_blank" rel="noreferrer noopener">' + data + '</a>';
+                }
+            },
+            {
+                title: "Origin",
+                render: function(data, type, row, metadata) {
+                    return '<a href="https://github.com/' + data + '" target="_blank" rel="noreferrer noopener">' + data + '</a>';
+                }
+            }
+        ]
+            });
+        });
+    </script>
+
+    <table id="forks" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>Fork</th>
+            <th>Origin</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th>Fork</th>
+            <th>Origin</th>
+        </tr>
+    </tfoot>
+    </table>
+++++
+  

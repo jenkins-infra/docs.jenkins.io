@@ -1,0 +1,41 @@
+= Extension Points defined in Checks API Plugin
+
+https://plugins.jenkins.io/checks-api[Checks API Plugin]
+
+== AbstractStatusChecksProperties
+
+`jenkinsdoc:checks-api:io.jenkins.plugins.checks.status.AbstractStatusChecksProperties]`
+
++++ Extension points for implementations to provide status checks properties. When no implementations is provided for a+++ +++ job, a+++ jenkinsdoc:DefaultStatusCheckProperties] +++will be used.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/checks-api[Checks API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++checks.+++<wbr/>+++status.+++<wbr/>+++**DefaultStatusCheckProperties** (link:https://github.com/jenkinsci/checks-api-plugin/search?q=DefaultStatusCheckProperties&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-checks[GitHub Checks Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++checks.+++<wbr/>+++github.+++<wbr/>+++status.+++<wbr/>+++**GitHubStatusChecksProperties** (link:https://github.com/jenkinsci/github-checks-plugin/search?q=GitHubStatusChecksProperties&type=Code[view on GitHub])
+
+
+== ChecksPublisherFactory
+
+`jenkinsdoc:checks-api:io.jenkins.plugins.checks.api.ChecksPublisherFactory]`
+
++++ A publisher API for consumers to publish checks.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/gitea-checks[Gitea Checks Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++checks.+++<wbr/>+++gitea.+++<wbr/>+++**GiteaPublisherFactory** (link:https://github.com/jenkinsci/gitea-checks-plugin/search?q=GiteaPublisherFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-checks[GitHub Checks Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++checks.+++<wbr/>+++github.+++<wbr/>+++**GitHubChecksPublisherFactory** (link:https://github.com/jenkinsci/github-checks-plugin/search?q=GitHubChecksPublisherFactory&type=Code[view on GitHub])
+
+
+== StatusChecksProperties
+
+`jenkinsdoc:checks-api:io.jenkins.plugins.checks.status.StatusChecksProperties]`
+
++++ Properties that controls status checks. When no implementations is provided for a job, a {@link+++ +++ DefaultStatusCheckProperties} will be used.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

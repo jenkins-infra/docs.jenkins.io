@@ -1,0 +1,18 @@
+= Extension Points defined in Google Cloud Storage Plugin
+
+https://plugins.jenkins.io/google-storage-plugin[Google Cloud Storage Plugin]
+
+== AbstractUpload
+
+`jenkinsdoc:google-storage-https://plugins.jenkins.io/com.google.jenkins.plugins.storage.AbstractUpload]`
+
++++ This new extension point is used for surfacing different kinds of Google Cloud Storage (GCS)+++ +++ uploads. The most obvious implementations are provided as:+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/google-storage-plugin[Google Cloud Storage Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++storage.+++<wbr/>+++**AbstractBucketLifecycleManager** (link:https://github.com/jenkinsci/google-storage-plugin/search?q=AbstractBucketLifecycleManager&type=Code[view on GitHub])
+* https://plugins.jenkins.io/google-storage-plugin[Google Cloud Storage Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++storage.+++<wbr/>+++**ClassicUpload** (link:https://github.com/jenkinsci/google-storage-plugin/search?q=ClassicUpload&type=Code[view on GitHub])
+* https://plugins.jenkins.io/google-storage-plugin[Google Cloud Storage Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++storage.+++<wbr/>+++**ExpiringBucketLifecycleManager** (link:https://github.com/jenkinsci/google-storage-plugin/search?q=ExpiringBucketLifecycleManager&type=Code[view on GitHub])
+* https://plugins.jenkins.io/google-storage-plugin[Google Cloud Storage Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++storage.+++<wbr/>+++**StdoutUpload** (link:https://github.com/jenkinsci/google-storage-plugin/search?q=StdoutUpload&type=Code[view on GitHub])
+

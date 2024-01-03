@@ -1,0 +1,34 @@
+= Extension Points defined in Job and Node ownership Plugin
+
+https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]
+
+== ItemOwnershipPolicy
+
+`jenkinsdoc:ownership:com.synopsys.arc.jenkins.plugins.ownership.extensions.ItemOwnershipPolicy]`
+
++++ Implements an ownership changes policy for+++ jenkinsdoc:Item] +++s. +++ +++ This policy defines actions to be implemented if specific changes in jobs occur.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++extensions.+++<wbr/>+++item_ownership_policy.+++<wbr/>+++**AssignCreatorPolicy** (link:https://github.com/jenkinsci/ownership-plugin/search?q=AssignCreatorPolicy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++extensions.+++<wbr/>+++item_ownership_policy.+++<wbr/>+++**DropOwnershipPolicy** (link:https://github.com/jenkinsci/ownership-plugin/search?q=DropOwnershipPolicy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++config.+++<wbr/>+++**PreserveOwnershipPolicy** (link:https://github.com/jenkinsci/ownership-plugin/search?q=PreserveOwnershipPolicy&type=Code[view on GitHub])
+
+
+== OwnershipHelperLocator
+
+`jenkinsdoc:ownership:org.jenkinsci.plugins.ownership.model.OwnershipHelperLocator]`
+
++++ Extension point, which allows to identify+++ jenkinsdoc:IOwnershipHelper] +++for particular classes.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++nodes.+++<wbr/>+++**ComputerOwnerHelper.+++<wbr/>+++LocatorImpl** (link:https://github.com/jenkinsci/ownership-plugin/search?q=ComputerOwnerHelper.LocatorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++model.+++<wbr/>+++folders.+++<wbr/>+++**FolderOwnershipHelper.+++<wbr/>+++LocatorImpl** (link:https://github.com/jenkinsci/ownership-plugin/search?q=FolderOwnershipHelper.LocatorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++jobs.+++<wbr/>+++**JobOwnerHelper.+++<wbr/>+++LocatorImpl** (link:https://github.com/jenkinsci/ownership-plugin/search?q=JobOwnerHelper.LocatorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++nodes.+++<wbr/>+++**NodeOwnerHelper.+++<wbr/>+++LocatorImpl** (link:https://github.com/jenkinsci/ownership-plugin/search?q=NodeOwnerHelper.LocatorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++nodes.+++<wbr/>+++**NodeOwnerPropertyHelper.+++<wbr/>+++LocatorImpl** (link:https://github.com/jenkinsci/ownership-plugin/search?q=NodeOwnerPropertyHelper.LocatorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++model.+++<wbr/>+++runs.+++<wbr/>+++**RunOwnershipHelper.+++<wbr/>+++LocatorImpl** (link:https://github.com/jenkinsci/ownership-plugin/search?q=RunOwnershipHelper.LocatorImpl&type=Code[view on GitHub])
+

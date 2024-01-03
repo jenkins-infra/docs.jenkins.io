@@ -1,0 +1,5 @@
+name: template
+title: Template
+version: "2.426.x"
+nav:
+  - modules/ROOT/nav.adoc

@@ -1,0 +1,68 @@
+= Extension Points defined in Script Security Plugin
+
+https://plugins.jenkins.io/script-security[Script Security Plugin]
+
+== ApprovalListener
+
+`jenkinsdoc:script-security:org.jenkinsci.plugins.scriptsecurity.scripts.ApprovalListener]`
+
++++ Receives notifications on approval-related events.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== Language
+
+`jenkinsdoc:script-security:org.jenkinsci.plugins.scriptsecurity.scripts.Language]`
+
++++ A language for which we can request+++ jenkinsdoc:ScriptApproval] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++scripts.+++<wbr/>+++languages.+++<wbr/>+++**GroovyLanguage** (link:https://github.com/jenkinsci/script-security-plugin/search?q=GroovyLanguage&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++scripts.+++<wbr/>+++languages.+++<wbr/>+++**GroovyShellLanguage** (link:https://github.com/jenkinsci/script-security-plugin/search?q=GroovyShellLanguage&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++scripts.+++<wbr/>+++languages.+++<wbr/>+++**GroovyXmlLanguage** (link:https://github.com/jenkinsci/script-security-plugin/search?q=GroovyXmlLanguage&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++scripts.+++<wbr/>+++languages.+++<wbr/>+++**JellyLanguage** (link:https://github.com/jenkinsci/script-security-plugin/search?q=JellyLanguage&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++scripts.+++<wbr/>+++languages.+++<wbr/>+++**JexlLanguage** (link:https://github.com/jenkinsci/script-security-plugin/search?q=JexlLanguage&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: Anonymous class in org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++scripts.+++<wbr/>+++**ScriptApproval** (link:https://github.com/jenkinsci/script-security-plugin/search?q=ScriptApproval.PendingScript.getLanguage.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++scripts.+++<wbr/>+++languages.+++<wbr/>+++**SystemCommandLanguage** (link:https://github.com/jenkinsci/script-security-plugin/search?q=SystemCommandLanguage&type=Code[view on GitHub])
+
+
+== Whitelist
+
+`jenkinsdoc:script-security:org.jenkinsci.plugins.scriptsecurity.sandbox.Whitelist]`
+
++++ Determines which methods and similar members which scripts may call.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/btc-embeddedplatform[BTC DSL for Pipeline Plugin]: com.+++<wbr/>+++btc.+++<wbr/>+++ep.+++<wbr/>+++plugins.+++<wbr/>+++embeddedplatform.+++<wbr/>+++**EmbeddedPlatformDSL.+++<wbr/>+++MiscWhitelist** (link:https://github.com/jenkinsci/btc-embeddedplatform-plugin/search?q=EmbeddedPlatformDSL.MiscWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git-changelog[Git Changelog Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++gitchangelog.+++<wbr/>+++steps.+++<wbr/>+++**Whitelist** (link:https://github.com/jenkinsci/git-changelog-plugin/search?q=Whitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira-steps[JIRA Pipeline Steps Plugin]: org.+++<wbr/>+++thoughtslive.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jira.+++<wbr/>+++steps.+++<wbr/>+++**BasicJiraStep.+++<wbr/>+++JiraWhitelist** (link:https://github.com/jenkinsci/jira-steps-plugin/search?q=BasicJiraStep.JiraWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++model.+++<wbr/>+++workflow.+++<wbr/>+++**OwnershipGlobalVariable.+++<wbr/>+++MiscWhitelist** (link:https://github.com/jenkinsci/ownership-plugin/search?q=OwnershipGlobalVariable.MiscWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-project[Matrix Project Plugin]: hudson.+++<wbr/>+++matrix.+++<wbr/>+++**FilterScript.+++<wbr/>+++ImpliesWhitelist** (link:https://github.com/jenkinsci/matrix-project-plugin/search?q=FilterScript.ImpliesWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ontrack[ontrack Jenkins Plugin]: net.+++<wbr/>+++nemerosa.+++<wbr/>+++ontrack.+++<wbr/>+++jenkins.+++<wbr/>+++dsl.+++<wbr/>+++**OntrackDSLWhitelist** (link:https://github.com/jenkinsci/ontrack-plugin/search?q=OntrackDSLWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/permissive-script-security[Permissive Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++permissivescriptsecurity.+++<wbr/>+++**PermissiveWhitelist** (link:https://github.com/jenkinsci/permissive-script-security-plugin/search?q=PermissiveWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-utility-steps[Pipeline Utility Steps Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++utility.+++<wbr/>+++steps.+++<wbr/>+++csv.+++<wbr/>+++**ReadCSVStep.+++<wbr/>+++WhiteLister** (link:https://github.com/jenkinsci/pipeline-utility-steps-plugin/search?q=ReadCSVStep.WhiteLister&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-utility-steps[Pipeline Utility Steps Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++utility.+++<wbr/>+++steps.+++<wbr/>+++maven.+++<wbr/>+++**ReadMavenPomStep.+++<wbr/>+++WhiteLister** (link:https://github.com/jenkinsci/pipeline-utility-steps-plugin/search?q=ReadMavenPomStep.WhiteLister&type=Code[view on GitHub])
+* https://plugins.jenkins.io/quali-torque[Quali Torque Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++torque.+++<wbr/>+++whitelists.+++<wbr/>+++**JenkinsWhitelist** (link:https://github.com/jenkinsci/quali-torque-plugin/search?q=JenkinsWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++sandbox.+++<wbr/>+++whitelists.+++<wbr/>+++**AbstractWhitelist** (link:https://github.com/jenkinsci/script-security-plugin/search?q=AbstractWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++sandbox.+++<wbr/>+++whitelists.+++<wbr/>+++**AclAwareWhitelist** (link:https://github.com/jenkinsci/script-security-plugin/search?q=AclAwareWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++sandbox.+++<wbr/>+++whitelists.+++<wbr/>+++**AnnotatedWhitelist** (link:https://github.com/jenkinsci/script-security-plugin/search?q=AnnotatedWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++sandbox.+++<wbr/>+++whitelists.+++<wbr/>+++**AnnotatedWhitelist.+++<wbr/>+++Impl** (link:https://github.com/jenkinsci/script-security-plugin/search?q=AnnotatedWhitelist.Impl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++sandbox.+++<wbr/>+++whitelists.+++<wbr/>+++**BlanketWhitelist** (link:https://github.com/jenkinsci/script-security-plugin/search?q=BlanketWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++sandbox.+++<wbr/>+++groovy.+++<wbr/>+++**ClassLoaderWhitelist** (link:https://github.com/jenkinsci/script-security-plugin/search?q=ClassLoaderWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++sandbox.+++<wbr/>+++whitelists.+++<wbr/>+++**EnumeratingWhitelist** (link:https://github.com/jenkinsci/script-security-plugin/search?q=EnumeratingWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++sandbox.+++<wbr/>+++whitelists.+++<wbr/>+++**GenericWhitelist** (link:https://github.com/jenkinsci/script-security-plugin/search?q=GenericWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++sandbox.+++<wbr/>+++whitelists.+++<wbr/>+++**JenkinsWhitelist** (link:https://github.com/jenkinsci/script-security-plugin/search?q=JenkinsWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++sandbox.+++<wbr/>+++whitelists.+++<wbr/>+++**ProxyWhitelist** (link:https://github.com/jenkinsci/script-security-plugin/search?q=ProxyWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: Anonymous class in org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++sandbox.+++<wbr/>+++whitelists.+++<wbr/>+++**ProxyWhitelist** (link:https://github.com/jenkinsci/script-security-plugin/search?q=ProxyWhitelist.reset.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++scripts.+++<wbr/>+++**ScriptApproval.+++<wbr/>+++ApprovedWhitelist** (link:https://github.com/jenkinsci/script-security-plugin/search?q=ScriptApproval.ApprovedWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/script-security[Script Security Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scriptsecurity.+++<wbr/>+++sandbox.+++<wbr/>+++whitelists.+++<wbr/>+++**StaticWhitelist** (link:https://github.com/jenkinsci/script-security-plugin/search?q=StaticWhitelist&type=Code[view on GitHub])
+* https://plugins.jenkins.io/simple-build-for-pipeline[Simple Build DSL for Pipeline Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++simplebuild.+++<wbr/>+++**SimpleBuildDSL.+++<wbr/>+++MiscWhitelist** (link:https://github.com/jenkinsci/simple-build-for-pipeline-plugin/search?q=SimpleBuildDSL.MiscWhitelist&type=Code[view on GitHub])
+

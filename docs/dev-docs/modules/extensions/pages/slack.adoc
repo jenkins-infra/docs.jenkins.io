@@ -1,0 +1,15 @@
+= Extension Points defined in Slack Notification Plugin
+
+https://plugins.jenkins.io/slack[Slack Notification Plugin]
+
+== SlackUserIdResolver
+
+`jenkinsdoc:slack:jenkins.plugins.slack.user.SlackUserIdResolver]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/slack[Slack Notification Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++slack.+++<wbr/>+++user.+++<wbr/>+++**EmailSlackUserIdResolver** (link:https://github.com/jenkinsci/slack-plugin/search?q=EmailSlackUserIdResolver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/slack[Slack Notification Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++slack.+++<wbr/>+++user.+++<wbr/>+++**NoSlackUserIdResolver** (link:https://github.com/jenkinsci/slack-plugin/search?q=NoSlackUserIdResolver&type=Code[view on GitHub])
+

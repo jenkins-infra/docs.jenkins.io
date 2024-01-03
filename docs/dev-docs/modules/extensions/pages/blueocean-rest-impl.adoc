@@ -1,0 +1,60 @@
+= Extension Points defined in REST Implementation for Blue Ocean Plugin
+
+https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]
+
+== ContainerFilter
+
+`jenkinsdoc:blueocean-rest-impl:io.jenkins.blueocean.service.embedded.rest.ContainerFilter]`
+
++++ Simple extension point to allow filtering item types by a specific key+++ +++ This can be used anywhere a list of items are returned, and it will examine+++ +++ the current request for a ?filter=filter1(param:value),filter2 parameter,+++ +++ okay the last bit is a future addition once/if OmniSearch and this are consolidated+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++**PipelineJobFilters.+++<wbr/>+++FolderJobFilter** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineJobFilters.FolderJobFilter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++**PipelineJobFilters.+++<wbr/>+++OriginFilter** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineJobFilters.OriginFilter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++**PipelineJobFilters.+++<wbr/>+++PullRequestFilter** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineJobFilters.PullRequestFilter&type=Code[view on GitHub])
+
+
+== JobAnalyticsCheck
+
+`jenkinsdoc:blueocean-rest-impl:io.jenkins.blueocean.service.embedded.analytics.JobAnalyticsCheck]`
+
++++Used to check the type of item for+++ jenkinsdoc:io.jenkins.blueocean.service.embedded.analytics.JobAnalytics] ++++++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++analytics.+++<wbr/>+++**DeclarativePipelineAnalyticsCheck** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=DeclarativePipelineAnalyticsCheck&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++analytics.+++<wbr/>+++**DeclarativeSinglePipelineCheck** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=DeclarativeSinglePipelineCheck&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++analytics.+++<wbr/>+++**FreeStyleAnalyticsCheck** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=FreeStyleAnalyticsCheck&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++analytics.+++<wbr/>+++**MatrixAnalyticsCheck** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=MatrixAnalyticsCheck&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++analytics.+++<wbr/>+++**MavenAnalyticsCheck** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=MavenAnalyticsCheck&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++analytics.+++<wbr/>+++**ScriptedPipelineAnalyticsCheck** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=ScriptedPipelineAnalyticsCheck&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++analytics.+++<wbr/>+++**ScriptedSinglePipelineCheck** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=ScriptedSinglePipelineCheck&type=Code[view on GitHub])
+
+
+== JobAnalyticsExclude
+
+`jenkinsdoc:blueocean-rest-impl:io.jenkins.blueocean.service.embedded.analytics.JobAnalyticsExclude]`
+
++++Used to exclude an item from+++ jenkinsdoc:io.jenkins.blueocean.service.embedded.analytics.JobAnalytics] ++++++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++analytics.+++<wbr/>+++**MatrixAnalyticsCheck.+++<wbr/>+++ExcludeImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=MatrixAnalyticsCheck.ExcludeImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++analytics.+++<wbr/>+++**MavenAnalyticsCheck.+++<wbr/>+++ExcludeImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=MavenAnalyticsCheck.ExcludeImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++analytics.+++<wbr/>+++**ScriptedPipelineAnalyticsCheck.+++<wbr/>+++ExcludeImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=ScriptedPipelineAnalyticsCheck.ExcludeImpl&type=Code[view on GitHub])
+
+
+== KeenConfiguration
+
+`jenkinsdoc:blueocean-rest-impl:io.jenkins.blueocean.service.embedded.analytics.KeenConfiguration]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++analytics.+++<wbr/>+++**KeenConfiguration.+++<wbr/>+++DefaultKeenConfiguration** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=KeenConfiguration.DefaultKeenConfiguration&type=Code[view on GitHub])
+

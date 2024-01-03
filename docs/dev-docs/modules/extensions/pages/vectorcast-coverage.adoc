@@ -1,0 +1,15 @@
+= Extension Points defined in VectorCAST Coverage Plugin
+
+https://plugins.jenkins.io/vectorcast-coverage[VectorCAST Coverage Plugin]
+
+== Rule
+
+`jenkinsdoc:vectorcast-coverage:com.vectorcast.plugins.vectorcastcoverage.Rule]`
+
++++ Rule object encapsulates the logic to mark+++ jenkinsdoc:CoverageObject] +++s as "failed".+++ +++ Such logic is used to mark builds as unstable when certain condition is met.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/vectorcast-coverage[VectorCAST Coverage Plugin]: com.+++<wbr/>+++vectorcast.+++<wbr/>+++plugins.+++<wbr/>+++vectorcastcoverage.+++<wbr/>+++rules.+++<wbr/>+++**StatementCoveragePerSourceFileRule** (link:https://github.com/jenkinsci/vectorcast-coverage-plugin/search?q=StatementCoveragePerSourceFileRule&type=Code[view on GitHub])
+

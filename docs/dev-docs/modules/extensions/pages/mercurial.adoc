@@ -1,0 +1,15 @@
+= Extension Points defined in Mercurial Plugin
+
+https://plugins.jenkins.io/mercurial[Mercurial Plugin]
+
+== ChangeComparator
+
+`jenkinsdoc:mercurial:hudson.plugins.mercurial.ChangeComparator]`
+
++++ An extension point that allows plugins to override the built in compare +++ +++ functionality when deciding whether to trigger a build or not.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

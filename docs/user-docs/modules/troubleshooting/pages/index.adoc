@@ -1,0 +1,4 @@
+= Troubleshooting Jenkins
+
+This chapter provides information on resolving issues you might encounter when running Jenkins.
+This section is suitable for all Jenkins users.

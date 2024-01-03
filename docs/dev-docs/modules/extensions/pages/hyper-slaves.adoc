@@ -1,0 +1,14 @@
+= Extension Points defined in Hyper.sh Slaves Plugin
+
+https://plugins.jenkins.io/hyper-slaves[Hyper.sh Slaves Plugin]
+
+== ContainerDriverFactory
+
+`jenkinsdoc:hyper-slaves:sh.hyper.hyperslaves.spi.ContainerDriverFactory]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/hyper-slaves[Hyper.sh Slaves Plugin]: sh.+++<wbr/>+++hyper.+++<wbr/>+++hyperslaves.+++<wbr/>+++drivers.+++<wbr/>+++**PlainHyperAPIContainerDriverFactory** (link:https://github.com/jenkinsci/hyper-slaves-plugin/search?q=PlainHyperAPIContainerDriverFactory&type=Code[view on GitHub])
+

@@ -1,0 +1,27 @@
+= Extension Points defined in Pipeline Maven Integration Plugin
+
+https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]
+
+== MavenPublisher
+
+`jenkinsdoc:pipeline-maven:org.jenkinsci.plugins.pipeline.maven.MavenPublisher]`
+
++++ Experimental interface, likely to change in the future.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**AbstractHealthAwarePublisher** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=AbstractHealthAwarePublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**ConcordionTestsPublisher** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=ConcordionTestsPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**DependenciesFingerprintPublisher** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=DependenciesFingerprintPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**FindbugsAnalysisPublisher** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=FindbugsAnalysisPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**GeneratedArtifactsPublisher** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=GeneratedArtifactsPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**InvokerRunsPublisher** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=InvokerRunsPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**JGivenTestsPublisher** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=JGivenTestsPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**JacocoReportPublisher** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=JacocoReportPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**JunitTestsPublisher** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=JunitTestsPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**MavenLinkerPublisher2** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=MavenLinkerPublisher2&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**PipelineGraphPublisher** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=PipelineGraphPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**SpotBugsAnalysisPublisher** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=SpotBugsAnalysisPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++publishers.+++<wbr/>+++**TasksScannerPublisher** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=TasksScannerPublisher&type=Code[view on GitHub])
+

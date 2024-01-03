@@ -1,0 +1,14 @@
+= Extension Points defined in Sematext Plugin
+
+https://plugins.jenkins.io/sematext[Sematext Plugin]
+
+== MetricProvider
+
+`jenkinsdoc:sematext:com.sematext.jenkins.plugins.metrics.MetricProvider]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/sematext[Sematext Plugin]: com.+++<wbr/>+++sematext.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++metrics.+++<wbr/>+++**JobMetricProviderImpl** (link:https://github.com/jenkinsci/sematext-plugin/search?q=JobMetricProviderImpl&type=Code[view on GitHub])
+

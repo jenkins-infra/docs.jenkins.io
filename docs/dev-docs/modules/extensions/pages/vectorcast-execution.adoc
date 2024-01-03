@@ -1,0 +1,17 @@
+= Extension Points defined in VectorCAST Execution Plugin
+
+https://plugins.jenkins.io/vectorcast-execution[VectorCAST Execution Plugin]
+
+== JobBase
+
+`jenkinsdoc:vectorcast-execution:com.vectorcast.plugins.vectorcastexecution.JobBase]`
+
++++ Base job+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/vectorcast-execution[VectorCAST Execution Plugin]: com.+++<wbr/>+++vectorcast.+++<wbr/>+++plugins.+++<wbr/>+++vectorcastexecution.+++<wbr/>+++**VectorCASTJobDiag** (link:https://github.com/jenkinsci/vectorcast-execution-plugin/search?q=VectorCASTJobDiag&type=Code[view on GitHub])
+* https://plugins.jenkins.io/vectorcast-execution[VectorCAST Execution Plugin]: com.+++<wbr/>+++vectorcast.+++<wbr/>+++plugins.+++<wbr/>+++vectorcastexecution.+++<wbr/>+++**VectorCASTJobPipeline** (link:https://github.com/jenkinsci/vectorcast-execution-plugin/search?q=VectorCASTJobPipeline&type=Code[view on GitHub])
+* https://plugins.jenkins.io/vectorcast-execution[VectorCAST Execution Plugin]: com.+++<wbr/>+++vectorcast.+++<wbr/>+++plugins.+++<wbr/>+++vectorcastexecution.+++<wbr/>+++**VectorCASTJobSingle** (link:https://github.com/jenkinsci/vectorcast-execution-plugin/search?q=VectorCASTJobSingle&type=Code[view on GitHub])
+

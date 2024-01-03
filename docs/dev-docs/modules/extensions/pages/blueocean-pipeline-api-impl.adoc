@@ -1,0 +1,48 @@
+= Extension Points defined in Pipeline implementation for Blue Ocean Plugin
+
+https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]
+
+== PipelineInputStepListener
+
+`jenkinsdoc:blueocean-pipeline-api-impl:io.jenkins.blueocean.rest.impl.pipeline.PipelineInputStepListener]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-events[Events API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++events.+++<wbr/>+++**PipelineEventListener.+++<wbr/>+++InputStepPublisher** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineEventListener.InputStepPublisher&type=Code[view on GitHub])
+
+
+== ScmContentProvider
+
+`jenkinsdoc:blueocean-pipeline-api-impl:io.jenkins.blueocean.rest.impl.pipeline.ScmContentProvider]`
+
++++ SCM content specific APIs+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-bitbucket-pipeline[Bitbucket Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_bitbucket_pipeline.+++<wbr/>+++**AbstractBitbucketScmContentProvider** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=AbstractBitbucketScmContentProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-bitbucket-pipeline[Bitbucket Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_bitbucket_pipeline.+++<wbr/>+++cloud.+++<wbr/>+++**BitbucketCloudScmContentProvider** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BitbucketCloudScmContentProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-bitbucket-pipeline[Bitbucket Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_bitbucket_pipeline.+++<wbr/>+++server.+++<wbr/>+++**BitbucketServerScmContentProvider** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BitbucketServerScmContentProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-git-pipeline[Git Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_git_pipeline.+++<wbr/>+++**GitReadSaveService** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=GitReadSaveService&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-github-pipeline[GitHub Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_github_pipeline.+++<wbr/>+++**GithubEnterpriseScmContentProvider** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=GithubEnterpriseScmContentProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-github-pipeline[GitHub Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_github_pipeline.+++<wbr/>+++**GithubScmContentProvider** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=GithubScmContentProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++scm.+++<wbr/>+++**AbstractScmContentProvider** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=AbstractScmContentProvider&type=Code[view on GitHub])
+
+
+== ScmFactory
+
+`jenkinsdoc:blueocean-pipeline-api-impl:io.jenkins.blueocean.rest.impl.pipeline.scm.ScmFactory]`
+
++++ SCM factory to get+++ jenkinsdoc:Scm] ++++++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-bitbucket-pipeline[Bitbucket Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_bitbucket_pipeline.+++<wbr/>+++cloud.+++<wbr/>+++**BitbucketCloudScm.+++<wbr/>+++BbScmFactory** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BitbucketCloudScm.BbScmFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-bitbucket-pipeline[Bitbucket Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_bitbucket_pipeline.+++<wbr/>+++server.+++<wbr/>+++**BitbucketServerScm.+++<wbr/>+++BbScmFactory** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BitbucketServerScm.BbScmFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-git-pipeline[Git Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_git_pipeline.+++<wbr/>+++**GitScm.+++<wbr/>+++GitScmFactory** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=GitScm.GitScmFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-github-pipeline[GitHub Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_github_pipeline.+++<wbr/>+++**GithubEnterpriseScm.+++<wbr/>+++GithubScmFactory** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=GithubEnterpriseScm.GithubScmFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-github-pipeline[GitHub Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_github_pipeline.+++<wbr/>+++**GithubScm.+++<wbr/>+++GithubScmFactory** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=GithubScm.GithubScmFactory&type=Code[view on GitHub])
+

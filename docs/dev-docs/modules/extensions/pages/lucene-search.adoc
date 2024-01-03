@@ -1,0 +1,14 @@
+= Extension Points defined in Lucene-Search Plugin
+
+https://plugins.jenkins.io/lucene-search[Lucene-Search Plugin]
+
+== FreeTextSearchExtension
+
+`jenkinsdoc:lucene-search:org.jenkinsci.plugins.lucene.search.FreeTextSearchExtension]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/lucene-search[Lucene-Search Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++lucene.+++<wbr/>+++search.+++<wbr/>+++extensionimplementations.+++<wbr/>+++**JunitFreeTextSearchExtension** (link:https://github.com/jenkinsci/lucene-search-plugin/search?q=JunitFreeTextSearchExtension&type=Code[view on GitHub])
+

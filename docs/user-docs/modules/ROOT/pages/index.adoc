@@ -1,0 +1,50 @@
+= Jenkins User Documentation
+
+Welcome to the Jenkins user documentation - for people wanting to _use_
+Jenkins's existing functionality and plugin features.
+
+If you want to extend the functionality of Jenkins by developing your own
+Jenkins plugins, please refer to the xref:dev-docs:ROOT:index.adoc[Extend Jenkins]
+(Developer Documentation).
+
+
+== What is Jenkins?
+
+Jenkins is a self-contained, open source automation server which can be used to
+automate all sorts of tasks related to building, testing, and delivering or
+deploying software.
+
+Jenkins can be installed through native system packages, Docker, or even run
+standalone by any machine with a Java Runtime Environment (JRE) installed.
+
+
+== About this documentation
+
+This documentation begins with a xref:pipeline:getting-started.adoc[Guided Tour]
+to help you get up and running with Jenkins and introduce you to Jenkins's main
+feature, Pipeline.
+
+There are also xref:tutorials:ROOT:index.adoc[Tutorials] geared to developers who want to
+orchestrate and automate building their project in Jenkins using Pipeline and
+Blue Ocean.
+
+If you've never used Jenkins before or have limited Jenkins experience, then the
+Guided Tour and introductory tutorials are good places to start.
+
+If you are looking for more detailed information about using Jenkins, please
+refer to the xref:getting-started:index.adoc[User Handbook]
+
+
+== Documentation scope
+
+Jenkins is a highly extensible product whose functionality can be extended
+through the installation of plugins.
+
+There are a vast array of plugins available to Jenkins. However, the
+documentation covered in the xref:pipeline:getting-started.adoc[Guided Tour]
+xref:tutorials:ROOT:index.adoc[Tutorials], xref:solutions:ROOT:index.adoc[Solution pages] and xref:getting-started:index.adoc[User Handbook] of
+this documentation are based on a xref:installing-jenkins:index.adoc[Jenkins installation]
+with the xref:blueocean:getting-started.adoc[Blue Ocean plugins installed],
+as well as the "suggested plugins", which are specified when running through the
+xref:installing-jenkins:linux.adoc#setup-wizard[Post-installation setup wizard].
+

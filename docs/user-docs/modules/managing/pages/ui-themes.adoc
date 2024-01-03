@@ -1,0 +1,90 @@
+= Themes for user interface
+
+It is possible to customize Jenkins' appearance with custom themes.
+This feature is not a part of the Jenkins core, but it is supported through plugins.
+
+== Using built-in themes
+
+There are several plugins that provide built-in themes, the most popular are
+
+* {plugin}dark-theme[Dark Theme Plugin] -
+  provides a dark theme for Jenkins.
+  Supports configuration as code to select the theme configuration.
+* {plugin}material-theme[Material Theme Plugin] -
+  port of Afonso F's link:http://afonsof.com/jenkins-material-theme/[Jenkins material theme] to use Theme Manager.
+* {plugin}solarized-theme[Solarized Theme Plugin] -
+  provides Solarized (light and dark) themes.
+
+Installing any of these will also install their common dependency: the {plugin}theme-manager[Theme Manager Plugin].
+This plugin allows administrators to set the default theme for a Jenkins installation via _Manage Jenkins > System > Built-in Themes_
+and users can set their preferred theme in their personal settings.
+You can also configure this plugin using {plugin}configuration-as-code[Configuration-as-Code Plugin].
+See the plugin documentation for more details.
+
+== Using custom themes
+
+To be able to fully customize Jenkins appearance you can install the {plugin}simple-theme-plugin[Simple Theme Plugin].
+It allows customizing the Jenkins UI by providing custom CSS and Javascript files.
+It also supports replacing the Favicon.
+
+To configure a theme, you can go to _Manage Jenkins > System > Theme_ and enter the URL of your stylesheet and/or Javascript file.
+You can also configure this plugin using {plugin}configuration-as-code[Configuration-as-Code Plugin].
+See the plugin documentation for the detailed usage guidelines and links to sample themes.
+
+=== Customizing the login screen
+
+Since Jenkins 2.128 themes configured using Simple Theme Plugin do not allow you to customize the login screen
+(link:/blog/2018/06/27/new-login-page/[announcement]).
+To customize the login screen you can install the {plugin}login-theme[Login Theme Plugin].
+
+
+== Themes support policy
+
+WARNING: Jenkins themes are provided “as is”, without warranty of any kind, implicit or explicit.
+The Jenkins core, plugins and other component updates may break theme compatibility without notice.
+
+At the moment, the Jenkins project does not provide specification for layouts/CSS,
+and we cannot guarantee backward or forward compatibility.
+We try to reflect major changes in changelogs
+(e.g. see the ‘developer’ changes in the link:/changelog/[Jenkins changelog]),
+but minor changes may not be included there.
+
+=== Why?
+
+There is an ongoing effort focused on improving Jenkins look-and-feel, accessibility, and user experience.
+This area is mission-critical to the project.
+There are multiple initiatives in the link:/project/roadmap/[Jenkins Roadmap] being coordinated by the xref:sigs:ux:index.adoc[Jenkins User Experience SIG].
+
+Major UI changes imply incompatible changes in layouts and the CSS structure which is critical for theme plugins.
+Historically Jenkins had no explicit support policy for themes,
+and we do not want to provide compatibility requirements which would create obstacles for reworking the main Jenkins interface.
+Later, once the Jenkins UI rework reaches its destination and the UI becomes more stable, we could consider creating specifications for theme extensibility so that we could make themes more stable and maintain compatibility.
+
+== Reporting and fixing issues
+
+For built-in themes, users are welcome to report discovered compatibility issues to theme maintainers,
+and to submit patches there.
+
+We will generally reject bug reports to the Jenkins core/plugins involving broken UI elements with a custom theme.
+We will consider pull requests which restore compatibility and do not block further Web UI evolvement.
+
+NOTE: If a theme outside the link:https://github.com/jenkinsci[jenkinsci] GitHub organization is no longer maintained,
+it is fine to fork it and to create a new version.
+For themes hosted within the `jenkinsci` organization,
+we have an xref:dev-docs:plugin-governance:adopt-a-plugin.adoc[adoption process] which also applies to themes.
+
+== Information for theme developers
+
+We encourage Jenkins users to create themes and to share them.
+Such themes could be a great way to experiment with UI enhancements,
+and we would be happy to consider enhancements from them for a default Jenkins theme.
+
+To improve the user experience,
+please consider the following recommendations:
+
+* Version themes with tags on Git and to maintain changelogs with explicit references to changes in the supported versions (e.g. see our release drafter documentation as one of the ways to automate changelogs).
+* Explicitly define an link:https://opensource.org/licenses[OSI-approved open source license] so that users can freely modify and redistribute them.
+** This is also a prerequisite for hosting themes in Jenkins GitHub organizations and, in the future, theme marketplaces or other similar promotion engines.
+
+If you would like to share a story about Jenkins themes,
+please let the xref:sigs:advocacy-and-outreach:index.adoc[Advocacy&Outreach SIG] know!

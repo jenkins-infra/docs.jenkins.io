@@ -1,0 +1,2824 @@
+= Jenkins Features Controlled with System Properties
+
+++++
+<style>
+.doc h5{
+  color: deeppink
+}
+</style>
+++++
+
+////
+properties:
+ Style guide:
+ - Prefer literal blocks over quoted blocks when necessary
+ - Format literal default values in `backticks` and descriptive parts of values outside backticks
+ - Use sentence-per-line formatting for descriptions
+
+Tags:
+- development: Mostly or only useful during development and debugging. While in rare cases these may help troubleshoot an instance, primary use is development.
+- escape hatch: Disables a behavior that is not generally expected to be disabled, such as security fixes. Intended to address unexpected compatibility problems.
+- feature: Enables (or rarely disables) a feature. Distinction to escape hatches is fuzzy when it disables.
+- internal: Not intended to be set by administrators, developers, or packaging scripts at all. Very rare.
+- obsolete: This option no longer has an effect or a different option should be used instead.
+- packaging: Options generally only useful when customizing the Jenkins packaging.
+- security: Related to security, both security fixes, and hardening. Usually also escape hatches.
+- tuning: Adjust thresholds, durations, and values of a similar nature that don't substantially alter behavior.
+- ui: User interface related.
+////
+
+Jenkins has several "hidden" features that can be enabled with system properties. This page documents many of them and explain how to configure them on your instance.
+
+Some system properties related to the Remoting library used for communication between controller and agents are documented in link:https://github.com/jenkinsci/remoting/blob/master/docs/configuration.md[that component’s repository].
+
+== Usage
+System properties are defined by passing `-Dproperty=value` to the `java` command line to start Jenkins. Make sure to pass all of these arguments before the `-jar` argument, otherwise they will be ignored. Example:
+
+.bash
+[source]
+----
+java -Dhudson.footerURL=http://example.org -jar jenkins.war
+----
+
+The following lists the properties and the version of Jenkins they were introduced in.
+
+`Property` - Java property name
+
+*Default* - Default value if not explicitly set
+
+*Since* - The version of Jenkins the property was introduced in
+
+*Description* - Other notes
+
+== Compatibility
+We do *NOT* guarantee that system properties will remain unchanged and functional indefinitely. These switches are often experimental in nature, and subject to change without notice. If you find these useful, please file a ticket to promote it to an official feature.
+
+== Properties in Jenkins Core
+NOTE: Due to the very large number of system properties used, often just added as a "safety valve" or "escape hatch" in case a change causes problems, this list is not expected to be complete.
+
+===== name: debug.YUI
+
+`development` `development`
+
+*Since*: December 2006 
+// https://github.com/jenkinsci/jenkins/commit/ab68a9fce7672649b797ea6ff46f88c965e2404b 
+
+*Default*: `false`
+
+
+*Description*::
+Whether to use the minified (`false`) or debug (`true`) JS files for the YUI library.
+
+
+===== name: executable-war
+
+`packaging`
+
+*Default*: Path to `jenkins.war` when invoked as `java -jar jenkins.war`, undefined otherwise.
+
+
+*Description*::
+This is the path to `jenkins.war` and set by `executable.Main` when invoked using `java -jar jenkins.war`.
+This allows Jenkins to find its own `.war` file and e.g. replace it to apply an update.
+If undefined, Jenkins will not e.g. offer to update itself.
+
+===== name: hudson.bundled.plugins
+
+`development`
+
+*Default*: undefined
+
+
+*Description*::
+Specify a location for additional bundled plugins during plugin development (`hpi:run`).
+There is no reason this would be set by an administrator.
+
+===== name: hudson.ClassicPluginStrategy.noBytecodeTransformer
+
+`escape hatch` `obsolete`
+
+*Default*: `false`
+
+*Since*: 1.538
+// https://github.com/jenkinsci/jenkins/commit/f98c4627da3c21e37aff82c75c0ef7240e60b4da
+
+
+*Description*::
+Disable the bytecode transformer that retains compatibility at runtime after changing public Java APIs.
+Has no effect since 2.296, as the bytecode transformer has been removed.
+
+===== name: hudson.ClassicPluginStrategy.useAntClassLoader
+
+`escape hatch`
+
+*Default*: `false` (until 2.309 and since 2.348), `true` (from 2.310 to 2.347)
+
+*Since*: 1.316
+// Unused since https://github.com/jenkinsci/jenkins/commit/47de54d070f67af95b4fefb6d006a72bb31a5cb8
+// Restored and default in https://github.com/jenkinsci/jenkins/pull/5698
+// Disabled since https://github.com/jenkinsci/jenkins/pull/6571
+
+*Description*::
+Unused between 1.527 and 2.309.
+Since 2.310, can be set to `false` to use `URLClassLoader` instead.
+This is the default since 2.347.
+
+===== name: hudson.cli.CLI.pingInterval
+
+`tuning`
+
+*Default*: `3000`
+
+*Since*: 2.199
+
+
+*Description*::
+Client-side HTTP CLI ping interval in milliseconds.
+Set on the CLI client (`java -jar jenkins-cli.jar`), not Jenkins server process.
+
+===== name: hudson.ConsoleNote.INSECURE
+
+`escape hatch` `security`
+
+*Default*: `false`
+
+*Since*: 2.44 / 2.32.2
+
+*Description*::
+Whether to load unsigned console notes.
+See SECURITY-382 on link:/security/advisory/2017-02-01///persisted-cross-site-scripting-vulnerability-in-console-notes[Jenkins Security Advisory 2017-02-01].
+
+===== name: hudson.consoleTailKB
+
+`tuning`
+
+*Default*: `150`
+
+*Since*: March 2009
+// https://github.com/jenkinsci/jenkins/commit/bf81f96ab3d5e90bca0963c51c40a62d2642548d
+
+*Description*::
+How many KB of console log to show in default console view.
+This property had no effect from Jenkins 2.4 (inclusive) until 2.98/2.89.3 (exclusive), see JENKINS-48593.
+
+===== name: hudson.diagnosis.HudsonHomeDiskUsageChecker.freeSpaceThreshold
+
+`tuning`
+
+*Default*: `1073741824` (1 GB, up to 2.39), `10737418240` (10 GB, from 2.40)
+*Since*: 1.339
+
+*Description*::
+If there's less than this amount of free disk space, in bytes, on the disk with the Jenkins home directory, and the disk is 90% or more full, a warning will be shown to administrators.
+
+===== name: hudson.diyChunking
+
+`feature`
+
+*Default*: `false`
+
+*Since*: May 2009
+// https://github.com/jenkinsci/jenkins/commit/703c50cf62dedfb7085d345ec102df7395cf7fca
+
+*Description*::
+Set to `true` if the servlet container doesn't support chunked encoding.
+
+===== name: hudson.DNSMultiCast.disabled
+
+`escape hatch` `obsolete`
+
+*Default*: `false` until 2.218, `true` in 2.219
+*Since*: 1.359
+
+*Description*::
+Set to `true` to disable DNS multicast.
+Has no effect since 2.220 as the feature has been removed.
+See link:/security/advisory/2020-01-29///SECURITY-1641[SECURITY-1641]
+
+===== name: hudson.FilePath.VALIDATE_ANT_FILE_MASK_BOUND
+
+`tuning`
+
+*Default*: `10000`
+
+*Since*: 1.592
+
+*Description*::
+Max. number of operations to validate a file mask (e.g. pattern to archive artifacts).
+
+===== name: hudson.footerURL
+
+`feature`
+
+*Default*: `+https://jenkins.io+`
+
+*Since*: 1.416
+
+*Description*::
+Allows tweaking the URL displayed at the bottom of Jenkins' UI
+
+===== name: hudson.Functions.autoRefreshSeconds
+
+`obsolete` `tuning`
+
+*Default*: `10`
+
+*Since*: 1.365
+
+*Description*::
+Number of seconds between reloads when Auto Refresh is enabled.
+Obsolete since the feature was removed in Jenkins 2.223.
+
+===== name: hudson.Functions.hidingPasswordFields
+
+`security` `escape hatch`
+
+*Default*: `true`
+
+*Since*: 2.205
+
+*Description*::
+Jenkins 2.205 and newer attempts to prevent browsers from offering to autofill password form fields by using a custom password control.
+Setting this to `false` reverts to the legacy behavior of using mostly standard password form fields.
+
+===== name: hudson.lifecycle
+
+`packaging`
+
+*Default*: automatically determined based on environment, see `hudson.lifecycle.Lifecycle`
+
+
+*Description*::
+Specify full class name for Lifecycle implementation to override default.
+See xref:dev-docs:extensions:jenkins-core.adoc#lifecycle[documentation] for class names.
+
+===== name: hudson.logging.LogRecorderManager.skipPermissionCheck
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.121.3 and 2.138
+
+*Description*::
+Disable security hardening for LogRecorderManager Stapler access.
+Possibly unsafe, link:/security/advisory/2018-12-05///SECURITY-595[see 2018-12-05 security advisory].
+
+===== name: hudson.Main.development
+
+`development`
+
+*Default*: `false` in production, `true` in development
+
+
+*Description*::
+This is set to `true` by the development tooling to identify when Jenkins is running via `jetty:run` or `hpi:run`.
+Can be used to distinguish between development and production use; most prominently used to bypass the setup wizard when running with an empty Jenkins home directory during development.
+
+===== name: hudson.Main.timeout
+
+`tuning`
+
+*Default*: `15000`
+
+
+*Description*::
+When using `jenkins-core.jar` from the CLI, this is the connection timeout connecting to Jenkins to report a build result.
+
+===== name: hudson.markup.MarkupFormatter.previewsAllowGET
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.263.2 / 2.275
+
+*Description*::
+Controls whether URLs implementing markup formatter previews are accessible via GET.
+See link:/security/advisory/2021-01-13///SECURITY-2153[2021-01-13 security advisory].
+
+===== name: hudson.markup.MarkupFormatter.previewsSetCSP
+
+`security` `escape hatch`
+
+*Default*: `true`
+
+*Since*: 2.263.2 / 2.275
+
+*Description*::
+Controls whether to set restrictive Content-Security-Policy headers on URLs implementing markup formatter previews.
+See link:/security/advisory/2021-01-13///SECURITY-2153[2021-01-13 security advisory].
+
+===== name: hudson.matrix.MatrixConfiguration.useShortWorkspaceName
+
+// TODO move to matrix-project plugin documentation
+`feature`
+
+*Default*: `false`
+
+
+*Description*::
+Use shorter but cryptic names in matrix build workspace directories.
+Avoids problems with 256-character limit on paths in Cygwin, path depths problems on Windows, and shell metacharacter problems with label expressions on most platforms.
+See https://issues.jenkins.io/browse/JENKINS-25783[JENKINS-25783].
+
+===== name: hudson.model.AbstractItem.skipPermissionCheck
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.121.3 / 2.138
+
+*Description*::
+Disable security hardening related to Stapler routing for AbstractItem.
+Possibly unsafe, link:/security/advisory/2018-12-05///SECURITY-595[see 2018-12-05 security advisory].
+
+===== name: hudson.model.Api.INSECURE
+
+`security` `escape hatch` `obsolete`
+
+*Default*: `false`
+
+*Since*: 1.502
+
+*Description*::
+Set to `true` to permit accessing the Jenkins remote API in an unsafe manner.
+See SECURITY-47.
+Deprecated, use e.g. https://plugins.jenkins.io/secure-requester-whitelist/[Secure Requester Whitelist] instead.
+
+===== name: hudson.model.AsyncAperiodicWork.logRotateMinutes
+
+`tuning`
+
+*Default*: `1440`
+
+*Since*: 1.651
+
+*Description*::
+The number of minutes after which to try and rotate the log file used by any AsyncAperiodicWork extension.
+For fine-grained control of a specific extension you can use the `_FullyQualifiedClassName_.logRotateMinutes` system property to only affect a specific extension.
+_It is not anticipated that you will ever need to change these defaults._
+
+===== name: hudson.model.AsyncAperiodicWork.logRotateSize
+
+`tuning`
+
+*Default*: `-1`
+
+*Since*: 1.651
+
+*Description*::
+When starting a new run of any AsyncAperiodicWork extension, if this value is non-negative and the existing log file is larger than the specified number of bytes then the log file will be rotated.
+For fine-grained control of a specific extension you can use the `_FullyQualifiedClassName_.logRotateSize` system property to only affect a specific extension.
+_It is not anticipated that you will ever need to change these defaults._
+
+===== name: hudson.model.AsyncPeriodicWork.logRotateMinutes
+
+`tuning`
+
+*Default*: `1440`
+
+*Since*: 1.651
+
+*Description*::
+The number of minutes after which to try and rotate the log file used by any AsyncPeriodicWork extension.
+For fine-grained control of a specific extension you can use the `_FullyQualifiedClassName_.logRotateMinutes` system property to only affect a specific extension.
+_It is not anticipated that you will ever need to change these defaults._
+
+Some implementations that can be individually configured (see _FullyQualifiedClassName_ above):
+
+* `hudson.model.WorkspaceCleanupThread`
+* `hudson.model.FingerprintCleanupThread`
+* `hudson.slaves.ConnectionActivityMonitor`
+* `jenkins.DailyCheck`
+* `jenkins.model.BackgroundGlobalBuildDiscarder`
+* `jenkins.telemetry.Telemetry$TelemetryReporter`
+
+===== name: hudson.model.AsyncPeriodicWork.logRotateSize
+
+`tuning`
+
+*Default*: `-1`
+
+*Since*: 1.651
+
+*Description*::
+When starting a new run of any AsyncPeriodicWork extension, if this value is non-negative and the existing log file is larger than the specified number of bytes then the log file will be rotated.
+For fine-grained control of a specific extension you can use the `_FullyQualifiedClassName_.logRotateSize` system property to only affect a specific extension.
+_It is not anticipated that you will ever need to change these defaults_
+
+Some implementations that can be individually configured (see _FullyQualifiedClassName_ above):
+
+* `hudson.model.WorkspaceCleanupThread`
+* `hudson.model.FingerprintCleanupThread`
+* `hudson.slaves.ConnectionActivityMonitor`
+* `jenkins.DailyCheck`
+* `jenkins.model.BackgroundGlobalBuildDiscarder`
+* `jenkins.telemetry.Telemetry$TelemetryReporter`
+
+===== name: hudson.model.DirectoryBrowserSupport.allowAbsolutePath
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.315 and 2.303.2
+
+*Description*::
+Escape hatch for link:/security/advisory/2021-10-06///SECURITY-2481[SECURITY-2481].
+Set this to `true` to allow browsing to absolute paths.
+
+===== name: hudson.model.DirectoryBrowserSupport.allowSymlinkEscape
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.154 and 2.138.4
+
+*Description*::
+Escape hatch for link:/security/advisory/2018-12-05///SECURITY-904[SECURITY-904] and link:/security/advisory/2021-01-13///SECURITY-1452[SECURITY-1452].
+
+===== name: hudson.model.DirectoryBrowserSupport.allowTmpEscape
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.394 and 2.375.4
+
+*Description*::
+Escape hatch for link:/security/advisory/2023-03-08///SECURITY-1807[SECURITY-1807].
+
+===== name: hudson.model.DirectoryBrowserSupport.CSP
+
+`security` `escape hatch`
+
+*Default*: `sandbox; default-src 'none'; image-src 'self'; style-src 'self';`
+
+*Since*: 1.625.3, 1.641
+
+*Description*::
+Determines the Content Security Policy header sent for static files served by Jenkins.
+Only affects instances that don't have a resource root URL set up.
+See xref:system-administration:configuring-content-security-policy.adoc[Configuring Content Security Policy] for more details.
+
+===== name: hudson.model.DownloadService$Downloadable.defaultInterval
+
+`tuning`
+
+*Default*: `86400000` (1 day)
+*Since*: '1.500'
+
+*Description*::
+Interval between periodic downloads of _Downloadables_, typically tool installer metadata.
+
+===== name: hudson.model.DownloadService.never
+
+`obsolete` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 1.319
+// https://github.com/jenkinsci/jenkins/commit/163c08003eb25cbe259fc8a8277bb3e264e36d18
+
+*Description*::
+Suppress the periodic download of data files for plugins via browser-based download.
+Since Jenkins 2.200, this has no effect.
+
+===== name: hudson.model.DownloadService.noSignatureCheck
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 1.482
+// https://github.com/jenkinsci/jenkins/commit/62f66f899c95ccdfdc7a5d3346240988b42a9aad
+
+*Description*::
+Skip the update site signature check.
+Setting this to `true` can be unsafe.
+
+===== name: hudson.model.Hudson.flyweightSupport
+
+`obsolete` `feature` `escape hatch`
+
+*Default*: `false` before 1.337; `true` from 1.337; unused since 1.598
+*Since*: 1.318
+
+*Description*::
+Matrix parent job and other flyweight tasks (e.g. Build Flow plugin) won't consume an executor when `true`.
+Unused since 1.598, flyweight support is now always enabled.
+
+===== name: hudson.model.Hudson.initLogLevel
+
+`obsolete`
+
+*Description*::
+Deprecated: Backward-compatible fallback for `jenkins.model.Jenkins.initLogLevel`.
+Removed since 2.272.
+
+===== name: hudson.model.Hudson.killAfterLoad
+
+`obsolete`
+
+*Description*::
+Deprecated: Backward-compatible fallback for `jenkins.model.Jenkins.killAfterLoad`.
+Removed since 2.272.
+
+===== name: hudson.model.Hudson.logStartupPerformance
+
+`obsolete`
+
+*Description*::
+Deprecated: Backward-compatible fallback for `jenkins.model.Jenkins.logStartupPerformance`.
+Removed since 2.272.
+
+===== name: hudson.model.Hudson.parallelLoad
+
+`obsolete`
+
+*Description*::
+Deprecated: Backward-compatible fallback for `jenkins.model.Jenkins.parallelLoad`.
+Removed since 2.272.
+
+===== name: hudson.model.Hudson.workspaceDirName
+
+`obsolete`
+
+*Description*::
+Deprecated: Backward-compatible fallback for `jenkins.model.Jenkins.workspaceDirName`.
+Removed since 2.272.
+
+===== name: hudson.model.LabelAtom.allowFolderTraversal
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.263.2 / 2.275
+
+*Description*::
+Controls whether label names containing unsafe characters that lead to path traversal can be saved.
+See link:/doc/upgrade-guide/2.263///labelatom[2.263.2 upgrade guide].
+
+===== name: hudson.model.LoadStatistics.clock
+
+`tuning`
+
+*Default*: `10000` (10 seconds)
+*Since*: January 2009
+// https://github.com/jenkinsci/jenkins/commit/8d771bc2e335fea5369ba06066c87866494fa5e3
+
+*Description*::
+Load statistics clock cycle in milliseconds.
+
+===== name: hudson.model.LoadStatistics.decay
+
+`tuning`
+
+*Default*: `0.9`
+
+*Since*: January 2009
+// https://github.com/jenkinsci/jenkins/commit/8d771bc2e335fea5369ba06066c87866494fa5e3
+
+*Description*::
+Decay ratio for every clock cycle in node utilization charts.
+
+===== name: hudson.model.MultiStageTimeSeries.chartFont
+
+`feature` `ui`
+
+*Default*: `SansSerif-10`
+
+*Since*: 1.562
+
+*Description*::
+Font used for load statistics.
+See http://docs.oracle.com/javase/7/docs/api/java/awt/Font.html//decode%28java.lang.String%29[Java documentation] on how the value is decoded.
+
+===== name: hudson.model.Node.SKIP_BUILD_CHECK_ON_FLYWEIGHTS
+
+`security` `escape hatch`
+
+*Default*: `true`
+
+*Since*: 2.111
+// https://github.com/jenkinsci/jenkins/commit/036e0ce6bb0f257c1e90d49a0af907adf6bb79f7
+
+*Description*::
+Whether to allow building flyweight tasks even if the necessary permission (Computer/Build) is missing.
+See https://issues.jenkins.io/browse/JENKINS-46652[JENKINS-46652].
+
+===== name: hudson.model.ParametersAction.keepUndefinedParameters
+
+`security` `escape hatch`
+
+*Default*: undefined
+*Since*: 1.651.2 / 2.3
+// TODO add advisory reference
+
+*Description*::
+If true, not discard parameters for builds that are not defined on the job.
+*Enabling this can be unsafe.*
+Since Jenkins 2.40, if set to false, will not log a warning message that parameters were defined but ignored.
+
+===== name: hudson.model.ParametersAction.safeParameters
+
+`security` `escape hatch`
+
+*Default*: undefined
+*Since*: 1.651.2 / 2.3
+// TODO add advisory reference
+
+*Description*::
+Comma-separated list of additional build parameter names that should not be discarded even when not defined on the job.
+
+===== name: hudson.model.Queue.cacheRefreshPeriod
+
+`tuning`
+
+*Default*: `1000`
+
+*Since*: 1.577 up to 1.647
+
+*Description*::
+Defines the refresh period for the internal queue cache (in milliseconds).
+The greater period workarounds web UI delays on large installations, which may be caused by locking of the build queue by build executors.
+Downside: Builds appear in the queue with a noticeable delay.
+
+===== name: hudson.model.Queue.Saver.DELAY_SECONDS
+
+`tuning`
+
+*Default*: `60`
+
+*Since*: 2.109
+
+*Description*::
+Maximal delay of a save operation when content of Jenkins queue changes.
+This works as a balancing factor between queue consistency guarantee in case of Jenkins crash (short delay) and decreasing IO activity based on Jenkins load (long delay).
+
+===== name: hudson.model.Run.ArtifactList.listCutoff
+
+`tuning` `ui`
+
+*Default*: `16`
+
+*Since*: 1.330
+
+*Description*::
+More artifacts than this will use tree view or simple link rather than listing out artifacts
+
+===== name: hudson.model.Run.ArtifactList.treeCutoff
+
+`tuning` `ui`
+
+*Default*: `40`
+
+*Since*: 1.330
+
+*Description*::
+More artifacts than this will show a simple link to directory browser rather than showing artifacts in tree view
+
+===== name: hudson.model.Slave.workspaceRoot
+
+`tuning`
+
+*Default*: `workspace`
+
+*Since*: 1.341?
+
+*Description*::
+name of the folder within the agent root directory to contain workspaces
+
+===== name: hudson.model.UpdateCenter.className
+
+`packaging`
+
+*Default*: effectively `hudson.model.UpdateCenter`
+
+*Since*: 2.4
+
+*Description*::
+This allows overriding the implementation class for update center when customizing the `.war` packaging of Jenkins.
+Cannot be used for plugins.
+
+===== name: hudson.model.UpdateCenter.defaultUpdateSiteId
+
+*Default*: `default`
+
+*Since*: 2.4
+// TODO figure out what this even does, IIRC Jenkins doesn't care about the ID other than distinguish on the UI?
+
+*Description*::
+Configure a different ID for the default update site.
+Useful for custom war distributions or externally provided UC data files.
+
+===== name: hudson.model.UpdateCenter.never
+
+*Default*: `false`
+
+
+*Description*::
+When true, don't automatically check for new versions
+
+===== name: hudson.model.UpdateCenter.pluginDownloadReadTimeoutSeconds
+
+`tuning`
+
+*Default*: `60`
+
+
+*Description*::
+Read timeout in seconds for downloading plugins.
+
+===== name: hudson.model.UpdateCenter.skipPermissionCheck
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.121.3 / 2.138
+
+*Description*::
+Disable security hardening related to Stapler routing for UpdateCenter.
+Possibly unsafe, link:/security/advisory/2018-12-05///SECURITY-595[see 2018-12-05 security advisory].
+
+===== name: hudson.model.UpdateCenter.updateCenterUrl
+
+`obsolete`
+
+*Default*: `+https://updates.jenkins.io/+`
+
+
+*Description*::
+Deprecated: Override the default update site URL.
+May have no effect since Jenkins 1.333.
+
+===== name: hudson.model.UsageStatistics.disabled
+
+`feature`
+
+*Default*: `false`
+
+*Since*: May 2009
+// https://github.com/jenkinsci/jenkins/commit/49ace47432e473b8f5febb6cc00f177be5854ffb looks like a rename
+// but it was originally added the same day https://github.com/jenkinsci/jenkins/commit/10cc0441aeaf7c042dc1ecca674a7cf9b8375863 just a typo
+
+*Description*::
+Set to `true` to opt out of usage statistics collection, independent of UI option.
+
+===== name: hudson.model.User.allowNonExistentUserToLogin
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 1.602
+
+*Description*::
+When `true`, does not check auth realm for existence of user if there's a record in Jenkins.
+Unsafe, but may be used on some instances for service accounts
+
+===== name: hudson.model.User.allowUserCreationViaUrl
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.44 / 2.32.2
+
+*Description*::
+Whether admins accessing `/user/example` creates a user record (see SECURITY-406 on https://wiki.jenkins.io/display/SECURITY/Jenkins+Security+Advisory+2017-02-01[Jenkins Security Advisory 2017-02-01])
+
+===== name: hudson.model.User.SECURITY_243_FULL_DEFENSE
+
+`security` `escape hatch`
+
+*Default*: `true`
+
+*Since*: 1.651.2 / 2.3
+
+*Description*::
+When false, skips part of the fix that tries to determine whether a given user ID exists, and if so, doesn't consider users with the same full name during resolution.
+
+===== name: hudson.model.User.skipPermissionCheck
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.121.3 / 2.138
+
+*Description*::
+Disable security hardening related to Stapler routing for User.
+Possibly unsafe, link:/security/advisory/2018-12-05///SECURITY-595[see 2018-12-05 security advisory].
+
+===== name: hudson.model.WorkspaceCleanupThread.disabled
+
+`escape hatch`
+
+*Default*: `false`
+
+*Since*: June 2009
+// https://github.com/jenkinsci/jenkins/commit/ee5cba8fac256580ac30878ed28cf3330cc9d4a4
+
+*Description*::
+Don't clean up old workspaces on agent nodes
+
+===== name: hudson.model.WorkspaceCleanupThread.recurrencePeriodHours
+
+`tuning`
+
+*Default*: `24`
+
+*Since*: 1.608
+
+*Description*::
+How frequently workspace cleanup should run, in hours.
+
+===== name: hudson.model.WorkspaceCleanupThread.retainForDays
+
+`tuning`
+
+*Default*: `30`
+
+*Since*: 1.608
+
+*Description*::
+Unused workspaces are retained for this many days before qualifying for deletion.
+
+===== name: hudson.node_monitors.AbstractNodeMonitorDescriptor.periodMinutes
+
+`tuning`
+
+*Default*: `60` (1 hour)
+
+
+*Description*::
+How frequently to update node monitors by default, in minutes.
+
+===== name: hudson.PluginManager.checkUpdateAttempts
+
+`tuning`
+
+*Default*: `1`
+
+*Since*: 2.152
+
+*Description*::
+Number of attempts to check the updates sites.
+
+===== name: hudson.PluginManager.checkUpdateSleepTimeMillis
+
+`tuning`
+
+*Default*: `1000`
+
+*Since*: 2.152
+
+*Description*::
+Time (milliseconds) elapsed between retries to check the updates sites.
+
+===== name: hudson.PluginManager.className
+
+`packaging`
+
+*Default*: effectively `hudson.LocalPluginManager`
+
+
+*Description*::
+Can be used to specify a different `PluginManager` implementation when customizing the `.war` packaging of Jenkins.
+Cannot be used for plugins.
+
+===== name: hudson.PluginManager.noFastLookup
+
+`escape hatch`
+
+*Default*: `false`
+
+
+*Description*::
+Disable fast lookup using `ClassLoaderReflectionToolkit` which reflectively accesses internal methods of `ClassLoader`.
+
+===== name: hudson.PluginManager.skipPermissionCheck
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.121.3 / 2.138
+
+*Description*::
+Disable security hardening related to Stapler routing for PluginManager.
+Possibly unsafe, link:/security/advisory/2018-12-05///SECURITY-595[see 2018-12-05 security advisory].
+
+===== name: hudson.PluginManager.workDir
+
+`feature`
+
+*Default*: undefined
+*Since*: 1.649
+
+*Description*::
+Location of the base directory for all exploded .hpi/.jpi plugins.
+By default, the plugins will be extracted under `$JENKINS_HOME/plugins/`.
+
+===== name: hudson.PluginStrategy
+
+`packaging`
+
+*Default*: effectively `hudson.ClassicPluginStrategy`
+
+
+*Description*::
+Allow plugins to be loaded into a different environment, such as an existing DI container like Plexus.
+Specify the full class name of a `hudson.PluginStrategy` implementation to override the default.
+
+===== name: hudson.PluginWrapper.dependenciesVersionCheck.enabled
+
+`escape hatch`
+
+*Default*: `true`
+
+*Since*: 2.0
+
+*Description*::
+Set to `false` to skip the version check for plugin dependencies.
+
+===== name: hudson.ProxyConfiguration.DEFAULT_CONNECT_TIMEOUT_MILLIS
+
+`tuning`
+
+*Default*: `20000`
+
+*Since*: 2.0
+
+*Description*::
+Connection timeout applied to connections e.g. to the update site.
+
+[#hudson-remoting-channelbuilder-allcallablescanignorerolechecker]
+===== name: hudson.remoting.ChannelBuilder.allCallablesCanIgnoreRoleChecker
+
+`security` `scape hatch`
+
+*Default*: `false`
+
+*Since*: 2.319 and 2.303.3
+
+*Description*::
+Disable requirement for remoting callables to perform a role check.
+See link:/doc/upgrade-guide/2.303///SECURITY-2458[the description in the upgrade guide].
+
+[#hudson-remoting-channelbuilder-specificcallablescanignoreroleche]
+===== name: hudson.remoting.ChannelBuilder.specificCallablesCanIgnoreRoleChecker
+
+`security` `scape hatch`
+
+*Default*: undefined
+*Since*: 2.319 and 2.303.3
+
+*Description*::
+Comma-separated list of class names allowed to bypass role check requirement.
+See link:/doc/upgrade-guide/2.303///SECURITY-2458[the description in the upgrade guide].
+
+===== name: hudson.remoting.ClassFilter
+
+`security` `escape hatch`
+
+*Default*: undefined
+
+
+*Description*::
+Allow or disallow the deserialization of specified types.
+Comma-separated class names, entries are whitelisted unless prefixed with `!`.
+See jep:200//backwards-compatibility[JEP-200] and https://issues.jenkins.io/browse/JENKINS-47736[JENKINS-47736].
+
+===== name: hudson.scheduledRetention
+
+`obsolete`
+// TODO figure out what this does
+*Default*: `false`
+
+*Since*: Up to 1.354
+
+*Description*::
+Control an agent based on a schedule
+
+===== name: hudson.scm.SCM.useAutoBrowserHolder
+
+`feature`
+
+*Default*: `false` since Jenkins 2.9, `true` before
+
+
+*Description*::
+When set to `true`, Jenkins will guess the repository browser used to render links in the changelog.
+
+===== name: hudson.script.noCache
+
+`development`
+
+*Default*: `false` in production, `true` during development
+
+
+*Description*::
+When set to true, Jenkins will not reference resource files through the `/static/.../` URL space, preventing their caching.
+This is set to `true` during development by default, and `false` otherwise.
+
+===== name: hudson.search.Search.MAX_SEARCH_SIZE
+
+`security` `escape hatch`
+
+*Default*: `500`
+
+*Since*: 2.375.4 / 2.394
+
+*Description*::
+Limits the number of results a search can render.
+
+===== name: hudson.search.Search.skipPermissionCheck
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.121.3 / 2.138
+
+*Description*::
+Disable security hardening related to Stapler routing for Search.
+Possibly unsafe, link:/security/advisory/2018-12-05///SECURITY-595[see 2018-12-05 security advisory].
+
+===== name: hudson.security.AccessDeniedException2.REPORT_GROUP_HEADERS
+
+`escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.46 / 2.32.3
+
+*Description*::
+If set to true, restore pre-2.46 behavior of sending HTTP headers on "access denied" pages listing group memberships.
+
+===== name: hudson.security.ArtifactsPermission
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 1.374
+
+*Description*::
+The Artifacts permission allows to control access to artifacts; When this property is unset or set to false, access to artifacts is not controlled
+
+===== name: hudson.security.csrf.CrumbFilter.UNPROCESSED_PATHINFO
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.228 and 2.204.6
+
+*Description*::
+Escape hatch for link:/security/advisory/2020-03-25///SECURITY-1774[SECURITY-1774].
+
+===== name: hudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.186 and 2.176.2
+
+*Description*::
+Escape hatch for link:/security/advisory/2019-07-17///SECURITY-626[SECURITY-626].
+
+===== name: hudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.222
+
+*Description*::
+Restore the ability to disable CSRF protection after the UI for doing so was removed from Jenkins 2.222.
+
+===== name: hudson.security.csrf.requestfield
+
+`security` `tuning`
+
+*Default*: `.crumb` (Jenkins 1.x), `Jenkins-Crumb` (Jenkins 2.0)
+*Since*: 1.310
+
+*Description*::
+Parameter name that contains a crumb value on POST requests
+
+===== name: hudson.security.ExtendedReadPermission
+
+`security` `feature`
+
+*Default*: `false`
+
+*Since*: 1.324
+
+*Description*::
+The ExtendedReadPermission allows read-only access to "Configure" pages; can also enable with extended-read-permission plugin
+
+===== name: hudson.security.HudsonPrivateSecurityRealm.ID_REGEX
+
+`security` `escape hatch`
+
+*Default*: `+[a-zA-Z0-9_-]++`
+
+*Since*: 2.121 and 2.107.3
+
+*Description*::
+Regex for legal usernames in Jenkins user database.
+See link:/security/advisory/2018-05-09///SECURITY-786[SECURITY-786].
+
+===== name: hudson.security.HudsonPrivateSecurityRealm.maximumBCryptLogRound
+
+`security` `escape hatch`
+
+*Default*: `18`
+
+*Since*: 2.161
+
+*Description*::
+Limits the number of rounds for pre-computed BCrypt hashes of user passwords for the Jenkins user database to prevent excessive computation.
+
+===== name: hudson.security.LDAPSecurityRealm.groupSearch
+
+// TODO move out, it's LDAP plugin
+// def: TODO recover default that was apparently lost after wiki
+
+*Description*::
+LDAP filter to look for groups by their names
+
+===== name: hudson.security.SecurityRealm.sessionFixationProtectionMode
+
+`security` `escape hatch`
+
+*Default*: `1`
+
+*Since*: 2.300 and 2.289.2
+
+*Description*::
+Escape hatch for link:/security/advisory/2021-06-30///SECURITY-2371[SECURITY-2371].
+Set to `0` to disable the fix or to `2` to select an alternative implementation.
+
+===== name: hudson.security.TokenBasedRememberMeServices2.skipTooFarExpirationDateCheck
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.160 and 2.150.2
+
+*Description*::
+Escape hatch for link:/security/advisory/2019-01-16///SECURITY-868[SECURITY-868]
+
+===== name: hudson.security.WipeOutPermission
+
+`security` `feature`
+
+*Default*: `false`
+
+*Since*: 1.416
+
+*Description*::
+The WipeOut permission allows to control access to the "Wipe Out Workspace" action, which is normally available as soon as the Build permission is granted
+
+===== name: hudson.slaves.ChannelPinger.pingInterval
+
+`tuning` `obsolete`
+
+*Default*: `5`
+
+*Since*: 1.405
+
+*Description*::
+Frequency (in minutes) of https://wiki.jenkins.io/display/JENKINS/Ping+Thread[pings between the controller and agents].
+Deprecated since 2.37, use `hudson.slaves.ChannelPinger.pingIntervalSeconds` instead.
+
+===== name: hudson.slaves.ChannelPinger.pingIntervalSeconds
+
+`tuning`
+
+*Default*: `300`
+
+*Since*: 2.37
+
+*Description*::
+Frequency of https://wiki.jenkins.io/display/JENKINS/Ping+Thread[pings between the controller and agents], in seconds
+
+===== name: hudson.slaves.ChannelPinger.pingTimeoutSeconds
+
+`tuning`
+
+*Default*: `240`
+
+*Since*: 2.37
+
+*Description*::
+Timeout for each https://wiki.jenkins.io/display/JENKINS/Ping+Thread[ping between the controller and agents], in seconds
+
+===== name: hudson.slaves.ConnectionActivityMonitor.enabled
+
+`feature`
+// TODO: This looks like a dead feature? Introduced 2011 and disabled by default?
+*Default*: `false`
+
+*Since*: 1.326
+
+*Description*::
+Whether to enable this feature that checks whether agents are alive and cuts them off if not.
+
+===== name: hudson.slaves.ConnectionActivityMonitor.frequency
+
+`tuning`
+// TODO: Actually dual use: Both for timeout (4 minutes) and time to ping (3 minutes). Possibly copy & paste issue and bug in core?
+*Default*: `10000` (10 seconds)
+*Since*: 1.326
+
+*Description*::
+How frequently to check for channel activity, in milliseconds.
+
+===== name: hudson.slaves.ConnectionActivityMonitor.timeToPing
+
+`tuning`
+
+*Default*: `180000` (3 minutes)
+*Since*: 1.326
+
+*Description*::
+How long to wait after startup to start checking agent connections, in milliseconds.
+
+===== name: hudson.slaves.NodeProvisioner.initialDelay
+
+`tuning`
+
+*Default*: 10 times `hudson.model.LoadStatistics.clock`, typically 100 seconds
+
+
+*Description*::
+How long to wait after startup before starting to provision nodes from clouds.
+This will allow static agents to start and handle the load first.
+
+===== name: hudson.slaves.NodeProvisioner.MARGIN
+
+`tuning`
+
+===== name: hudson.slaves.NodeProvisioner.MARGIN0
+
+`tuning`
+
+===== name: hudson.slaves.NodeProvisioner.MARGIN_DECAY
+
+`tuning`
+
+===== name: hudson.slaves.NodeProvisioner.recurrencePeriod
+
+`tuning`
+
+*Default*: Equal to `hudson.model.LoadStatistics.clock`, typically 10 seconds
+
+
+*Description*::
+How frequently to possibly provision nodes.
+
+===== name: hudson.slaves.SlaveComputer.allowUnsupportedRemotingVersions
+
+`escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.343
+
+*Description*::
+Allow connection by agents running unsupported remoting versions.
+
+===== name: hudson.slaves.WorkspaceList
+
+`tuning`
+
+*Default*: `@`
+
+*Since*: 1.424
+
+*Description*::
+When concurrent builds is enabled, a unique workspace directory name is required for each concurrent build.
+To create this name, this token is placed between project name and a unique ID, e.g. "my-project@123".
+
+===== name: hudson.tasks.ArtifactArchiver.warnOnEmpty
+
+`feature`
+
+*Default*: `false`
+
+
+*Description*::
+When true, builds don't fail when there is nothing to archive
+
+===== name: hudson.tasks.Fingerprinter.enableFingerprintsInDependencyGraph
+
+`feature`
+
+*Default*: `false`
+
+*Since*: 1.430
+
+*Description*::
+When true, jobs associated through fingerprints are added to the dependency graph, even when there is no configured upstream/downstream relationship between them.
+
+===== name: hudson.tasks.MailSender.maxLogLines
+
+// TODO is this mailer plugin now?
+
+*Default*: `250`
+
+
+*Description*::
+Number of lines of console output to include in emails
+
+
+===== name: hudson.TcpSlaveAgentListener.hostName
+
+`feature`
+
+*Default*: Same as the configured Jenkins root URL
+
+
+*Description*::
+Host name that Jenkins advertises to inbound TCP agents.
+Especially useful when running Jenkins behind a reverse proxy.
+
+
+===== name: hudson.TcpSlaveAgentListener.port
+
+`feature`
+
+*Default*: Same as the configured TCP agent port
+
+
+*Description*::
+Port that Jenkins advertises to inbound TCP agents.
+Especially useful when running Jenkins behind a reverse proxy.
+
+===== name: hudson.TreeView
+
+`feature` `obsolete`
+
+*Default*: `false`
+
+
+*Description*::
+Enables the experimental nested views feature.
+Has no effect since 2.302, as the experimental nested views feature has been removed.
+
+===== name: hudson.triggers.SafeTimerTask.logsTargetDir
+
+`feature`
+
+*Default*: `$JENKINS_HOME/logs`
+
+*Since*: 2.114
+
+*Description*::
+Allows to move the logs usually found under `$JENKINS_HOME/logs` to another location.
+Beware that no migration is handled if you change it on an existing instance.
+
+===== name: hudson.triggers.SCMTrigger.starvationThreshold
+
+`tuning`
+
+*Default*: `3600000` (1 hour)
+
+
+*Description*::
+Milliseconds waiting for polling executor before trigger reports it is clogged.
+
+===== name: hudson.udp
+
+`escape hatch` `obsolete` `tuning`
+
+*Default*: `33848` until 2.218, `-1` in 2.219
+
+
+*Description*::
+Port for UDP multicast broadcast.
+Set to -1 to disable.
+Has no effect since 2.220 as the feature has been removed.
+See link:/security/advisory/2020-01-29///SECURITY-1641[SECURITY-1641]
+
+===== name: hudson.upstreamCulprits
+
+`feature`
+
+*Default*: `false`
+
+*Since*: 1.327
+
+*Description*::
+Pass blame information to downstream jobs.
+
+===== name: hudson.util.AtomicFileWriter.DISABLE_FORCED_FLUSH
+
+`escape hatch`
+// The code is really confusing; there are two flags, one is always false, and will be forcibly set to false here, except using a new constructor that was deprecated in the same PR it was introduced in.
+*Default*: `false`
+
+*Since*: 2.102
+
+*Description*::
+Disables the forced flushing when calling `//close()`.
+Not expected to be used.
+
+===== name: hudson.util.CharacterEncodingFilter.disableFilter
+
+`escape hatch`
+
+*Default*: `false`
+
+
+*Description*::
+Set to `true` to disable the filter that sets request encoding to UTF-8 if it's undefined and its content type is `text/xml` or `application/xml` (API submissions).
+
+===== name: hudson.util.CharacterEncodingFilter.forceEncoding
+
+`feature`
+
+*Default*: `false`
+
+
+*Description*::
+Set to `true` to force the request encoding to UTF-8 even if a different character set is declared.
+
+===== name: hudson.Util.deletionRetryWait
+
+`tuning`
+
+*Default*: `100`
+
+*Since*: 2.2
+
+*Description*::
+The time (in milliseconds) to wait between attempts to delete files when retrying.
+This has no effect unless _hudson.Util.maxFileDeletionRetries_ is greater than 1.
+If zero, there will be no delay between attempts.
+If negative, the delay will be a (linearly) increasing multiple of this value between attempts.
+
+===== name: hudson.util.Digester2.UNSAFE
+
+`security` `escape hatch` `obsolete`
+
+*Default*: `false`
+
+*Since*: 2.263.2 / 2.275
+
+*Description*::
+Opts out of a change in default behavior that disables the processing of XML external entities (XXE) for the `Digester2` class in Jenkins if set to `true`.
+This system property can be changed while Jenkins is running and the change is effective immediately.
+See link:/doc/upgrade-guide/2.263///digester2[2.263.2 upgrade guide].
+Has no effect since 2.297, as the `Digester2` class has been removed.
+
+===== name: hudson.util.FormValidation.applyContentSecurityPolicyHeaders
+
+`security` `escape hatch`
+
+*Default*: `true`
+
+*Since*: 2.263.2 / 2.275
+
+*Description*::
+Controls whether to set restrictive Content-Security-Policy headers on URLs implementing form validation responses.
+This reduces the impact of cross-site scripting (XSS) vulnerabilities in form validation output.
+See link:/doc/upgrade-guide/2.263///formvalidation[2.263.2 upgrade guide].
+
+===== name: hudson.util.Graph.maxArea
+
+`security` `escape hatch`
+
+*Default*: `10000000` (10 million)
+*Since*: 2.263.2 / 2.275
+
+*Description*::
+Controls the maximum size (area) for requests to render graphs like load statistics.
+See link:/security/advisory/2021-01-13///SECURITY-2025[2021-01-13 security advisory].
+
+===== name: hudson.Util.maxFileDeletionRetries
+
+`tuning`
+
+*Default*: `3`
+
+*Since*: 2.2
+
+*Description*::
+The number of times to attempt to delete files/directory trees before giving up and throwing an exception.
+Specifying a value less than 1 is invalid and will be treated as if a value of 1 (i.e. one attempt, no retries) was specified.
+See https://issues.jenkins.io/browse/JENKINS-10113[JENKINS-10113] and https://issues.jenkins.io/browse/JENKINS-15331[JENKINS-15331].
+
+===== name: hudson.util.MultipartFormDataParser.FILEUPLOAD_MAX_FILES
+
+`escape hatch` `tuning` `security`
+
+*Default*: `1000`
+
+*Since*: 2.375.4, 2.394
+
+*Description*::
+Limits the number of form fields that can be processed in one `multipart/form-data` request.
+Used to set `org.apache.commons.fileupload.servlet.ServletFileUpload//setFileCountMax(long)`.
+Despite the name, this applies to all form fields, not just actual file attachments.
+`-1` disables this limit.
+
+===== name: hudson.util.MultipartFormDataParser.FILEUPLOAD_MAX_FILE_SIZE
+
+  tags:
+// Not an escape hatch since it's disabled by default
+  - tuning
+  - security
+*Default*: `-1`
+
+*Since*: 2.375.4, 2.394
+
+*Description*::
+Limits the size (in bytes) of individual fields that can be processed in one `multipart/form-data` request.
+Despite the name, this applies to all form fields, not just actual file attachments.
+`-1` disables this limit.
+
+===== name: hudson.util.MultipartFormDataParser.FILEUPLOAD_MAX_SIZE
+
+  tags:
+// Not an escape hatch since it's disabled by default
+- tuning
+- security
+*Default*: `-1`
+
+*Since*: 2.375.4, 2.394
+
+*Description*::
+Limits the total request size (in bytes) that can be processed in one `multipart/form-data` request.
+Used to set `org.apache.commons.fileupload.servlet.ServletFileUpload//setSizeMax(long)`.
+`-1` disables this limit.
+
+===== name: hudson.Util.noSymLink
+
+`feature`
+// TODO this is now in a plugin I think?
+
+*Default*: `false`
+
+
+*Description*::
+True to disable creation of symbolic links in job/builds directories
+
+===== name: hudson.Util.performGCOnFailedDelete
+
+`tuning`
+
+*Default*: `false`
+
+*Since*: 2.2
+
+*Description*::
+If this flag is set to `true` then we will request a garbage collection after a deletion failure before we next retry the deletion.
+It is ignored unless _hudson.Util.maxFileDeletionRetries_ is greater than 1.
+Setting this flag to `true` _may_ resolve some problems on Windows, and also for directory trees residing on an NFS share, but it can have a negative impact on performance and may have no effect at all (GC behavior is JVM-specific).
+**Warning**: This should only ever be used if you find that your builds are failing because Jenkins is unable to delete files, that this failure is because Jenkins itself has those files locked "open", and even then it should only be used on agents with relatively few executors (because the garbage collection can impact the performance of all job executors on that agent).
+_Setting this flag is an act of last resort - it is not recommended, and should not be used on your main Jenkins server unless you can tolerate the performance impact_.
+
+===== name: hudson.util.ProcessTree.disable
+
+`feature`
+
+*Default*: `false`
+
+
+*Description*::
+True to disable cleanup of child processes.
+
+===== name: hudson.util.RingBufferLogHandler.defaultSize
+
+`tuning`
+
+*Default*: `256`
+
+*Since*: 1.563
+
+*Description*::
+Number of log entries in loggers available on the UI at `/log/`
+
+===== name: hudson.util.RobustReflectionConverter.recordFailuresForAdmins
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.263.2 / 2.275
+
+*Description*::
+If set to `true`, Old Data Monitor will record some failures to load data submitted by users with Overall/Administer permission, partially disabling a security fix.
+See link:/security/advisory/2021-01-13///SECURITY-1923[2021-01-13 security advisory] and link://hudson-util-robustreflectionconverter-recordfailuresforallauthen[`hudson.util.RobustReflectionConverter.recordFailuresForAllAuthentications`].
+
+===== name: hudson.util.RobustReflectionConverter.recordFailuresForAllAuthentications
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.263.2 / 2.275
+
+*Description*::
+If set to `true`, Old Data Monitor will record some failures to load data submitted by all authorized users, completely disabling a security fix.
+See link:/security/advisory/2021-01-13///SECURITY-1923[2021-01-13 security advisory] and link://hudson-util-robustreflectionconverter-recordfailuresforadmins[`hudson.util.RobustReflectionConverter.recordFailuresForAdmins`].
+
+===== name: hudson.util.Secret.AUTO_ENCRYPT_PASSWORD_CONTROL
+
+`security` `escape hatch`
+
+*Default*: `true`
+
+*Since*: 2.236
+
+*Description*::
+Jenkins automatically round-trips `f:password` based form fields as encrypted `Secret` even if the field is not of type `Secret`.
+Set this to `false` to disable this behavior, doing so is discouraged.
+
+===== name: hudson.util.Secret.BLANK_NONSECRET_PASSWORD_FIELDS_WITHOUT_ITEM_CONFIGURE
+
+`escape hatch` `security`
+
+*Default*: `true`
+
+*Since*: 2.236
+
+*Description*::
+If the user is missing _Item/Configure_ permission, Jenkins 2.236 and newer will blank out the password value automatically even if the form field is not backed by a `Secret`.
+Set this to `false` to disable this behavior, doing so is discouraged.
+
+===== name: hudson.util.Secret.provider
+
+`escape hatch`
+  def: system default
+*Since*: 1.360
+
+*Description*::
+Force a particular crypto provider; with Glassfish Enterprise set value to `SunJCE` to workaround https://issues.jenkins.io/browse/JENKINS-6459[JENKINS-6459] and GLASSFISH-11862.
+
+===== name: hudson.util.StreamTaskListener.AUTO_FLUSH
+
+`escape hatch`
+// https://github.com/jenkinsci/jenkins/pull/3961
+*Default*: `false`
+
+*Since*: 2.173
+
+*Description*::
+Jenkins no longer automatically flushes streams for code running remotely on agents for better performance.
+This may lead to loss of messages for plugins which print to a build log from the agent machine but do not flush their output.
+Use this flag to restore the previous behavior for freestyle builds.
+
+===== name: hudson.Util.symlinkEscapeHatch
+
+`escape hatch`
+
+*Default*: `false`
+
+
+*Description*::
+True to use exec of "ln" binary to create symbolic links instead of native code
+
+===== name: hudson.Util.useNativeChmodAndMode
+
+`escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.93
+
+*Description*::
+True to use native (JNA/JNR) implementation to set file permissions instead of NIO.
+Removed without replacement in 2.304.
+
+===== name: hudson.util.XStream2.collectionUpdateLimit
+
+`security` `tuning` `escape hatch`
+
+*Default*: `5`
+
+*Since*: 2.334 and 2.319.3
+
+*Description*::
+The maximum number of seconds that adding elements to collections may cumulatively take when loading an XML document using XStream, or `-1` to disable.
+See link:/security/advisory/2022-02-09///SECURITY-2602[2022-02-09 security advisory] for context.
+
+===== name: hudson.WebAppMain.forceSessionTrackingByCookie
+
+`escape hatch` `security`
+
+*Default*: `true`
+
+*Since*: 2.234
+
+*Description*::
+Set to `false` to not force session tracking to be done via cookie.
+Escape hatch for https://issues.jenkins.io/browse/JENKINS-61738[JENKINS-61738].
+
+===== name: hudson.widgets.HistoryWidget.threshold
+
+`tuning`
+
+*Default*: `30`
+
+*Since*: 1.433
+
+*Description*::
+How many builds to show in the build history side panel widget.
+
+===== name: historyWidget.descriptionLimit
+
+`feature` `UI`
+
+*Default*: `100`
+
+*Since*: 2.223
+
+*Description*::
+Defines a limit for the characters shown in the description field for each build row in the Build History column.
+A positive integer (e.g. `300`) will define the limit.
+After the limit is reached (...) will be shown.
+The value `-1` disables the limit and allows unlimited characters in the build description.
+The value `0` shows no description.
+
+===== name: HUDSON_HOME
+
+  def: n/a
+`obsolete`
+
+*Description*::
+Backward compatible fallback name for `JENKINS_HOME`.
+See documentation there.
+
+===== name: jenkins.CLI.disabled
+
+`feature` `obsolete`
+
+*Default*: `false`
+
+*Since*: 2.32 and 2.19.3
+
+*Description*::
+`true` to disable Jenkins CLI via JNLP and HTTP (SSHD can still be enabled). This has no effect since 2.165.
+
+===== name: jenkins.InitReactorRunner.concurrency
+
+`tuning`
+  def: 2x of CPU
+
+*Description*::
+During the start of Jenkins, the loading of jobs in parallel have a fixed number of threads by default (twice the CPU).
+To make Jenkins load time 8x faster (assuming sufficient IO), increase it to 8x.
+For example, 24 CPU Jenkins controller host use this: `-Djenkins.InitReactorRunner.concurrency=192`
+
+===== name: jenkins.install.runSetupWizard
+
+`feature`
+
+*Default*: undefined
+*Since*: 2.0
+
+*Description*::
+Set to `false` to skip install wizard.
+Note that doing so leaves Jenkins unsecured.
+Development-mode only: Set to `true` to not skip showing the setup wizard during Jenkins development.
+This property is only effective the first time you run Jenkins in given `JENKINS_HOME`.
+
+===== name: jenkins.install.SetupWizard.adminInitialApiToken
+
+`security` `packaging`
+  def: The default admin account will not have an API Token unless a value is provided for this system property
+*Since*: "2.260"
+
+*Description*::
+This property determines the behavior during the SetupWizard install phase concerning the API Token creation for the initial admin account.
+The behavior depends on the provided value:
+
+`true`:: A token is generated using random value at startup and the information is put in the file `$JENKINS_HOME/secrets/initialAdminApiToken`.
+"token" in plain text:: A fixed API Token will be created for the user with provided value as the token.
+"@[file-location]" which contains plain text value of the token:: A fixed API Token will be created for the user with the value read from the file.
+Jenkins will not delete the file after read, so the script is responsible to remove it when no longer needed.
+
+Token format is `[2-char hash version][32-hex-char of secret]`, where the hash version is currently only 11, e.g., `110123456789abcdef0123456789abcdef`.
+For example can be generated in following ways:
+
+* manually by prepending `11` to output of random generator website.
+  Ask for 32 hex digits or 16 bytes in hex, e.g. https://www.browserling.com/tools/random-hex, https://www.random.org/bytes/
+* in a shell: `echo "11$(openssl rand -hex 16)"`
+* in JavaScript: `const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join(''); console.log('11' + genRanHex(32));`
+
+When the API Token is generated using this system property, it should be revoked during the installation script using the other ways at your disposal so that you have a fresh (random) token with fewer traces for your script.
+See https://javadoc.jenkins.io/jenkins/security/ApiTokenProperty.html//generateNewToken-java.lang.String-[ApiTokenProperty//generateNewToken(String)] and https://javadoc.jenkins.io/jenkins/security/ApiTokenProperty.html//revokeAllTokensExceptOne-java.lang.String-[ApiTokenProperty//revokeAllTokensExceptOne(String)] for scripting methods or using the web API calls:
+`/user/[user-login]/descriptorByName/jenkins.security.ApiTokenProperty/generateNewToken` and `/user/[user-login]/descriptorByName/jenkins.security.ApiTokenProperty/revokeAllExcept`
+
+===== name: jenkins.model.Jenkins.additionalReadablePaths
+
+`security` `escape hatch`
+
+*Default*: undefined
+*Since*: 2.263.2 / 2.275
+
+*Description*::
+A comma-separated list of additional top level path segments that should be accessible to users without Overall/Read permission.
+See link:/security/advisory/2021-01-13///SECURITY-2047[2021-01-13 security advisory].
+
+[#jenkins-model-jenkins-buildsdir]
+===== name: jenkins.model.Jenkins.buildsDir
+
+`feature`
+
+*Default*: `${ITEM_ROOTDIR}/builds`
+
+*Since*: 2.119
+
+*Description*::
+The configuration of a given job is located under `$JENKINS_HOME/jobs/[JOB_NAME]/config.xml` and its builds are under `$JENKINS_HOME/jobs/[JOB_NAME]/builds` by default.
+This option allows you to store builds elsewhere, which can be useful with finer-grained backup policies, or to store the build data on a faster disk such as an SSD.
+The following placeholders are supported for this value:
+
+* `${JENKINS_HOME}`  – Resolves to the Jenkins home directory.
+* `${ITEM_ROOTDIR}` – The directory containing the job metadata within Jenkins home.
+* `${ITEM_FULL_NAME}` – The full name of the item, with file system unsafe characters replaced by others.
+* `${ITEM_FULLNAME}` – See above, but does not replace unsafe characters.
+  This is a legacy option and should not be used.
+
+For instance, if you would like to store builds outside of Jenkins home, you can use a value like the following: `/some_other_root/builds/${ITEM_FULL_NAME}` This used to be a UI setting, but was removed in 2.119 as it did not support migration of existing build records and could lead to build-related errors until restart.
+
+To manually migrate existing build records when starting to use this option (`TARGET_DIR` is the value supplied to `jenkins.model.Jenkins.buildsDir`):
+
+For xref:pipeline:index.adoc[Pipeline] and Freestyle job types, run this for each `JOB_NAME`:
+
+```sh
+mkdir -p [TARGET_DIR]
+mv $JENKINS_HOME/jobs/[JOB_NAME]/builds [TARGET_DIR]/[JOB_NAME]
+```
+
+For xref:pipeline:multibranch.adoc#creating-a-multibranch-pipeline[Multibranch Pipeline] jobs, run for each `BRANCH_NAME`:
+
+```sh
+mkdir -p [TARGET_DIR]/[JOB_NAME]/branches/
+mv $JENKINS_HOME/jobs/[JOB_NAME]/branches/[BRANCH_NAME]/builds \
+[TARGET_DIR]/[JOB_NAME]/branches/[BRANCH_NAME]
+```
+
+For xref:pipeline:multibranch.adoc#organization-folders[Organization Folders], run this for each `REPO_NAME` and `BRANCH_NAME`:
+
+```sh
+mkdir -p [TARGET_DIR]/[ORG_NAME]/jobs/[REPO_NAME]/branches/
+mv $JENKINS_HOME/jobs/[ORG_NAME]/jobs/[REPO_NAME]/branches/[BRANCH_NAME]/builds \
+[TARGET_DIR]/[ORG_NAME]/jobs/[REPO_NAME]/branches/[BRANCH_NAME]
+```
+
+===== name: jenkins.model.Jenkins.crumbIssuerProxyCompatibility
+
+`escape hatch` `feature`
+
+*Default*: `false`
+
+*Since*: 2.119
+
+*Description*::
+`true` to enable crumb proxy compatibility when running the Setup Wizard for the first time.
+
+===== name: jenkins.model.Jenkins.disableExceptionOnNullInstance
+
+`escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.4 *only*, replaced in 2.5+ by jenkins.model.Jenkins.enableExceptionOnNullInstance
+
+*Description*::
+`true` to disable throwing an `IllegalStateException` when `Jenkins.getInstance()` returns `null`
+
+===== name: jenkins.model.Jenkins.enableExceptionOnNullInstance
+
+`escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.5
+
+*Description*::
+`true` to enable throwing an `IllegalStateException` when `Jenkins.getInstance()` returns `null`
+
+===== name: jenkins.model.Jenkins.exitCodeOnRestart
+
+`packaging`
+
+*Default*: `5`
+
+*Since*: 2.102
+
+*Description*::
+When using the `-Dhudson.lifecycle=hudson.lifecycle.ExitLifecycle`, exit using this exit code when Jenkins is restarted
+
+===== name: jenkins.model.Jenkins.initLogLevel
+
+*Default*: `FINE`
+
+
+*Description*::
+Log level for verbose messages from the init reactor listener.
+
+===== name: jenkins.model.Jenkins.killAfterLoad
+
+*Default*: `false`
+
+
+*Description*::
+Exit Jenkins right after loading.
+Intended as a development/testing aid only.
+
+===== name: jenkins.model.Jenkins.logStartupPerformance
+
+*Default*: `false`
+
+
+*Description*::
+Log startup timing info.
+Note that some messages are not logged on levels visible by default (i.e. INFO and up).
+
+===== name: jenkins.model.Jenkins.nameValidationRejectsTrailingDot
+
+`security` `escape hatch`
+
+*Default*: `true`
+
+*Since*: 2.315 and 2.303.2
+
+*Description*::
+Set to `false` to allow names to end with a trailing `.` character, which can cause problems on Windows.
+Escape hatch for link:/security/advisory/2021-10-06///SECURITY-2424[SECURITY-2424].
+
+===== name: jenkins.model.Jenkins.parallelLoad
+
+`escape hatch`
+
+*Default*: `true`
+
+
+*Description*::
+Loads job configurations in parallel on startup.
+
+===== name: jenkins.model.Jenkins.slaveAgentPort
+
+`feature`
+
+*Default*: `-1` (disabled) since 2.0, `0` in Jenkins 1.x.
+*Since*: 1.643
+
+*Description*::
+Specifies the default TCP agent port unless/until configured differently on the UI.
+`-1` to disable, `0` for random port, other values for fixed port.
+
+===== name: jenkins.model.Jenkins.slaveAgentPortEnforce
+
+`feature`
+
+*Default*: `false`
+
+*Since*: 2.19.4 and 2.24
+
+*Description*::
+If true, enforces the specified `jenkins.model.Jenkins.slaveAgentPort` on startup and will not allow changing it through the UI
+
+===== name: jenkins.model.Jenkins.workspaceDirName
+
+`obsolete`
+
+*Default*: `workspace`
+
+
+*Description*::
+Obsolete: Was used as the default workspace directory name in the legacy workspace directory layout (workspace directories within job directories).
+
+===== name: jenkins.model.Jenkins.workspacesDir
+
+`feature`
+
+*Default*: `${JENKINS_HOME}/workspace/${ITEM_FULL_NAME}`
+
+*Since*: 2.119
+
+*Description*::
+Allows to change the directory layout for the job workspaces on the controller node.
+See `jenkins.model.Jenkins.buildsDir` for supported placeholders.
+
+===== name: jenkins.model.JenkinsLocationConfiguration.disableUrlValidation
+
+`escape hatch`
+
+*Default*: `false`
+
+*Since*: 2.197 / LTS 2.176.4
+
+*Description*::
+Disable URL validation intended to prevent an XSS vulnerability.
+See link:/security/advisory/2019-09-25///SECURITY-1471[SECURITY-1471] for details.
+
+===== name: jenkins.model.lazy.BuildReference.MODE
+
+`development` `tuning`
+
+*Default*: `soft`
+
+*Since*: 1.548
+
+*Description*::
+Configure the kind of reference Jenkins uses to hold builds in memory.
+Choose from among `soft`, `weak`, `strong`, and `not` (do not hold builds in memory at all).
+Intended mostly as a debugging aid.
+See https://issues.jenkins.io/browse/JENKINS-19400[JENKINS-19400].
+
+===== name: jenkins.model.Nodes.enforceNameRestrictions
+
+`security` `escape hatch`
+
+*Default*: `true`
+
+*Since*: 2.263.2 / 2.275
+
+*Description*::
+Whether to enforce new name restrictions for agent names.
+See link:/security/advisory/2021-01-13///SECURITY-2021[2021-01-13 security advisory].
+
+===== name: jenkins.model.StandardArtifactManager.disableTrafficCompression
+
+`tuning` `feature`
+
+*Default*: `false`
+
+*Since*: 2.196
+
+*Description*::
+`true` to disable GZIP compression of artifacts when they're transferred from agent nodes to controller.  Uses less CPU at the cost of increased network traffic.
+===== name: jenkins.monitor.JavaVersionRecommendationAdminMonitor.disable
+
+`feature`
+
+*Default*: `false`
+
+*Since*: 2.305
+
+*Description*::
+`true` to disable the monitor that recommends newer Java versions.
+
+===== name: jenkins.security.ApiTokenProperty.adminCanGenerateNewTokens 
+
+`escape hatch` `security`
+
+*Default*: `false`
+
+*Since*: 2.129
+
+*Description*::
+`true` to allow users with Overall/Administer permission to create API tokens using the new system for any user.
+Note that the user will not be able to use that token since it's only displayed to the creator, once.
+
+===== name: jenkins.security.ApiTokenProperty.showTokenToAdmins
+
+`escape hatch` `security`
+
+*Default*: `false`
+
+*Since*: 1.638
+
+*Description*::
+True to show API tokens for users to administrators on the user configuration page.
+This was set to `false` as part of link:/security/advisory/2015-11-11///api-tokens-of-other-users-available-to-admins[SECURITY-200]
+
+===== name: jenkins.security.ClassFilterImpl.SUPPRESS_ALL
+
+`escape hatch` `security`
+
+*Default*: `false`
+
+*Since*: 2.102
+
+*Description*::
+Do not perform any JEP-200 class filtering when deserializing data.
+Setting this to `true` is unsafe.
+See link:/redirect/class-filter/[documentation].
+
+===== name: jenkins.security.ClassFilterImpl.SUPPRESS_WHITELIST
+
+`escape hatch` `security`
+
+*Default*: `false`
+
+*Since*: 2.102
+
+*Description*::
+Do not perform whitelist-based JEP-200 class filtering when deserializing data.
+With this flag set, only explicitly blacklisted types will be rejected.
+Setting this to `true` is unsafe.
+See link:/redirect/class-filter/[documentation].
+
+===== name: jenkins.security.FIPS140.COMPLIANCE
+
+`feature` `security`
+
+*Default*: `false`
+
+*Since*: 2.424
+
+*Description*::
+If Jenkins and plugins systems should prefer link:https://csrc.nist.gov/pubs/fips/140-2/upd2/final[FIPS-140] compliant cryptography.
+Not all features/plugins have been adapted, and this only indicates a preference.
+If you set this flag to `true`, it does not make Jenkins and its plugins FIPS-140 compliant.
+Refer to xref:dev-docs:FIPS-140:index.adoc[Jenkins and FIPS-140 Overview] for more information.
+
+===== name: jenkins.security.FrameOptionsPageDecorator.enabled
+
+`escape hatch` `security`
+
+*Default*: `true`
+
+*Since*: 1.581
+
+*Description*::
+Whether to send `X-Frame-Options: sameorigin` header, set to `false` to disable and make Jenkins embeddable
+
+===== name: jenkins.security.ignoreBasicAuth
+
+// TODO test whether this actually works
+`feature` `security`
+
+*Default*: `false`
+
+*Since*: 1.421
+
+*Description*::
+When set to `true`, disable `Basic` authentication with username and password (rather than API token).
+
+[#jenkins-security-managepermission]
+===== name: jenkins.security.ManagePermission
+
+`feature` `security`
+
+*Default*: `false`
+
+*Since*: 2.222
+
+*Description*::
+Enable the optional Overall/Manage permission that allows limited access to administrative features suitable for a hosted Jenkins environment.
+See https://github.com/jenkinsci/jep/tree/master/jep/223[JEP-223].
+
+===== name: jenkins.security.ResourceDomainRootAction.validForMinutes
+
+`tuning` `security`
+
+*Default*: `30`
+
+*Since*: 2.200
+
+*Description*::
+How long a resource URL served from the resource root URL will be valid for before users are required to reauthenticate to access it.
+See inline documentation in Jenkins for details.
+
+===== name: jenkins.security.s2m.CallableDirectionChecker.allow
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+*Since*: 1.587 and 1.580.1
+
+*Description*::
+This flag can be set to `true` to disable the agent-to-controller security system entirely.
+Since Jenkins 2.326, this is the only way to do that, as the UI option has been removed.
+
+===== name: jenkins.security.s2m.CallableDirectionChecker.allowAnyRole
+
+`security` `obsolete`
+
+*Default*: `true`
+
+*Since*: 2.319 and 2.303.3
+
+*Description*::
+This flag can be set to `false` to explicitly reject `Callable` implementations that do not declare any required role.
+It is unclear whether this can safely be set to `false` in Jenkins before 2.335, or whether that would cause problems with some remoting built-in callables.
+This flag was removed in Jenkins 2.335.
+
+===== name: jenkins.security.s2m.DefaultFilePathFilter.allow
+
+`escape hatch` `security`
+
+*Default*: `false`
+
+*Since*: 1.587 and 1.580.1
+
+*Description*::
+Allow all file paths on the Jenkins controller to be accessed from agents.
+This disables a big part of link:/security/advisory/2014-10-30/[SECURITY-144] protections.
+
+===== name: jenkins.security.s2m.RunningBuildFilePathFilter.FAIL
+
+`escape hatch` `security`
+
+*Default*: `true`
+
+*Since*: 2.319 and 2.303.3
+
+*Description*::
+Set to `false` to not reject attempts to access file paths in build directories of builds not currently being built on the accessing agent.
+Instead, only a warning is logged.
+Attempts to access file paths in build directories from other processes will still fail.
+See link:/security/advisory/2021-11-04///SECURITY-2455[the description of the SECURITY-2458 security fix] for context.
+
+===== name: jenkins.security.s2m.RunningBuildFilePathFilter.SKIP
+
+`escape hatch` `security`
+
+*Default*: `false`
+
+*Since*: 2.319 and 2.303.3
+
+*Description*::
+Set to `true` to disable the additional protection to not reject attempts to access file paths in build directories.
+This will restore access to any build directories both from agents and from other processes with a remoting channel, like Maven Integration Plugin.
+See link:/security/advisory/2021-11-04///SECURITY-2455[the description of the SECURITY-2458 security fix] for context.
+
+===== name: jenkins.security.seed.UserSeedProperty.disableUserSeed
+
+`escape hatch` `security`
+
+*Default*: `false`
+
+*Since*: 2.160 and 2.105.2
+
+*Description*::
+Disables _user seed_.
+Escape hatch for link:/security/advisory/2019-01-16///SECURITY-901[SECURITY-901].
+
+===== name: jenkins.security.seed.UserSeedProperty.hideUserSeedSection
+
+`ui` `security`
+
+*Default*: `false`
+
+*Since*: 2.160 and 2.105.2
+
+*Description*::
+Hide the UI for _user seed_ introduced for link:/security/advisory/2019-01-16///SECURITY-901[SECURITY-901].
+
+===== name: jenkins.security.stapler.StaplerDispatchValidator.disabled
+
+`escape hatch` `security`
+
+*Default*: `false`
+
+*Since*: 2.186 and 2.176.2
+
+*Description*::
+Escape hatch for link:/security/advisory/2019-07-17///SECURITY-534[SECURITY-534].
+
+===== name: jenkins.security.stapler.StaplerDispatchValidator.whitelist
+
+`escape hatch` `security`
+
+*Default*: `stapler-views-whitelist.txt` in `JENKINS_HOME`
+
+*Since*: 2.186 and 2.176.2
+
+*Description*::
+Override the location of the user configurable whitelist for stapler view dispatches.
+This augments the built-in whitelist for link:/security/advisory/2019-07-17///SECURITY-534[SECURITY-534] that allows dispatches to views that would otherwise be prohibited.
+
+===== name: jenkins.security.stapler.StaticRoutingDecisionProvider.whitelist
+
+`escape hatch` `security`
+
+*Default*: `stapler-whitelist.txt` in `JENKINS_HOME`
+
+*Since*: 2.154 and 2.138.4
+
+*Description*::
+Override the location of the user configurable whitelist for stapler request routing.
+This augments the built-in whitelist for link:/security/advisory/2018-12-05///SECURITY-595[SECURITY-595] that allows routing requests through methods that would otherwise be prohibited.
+
+===== name: jenkins.security.stapler.TypedFilter.prohibitStaticAccess
+
+`escape hatch` `security`
+
+*Default*: `true`
+
+*Since*: 2.154 and 2.138.4
+
+*Description*::
+Prohibits access to `public static` fields when routing requests in Stapler.
+Escape hatch for link:/security/advisory/2018-12-05///SECURITY-595[SECURITY-595].
+
+===== name: jenkins.security.stapler.TypedFilter.skipTypeCheck
+
+`escape hatch` `security`
+
+*Default*: `false`
+
+*Since*: 2.154 and 2.138.4
+
+*Description*::
+Skip (return) type check when determining whether a method or field should be routable with Stapler (i.e. allow any return type).
+Escape hatch for link:/security/advisory/2018-12-05///SECURITY-595[SECURITY-595].
+
+===== name: jenkins.security.SuspiciousRequestFilter.allowSemicolonsInPath
+
+`escape hatch` `security`
+
+*Default*: `false`
+
+*Since*: 2.228 and 2.204.6
+
+*Description*::
+Escape hatch for link:/security/advisory/2020-03-25///SECURITY-1774[SECURITY-1774].
+Allows requests to URLs with semicolon characters (`;`) in the request path.
+
+[#jenkins-security-systemreadpermission]
+===== name: jenkins.security.SystemReadPermission
+
+`feature` `security`
+
+*Default*: `false`
+
+*Since*: 2.222
+
+*Description*::
+Enable the optional Overall/SystemRead permission that allows read-only access to administrative features suitable for a managed Jenkins Configuration as Code environment.
+See https://github.com/jenkinsci/jep/tree/master/jep/224[JEP-224].
+
+===== name: jenkins.security.UserDetailsCache.EXPIRE_AFTER_WRITE_SEC
+
+`tuning` `security`
+
+*Default*: `120` (2 minutes)
+*Since*: 2.15
+
+*Description*::
+How long a cache for `UserDetails` should be valid for before it is looked up again from the security realm.
+See https://issues.jenkins.io/browse/JENKINS-35493[JENKINS-35493].
+
+===== name: jenkins.slaves.DefaultJnlpSlaveReceiver.disableStrictVerification
+
+`security`
+
+*Default*: `false`
+
+*Since*: 2.28
+//description: ''
+// TODO describe
+
+===== name: jenkins.slaves.JnlpSlaveAgentProtocol3.enabled
+
+`obsolete`
+// TODO update this
+*Default*: undefined
+*Since*: 1.653
+
+*Description*::
+`false` to disable the JNLP3 agent protocol, `true` to enable it.
+Otherwise, it's randomly enabled/disabled to A/B test it.
+Obsolete since the protocol was removed in 2.214.
+
+===== name: jenkins.slaves.NioChannelSelector.disabled
+
+`escape hatch`
+
+*Default*: `false`
+
+*Since*: 1.560
+
+*Description*::
+`true` to disable Nio for JNLP agents
+
+===== name: jenkins.slaves.StandardOutputSwapper.disabled
+
+`escape hatch`
+// TODO Unsure how this works. References:
+// - https://github.com/jenkinsci/jenkins/blob/3fd66ff22051a3309b8dc5130d8da0759ee27f48/core/src/main/java/jenkins/slaves/StandardOutputSwapper.java
+// - https://github.com/jenkinsci/remoting/commit/fad8c38724068dfbd155e64508e5d4c154240b87
+*Default*: `false`
+
+*Since*: 1.429
+
+*Description*::
+Some Unix-like agents (e.g. SSH Build Agents) can communicate via stdin/stdout, which is very convenient.
+Unfortunately, some JVM output (e.g. related to GC) also goes to standard out.
+This will swap output streams around to prevent stream corruption through unexpected writes to standard out.
+
+===== name: jenkins.SoloFilePathFilter.redactErrors
+
+`escape hatch` `security`
+
+*Default*: `true`
+
+*Since*: 2.319 and 2.303.3
+
+*Description*::
+Set to `false` to not redact error messages when the agent-to-controller file path filters reject a file access.
+This can give attackers information about files and directories on the Jenkins controller file system.
+
+[#jenkins-telemetry-telemetry-endpoint]
+===== name: jenkins.telemetry.Telemetry.endpoint
+
+`development`
+// https://github.com/jenkinsci/jenkins/pull/3604
+*Default*: `+https://uplink.jenkins.io/events+`
+
+*Since*: 2.143
+
+*Description*::
+Change the endpoint that JEP-214/Uplink telemetry sends data to.
+Expected to be used for testing only.
+
+===== name: jenkins.ui.refresh
+
+`ui` `feature`
+
+*Default*: `false`
+
+*Since*: 2.222
+
+*Description*::
+`true` to enable the new experimental UX on Jenkins.
+See https://issues.jenkins.io/browse/JENKINS-60920[JENKINS-60920].
+Also see xref:sigs:ux:index.adoc[Jenkins UX SIG].
+Has no effect since https://github.com/jenkinsci/jenkins/commit/51e7142d5705c10833e0959fdf2534a32b0e7d86[2.344] as the feature has been removed.
+
+===== name: jenkins.websocket.idleTimeout
+
+`tuning`
+
+*Default*: `60`
+
+*Since*: 2.395
+
+*Description*::
+Number of seconds a WebSocket agent connection may stay idle until it expires. `0` to disable. Must be higher than `jenkins.websocket.pingInterval`.
+
+===== name: jenkins.websocket.pingInterval
+
+`tuning`
+
+*Default*: `30`
+
+*Since*: 2.217
+
+*Description*::
+Number of seconds between server-sent pings over WebSocket agent connections. `0` to disable. Must be lower than `jenkins.websocket.idleTimeout`.
+
+===== name: jenkins.util.ProgressiveRendering.DEBUG_SLEEP
+
+*Default*: `0`
+
+
+*Description*::
+Debug/development option to slow down the cancelling of progressive rendering when the client fails to send a heartbeat.
+
+===== name: JENKINS_HOME
+
+`feature`
+
+*Default*: `~/.jenkins`
+
+
+*Description*::
+While typically set as an environment variable, Jenkins also looks up the path to its home directory as a system property.
+`JENKINS_HOME` set via JNDI context has higher priority than this, but this takes precedence over the environment variable.
+
+===== name: org.jenkinsci.main.modules.sshd.SSHD.idle-timeout
+
+`tuning`
+// This is a core module, so this documentation should remain here.
+*Default*: undefined
+*Since*: 2.22
+
+*Description*::
+Allows to configure the SSHD client idle timeout (value in milliseconds).
+Default value is 10min (600000ms).
+
+===== name: org.jenkinsci.plugins.workflow.steps.durable_task.DurableTaskStep.REMOTE_TIMEOUT
+
+`tuning`
+// TODO move to plugin documentation
+  def: 20 seconds
+*Since*: workflow-durable-task-step-plugin 2.29
+
+*Description*::
+How long to wait, in seconds, before interrupting remote calls and forcing cleanup when the step is stopped.
+See https://issues.jenkins.io/browse/JENKINS-46507[JENKINS-46507] for more information.
+
+===== name: org.jenkinsci.plugins.workflow.steps.durable_task.DurableTaskStep.USE_WATCHING
+
+`feature`
+
+*Default*: `false`
+
+*Since*: workflow-durable-task-step-plugin 2.22
+
+*Description*::
+`true` to enable the experimental push mode for durable task logging.
+See https://issues.jenkins.io/browse/JENKINS-52165[JENKINS-52165] for more information.
+
+===== name: org.jenkinsci.plugins.workflow.support.pickles.ExecutorPickle.timeoutForNodeMillis
+
+`tuning`
+  def: 5 minutes (300,000 milliseconds)
+*Since*: workflow-durable-task-step-plugin 2.14
+
+*Description*::
+How long to wait, in milliseconds, before aborting the build if an agent has been removed.
+See https://issues.jenkins.io/browse/JENKINS-36013[JENKINS-36013] for more information.
+
+===== name: org.jenkinsci.plugins.workflow.support.steps.ExecutorStepExecution.REMOVED_NODE_DETECTION
+
+`feature`
+
+*Default*: `true`
+
+*Since*: workflow-durable-task-step-plugin 2.32
+
+*Description*::
+`false` to prevent Jenkins from aborting the build if an agent has been removed.
+See https://issues.jenkins.io/browse/JENKINS-49707[JENKINS-49707] for more information.
+
+===== name: org.kohsuke.stapler.Facet.allowViewNamePathTraversal
+
+`escape hatch` `security`
+
+*Default*: `false`
+
+*Since*: 2.138.2, 2.146
+
+*Description*::
+Allows specifying non-simple names for views, including ones resulting in path traversal.
+This is an escape hatch for the link:/security/advisory/2018-10-10///SECURITY-867[SECURITY-867] fix.
+
+===== name: org.kohsuke.stapler.jelly.IncludeTag.skipLoggingClassSetter
+
+`escape hatch`
+
+*Default*: `false`
+
+*Since*: '2.288'
+
+*Description*::
+Do not log attempts to set the `class` property of `st:include` tags directly.
+No log messages should be emitted in regular use, but they can be disabled if they cause unnecessary noise in the system log.
+
+===== name: org.kohsuke.stapler.RequestImpl.ALLOWED_HTTP_VERBS_FOR_FORMS
+
+`escape hatch` `security`
+
+*Default*: `POST`
+
+*Since*: 2.277.2, 2.287
+
+*Description*::
+HTTP verbs of requests that are allowed to provide `StaplerRequest//getSubmittedForm` or `@SubmittedForm`.
+Escape hatch for a security hardening, see link:/doc/upgrade-guide/2.277///submittedform[2.277.2 upgrade guide].
+
+===== name: org.kohsuke.stapler.RequestImpl.FILEUPLOAD_MAX_FILES
+
+`escape hatch` `tuning` `security`
+
+*Default*: `1000`
+
+*Since*: 2.375.4, 2.394
+
+*Description*::
+Limits the number of form fields that can be processed in one `multipart/form-data` request.
+Used to set `org.apache.commons.fileupload.servlet.ServletFileUpload//setFileCountMax(long)`.
+Despite the name, this applies to all form fields, not just actual file attachments.
+`-1` disables this limit.
+
+===== name: org.kohsuke.stapler.RequestImpl.FILEUPLOAD_MAX_FILE_SIZE
+
+  tags:
+// Not an escape hatch since it's disabled by default
+  - tuning
+  - security
+*Default*: `-1`
+
+*Since*: 2.375.4, 2.394
+
+*Description*::
+Limits the size (in bytes) of individual fields that can be processed in one `multipart/form-data` request.
+Despite the name, this applies to all form fields, not just actual file attachments.
+`-1` disables this limit.
+
+===== name: org.kohsuke.stapler.RequestImpl.FILEUPLOAD_MAX_SIZE
+
+  tags:
+// Not an escape hatch since it's disabled by default
+  - tuning
+  - security
+*Default*: `-1`
+
+*Since*: 2.375.4, 2.394
+
+*Description*::
+Limits the total request size (in bytes) that can be processed in one `multipart/form-data` request.
+Used to set `org.apache.commons.fileupload.servlet.ServletFileUpload//setSizeMax(long)`.
+`-1` disables this limit.
+
+===== name: stapler.jelly.noCache
+
+`development`
+
+*Default*: `false`
+
+
+*Description*::
+Controls both caching of various cacheable resources (Jelly scripts etc.) and the `Expires` HTTP response header for some static resources.
+Useful during development to see the effect of changes after reload.
+
+[#stapler-jelly-trace]
+===== name: stapler.jelly.trace
+
+`development`
+
+*Default*: `false`
+
+
+*Description*::
+Enables tracing of Jelly view composition.
+View the resulting page source to see comments indicating which parts of the view were created from which view fragments.
+
+===== name: stapler.legacyGetterDispatcherMode
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+
+*Description*::
+Do not filter get methods at the Stapler framework level.
+Escape hatch for link:/security/advisory/2018-12-05///SECURITY-595[SECURITY-595].
+
+===== name: stapler.legacyWebMethodDispatcherMode
+
+`security` `escape hatch`
+
+*Default*: `false`
+
+
+*Description*::
+Do not filter web methods ("do" actions) at the Stapler framework level.
+Escape hatch for link:/security/advisory/2018-12-05///SECURITY-595[SECURITY-595].
+
+===== name: stapler.resourcePath
+
+`development`
+
+*Default*: undefined
+
+
+*Description*::
+Additional debug resource paths.
+Set by the core development tooling so developers can see the effect of changes immediately after reloading the page.
+
+[#stapler-trace]
+===== name: stapler.trace
+
+`development`
+
+*Default*: `true` when run using `mvn jetty:run` (core war) or `mvn hpi:run` (plugins), `false` otherwise
+
+
+*Description*::
+Trace request handling and report the result using `Stapler-Trace-...` response headers.
+Additionally, renders a diagnostic HTTP 404 error page when the request could not be processed.
+
+[#stapler-trace-per-request]
+===== name: stapler.trace.per-request
+
+`development`
+
+*Default*: `false`
+
+
+*Description*::
+Trace request handling (see above) for requests with the `X-Stapler-Trace` request header set.
+
+===== name: jenkins.util.groovy.GroovyHookScript.ROOT_PATH
+
+*Since*: 2.273
+`packaging`
+
+*Default*: `$JENKINS_HOME`
+
+
+*Description*::
+Set the root directory used to load groovy hooks scripts.
+
+===== name: jenkins.branch.MultiBranchProject.fireSCMSourceBuildsAfterSave
+
+*Since*: branch-api 2.7.0
+`feature`
+
+*Default*: `true`
+
+
+*Description*::
+When Multibranch Pipeline is reloaded from XML, it notifies its branch sources about it and triggers a scan if possible. 
+This flag allows turning off this behavior. 
+When Job DSL manages the items, this can avoid triggering many scans, which can potentially cause a build storm. 
+The downside is that the branch source might use this notification to register webhooks or do any other useful setup work.
+---
+
+== Jenkins Features Controlled with System Properties
+
+Jenkins has several "hidden" features that can be enabled with system properties.
+This page documents many of them and explain how to configure them on your instance.
+
+Some system properties related to the Remoting library used for communication between controller and agents are documented in https://github.com/jenkinsci/remoting/blob/master/docs/configuration.md[that component's repository].
+
+=== Usage
+
+System properties are defined by passing `-Dproperty=value` to the `java` command line to start Jenkins.
+Make sure to pass all of these arguments *before* the `-jar` argument, otherwise they will be ignored.
+Example:
+
+```sh
+java -Dhudson.footerURL=http://example.org -jar jenkins.war
+```
+
+The following lists the properties and the version of Jenkins they were introduced in.
+
+* `*Property*` - Java property name
+* *Default* - Default value if not explicitly set
+* *Since* - The version of Jenkins the property was introduced in
+* *Description* - Other notes
+
+==== Compatibility
+
+We do **NOT** guarantee that system properties will remain unchanged and functional indefinitely.
+These switches are often experimental in nature, and subject to change without notice.
+If you find these useful, please file a ticket to promote it to an official feature.
+
+
+=== Properties in Jenkins Core
+
+[NOTE]
+Due to the very large number of system properties used, often just added as a "safety valve" or "escape hatch" in case a change causes problems, this list is not expected to be complete.
+
+.References
+****
+* https://wiki.jenkins.io/display/JENKINS/Administering+Jenkins[Administering Jenkins]
+* http://jenkins.io/doc/book/installing///configuring-http[Configuring HTTP in Jenkins]
+* https://github.com/jenkinsci/remoting/blob/master/docs/configuration.md[Remoting configuration]
+****
+
+++++
+<style>
+dd {
+  margin-left: 30px;
+}
+dd div.tag {
+}
+span.tag {
+display: inline-block;
+border: 1px solid //666;
+background-color: //eee;
+color: //333;
+border-radius: 4px;
+font-size: 0.75rem;
+font-weight: 500;
+padding: 0 0.5rem;
+margin: 0.25rem 0.5rem 0.25rem 0;
+text-decoration: none;
+text-align: center;
+white-space: nowrap;
+vertical-align: baseline;
+text-transform: capitalize;
+}
+/* Work around wrapper block elements added for Asciidoctor conversions that would break the layout */
+.def div {
+display: inline-block;
+}
+.def div p {
+margin: 0;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function(event) {
+anchors.add('dt');
+});
+</script>
+++++

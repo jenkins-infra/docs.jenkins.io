@@ -1,0 +1,19 @@
+= Extension Points defined in Build Timeout Plugin
+
+https://plugins.jenkins.io/build-timeout[Build Timeout Plugin]
+
+== BuildTimeOutOperation
+
+`jenkinsdoc:build-timeout:hudson.plugins.build_timeout.BuildTimeOutOperation]`
+
++++ Defines an operation performed when timeout occurs.+++ +++ They are called "Timeout Actions", but the class is BuildTimeOutOperation+++ +++ not to be confused with+++ jenkinsdoc:Action] ++++++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/build-timeout[Build Timeout Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++build_timeout.+++<wbr/>+++operations.+++<wbr/>+++**AbortAndRestartOperation** (link:https://github.com/jenkinsci/build-timeout-plugin/search?q=AbortAndRestartOperation&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-timeout[Build Timeout Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++build_timeout.+++<wbr/>+++operations.+++<wbr/>+++**AbortOperation** (link:https://github.com/jenkinsci/build-timeout-plugin/search?q=AbortOperation&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-timeout[Build Timeout Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++build_timeout.+++<wbr/>+++operations.+++<wbr/>+++**BuildStepOperation** (link:https://github.com/jenkinsci/build-timeout-plugin/search?q=BuildStepOperation&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-timeout[Build Timeout Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++build_timeout.+++<wbr/>+++operations.+++<wbr/>+++**FailOperation** (link:https://github.com/jenkinsci/build-timeout-plugin/search?q=FailOperation&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-timeout[Build Timeout Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++build_timeout.+++<wbr/>+++operations.+++<wbr/>+++**WriteDescriptionOperation** (link:https://github.com/jenkinsci/build-timeout-plugin/search?q=WriteDescriptionOperation&type=Code[view on GitHub])
+

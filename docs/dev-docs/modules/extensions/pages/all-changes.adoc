@@ -1,0 +1,15 @@
+= Extension Points defined in All changes Plugin
+
+https://plugins.jenkins.io/all-changes[All changes Plugin]
+
+== ChangesAggregator
+
+`https://javadoc.jenkins.io/plugin/all-changes/org/jenkinsci/plugins/all_changes/ChangesAggregator.html[jenkinsdoc:all-changes:org.jenkinsci.plugins.all_changes.ChangesAggregator]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/all-changes[All changes Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++all_changes.+++<wbr/>+++**DependencyChangesAggregator** (link:https://github.com/jenkinsci/all-changes-plugin/search?q=DependencyChangesAggregator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/all-changes[All changes Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++all_changes.+++<wbr/>+++**SubProjectChangesAggregator** (link:https://github.com/jenkinsci/all-changes-plugin/search?q=SubProjectChangesAggregator&type=Code[view on GitHub])
+

@@ -1,0 +1,14 @@
+= Extension Points defined in OctoPerf Load Testing Plugin
+
+https://plugins.jenkins.io/octoperf[OctoPerf Load Testing Plugin]
+
+== TestStopCondition
+
+`jenkinsdoc:octoperf:org.jenkinsci.plugins.octoperf.conditions.TestStopCondition]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/octoperf[OctoPerf Load Testing Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++octoperf.+++<wbr/>+++conditions.+++<wbr/>+++**StopOnAlert** (link:https://github.com/jenkinsci/octoperf-plugin/search?q=StopOnAlert&type=Code[view on GitHub])
+

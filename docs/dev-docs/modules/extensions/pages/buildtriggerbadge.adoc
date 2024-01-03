@@ -1,0 +1,28 @@
+= Extension Points defined in Build Trigger Badge Plugin
+
+https://plugins.jenkins.io/buildtriggerbadge[Build Trigger Badge Plugin]
+
+== BuildTriggerBadgeDeactivator
+
+`jenkinsdoc:buildtriggerbadge:org.jenkinsci.plugins.buildtriggerbadge.provider.BuildTriggerBadgeDeactivator]`
+
++++ Extend this class if you want to be able to disable the badge for a given cause globally.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== BuildTriggerBadgeProvider
+
+`jenkinsdoc:buildtriggerbadge:org.jenkinsci.plugins.buildtriggerbadge.provider.BuildTriggerBadgeProvider]`
+
++++ Extend this class to be able to define/override an association between a class and an icon. This will then add that icon as a badge in+++ +++ the build history side panel.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/gitbucket[GitBucket Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++gitbucket.+++<wbr/>+++**GitBucketBuildTriggerBadgeProvider** (link:https://github.com/jenkinsci/gitbucket-plugin/search?q=GitBucketBuildTriggerBadgeProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/quayio-trigger[Quay.io trigger Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++quayio.+++<wbr/>+++trigger.+++<wbr/>+++**PushEventNotificationCause.+++<wbr/>+++QuayIoTriggerBadgeProvider** (link:https://github.com/jenkinsci/quayio-trigger-plugin/search?q=PushEventNotificationCause.QuayIoTriggerBadgeProvider&type=Code[view on GitHub])
+

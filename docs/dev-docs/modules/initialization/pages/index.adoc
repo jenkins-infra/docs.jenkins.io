@@ -1,0 +1,8 @@
+= Initialization and Startup
+
+:page-layout: wip
+
+.References
+****
+* link:https://wiki.jenkins.io/display/JENKINS/Jenkins+Pieces+in+GitHub[Jenkins wiki: On Winstone]
+****

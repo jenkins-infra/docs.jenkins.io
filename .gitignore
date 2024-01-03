@@ -1,0 +1,6 @@
+.cache/
+.idea/
+node_modules/
+blog/public/
+blog/package-lock.json
+.DS_Store

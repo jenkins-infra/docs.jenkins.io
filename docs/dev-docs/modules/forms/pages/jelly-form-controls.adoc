@@ -1,0 +1,177 @@
+= Jelly form controls
+
+Most of the jelly files in the Jenkins source have embedded documentation. See xref:dev-docs:development-environment:ide-configuration.adoc[IDE Configuration] for details on how to get this setup so you can click through to it in your IDE.
+
+For example you can see the embedded documentation of link:https://github.com/jenkinsci/jenkins/blob/63f80114e99f6692812c3039407652592bdf36fe/core/src/main/resources/lib/form/form.jelly[ the <form> tag ].
+
+You can also have a look at the referenced **ui-samples-plugin**, this repository contains executable examples of user interface elements, including forms.
+
+== Validation Button
+
+* jelly definition link:https://github.com/jenkinsci/jenkins/blob/63f80114e99f6692812c3039407652592bdf36fe/core/src/main/resources/lib/form/validateButton.jelly[form/validateButton.jelly]
+
+This tag creates a right-aligned button for performing server-side validation. It is suitable for situations where the validation depends on the values of multiple input fields, such as credential check that uses both username and password.
+
+[source, xml]
+----
+<f:entry title="${%Access Key ID}">
+  <f:textbox field="accessId" />
+</f:entry>
+<f:entry title="${%Secret Access Key}">
+  <f:password field="secretKey" />
+</f:entry>
+<f:validateButton
+   title="${%Test Connection}" progress="${%Testing...}"
+   method="testConnection" with="secretKey,accessId" />
+----
+
+The `title` attribute is used to determine the text written on the button. The `progress` attribute determines the message displayed while the server-side validation is in progress. The `method` attribute specifies the server-side method invoked by this button; this follows the stapler name mangling convention, so for example `method="testConnection"` will invoke the `doTestConnection` method. This method needs to be on the Descriptor class that owns this form fragment.
+
+The `with` attribute specifies the input fields sent to the server for the validation. They are matched against the `field` attribute or the `name` attribute of other input controls. The values of the nearest input fields above the `<f:validateButton/>` are sent to the server, so this means the button has to come after the input fields. Multiple fields can be specified by using ','.
+
+On the server side, this tag invokes the standard "do"-style method like this:
+
+[source, java]
+----
+@POST
+public FormValidation doTestConnection(@QueryParameter("accessId") final String accessId,
+        @QueryParameter("secretKey") final String secretKey,
+        @AncestorInPath Job job) throws IOException, ServletException {
+    try {
+         if (job == null) {
+
+             Jenkins.get().checkPermission(Jenkins.ADMINISTER);
+         } else {
+             job.checkPermission(Item.CONFIGURE);
+         }
+        ... do some tests ...
+        return FormValidation.ok("Success");
+    } catch (EC2Exception e) {
+        return FormValidation.error("Client error : "+e.getMessage());
+    }
+}
+----
+
+The doTestConnection method contains the validation logic. In the end, this method has to call either `FormValidation.ok`, `.warning`, or .error method. Depending on which method you use, the appropriate HTML will be rendered on the client side to indicate the status to the user.
+
+== Advanced
+
+* jelly definition link:https://github.com/jenkinsci/jenkins/blob/63f80114e99f6692812c3039407652592bdf36fe/core/src/main/resources/lib/form/advanced.jelly[form/avanced.jelly]
+
+Expandable section that shows "advanced..." button by default. Upon clicking it, a section unfolds.
+
+[source, xml]
+----
+<f:section title="Advanced Project Options">
+  <f:advanced>
+    <st:include page="configure-advanced.jelly" />
+  </f:advanced>
+</f:section>
+----
+
+== OptionalBlock
+
+* jelly definition link:https://github.com/jenkinsci/jenkins/blob/63f80114e99f6692812c3039407652592bdf36fe/core/src/main/resources/lib/form/optionalBlock.jelly[form/optionalBlock.jelly]
+
+Foldable block expanded when the menu item is checked.
+
+[source, xml]
+----
+<f:block>
+  <table>
+    <f:optionalBlock name="dynamic" title="Use existing dynamic view">
+      <f:entry title="View drive">
+        <f:textbox name="drive" value="${it.drive}"/>
+      </f:entry>
+    </f:optionalBlock>
+  </table>
+</f:block>
+----
+
+Unchecked the text box will not be displayed
+Checked the text box is displayed 
+
+== Select (drop-down menu)
+
+Use an link:https://github.com/jenkinsci/jenkins/blob/63f80114e99f6692812c3039407652592bdf36fe/core/src/main/resources/lib/form/entry.jelly[<f:entry>] tag to enclose the normal select tag.
+
+[source, xml]
+----
+<f:entry name="goalType" title="Choose Goal Type" field="goalType">
+    <select name="goalType">
+        <option value="buildGoal">Build Goal</option>
+        <option value="spotBugsGoal">SpotBugs goal</option>
+    </select>
+</f:entry>
+----
+
+== Select (drop-down menu) with model filled values
+
+Basically the same as above. You need to define the following method in the descriptor of your Describable instance:
+
+[source, java]
+----
+public ListBoxModel doFillGoalTypeItems() {
+    ListBoxModel items = new ListBoxModel();
+
+    
+    items.add("Build Goal", "buildGoal");
+    items.add("SpotBugs goal", "spotBugsGoal");
+
+    return items;
+}
+----
+
+Then, use an `<f:entry>` tag to enclose the normal select tag.
+
+[source, xml]
+----
+<f:entry field="goalType" title="Choose Goal Type">
+   <f:select />
+</f:entry>
+----
+
+== Inline help
+
+* jelly definition link:https://github.com/jenkinsci/jenkins/blob/63f80114e99f6692812c3039407652592bdf36fe/core/src/main/resources/lib/form/helpLink.jelly[form/helpLink.jelly]
+
+=== Add an inline help to a form element
+
+Most form elements allow you to have inline help generated by adding a small HTML file and following some conventions.
+
+For example the `<f:entry>` tag uses the `field` attribute.
+
+Given a file in src/main/resources/myForm.jelly with this content:
+
+[source, xml]
+----
+<f:entry title="Name" field="name">
+    <f:textbox />
+</f:entry>
+----
+
+Adding a src/main/resources/help-name.html:
+[source, html]
+----
+<div>
+This is my content to help the end user understanding how to use this field.
+</div>
+----
+
+Will automatically display the help button with the `<div>...</div>` content.
+
+=== Additional notes on inline help
+
+* Most controls support `help.html` as overall help for the `Describable`.
+
+* The help message can be overridden in jelly with the `help` attribute, but please use the convention 'help-fieldName.html' as much as possible.
+
+[source, xml]
+----
+<f:entry title="This is a nice Title"  help="/plugin/my-plugin/help/custom-file.html">
+----
+
+.References
+****
+* link:https://github.com/jenkinsci/ui-samples-plugin[ui-samples-plugin]
+****

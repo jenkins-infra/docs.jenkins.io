@@ -1,0 +1,15 @@
+= Extension Points defined in OpenID Connect Provider Plugin
+
+https://plugins.jenkins.io/oidc-provider[OpenID Connect Provider Plugin]
+
+== Issuer.+++<wbr/>+++Factory
+
+`jenkinsdoc:oidc-provider:io.jenkins.plugins.oidc_provider.Issuer.Factory]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/oidc-provider[OpenID Connect Provider Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++oidc_provider.+++<wbr/>+++**FolderIssuer.+++<wbr/>+++Factory** (link:https://github.com/jenkinsci/oidc-provider-plugin/search?q=FolderIssuer.Factory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/oidc-provider[OpenID Connect Provider Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++oidc_provider.+++<wbr/>+++**RootIssuer** (link:https://github.com/jenkinsci/oidc-provider-plugin/search?q=RootIssuer&type=Code[view on GitHub])
+

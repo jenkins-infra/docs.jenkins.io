@@ -1,0 +1,15 @@
+= Extension Points defined in Alauda DevOps Pipeline Plugin
+
+https://plugins.jenkins.io/alauda-devops-pipeline[Alauda DevOps Pipeline Plugin]
+
+== ClusterRegistryExtension
+
+`https://javadoc.jenkins.io/plugin/alauda-devops-pipeline/com/alauda/jenkins/plugins/cluster/ClusterRegistryExtension.html[jenkinsdoc:alauda-devops-pipeline:com.alauda.jenkins.plugins.cluster.ClusterRegistryExtension]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/alauda-devops-pipeline[Alauda DevOps Pipeline Plugin]: com.+++<wbr/>+++alauda.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++cluster.+++<wbr/>+++**DefaultClusterRegistry** (link:https://github.com/jenkinsci/alauda-devops-pipeline-plugin/search?q=DefaultClusterRegistry&type=Code[view on GitHub])
+* https://plugins.jenkins.io/alauda-devops-pipeline[Alauda DevOps Pipeline Plugin]: com.+++<wbr/>+++alauda.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++cluster.+++<wbr/>+++**LocalFileSystemClusterRegistry** (link:https://github.com/jenkinsci/alauda-devops-pipeline-plugin/search?q=LocalFileSystemClusterRegistry&type=Code[view on GitHub])
+

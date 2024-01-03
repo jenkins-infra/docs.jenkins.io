@@ -1,0 +1,51 @@
+= Extension Points defined in Forensics API Plugin
+
+https://plugins.jenkins.io/forensics-api[Forensics API Plugin]
+
+== BlamerFactory
+
+`jenkinsdoc:forensics-api:io.jenkins.plugins.forensics.blame.BlamerFactory]`
+
++++ Jenkins' extension point that allows plugins to create+++ jenkinsdoc:Blamer] +++instances based on a supported+++ jenkinsdoc:SCM] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/git-forensics[Git Forensics Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++forensics.+++<wbr/>+++git.+++<wbr/>+++blame.+++<wbr/>+++**GitBlamerFactory** (link:https://github.com/jenkinsci/git-forensics-plugin/search?q=GitBlamerFactory&type=Code[view on GitHub])
+
+
+== CommitDecoratorFactory
+
+`jenkinsdoc:forensics-api:io.jenkins.plugins.forensics.util.CommitDecoratorFactory]`
+
++++ Jenkins' extension point that allows plugins to create+++ jenkinsdoc:CommitDecorator] +++instances based on a supported {@link+++ +++ SCM} and+++ jenkinsdoc:RepositoryBrowser] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/git-forensics[Git Forensics Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++forensics.+++<wbr/>+++git.+++<wbr/>+++util.+++<wbr/>+++**GitCommitDecoratorFactory** (link:https://github.com/jenkinsci/git-forensics-plugin/search?q=GitCommitDecoratorFactory&type=Code[view on GitHub])
+
+
+== DeltaCalculatorFactory
+
+`jenkinsdoc:forensics-api:io.jenkins.plugins.forensics.delta.DeltaCalculatorFactory]`
+
++++ Jenkins' extension point that allows plugins to create+++ jenkinsdoc:DeltaCalculator] +++instances based on a supported {@link+++ +++ SCM}.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/git-forensics[Git Forensics Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++forensics.+++<wbr/>+++git.+++<wbr/>+++delta.+++<wbr/>+++**GitDeltaCalculatorFactory** (link:https://github.com/jenkinsci/git-forensics-plugin/search?q=GitDeltaCalculatorFactory&type=Code[view on GitHub])
+
+
+== MinerFactory
+
+`jenkinsdoc:forensics-api:io.jenkins.plugins.forensics.miner.MinerFactory]`
+
++++ Jenkins extension point that allows plugins to create+++ jenkinsdoc:RepositoryMiner] +++instances based on a supported {@link+++ +++ SCM}.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/git-forensics[Git Forensics Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++forensics.+++<wbr/>+++git.+++<wbr/>+++miner.+++<wbr/>+++**GitMinerFactory** (link:https://github.com/jenkinsci/git-forensics-plugin/search?q=GitMinerFactory&type=Code[view on GitHub])
+

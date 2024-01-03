@@ -1,0 +1,14 @@
+= Extension Points defined in DeployHub Plugin
+
+https://plugins.jenkins.io/deployhub[DeployHub Plugin]
+
+== DeployHubMenu
+
+`jenkinsdoc:deployhub:org.jenkinsci.plugins.deployhub.DeployHubMenu]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+_(no known implementations)_
+

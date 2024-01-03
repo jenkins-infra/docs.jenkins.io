@@ -1,0 +1,28 @@
+= Extension Points defined in Theme Manager Plugin
+
+https://plugins.jenkins.io/theme-manager[Theme Manager Plugin]
+
+== ThemeManagerFactory
+
+`jenkinsdoc:theme-manager:io.jenkins.plugins.thememanager.ThemeManagerFactory]`
+
++++ Pluggable ability to add additional built-in themes. The descriptor's display name will be used+++ +++ for the UI label+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/dark-theme[Dark Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++darktheme.+++<wbr/>+++**DarkThemeManagerFactory** (link:https://github.com/jenkinsci/dark-theme-plugin/search?q=DarkThemeManagerFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/dark-theme[Dark Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++darktheme.+++<wbr/>+++**DarkThemeSystemManagerFactory** (link:https://github.com/jenkinsci/dark-theme-plugin/search?q=DarkThemeSystemManagerFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/material-theme[Material Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++materialtheme.+++<wbr/>+++**AbstractMaterialTheme** (link:https://github.com/jenkinsci/material-theme-plugin/search?q=AbstractMaterialTheme&type=Code[view on GitHub])
+* https://plugins.jenkins.io/material-theme[Material Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++materialtheme.+++<wbr/>+++**MaterialGreenThemeManagerFactory** (link:https://github.com/jenkinsci/material-theme-plugin/search?q=MaterialGreenThemeManagerFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/material-theme[Material Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++materialtheme.+++<wbr/>+++**MaterialGreyThemeManagerFactory** (link:https://github.com/jenkinsci/material-theme-plugin/search?q=MaterialGreyThemeManagerFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/material-theme[Material Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++materialtheme.+++<wbr/>+++**MaterialIndigoThemeManagerFactory** (link:https://github.com/jenkinsci/material-theme-plugin/search?q=MaterialIndigoThemeManagerFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/material-theme[Material Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++materialtheme.+++<wbr/>+++**MaterialLightBlueThemeManagerFactory** (link:https://github.com/jenkinsci/material-theme-plugin/search?q=MaterialLightBlueThemeManagerFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/material-theme[Material Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++materialtheme.+++<wbr/>+++**MaterialRedThemeManagerFactory** (link:https://github.com/jenkinsci/material-theme-plugin/search?q=MaterialRedThemeManagerFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/material-theme[Material Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++materialtheme.+++<wbr/>+++**MaterialYellowThemeManagerFactory** (link:https://github.com/jenkinsci/material-theme-plugin/search?q=MaterialYellowThemeManagerFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/solarized-theme[Solarized Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++solarizedtheme.+++<wbr/>+++**AbstractSolarizedTheme** (link:https://github.com/jenkinsci/solarized-theme-plugin/search?q=AbstractSolarizedTheme&type=Code[view on GitHub])
+* https://plugins.jenkins.io/solarized-theme[Solarized Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++solarizedtheme.+++<wbr/>+++**SolarizedDarkTheme** (link:https://github.com/jenkinsci/solarized-theme-plugin/search?q=SolarizedDarkTheme&type=Code[view on GitHub])
+* https://plugins.jenkins.io/solarized-theme[Solarized Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++solarizedtheme.+++<wbr/>+++**SolarizedLightTheme** (link:https://github.com/jenkinsci/solarized-theme-plugin/search?q=SolarizedLightTheme&type=Code[view on GitHub])
+* https://plugins.jenkins.io/solarized-theme[Solarized Theme Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++solarizedtheme.+++<wbr/>+++**SolarizedSystemTheme** (link:https://github.com/jenkinsci/solarized-theme-plugin/search?q=SolarizedSystemTheme&type=Code[view on GitHub])
+* https://plugins.jenkins.io/theme-manager[Theme Manager Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++thememanager.+++<wbr/>+++none.+++<wbr/>+++**NoOpThemeManagerFactory** (link:https://github.com/jenkinsci/theme-manager-plugin/search?q=NoOpThemeManagerFactory&type=Code[view on GitHub])
+

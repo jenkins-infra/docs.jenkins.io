@@ -1,0 +1,58 @@
+= Extension Points defined in CloudBees CD Plugin
+
+https://plugins.jenkins.io/electricflow[CloudBees CD Plugin]
+
+== CloudBeesFlowMultiBranchPipeline
+
+`jenkinsdoc:electricflow:org.jenkinsci.plugins.electricflow.extension.CloudBeesFlowMultiBranchPipeline]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/electricflow[CloudBees CD Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++electricflow.+++<wbr/>+++extension.+++<wbr/>+++impl.+++<wbr/>+++**CloudBeesFlowMultiBranchPipelineBranchApi** (link:https://github.com/jenkinsci/electricflow-plugin/search?q=CloudBeesFlowMultiBranchPipelineBranchApi&type=Code[view on GitHub])
+
+
+== CloudBeesFlowPipeline
+
+`jenkinsdoc:electricflow:org.jenkinsci.plugins.electricflow.extension.CloudBeesFlowPipeline]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/electricflow[CloudBees CD Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++electricflow.+++<wbr/>+++extension.+++<wbr/>+++impl.+++<wbr/>+++**CloudBeesFlowPipelineRest** (link:https://github.com/jenkinsci/electricflow-plugin/search?q=CloudBeesFlowPipelineRest&type=Code[view on GitHub])
+
+
+== CloudBeesFlowSCM
+
+`jenkinsdoc:electricflow:org.jenkinsci.plugins.electricflow.extension.CloudBeesFlowSCM]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/electricflow[CloudBees CD Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++electricflow.+++<wbr/>+++extension.+++<wbr/>+++impl.+++<wbr/>+++**CloudBeesFlowSCMGit** (link:https://github.com/jenkinsci/electricflow-plugin/search?q=CloudBeesFlowSCMGit&type=Code[view on GitHub])
+
+
+== CloudBeesFlowTestResult
+
+`jenkinsdoc:electricflow:org.jenkinsci.plugins.electricflow.extension.CloudBeesFlowTestResult]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/electricflow[CloudBees CD Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++electricflow.+++<wbr/>+++extension.+++<wbr/>+++impl.+++<wbr/>+++**CloudBeesFlowTestResultJUnit** (link:https://github.com/jenkinsci/electricflow-plugin/search?q=CloudBeesFlowTestResultJUnit&type=Code[view on GitHub])
+
+
+== ElectricFlowChangeSet
+
+`jenkinsdoc:electricflow:org.jenkinsci.plugins.electricflow.integration.ElectricFlowChangeSet]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/electricflow[CloudBees CD Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++electricflow.+++<wbr/>+++integration.+++<wbr/>+++**ElectricFlowGitChangeSet** (link:https://github.com/jenkinsci/electricflow-plugin/search?q=ElectricFlowGitChangeSet&type=Code[view on GitHub])
+

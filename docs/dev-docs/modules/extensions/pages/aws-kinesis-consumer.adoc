@@ -1,0 +1,15 @@
+= Extension Points defined in AWS Kinesis Consumer Plugin
+
+https://plugins.jenkins.io/aws-kinesis-consumer[AWS Kinesis Consumer Plugin]
+
+== AWSKinesisStreamListener
+
+`jenkinsdoc:aws-kinesis-consumer:io.jenkins.plugins.aws.kinesisconsumer.extensions.AWSKinesisStreamListener]`
+
++++ Extension point to implement by external applications to listen to records coming from a Kinesis+++ +++ stream. The external application has to:+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

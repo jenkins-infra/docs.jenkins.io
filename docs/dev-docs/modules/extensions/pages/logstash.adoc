@@ -1,0 +1,20 @@
+= Extension Points defined in Logstash Plugin
+
+https://plugins.jenkins.io/logstash[Logstash Plugin]
+
+== LogstashIndexer
+
+`jenkinsdoc:logstash:jenkins.plugins.logstash.configuration.LogstashIndexer]`
+
++++ Extension point for logstash indexers.+++ +++ This extension point provides the configuration for the indexer. You also have to implement the actual+++ +++ indexer in a separate class extending+++ jenkinsdoc:AbstractLogstashIndexerDao] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/logstash[Logstash Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++logstash.+++<wbr/>+++configuration.+++<wbr/>+++**ElasticSearch** (link:https://github.com/jenkinsci/logstash-plugin/search?q=ElasticSearch&type=Code[view on GitHub])
+* https://plugins.jenkins.io/logstash[Logstash Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++logstash.+++<wbr/>+++configuration.+++<wbr/>+++**HostBasedLogstashIndexer** (link:https://github.com/jenkinsci/logstash-plugin/search?q=HostBasedLogstashIndexer&type=Code[view on GitHub])
+* https://plugins.jenkins.io/logstash[Logstash Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++logstash.+++<wbr/>+++configuration.+++<wbr/>+++**Logstash** (link:https://github.com/jenkinsci/logstash-plugin/search?q=Logstash&type=Code[view on GitHub])
+* https://plugins.jenkins.io/logstash[Logstash Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++logstash.+++<wbr/>+++configuration.+++<wbr/>+++**RabbitMq** (link:https://github.com/jenkinsci/logstash-plugin/search?q=RabbitMq&type=Code[view on GitHub])
+* https://plugins.jenkins.io/logstash[Logstash Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++logstash.+++<wbr/>+++configuration.+++<wbr/>+++**Redis** (link:https://github.com/jenkinsci/logstash-plugin/search?q=Redis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/logstash[Logstash Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++logstash.+++<wbr/>+++configuration.+++<wbr/>+++**Syslog** (link:https://github.com/jenkinsci/logstash-plugin/search?q=Syslog&type=Code[view on GitHub])
+

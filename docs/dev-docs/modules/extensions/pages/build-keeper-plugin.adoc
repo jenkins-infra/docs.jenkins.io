@@ -1,0 +1,19 @@
+= Extension Points defined in Build Keeper Plugin
+
+https://plugins.jenkins.io/build-keeper-plugin[Build Keeper Plugin]
+
+== BuildKeeperPolicy
+
+`jenkinsdoc:build-keeper-https://plugins.jenkins.io/org.jenkins_ci.plugins.build_keeper.BuildKeeperPolicy]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/build-keeper-plugin[Build Keeper Plugin]: org.+++<wbr/>+++jenkins_ci.+++<wbr/>+++plugins.+++<wbr/>+++build_keeper.+++<wbr/>+++**BuildNumberPolicy** (link:https://github.com/jenkinsci/build-keeper-plugin/search?q=BuildNumberPolicy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-keeper-plugin[Build Keeper Plugin]: org.+++<wbr/>+++jenkins_ci.+++<wbr/>+++plugins.+++<wbr/>+++build_keeper.+++<wbr/>+++**ByDayPolicy** (link:https://github.com/jenkinsci/build-keeper-plugin/search?q=ByDayPolicy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-keeper-plugin[Build Keeper Plugin]: org.+++<wbr/>+++jenkins_ci.+++<wbr/>+++plugins.+++<wbr/>+++build_keeper.+++<wbr/>+++**KeepFirstFailedPolicy** (link:https://github.com/jenkinsci/build-keeper-plugin/search?q=KeepFirstFailedPolicy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-keeper-plugin[Build Keeper Plugin]: org.+++<wbr/>+++jenkins_ci.+++<wbr/>+++plugins.+++<wbr/>+++build_keeper.+++<wbr/>+++**KeepSincePolicy** (link:https://github.com/jenkinsci/build-keeper-plugin/search?q=KeepSincePolicy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-keeper-plugin[Build Keeper Plugin]: org.+++<wbr/>+++jenkins_ci.+++<wbr/>+++plugins.+++<wbr/>+++build_keeper.+++<wbr/>+++**PeriodAndFailedPolicy** (link:https://github.com/jenkinsci/build-keeper-plugin/search?q=PeriodAndFailedPolicy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-keeper-plugin[Build Keeper Plugin]: org.+++<wbr/>+++jenkins_ci.+++<wbr/>+++plugins.+++<wbr/>+++build_keeper.+++<wbr/>+++**RunConditionPolicy** (link:https://github.com/jenkinsci/build-keeper-plugin/search?q=RunConditionPolicy&type=Code[view on GitHub])
+

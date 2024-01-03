@@ -1,0 +1,28 @@
+= Extension Points defined in Gerrit Trigger Plugin
+
+https://plugins.jenkins.io/gerrit-trigger[Gerrit Trigger Plugin]
+
+== GerritMessageProvider
+
+`jenkinsdoc:gerrit-trigger:com.sonyericsson.hudson.plugins.gerrit.trigger.gerritnotifier.GerritMessageProvider]`
+
++++ ExtensionPoint that allows other plug-ins to provide custom messages.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/build-failure-analyzer[Build Failure Analyzer Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bfa.+++<wbr/>+++**GerritMessageProviderExtension** (link:https://github.com/jenkinsci/build-failure-analyzer-plugin/search?q=GerritMessageProviderExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/msginject[Message Injector Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++msginject.+++<wbr/>+++**GerritMessageInjector** (link:https://github.com/jenkinsci/msginject-plugin/search?q=GerritMessageInjector&type=Code[view on GitHub])
+
+
+== GerritTriggeredBuildListener
+
+`jenkinsdoc:gerrit-trigger:com.sonyericsson.hudson.plugins.gerrit.trigger.extensions.GerritTriggeredBuildListener]`
+
++++ A abstract class for listening Gerrit triggered build result.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/fluentd[Fluentd Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++fluentd.+++<wbr/>+++**GerritTriggerPluginListener** (link:https://github.com/jenkinsci/fluentd-plugin/search?q=GerritTriggerPluginListener&type=Code[view on GitHub])
+

@@ -1,0 +1,18 @@
+= Extension Points defined in Jobcopy Builder Plugin
+
+https://plugins.jenkins.io/jobcopy-builder[Jobcopy Builder Plugin]
+
+== JobcopyOperation
+
+`jenkinsdoc:jobcopy-builder:jp.ikedam.jenkins.plugins.jobcopy_builder.JobcopyOperation]`
+
++++ Additional operations performed when the jobcopy build step copies a job.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/jobcopy-builder[Jobcopy Builder Plugin]: jp.+++<wbr/>+++ikedam.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jobcopy_builder.+++<wbr/>+++**AbstractXmlJobcopyOperation** (link:https://github.com/jenkinsci/jobcopy-builder-plugin/search?q=AbstractXmlJobcopyOperation&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jobcopy-builder[Jobcopy Builder Plugin]: jp.+++<wbr/>+++ikedam.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jobcopy_builder.+++<wbr/>+++**DisableOperation** (link:https://github.com/jenkinsci/jobcopy-builder-plugin/search?q=DisableOperation&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jobcopy-builder[Jobcopy Builder Plugin]: jp.+++<wbr/>+++ikedam.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jobcopy_builder.+++<wbr/>+++**EnableOperation** (link:https://github.com/jenkinsci/jobcopy-builder-plugin/search?q=EnableOperation&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jobcopy-builder[Jobcopy Builder Plugin]: jp.+++<wbr/>+++ikedam.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jobcopy_builder.+++<wbr/>+++**ReplaceOperation** (link:https://github.com/jenkinsci/jobcopy-builder-plugin/search?q=ReplaceOperation&type=Code[view on GitHub])
+

@@ -1,0 +1,18 @@
+= Extension Points defined in Maven Artifact ChoiceListProvider (Nexus) Plugin
+
+https://plugins.jenkins.io/maven-artifact-choicelistprovider[Maven Artifact ChoiceListProvider (Nexus) Plugin]
+
+== AbstractMavenArtifactChoiceListProvider
+
+`jenkinsdoc:maven-artifact-choicelistprovider:org.jenkinsci.plugins.maven_artifact_choicelistprovider.AbstractMavenArtifactChoiceListProvider]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/maven-artifact-choicelistprovider[Maven Artifact ChoiceListProvider (Nexus) Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++maven_artifact_choicelistprovider.+++<wbr/>+++artifactory.+++<wbr/>+++**ArtifactoryChoiceListProvider** (link:https://github.com/jenkinsci/maven-artifact-choicelistprovider-plugin/search?q=ArtifactoryChoiceListProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-artifact-choicelistprovider[Maven Artifact ChoiceListProvider (Nexus) Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++maven_artifact_choicelistprovider.+++<wbr/>+++central.+++<wbr/>+++**MavenCentralChoiceListProvider** (link:https://github.com/jenkinsci/maven-artifact-choicelistprovider-plugin/search?q=MavenCentralChoiceListProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-artifact-choicelistprovider[Maven Artifact ChoiceListProvider (Nexus) Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++maven_artifact_choicelistprovider.+++<wbr/>+++maven.+++<wbr/>+++**MavenMetadataChoiceListProvider** (link:https://github.com/jenkinsci/maven-artifact-choicelistprovider-plugin/search?q=MavenMetadataChoiceListProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-artifact-choicelistprovider[Maven Artifact ChoiceListProvider (Nexus) Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++maven_artifact_choicelistprovider.+++<wbr/>+++nexus3.+++<wbr/>+++**Nexus3ChoiceListProvider** (link:https://github.com/jenkinsci/maven-artifact-choicelistprovider-plugin/search?q=Nexus3ChoiceListProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-artifact-choicelistprovider[Maven Artifact ChoiceListProvider (Nexus) Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++maven_artifact_choicelistprovider.+++<wbr/>+++nexus.+++<wbr/>+++**NexusChoiceListProvider** (link:https://github.com/jenkinsci/maven-artifact-choicelistprovider-plugin/search?q=NexusChoiceListProvider&type=Code[view on GitHub])
+

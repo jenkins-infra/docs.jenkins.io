@@ -1,0 +1,41 @@
+= Extension Points defined in Appdome Build-2secure Plugin
+
+https://plugins.jenkins.io/appdome-build-2secure[Appdome Build-2secure Plugin]
+
+== CertificateMethod
+
+`jenkinsdoc:appdome-build-2secure:io.jenkins.plugins.appdome.build.to.secure.platform.ios.certificate.method.CertificateMethod]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/appdome-build-2secure[Appdome Build-2secure Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++appdome.+++<wbr/>+++build.+++<wbr/>+++to.+++<wbr/>+++secure.+++<wbr/>+++platform.+++<wbr/>+++ios.+++<wbr/>+++certificate.+++<wbr/>+++method.+++<wbr/>+++**AutoDevSign** (link:https://github.com/jenkinsci/appdome-build-2secure-plugin/search?q=AutoDevSign&type=Code[view on GitHub])
+* https://plugins.jenkins.io/appdome-build-2secure[Appdome Build-2secure Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++appdome.+++<wbr/>+++build.+++<wbr/>+++to.+++<wbr/>+++secure.+++<wbr/>+++platform.+++<wbr/>+++ios.+++<wbr/>+++certificate.+++<wbr/>+++method.+++<wbr/>+++**AutoSign** (link:https://github.com/jenkinsci/appdome-build-2secure-plugin/search?q=AutoSign&type=Code[view on GitHub])
+* https://plugins.jenkins.io/appdome-build-2secure[Appdome Build-2secure Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++appdome.+++<wbr/>+++build.+++<wbr/>+++to.+++<wbr/>+++secure.+++<wbr/>+++platform.+++<wbr/>+++ios.+++<wbr/>+++certificate.+++<wbr/>+++method.+++<wbr/>+++**PrivateSign** (link:https://github.com/jenkinsci/appdome-build-2secure-plugin/search?q=PrivateSign&type=Code[view on GitHub])
+
+
+== CertificateMethod
+
+`jenkinsdoc:appdome-build-2secure:io.jenkins.plugins.appdome.build.to.secure.platform.android.certificate.method.CertificateMethod]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/appdome-build-2secure[Appdome Build-2secure Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++appdome.+++<wbr/>+++build.+++<wbr/>+++to.+++<wbr/>+++secure.+++<wbr/>+++platform.+++<wbr/>+++android.+++<wbr/>+++certificate.+++<wbr/>+++method.+++<wbr/>+++**AutoDevSign** (link:https://github.com/jenkinsci/appdome-build-2secure-plugin/search?q=AutoDevSign&type=Code[view on GitHub])
+* https://plugins.jenkins.io/appdome-build-2secure[Appdome Build-2secure Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++appdome.+++<wbr/>+++build.+++<wbr/>+++to.+++<wbr/>+++secure.+++<wbr/>+++platform.+++<wbr/>+++android.+++<wbr/>+++certificate.+++<wbr/>+++method.+++<wbr/>+++**AutoSign** (link:https://github.com/jenkinsci/appdome-build-2secure-plugin/search?q=AutoSign&type=Code[view on GitHub])
+* https://plugins.jenkins.io/appdome-build-2secure[Appdome Build-2secure Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++appdome.+++<wbr/>+++build.+++<wbr/>+++to.+++<wbr/>+++secure.+++<wbr/>+++platform.+++<wbr/>+++android.+++<wbr/>+++certificate.+++<wbr/>+++method.+++<wbr/>+++**PrivateSign** (link:https://github.com/jenkinsci/appdome-build-2secure-plugin/search?q=PrivateSign&type=Code[view on GitHub])
+
+
+== Platform
+
+`jenkinsdoc:appdome-build-2secure:io.jenkins.plugins.appdome.build.to.secure.platform.Platform]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/appdome-build-2secure[Appdome Build-2secure Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++appdome.+++<wbr/>+++build.+++<wbr/>+++to.+++<wbr/>+++secure.+++<wbr/>+++platform.+++<wbr/>+++android.+++<wbr/>+++**AndroidPlatform** (link:https://github.com/jenkinsci/appdome-build-2secure-plugin/search?q=AndroidPlatform&type=Code[view on GitHub])
+* https://plugins.jenkins.io/appdome-build-2secure[Appdome Build-2secure Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++appdome.+++<wbr/>+++build.+++<wbr/>+++to.+++<wbr/>+++secure.+++<wbr/>+++platform.+++<wbr/>+++ios.+++<wbr/>+++**IosPlatform** (link:https://github.com/jenkinsci/appdome-build-2secure-plugin/search?q=IosPlatform&type=Code[view on GitHub])
+

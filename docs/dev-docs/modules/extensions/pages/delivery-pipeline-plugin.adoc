@@ -1,0 +1,64 @@
+= Extension Points defined in Delivery Pipeline Plugin
+
+https://plugins.jenkins.io/delivery-pipeline-plugin[Delivery Pipeline Plugin]
+
+== AbstractPromotionStatusProvider
+
+`jenkinsdoc:delivery-pipeline-https://plugins.jenkins.io/se.diabol.jenkins.pipeline.domain.status.promotion.AbstractPromotionStatusProvider]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/delivery-pipeline-plugin[Delivery Pipeline Plugin]: se.+++<wbr/>+++diabol.+++<wbr/>+++jenkins.+++<wbr/>+++pipeline.+++<wbr/>+++domain.+++<wbr/>+++status.+++<wbr/>+++promotion.+++<wbr/>+++**PromotionStatusProvider** 
+
+
+== CauseResolver
+
+`jenkinsdoc:delivery-pipeline-https://plugins.jenkins.io/se.diabol.jenkins.pipeline.CauseResolver]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/delivery-pipeline-plugin[Delivery Pipeline Plugin]: se.+++<wbr/>+++diabol.+++<wbr/>+++jenkins.+++<wbr/>+++pipeline.+++<wbr/>+++resolver.+++<wbr/>+++**CoreCauseResolver** 
+* https://plugins.jenkins.io/delivery-pipeline-plugin[Delivery Pipeline Plugin]: se.+++<wbr/>+++diabol.+++<wbr/>+++jenkins.+++<wbr/>+++pipeline.+++<wbr/>+++resolver.+++<wbr/>+++**GitCauseResolver** 
+
+
+== GenericComponentComparator
+
+`jenkinsdoc:delivery-pipeline-https://plugins.jenkins.io/se.diabol.jenkins.pipeline.sort.GenericComponentComparator]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/delivery-pipeline-plugin[Delivery Pipeline Plugin]: se.+++<wbr/>+++diabol.+++<wbr/>+++jenkins.+++<wbr/>+++pipeline.+++<wbr/>+++sort.+++<wbr/>+++**FailedJobComparator** 
+* https://plugins.jenkins.io/delivery-pipeline-plugin[Delivery Pipeline Plugin]: se.+++<wbr/>+++diabol.+++<wbr/>+++jenkins.+++<wbr/>+++pipeline.+++<wbr/>+++sort.+++<wbr/>+++**LatestActivityComparator** 
+* https://plugins.jenkins.io/delivery-pipeline-plugin[Delivery Pipeline Plugin]: se.+++<wbr/>+++diabol.+++<wbr/>+++jenkins.+++<wbr/>+++pipeline.+++<wbr/>+++sort.+++<wbr/>+++**NameComparator** 
+
+
+== ManualTriggerResolver
+
+`jenkinsdoc:delivery-pipeline-https://plugins.jenkins.io/se.diabol.jenkins.pipeline.trigger.ManualTriggerResolver]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/delivery-pipeline-plugin[Delivery Pipeline Plugin]: se.+++<wbr/>+++diabol.+++<wbr/>+++jenkins.+++<wbr/>+++pipeline.+++<wbr/>+++trigger.+++<wbr/>+++**BPPManualTriggerResolver** 
+
+
+== RelationshipResolver
+
+`jenkinsdoc:delivery-pipeline-https://plugins.jenkins.io/se.diabol.jenkins.pipeline.RelationshipResolver]`
+
++++ Defines an ExtensionPoint for resolving a projects downstream relationships.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/delivery-pipeline-plugin[Delivery Pipeline Plugin]: se.+++<wbr/>+++diabol.+++<wbr/>+++jenkins.+++<wbr/>+++pipeline.+++<wbr/>+++resolver.+++<wbr/>+++**ProjectRelationshipResolver** 
+* https://plugins.jenkins.io/delivery-pipeline-plugin[Delivery Pipeline Plugin]: se.+++<wbr/>+++diabol.+++<wbr/>+++jenkins.+++<wbr/>+++pipeline.+++<wbr/>+++resolver.+++<wbr/>+++**PromotedBuildRelationshipResolver** 
+* https://plugins.jenkins.io/delivery-pipeline-plugin[Delivery Pipeline Plugin]: se.+++<wbr/>+++diabol.+++<wbr/>+++jenkins.+++<wbr/>+++pipeline.+++<wbr/>+++resolver.+++<wbr/>+++**SubProjectRelationshipResolver** 
+

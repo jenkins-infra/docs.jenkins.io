@@ -1,0 +1,521 @@
+= Hardware and Software Requirements
+Author Name
+:idprefix:
+:idseparator: -
+:!example-caption:
+:!table-caption:
+:page-pagination:
+
+
+.References
+****
+* link:https://github.com/jenkinsci/blueocean-plugin[Main Blue Ocean plugin repository]
+* link:https://github.com/jenkinsci/jenkins-design-language[Design language repository with the styles and common components for Blue Ocean]
+****
+
+[.youtube-videos]
+.Videos related to Docker
+****
+video::C00AmRN9BbU[youtube]
+video::Pi2kJ2RJS50[youtube]
+video::6tcoRIPBd8s[youtube]
+video::HxoF7x48Uvc[youtube]
+video::e7N3jX2b1i0[youtube]
+****
+
+++++
+<style>
+.ji-dated-list,
+.ji-item-list,
+.ji-item-list>post,
+.ji-item-list>post>.body,
+.ji-item-list>.post>.body {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size:1rem;
+}
+
+.events .ji-item-list{
+  text-align: center;
+  white-space: nowrap;
+  overflow: visible;
+  overflow-x: auto;
+  border-bottom:1px solid #ccc;
+  vertical-align:top;
+}
+
+.events .ji-item-list>.event{
+  display:inline-block;
+  margin:0;
+  vertical-align:top;
+}
+
+.events .ji-item-list>.event>a{
+  width:16rem;
+  padding:.75rem;
+  margin:1rem .25rem .25rem;
+  white-space:normal;
+  text-decoration:none;
+}
+
+.events .ji-item-list>.event>a .title{
+  margin:.75rem 0 .25rem;
+  height:1.1rem;
+  overflow:hidden;
+  position:relative;
+}
+
+.events .ji-item-list>.event>a .title:after{
+  content:' ';
+  display:block;
+  position:absolute;
+  height:1.1rem;
+  width:10%;
+  box-shadow:inset white -3rem 0 2rem -2rem;
+  bottom:0; right:0;
+}
+
+.events .ji-item-list>.event>a .teaser{
+  color:#4a5568;
+  font-size:.85rem;
+  height:3.3rem;
+  overflow:hidden;
+  position:relative;
+}
+
+.events .ji-item-list>.event>a .teaser:after{
+  content:' ';
+  display:block;
+  position:absolute;
+  height:1.1rem;
+  width:25%;
+  box-shadow:inset white -6rem 0 3rem -3rem;
+  bottom:0; right:0;
+}
+</style>
+++++
+
+[.float-group]
+--
+image:multirepo-ssg.svg[Multirepo SSG,180,135,float=right,role=float-gap]
+Platonem complectitur mediocritatem ea eos.
+Ei nonumy deseruisse ius.
+Mel id omnes verear.
+Vis no velit audiam, sonet <<dependencies,praesent>> eum ne.
+*Prompta eripuit* nec ad.
+Integer diam enim, dignissim eget eros et, ultricies mattis odio.
+--
+
+Vestibulum consectetur nec urna a luctus.
+Quisque pharetra tristique arcu fringilla dapibus.
+https://example.org[Curabitur,role=unresolved] ut massa aliquam, cursus enim et, accumsan lectus.
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+
+== Cu solet
+
+Nominavi luptatum eos, an vim hinc philosophia intellegebat.
+Lorem pertinacia `expetenda` et nec, [.underline]#wisi# illud [.line-through]#sonet# qui ea.
+H~2~0.
+E = mc^2^.
+Eum an doctus <<liber-recusabo,maiestatis efficiantur>>.
+Eu mea inani iriure.footnote:[Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae! Lorem ipsum dolor sit amet, consectetur adipiscing elit.]
+
+[,json]
+----
+{
+  "name": "module-name",
+  "version": "10.0.1",
+  "description": "An example module to illustrate the usage of package.json",
+  "author": "Author Name <author@example.com>",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint"
+  }
+}
+----
+
+.Example paragraph syntax
+[,asciidoc]
+----
+.Optional title
+[example]
+This is an example paragraph.
+----
+
+.Optional title
+[example]
+This is an example paragraph.
+
+.Summary *Spoiler Alert!*
+[%collapsible]
+====
+Details.
+
+Loads of details.
+====
+
+[,asciidoc]
+----
+Voila!
+----
+
+.Result
+[%collapsible.result]
+====
+Voila!
+====
+
+=== Some Code
+
+How about some code?
+
+[,js]
+----
+vfs
+  .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
+  .pipe(tap((file) => { // <.>
+    file.contents = browserify(file.relative, { basedir: 'src', detectGlobals: false }).bundle()
+  }))
+  .pipe(buffer()) // <.>
+  .pipe(uglify())
+  .pipe(gulp.dest('build'))
+----
+<.> The `tap` function is used to wiretap the data in the pipe.
+<.> Wrap each streaming file in a buffer so the files can be processed by uglify.
+Uglify can only work with buffers, not streams.
+
+Execute these commands to validate and build your site:
+
+ $ podman run -v $PWD:/antora:Z --rm -t antora/antora \
+   version
+ 3.0.0
+ $ podman run -v $PWD:/antora:Z --rm -it antora/antora \
+   --clean \
+   antora-playbook.yml
+
+Cum dicat #putant# ne.
+Est in <<inline,reque>> homero principes, meis deleniti mediocrem ad has.
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+
+....
+pom.xml
+src/
+  main/
+    java/
+      HelloWorld.java
+  test/
+    java/
+      HelloWorldTest.java
+....
+
+Eu mea munere vituperata constituam.
+
+[%autowidth]
+|===
+|Input | Output | Example
+
+m|"foo\nbar"
+l|foo
+bar
+a|
+[,ruby]
+----
+puts "foo\nbar"
+----
+|===
+
+Here we just have some plain text.
+
+[source]
+----
+plain text
+----
+
+[.rolename]
+=== Liber recusabo
+
+// Select menu:File[Open Project] to open the project in your IDE.
+// Per ea btn:[Cancel] inimicus.
+// Ferri kbd:[F11] tacimates constituam sed ex, eu mea munere vituperata kbd:[Ctrl,T] constituam.
+
+
+[.participate-connect]
+.CONNECT
+****
+Join our communication channels, discuss and help us spread the word!
+
+[.button]
+xref:connect.adoc[Read More]
+****
+
+[.participate-meet]
+.MEET
+****
+Meet other Jenkins users and share your experiences by organizing and attending events and meetups.
+
+[.button]
+xref:meet.adoc[Read More]
+****
+
+[.participate-code]
+.CODE
+****
+Do you enjoy writing code? There are numerous plugins and components for you to contribute to.
+
+[.button]
+xref:code.adoc[Read More]
+****
+
+[.participate-help]
+.HELP
+****
+As an experienced user, you can help others get the most out of Jenkins.
+
+[.button]
+xref:help.adoc[Read More]
+****
+
+[.participate-translate]
+.TRANSLATE
+****
+If you're fluent in languages other than English, consider improving support for those languages.
+
+[.button]
+xref:dev-docs:internationalization:index.adoc[Read More]
+****
+
+[.participate-test]
+.TEST
+****
+You can help prevent regressions by contributing automated tests.
+
+[.button]
+xref:test.adoc[Read More]
+****
+
+[.participate-document]
+.DOCUMENT
+****
+Improve the documentation to make it easier for others to get started.
+
+[.button]
+xref:document.adoc[Read More]
+****
+
+[.participate-design]
+.DESIGN
+****
+As it is intended for daily use by finicky web developers, design is essential.
+
+[.button]
+xref:design.adoc[Read More]
+****
+
+[.participate-review]
+.REVIEW
+****
+Help review changes to code or documentation.
+
+[.button]
+xref:review-changes.adoc[Read More]
+****
+
+[.participate-donate]
+.DONATE
+****
+If you have no time but want to help, we accept money to facilitate project goals.
+
+[.button]
+xref:meet.adoc[Read More]
+****
+
+
+=== A
+
+.Connect
+****
+* https://groups.google.com/g/jenkins-advocacy-and-outreach-sig[Mailing List]
+* https://app.gitter.im/#/room/#jenkinsci_advocacy-and-outreach-sig:gitter.im[Gitter]
+* https://docs.google.com/document/d/1K5dTSqe56chFhDSGNfg_MCy-LmseUs_S3ys_tg60sTs/edit#heading=h.9jh09t587y90[Meetings]
+* https://community.jenkins.io/c/contributing/advocacy-and-outreach[Forum]
+****
+
+No sea, at invenire voluptaria mnesarchum has.
+Ex nam suas nemore dignissim, vel apeirian democritum et.
+At ornatus splendide sed, phaedrum omittantur usu an, vix an noster voluptatibus.
+
+---
+
+.Ordered list with customized numeration
+[upperalpha]
+. potenti donec cubilia tincidunt
+. etiam pulvinar inceptos velit quisque aptent himenaeos
+. lacus volutpat semper porttitor aliquet ornare primis nulla enim
+
+Natum facilisis theophrastus an duo.
+No sea, at invenire voluptaria mnesarchum has.
+
+.Unordered list with customized marker
+[square]
+* ultricies sociosqu tristique integer
+* lacus volutpat semper porttitor aliquet ornare primis nulla enim
+* etiam pulvinar inceptos velit quisque aptent himenaeos
+
+Eu sed antiopam gloriatur.
+Ea mea agam graeci philosophia.
+
+[circle]
+* circles
+** circles
+*** and more circles!
+
+At ornatus splendide sed, phaedrum omittantur usu an, vix an noster voluptatibus.
+
+* [ ] todo
+* [x] done!
+
+Vis veri graeci legimus ad.
+
+sed::
+splendide sed
+
+mea::
+agam graeci
+
+Let's look at that another way.
+
+[horizontal]
+sed::
+splendide sed
+
+mea::
+agam graeci
+
+At ornatus splendide sed.
+
+.Library dependencies
+[#dependencies%autowidth%footer,stripes=hover]
+|===
+|Library |Version
+
+|eslint
+|^1.7.3
+
+|eslint-config-gulp
+|^2.0.0
+
+|expect
+|^1.20.2
+
+|istanbul
+|^0.4.3
+
+|istanbul-coveralls
+|^1.0.3
+
+|jscs
+|^2.3.5
+
+h|Total
+|6
+|===
+
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+
+[TIP]
+This oughta do it!
+
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+
+[NOTE]
+====
+You've been down _this_ road before.
+====
+
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+
+[WARNING]
+====
+Watch out!
+====
+
+[CAUTION]
+====
+[#inline]#I wouldn't try that if I were you.#
+====
+
+[IMPORTANT]
+====
+Don't forget this step!
+====
+
+.Key Points to Remember
+[TIP]
+====
+If you installed the CLI and the default site generator globally, you can upgrade both of them with the same command.
+
+ $ npm i -g @antora/cli @antora/site-generator
+
+Or you can install the metapackage to upgrade both packages at once.
+
+ $ npm i -g antora
+====
+
+Nominavi luptatum eos, an vim hinc philosophia intellegebat.
+Eu mea inani iriure.
+
+[discrete]
+== Voluptua singulis
+
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+Ex nam suas nemore dignissim, vel apeirian democritum et.
+
+.Antora is a multi-repo documentation site generator
+image::multirepo-ssg.svg[Multirepo SSG,3000,opts=interactive]
+
+Make the switch today!
+
+.Full Circle with Jake Blauvelt
+video::300817511[vimeo,640,360,align=left]
+
+[#english+中文]
+== English + 中文
+
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+
+[,'Famous Person. Cum dicat putant ne.','Cum dicat putant ne. https://example.com[Famous Person Website]']
+____
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
+____
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+[verse]
+____
+The fog comes
+on little cat feet.
+____
+
+== Fin
+
+That's all, folks!

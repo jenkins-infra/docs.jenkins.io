@@ -1,0 +1,15 @@
+= Extension Points defined in Node Iterator API Plugin
+
+https://plugins.jenkins.io/node-iterator-api[Node Iterator API Plugin]
+
+== NodeIterator
+
+`jenkinsdoc:node-iterator-api:jenkins.slaves.iterators.api.NodeIterator]`
+
++++ A class that iterates through all the+++ jenkinsdoc:Node] +++s in the system, even nodes which are not attached to the main+++ ++++++ jenkinsdoc:Jenkins] +++object. If you are holding onto nodes that are not attached to the main+++ jenkinsdoc:Jenkins] +++object+++ +++ then you need to have an+++ jenkinsdoc:Extension] +++which extends this class and can iterate through your+++ jenkinsdoc:Node] +++s.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/node-iterator-api[Node Iterator API Plugin]: jenkins.+++<wbr/>+++slaves.+++<wbr/>+++iterators.+++<wbr/>+++api.+++<wbr/>+++**NodeIterator.+++<wbr/>+++MetaNodeIterator** (link:https://github.com/jenkinsci/node-iterator-api-plugin/search?q=NodeIterator.MetaNodeIterator&type=Code[view on GitHub])
+

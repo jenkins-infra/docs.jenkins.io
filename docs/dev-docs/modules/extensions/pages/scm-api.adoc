@@ -1,0 +1,264 @@
+= Extension Points defined in SCM API Plugin
+
+https://plugins.jenkins.io/scm-api[SCM API Plugin]
+
+== SCMEventListener
+
+`jenkinsdoc:scm-api:jenkins.scm.api.SCMEventListener]`
+
++++ Base class for listeners to+++ jenkinsdoc:SCMEvent] +++s+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**MultiBranchProject.+++<wbr/>+++SCMEventListenerImpl** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=MultiBranchProject.SCMEventListenerImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**OrganizationFolder.+++<wbr/>+++SCMEventListenerImpl** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=OrganizationFolder.SCMEventListenerImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-api[SCM API Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++impl.+++<wbr/>+++**SCMTriggerListener** (link:https://github.com/jenkinsci/scm-api-plugin/search?q=SCMTriggerListener&type=Code[view on GitHub])
+
+
+== SCMFileSystem.+++<wbr/>+++Builder
+
+`jenkinsdoc:scm-api:jenkins.scm.api.SCMFileSystem.Builder]`
+
++++ Extension point that allows different plugins to implement+++ jenkinsdoc:SCMFileSystem] +++classes for the same+++ jenkinsdoc:SCM] ++++++ +++ or+++ jenkinsdoc:SCMSource] +++and let Jenkins pick the most capable for any specific+++ jenkinsdoc:SCM] +++implementation.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++filesystem.+++<wbr/>+++**BitbucketSCMFileSystem.+++<wbr/>+++BuilderImpl** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=BitbucketSCMFileSystem.BuilderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/atlassian-bitbucket-server-integration[Bitbucket Server Integration Plugin]: com.+++<wbr/>+++atlassian.+++<wbr/>+++bitbucket.+++<wbr/>+++jenkins.+++<wbr/>+++internal.+++<wbr/>+++scm.+++<wbr/>+++filesystem.+++<wbr/>+++**BitbucketSCMFileSystem.+++<wbr/>+++BuilderImpl** (link:https://github.com/jenkinsci/atlassian-bitbucket-server-integration-plugin/search?q=BitbucketSCMFileSystem.BuilderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++**GitSCMFileSystem.+++<wbr/>+++BuilderImpl** (link:https://github.com/jenkinsci/git-plugin/search?q=GitSCMFileSystem.BuilderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++**GitSCMTelescope** (link:https://github.com/jenkinsci/git-plugin/search?q=GitSCMTelescope&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**GitHubSCMFileSystem.+++<wbr/>+++BuilderImpl** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=GitHubSCMFileSystem.BuilderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-pullrequest[GitHub Integration Plugin]: com.+++<wbr/>+++github.+++<wbr/>+++kostyasha.+++<wbr/>+++github.+++<wbr/>+++integration.+++<wbr/>+++multibranch.+++<wbr/>+++fs.+++<wbr/>+++**GitHubSCMFileSystemBuilder** (link:https://github.com/jenkinsci/github-integration-plugin/search?q=GitHubSCMFileSystemBuilder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**GitLabSCMFileSystem.+++<wbr/>+++BuilderImpl** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=GitLabSCMFileSystem.BuilderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/plasticscm-mergebot[MergeBot PlasticSCM Plugin]: com.+++<wbr/>+++codicesoftware.+++<wbr/>+++plasticscm.+++<wbr/>+++plugins.+++<wbr/>+++mergebot.+++<wbr/>+++jenkins.+++<wbr/>+++**PlasticSCMFileSystem.+++<wbr/>+++BuilderImpl** (link:https://github.com/jenkinsci/plasticscm-mergebot-plugin/search?q=PlasticSCMFileSystem.BuilderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/plasticscm-plugin[PlasticSCM Plugin]: com.+++<wbr/>+++codicesoftware.+++<wbr/>+++plugins.+++<wbr/>+++jenkins.+++<wbr/>+++**PlasticSCMFileSystem.+++<wbr/>+++BuilderImpl** (link:https://github.com/jenkinsci/plasticscm-plugin/search?q=PlasticSCMFileSystem.BuilderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/subversion[Subversion Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++impl.+++<wbr/>+++subversion.+++<wbr/>+++**SubversionSCMFileSystem.+++<wbr/>+++BuilderImpl** (link:https://github.com/jenkinsci/subversion-plugin/search?q=SubversionSCMFileSystem.BuilderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/tuleap-git-branch-source[Tuleap Git Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++tuleap_git_branch_source.+++<wbr/>+++config.+++<wbr/>+++**TuleapSCMFileSystem.+++<wbr/>+++BuilderImpl** (link:https://github.com/jenkinsci/tuleap-git-branch-source-plugin/search?q=TuleapSCMFileSystem.BuilderImpl&type=Code[view on GitHub])
+
+
+== SCMHead.+++<wbr/>+++HeadByItem
+
+`jenkinsdoc:scm-api:jenkins.scm.api.SCMHead.HeadByItem]`
+
++++ Means of locating a head given an item.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**BranchProjectFactory.+++<wbr/>+++HeadByItemImpl** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=BranchProjectFactory.HeadByItemImpl&type=Code[view on GitHub])
+
+
+== SCMHeadMigration
+
+`jenkinsdoc:scm-api:jenkins.scm.api.SCMHeadMigration]`
+
++++ If a+++ jenkinsdoc:SCMSource] +++plugin needs to migrate the implementation classes for+++ jenkinsdoc:SCMHead] +++this extension+++ +++ point allows the plugin to register type migrations. For speed of migration implementations should just jump directly+++ +++ to the final end-point and not expect recursive chain walking.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**PullRequestSCMHead.+++<wbr/>+++FixLegacyMigration1** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=PullRequestSCMHead.FixLegacyMigration1&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**SCMHeadWithOwnerAndRepo.+++<wbr/>+++GitMigrationImpl** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=SCMHeadWithOwnerAndRepo.GitMigrationImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++**GitBranchSCMHead.+++<wbr/>+++SCMHeadMigrationImpl** (link:https://github.com/jenkinsci/git-plugin/search?q=GitBranchSCMHead.SCMHeadMigrationImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**BranchSCMHead.+++<wbr/>+++MigrationImpl** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=BranchSCMHead.MigrationImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**PullRequestSCMHead.+++<wbr/>+++FixMetadataMigration** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=PullRequestSCMHead.FixMetadataMigration&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**PullRequestSCMHead.+++<wbr/>+++FixOriginMigration** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=PullRequestSCMHead.FixOriginMigration&type=Code[view on GitHub])
+
+
+== SCMNavigator
+
+`jenkinsdoc:scm-api:jenkins.scm.api.SCMNavigator]`
+
++++ An API for discovering new and navigating already discovered+++ jenkinsdoc:SCMSource] +++s within an organization.+++ +++ An implementation does not need to cache existing discoveries, but some form of caching is strongly recommended+++ +++ where the backing provider of repositories has a rate limiter on API calls.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/aws-codecommit-jobs[AWS Code Commit Jobs Plugin]: com.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++awscodecommit.+++<wbr/>+++navigator.+++<wbr/>+++**AWSCodeCommitSCMNavigator** (link:https://github.com/jenkinsci/aws-codecommit-jobs-plugin/search?q=AWSCodeCommitSCMNavigator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**BitbucketSCMNavigator** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=BitbucketSCMNavigator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**GitHubSCMNavigator** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=GitHubSCMNavigator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**GitLabSCMNavigator** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=GitLabSCMNavigator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-api[SCM API Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++impl.+++<wbr/>+++**SingleSCMNavigator** (link:https://github.com/jenkinsci/scm-api-plugin/search?q=SingleSCMNavigator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++scm.+++<wbr/>+++**ScmManagerNavigator** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=ScmManagerNavigator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/tuleap-git-branch-source[Tuleap Git Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++tuleap_git_branch_source.+++<wbr/>+++**TuleapSCMNavigator** (link:https://github.com/jenkinsci/tuleap-git-branch-source-plugin/search?q=TuleapSCMNavigator&type=Code[view on GitHub])
+
+
+== SCMNavigatorOwners
+
+`jenkinsdoc:scm-api:jenkins.scm.api.SCMNavigatorOwners]`
+
++++ Provides a means to lookup the+++ jenkinsdoc:SCMNavigatorOwners] +++that own+++ jenkinsdoc:SCMNavigatorOwner] +++instances.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== SCMNavigatorOwners.+++<wbr/>+++Enumerator
+
+`jenkinsdoc:scm-api:jenkins.scm.api.SCMNavigatorOwners.Enumerator]`
+
++++ Extension point to allow for access to embedded+++ jenkinsdoc:SCMSourceOwner] +++instances that+++ ++++++ jenkinsdoc:SCMNavigatorOwners.JenkinsItemEnumerator] +++will not find.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/scm-api[SCM API Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++api.+++<wbr/>+++**SCMNavigatorOwners.+++<wbr/>+++JenkinsItemEnumerator** (link:https://github.com/jenkinsci/scm-api-plugin/search?q=SCMNavigatorOwners.JenkinsItemEnumerator&type=Code[view on GitHub])
+
+
+== SCMSource
+
+`jenkinsdoc:scm-api:jenkins.scm.api.SCMSource]`
+
++++ A+++ jenkinsdoc:SCMSource] +++is responsible for fetching+++ jenkinsdoc:SCMHead] +++and corresponding+++ jenkinsdoc:SCMRevision] +++instances from+++ +++ which it can build+++ jenkinsdoc:SCM] +++instances that are configured to check out the specific+++ jenkinsdoc:SCMHead] +++at the+++ +++ specified+++ jenkinsdoc:SCMRevision] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/backlog[Backlog Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++backlog.+++<wbr/>+++pipeline.+++<wbr/>+++**BacklogPullRequestSCMSource** (link:https://github.com/jenkinsci/backlog-plugin/search?q=BacklogPullRequestSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**BitbucketSCMSource** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=BitbucketSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/atlassian-bitbucket-server-integration[Bitbucket Server Integration Plugin]: com.+++<wbr/>+++atlassian.+++<wbr/>+++bitbucket.+++<wbr/>+++jenkins.+++<wbr/>+++internal.+++<wbr/>+++scm.+++<wbr/>+++**BitbucketSCMSource** (link:https://github.com/jenkinsci/atlassian-bitbucket-server-integration-plugin/search?q=BitbucketSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/atlassian-bitbucket-server-integration[Bitbucket Server Integration Plugin]: com.+++<wbr/>+++atlassian.+++<wbr/>+++bitbucket.+++<wbr/>+++jenkins.+++<wbr/>+++internal.+++<wbr/>+++scm.+++<wbr/>+++**CustomGitSCMSource** (link:https://github.com/jenkinsci/atlassian-bitbucket-server-integration-plugin/search?q=CustomGitSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/dagshub-branch-source[DAGsHub Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++dagshubbranchsource.+++<wbr/>+++**DAGsHubSCMSource** (link:https://github.com/jenkinsci/dagshub-branch-source-plugin/search?q=DAGsHubSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gerrit-code-review[Gerrit Code Review Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gerrit.+++<wbr/>+++**AbstractGerritSCMSource** (link:https://github.com/jenkinsci/gerrit-code-review-plugin/search?q=AbstractGerritSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gerrit-code-review[Gerrit Code Review Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gerrit.+++<wbr/>+++**GerritSCMSource** (link:https://github.com/jenkinsci/gerrit-code-review-plugin/search?q=GerritSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-git-pipeline[Git Pipeline for Blue Ocean Plugin]: Anonymous class in io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_git_pipeline.+++<wbr/>+++**GitReadSaveService** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=GitReadSaveService.makeSaveRequest.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++**AbstractGitSCMSource** (link:https://github.com/jenkinsci/git-plugin/search?q=AbstractGitSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++**GitSCMSource** (link:https://github.com/jenkinsci/git-plugin/search?q=GitSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**GitHubSCMSource** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=GitHubSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-pullrequest[GitHub Integration Plugin]: com.+++<wbr/>+++github.+++<wbr/>+++kostyasha.+++<wbr/>+++github.+++<wbr/>+++integration.+++<wbr/>+++multibranch.+++<wbr/>+++**GitHubSCMSource** (link:https://github.com/jenkinsci/github-integration-plugin/search?q=GitHubSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**GitLabSCMSource** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=GitLabSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/mercurial[Mercurial Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++mercurial.+++<wbr/>+++**MercurialSCMSource** (link:https://github.com/jenkinsci/mercurial-plugin/search?q=MercurialSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-api[SCM API Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++impl.+++<wbr/>+++**NullSCMSource** (link:https://github.com/jenkinsci/scm-api-plugin/search?q=NullSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-api[SCM API Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++impl.+++<wbr/>+++**SingleSCMSource** (link:https://github.com/jenkinsci/scm-api-plugin/search?q=SingleSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++scm.+++<wbr/>+++**ScmManagerSource** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=ScmManagerSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++scm.+++<wbr/>+++**ScmManagerSvnSource** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=ScmManagerSvnSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/subversion[Subversion Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++impl.+++<wbr/>+++subversion.+++<wbr/>+++**SubversionSCMSource** (link:https://github.com/jenkinsci/subversion-plugin/search?q=SubversionSCMSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/tuleap-git-branch-source[Tuleap Git Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++tuleap_git_branch_source.+++<wbr/>+++**TuleapSCMSource** (link:https://github.com/jenkinsci/tuleap-git-branch-source-plugin/search?q=TuleapSCMSource&type=Code[view on GitHub])
+
+
+== SCMSource.+++<wbr/>+++SourceByItem
+
+`jenkinsdoc:scm-api:jenkins.scm.api.SCMSource.SourceByItem]`
+
++++ Means of locating a head given an item.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**BranchProjectFactory.+++<wbr/>+++SourceByItemImpl** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=BranchProjectFactory.SourceByItemImpl&type=Code[view on GitHub])
+
+
+== SCMSourceOwners
+
+`jenkinsdoc:scm-api:jenkins.scm.api.SCMSourceOwners]`
+
++++ Provides a means to lookup the+++ jenkinsdoc:SCMSourceOwners] +++that own+++ jenkinsdoc:SCMSource] +++instances.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== SCMSourceOwners.+++<wbr/>+++Enumerator
+
+`jenkinsdoc:scm-api:jenkins.scm.api.SCMSourceOwners.Enumerator]`
+
++++ Extension point to allow for access to embedded+++ jenkinsdoc:SCMSourceOwner] +++instances that+++ ++++++ jenkinsdoc:SCMSourceOwners.JenkinsItemEnumerator] +++will not find.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/scm-api[SCM API Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++api.+++<wbr/>+++**SCMSourceOwners.+++<wbr/>+++JenkinsItemEnumerator** (link:https://github.com/jenkinsci/scm-api-plugin/search?q=SCMSourceOwners.JenkinsItemEnumerator&type=Code[view on GitHub])
+
+
+== SCMTrait
+
+`jenkinsdoc:scm-api:jenkins.scm.api.trait.SCMTrait]`
+
++++ Base class for common traits.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**BitbucketBuildStatusNotificationsTrait** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=BitbucketBuildStatusNotificationsTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**BranchDiscoveryTrait** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=BranchDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**ForkPullRequestDiscoveryTrait** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=ForkPullRequestDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**OriginPullRequestDiscoveryTrait** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=OriginPullRequestDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**PublicRepoPullRequestFilterTrait** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=PublicRepoPullRequestFilterTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**SSHCheckoutTrait** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=SSHCheckoutTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**TagDiscoveryTrait** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=TagDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**WebhookConfigurationTrait** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=WebhookConfigurationTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++**WebhookRegistrationTrait** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=WebhookRegistrationTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/bitbucket-pullrequests-filter[Bitbucket Pull Requests filter Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++pullrequests.+++<wbr/>+++filter.+++<wbr/>+++traits.+++<wbr/>+++**PullRequestNameFilterTrait** (link:https://github.com/jenkinsci/bitbucket-pullrequests-filter-plugin/search?q=PullRequestNameFilterTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/bitbucket-pullrequests-filter[Bitbucket Pull Requests filter Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++pullrequests.+++<wbr/>+++filter.+++<wbr/>+++traits.+++<wbr/>+++**PullRequestSourceBranchFilterTrait** (link:https://github.com/jenkinsci/bitbucket-pullrequests-filter-plugin/search?q=PullRequestSourceBranchFilterTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/bitbucket-pullrequests-filter[Bitbucket Pull Requests filter Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++pullrequests.+++<wbr/>+++filter.+++<wbr/>+++traits.+++<wbr/>+++**PullRequestTargetBranchFilterTrait** (link:https://github.com/jenkinsci/bitbucket-pullrequests-filter-plugin/search?q=PullRequestTargetBranchFilterTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**AuthorInChangelogTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=AuthorInChangelogTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**BranchDiscoveryTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=BranchDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**CheckoutOptionTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=CheckoutOptionTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**CleanAfterCheckoutTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=CleanAfterCheckoutTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**CleanBeforeCheckoutTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=CleanBeforeCheckoutTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**CloneOptionTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=CloneOptionTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**DiscoverOtherRefsTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=DiscoverOtherRefsTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**GitBrowserSCMSourceTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=GitBrowserSCMSourceTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**GitLFSPullTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=GitLFSPullTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**GitSCMExtensionTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=GitSCMExtensionTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**GitToolSCMSourceTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=GitToolSCMSourceTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**IgnoreOnPushNotificationTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=IgnoreOnPushNotificationTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**LocalBranchTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=LocalBranchTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**PruneStaleBranchTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=PruneStaleBranchTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**PruneStaleTagTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=PruneStaleTagTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**RefSpecsSCMSourceTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=RefSpecsSCMSourceTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**RemoteNameSCMSourceTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=RemoteNameSCMSourceTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**SparseCheckoutPathsTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=SparseCheckoutPathsTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**SubmoduleOptionTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=SubmoduleOptionTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**TagDiscoveryTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=TagDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**UserIdentityTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=UserIdentityTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++traits.+++<wbr/>+++**WipeWorkspaceTrait** (link:https://github.com/jenkinsci/git-plugin/search?q=WipeWorkspaceTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**BranchDiscoveryTrait** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=BranchDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**ExcludeArchivedRepositoriesTrait** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=ExcludeArchivedRepositoriesTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**ExcludeForkedRepositoriesTrait** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=ExcludeForkedRepositoriesTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**ExcludePrivateRepositoriesTrait** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=ExcludePrivateRepositoriesTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**ExcludePublicRepositoriesTrait** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=ExcludePublicRepositoriesTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**ForkPullRequestDiscoveryTrait** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=ForkPullRequestDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**IgnoreDraftPullRequestFilterTrait** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=IgnoreDraftPullRequestFilterTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**OriginPullRequestDiscoveryTrait** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=OriginPullRequestDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**SSHCheckoutTrait** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=SSHCheckoutTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**TagDiscoveryTrait** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=TagDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**TeamSlugTrait** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=TeamSlugTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-branch-source[GitHub Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github_branch_source.+++<wbr/>+++**TopicsTrait** (link:https://github.com/jenkinsci/github-branch-source-plugin/search?q=TopicsTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**BranchDiscoveryTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=BranchDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**BuildStatusNameCustomPartTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=BuildStatusNameCustomPartTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**ExcludeArchivedRepositoriesTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=ExcludeArchivedRepositoriesTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**ForkMergeRequestDiscoveryTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=ForkMergeRequestDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**GitLabAvatarTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=GitLabAvatarTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**GitLabSkipNotificationsTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=GitLabSkipNotificationsTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**HookRegistrationTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=HookRegistrationTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**LogCommentTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=LogCommentTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**OriginMergeRequestDiscoveryTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=OriginMergeRequestDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**ProjectNamingStrategyTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=ProjectNamingStrategyTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**SSHCheckoutTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=SSHCheckoutTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**SubGroupProjectDiscoveryTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=SubGroupProjectDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**TagDiscoveryTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=TagDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**TriggerMRCommentTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=TriggerMRCommentTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitlab-branch-source[GitLab Branch Source Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gitlabbranchsource.+++<wbr/>+++**WebhookListenerBuildConditionsTrait** (link:https://github.com/jenkinsci/gitlab-branch-source-plugin/search?q=WebhookListenerBuildConditionsTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/mercurial[Mercurial Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++mercurial.+++<wbr/>+++traits.+++<wbr/>+++**CleanMercurialSCMSourceTrait** (link:https://github.com/jenkinsci/mercurial-plugin/search?q=CleanMercurialSCMSourceTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/mercurial[Mercurial Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++mercurial.+++<wbr/>+++traits.+++<wbr/>+++**MercurialBrowserSCMSourceTrait** (link:https://github.com/jenkinsci/mercurial-plugin/search?q=MercurialBrowserSCMSourceTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/mercurial[Mercurial Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++mercurial.+++<wbr/>+++traits.+++<wbr/>+++**MercurialInstallationSCMSourceTrait** (link:https://github.com/jenkinsci/mercurial-plugin/search?q=MercurialInstallationSCMSourceTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-api[SCM API Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++impl.+++<wbr/>+++trait.+++<wbr/>+++**RegexSCMHeadFilterTrait** (link:https://github.com/jenkinsci/scm-api-plugin/search?q=RegexSCMHeadFilterTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-api[SCM API Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++impl.+++<wbr/>+++trait.+++<wbr/>+++**RegexSCMSourceFilterTrait** (link:https://github.com/jenkinsci/scm-api-plugin/search?q=RegexSCMSourceFilterTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-api[SCM API Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++api.+++<wbr/>+++trait.+++<wbr/>+++**SCMNavigatorTrait** (link:https://github.com/jenkinsci/scm-api-plugin/search?q=SCMNavigatorTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-api[SCM API Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++api.+++<wbr/>+++trait.+++<wbr/>+++**SCMSourceTrait** (link:https://github.com/jenkinsci/scm-api-plugin/search?q=SCMSourceTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-api[SCM API Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++impl.+++<wbr/>+++trait.+++<wbr/>+++**WildcardSCMHeadFilterTrait** (link:https://github.com/jenkinsci/scm-api-plugin/search?q=WildcardSCMHeadFilterTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-api[SCM API Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++impl.+++<wbr/>+++trait.+++<wbr/>+++**WildcardSCMSourceFilterTrait** (link:https://github.com/jenkinsci/scm-api-plugin/search?q=WildcardSCMSourceFilterTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skip-notifications-trait[Skip Notifications Trait Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++notifications.+++<wbr/>+++**BitbucketSkipNotifications** (link:https://github.com/jenkinsci/skip-notifications-trait-plugin/search?q=BitbucketSkipNotifications&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skip-notifications-trait[Skip Notifications Trait Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github.+++<wbr/>+++notifications.+++<wbr/>+++**GithubSkipNotifications** (link:https://github.com/jenkinsci/skip-notifications-trait-plugin/search?q=GithubSkipNotifications&type=Code[view on GitHub])
+* https://plugins.jenkins.io/tuleap-git-branch-source[Tuleap Git Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++tuleap_git_branch_source.+++<wbr/>+++trait.+++<wbr/>+++**TuleapBranchDiscoveryTrait** (link:https://github.com/jenkinsci/tuleap-git-branch-source-plugin/search?q=TuleapBranchDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/tuleap-git-branch-source[Tuleap Git Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++tuleap_git_branch_source.+++<wbr/>+++trait.+++<wbr/>+++**TuleapCommitNotificationTrait** (link:https://github.com/jenkinsci/tuleap-git-branch-source-plugin/search?q=TuleapCommitNotificationTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/tuleap-git-branch-source[Tuleap Git Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++tuleap_git_branch_source.+++<wbr/>+++trait.+++<wbr/>+++**TuleapForkPullRequestDiscoveryTrait** (link:https://github.com/jenkinsci/tuleap-git-branch-source-plugin/search?q=TuleapForkPullRequestDiscoveryTrait&type=Code[view on GitHub])
+* https://plugins.jenkins.io/tuleap-git-branch-source[Tuleap Git Branch Source Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++tuleap_git_branch_source.+++<wbr/>+++trait.+++<wbr/>+++**TuleapOriginPullRequestDiscoveryTrait** (link:https://github.com/jenkinsci/tuleap-git-branch-source-plugin/search?q=TuleapOriginPullRequestDiscoveryTrait&type=Code[view on GitHub])
+

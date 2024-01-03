@@ -1,0 +1,18 @@
+= Extension Points defined in Port Allocator Plugin
+
+https://plugins.jenkins.io/port-allocator[Port Allocator Plugin]
+
+== PortType
+
+`jenkinsdoc:port-allocator:org.jvnet.hudson.plugins.port_allocator.PortType]`
+
++++ Base class for different types of TCP port.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/port-allocator[Port Allocator Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++port_allocator.+++<wbr/>+++**DefaultPortType** (link:https://github.com/jenkinsci/port-allocator-plugin/search?q=DefaultPortType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/port-allocator[Port Allocator Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++port_allocator.+++<wbr/>+++**GlassFishJmxPortType** (link:https://github.com/jenkinsci/port-allocator-plugin/search?q=GlassFishJmxPortType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/port-allocator[Port Allocator Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++port_allocator.+++<wbr/>+++**PooledPortType** (link:https://github.com/jenkinsci/port-allocator-plugin/search?q=PooledPortType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/port-allocator[Port Allocator Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++port_allocator.+++<wbr/>+++**TomcatShutdownPortType** (link:https://github.com/jenkinsci/port-allocator-plugin/search?q=TomcatShutdownPortType&type=Code[view on GitHub])
+

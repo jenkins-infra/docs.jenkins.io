@@ -1,0 +1,15 @@
+= Extension Points defined in Favorite Plugin
+
+https://plugins.jenkins.io/favorite[Favorite Plugin]
+
+== FavoriteListener
+
+`jenkinsdoc:favorite:hudson.plugins.favorite.listener.FavoriteListener]`
+
++++ Allows plugins to listen to favoriting+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

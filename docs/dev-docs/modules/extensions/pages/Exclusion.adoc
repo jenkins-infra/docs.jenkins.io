@@ -1,0 +1,15 @@
+= Extension Points defined in Exclusion Plugin
+
+https://plugins.jenkins.io/Exclusion[Exclusion Plugin]
+
+== IdType
+
+`jenkinsdoc:Exclusion:org.jvnet.hudson.plugins.exclusion.IdType]`
+
++++ Exclusion resource factory.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/Exclusion[Exclusion Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++exclusion.+++<wbr/>+++**DefaultIdType** (link:https://github.com/jenkinsci/exclusion-plugin/search?q=DefaultIdType&type=Code[view on GitHub])
+

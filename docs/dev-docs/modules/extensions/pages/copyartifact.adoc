@@ -1,0 +1,39 @@
+= Extension Points defined in Copy Artifact Plugin
+
+https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]
+
+== BuildSelector
+
+`jenkinsdoc:copyartifact:hudson.plugins.copyartifact.BuildSelector]`
+
++++ Extension point for selecting the build to copy artifacts from.+++ +++ In a subclass override just isSelectable() for a standard loop through completed+++ +++ builds, starting with the most recent. Otherwise override getBuild() to provide+++ +++ different build selection logic.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++copyartifact.+++<wbr/>+++**DownstreamBuildSelector** (link:https://github.com/jenkinsci/copyartifact-plugin/search?q=DownstreamBuildSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++copyartifact.+++<wbr/>+++**LastBuildWithArtifactSelector** (link:https://github.com/jenkinsci/copyartifact-plugin/search?q=LastBuildWithArtifactSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++copyartifact.+++<wbr/>+++**LastCompletedBuildSelector** (link:https://github.com/jenkinsci/copyartifact-plugin/search?q=LastCompletedBuildSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++copyartifact.+++<wbr/>+++**ParameterizedBuildSelector** (link:https://github.com/jenkinsci/copyartifact-plugin/search?q=ParameterizedBuildSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++copyartifact.+++<wbr/>+++**PermalinkBuildSelector** (link:https://github.com/jenkinsci/copyartifact-plugin/search?q=PermalinkBuildSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++copyartifact.+++<wbr/>+++**SavedBuildSelector** (link:https://github.com/jenkinsci/copyartifact-plugin/search?q=SavedBuildSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++copyartifact.+++<wbr/>+++**SpecificBuildSelector** (link:https://github.com/jenkinsci/copyartifact-plugin/search?q=SpecificBuildSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++copyartifact.+++<wbr/>+++**StatusBuildSelector** (link:https://github.com/jenkinsci/copyartifact-plugin/search?q=StatusBuildSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++copyartifact.+++<wbr/>+++**TriggeredBuildSelector** (link:https://github.com/jenkinsci/copyartifact-plugin/search?q=TriggeredBuildSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++copyartifact.+++<wbr/>+++**WorkspaceSelector** (link:https://github.com/jenkinsci/copyartifact-plugin/search?q=WorkspaceSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jenkins-multijob-plugin[Multijob Plugin]: com.+++<wbr/>+++tikal.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multijob.+++<wbr/>+++**MultiJobBuildSelector** (link:https://github.com/jenkinsci/tikal-multijob-plugin/search?q=MultiJobBuildSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/promoted-builds-simple[Promoted Builds (Simple) Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++promoted_builds_simple.+++<wbr/>+++**PromotedBuildSelector** (link:https://github.com/jenkinsci/promoted-builds-simple-plugin/search?q=PromotedBuildSelector&type=Code[view on GitHub])
+
+
+== Copier
+
+`jenkinsdoc:copyartifact:hudson.plugins.copyartifact.Copier]`
+
++++ Extension point for how files are copied.+++ +++ CopyArtifact plugin provides a default implementation using methods+++ +++ available in the Jenkins FilePath class.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++copyartifact.+++<wbr/>+++**FilePathCopyMethod** (link:https://github.com/jenkinsci/copyartifact-plugin/search?q=FilePathCopyMethod&type=Code[view on GitHub])
+* https://plugins.jenkins.io/copyartifact[Copy Artifact Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++copyartifact.+++<wbr/>+++**FingerprintingCopyMethod** (link:https://github.com/jenkinsci/copyartifact-plugin/search?q=FingerprintingCopyMethod&type=Code[view on GitHub])
+

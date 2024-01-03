@@ -1,0 +1,54 @@
+= Extension Points defined in Deployer Framework Plugin
+
+https://plugins.jenkins.io/deployer-framework[Deployer Framework Plugin]
+
+== CapabilitiesResolver
+
+`jenkinsdoc:deployer-framework:com.cloudbees.plugins.deployer.resolvers.CapabilitiesResolver]`
+
++++ Provides information about the capabilities that should be exposed for different project types.+++ +++ If there is a specific project type which should have its own tweaks (e.g. promoted-builds)+++ +++ then it can implement an extension of this type and change the effective behaviour.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/deployer-framework[Deployer Framework Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++plugins.+++<wbr/>+++deployer.+++<wbr/>+++resolvers.+++<wbr/>+++**CapabilitiesResolver.+++<wbr/>+++DefaultCapabilitiesResolver** (link:https://github.com/jenkinsci/deployer-framework-plugin/search?q=CapabilitiesResolver.DefaultCapabilitiesResolver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/deployer-framework[Deployer Framework Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++plugins.+++<wbr/>+++deployer.+++<wbr/>+++resolvers.+++<wbr/>+++**PromotionCapabilitiesResolver** (link:https://github.com/jenkinsci/deployer-framework-plugin/search?q=PromotionCapabilitiesResolver&type=Code[view on GitHub])
+
+
+== DeployListener
+
+`jenkinsdoc:deployer-framework:com.cloudbees.plugins.deployer.DeployListener]`
+
++++ An extension point for listening to deployment events+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== DeploySource
+
+`jenkinsdoc:deployer-framework:com.cloudbees.plugins.deployer.sources.DeploySource]`
+
++++ A source of files to deploy.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/deployer-framework[Deployer Framework Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++plugins.+++<wbr/>+++deployer.+++<wbr/>+++sources.+++<wbr/>+++**FixedDirectoryDeploySource** (link:https://github.com/jenkinsci/deployer-framework-plugin/search?q=FixedDirectoryDeploySource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/deployer-framework[Deployer Framework Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++plugins.+++<wbr/>+++deployer.+++<wbr/>+++sources.+++<wbr/>+++**MavenArtifactDeploySource** (link:https://github.com/jenkinsci/deployer-framework-plugin/search?q=MavenArtifactDeploySource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/deployer-framework[Deployer Framework Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++plugins.+++<wbr/>+++deployer.+++<wbr/>+++sources.+++<wbr/>+++**StaticSelectionDeploySource** (link:https://github.com/jenkinsci/deployer-framework-plugin/search?q=StaticSelectionDeploySource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/deployer-framework[Deployer Framework Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++plugins.+++<wbr/>+++deployer.+++<wbr/>+++sources.+++<wbr/>+++**WildcardPathDeploySource** (link:https://github.com/jenkinsci/deployer-framework-plugin/search?q=WildcardPathDeploySource&type=Code[view on GitHub])
+
+
+== DeployTarget
+
+`jenkinsdoc:deployer-framework:com.cloudbees.plugins.deployer.targets.DeployTarget]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+_(no known implementations)_
+

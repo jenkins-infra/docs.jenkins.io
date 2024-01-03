@@ -1,0 +1,17 @@
+= Extension Points defined in RabbitMQ Consumer Plugin
+
+https://plugins.jenkins.io/rabbitmq-consumer[RabbitMQ Consumer Plugin]
+
+== MessageQueueListener
+
+`jenkinsdoc:rabbitmq-consumer:org.jenkinsci.plugins.rabbitmqconsumer.extensions.MessageQueueListener]`
+
++++ Listener for message queue.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/gerrit-trigger[Gerrit Trigger Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++gerrit.+++<wbr/>+++trigger.+++<wbr/>+++impls.+++<wbr/>+++**RabbitMQMessageListenerImpl** (link:https://github.com/jenkinsci/gerrit-trigger-plugin/search?q=RabbitMQMessageListenerImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/rabbitmq-build-trigger[RabbitMQ Build Trigger Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++rabbitmqbuildtrigger.+++<wbr/>+++**RemoteBuildListener** (link:https://github.com/jenkinsci/rabbitmq-build-trigger-plugin/search?q=RemoteBuildListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/rabbitmq-consumer[RabbitMQ Consumer Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++rabbitmqconsumer.+++<wbr/>+++logger.+++<wbr/>+++**MessageLogger** (link:https://github.com/jenkinsci/rabbitmq-consumer-plugin/search?q=MessageLogger&type=Code[view on GitHub])
+

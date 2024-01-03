@@ -1,0 +1,20 @@
+= Extension Points defined in Security Inspector Plugin
+
+https://plugins.jenkins.io/security-inspector[Security Inspector Plugin]
+
+== ReportBuilder
+
+`jenkinsdoc:security-inspector:org.jenkinsci.plugins.securityinspector.model.ReportBuilder]`
+
++++ Defines a report builder for the Security Inspector UI.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++integrations.+++<wbr/>+++securityinspector.+++<wbr/>+++**PermissionsForOwnerReportBuilder** (link:https://github.com/jenkinsci/ownership-plugin/search?q=PermissionsForOwnerReportBuilder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/security-inspector[Security Inspector Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++securityinspector.+++<wbr/>+++impl.+++<wbr/>+++items.+++<wbr/>+++**ItemForMultipleUsersReportBuilder** (link:https://github.com/jenkinsci/security-inspector-plugin/search?q=ItemForMultipleUsersReportBuilder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/security-inspector[Security Inspector Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++securityinspector.+++<wbr/>+++impl.+++<wbr/>+++items.+++<wbr/>+++**ItemReportBuilder** (link:https://github.com/jenkinsci/security-inspector-plugin/search?q=ItemReportBuilder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/security-inspector[Security Inspector Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++securityinspector.+++<wbr/>+++impl.+++<wbr/>+++users.+++<wbr/>+++**PermissionsForComputerReportBuilder** (link:https://github.com/jenkinsci/security-inspector-plugin/search?q=PermissionsForComputerReportBuilder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/security-inspector[Security Inspector Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++securityinspector.+++<wbr/>+++impl.+++<wbr/>+++users.+++<wbr/>+++**PermissionsForItemReportBuilder** (link:https://github.com/jenkinsci/security-inspector-plugin/search?q=PermissionsForItemReportBuilder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/security-inspector[Security Inspector Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++securityinspector.+++<wbr/>+++impl.+++<wbr/>+++users.+++<wbr/>+++**UserReportBuilder** (link:https://github.com/jenkinsci/security-inspector-plugin/search?q=UserReportBuilder&type=Code[view on GitHub])
+

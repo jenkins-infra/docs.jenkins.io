@@ -1,0 +1,11 @@
+name: sigs
+title: Special Interest Groups (SIGs)
+version: ~
+display_version: 'latest'
+nav:
+  - modules/gsoc/nav.adoc
+  - modules/ROOT/nav.adoc
+  - modules/advocacy-and-outreach/nav.adoc
+  - modules/platform/nav.adoc
+  - modules/ux/nav.adoc
+  - modules/docs/nav.adoc

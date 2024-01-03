@@ -1,0 +1,27 @@
+= Extension Points defined in Ivy Plugin
+
+https://plugins.jenkins.io/ivy[Ivy Plugin]
+
+== IvyBuilderType
+
+`jenkinsdoc:ivy:hudson.ivy.builder.IvyBuilderType]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/ivy[Ivy Plugin]: hudson.+++<wbr/>+++ivy.+++<wbr/>+++builder.+++<wbr/>+++**AntIvyBuilderType** (link:https://github.com/jenkinsci/ivy-plugin/search?q=AntIvyBuilderType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ivy[Ivy Plugin]: hudson.+++<wbr/>+++ivy.+++<wbr/>+++builder.+++<wbr/>+++**NAntIvyBuilderType** (link:https://github.com/jenkinsci/ivy-plugin/search?q=NAntIvyBuilderType&type=Code[view on GitHub])
+
+
+== IvyReporter
+
+`jenkinsdoc:ivy:hudson.ivy.IvyReporter]`
+
++++ Listens to the build execution of+++ jenkinsdoc:IvyBuild] +++,+++ +++ and normally records some information and exposes these+++ +++ in+++ jenkinsdoc:IvyBuild] +++later.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

@@ -1,0 +1,17 @@
+= Extension Points defined in URLTrigger Plugin
+
+https://plugins.jenkins.io/urltrigger[URLTrigger Plugin]
+
+== URLTriggerContentType
+
+`jenkinsdoc:urltrigger:org.jenkinsci.plugins.urltrigger.content.URLTriggerContentType]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/urltrigger[URLTrigger Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++urltrigger.+++<wbr/>+++content.+++<wbr/>+++**JSONContentType** (link:https://github.com/jenkinsci/urltrigger-plugin/search?q=JSONContentType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/urltrigger[URLTrigger Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++urltrigger.+++<wbr/>+++content.+++<wbr/>+++**SimpleContentType** (link:https://github.com/jenkinsci/urltrigger-plugin/search?q=SimpleContentType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/urltrigger[URLTrigger Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++urltrigger.+++<wbr/>+++content.+++<wbr/>+++**TEXTContentType** (link:https://github.com/jenkinsci/urltrigger-plugin/search?q=TEXTContentType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/urltrigger[URLTrigger Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++urltrigger.+++<wbr/>+++content.+++<wbr/>+++**XMLContentType** (link:https://github.com/jenkinsci/urltrigger-plugin/search?q=XMLContentType&type=Code[view on GitHub])
+

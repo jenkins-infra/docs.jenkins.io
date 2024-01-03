@@ -1,0 +1,31 @@
+= Extension Points defined in Google Cloud Build Plugin
+
+https://plugins.jenkins.io/google-cloudbuild[Google Cloud Build Plugin]
+
+== CloudBuildRequest
+
+`jenkinsdoc:google-cloudbuild:com.google.jenkins.plugins.cloudbuild.request.CloudBuildRequest]`
+
++++Generates the request to submit to Google Cloud Build. +++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/google-cloudbuild[Google Cloud Build Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++cloudbuild.+++<wbr/>+++request.+++<wbr/>+++**FileCloudBuildRequest** (link:https://github.com/jenkinsci/google-cloudbuild-plugin/search?q=FileCloudBuildRequest&type=Code[view on GitHub])
+* https://plugins.jenkins.io/google-cloudbuild[Google Cloud Build Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++cloudbuild.+++<wbr/>+++request.+++<wbr/>+++**InlineCloudBuildRequest** (link:https://github.com/jenkinsci/google-cloudbuild-plugin/search?q=InlineCloudBuildRequest&type=Code[view on GitHub])
+
+
+== CloudBuildSource
+
+`jenkinsdoc:google-cloudbuild:com.google.jenkins.plugins.cloudbuild.source.CloudBuildSource]`
+
++++ The source to be used along with a Google Cloud Build build request.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/google-cloudbuild[Google Cloud Build Plugin]: Anonymous class in com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++cloudbuild.+++<wbr/>+++source.+++<wbr/>+++**CloudBuildSource** (link:https://github.com/jenkinsci/google-cloudbuild-plugin/search?q=CloudBuildSource.NULL.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/google-cloudbuild[Google Cloud Build Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++cloudbuild.+++<wbr/>+++source.+++<wbr/>+++**LocalCloudBuildSource** (link:https://github.com/jenkinsci/google-cloudbuild-plugin/search?q=LocalCloudBuildSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/google-cloudbuild[Google Cloud Build Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++cloudbuild.+++<wbr/>+++source.+++<wbr/>+++**RepoCloudBuildSource** (link:https://github.com/jenkinsci/google-cloudbuild-plugin/search?q=RepoCloudBuildSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/google-cloudbuild[Google Cloud Build Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++cloudbuild.+++<wbr/>+++source.+++<wbr/>+++**StorageCloudBuildSource** (link:https://github.com/jenkinsci/google-cloudbuild-plugin/search?q=StorageCloudBuildSource&type=Code[view on GitHub])
+

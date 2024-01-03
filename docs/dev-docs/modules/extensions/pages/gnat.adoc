@@ -1,0 +1,27 @@
+= Extension Points defined in GNAT Plugin
+
+https://plugins.jenkins.io/gnat[GNAT Plugin]
+
+== GnatcheckType
+
+`jenkinsdoc:gnat:com.thalesgroup.hudson.plugins.gnat.gnatcheck.GnatcheckType]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/gnat[GNAT Plugin]: com.+++<wbr/>+++thalesgroup.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++gnat.+++<wbr/>+++gnatcheck.+++<wbr/>+++**FreeStyleGnatcheckType** (link:https://github.com/jenkinsci/gnat-plugin/search?q=FreeStyleGnatcheckType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gnat[GNAT Plugin]: com.+++<wbr/>+++thalesgroup.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++gnat.+++<wbr/>+++gnatcheck.+++<wbr/>+++**ProjectGnatcheckType** (link:https://github.com/jenkinsci/gnat-plugin/search?q=ProjectGnatcheckType&type=Code[view on GitHub])
+
+
+== GnatmetricType
+
+`jenkinsdoc:gnat:com.thalesgroup.hudson.plugins.gnat.gnatmetric.GnatmetricType]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/gnat[GNAT Plugin]: com.+++<wbr/>+++thalesgroup.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++gnat.+++<wbr/>+++gnatmetric.+++<wbr/>+++**FreeStyleGnatmetricType** (link:https://github.com/jenkinsci/gnat-plugin/search?q=FreeStyleGnatmetricType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gnat[GNAT Plugin]: com.+++<wbr/>+++thalesgroup.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++gnat.+++<wbr/>+++gnatmetric.+++<wbr/>+++**ProjectGnatmetricType** (link:https://github.com/jenkinsci/gnat-plugin/search?q=ProjectGnatmetricType&type=Code[view on GitHub])
+

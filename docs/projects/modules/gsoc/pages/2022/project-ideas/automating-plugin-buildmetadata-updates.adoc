@@ -1,0 +1,84 @@
+= Automating plugin build metadata updates
+
+*Project goal:* Apply generic transformations across the Jenkins ecosystem
+
+*Skills to study/improve:* Java
+
+NOTE: This idea is published as a draft under active discussion, but it is confirmed in principle. It is FINE to apply to it. The scope and the suggested implementation may change significantly before the final version is published. Sections like quickstart guide and newbie-friendly issues may be also missing. As a contributor, you are welcome to request additional information and to join the discussions using channels linked on this page.
+
+
+
+The Jenkins ecosystem combines a monolithic core with a modular plugin system.
+True, this design provides a great degree of flexibility and robustness, yet also it poses challenges to propagating large-scale changes throughout the ecosystem.
+The lack of automation has led to many plugins falling behind with regard to ecosystem-wide migrations.
+This project proposes the creation of a new tool to apply generic transformations across the Jenkins ecosystem.
+
+Example transformations include:
+
+* Ensuring that each plugin has a Jenkinsfile that conforms to the latest best practices from the Jenkins infrastructure team, including the use of containerized builds
+* Keeping the minimum Jenkins version reasonably current
+* Updating the plugin parent POM to the latest version
+* Migrating from explicit dependency versions to the Jenkins plugin BOM
+* Enabling incrementals
+* Updating plugin SCM URLs to conform to the latest GitHub best practices
+* Migrating from HTTP to HTTPs URLs wherever possible
+* Converting API dependencies to plugin dependencies
+* Replacing transitional <table>-based markup with <div>-based markup
+* Replacing JSR 305 annotations with SpotBugs annotations
+* Replacing deprecated JUnit assertions with Hamcrest assertions
+* Replacing deprecated Mockito method calls with non-deprecated equivalents
+* Replacing deprecated HTMLUnit method calls with non-deprecated equivalents
+* Migrating from JUnit 3 to JUnit 4
+* Replacing HudsonTestCase with JenkinsRule
+* Replacing RestartableJenkinsRule with JenkinsSessionRule
+* Replacing Guava, Apache Commons, and Joda Time with Java Platform equivalents
+
+== Quick Start
+
+Use the "Contributing to Open Source" document and the "Modernizing Jenkins Plugins" video series to understand some of the transformations.
+
+The scope of this project is to create a generic tool for applying these types of transformations against Jenkins plugins, validating the applied transformations, and creating pull requests with the results.
+While not all of the transformations described above will be implemented as part of this project, it is expected that a subset of the above list will be implemented to prove the viability of the newly-created tool.
+
+Note that some of these transformations depend on other transformations, so a stack of transformations must be created and validated prior to creating the pull request.
+
+The transformations range from editing Maven pom.xml files to applying automated refactorings to Java source code.
+It is suggested that XML and Java manipulation frameworks like JDOM and Refaster be used to implement the transformations described above.
+
+== Skills to Study and Improve
+
+To be clarified
+
+== Project Difficulty Level
+
+Beginner to Intermediate
+
+== Project Size
+
+175 hours
+
+== Expected outcomes
+
+New feature
+
+Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase. 
+
+// === Newbie Friendly Issues
+
+== Potential Mentors
+
+[.avatar]
+* image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Basil Crow
+
+== Project Links
+
+* image:https://img.shields.io/badge/gitter%20-%20join_chat%20-%20light_green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_gsoc-sig%3Agitter.im[Static Badge]
+* https://www.jenkins.io/projects/gsoc/#office-hours[Meetings]
+* https://docs.google.com/document/d/1CYzV_w5SrA-npXEMwTkJ4E2QyJdd2cJm7eDpwhg4XPk[Project idea draft]
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2022/project-ideas.adoc[Go back to other GSoC 2022 project ideas]

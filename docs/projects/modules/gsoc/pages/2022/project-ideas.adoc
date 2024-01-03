@@ -1,0 +1,115 @@
+= GSoC 2021 Project Ideas 
+
+[.float-group]
+--
+image:images:ROOT:gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=right,role=float-gap]
+This page aggregates project ideas for Google Summer of Code 2021. See more information about this project and applications on the xref:gsoc:index.adoc[Jenkins Google Summer of Code page].
+
+Below you can find project ideas which have been proposed for this year. New ideas may be proposed by interested mentors or students (e.g. new features in the core, "write a plugin for MY_TOOL_OR_SERVICE", etc.). Project ideas without potential mentors will be considered though applicants may need to work with the community and GSoC org admins to find mentors. To add a new project idea, see: xref:gsoc:proposing-project-ideas.adoc[proposing project ideas].
+--
+
+== Accepted ideas 
+
+Below you can see the list of project ideas that fully match the Jenkins' project idea standard. The scope of these ideas is well known and we don't normally expect deep changes. All ideas have quick start guidelines and newbie-friendly issues referenced. We welcome contributors to join the mentor teams, and we invite students to submit project proposal applications in relation to these ideas.
+
+
+[cols="3,1,1"]
+|===
+|Project	|Category	|Skills to study/improve
+|*Automatic git cache maintenance on the controller*
+
+Automate the maintenance of cached git repositories on the Jenkins controller.
+
+Potential Mentor(s): 
+* image:images:ROOT:avatars/markewaite.jpg[,width=30,height=30] Mark Waite
+* image:images:ROOT:avatars/rishabhbudhouliya.jpg[,width=30,height=30] Rishabh Budhouliya
+ 
+Kris Stern
+|Tools	
+|Java
+
+|*Automatic Specification Generator for Jenkins REST API*
+
+Find and implement the extraction of the REST APIs from the sources and generate and publish the REST APIs respective documentation.
+
+Potential Mentor(s): 
+Kristin Whetstone
+Abhyudaya Sharma
+|Plugins	
+|Java, REST API, OpenAPI / Swagger
+
+
+|*Jenkinsfile Runner Action for GitHub Actions*
+
+Implement a (near) feature-complete version of Jenkinsfile Runner Action for GitHub Actions.
+
+Potential Mentor(s): 
+Kris Stern
+Shubham Kumar
+Oleg Nenashev
+|Tools	
+|Java, Jenkinsfile Runner, Docker, GitHub Actions
+
+|*Pipeline Step Documentation Generator improvements*
+
+Enhance the Jenkins Pipeline documentation generator to produce better documentation for thousands of Pipeline developers.
+
+Potential Mentor(s): 
+Kristin Whetstone
+Harshit Chopra
+Mark Waite
+Tasneem Koushar
+|Dev Tools	
+|Java, Jenkins Pipeline, HTML, CSS, Asciidoc, JavaScript
+
+|*Plugin Health Scoring system - how should it work*
+
+Provide a 'plugin health indicator' for plugin maintainers and Jenkins administrators.
+
+Potential Mentor(s): 
+Adrien Lecharpentier
+Mark Waite
+Jake Leon
+|Tools	
+|Java, Data Analysis, Data Presentation
+
+|*Plugin Installation Manager Tool Improvements*
+
+Introduce new features and improvements in the plugin installation manager.
+
+Potential Mentor(s): 
+Mark Waite
+Abhyudaya Sharma
+|Tools	
+|Java, YAML, Command line tools, Package management tool theory
+|===
+
+
+== Draft project ideas 
+
+Below you can see draft project ideas, which are currently under review. The scope of such ideas may change during the discussions, but the idea is accepted in principle. You are welcome to comment on the draft and to join the project as a mentor. If you are a student, it is also fine to explore and to apply to the draft project ideas.
+
+
+[cols="3,1,1"]
+|===
+|Project	|Category	|Skills to study/improve
+|*Building iOS Apps with Jenkins*
+
+Describe best practices and provide architectural templates for building iOS applications with Jenkins.
+
+Potential Mentor(s): 
+Bruno Verachten
+|Tools	
+|Java, YAML, iOS development, Command line tools, Package management tool theory
+|===
+
+== Ongoing discussion 
+
+These are proposals in the mailing lists which have not been published as project ideas yet. The feasibility is yet to be defined, and the idea may be dismissed depending on the feedback. Everyone is welcome to participate in the discussion and to join as a potential mentor.
+
+[cols="3,1"]
+|===
+|Project	|Category	
+|
+|
+|===

@@ -1,0 +1,8 @@
+= Handling Requests
+
+:page-layout: wip
+
+.References
+****
+* link:https://github.com/stapler/stapler/blob/master/README.md[Stapler Reference Documentation]
+****

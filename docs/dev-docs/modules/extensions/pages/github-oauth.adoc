@@ -1,0 +1,15 @@
+= Extension Points defined in GitHub Authentication Plugin
+
+https://plugins.jenkins.io/github-oauth[GitHub Authentication Plugin]
+
+== GitHubOAuthScope
+
+`jenkinsdoc:github-oauth:org.jenkinsci.plugins.GitHubOAuthScope]`
+
++++ Extension point to be implemented by plugins to request additional scopes.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

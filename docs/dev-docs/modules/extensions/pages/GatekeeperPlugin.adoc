@@ -1,0 +1,15 @@
+= Extension Points defined in Gatekeeper Plugin
+
+https://plugins.jenkins.io/GatekeeperPlugin[Gatekeeper Plugin]
+
+== ReleaseBranch
+
+`jenkinsdoc:Gatekeeperhttps://plugins.jenkins.io/org.paylogic.jenkins.upmerge.releasebranch.ReleaseBranch]`
+
++++ Abstract class to represent a Release Branch.+++ +++ Implement one for your use case by filling the ExtensionPoint.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/GatekeeperPlugin[Gatekeeper Plugin]: org.+++<wbr/>+++paylogic.+++<wbr/>+++jenkins.+++<wbr/>+++upmerge.+++<wbr/>+++releasebranch.+++<wbr/>+++**ReleaseBranchImpl** (link:https://github.com/jenkinsci/gatekeeper-plugin/search?q=ReleaseBranchImpl&type=Code[view on GitHub])
+

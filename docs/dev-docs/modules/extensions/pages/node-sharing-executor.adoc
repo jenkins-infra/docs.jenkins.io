@@ -1,0 +1,15 @@
+= Extension Points defined in Node sharing executor Plugin
+
+https://plugins.jenkins.io/node-sharing-executor[Node sharing executor Plugin]
+
+== SharedNodeFactory
+
+`jenkinsdoc:node-sharing-executor:com.redhat.jenkins.nodesharingfrontend.SharedNodeFactory]`
+
++++ An extension point turning+++ jenkinsdoc:com.redhat.jenkins.nodesharing.NodeDefinition] +++s into+++ jenkinsdoc:SharedNode] +++s.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/node-sharing-executor[Node sharing executor Plugin]: com.+++<wbr/>+++redhat.+++<wbr/>+++jenkins.+++<wbr/>+++nodesharingfrontend.+++<wbr/>+++**SharedNodeFactory.+++<wbr/>+++XStreamFactory** (link:https://github.com/jenkinsci/node-sharing-plugin/search?q=SharedNodeFactory.XStreamFactory&type=Code[view on GitHub])
+

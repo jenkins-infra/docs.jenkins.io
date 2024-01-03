@@ -1,0 +1,23 @@
+= Views
+
+////
+TODO INFRA-897: Jelly taglib reference core define, stapler, and taglibs defined in Jenkins core
+////
+:page-layout: wip
+
+== Debugging Tips and Tricks
+
+The following static fields can be set to `true` (e.g. via Script Console) while Jenkins is running to enable various debugging aids:
+
+`org.kohsuke.stapler.jelly.JellyFacet.TRACE`::
+Jelly will emit XML comments that help understand Jelly view composition from fragments.
+This can help understand how a view is composed.
+The corresponding Java system property is xref:user-docs:managing:system-properties.adoc#stapler-jelly-trace[`stapler.jelly.trace`].
+
+NOTE: Support for Jelly tracing is broken in Jenkins 2.287 and earlier (https://issues.jenkins.io/browse/JENKINS-65288[JENKINS-65288]).
+Some plugins with custom JavaScript may also have problems if this is set to `true`.
+
+`org.kohsuke.stapler.jelly.ReallyStaticTagLibrary.EMIT_LOCATION`::
+Jelly will emit `line` and `file` attributes on rendered HTML/XML tags.
+This can help understand how a view is composed.
+There is no corresponding Java system property.

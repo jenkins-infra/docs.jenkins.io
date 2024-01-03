@@ -1,0 +1,14 @@
+= Extension Points defined in Protecode SC Plugin
+
+https://plugins.jenkins.io/protecode-sc[Protecode SC Plugin]
+
+== ProtecodeScPlugin.+++<wbr/>+++DescriptorImpl
+
+`jenkinsdoc:protecode-sc:com.synopsys.protecode.sc.jenkins.ProtecodeScPlugin.DescriptorImpl]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+_(no known implementations)_
+

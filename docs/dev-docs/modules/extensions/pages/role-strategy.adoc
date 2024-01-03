@@ -1,0 +1,28 @@
+= Extension Points defined in Role-based Authorization Strategy Plugin
+
+https://plugins.jenkins.io/role-strategy[Role-based Authorization Strategy Plugin]
+
+== RoleMacroExtension
+
+`jenkinsdoc:role-strategy:com.synopsys.arc.jenkins.plugins.rolestrategy.RoleMacroExtension]`
+
++++ Extension for macro roles (automatic membership handling).+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++security.+++<wbr/>+++rolestrategy.+++<wbr/>+++**AbstractOwnershipRoleMacro** (link:https://github.com/jenkinsci/ownership-plugin/search?q=AbstractOwnershipRoleMacro&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++security.+++<wbr/>+++rolestrategy.+++<wbr/>+++**CoOwnerRoleMacro** (link:https://github.com/jenkinsci/ownership-plugin/search?q=CoOwnerRoleMacro&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++security.+++<wbr/>+++rolestrategy.+++<wbr/>+++**CoOwnerRoleMacroNoSid** (link:https://github.com/jenkinsci/ownership-plugin/search?q=CoOwnerRoleMacroNoSid&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++integrations.+++<wbr/>+++rolestrategy.+++<wbr/>+++macros.+++<wbr/>+++**CurrentUserIsOwnerMacro** (link:https://github.com/jenkinsci/ownership-plugin/search?q=CurrentUserIsOwnerMacro&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++integrations.+++<wbr/>+++rolestrategy.+++<wbr/>+++macros.+++<wbr/>+++**CurrentUserIsPrimaryOwnerMacro** (link:https://github.com/jenkinsci/ownership-plugin/search?q=CurrentUserIsPrimaryOwnerMacro&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++security.+++<wbr/>+++rolestrategy.+++<wbr/>+++**ItemSpecificRoleMacro** (link:https://github.com/jenkinsci/ownership-plugin/search?q=ItemSpecificRoleMacro&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++security.+++<wbr/>+++rolestrategy.+++<wbr/>+++**ItemSpecificRoleMacroWithUserID** (link:https://github.com/jenkinsci/ownership-plugin/search?q=ItemSpecificRoleMacroWithUserID&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++security.+++<wbr/>+++rolestrategy.+++<wbr/>+++**NoOwnerRoleMacro** (link:https://github.com/jenkinsci/ownership-plugin/search?q=NoOwnerRoleMacro&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++security.+++<wbr/>+++rolestrategy.+++<wbr/>+++**OwnerRoleMacro** (link:https://github.com/jenkinsci/ownership-plugin/search?q=OwnerRoleMacro&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++security.+++<wbr/>+++rolestrategy.+++<wbr/>+++**OwnerRoleMacroNoSid** (link:https://github.com/jenkinsci/ownership-plugin/search?q=OwnerRoleMacroNoSid&type=Code[view on GitHub])
+* https://plugins.jenkins.io/role-strategy[Role-based Authorization Strategy Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++rolestrategy.+++<wbr/>+++macros.+++<wbr/>+++**BuildableJobMacro** (link:https://github.com/jenkinsci/role-strategy-plugin/search?q=BuildableJobMacro&type=Code[view on GitHub])
+* https://plugins.jenkins.io/role-strategy[Role-based Authorization Strategy Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++rolestrategy.+++<wbr/>+++macros.+++<wbr/>+++**ContainedInViewMacro** (link:https://github.com/jenkinsci/role-strategy-plugin/search?q=ContainedInViewMacro&type=Code[view on GitHub])
+* https://plugins.jenkins.io/role-strategy[Role-based Authorization Strategy Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++rolestrategy.+++<wbr/>+++macros.+++<wbr/>+++**FolderMacro** (link:https://github.com/jenkinsci/role-strategy-plugin/search?q=FolderMacro&type=Code[view on GitHub])
+* https://plugins.jenkins.io/role-strategy[Role-based Authorization Strategy Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++rolestrategy.+++<wbr/>+++macros.+++<wbr/>+++**StubMacro** (link:https://github.com/jenkinsci/role-strategy-plugin/search?q=StubMacro&type=Code[view on GitHub])
+

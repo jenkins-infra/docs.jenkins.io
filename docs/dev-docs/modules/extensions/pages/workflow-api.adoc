@@ -1,0 +1,202 @@
+= Extension Points defined in Pipeline: API Plugin
+
+https://plugins.jenkins.io/workflow-api[Pipeline: API Plugin]
+
+== DurabilityHintProvider
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.flow.DurabilityHintProvider]`
+
++++ Provides a way to indirectly register durability settings to apply to pipelines.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/workflow-multibranch[Pipeline: Multibranch Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++**DurabilityHintBranchProperty.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/workflow-multibranch-plugin/search?q=DurabilityHintBranchProperty.DescriptorImpl&type=Code[view on GitHub])
+
+
+== ErrorCondition
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.flow.ErrorCondition]`
+
++++ User-configurable predicate for errors that may occur during a build.+++ +++ Implementations could check for agent-related outages, for example.+++ +++ Step callers could use a condition to decide whether to ignore or report an error, retry, etc.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/workflow-basic-steps[Pipeline: Basic Steps Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++steps.+++<wbr/>+++**SynchronousResumeNotSupportedErrorCondition** (link:https://github.com/jenkinsci/workflow-basic-steps-plugin/search?q=SynchronousResumeNotSupportedErrorCondition&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-durable-task-step[Pipeline: Nodes and Processes Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++steps.+++<wbr/>+++**AgentErrorCondition** (link:https://github.com/jenkinsci/workflow-durable-task-step-plugin/search?q=AgentErrorCondition&type=Code[view on GitHub])
+
+
+== FlowCopier
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.flow.FlowCopier]`
+
++++ A way for plugins to copy metadata and associated files from one flow execution to another.+++ +++ Useful when a new execution is not being created from scratch, but is a kind of clone of another.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/workflow-api[Pipeline: API Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++flow.+++<wbr/>+++**FlowCopier.+++<wbr/>+++ByRun** (link:https://github.com/jenkinsci/workflow-api-plugin/search?q=FlowCopier.ByRun&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-api[Pipeline: API Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++flow.+++<wbr/>+++**FlowCopier.+++<wbr/>+++StandardActions** (link:https://github.com/jenkinsci/workflow-api-plugin/search?q=FlowCopier.StandardActions&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-api[Pipeline: API Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++flow.+++<wbr/>+++**StashManager.+++<wbr/>+++CopyStashesAndArtifacts** (link:https://github.com/jenkinsci/workflow-api-plugin/search?q=StashManager.CopyStashesAndArtifacts&type=Code[view on GitHub])
+
+
+== FlowDefinition
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.flow.FlowDefinition]`
+
++++ Actual executable script.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/config-driven-pipeline[Config-Driven Pipeline Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++template.+++<wbr/>+++**ConfigFileSCMBinder** (link:https://github.com/jenkinsci/config-driven-pipeline-plugin/search?q=ConfigFileSCMBinder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/inline-pipeline[Multibranch Pipeline Inline Definition Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++inlinepipeline.+++<wbr/>+++**InlineFlowDefinition** (link:https://github.com/jenkinsci/inline-pipeline-plugin/search?q=InlineFlowDefinition&type=Code[view on GitHub])
+* https://plugins.jenkins.io/oes-template[OES Template Plugin]: cn.+++<wbr/>+++opsbox.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++cps.+++<wbr/>+++**CpsTemplateFlowDefinition** (link:https://github.com/jenkinsci/oes-template-plugin/search?q=CpsTemplateFlowDefinition&type=Code[view on GitHub])
+* https://plugins.jenkins.io/oes-template[OES Template Plugin]: cn.+++<wbr/>+++opsbox.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++cps.+++<wbr/>+++**OesTemplateFlowDefinition** (link:https://github.com/jenkinsci/oes-template-plugin/search?q=OesTemplateFlowDefinition&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-as-yaml[Pipeline As YAML (Incubated) Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++scm.+++<wbr/>+++**ExtendedSCMBinder** (link:https://github.com/jenkinsci/pipeline-as-yaml-plugin/search?q=ExtendedSCMBinder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-as-yaml[Pipeline As YAML (Incubated) Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++**PipelineAsYamlScmFlowDefinition** (link:https://github.com/jenkinsci/pipeline-as-yaml-plugin/search?q=PipelineAsYamlScmFlowDefinition&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-as-yaml[Pipeline As YAML (Incubated) Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++**PipelineAsYamlScriptFlowDefinition** (link:https://github.com/jenkinsci/pipeline-as-yaml-plugin/search?q=PipelineAsYamlScriptFlowDefinition&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-as-yaml[Pipeline As YAML (Incubated) Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++cps.+++<wbr/>+++**PipelineCpsFlowDefinition** (link:https://github.com/jenkinsci/pipeline-as-yaml-plugin/search?q=PipelineCpsFlowDefinition&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-as-yaml[Pipeline As YAML (Incubated) Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++cps.+++<wbr/>+++**PipelineCpsScmFlowDefinition** (link:https://github.com/jenkinsci/pipeline-as-yaml-plugin/search?q=PipelineCpsScmFlowDefinition&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-restful-api[Pipeline restFul API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++restful.+++<wbr/>+++api.+++<wbr/>+++**HttpFlowDefinition** (link:https://github.com/jenkinsci/pipeline-restful-api-plugin/search?q=HttpFlowDefinition&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-cps-http[Pipeline: Groovy HTTP Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflowhttp.+++<wbr/>+++cps.+++<wbr/>+++**CpsHttpFlowDefinition** (link:https://github.com/jenkinsci/pipeline-cps-http-plugin/search?q=CpsHttpFlowDefinition&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-multibranch[Pipeline: Multibranch Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++**SCMBinder** (link:https://github.com/jenkinsci/workflow-multibranch-plugin/search?q=SCMBinder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-multibranch-defaults[Pipeline: Multibranch with defaults Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++multibranch.+++<wbr/>+++defaults.+++<wbr/>+++**DefaultsBinder** (link:https://github.com/jenkinsci/pipeline-multibranch-defaults-plugin/search?q=DefaultsBinder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/remote-file[Remote Jenkinsfile Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++extended.+++<wbr/>+++scm.+++<wbr/>+++**ExtendedSCMBinder** (link:https://github.com/jenkinsci/remote-file-plugin/search?q=ExtendedSCMBinder&type=Code[view on GitHub])
+
+
+== FlowExecutionListener
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.flow.FlowExecutionListener]`
+
++++ Listens for significant status updates for a+++ jenkinsdoc:FlowExecution] +++, such as started running or completed.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-events[Events API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++events.+++<wbr/>+++**PipelineEventListener.+++<wbr/>+++StartPublisher** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineEventListener.StartPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jfrog[JFrog Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jfrog.+++<wbr/>+++**WorkflowListener** (link:https://github.com/jenkinsci/jfrog-plugin/search?q=WorkflowListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-config-history[Pipeline Configuration History Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipelineConfigHistory.+++<wbr/>+++model.+++<wbr/>+++**PipelineConfigHistoryFlowExecutionListener** (link:https://github.com/jenkinsci/pipeline-config-history-plugin/search?q=PipelineConfigHistoryFlowExecutionListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-api[Pipeline: API Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++flow.+++<wbr/>+++**FlowExecutionList.+++<wbr/>+++ResumeStepExecutionListener** (link:https://github.com/jenkinsci/workflow-api-plugin/search?q=FlowExecutionList.ResumeStepExecutionListener&type=Code[view on GitHub])
+
+
+== FlowNodeViewColumn
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.visualization.table.FlowNodeViewColumn]`
+
++++ Extension point for adding a column to a table rendering of+++ jenkinsdoc:FlowNode] +++s.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/workflow-support[Pipeline: Supporting APIs Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++visualization.+++<wbr/>+++table.+++<wbr/>+++**ArgumentsColumn** (link:https://github.com/jenkinsci/workflow-support-plugin/search?q=ArgumentsColumn&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-support[Pipeline: Supporting APIs Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++visualization.+++<wbr/>+++table.+++<wbr/>+++**ConsoleColumn** (link:https://github.com/jenkinsci/workflow-support-plugin/search?q=ConsoleColumn&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-support[Pipeline: Supporting APIs Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++visualization.+++<wbr/>+++table.+++<wbr/>+++**StatusColumn** (link:https://github.com/jenkinsci/workflow-support-plugin/search?q=StatusColumn&type=Code[view on GitHub])
+
+
+== FlowNodeViewColumnDescriptor
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.visualization.table.FlowNodeViewColumnDescriptor]`
+
+++++++ jenkinsdoc:Descriptor] +++for+++ jenkinsdoc:FlowNodeViewColumn] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/workflow-support[Pipeline: Supporting APIs Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++visualization.+++<wbr/>+++table.+++<wbr/>+++**ArgumentsColumn.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/workflow-support-plugin/search?q=ArgumentsColumn.DescriptorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-support[Pipeline: Supporting APIs Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++visualization.+++<wbr/>+++table.+++<wbr/>+++**ConsoleColumn.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/workflow-support-plugin/search?q=ConsoleColumn.DescriptorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-support[Pipeline: Supporting APIs Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++visualization.+++<wbr/>+++table.+++<wbr/>+++**StatusColumn.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/workflow-support-plugin/search?q=StatusColumn.DescriptorImpl&type=Code[view on GitHub])
+
+
+== GraphListener
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.flow.GraphListener]`
+
++++ {@code GraphListener}s can be used in two different ways: either as an+++ jenkinsdoc:Extension] +++, which will have its+++ ++++++ jenkinsdoc:=onNewHead(FlowNode)] +++fired for every+++ jenkinsdoc:FlowExecution] +++, or by instantiation and being passed to+++ ++++++ jenkinsdoc:FlowExecution=addListener(GraphListener)] +++, in which case only events for that specific+++ jenkinsdoc:FlowExecution] ++++++ +++ will be fired.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/atlassian-jira-software-cloud[Atlassian Jira Software Cloud Plugin]: com.+++<wbr/>+++atlassian.+++<wbr/>+++jira.+++<wbr/>+++cloud.+++<wbr/>+++jenkins.+++<wbr/>+++listeners.+++<wbr/>+++**JenkinsPipelineGraphListener** (link:https://github.com/jenkinsci/atlassian-jira-software-cloud-plugin/search?q=JenkinsPipelineGraphListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/checks-api[Checks API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++checks.+++<wbr/>+++status.+++<wbr/>+++**BuildStatusChecksPublisher.+++<wbr/>+++ChecksGraphListener** (link:https://github.com/jenkinsci/checks-api-plugin/search?q=BuildStatusChecksPublisher.ChecksGraphListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/datadog[Datadog Plugin]: org.+++<wbr/>+++datadog.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++datadog.+++<wbr/>+++listeners.+++<wbr/>+++**DatadogGraphListener** (link:https://github.com/jenkinsci/datadog-plugin/search?q=DatadogGraphListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-events[Events API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++events.+++<wbr/>+++**PipelineEventListener** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineEventListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-autostatus[Job and Stage monitoring Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++githubautostatus.+++<wbr/>+++**GithubBuildStatusGraphListener** (link:https://github.com/jenkinsci/github-autostatus-plugin/search?q=GithubBuildStatusGraphListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hp-application-automation-tools-plugin[Micro Focus Application Automation Tools Plugin]: com.+++<wbr/>+++microfocus.+++<wbr/>+++application.+++<wbr/>+++automation.+++<wbr/>+++tools.+++<wbr/>+++octane.+++<wbr/>+++vulnerabilities.+++<wbr/>+++**VulnerabilitiesWorkflowListener** (link:https://github.com/jenkinsci/hp-application-automation-tools-plugin/search?q=VulnerabilitiesWorkflowListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hp-application-automation-tools-plugin[Micro Focus Application Automation Tools Plugin]: com.+++<wbr/>+++microfocus.+++<wbr/>+++application.+++<wbr/>+++automation.+++<wbr/>+++tools.+++<wbr/>+++octane.+++<wbr/>+++events.+++<wbr/>+++**WorkflowListenerOctaneImpl** (link:https://github.com/jenkinsci/hp-application-automation-tools-plugin/search?q=WorkflowListenerOctaneImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-input-notification[Pipeline Input Step Notification Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++input.+++<wbr/>+++**InputNotificationGraphListener** (link:https://github.com/jenkinsci/pipeline-input-notification-plugin/search?q=InputNotificationGraphListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-api[Pipeline: API Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++flow.+++<wbr/>+++**GraphListener.+++<wbr/>+++Synchronous** (link:https://github.com/jenkinsci/workflow-api-plugin/search?q=GraphListener.Synchronous&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-api[Pipeline: API Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++graph.+++<wbr/>+++**StandardGraphLookupView** (link:https://github.com/jenkinsci/workflow-api-plugin/search?q=StandardGraphLookupView&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-support[Pipeline: Supporting APIs Plugin]: Anonymous class in org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++**DefaultStepContext** (link:https://github.com/jenkinsci/workflow-support-plugin/search?q=DefaultStepContext.getListener.&type=Code[view on GitHub])
+
+
+== LogStorageFactory
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.log.LogStorageFactory]`
+
++++ Factory interface for+++ jenkinsdoc:LogStorage] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/pipeline-cloudwatch-logs[Pipeline Logging over CloudWatch Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++pipeline_cloudwatch_logs.+++<wbr/>+++**PipelineBridge** (link:https://github.com/jenkinsci/pipeline-cloudwatch-logs-plugin/search?q=PipelineBridge&type=Code[view on GitHub])
+
+
+== PickleFactory
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.pickles.PickleFactory]`
+
++++ Provides a way of converting transient objects into+++ jenkinsdoc:Pickle] +++s.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/junit-realtime-test-reporter[JUnit Realtime Test Reporter Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++junitrealtimetestreporter.+++<wbr/>+++**RealtimeJUnitStep.+++<wbr/>+++Pickler** (link:https://github.com/jenkinsci/junit-realtime-test-reporter-plugin/search?q=RealtimeJUnitStep.Pickler&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-multibranch[Pipeline: Multibranch Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++**SCMVar.+++<wbr/>+++Pickler** (link:https://github.com/jenkinsci/workflow-multibranch-plugin/search?q=SCMVar.Pickler&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-durable-task-step[Pipeline: Nodes and Processes Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++pickles.+++<wbr/>+++**ComputerPickle.+++<wbr/>+++Factory** (link:https://github.com/jenkinsci/workflow-durable-task-step-plugin/search?q=ComputerPickle.Factory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-durable-task-step[Pipeline: Nodes and Processes Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++pickles.+++<wbr/>+++**ExecutorPickle.+++<wbr/>+++Factory** (link:https://github.com/jenkinsci/workflow-durable-task-step-plugin/search?q=ExecutorPickle.Factory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-durable-task-step[Pipeline: Nodes and Processes Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++pickles.+++<wbr/>+++**FilePathPickle.+++<wbr/>+++Factory** (link:https://github.com/jenkinsci/workflow-durable-task-step-plugin/search?q=FilePathPickle.Factory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-durable-task-step[Pipeline: Nodes and Processes Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++pickles.+++<wbr/>+++**WorkspaceListLeasePickle.+++<wbr/>+++Factory** (link:https://github.com/jenkinsci/workflow-durable-task-step-plugin/search?q=WorkspaceListLeasePickle.Factory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-support[Pipeline: Supporting APIs Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++pickles.+++<wbr/>+++**SecretPickle.+++<wbr/>+++Factory** (link:https://github.com/jenkinsci/workflow-support-plugin/search?q=SecretPickle.Factory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-support[Pipeline: Supporting APIs Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++pickles.+++<wbr/>+++**SingleTypedPickleFactory** (link:https://github.com/jenkinsci/workflow-support-plugin/search?q=SingleTypedPickleFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-support[Pipeline: Supporting APIs Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++support.+++<wbr/>+++pickles.+++<wbr/>+++**ThrowablePickle.+++<wbr/>+++Factory** (link:https://github.com/jenkinsci/workflow-support-plugin/search?q=ThrowablePickle.Factory&type=Code[view on GitHub])
+
+
+== StashManager.+++<wbr/>+++StashBehavior
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.flow.StashManager.StashBehavior]`
+
++++ Extension point for customizing behavior of stashes from other plugins.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== StepListener
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.flow.StepListener]`
+
+++++++ jenkinsdoc:StepListener] +++s are fired before invoking a step but after the+++ jenkinsdoc:FlowNode] +++has been created and the+++ ++++++ jenkinsdoc:StepContext] +++has been populated. A+++ jenkinsdoc:StepListener] +++can perform actions before the+++ jenkinsdoc:Step] +++is+++ +++ executed, such as calling+++ jenkinsdoc:StepContext=onFailure] +++to make the step fail before it starts.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/datadog[Datadog Plugin]: org.+++<wbr/>+++datadog.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++datadog.+++<wbr/>+++listeners.+++<wbr/>+++**DatadogStepListener** (link:https://github.com/jenkinsci/datadog-plugin/search?q=DatadogStepListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/dingding-notifications[DingTalk Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++**DingTalkStepListener** (link:https://github.com/jenkinsci/dingtalk-plugin/search?q=DingTalkStepListener&type=Code[view on GitHub])
+
+
+== TaskListenerDecorator.+++<wbr/>+++Factory
+
+`jenkinsdoc:workflow-api:org.jenkinsci.plugins.workflow.log.TaskListenerDecorator.Factory]`
+
++++ Allows a decorator to be applied to any build.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/datadog[Datadog Plugin]: org.+++<wbr/>+++datadog.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++datadog.+++<wbr/>+++logs.+++<wbr/>+++**DatadogTaskListenerDecorator.+++<wbr/>+++Factory** (link:https://github.com/jenkinsci/datadog-plugin/search?q=DatadogTaskListenerDecorator.Factory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/logstash[Logstash Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++logstash.+++<wbr/>+++pipeline.+++<wbr/>+++**GlobalDecorator.+++<wbr/>+++Factory** (link:https://github.com/jenkinsci/logstash-plugin/search?q=GlobalDecorator.Factory&type=Code[view on GitHub])
+

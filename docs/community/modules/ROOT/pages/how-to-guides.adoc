@@ -1,0 +1,15 @@
+= How-To Guides
+
+NOTE: This page is under development, there will be more content added soon.
+See the https://issues.jenkins.io/browse/WEBSITE-662[WEBSITE-662] EPIC for tasks related to this page, contributions are welcome!
+
+== How-To Guidelines
+
+=== How to report a bug, request an improvement, or propose a new feature
+
+- xref:report-issue.adoc[Report an issue]
+
+=== How To Track an issue
+
+- xref:track-issue.adoc[Track an issue]
+

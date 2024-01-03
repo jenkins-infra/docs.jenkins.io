@@ -1,0 +1,7 @@
+= Distributed Builds
+
+:page-layout: wip
+
+- link:https://wiki.jenkins.io/display/JENKINS/Making+your+plugin+behave+in+distributed+Jenkins[Making your plugin behave in distributed Jenkins]
+- link:https://github.com/jenkinsci/cli-channel-demo[How to develop remote systems that talk to Jenkins by taking advantages of the remoting subsystem]
+

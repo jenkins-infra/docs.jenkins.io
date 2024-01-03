@@ -1,0 +1,20 @@
+= User Handbook Overview
+
+This page provides an overview of the documentation in the Jenkins User
+Handbook.
+
+If you want to get up and running with Jenkins, see
+xref:installing-jenkins:index.adoc[Installing Jenkins] for procedures on how to install Jenkins
+on your supported platform of choice.
+
+If you are a typical Jenkins user (of any skill level) who wants to know more
+about Jenkins usage, see xref:using-jenkins:index.adoc[Using Jenkins]. Also refer to the
+separate xref:pipeline:index.adoc[Pipeline] and xref:blueocean:index.adoc[Blue Ocean] chapters
+for more information about these core Jenkins features.
+
+If you are a Jenkins administrator and want to know more about managing Jenkins
+nodes and instances, see xref:managing:index.adoc[Managing Jenkins].
+
+If you are a system administrator and want to learn how to back-up, restore,
+maintain as Jenkins servers and nodes, see
+xref:system-administration:index.adoc[Jenkins System Administration].

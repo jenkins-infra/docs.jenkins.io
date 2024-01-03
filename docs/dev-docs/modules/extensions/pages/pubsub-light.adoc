@@ -1,0 +1,41 @@
+= Extension Points defined in Pub-Sub "light" Bus Plugin
+
+https://plugins.jenkins.io/pubsub-light[Pub-Sub "light" Bus Plugin]
+
+== AbstractChannelSubscriber
+
+`jenkinsdoc:pubsub-light:org.jenkinsci.plugins.pubsub.AbstractChannelSubscriber]`
+
++++ Simple asynchronous+++ jenkinsdoc:ChannelSubscriber] ++++++ jenkinsdoc:ExtensionPoint] +++for Jenkins.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== MessageEnricher
+
+`jenkinsdoc:pubsub-light:org.jenkinsci.plugins.pubsub.MessageEnricher]`
+
++++ Message enricher extension point.+++ +++
+<p>+++ +++ This extension point should only be used to add enough additional event data+++ +++ to allow an event consumer make a decision on whether or not it is interested in+++ +++ this event i.e. where the default min data on the event was not enough.+++ +++ Please use sparingly!!+++</p>
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-events[Events API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++events.+++<wbr/>+++**BlueMessageEnricher** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueMessageEnricher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-events[Events API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++events.+++<wbr/>+++**JobIndexingMessageEnricher** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=JobIndexingMessageEnricher&type=Code[view on GitHub])
+
+
+== PubsubBus
+
+`jenkinsdoc:pubsub-light:org.jenkinsci.plugins.pubsub.PubsubBus]`
+
++++ Abstract Pub-sub bus.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/pubsub-light[Pub-Sub "light" Bus Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pubsub.+++<wbr/>+++**GuavaPubsubBus** (link:https://github.com/jenkinsci/pubsub-light-plugin/search?q=GuavaPubsubBus&type=Code[view on GitHub])
+

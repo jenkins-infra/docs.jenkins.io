@@ -1,0 +1,241 @@
+= Pipeline Development Tools
+
+Jenkins Pipeline includes
+xref:./getting-started.adoc#built-in-documentation[built-in documentation] and the
+xref:./getting-started.adoc#snippet-generator[Snippet Generator] which are key resources
+when developing Pipelines. They provide detailed help and information that is customized
+to the currently installed version of Jenkins and related plugins.
+In this section, we'll discuss other tools and resources
+that may help with development of Jenkins Pipelines.
+
+[#linter]
+== Command-line Pipeline Linter
+
+Jenkins can validate, or
+"link:https://en.wikipedia.org/wiki/Lint_(software)[lint]",
+a Declarative Pipeline from the command line before actually running it.
+This can be done using a Jenkins CLI command or by making an
+HTTP POST
+request with appropriate parameters.
+We recommended using the
+xref:user-docs:managing:cli.adoc#ssh[SSH interface]
+to run the linter. See the xref:user-docs:managing:cli.adoc[Jenkins CLI documentation] for details on how to properly configure
+Jenkins for secure command-line access.
+
+.Linting via the CLI with SSH
+[source,bash]
+----
+# ssh (Jenkins CLI)
+# JENKINS_PORT=[sshd port on controller]
+# JENKINS_HOST=[Jenkins controller hostname]
+ssh -p $JENKINS_PORT $JENKINS_HOST declarative-linter < Jenkinsfile
+----
+
+.Linting via HTTP POST using `curl`
+[source,bash]
+----
+# curl (REST API)
+# Assuming "anonymous read access" has been enabled on your Jenkins instance.
+# JENKINS_URL=[root URL of Jenkins controller]
+# JENKINS_CRUMB is needed if your Jenkins controller has CRSF protection enabled as it should
+JENKINS_CRUMB=`curl "$JENKINS_URL/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,\":\",//crumb)"`
+curl -X POST -H $JENKINS_CRUMB -F "jenkinsfile=<Jenkinsfile" $JENKINS_URL/pipeline-model-converter/validate
+----
+
+=== Examples
+
+Below are two examples of the Pipeline Linter in action.
+This first example shows the output of the linter when it is passed
+an invalid `Jenkinsfile`, one that is missing part of the `agent` declaration.
+
+.Jenkinsfile
+[source,groovy]
+----
+pipeline {
+  agent
+  stages {
+    stage ('Initialize') {
+      steps {
+        echo 'Placeholder.'
+      }
+    }
+  }
+}
+----
+
+.Linter output for invalid Jenkinsfile
+[source,bash]
+----
+# pass a Jenkinsfile that does not contain an "agent" section
+ssh -p 8675 localhost declarative-linter < ./Jenkinsfile
+Errors encountered validating Jenkinsfile:
+WorkflowScript: 2: Not a valid section definition: "agent". Some extra configuration is required. @ line 2, column 3.
+     agent
+     ^
+
+WorkflowScript: 1: Missing required section "agent" @ line 1, column 1.
+   pipeline &#125;
+   ^
+----
+
+In this second example, the `Jenkinsfile` has been updated to include the
+missing `any` on `agent`.  The linter now reports that the Pipeline is valid.
+
+.Jenkinsfile
+[source,groovy]
+----
+pipeline {
+  agent any
+  stages {
+    stage ('Initialize') {
+      steps {
+        echo 'Placeholder.'
+      }
+    }
+  }
+}
+----
+
+.Linter output for valid Jenkinsfile
+[source,bash]
+----
+ssh -p 8675 localhost declarative-linter < ./Jenkinsfile
+Jenkinsfile successfully validated.
+----
+
+== Blue Ocean Editor
+
+The xref:glossary:index.adoc#../blueocean/pipeline-editor[Blue Ocean Pipeline Editor] provides a link:https://en.wikipedia.org/wiki/WYSIWYG[WYSIWYG] way to create Declarative Pipelines.
+The editor offers a structural view of all the stages, parallel branches, and steps in a Pipeline.
+The editor validates Pipeline changes as they are made, eliminating many errors before they are even committed.  
+Behind the scenes it still generates Declarative Pipeline code.
+
+== There should be a partial here
+
+include::blueocean:partial$_blue-ocean-status.adoc[]
+
+[#replay]
+== "Replay" Pipeline Runs with Modifications
+
+Typically a Pipeline will be defined inside of the classic Jenkins web UI,
+or by committing to a `Jenkinsfile` in source control. Unfortunately,
+neither approach is ideal for rapid iteration, or prototyping, of a Pipeline.
+The "Replay" feature allows for quick modifications and execution of an existing
+Pipeline without changing the Pipeline configuration or creating a new commit.
+
+=== Usage
+
+To use the "Replay" feature:
+
+. Select a previously completed run in the build history.
++
+image::replay-previous-run.png[Previous Pipeline Run]
++
+. Click "Replay" in the left menu
++
+image::replay-left-bar.png[Replay Left-menu Button]
++
+. Make modifications and click "Run". In this example, we changed "ruby-2.3" to "ruby-2.4".
++
+image::replay-modified.png[Replay Left-menu Button]
++
+. Check the results of changes
+
+Once you are satisfied with the changes,
+you can use Replay to view them again, copy them back to your Pipeline job
+or `Jenkinsfile`, and then commit them using your usual engineering processes.
+
+=== Features
+
+* *Can be called multiple times on the same run* -
+allows for easy parallel testing of different changes.
+* *Can also be called on Pipeline runs that are still in-progress* -
+As long as a Pipeline contained syntactically correct Groovy and was able to start,
+it can be Replayed.
+* *Referenced Shared Library code is also modifiable* - If a Pipeline run references a
+xref:user-docs:pipeline:shared-libraries.adoc[Shared Library], the code from the shared library will
+also be shown and modifiable as part of the Replay page.
+* *Access Control via dedicated "Run / Replay" permission* -
+implied by "Job / Configure". If Pipeline is not configurable (e.g. Branch Pipeline of a Multibranch) or "Job / Configure" is not granted, users still can experiment with Pipeline Definition via Replay
+* *Can be used for Re-run* -
+users lacking "Run / Replay" but who are granted "Job / Build" can still use Replay to run a build again with the same definition.
+
+=== Limitations
+
+* *Pipeline runs with syntax errors cannot be replayed* -
+meaning their code cannot be viewed and any changes made in them cannot be retrieved.
+When using Replay for more significant modifications, save your changes
+to a file or editor outside of Jenkins before running them.
+See link:https://issues.jenkins.io/browse/JENKINS-37589[JENKINS-37589]
+* *Replayed Pipeline behavior may differ from runs started by other methods* -
+For Pipelines that are not part of a Multi-branch Pipeline,
+the commit information may differ for the original run and the Replayed run.
+See link:https://issues.jenkins.io/browse/JENKINS-36453[JENKINS-36453]
+
+== IDE Integrations
+
+=== Eclipse Jenkins Editor
+
+The `Jenkins Editor` Eclipse plugin can be found on
+link:https://marketplace.eclipse.org/content/jenkins-editor[Eclipse Marketplace].
+This special text editor provides some features for defining pipelines e.g:
+
+- Validate pipeline scripts by xref:#linter[Jenkins Linter Validation]. Failures are shown as eclipse markers
+- An Outline with dedicated icons (for declarative Jenkins pipelines )
+- Syntax / keyword highlighting
+- Groovy validation
+
+NOTE: The Jenkins Editor Plugin is a third-party tool that is not supported
+by the Jenkins Project.
+
+=== VisualStudio Code Jenkins Pipeline Linter Connector
+
+The `Jenkins Pipeline Linter Connector` extension for
+link:https://code.visualstudio.com/[VisualStudio Code]
+takes the file that you have currently opened, pushes it to your Jenkins Server and displays the validation result in VS Code.
+
+​You can find the extension from within the VS Code extension browser or at the following url: https://marketplace.visualstudio.com/items?itemName=janjoerke.jenkins-pipeline-linter-connector
+
+The extension adds four settings entries to VS Code which select the Jenkins server you want to use for validation.
+
+* `jenkins.pipeline.linter.connector.url` is the endpoint at which your Jenkins Server expects the POST request, containing your Jenkinsfile which you want to validate. Typically this points to __http://<your_jenkins_server:port>/pipeline-model-converter/validate__.
+* `jenkins.pipeline.linter.connector.user` allows you to specify your Jenkins username.
+* `jenkins.pipeline.linter.connector.pass` allows you to specify your Jenkins password.
+* `jenkins.pipeline.linter.connector.crumbUrl` has to be specified if your Jenkins Server has CRSF protection enabled. Typically this points to __http://<your_jenkins_server:port>/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb)__.
+
+=== Neovim nvim-jenkinsfile-linter plugin
+
+The link:https://github.com/ckipp01/nvim-jenkinsfile-linter[nvim-jenkinsfile-linter]
+Neovim plugin allows you to validate a Jenkinsfile by using the Pipeline Linter API
+of your Jenkins instance and report any existing diagnostics in your editor.
+
+=== Atom linter-jenkins package
+
+The link:https://atom.io/packages/linter-jenkins[linter-jenkins] Atom package allows 
+you to validate a Jenkins file by using the Pipeline Linter API of a running Jenkins. 
+You can install it directly from the Atom package manager. It needs also to install 
+link:https://atom.io/packages/language-jenkinsfile[Jenkinsfile language support in Atom]
+
+=== Sublime Text Jenkinsfile package
+
+The link:https://github.com/june07/sublime-Jenkinsfile[Jenkinsfile] Sublime Text package allows 
+you to validate a Jenkinsfile by using the Pipeline Linter API of a running Jenkins instance over
+a secure channel (SSH).  You can install it directly from the Sublime Text package manager.
+
+​You can find the package from within the Sublime Text interface via the Package Control package, at GitHub, or packagecontrol.io:
+
+* link:https://github.com/june07/sublime-Jenkinsfile[https://github.com/june07/sublime-Jenkinsfile]
+* link:https://packagecontrol.io/packages/Jenkinsfile[https://packagecontrol.io/packages/Jenkinsfile]
+
+[#unit-test]
+== Pipeline Unit Testing Framework
+
+The link:https://github.com/jenkinsci/JenkinsPipelineUnit[Pipeline Unit Testing Framework]
+allows you to
+link:https://en.wikipedia.org/wiki/Unit_testing[unit test]
+Pipelines and xref:user-docs:pipeline:shared-libraries.adoc[Shared Libraries]
+before running them in full. It provides a mock execution environment where real
+Pipeline steps are replaced with mock objects that you can use to check for expected
+behavior. New and rough around the edges, but promising.
+The link:https://github.com/jenkinsci/JenkinsPipelineUnit/blob/master/README.md[README]
+for that project contains examples and usage instructions.

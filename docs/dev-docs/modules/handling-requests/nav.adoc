@@ -1,0 +1,6 @@
+.xref:index.adoc[]
+* xref:routing.adoc[]
+* xref:actions.adoc[]
+* xref:responses.adoc[]
+* xref:json.adoc[]
+* xref:deprecated-reflective-access.adoc[]

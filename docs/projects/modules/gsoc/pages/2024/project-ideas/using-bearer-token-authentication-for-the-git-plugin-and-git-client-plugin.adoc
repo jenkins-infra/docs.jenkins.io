@@ -1,0 +1,38 @@
+= Using Bearer Token Authentication for the Git plugin and Git Client Plugin
+
+*Project goal:* To introduce a new authentication technique for both the Git plugin and Git Client plugin
+
+*Skills to study/improve:* Java, Authentication techniques, Jenkins plugin development
+
+NOTE: This idea is published as a draft under active discussion, but it is confirmed in principle. It is FINE to apply to it. The scope and the suggested implementation may change significantly before the final version is published. Sections like quickstart guide and newbie-friendly issues may be also missing. As a contributor, you are welcome to request additional information and to join the discussions using channels linked on this page.
+
+== Details 
+=== Background
+
+Currently neither the Jenkins Git plugin nor the Jenkins Git Client plugin support the use of bearer token authentication. This project would add support for bearer token authentication to both plugins.
+
+
+=== Links
+
+* link:https://plugins.jenkins.io/git/[Jenkins Git plugin]
+* link:https://plugins.jenkins.io/git-client/[Jenkins Git Client plugin]
+
+
+== Potential Mentors
+
+[.avatar]
+image:images:ROOT:avatars/markewaite.jpg[,width=30,height=30] Mark Waite
+image:images:ROOT:avatars/krisstern.png[,width=30,height=30] Kris Stern
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Valentin Delaye
+
+== Project Links
+
+* image:https://img.shields.io/badge/gitter-join_chat-light_green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_role-strategy-plugin%3Agitter.im[Static Badge,link=https://app.gitter.im/#/room/#jenkinsci_gsoc-sig:gitter.im]
+* xref:gsoc:index.adoc#office-hours[Meetings]
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2024/project-ideas.adoc[Go back to other GSoC 2024 project ideas]

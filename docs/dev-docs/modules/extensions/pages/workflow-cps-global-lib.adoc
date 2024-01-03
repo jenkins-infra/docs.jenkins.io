@@ -1,0 +1,15 @@
+= Extension Points defined in Pipeline: Deprecated Groovy Libraries Plugin
+
+https://plugins.jenkins.io/workflow-cps-global-lib[Pipeline: Deprecated Groovy Libraries Plugin]
+
+== WorkflowLibRepositoryListener
+
+`jenkinsdoc:workflow-cps-global-lib:org.jenkinsci.plugins.workflow.cps.global.WorkflowLibRepositoryListener]`
+
++++ A listener to respond to the receipt of packs by the+++ jenkinsdoc:WorkflowLibRepository] ++++++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/workflow-cps-global-lib[Pipeline: Deprecated Groovy Libraries Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++cps.+++<wbr/>+++global.+++<wbr/>+++**UserDefinedGlobalVariableRepoListener** (link:https://github.com/jenkinsci/workflow-cps-global-lib-plugin/search?q=UserDefinedGlobalVariableRepoListener&type=Code[view on GitHub])
+

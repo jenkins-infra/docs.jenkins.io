@@ -1,0 +1,20 @@
+= Extension Points defined in Label Verifier Plugin
+
+https://plugins.jenkins.io/label-verifier[Label Verifier Plugin]
+
+== LabelVerifier
+
+`jenkinsdoc:label-verifier:hudson.plugins.label_verifier.LabelVerifier]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/label-verifier[Label Verifier Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++label_verifier.+++<wbr/>+++logic.+++<wbr/>+++**AlwaysFalse** (link:https://github.com/jenkinsci/label-verifier-plugin/search?q=AlwaysFalse&type=Code[view on GitHub])
+* https://plugins.jenkins.io/label-verifier[Label Verifier Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++label_verifier.+++<wbr/>+++logic.+++<wbr/>+++**AlwaysTrue** (link:https://github.com/jenkinsci/label-verifier-plugin/search?q=AlwaysTrue&type=Code[view on GitHub])
+* https://plugins.jenkins.io/label-verifier[Label Verifier Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++label_verifier.+++<wbr/>+++logic.+++<wbr/>+++**And** (link:https://github.com/jenkinsci/label-verifier-plugin/search?q=And&type=Code[view on GitHub])
+* https://plugins.jenkins.io/label-verifier[Label Verifier Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++label_verifier.+++<wbr/>+++logic.+++<wbr/>+++**Not** (link:https://github.com/jenkinsci/label-verifier-plugin/search?q=Not&type=Code[view on GitHub])
+* https://plugins.jenkins.io/label-verifier[Label Verifier Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++label_verifier.+++<wbr/>+++logic.+++<wbr/>+++**Or** (link:https://github.com/jenkinsci/label-verifier-plugin/search?q=Or&type=Code[view on GitHub])
+* https://plugins.jenkins.io/label-verifier[Label Verifier Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++label_verifier.+++<wbr/>+++verifiers.+++<wbr/>+++**RegexNameVerifier** (link:https://github.com/jenkinsci/label-verifier-plugin/search?q=RegexNameVerifier&type=Code[view on GitHub])
+* https://plugins.jenkins.io/label-verifier[Label Verifier Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++label_verifier.+++<wbr/>+++verifiers.+++<wbr/>+++**ShellScriptVerifier** (link:https://github.com/jenkinsci/label-verifier-plugin/search?q=ShellScriptVerifier&type=Code[view on GitHub])
+

@@ -1,0 +1,19 @@
+= Extension Points defined in Authorize Project Plugin
+
+https://plugins.jenkins.io/authorize-project[Authorize Project Plugin]
+
+== AuthorizeProjectStrategy
+
+`jenkinsdoc:authorize-project:org.jenkinsci.plugins.authorizeproject.AuthorizeProjectStrategy]`
+
++++ Extension point to define a new strategy to authorize builds configured in project configuration pages.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/authorize-project[Authorize Project Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++authorizeproject.+++<wbr/>+++strategy.+++<wbr/>+++**AnonymousAuthorizationStrategy** (link:https://github.com/jenkinsci/authorize-project-plugin/search?q=AnonymousAuthorizationStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/authorize-project[Authorize Project Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++authorizeproject.+++<wbr/>+++strategy.+++<wbr/>+++**SpecificUsersAuthorizationStrategy** (link:https://github.com/jenkinsci/authorize-project-plugin/search?q=SpecificUsersAuthorizationStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/authorize-project[Authorize Project Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++authorizeproject.+++<wbr/>+++strategy.+++<wbr/>+++**SystemAuthorizationStrategy** (link:https://github.com/jenkinsci/authorize-project-plugin/search?q=SystemAuthorizationStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/authorize-project[Authorize Project Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++authorizeproject.+++<wbr/>+++strategy.+++<wbr/>+++**TriggeringUsersAuthorizationStrategy** (link:https://github.com/jenkinsci/authorize-project-plugin/search?q=TriggeringUsersAuthorizationStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: com.+++<wbr/>+++synopsys.+++<wbr/>+++arc.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++security.+++<wbr/>+++authorizeproject.+++<wbr/>+++**OwnershipAuthorizeProjectStrategy** (link:https://github.com/jenkinsci/ownership-plugin/search?q=OwnershipAuthorizeProjectStrategy&type=Code[view on GitHub])
+

@@ -1,0 +1,3 @@
+= Preparing a Groovy-based View for Localization
+
+:page-layout: wip

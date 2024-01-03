@@ -1,0 +1,52 @@
+= Extension Points defined in JUnit Plugin
+
+https://plugins.jenkins.io/junit[JUnit Plugin]
+
+== JunitTestResultStorage
+
+`jenkinsdoc:junit:io.jenkins.plugins.junit.storage.JunitTestResultStorage]`
+
++++ Allows test results to be saved and loaded from an external storage service.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/junit[JUnit Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++junit.+++<wbr/>+++storage.+++<wbr/>+++**FileJunitTestResultStorage** (link:https://github.com/jenkinsci/junit-plugin/search?q=FileJunitTestResultStorage&type=Code[view on GitHub])
+* https://plugins.jenkins.io/junit-sql-storage[Junit SQL Storage Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++junit.+++<wbr/>+++storage.+++<wbr/>+++database.+++<wbr/>+++**DatabaseTestResultStorage** (link:https://github.com/jenkinsci/junit-sql-storage-plugin/search?q=DatabaseTestResultStorage&type=Code[view on GitHub])
+
+
+== TestDataPublisher
+
+`jenkinsdoc:junit:hudson.tasks.junit.TestDataPublisher]`
+
++++ Contributes+++ jenkinsdoc:TestAction] +++s to test results.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/browserstack-integration[BrowserStack Plugin]: com.+++<wbr/>+++browserstack.+++<wbr/>+++automate.+++<wbr/>+++ci.+++<wbr/>+++jenkins.+++<wbr/>+++**AutomateTestDataPublisher** (link:https://github.com/jenkinsci/browserstack-integration-plugin/search?q=AutomateTestDataPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/claim[Claim Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++claim.+++<wbr/>+++**ClaimTestDataPublisher** (link:https://github.com/jenkinsci/claim-plugin/search?q=ClaimTestDataPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/flaky-test-handler[Flaky Test Handler Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++flakyTestHandler.+++<wbr/>+++plugin.+++<wbr/>+++**JUnitFlakyTestDataPublisher** (link:https://github.com/jenkinsci/flaky-test-handler-plugin/search?q=JUnitFlakyTestDataPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/JiraTestResultReporter[JiraTestResultReporter Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++JiraTestResultReporter.+++<wbr/>+++**JiraTestDataPublisher** (link:https://github.com/jenkinsci/JiraTestResultReporter-plugin/search?q=JiraTestDataPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/junit-attachments[JUnit Attachments Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++junitattachments.+++<wbr/>+++**AttachmentPublisher** (link:https://github.com/jenkinsci/junit-attachments-plugin/search?q=AttachmentPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/performance-signature-dynatrace[Performance Signature: Dynatrace AppMon Plugin]: de.+++<wbr/>+++tsystems.+++<wbr/>+++mms.+++<wbr/>+++apm.+++<wbr/>+++performancesignature.+++<wbr/>+++dynatrace.+++<wbr/>+++**PerfSigTestDataPublisher** (link:https://github.com/jenkinsci/performance-signature-dynatrace-plugin/search?q=PerfSigTestDataPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/mentor-questa-vrm[Questa VRM Plugin]: com.+++<wbr/>+++mentor.+++<wbr/>+++questa.+++<wbr/>+++ucdb.+++<wbr/>+++jenkins.+++<wbr/>+++**QuestaCoverageTestDataPublisher** (link:https://github.com/jenkinsci/mentor-questa-vrm-plugin/search?q=QuestaCoverageTestDataPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sauce-ondemand[Sauce OnDemand Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sauce_ondemand.+++<wbr/>+++**SauceOnDemandReportPublisher** (link:https://github.com/jenkinsci/sauce-ondemand-plugin/search?q=SauceOnDemandReportPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudtest[SOASTA CloudTest Plugin]: com.+++<wbr/>+++soasta.+++<wbr/>+++jenkins.+++<wbr/>+++**JunitResultPublisher** (link:https://github.com/jenkinsci/cloudtest-plugin/search?q=JunitResultPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/test-stability[Test stability history Plugin]: de.+++<wbr/>+++esailors.+++<wbr/>+++jenkins.+++<wbr/>+++teststability.+++<wbr/>+++**StabilityTestDataPublisher** (link:https://github.com/jenkinsci/test-stability-plugin/search?q=StabilityTestDataPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/testcafe[TestCafe Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++testcafe.+++<wbr/>+++**TestCafePublisher** (link:https://github.com/jenkinsci/testcafe-plugin/search?q=TestCafePublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/testingbot[TestingBot Plugin]: testingbot.+++<wbr/>+++**TestReporter** (link:https://github.com/jenkinsci/testingbot-plugin/search?q=TestReporter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/youtrack-plugin[youtrack-plugin Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++youtrack.+++<wbr/>+++test.+++<wbr/>+++**YoutrackTestDataPublisher** (link:https://github.com/jenkinsci/youtrack-plugin/search?q=YoutrackTestDataPublisher&type=Code[view on GitHub])
+
+
+== TestNameTransformer
+
+`jenkinsdoc:junit:hudson.tasks.junit.TestNameTransformer]`
+
++++ Allow extensions to transform the class/package/method name for JUnit test+++ +++ cases which will be displayed on the test result page.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/scala-junit-name-decoder[Scala JUnit Name Decoder Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++scalajunitnamedecoder.+++<wbr/>+++**ScalaTestNameTransformer** (link:https://github.com/jenkinsci/scala-junit-name-decoder-plugin/search?q=ScalaTestNameTransformer&type=Code[view on GitHub])
+

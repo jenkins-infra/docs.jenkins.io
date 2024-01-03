@@ -1,0 +1,21 @@
+= Extension Points defined in BuildContext Capture Plugin
+
+https://plugins.jenkins.io/buildcontext-capture[BuildContext Capture Plugin]
+
+== BuildContextCaptureType
+
+`jenkinsdoc:buildcontext-capture:org.jenkinsci.plugins.buildcontextcapture.type.BuildContextCaptureType]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/buildcontext-capture[BuildContext Capture Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildcontextcapture.+++<wbr/>+++type.+++<wbr/>+++impl.+++<wbr/>+++**BuildTimeType** (link:https://github.com/jenkinsci/buildcontext-capture-plugin/search?q=BuildTimeType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/buildcontext-capture[BuildContext Capture Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildcontextcapture.+++<wbr/>+++type.+++<wbr/>+++impl.+++<wbr/>+++**CommandType** (link:https://github.com/jenkinsci/buildcontext-capture-plugin/search?q=CommandType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/buildcontext-capture[BuildContext Capture Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildcontextcapture.+++<wbr/>+++type.+++<wbr/>+++impl.+++<wbr/>+++**EnvVarsType** (link:https://github.com/jenkinsci/buildcontext-capture-plugin/search?q=EnvVarsType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/buildcontext-capture[BuildContext Capture Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildcontextcapture.+++<wbr/>+++type.+++<wbr/>+++**FlexibleBuildContextCaptureType** (link:https://github.com/jenkinsci/buildcontext-capture-plugin/search?q=FlexibleBuildContextCaptureType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/buildcontext-capture[BuildContext Capture Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildcontextcapture.+++<wbr/>+++type.+++<wbr/>+++impl.+++<wbr/>+++**JobConfigType** (link:https://github.com/jenkinsci/buildcontext-capture-plugin/search?q=JobConfigType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/buildcontext-capture[BuildContext Capture Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildcontextcapture.+++<wbr/>+++type.+++<wbr/>+++impl.+++<wbr/>+++**JobInfraType** (link:https://github.com/jenkinsci/buildcontext-capture-plugin/search?q=JobInfraType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/buildcontext-capture[BuildContext Capture Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildcontextcapture.+++<wbr/>+++type.+++<wbr/>+++impl.+++<wbr/>+++**LogType** (link:https://github.com/jenkinsci/buildcontext-capture-plugin/search?q=LogType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/buildcontext-capture[BuildContext Capture Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildcontextcapture.+++<wbr/>+++type.+++<wbr/>+++**WizardBuildContextCaptureType** (link:https://github.com/jenkinsci/buildcontext-capture-plugin/search?q=WizardBuildContextCaptureType&type=Code[view on GitHub])
+

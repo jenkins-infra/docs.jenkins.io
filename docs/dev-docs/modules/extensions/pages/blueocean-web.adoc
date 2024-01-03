@@ -1,0 +1,17 @@
+= Extension Points defined in Web for Blue Ocean Plugin
+
+https://plugins.jenkins.io/blueocean-web[Web for Blue Ocean Plugin]
+
+== BluePageDecorator
+
+`jenkinsdoc:blueocean-web:io.jenkins.blueocean.BluePageDecorator]`
+
++++ Participates in the rendering of HTML pages for all pages of Hudson.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-config[Config API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++config.+++<wbr/>+++**RollbarDecorator** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=RollbarDecorator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/theme-manager[Theme Manager Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++thememanager.+++<wbr/>+++**ThemeManagerBluePageDecorator** (link:https://github.com/jenkinsci/theme-manager-plugin/search?q=ThemeManagerBluePageDecorator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-web[Web for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++**PageStatePreloadDecorator** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PageStatePreloadDecorator&type=Code[view on GitHub])
+

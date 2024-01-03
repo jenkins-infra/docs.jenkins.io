@@ -1,0 +1,16 @@
+= Extension Points defined in Bitbucket Branch Source Plugin
+
+https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]
+
+== BitbucketApiFactory
+
+`jenkinsdoc:cloudbees-bitbucket-branch-source:com.cloudbees.jenkins.plugins.bitbucket.api.BitbucketApiFactory]`
+
++++ Factory for creating+++ jenkinsdoc:BitbucketApi] +++instances to connect to a given server+++ jenkinsdoc:URL] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++client.+++<wbr/>+++**BitbucketCloudApiFactory** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=BitbucketCloudApiFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-bitbucket-branch-source[Bitbucket Branch Source Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucket.+++<wbr/>+++server.+++<wbr/>+++client.+++<wbr/>+++**BitbucketServerApiFactory** (link:https://github.com/jenkinsci/bitbucket-branch-source-plugin/search?q=BitbucketServerApiFactory&type=Code[view on GitHub])
+

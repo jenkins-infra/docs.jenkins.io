@@ -1,0 +1,44 @@
+= Extension Points defined in Subversion Plugin
+
+https://plugins.jenkins.io/subversion[Subversion Plugin]
+
+== SubversionCredentialProvider
+
+`jenkinsdoc:subversion:hudson.scm.SubversionCredentialProvider]`
+
++++ Extension point for programmatically providing a credential (such as username/password) for+++ +++ Subversion access.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== SubversionRepositoryStatus.+++<wbr/>+++Listener
+
+`jenkinsdoc:subversion:hudson.scm.SubversionRepositoryStatus.Listener]`
+
++++ An extension point to allow things other than jobs to listen for repository status updates.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/subversion[Subversion Plugin]: hudson.+++<wbr/>+++scm.+++<wbr/>+++**SubversionRepositoryStatus.+++<wbr/>+++JobTriggerListenerImpl** (link:https://github.com/jenkinsci/subversion-plugin/search?q=SubversionRepositoryStatus.JobTriggerListenerImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/subversion[Subversion Plugin]: jenkins.+++<wbr/>+++scm.+++<wbr/>+++impl.+++<wbr/>+++subversion.+++<wbr/>+++**SubversionSCMSource.+++<wbr/>+++ListenerImpl** (link:https://github.com/jenkinsci/subversion-plugin/search?q=SubversionSCMSource.ListenerImpl&type=Code[view on GitHub])
+
+
+== WorkspaceUpdater
+
+`jenkinsdoc:subversion:hudson.scm.subversion.WorkspaceUpdater]`
+
++++ Encapsulates the logic of how files are obtained from a subversion repository.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/subversion[Subversion Plugin]: hudson.+++<wbr/>+++scm.+++<wbr/>+++subversion.+++<wbr/>+++**CheckoutUpdater** (link:https://github.com/jenkinsci/subversion-plugin/search?q=CheckoutUpdater&type=Code[view on GitHub])
+* https://plugins.jenkins.io/subversion[Subversion Plugin]: hudson.+++<wbr/>+++scm.+++<wbr/>+++subversion.+++<wbr/>+++**NoopUpdater** (link:https://github.com/jenkinsci/subversion-plugin/search?q=NoopUpdater&type=Code[view on GitHub])
+* https://plugins.jenkins.io/subversion[Subversion Plugin]: hudson.+++<wbr/>+++scm.+++<wbr/>+++subversion.+++<wbr/>+++**UpdateUpdater** (link:https://github.com/jenkinsci/subversion-plugin/search?q=UpdateUpdater&type=Code[view on GitHub])
+* https://plugins.jenkins.io/subversion[Subversion Plugin]: hudson.+++<wbr/>+++scm.+++<wbr/>+++subversion.+++<wbr/>+++**UpdateWithCleanUpdater** (link:https://github.com/jenkinsci/subversion-plugin/search?q=UpdateWithCleanUpdater&type=Code[view on GitHub])
+* https://plugins.jenkins.io/subversion[Subversion Plugin]: hudson.+++<wbr/>+++scm.+++<wbr/>+++subversion.+++<wbr/>+++**UpdateWithRevertUpdater** (link:https://github.com/jenkinsci/subversion-plugin/search?q=UpdateWithRevertUpdater&type=Code[view on GitHub])
+

@@ -1,0 +1,17 @@
+= Extension Points defined in Sumologic Publisher Plugin
+
+https://plugins.jenkins.io/sumologic-publisher[Sumologic Publisher Plugin]
+
+== SumoPipelineJobIdentifier
+
+`jenkinsdoc:sumologic-publisher:com.sumologic.jenkins.jenkinssumologicplugin.pipeline.SumoPipelineJobIdentifier]`
+
++++ Sumo Logic plugin for Jenkins model.+++ +++
+<p>+++ +++ Identify the Pipeline stages information+++ +++</p>
+<p>+++ +++ Created by Sourabh Jain on 5/2019.+++</p>
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/sumologic-publisher[Sumologic Publisher Plugin]: com.+++<wbr/>+++sumologic.+++<wbr/>+++jenkins.+++<wbr/>+++jenkinssumologicplugin.+++<wbr/>+++pipeline.+++<wbr/>+++**PipelineStageExtractor** (link:https://github.com/jenkinsci/sumologic-publisher-plugin/search?q=PipelineStageExtractor&type=Code[view on GitHub])
+

@@ -1,0 +1,35 @@
+= Extension Points defined in Matrix Authorization Strategy Plugin
+
+https://plugins.jenkins.io/matrix-auth[Matrix Authorization Strategy Plugin]
+
+== AmbiguityMonitor.+++<wbr/>+++Contributor
+
+`jenkinsdoc:matrix-auth:org.jenkinsci.plugins.matrixauth.AmbiguityMonitor.Contributor]`
+
++++ Implementations must provide a {@code entries.jelly} file to display their ambiguous items as top-level {@code
+<li>} items (it will be displayed in a {@code
+<ul>
+}.+++
+</ul></li>
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/matrix-auth[Matrix Authorization Strategy Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++matrixauth.+++<wbr/>+++**AmbiguityMonitor.+++<wbr/>+++GlobalConfigurationContributor** (link:https://github.com/jenkinsci/matrix-auth-plugin/search?q=AmbiguityMonitor.GlobalConfigurationContributor&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-auth[Matrix Authorization Strategy Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++matrixauth.+++<wbr/>+++**AmbiguityMonitor.+++<wbr/>+++JobContributor** (link:https://github.com/jenkinsci/matrix-auth-plugin/search?q=AmbiguityMonitor.JobContributor&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-auth[Matrix Authorization Strategy Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++matrixauth.+++<wbr/>+++**AmbiguityMonitor.+++<wbr/>+++NodeContributor** (link:https://github.com/jenkinsci/matrix-auth-plugin/search?q=AmbiguityMonitor.NodeContributor&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-auth[Matrix Authorization Strategy Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++folder.+++<wbr/>+++properties.+++<wbr/>+++**FolderContributor** (link:https://github.com/jenkinsci/matrix-auth-plugin/search?q=FolderContributor&type=Code[view on GitHub])
+
+
+== InheritanceStrategy
+
+`jenkinsdoc:matrix-auth:org.jenkinsci.plugins.matrixauth.inheritance.InheritanceStrategy]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/matrix-auth[Matrix Authorization Strategy Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++matrixauth.+++<wbr/>+++inheritance.+++<wbr/>+++**InheritGlobalStrategy** (link:https://github.com/jenkinsci/matrix-auth-plugin/search?q=InheritGlobalStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-auth[Matrix Authorization Strategy Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++matrixauth.+++<wbr/>+++inheritance.+++<wbr/>+++**InheritParentStrategy** (link:https://github.com/jenkinsci/matrix-auth-plugin/search?q=InheritParentStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-auth[Matrix Authorization Strategy Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++matrixauth.+++<wbr/>+++inheritance.+++<wbr/>+++**NonInheritingStrategy** (link:https://github.com/jenkinsci/matrix-auth-plugin/search?q=NonInheritingStrategy&type=Code[view on GitHub])
+

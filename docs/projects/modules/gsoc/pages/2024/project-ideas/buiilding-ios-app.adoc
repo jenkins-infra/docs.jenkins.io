@@ -1,0 +1,57 @@
+= Building iOS Apps with Jenkins
+
+*Project goal:* Describe best practices and provide architectural templates for building iOS applications with Jenkins
+
+*Skills to study/improve:* Java, YAML, iOS development, Command line tools, Package management tool theory
+
+NOTE: This idea is published as a draft under active discussion, but it is confirmed in principle. It is FINE to apply to it. The scope and the suggested implementation may change significantly before the final version is published. Sections like quickstart guide and newbie-friendly issues may be also missing. As a contributor, you are welcome to request additional information and to join the discussions using channels linked on this page.
+
+== Details 
+=== Background
+
+Topics such as _how to proceed_, _what are the successful patterns_, and _what are the pitfalls_ are poorly documented. 
+It very often requires potential users and Jenkins Administrators to "reinvent the wheel".
+
+The project idea is to have a clear status of what can be done with Jenkins for iOS app builds now.
+There are only a few articles here and there about iOS.
+
+
+=== Skills to Study and Improve
+
+- Jenkins technical architecture
+- iOS application development
+- CI principle and practice
+
+
+=== Project Difficulty Level
+
+Beginner to Intermediate
+
+
+=== Expected outcomes
+
+* A working iOS application CI build with Jenkins from a public GitHub public repository (Proof of Concept).
+* A proposed architecture that would work for almost anyone (so Docker whenever it’s possible, or virtual machines) using a public GitHub repo.
+* The required additional tooling to make it all work.
+* At least one blog post explaining how to replicate the POC, preferably a full documentation to be integrated in Jenkins.io
+
+
+Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase.
+
+
+== Potential Mentors
+
+[.avatar]
+image:images:ROOT:avatars/krisstern.png[,width=30,height=30] Kris Stern
+
+== Project Links
+
+* image:https://img.shields.io/badge/gitter-join_chat-light_green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_role-strategy-plugin%3Agitter.im[Static Badge,link=https://app.gitter.im/#/room/#jenkinsci_gsoc-sig:gitter.im]
+* xref:gsoc:index.adoc#office-hours[Meetings]
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2024/project-ideas.adoc[Go back to other GSoC 2024 project ideas]

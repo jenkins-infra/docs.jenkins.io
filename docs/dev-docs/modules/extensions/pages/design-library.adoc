@@ -1,0 +1,46 @@
+= Extension Points defined in Design Library Plugin
+
+https://plugins.jenkins.io/design-library[Design Library Plugin]
+
+== Select.+++<wbr/>+++Fruit
+
+`jenkinsdoc:design-library:io.jenkins.plugins.designlibrary.Select.Fruit]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Select.+++<wbr/>+++Apple** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Select.Apple&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Select.+++<wbr/>+++Banana** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Select.Banana&type=Code[view on GitHub])
+
+
+== UISample
+
+`jenkinsdoc:design-library:io.jenkins.plugins.designlibrary.UISample]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**AppBar** (link:https://github.com/jenkinsci/design-library-plugin/search?q=AppBar&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Buttons** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Buttons&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Checkboxes** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Checkboxes&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Colors** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Colors&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Conventions** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Conventions&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**File** (link:https://github.com/jenkinsci/design-library-plugin/search?q=File&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**HeteroList** (link:https://github.com/jenkinsci/design-library-plugin/search?q=HeteroList&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**JavaScriptProxy** (link:https://github.com/jenkinsci/design-library-plugin/search?q=JavaScriptProxy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Layouts** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Layouts&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Links** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Links&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Notifications** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Notifications&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Progress** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Progress&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Radios** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Radios&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Select** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Select&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Spacing** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Spacing&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Symbols** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Symbols&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Table** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Table&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**TextBox** (link:https://github.com/jenkinsci/design-library-plugin/search?q=TextBox&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**ToggleSwitch** (link:https://github.com/jenkinsci/design-library-plugin/search?q=ToggleSwitch&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Tooltips** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Tooltips&type=Code[view on GitHub])
+* https://plugins.jenkins.io/design-library[Design Library Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++designlibrary.+++<wbr/>+++**Validation** (link:https://github.com/jenkinsci/design-library-plugin/search?q=Validation&type=Code[view on GitHub])
+

@@ -1,0 +1,17 @@
+= Extension Points defined in Pull Request Monitoring Plugin
+
+https://plugins.jenkins.io/pull-request-monitoring[Pull Request Monitoring Plugin]
+
+== MonitorPortletFactory
+
+`jenkinsdoc:pull-request-monitoring:io.jenkins.plugins.monitoring.MonitorPortletFactory]`
+
++++
+<p>Defines the+++ jenkinsdoc:ExtensionPoint] +++to register one or more new pull request monitoring portlets.</p>+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/pull-request-monitoring[Pull Request Monitoring Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++monitoring.+++<wbr/>+++**DemoPortlet.+++<wbr/>+++ExampleMonitorFactory** (link:https://github.com/jenkinsci/pull-request-monitoring-plugin/search?q=DemoPortlet.ExampleMonitorFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/warnings-ng[Warnings Next Generation Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++analysis.+++<wbr/>+++core.+++<wbr/>+++portlets.+++<wbr/>+++**PullRequestMonitoringPortlet.+++<wbr/>+++PortletFactory** (link:https://github.com/jenkinsci/warnings-ng-plugin/search?q=PullRequestMonitoringPortlet.PortletFactory&type=Code[view on GitHub])
+

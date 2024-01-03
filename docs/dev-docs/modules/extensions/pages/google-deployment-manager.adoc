@@ -1,0 +1,32 @@
+= Extension Points defined in Google Deployment Manager Plugin
+
+https://plugins.jenkins.io/google-deployment-manager[Google Deployment Manager Plugin]
+
+== AbstractCloudDeployment
+
+`jenkinsdoc:google-deployment-manager:com.google.jenkins.plugins.manage.AbstractCloudDeployment]`
+
++++ Instances of this class represent a deployment being managed by the Google Cloud Deployment+++ +++ Manager.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/google-deployment-manager[Google Deployment Manager Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++manage.+++<wbr/>+++**CloudDeploymentDeleter** (link:https://github.com/jenkinsci/${project.gitProjectId}/search?q=CloudDeploymentDeleter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/google-deployment-manager[Google Deployment Manager Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++manage.+++<wbr/>+++**TemplatedCloudDeployment** (link:https://github.com/jenkinsci/${project.gitProjectId}/search?q=TemplatedCloudDeployment&type=Code[view on GitHub])
+
+
+== BuildStepDetailsProvider
+
+`jenkinsdoc:google-deployment-manager:com.google.jenkins.plugins.deploy.BuildStepDetailsProvider]`
+
++++
+<p>+++ +++ An extension to provide additional details for a given+++ jenkinsdoc:BuildStep] +++. Subclasses will need to+++ +++ overwrite+++ jenkinsdoc:=getDetails(BuildStep)] +++for the build step type they supported.+++ +++</p>+++ +++
+<p>+++ +++ To provide details for a new build step, add a class as+++ +++</p>+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/google-deployment-manager[Google Deployment Manager Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++deploy.+++<wbr/>+++**BuildStepDetailsProvider.+++<wbr/>+++MavenBuildStepDetailsProvider** (link:https://github.com/jenkinsci/${project.gitProjectId}/search?q=BuildStepDetailsProvider.MavenBuildStepDetailsProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/google-deployment-manager[Google Deployment Manager Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++deploy.+++<wbr/>+++**BuildStepDetailsProvider.+++<wbr/>+++ShellBuildStepDetailsProvider** (link:https://github.com/jenkinsci/${project.gitProjectId}/search?q=BuildStepDetailsProvider.ShellBuildStepDetailsProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/google-deployment-manager[Google Deployment Manager Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++deploy.+++<wbr/>+++**GoogleCloudManagerDeployer.+++<wbr/>+++DetailsProvider** (link:https://github.com/jenkinsci/${project.gitProjectId}/search?q=GoogleCloudManagerDeployer.DetailsProvider&type=Code[view on GitHub])
+

@@ -1,0 +1,17 @@
+= Extension Points defined in Git client Plugin
+
+https://plugins.jenkins.io/git-client[Git client Plugin]
+
+== SshHostKeyVerificationStrategy
+
+`jenkinsdoc:git-client:org.jenkinsci.plugins.gitclient.verifier.SshHostKeyVerificationStrategy]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/git-client[Git client Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++gitclient.+++<wbr/>+++verifier.+++<wbr/>+++**AcceptFirstConnectionStrategy** (link:https://github.com/jenkinsci/git-client-plugin/search?q=AcceptFirstConnectionStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git-client[Git client Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++gitclient.+++<wbr/>+++verifier.+++<wbr/>+++**KnownHostsFileVerificationStrategy** (link:https://github.com/jenkinsci/git-client-plugin/search?q=KnownHostsFileVerificationStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git-client[Git client Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++gitclient.+++<wbr/>+++verifier.+++<wbr/>+++**ManuallyProvidedKeyVerificationStrategy** (link:https://github.com/jenkinsci/git-client-plugin/search?q=ManuallyProvidedKeyVerificationStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git-client[Git client Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++gitclient.+++<wbr/>+++verifier.+++<wbr/>+++**NoHostKeyVerificationStrategy** (link:https://github.com/jenkinsci/git-client-plugin/search?q=NoHostKeyVerificationStrategy&type=Code[view on GitHub])
+

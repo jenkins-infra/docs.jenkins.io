@@ -1,0 +1,112 @@
+= Pipeline as Code with Jenkins
+
+The default interaction model with Jenkins, historically, has been very web UI
+driven, requiring users to manually create jobs, then manually fill in the
+details through a web browser. This requires additional effort to create and
+manage jobs to test and build multiple projects, it also keeps the
+configuration of a job to build/test/deploy separate from the actual code being
+built/tested/deployed. This prevents users from applying their existing CI/CD
+best practices to the job configurations themselves.
+
+
+== Pipeline
+
+With the introduction of the {plugin}workflow-aggregator[Pipeline plugin],
+users now can implement a project's entire build/test/deploy pipeline
+in a `Jenkinsfile` and store that alongside their code, treating their
+pipeline as another piece of code checked into source control.
+
+The Pipeline plugin was inspired by the
+link:https://wiki.jenkins.io/display/JENKINS/Build+Flow+Plugin[Build Flow
+plugin] but aims to improve upon some concepts explored by Build Flow with
+features like:
+
+* the ability to suspend/resume of executing jobs.
+* checking the pipeline definition into source control (`Jenkinsfile`)
+* support for extending the domain specific language with additional,
+  organization specific steps, via the
+  "xref:user-docs:pipeline:shared-libraries.adoc[Shared Libraries]" feature.
+
+In an adjacent space is the
+{plugin}job-dsl[Job DSL plugin]
+which is worth mentioning as well.
+
+
+== Getting Started
+
+* xref:user-docs:pipeline:getting-started.adocGetting Started with Pipeline]
+* The {plugin}workflow-aggregator[Pipeline plugin]
+  has a fairly comprehensive
+  link:https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md[tutorial]
+  checked into its source tree too.
+* link:https://dzone.com/refcardz/continuous-delivery-with-jenkins-pipeline[DZone Refcard]
+
+== Demos
+
+Pipeline tutorials you can run locally.
+
+* xref:tutorials:ROOT:build-a-java-app-with-maven.adoc[Build a Java app with Maven]
+* xref:tutorials:ROOT:build-a-node-js-and-react-app-with-npm.adoc[Build a Node.js and React appl with npm]
+* xref:tutorials:ROOT:build-a-python-app-with-pyinstaller.adoc[Python application with PyInstaller]
+* xref:tutorials:ROOT:build-a-labview-app.adoc[Build a LabVIEW app]
+
+Demonstrations of Pipeline functionality you can run locally.
+
+* link:https://hub.docker.com/r/jenkinsci/workflow-demo/[continuous delivery]
+* link:https://hub.docker.com/r/jenkinsci/pipeline-as-code-github-demo/[GitHub organization folders]
+* link:https://hub.docker.com/r/jenkinsci/docker-workflow-demo/[build, test, and publish with Docker]
+
+== Additional resources
+
+* {plugin}workflow-aggregator[Pipeline Plugin page]
+* link:https://github.com/jenkinsci/workflow-plugin/blob/master/COMPATIBILITY.md[Plugins compatible with Pipeline]
+* link:https://stackoverflow.com/questions/tagged/jenkins-pipeline[Stack Overflow "jenkins-pipeline" tag]
+* link:https://github.com/jenkinsci/pipeline-examples[Examples/snippets repository]
+
+
+== Presentations
+
+A presentation by link:https://github.com/kohsuke[Kohsuke Kawaguchi], link:https://github.com/markewaite[Mark Waite], and Tyler Johnson:
+
+++++
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/79HfmjeOTEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+++++
+
+The presentations below were given by link:https://github.com/jglick[Jesse Glick], author of the {plugin}workflow-aggregator[Pipeline Plugin]
+
+++++
+<center>
+<iframe width="560" height="315" frameborder="0"
+  src="https://www.youtube-nocookie.com/embed/VkIzoU7zYzE"></iframe>
+</center>
+++++
+
+* link:https://www.youtube.com/watch?v=gpaV6x9QwDo[2014 presentation] (with link:https://www.cloudbees.com/sites/default/files/2014-0618-Boston-Jesse_Glick-Workflow.pdf[slides])
+
+Other presentations:
+
+* link:https://www.slideshare.net/cloudbees/pimp-your-continuous-delivery-pipeline-with-jenkins-workflow-wjax-14[Pimp your Continuous Delivery Pipeline with Jenkins workflow (W-JAX 14)] by link:https://github.com/cyrille-leclerc[Cyrille Le Clerc]
+
+.Jenkins ♥ Continuous Delivery Articles
+****
+https://jenkins.io/blog/2015/12/03/pipeline-as-code-with-multibranch-workflows-in-jenkins[Multibranch Workflows in Jenkins]
+
+jenkins.io
+****
+
+.Continuous Delivery plugins for Jenkins
+****
+{plugin}workflow-aggregator[Pipeline plugin]
+
+allows creating Pipeline scripts for defining build/test/deploy stages of a delivery pipeline
+
+{plugin}pipeline-utility-steps[Pipeline Utility Steps plugin]
+
+provides a number of addition, useful, steps to the Pipeline DSL
+
+{plugin}job-dsl[Job DSL plugin]
+
+creates a DSL to orchestrate job creation
+****

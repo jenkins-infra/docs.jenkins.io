@@ -1,0 +1,78 @@
+= Plugin Installation Manager Tool Improvements
+// goal: "Introduce new features and improvements in the plugin installation manager"
+// category: Tools
+// year: 2021
+// status: published
+// sig: platform
+// skills:
+// - Java
+// - YAML
+// - Command line tools
+// - Package management tool theory
+// mentors:
+// # TBC
+// #- "kwhetstone"
+// #- "timja"
+// - "oleg_nenashev"
+// - "sladyn98"
+
+// links:
+//   gitter: "jenkinsci_plugin-installation-manager-cli-tool:gitter.im"
+//   draft: https://docs.google.com/document/d/1s-dLUfU1OK-88bCj-GKaNuFfJQlQNLTWtacKkVMVmHc
+// ---
+
+*Project goal:* Introduce new features and improvements in the plugin installation manager
+
+*Skills to study/improve:* Java, YAML, Command line tools, Package management tool theory
+
+== Details 
+=== Background
+In 2019 there was a Jenkins Google Summer of Code project to create a tool to automatically install plugins from the command line based on a provided input.
+This is meant to help with creating reproducible environments and other places where you would want to install a certain set of plugins.
+The project was successful in creating a useable tool to install plugins with a 1.0 release.
+Over time, the plugin installation manager was improved and added to other components like official Jenkins Docker images.
+
+As a part of this project,
+students are invited to introduce new features and improvements in the plugin installation manager.
+The list of enhancements is a subject for discovery as a part of the application process
+Some of the ideas are available in the link:https://github.com/jenkinsci/plugin-installation-manager-tool/issues[project tracker].
+
+=== Quick Start
+Visit the project page at https://github.com/jenkinsci/plugin-installation-manager-tool
+
+1. Clone the project
+2. Run the tests; there are several different lists of plugins
+3. Run the Plugin Installation Manager for various combinations of plugins with a real Jenkins instance.
+   See how the downloads and caching work.
+4. Try out some edge cases to see what could be improved.
+
+=== Skills to Study and Improve
+* Java
+* YAML/data structures/package management tools
+* Writing command line interfaces
+* How the Jenkins Docker image and Configuration as Code (CasC) work
+
+=== Newbie Friendly Issues
+
+Some newcomer-friendly issues are available in the link:https://github.com/jenkinsci/plugin-installation-manager-tool/issues[issue tracker].
+For information about how to contribute to and what to work on, please use the gitter channel.
+Since the project is in active development, these issues could be closed by the time you are looking at them.
+
+
+== Potential Mentors 
+
+image:images:ROOT:avatars/oleg_nenashev.png[,width=30,height=30] Oleg Nenashev
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Sladyn Nunes
+
+== Project Links
+
+* image:https://img.shields.io/badge/gitter%20-%20join_chat%20-%20light_green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_gsoc-sig%3Agitter.im[Static Badge,link=https://app.gitter.im/#/room/#jenkinsci_plugin-installation-manager-cli-tool:gitter.im]
+* xref:gsoc:index.adoc#office-hours[Office Hours]
+* https://docs.google.com/document/d/1s-dLUfU1OK-88bCj-GKaNuFfJQlQNLTWtacKkVMVmHc[Project Idea draft]
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2021/project-ideas.adoc[Go back to other GSoC 2021 project ideas]

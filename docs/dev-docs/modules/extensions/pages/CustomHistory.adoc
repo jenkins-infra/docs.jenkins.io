@@ -1,0 +1,15 @@
+= Extension Points defined in CustomHistory Plugin
+
+https://plugins.jenkins.io/CustomHistory[CustomHistory Plugin]
+
+== HistoryAggregator
+
+`jenkinsdoc:CustomHistory:org.jenkinsci.plugins.custom_history.HistoryAggregator]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/CustomHistory[CustomHistory Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++custom_history.+++<wbr/>+++**DependencyHistoryAggregator** (link:https://github.com/jenkinsci/custom-history-plugin/search?q=DependencyHistoryAggregator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/CustomHistory[CustomHistory Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++custom_history.+++<wbr/>+++**SubProjectHistoryAggregator** (link:https://github.com/jenkinsci/custom-history-plugin/search?q=SubProjectHistoryAggregator&type=Code[view on GitHub])
+

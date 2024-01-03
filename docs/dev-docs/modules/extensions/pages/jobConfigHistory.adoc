@@ -1,0 +1,15 @@
+= Extension Points defined in Job Configuration History Plugin
+
+https://plugins.jenkins.io/jobConfigHistory[Job Configuration History Plugin]
+
+== JobConfigHistoryStrategy
+
+`jenkinsdoc:jobConfigHistory:hudson.plugins.jobConfigHistory.JobConfigHistoryStrategy]`
+
++++ Controller class for adding new backends to the history plugin.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/jobConfigHistory[Job Configuration History Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++jobConfigHistory.+++<wbr/>+++**FileHistoryDao** (link:https://github.com/jenkinsci/job-config-history-plugin/search?q=FileHistoryDao&type=Code[view on GitHub])
+

@@ -1,0 +1,15 @@
+= Extension Points defined in Orka by MacStadium Plugin
+
+https://plugins.jenkins.io/macstadium-orka[Orka by MacStadium Plugin]
+
+== OrkaVerificationStrategy
+
+`jenkinsdoc:macstadium-orka:io.jenkins.plugins.orka.OrkaVerificationStrategy]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/macstadium-orka[Orka by MacStadium Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++orka.+++<wbr/>+++**AESVerificationStrategy** (link:https://github.com/jenkinsci/macstadium-orka-plugin/search?q=AESVerificationStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/macstadium-orka[Orka by MacStadium Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++orka.+++<wbr/>+++**DefaultVerificationStrategy** (link:https://github.com/jenkinsci/macstadium-orka-plugin/search?q=DefaultVerificationStrategy&type=Code[view on GitHub])
+

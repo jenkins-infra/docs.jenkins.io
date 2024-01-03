@@ -1,0 +1,19 @@
+= Extension Points defined in Jira Plugin
+
+https://plugins.jenkins.io/jira[Jira Plugin]
+
+== AbstractIssueSelector
+
+`jenkinsdoc:jira:hudson.plugins.jira.selector.AbstractIssueSelector`
+
++++ Strategy of finding issues which should be updated after completed run.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/jira[Jira Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++jira.+++<wbr/>+++selector.+++<wbr/>+++**DefaultIssueSelector** (link:https://github.com/jenkinsci/jira-plugin/search?q=DefaultIssueSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira[Jira Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++jira.+++<wbr/>+++selector.+++<wbr/>+++**ExplicitIssueSelector** (link:https://github.com/jenkinsci/jira-plugin/search?q=ExplicitIssueSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira[Jira Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++jira.+++<wbr/>+++selector.+++<wbr/>+++perforce.+++<wbr/>+++**JobIssueSelector** (link:https://github.com/jenkinsci/jira-plugin/search?q=JobIssueSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira[Jira Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++jira.+++<wbr/>+++selector.+++<wbr/>+++**JqlIssueSelector** (link:https://github.com/jenkinsci/jira-plugin/search?q=JqlIssueSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira[Jira Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++jira.+++<wbr/>+++selector.+++<wbr/>+++perforce.+++<wbr/>+++**P4JobIssueSelector** (link:https://github.com/jenkinsci/jira-plugin/search?q=P4JobIssueSelector&type=Code[view on GitHub])
+

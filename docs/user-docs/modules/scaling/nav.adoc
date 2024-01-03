@@ -1,0 +1,5 @@
+.xref:index.adoc[]
+* xref:architecting-for-scale.adoc[]
+* xref:hardware-recommendations.adoc[]
+* xref:architecting-for-manageability.adoc[]
+* xref:scaling-jenkins-on-kubernetes.adoc[]

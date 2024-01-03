@@ -1,0 +1,38 @@
+= Jenkins and Python
+
+Unlike compiled languages, Python doesn't need a "build" per se. Python
+projects can still benefit greatly from using Jenkins for continuous
+integration and delivery.
+
+In the Python ecosystem there are tools which can be integrated into Jenkins
+for testing/reporting such as:
+
+* link:https://github.com/nose-devs/nose2[nose2] and link:https://docs.pytest.org/en/latest[pytest]
+  for executing unit tests and generating JUnit-compatible XML test reports _and_
+  {plugin}cobertura[Cobertura]-compatible
+  code coverage reports.
+
+
+image::solutions:ROOT:jenkins-chart-nosetests.png[role=center]
+
+* link:https://www.pylint.org/[pylint] for generating code quality reports which
+  can be integrated directly into Jenkins for trending and reporting purposes.
+
+image::solutions:ROOT:jenkins-chart-pylint.png[role=center]
+
+(_images courtesy of link:http://www.alexconrad.org/2011/10/jenkins-and-python.html[Alex Conrad]_)
+
+== Resources
+
+Below are a collection of miscellaneous resources for working with Python on
+top of Jenkins. If you believe something is missing, please click ("link:https://github.com/jenkins-infra/jenkins.io/edit/master/content//solutions/python.adoc[here]") or the "Improve this Page" link in the lower right, and submit a pull request!
+
+=== Templates
+
+* link:https://github.com/bobuss/python-jenkins-template[Jenkins job template for a Python-based project using Nose]
+
+
+=== Using the Jenkins API
+
+* link:https://pythonhosted.org/jenkinsapi/[Jenkins API - Python client library for Jenkins' API]
+* link:https://python-jenkins.readthedocs.org/en/latest/[Python-Jenkins : Python Wrapper for Jenkins REST API]

@@ -1,0 +1,15 @@
+= Extension Points defined in Alauda Kubernetes Suport Plugin
+
+https://plugins.jenkins.io/alauda-kubernetes-support[Alauda Kubernetes Suport Plugin]
+
+== KubernetesClusterConfigurationListener
+
+`https://javadoc.jenkins.io/plugin/alauda-kubernetes-support/io/alauda/jenkins/devops/support/KubernetesClusterConfigurationListener.html[jenkinsdoc:alauda-kubernetes-support:io.alauda.jenkins.devops.support.KubernetesClusterConfigurationListener]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/alauda-devops-credentials-provider[Alauda DevOps Credentials Provider Plugin]: io.+++<wbr/>+++alauda.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++credentials.+++<wbr/>+++**KubernetesCredentialsProvider** (link:https://github.com/jenkinsci/alauda-devops-credentials-provider-plugin/search?q=KubernetesCredentialsProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/alauda-devops-pipeline[Alauda DevOps Pipeline Plugin]: com.+++<wbr/>+++alauda.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++cluster.+++<wbr/>+++**DefaultClusterRegistry** (link:https://github.com/jenkinsci/alauda-devops-pipeline-plugin/search?q=DefaultClusterRegistry&type=Code[view on GitHub])
+

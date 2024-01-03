@@ -1,0 +1,18 @@
+= Extension Points defined in Durable Task Plugin
+
+https://plugins.jenkins.io/durable-task[Durable Task Plugin]
+
+== DurableTask
+
+`jenkinsdoc:durable-task:org.jenkinsci.plugins.durabletask.DurableTask]`
+
++++ A task which may be run asynchronously on a build node and withstand disconnection of the slave agent.+++ +++ Should have a descriptor, and a {@code config.jelly} for form data binding.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/durable-task[Durable Task Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++durabletask.+++<wbr/>+++**BourneShellScript** (link:https://github.com/jenkinsci/durable-task-plugin/search?q=BourneShellScript&type=Code[view on GitHub])
+* https://plugins.jenkins.io/durable-task[Durable Task Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++durabletask.+++<wbr/>+++**FileMonitoringTask** (link:https://github.com/jenkinsci/durable-task-plugin/search?q=FileMonitoringTask&type=Code[view on GitHub])
+* https://plugins.jenkins.io/durable-task[Durable Task Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++durabletask.+++<wbr/>+++**PowershellScript** (link:https://github.com/jenkinsci/durable-task-plugin/search?q=PowershellScript&type=Code[view on GitHub])
+* https://plugins.jenkins.io/durable-task[Durable Task Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++durabletask.+++<wbr/>+++**WindowsBatchScript** (link:https://github.com/jenkinsci/durable-task-plugin/search?q=WindowsBatchScript&type=Code[view on GitHub])
+

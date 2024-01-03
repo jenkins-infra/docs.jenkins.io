@@ -1,0 +1,9 @@
+= Responding to Requests
+
+:page-layout: wip
+
+.References
+****
+* link:https://javadoc.jenkins.io/hudson/util/HttpResponses.html[HttpResponses Javadoc]
+* link:https://javadoc.jenkins.io/component/stapler/org/kohsuke/stapler/interceptor/RespondSuccess.html[RespondSuccess Javadoc]
+****

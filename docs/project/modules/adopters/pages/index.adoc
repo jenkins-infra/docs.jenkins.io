@@ -1,0 +1,130 @@
+:page-layout: artwork
+= Jenkins Adopters 
+
+++++
+<style>
+.doc .image img {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+.doc .tableblock strong {
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+.doc th.tableblock {
+    display: none;
+}
+
+.doc p.tableblock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+table.tableblock.frame-all.grid-all.stretch {
+    border-collapse: collapse;
+}
+
+.doc table.grid-all>*>tr>* {
+    border-width: 0;
+}
+
+.doc table.frame-all {
+    border-width: 0;
+}
+
+.doc {
+    height: auto;
+    width: 240px;
+}
+
+.doc td .halign-left .valign-top {
+    border: solid black 2px;
+}
+
+.doc table.tableblock td, .doc table.tableblock th {
+    padding: 1rem;
+}
+</style>
+++++
+
+This page provides a list of Jenkins adopters.
+
+---
+
+|===
+|||
+|*Anchore*
+image:images:ROOT:adopters/Anchore.jpg[height=256,link=https://anchore.com/]
+
+https://anchore.com/blog/jenkins-at-scale-with-anchore-vulnerability-scanning-compliance/[Blog post]
+
+|*Avoris Travel*
+image:images:ROOT:adopters/Avoris-Travel.jpg[width=240,height=141,link=https://www.avoristravel.com/]
+
+https://stories.jenkins.io/user-story/to-do-things-quickly-simply-and-in-a-powerful-way/[User Story]
+
+|*CERN*
+image:images:ROOT:adopters/CERN.jpg[height=256,link=https://home.cern/]
+
+https://stories.jenkins.io/user-story/to-facilitate-day-to-day-work/[User Story]
+
+|*CloudBees*
+image:images:ROOT:adopters/CloudBees.jpg[height=256,link=https://www.cloudbees.com/]
+
+https://www.cloudbees.com/jenkins[Details]
+
+|*D4Science*
+image:images:ROOT:adopters/D4Science.jpeg[height=256,link=https://www.d4science.org/]
+
+https://jenkinsistheway.io/case-studies/d4science-amps-up-their-scientific-research-platform-with-ci-cd-powered-by-jenkins/[User Story]
+
+|*JD.com*
+image:images:ROOT:adopters/JDcom.jpg[height=256,link=http://jd.com/]
+
+https://stories.jenkins.io/user-story/to-cast-magic-of-continuous-delivery/[User Story]
+
+|*KP Labs*
+image:images:ROOT:adopters/KP-Labs.png[height=256,link=https://www.kplabs.pl/en/]
+
+https://www.cloudbees.com/jenkins[Details]
+
+|*Preply*
+image:images:ROOT:adopters/Preply.png[height=256,link=https://preply.com/en/home]
+
+https://jenkinsistheway.io/case-studies/d4science-amps-up-their-scientific-research-platform-with-ci-cd-powered-by-jenkins/[User Story]
+
+|*Topdanmark*
+image:images:ROOT:adopters/Topdanmark.png[height=256,link=https://www.topdanmark.dk/]
+
+https://stories.jenkins.io/user-story/to-cast-magic-of-continuous-delivery/[User Story]
+
+|*Tymit*
+image:images:ROOT:adopters/Tymit.png[height=256,link=https://tymit.com/]
+
+https://stories.jenkins.io/user-story/to-scale-from-the-ground-up/[User Story]
+
+|*Add your org!*
+image:images:ROOT:adopters/ZZZ_add_your_company.png[height=256,link=contributing.html#add-your-org]
+
+xref:contributing.adoc#add-your-org[How to?]
+|
+|===
+
+== More adopters
+
+https://stackshare.io/jenkins[Stackshare] lists many more Jenkins adopters. According to the site, Jenkins has more than 3000 adopter companies which you can discover using its web interface and API. https://stackshare.io/jenkins[Jenkins on Stackshare]
+
+image::images:ROOT:adopters/stackshare.png[link=https://stackshare.io/jenkins]
+
+.References
+****
+* https://stackshare.io/jenkins[Jenkins on Stackshare]
+* https://stories.jenkins.io/[Jenkins stories - more case studies]
+* xref:contributing.adoc#add-your-org[Add your company to the listing]
+****

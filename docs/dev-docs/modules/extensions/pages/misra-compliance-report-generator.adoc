@@ -1,0 +1,16 @@
+= Extension Points defined in MISRA Compliance Report Plugin
+
+https://plugins.jenkins.io/misra-compliance-report-generator[MISRA Compliance Report Plugin]
+
+== WarningParser
+
+`jenkinsdoc:misra-compliance-report-generator:rortveiten.misra.WarningParser]`
+
++++ Abstract class with functions to parse warnings from a specific MISRA checker+++ +++ tool. Extend this class and implement the abstract methods in order to+++ +++ implement a parser for a new tool. See PCLintWarningParser for an example.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/misra-compliance-report-generator[MISRA Compliance Report Plugin]: rortveiten.+++<wbr/>+++misra.+++<wbr/>+++**CppcheckWarningParser** (link:https://github.com/jenkinsci/misra-compliance-report-generator-plugin/search?q=CppcheckWarningParser&type=Code[view on GitHub])
+* https://plugins.jenkins.io/misra-compliance-report-generator[MISRA Compliance Report Plugin]: rortveiten.+++<wbr/>+++misra.+++<wbr/>+++**PcLintWarningParser** (link:https://github.com/jenkinsci/misra-compliance-report-generator-plugin/search?q=PcLintWarningParser&type=Code[view on GitHub])
+

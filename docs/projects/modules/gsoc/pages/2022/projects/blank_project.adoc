@@ -1,0 +1,35 @@
+= Plugin Health Scoring system
+*Goal:*  Provide a 'plugin health indicator' for plugin maintainers and Jenkins administrators"
+category: tools
+
+
+tags:
+- gsoc2022
+- plugins
+
+student: arpoch
+
+
+
+//above links must be updated
+
+
+=== Abstract
+
+(to be described)
+
+=== Rationale
+
+(to be described)
+
+=== Implementation
+
+(to be described)
+
+=== Office hours
+
+Details about the Office Hours (general or specific)
+
+=== Links
+
+Here come some useful links

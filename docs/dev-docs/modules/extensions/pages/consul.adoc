@@ -1,0 +1,27 @@
+= Extension Points defined in Consul Plugin
+
+https://plugins.jenkins.io/consul[Consul Plugin]
+
+== ConsulClusterConfiguration
+
+`jenkinsdoc:consul:com.inneractive.jenkins.plugins.consul.configurations.ConsulClusterConfiguration]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== ConsulOperation
+
+`jenkinsdoc:consul:com.inneractive.jenkins.plugins.consul.ConsulOperation]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/consul[Consul Plugin]: com.+++<wbr/>+++inneractive.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++consul.+++<wbr/>+++operations.+++<wbr/>+++**ConsulGetKV** (link:https://github.com/jenkinsci/consul-plugin/search?q=ConsulGetKV&type=Code[view on GitHub])
+* https://plugins.jenkins.io/consul[Consul Plugin]: com.+++<wbr/>+++inneractive.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++consul.+++<wbr/>+++operations.+++<wbr/>+++**ConsulServiceDiscoveryOperation** (link:https://github.com/jenkinsci/consul-plugin/search?q=ConsulServiceDiscoveryOperation&type=Code[view on GitHub])
+* https://plugins.jenkins.io/consul[Consul Plugin]: com.+++<wbr/>+++inneractive.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++consul.+++<wbr/>+++operations.+++<wbr/>+++**ConsulSetKV** (link:https://github.com/jenkinsci/consul-plugin/search?q=ConsulSetKV&type=Code[view on GitHub])
+

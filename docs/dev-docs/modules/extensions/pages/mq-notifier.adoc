@@ -1,0 +1,17 @@
+= Extension Points defined in MQ Notifier Plugin
+
+https://plugins.jenkins.io/mq-notifier[MQ Notifier Plugin]
+
+== MQDataProvider
+
+`jenkinsdoc:mq-notifier:com.sonymobile.jenkins.plugins.mq.mqnotifier.providers.MQDataProvider]`
+
++++ Provides data for the notifier to send.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/build-failure-analyzer[Build Failure Analyzer Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bfa.+++<wbr/>+++providers.+++<wbr/>+++**FailureCauseProvider** (link:https://github.com/jenkinsci/build-failure-analyzer-plugin/search?q=FailureCauseProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/mq-notifier[MQ Notifier Plugin]: com.+++<wbr/>+++sonymobile.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++mq.+++<wbr/>+++mqnotifier.+++<wbr/>+++providers.+++<wbr/>+++**CauseProvider** (link:https://github.com/jenkinsci/mq-notifier-plugin/search?q=CauseProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/mq-notifier[MQ Notifier Plugin]: com.+++<wbr/>+++sonymobile.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++mq.+++<wbr/>+++mqnotifier.+++<wbr/>+++providers.+++<wbr/>+++**ParameterProvider** (link:https://github.com/jenkinsci/mq-notifier-plugin/search?q=ParameterProvider&type=Code[view on GitHub])
+

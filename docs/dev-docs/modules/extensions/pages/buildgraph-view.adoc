@@ -1,0 +1,18 @@
+= Extension Points defined in buildgraph-view Plugin
+
+https://plugins.jenkins.io/buildgraph-view[buildgraph-view Plugin]
+
+== DownStreamRunDeclarer
+
+`jenkinsdoc:buildgraph-view:org.jenkinsci.plugins.buildgraphview.DownStreamRunDeclarer]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/buildgraph-view[buildgraph-view Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildgraphview.+++<wbr/>+++**FlowDownStreamRunDeclarer** (link:https://github.com/jenkinsci/buildgraph-view-plugin/search?q=FlowDownStreamRunDeclarer&type=Code[view on GitHub])
+* https://plugins.jenkins.io/buildgraph-view[buildgraph-view Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildgraphview.+++<wbr/>+++**MatrixBuildDownstreamDeclarer** (link:https://github.com/jenkinsci/buildgraph-view-plugin/search?q=MatrixBuildDownstreamDeclarer&type=Code[view on GitHub])
+* https://plugins.jenkins.io/buildgraph-view[buildgraph-view Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildgraphview.+++<wbr/>+++**ParameterizedBuildTriggerDownStreamRunDeclarer** (link:https://github.com/jenkinsci/buildgraph-view-plugin/search?q=ParameterizedBuildTriggerDownStreamRunDeclarer&type=Code[view on GitHub])
+* https://plugins.jenkins.io/buildgraph-view[buildgraph-view Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildgraphview.+++<wbr/>+++**PromotedBuildTriggerDownStreamRunDeclarer** (link:https://github.com/jenkinsci/buildgraph-view-plugin/search?q=PromotedBuildTriggerDownStreamRunDeclarer&type=Code[view on GitHub])
+* https://plugins.jenkins.io/buildgraph-view[buildgraph-view Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildgraphview.+++<wbr/>+++**UpstreamCauseDonwStreamRunDeclarer** (link:https://github.com/jenkinsci/buildgraph-view-plugin/search?q=UpstreamCauseDonwStreamRunDeclarer&type=Code[view on GitHub])
+

@@ -1,0 +1,15 @@
+= Extension Points defined in Publish Over FTP Plugin
+
+https://plugins.jenkins.io/publish-over-ftp[Publish Over FTP Plugin]
+
+== FtpDefaults
+
+`jenkinsdoc:publish-over-ftp:jenkins.plugins.publish_over_ftp.options.FtpDefaults]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/publish-over-ftp[Publish Over FTP Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++publish_over_ftp.+++<wbr/>+++options.+++<wbr/>+++**FtpOverrideDefaults** (link:https://github.com/jenkinsci/publish-over-ftp-plugin/search?q=FtpOverrideDefaults&type=Code[view on GitHub])
+* https://plugins.jenkins.io/publish-over-ftp[Publish Over FTP Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++publish_over_ftp.+++<wbr/>+++options.+++<wbr/>+++**FtpPluginDefaults** (link:https://github.com/jenkinsci/publish-over-ftp-plugin/search?q=FtpPluginDefaults&type=Code[view on GitHub])
+

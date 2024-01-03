@@ -1,0 +1,8 @@
+= Jenkins CLI
+
+.References
+****
+* xref:user-docs:managing:cli.adoc[CLI user documentation in the User Handbook]
+* link:https://wiki.jenkins.io/display/JENKINS/Jenkins+CLI[CLI documentation on the Jenkins wiki]
+* link:https://github.com/jenkins-zh/jenkins-cli[Jenkins CLI written in Go]
+****

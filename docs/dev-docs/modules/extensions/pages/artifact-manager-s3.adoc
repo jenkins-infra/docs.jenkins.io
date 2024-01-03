@@ -1,0 +1,16 @@
+= Extension Points defined in Artifact Manager on S3 Plugin
+
+https://plugins.jenkins.io/artifact-manager-s3[Artifact Manager on S3 Plugin]
+
+== BlobStoreProvider
+
+`jenkinsdoc:artifact-manager-s3:io.jenkins.plugins.artifact_manager_jclouds.BlobStoreProvider]`
+
++++ Provider for jclouds-based blob stores usable for artifact storage.+++ +++ An instance will be copied into a build record together with any fields it defines.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/artifact-manager-s3[Artifact Manager on S3 Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++artifact_manager_jclouds.+++<wbr/>+++s3.+++<wbr/>+++**S3BlobStore** (link:https://github.com/jenkinsci/artifact-manager-s3-plugin/search?q=S3BlobStore&type=Code[view on GitHub])
+* https://plugins.jenkins.io/artifact-manager-s3[Artifact Manager on S3 Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++artifact_manager_jclouds.+++<wbr/>+++s3.+++<wbr/>+++**S3BlobStoreConfig.+++<wbr/>+++S3BlobStoreTester** (link:https://github.com/jenkinsci/artifact-manager-s3-plugin/search?q=S3BlobStoreConfig.S3BlobStoreTester&type=Code[view on GitHub])
+

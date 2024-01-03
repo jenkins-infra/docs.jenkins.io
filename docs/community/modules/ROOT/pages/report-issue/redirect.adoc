@@ -1,0 +1,42 @@
+= Report an issue in a plugin
+
+++++
+<style>
+.doc {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.doc .sidebarblock {
+  margin:1rem;
+}
+</style>
+++++
+
+Choose the kind of issue you'd like to report below. *Please be sure to follow the advice on xref:community:ROOT:index.adoc[how to report great issues]*.
+[.participate-connect]
+.Bug
+****
+Report that something is broken.
+
+[.button]
+https://issues.jenkins.io/secure/CreateIssueDetails!init.jspa?pid=10172&issuetype=1&priority=4[Continue]
+****
+
+[.participate-meet]
+.Improvement
+****
+Request a new feature or improvement.
+
+[.button]
+https://issues.jenkins.io/secure/CreateIssueDetails!init.jspa?pid=10172&issuetype=2&priority=4[Continue]
+****
+
+[.participate-code]
+.Security Issue
+****
+Report a security issue privately. xref:security:ROOT:reporting.adoc[Learn more...]
+
+[.button]
+https://issues.jenkins.io/secure/CreateIssueDetails!init.jspa?pid=10180&issuetype=10103&components=17329[Continue]
+****

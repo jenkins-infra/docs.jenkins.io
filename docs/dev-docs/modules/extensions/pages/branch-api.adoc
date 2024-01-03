@@ -1,0 +1,131 @@
+= Extension Points defined in Branch API Plugin
+
+https://plugins.jenkins.io/branch-api[Branch API Plugin]
+
+== BranchBuildStrategy
+
+`jenkinsdoc:branch-api:jenkins.branch.BranchBuildStrategy]`
+
++++ An extension point that allows controlling whether a specific+++ jenkinsdoc:SCMHead] +++should be automatically built when+++ +++ discovered.+++ +++
+<p>+++ +++ Methods marked as {@code SPI:} are intended to be implemented by implementers of+++ jenkinsdoc:BranchBuildStrategy] +++.+++ +++ Methods marked as {@code API:} are intended to be invoked consumers of+++ jenkinsdoc:BranchBuildStrategy] +++.+++ +++ A consumer invoking a {@code SPI:} method may get a+++ jenkinsdoc:UnsupportedOperationException] +++.+++ +++ Methods marked as {@code SPI:} are only to be invoked through the API methods in order to allow safe evolution.+++ +++ Changing the API may require updating any SPI implementations that are also API consumers, specifically the Any,+++ +++ All and None implementations in basic-branch-build-strategies+++</p>
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/basic-branch-build-strategies[Basic Branch Build Strategies Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++buildstrategies.+++<wbr/>+++basic.+++<wbr/>+++**AllBranchBuildStrategyImpl** (link:https://github.com/jenkinsci/basic-branch-build-strategies-plugin/search?q=AllBranchBuildStrategyImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/basic-branch-build-strategies[Basic Branch Build Strategies Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++buildstrategies.+++<wbr/>+++basic.+++<wbr/>+++**AnyBranchBuildStrategyImpl** (link:https://github.com/jenkinsci/basic-branch-build-strategies-plugin/search?q=AnyBranchBuildStrategyImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/basic-branch-build-strategies[Basic Branch Build Strategies Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++buildstrategies.+++<wbr/>+++basic.+++<wbr/>+++**BranchBuildStrategyImpl** (link:https://github.com/jenkinsci/basic-branch-build-strategies-plugin/search?q=BranchBuildStrategyImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/basic-branch-build-strategies[Basic Branch Build Strategies Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++buildstrategies.+++<wbr/>+++basic.+++<wbr/>+++**ChangeRequestBuildStrategyImpl** (link:https://github.com/jenkinsci/basic-branch-build-strategies-plugin/search?q=ChangeRequestBuildStrategyImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/basic-branch-build-strategies[Basic Branch Build Strategies Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++buildstrategies.+++<wbr/>+++basic.+++<wbr/>+++**NamedBranchBuildStrategyImpl** (link:https://github.com/jenkinsci/basic-branch-build-strategies-plugin/search?q=NamedBranchBuildStrategyImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/basic-branch-build-strategies[Basic Branch Build Strategies Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++buildstrategies.+++<wbr/>+++basic.+++<wbr/>+++**NoneBranchBuildStrategyImpl** (link:https://github.com/jenkinsci/basic-branch-build-strategies-plugin/search?q=NoneBranchBuildStrategyImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/basic-branch-build-strategies[Basic Branch Build Strategies Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++buildstrategies.+++<wbr/>+++basic.+++<wbr/>+++**SkipInitialBuildOnFirstBranchIndexing** (link:https://github.com/jenkinsci/basic-branch-build-strategies-plugin/search?q=SkipInitialBuildOnFirstBranchIndexing&type=Code[view on GitHub])
+* https://plugins.jenkins.io/basic-branch-build-strategies[Basic Branch Build Strategies Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++buildstrategies.+++<wbr/>+++basic.+++<wbr/>+++**TagBuildStrategyImpl** (link:https://github.com/jenkinsci/basic-branch-build-strategies-plugin/search?q=TagBuildStrategyImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-pullrequest[GitHub Integration Plugin]: com.+++<wbr/>+++github.+++<wbr/>+++kostyasha.+++<wbr/>+++github.+++<wbr/>+++integration.+++<wbr/>+++multibranch.+++<wbr/>+++**GitHubBranchBuildStrategy** (link:https://github.com/jenkinsci/github-integration-plugin/search?q=GitHubBranchBuildStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ignore-committer-strategy[Ignore Committer Strategy Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++versent.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ignoreCommitterStrategy.+++<wbr/>+++**IgnoreCommitterStrategy** (link:https://github.com/jenkinsci/jenkins-ignore-committer-strategy-plugin/search?q=IgnoreCommitterStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multibranch-build-strategy-extension[Pipeline: Multibranch build strategy extension Plugin]: com.+++<wbr/>+++igalg.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multibranch.+++<wbr/>+++buildstrategy.+++<wbr/>+++**BranchBuildStrategyExtension** (link:https://github.com/jenkinsci/multibranch-build-strategy-extension/search?q=BranchBuildStrategyExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multibranch-build-strategy-extension[Pipeline: Multibranch build strategy extension Plugin]: com.+++<wbr/>+++igalg.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multibranch.+++<wbr/>+++buildstrategy.+++<wbr/>+++**ExcludeByIgnoreFileBranchBuildStrategy** (link:https://github.com/jenkinsci/multibranch-build-strategy-extension/search?q=ExcludeByIgnoreFileBranchBuildStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multibranch-build-strategy-extension[Pipeline: Multibranch build strategy extension Plugin]: com.+++<wbr/>+++igalg.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multibranch.+++<wbr/>+++buildstrategy.+++<wbr/>+++**ExcludeRegionBranchBuildStrategy** (link:https://github.com/jenkinsci/multibranch-build-strategy-extension/search?q=ExcludeRegionBranchBuildStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multibranch-build-strategy-extension[Pipeline: Multibranch build strategy extension Plugin]: com.+++<wbr/>+++igalg.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multibranch.+++<wbr/>+++buildstrategy.+++<wbr/>+++**IncludeRegionBranchBuildStrategy** (link:https://github.com/jenkinsci/multibranch-build-strategy-extension/search?q=IncludeRegionBranchBuildStrategy&type=Code[view on GitHub])
+
+
+== BranchProjectFactory
+
+`jenkinsdoc:branch-api:jenkins.branch.BranchProjectFactory]`
+
++++ Creates instances of the branch projects for a specific+++ jenkinsdoc:Branch] +++and also provides some utility methods for+++ +++ updating the branch specific projects.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/config-driven-pipeline[Config-Driven Pipeline Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++template.+++<wbr/>+++**ConfigDrivenWorkflowBranchProjectFactory** (link:https://github.com/jenkinsci/config-driven-pipeline-plugin/search?q=ConfigDrivenWorkflowBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multi-branch-project-plugin[Multi-Branch Project Plugin (DEPRECATED) Plugin]: com.+++<wbr/>+++github.+++<wbr/>+++mjdetullio.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multibranch.+++<wbr/>+++**FreeStyleBranchProjectFactory** (link:https://github.com/jenkinsci/multi-branch-project-plugin/search?q=FreeStyleBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multi-branch-project-plugin[Multi-Branch Project Plugin (DEPRECATED) Plugin]: com.+++<wbr/>+++github.+++<wbr/>+++mjdetullio.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multibranch.+++<wbr/>+++**IvyBranchProjectFactory** (link:https://github.com/jenkinsci/multi-branch-project-plugin/search?q=IvyBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multi-branch-project-plugin[Multi-Branch Project Plugin (DEPRECATED) Plugin]: com.+++<wbr/>+++github.+++<wbr/>+++mjdetullio.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multibranch.+++<wbr/>+++**MatrixBranchProjectFactory** (link:https://github.com/jenkinsci/multi-branch-project-plugin/search?q=MatrixBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multi-branch-project-plugin[Multi-Branch Project Plugin (DEPRECATED) Plugin]: com.+++<wbr/>+++github.+++<wbr/>+++mjdetullio.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multibranch.+++<wbr/>+++**MavenBranchProjectFactory** (link:https://github.com/jenkinsci/multi-branch-project-plugin/search?q=MavenBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multi-branch-project-plugin[Multi-Branch Project Plugin (DEPRECATED) Plugin]: com.+++<wbr/>+++github.+++<wbr/>+++mjdetullio.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multibranch.+++<wbr/>+++**TemplateDrivenBranchProjectFactory** (link:https://github.com/jenkinsci/multi-branch-project-plugin/search?q=TemplateDrivenBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multibranch-action-triggers[MultiBranch Action Triggers Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++**ExtendedWorkflowMultiBranchProject** (link:https://github.com/jenkinsci/multibranch-action-triggers-plugin/search?q=ExtendedWorkflowMultiBranchProject&type=Code[view on GitHub])
+* https://plugins.jenkins.io/inline-pipeline[Multibranch Pipeline Inline Definition Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++inlinepipeline.+++<wbr/>+++**InlineDefinitionBranchProjectFactory** (link:https://github.com/jenkinsci/inline-pipeline-plugin/search?q=InlineDefinitionBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/oes-template[OES Template Plugin]: cn.+++<wbr/>+++opsbox.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++cps.+++<wbr/>+++**OesTemplateWorkflowBranchProjectFactory** (link:https://github.com/jenkinsci/oes-template-plugin/search?q=OesTemplateWorkflowBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-as-yaml[Pipeline As YAML (Incubated) Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++**PipelineAsYamlWorkflowBranchProjectFactory** (link:https://github.com/jenkinsci/pipeline-as-yaml-plugin/search?q=PipelineAsYamlWorkflowBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-multibranch[Pipeline: Multibranch Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++**AbstractWorkflowBranchProjectFactory** (link:https://github.com/jenkinsci/workflow-multibranch-plugin/search?q=AbstractWorkflowBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-multibranch[Pipeline: Multibranch Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++**WorkflowBranchProjectFactory** (link:https://github.com/jenkinsci/workflow-multibranch-plugin/search?q=WorkflowBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-multibranch-defaults[Pipeline: Multibranch with defaults Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++multibranch.+++<wbr/>+++defaults.+++<wbr/>+++**PipelineBranchDefaultsProjectFactory** (link:https://github.com/jenkinsci/pipeline-multibranch-defaults-plugin/search?q=PipelineBranchDefaultsProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/remote-file[Remote Jenkinsfile Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++extended.+++<wbr/>+++**RemoteJenkinsFileWorkflowBranchProjectFactory** (link:https://github.com/jenkinsci/remote-file-plugin/search?q=RemoteJenkinsFileWorkflowBranchProjectFactory&type=Code[view on GitHub])
+
+
+== BranchProperty
+
+`jenkinsdoc:branch-api:jenkins.branch.BranchProperty]`
+
++++ Additional information associated with+++ jenkinsdoc:Branch] +++.+++ +++
+<p>+++ ++++++ jenkinsdoc:jenkins.scm.api.SCMSource] +++s can use properties to convey additional implementation/SCM specific+++ +++ information that's not captured in the base+++ jenkinsdoc:Branch] +++class.+++</p>
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/backlog[Backlog Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++backlog.+++<wbr/>+++pipeline.+++<wbr/>+++**BacklogPullRequestBranchProperty** (link:https://github.com/jenkinsci/backlog-plugin/search?q=BacklogPullRequestBranchProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**BuildRetentionBranchProperty** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=BuildRetentionBranchProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**NoTriggerBranchProperty** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=NoTriggerBranchProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**ParameterDefinitionBranchProperty** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=ParameterDefinitionBranchProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**RateLimitBranchProperty** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=RateLimitBranchProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**UntrustedBranchProperty** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=UntrustedBranchProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-pr-comment-build[GitHub PR Comment Build Plugin]: com.+++<wbr/>+++adobe.+++<wbr/>+++jenkins.+++<wbr/>+++github_pr_comment_build.+++<wbr/>+++**TriggerPRCommentBranchProperty** (link:https://github.com/jenkinsci/github-pr-comment-build-plugin/search?q=TriggerPRCommentBranchProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-pr-comment-build[GitHub PR Comment Build Plugin]: com.+++<wbr/>+++adobe.+++<wbr/>+++jenkins.+++<wbr/>+++github_pr_comment_build.+++<wbr/>+++**TriggerPRReviewBranchProperty** (link:https://github.com/jenkinsci/github-pr-comment-build-plugin/search?q=TriggerPRReviewBranchProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-pr-comment-build[GitHub PR Comment Build Plugin]: com.+++<wbr/>+++adobe.+++<wbr/>+++jenkins.+++<wbr/>+++github_pr_comment_build.+++<wbr/>+++**TriggerPRUpdateBranchProperty** (link:https://github.com/jenkinsci/github-pr-comment-build-plugin/search?q=TriggerPRUpdateBranchProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-multibranch[Pipeline: Multibranch Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++**DurabilityHintBranchProperty** (link:https://github.com/jenkinsci/workflow-multibranch-plugin/search?q=DurabilityHintBranchProperty&type=Code[view on GitHub])
+
+
+== BranchPropertyStrategy
+
+`jenkinsdoc:branch-api:jenkins.branch.BranchPropertyStrategy]`
+
++++ A strategy for determining the properties that apply to a specific+++ jenkinsdoc:SCMHead] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**DefaultBranchPropertyStrategy** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=DefaultBranchPropertyStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**NamedExceptionsBranchPropertyStrategy** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=NamedExceptionsBranchPropertyStrategy&type=Code[view on GitHub])
+
+
+== MultiBranchProjectFactory
+
+`jenkinsdoc:branch-api:jenkins.branch.MultiBranchProjectFactory]`
+
++++ Creates+++ jenkinsdoc:MultiBranchProject] +++s for repositories where recognized.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**MultiBranchProjectFactory.+++<wbr/>+++BySCMSourceCriteria** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=MultiBranchProjectFactory.BySCMSourceCriteria&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-driven-pipeline[Config-Driven Pipeline Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++template.+++<wbr/>+++**ConfigDrivenWorkflowMultiBranchProjectFactory** (link:https://github.com/jenkinsci/config-driven-pipeline-plugin/search?q=ConfigDrivenWorkflowMultiBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/inline-pipeline[Multibranch Pipeline Inline Definition Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++inlinepipeline.+++<wbr/>+++**InlineDefinitionMultiBranchProjectFactory** (link:https://github.com/jenkinsci/inline-pipeline-plugin/search?q=InlineDefinitionMultiBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/oes-template[OES Template Plugin]: cn.+++<wbr/>+++opsbox.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++cps.+++<wbr/>+++**OesTemplateWorkflowMultiBranchProjectFactory** (link:https://github.com/jenkinsci/oes-template-plugin/search?q=OesTemplateWorkflowMultiBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-multibranch[Pipeline: Multibranch Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++**AbstractWorkflowMultiBranchProjectFactory** (link:https://github.com/jenkinsci/workflow-multibranch-plugin/search?q=AbstractWorkflowMultiBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-multibranch[Pipeline: Multibranch Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++**WorkflowMultiBranchProjectFactory** (link:https://github.com/jenkinsci/workflow-multibranch-plugin/search?q=WorkflowMultiBranchProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-multibranch-defaults[Pipeline: Multibranch with defaults Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++multibranch.+++<wbr/>+++defaults.+++<wbr/>+++**PipelineMultiBranchDefaultsProjectFactory** (link:https://github.com/jenkinsci/pipeline-multibranch-defaults-plugin/search?q=PipelineMultiBranchDefaultsProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/remote-file[Remote Jenkinsfile Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++extended.+++<wbr/>+++**RemoteJenkinsFileWorkflowMultiBranchProjectFactory** (link:https://github.com/jenkinsci/remote-file-plugin/search?q=RemoteJenkinsFileWorkflowMultiBranchProjectFactory&type=Code[view on GitHub])
+
+
+== PropertyMigration
+
+`jenkinsdoc:branch-api:jenkins.branch.PropertyMigration]`
+
++++ An extension point that captures the need for a complex migration of a folder property into some other configuration+++ +++ of the containing folder.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**NoTriggerOrganizationFolderProperty.+++<wbr/>+++PropertyMigrationImpl** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=NoTriggerOrganizationFolderProperty.PropertyMigrationImpl&type=Code[view on GitHub])
+
+
+== PropertyMigration.+++<wbr/>+++Migrator
+
+`jenkinsdoc:branch-api:jenkins.branch.PropertyMigration.Migrator]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/basic-branch-build-strategies[Basic Branch Build Strategies Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++buildstrategies.+++<wbr/>+++basic.+++<wbr/>+++**NoTriggerOrganizationFolderMigration** (link:https://github.com/jenkinsci/basic-branch-build-strategies-plugin/search?q=NoTriggerOrganizationFolderMigration&type=Code[view on GitHub])
+

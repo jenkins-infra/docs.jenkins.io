@@ -1,0 +1,17 @@
+= Extension Points defined in NodeJS Plugin
+
+https://plugins.jenkins.io/nodejs[NodeJS Plugin]
+
+== CacheLocationLocator
+
+`jenkinsdoc:nodejs:jenkins.plugins.nodejs.cache.CacheLocationLocator]`
+
++++ Strategy pattern that decides the location of the NPM cache location for a+++ +++ build.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/nodejs[NodeJS Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nodejs.+++<wbr/>+++cache.+++<wbr/>+++**DefaultCacheLocationLocator** (link:https://github.com/jenkinsci/nodejs-plugin/search?q=DefaultCacheLocationLocator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nodejs[NodeJS Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nodejs.+++<wbr/>+++cache.+++<wbr/>+++**PerExecutorCacheLocationLocator** (link:https://github.com/jenkinsci/nodejs-plugin/search?q=PerExecutorCacheLocationLocator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nodejs[NodeJS Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nodejs.+++<wbr/>+++cache.+++<wbr/>+++**PerJobCacheLocationLocator** (link:https://github.com/jenkinsci/nodejs-plugin/search?q=PerJobCacheLocationLocator&type=Code[view on GitHub])
+

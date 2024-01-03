@@ -1,0 +1,27 @@
+= Extension Points defined in Process cleaner Plugin
+
+https://plugins.jenkins.io/proc-cleaner-plugin[Process cleaner Plugin]
+
+== ProcCleaner
+
+`jenkinsdoc:proc-cleaner-https://plugins.jenkins.io/org.jenkinsci.plugins.proccleaner.ProcCleaner]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/proc-cleaner-plugin[Process cleaner Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++proccleaner.+++<wbr/>+++**GroovyScriptCleaner** (link:https://github.com/jenkinsci/proc-cleaner-plugin/search?q=GroovyScriptCleaner&type=Code[view on GitHub])
+* https://plugins.jenkins.io/proc-cleaner-plugin[Process cleaner Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++proccleaner.+++<wbr/>+++**PsCleaner** (link:https://github.com/jenkinsci/proc-cleaner-plugin/search?q=PsCleaner&type=Code[view on GitHub])
+
+
+== PsKiller
+
+`jenkinsdoc:proc-cleaner-https://plugins.jenkins.io/org.jenkinsci.plugins.proccleaner.PsKiller]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/proc-cleaner-plugin[Process cleaner Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++proccleaner.+++<wbr/>+++**PsAllKiller** (link:https://github.com/jenkinsci/proc-cleaner-plugin/search?q=PsAllKiller&type=Code[view on GitHub])
+* https://plugins.jenkins.io/proc-cleaner-plugin[Process cleaner Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++proccleaner.+++<wbr/>+++**PsRecursiveKiller** (link:https://github.com/jenkinsci/proc-cleaner-plugin/search?q=PsRecursiveKiller&type=Code[view on GitHub])
+

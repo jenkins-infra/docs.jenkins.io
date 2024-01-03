@@ -1,0 +1,3 @@
+.For Maintainers
+* xref:for-maintainers.adoc[Overview]
+* xref:plugins.adoc[Vulnerabilities in Plugins]

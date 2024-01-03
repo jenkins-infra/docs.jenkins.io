@@ -1,0 +1,15 @@
+= Extension Points defined in Thycotic DevOps Secrets Vault Plugin
+
+https://plugins.jenkins.io/thycotic-vault[Thycotic DevOps Secrets Vault Plugin]
+
+== DevOpsSecretsVaultConfigResolver
+
+`jenkinsdoc:thycotic-vault:com.thycotic.jenkins.configuration.DevOpsSecretsVaultConfigResolver]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/thycotic-vault[Thycotic DevOps Secrets Vault Plugin]: com.+++<wbr/>+++thycotic.+++<wbr/>+++jenkins.+++<wbr/>+++configuration.+++<wbr/>+++**DevOpsSecretsGlobalVaultConfiguration.+++<wbr/>+++ForJob** (link:https://github.com/jenkinsci/thycotic-vault-plugin/search?q=DevOpsSecretsGlobalVaultConfiguration.ForJob&type=Code[view on GitHub])
+* https://plugins.jenkins.io/thycotic-vault[Thycotic DevOps Secrets Vault Plugin]: com.+++<wbr/>+++thycotic.+++<wbr/>+++jenkins.+++<wbr/>+++configuration.+++<wbr/>+++**DevOpsSecretsVaultFolderConfiguration.+++<wbr/>+++ForJob** (link:https://github.com/jenkinsci/thycotic-vault-plugin/search?q=DevOpsSecretsVaultFolderConfiguration.ForJob&type=Code[view on GitHub])
+

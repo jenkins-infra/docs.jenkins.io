@@ -1,0 +1,33 @@
+= Extension Points defined in Diagnostics Plugin
+
+https://plugins.jenkins.io/diagnostics[Diagnostics Plugin]
+
+== Diagnostic
+
+`jenkinsdoc:diagnostics:org.jenkinsci.plugins.diagnostics.diagnostics.Diagnostic]`
+
++++ Extension point that allows the creation of new diagnostics.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/diagnostics[Diagnostics Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++diagnostics.+++<wbr/>+++diagnostics.+++<wbr/>+++**DefaultDiagnostic** (link:https://github.com/jenkinsci/diagnostics-plugin/search?q=DefaultDiagnostic&type=Code[view on GitHub])
+* https://plugins.jenkins.io/diagnostics[Diagnostics Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++diagnostics.+++<wbr/>+++diagnostics.+++<wbr/>+++**IODiagnostic** (link:https://github.com/jenkinsci/diagnostics-plugin/search?q=IODiagnostic&type=Code[view on GitHub])
+* https://plugins.jenkins.io/diagnostics[Diagnostics Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++diagnostics.+++<wbr/>+++diagnostics.+++<wbr/>+++**ResponsivenessDiagnostic** (link:https://github.com/jenkinsci/diagnostics-plugin/search?q=ResponsivenessDiagnostic&type=Code[view on GitHub])
+* https://plugins.jenkins.io/diagnostics[Diagnostics Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++diagnostics.+++<wbr/>+++diagnostics.+++<wbr/>+++**RunCommandDiagnostic** (link:https://github.com/jenkinsci/diagnostics-plugin/search?q=RunCommandDiagnostic&type=Code[view on GitHub])
+* https://plugins.jenkins.io/diagnostics[Diagnostics Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++diagnostics.+++<wbr/>+++diagnostics.+++<wbr/>+++**SupportBundleDiagnostic** (link:https://github.com/jenkinsci/diagnostics-plugin/search?q=SupportBundleDiagnostic&type=Code[view on GitHub])
+
+
+== SupportBundleDiagnostic.+++<wbr/>+++SupportBundleConfig
+
+`jenkinsdoc:diagnostics:org.jenkinsci.plugins.diagnostics.diagnostics.SupportBundleDiagnostic.SupportBundleConfig]`
+
++++ base class for support bundle configurations.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/diagnostics[Diagnostics Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++diagnostics.+++<wbr/>+++diagnostics.+++<wbr/>+++**SupportBundleDiagnostic.+++<wbr/>+++BasicSupportBundle** (link:https://github.com/jenkinsci/diagnostics-plugin/search?q=SupportBundleDiagnostic.BasicSupportBundle&type=Code[view on GitHub])
+* https://plugins.jenkins.io/diagnostics[Diagnostics Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++diagnostics.+++<wbr/>+++diagnostics.+++<wbr/>+++**SupportBundleDiagnostic.+++<wbr/>+++FullSupportBundle** (link:https://github.com/jenkinsci/diagnostics-plugin/search?q=SupportBundleDiagnostic.FullSupportBundle&type=Code[view on GitHub])
+* https://plugins.jenkins.io/diagnostics[Diagnostics Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++diagnostics.+++<wbr/>+++diagnostics.+++<wbr/>+++**SupportBundleDiagnostic.+++<wbr/>+++MediumSupportBundle** (link:https://github.com/jenkinsci/diagnostics-plugin/search?q=SupportBundleDiagnostic.MediumSupportBundle&type=Code[view on GitHub])
+

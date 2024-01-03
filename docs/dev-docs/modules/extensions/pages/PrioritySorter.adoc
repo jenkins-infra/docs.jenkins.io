@@ -1,0 +1,51 @@
+= Extension Points defined in Priority Sorter Plugin
+
+https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]
+
+== JobInclusionStrategy
+
+`jenkinsdoc:PrioritySorter:jenkins.advancedqueue.jobinclusion.JobInclusionStrategy]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++jobinclusion.+++<wbr/>+++strategy.+++<wbr/>+++**AllJobsJobInclusionStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=AllJobsJobInclusionStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++jobinclusion.+++<wbr/>+++strategy.+++<wbr/>+++**FolderBasedJobInclusionStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=FolderBasedJobInclusionStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++jobinclusion.+++<wbr/>+++strategy.+++<wbr/>+++**PropertyBasedJobInclusionStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=PropertyBasedJobInclusionStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++jobinclusion.+++<wbr/>+++strategy.+++<wbr/>+++**ViewBasedJobInclusionStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=ViewBasedJobInclusionStrategy&type=Code[view on GitHub])
+
+
+== PriorityStrategy
+
+`jenkinsdoc:PrioritySorter:jenkins.advancedqueue.priority.PriorityStrategy]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/multi-branch-priority-sorter[Multi-Branch priority sorter Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multibranch.+++<wbr/>+++**BranchPriorityStrategy** (link:https://github.com/jenkinsci/multi-branch-priority-sorter-plugin/search?q=BranchPriorityStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++priority.+++<wbr/>+++strategy.+++<wbr/>+++**AbstractDynamicPriorityStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=AbstractDynamicPriorityStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++priority.+++<wbr/>+++strategy.+++<wbr/>+++**AbstractStaticPriorityStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=AbstractStaticPriorityStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++priority.+++<wbr/>+++strategy.+++<wbr/>+++**BuildParameterStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=BuildParameterStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++priority.+++<wbr/>+++strategy.+++<wbr/>+++**CLICauseStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=CLICauseStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++priority.+++<wbr/>+++strategy.+++<wbr/>+++**HealthStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=HealthStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++priority.+++<wbr/>+++strategy.+++<wbr/>+++**JobPropertyStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=JobPropertyStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++priority.+++<wbr/>+++strategy.+++<wbr/>+++**UpstreamCauseStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=UpstreamCauseStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++priority.+++<wbr/>+++strategy.+++<wbr/>+++**UserIdCauseStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=UserIdCauseStrategy&type=Code[view on GitHub])
+
+
+== SorterStrategy
+
+`jenkinsdoc:PrioritySorter:jenkins.advancedqueue.sorter.SorterStrategy]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++sorter.+++<wbr/>+++strategy.+++<wbr/>+++**AbsoluteStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=AbsoluteStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++sorter.+++<wbr/>+++strategy.+++<wbr/>+++**FQBaseStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=FQBaseStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++sorter.+++<wbr/>+++strategy.+++<wbr/>+++**FQStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=FQStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++sorter.+++<wbr/>+++strategy.+++<wbr/>+++**MultiBucketStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=MultiBucketStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++sorter.+++<wbr/>+++strategy.+++<wbr/>+++**WFQStrategy** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=WFQStrategy&type=Code[view on GitHub])
+

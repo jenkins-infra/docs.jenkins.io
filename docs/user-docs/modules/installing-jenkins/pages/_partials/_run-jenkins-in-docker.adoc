@@ -1,0 +1,22 @@
+////
+This file is only meant to be included as a snippet in other documents.
+It is currently used in the Tutorials.
+If you update content on this page, please ensure it reflects the generic
+Docker instructions documented in the sibling 'index.adoc' file.
+////
+[#run-jenkins-in-docker]
+== Run Jenkins in Docker
+
+In this tutorial, you'll be running Jenkins as a Docker container from the
+link:https://hub.docker.com/r/jenkins/jenkins/[`jenkins/jenkins`] Docker
+image.
+
+To run Jenkins in Docker, follow the relevant instructions below for either
+xref:#on-macos-and-linux[macOS and Linux] or xref:#on-windows[Windows].
+
+You can read more about Docker container and image concepts in the xref:user-docs:installing-jenkins:partial$_docker.adoc[Docker]
+section of the xref:user-docs:installing-jenkins:index.adoc[Installing Jenkins] page.
+
+include::user-docs:installing-jenkins:partial$_docker-for-tutorials.adoc[]
+
+include::user-docs:installing-jenkins:partial$_setup-wizard-for-tutorials.adoc[]

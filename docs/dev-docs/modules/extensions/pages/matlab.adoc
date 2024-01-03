@@ -1,0 +1,15 @@
+= Extension Points defined in MATLAB Plugin
+
+https://plugins.jenkins.io/matlab[MATLAB Plugin]
+
+== MatlabBuilder.+++<wbr/>+++TestRunTypeList
+
+`jenkinsdoc:matlab:com.mathworks.ci.MatlabBuilder.TestRunTypeList]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/matlab[MATLAB Plugin]: com.+++<wbr/>+++mathworks.+++<wbr/>+++ci.+++<wbr/>+++**MatlabBuilder.+++<wbr/>+++RunTestsAutomaticallyOption** (link:https://github.com/jenkinsci/matlab-plugin/search?q=MatlabBuilder.RunTestsAutomaticallyOption&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matlab[MATLAB Plugin]: com.+++<wbr/>+++mathworks.+++<wbr/>+++ci.+++<wbr/>+++**MatlabBuilder.+++<wbr/>+++RunTestsWithCustomCommandOption** (link:https://github.com/jenkinsci/matlab-plugin/search?q=MatlabBuilder.RunTestsWithCustomCommandOption&type=Code[view on GitHub])
+

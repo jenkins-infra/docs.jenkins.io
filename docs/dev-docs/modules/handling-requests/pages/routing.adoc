@@ -1,0 +1,52 @@
+= Routing Requests
+
+Let's look at some real-world examples for the most common ways to process (part of) the path:
+
+* Traversing the model graph
+  - Getter: `/*log*/…` → `https://javadoc.jenkins.io/jenkins/model/Jenkins.html#getLog%28%29[Jenkins#getLog()]`
+  - Getter with argument: `/*job/foo*/…` → `https://javadoc.jenkins.io/hudson/model/Hudson.html#getJob%28java.lang.String%29[Hudson#getJob("foo")]`
+  - Dynamic getter: `/job/foo/*1*/…` → `https://javadoc.jenkins.io/hudson/model/Job.html#getDynamic%28java.lang.String,%20org.kohsuke.stapler.StaplerRequest,%20org.kohsuke.stapler.StaplerResponse%29[Job#getDynamic("1" …)]`
+* Rendering views
+  - Index view: `/job/foo*/*` → `_index.jelly_` of `_https://javadoc.jenkins.io/hudson/model/Job.html[job]_` (or other `https://javadoc.jenkins.io/byShortName/TopLevelItem[TopLevelItem]` implementations)
+  - Named view: `/job/foo/*changes*` → `_changes.jelly_` of `_https://javadoc.jenkins.io/byShortName/Job[Job]_`
+* Action methods
+** Action method
+  - `/job/foo/1/*artifact*` → `https://javadoc.jenkins.io/hudson/model/Run.html#doArtifact%28%29[Run#doArtifact(…)]`
+  - `/job.foo/*config.xml*` → `https://javadoc.jenkins.io/hudson/model/AbstractItem.html#doConfigDotXml%28org.kohsuke.stapler.StaplerRequest,%20org.kohsuke.stapler.StaplerResponse%29[@WebMethod("config.xml") doConfigDotXml(…)]`
+** Index action method
+  - `/search` → `https://javadoc.jenkins.io/hudson/search/Search.html#doIndex(org.kohsuke.stapler.StaplerRequest,%20org.kohsuke.stapler.StaplerResponse)[Search#doIndex(…)]`
+
+Additionally, objects can implement several interfaces to further control how Stapler processes URLs:
+
+* `https://javadoc.jenkins.io/component/stapler/org/kohsuke/stapler/StaplerProxy.html[staplerdoc:org.kohsuke.stapler.StaplerProxy]` allows delegating the processing of a URL to another object.
+  So, for `/foo/bar`, if `getFoo()` returns an object `x` that implements `StaplerProxy`'s `getTarget()` method, Stapler will call `x.getTarget()` and continue using that to process the rest of the URL (`bar`).
+  This has the *highest priority* among all possible URL processing options.
+  `getTarget()` may also return `this`, for example to implement permission checks: No getters or views of `x` will be available to anyone who doesn't have the necessary permissions via URLs.
+* `https://javadoc.jenkins.io/component/stapler/org/kohsuke/stapler/StaplerOverridable.html[staplerdoc:org.kohsuke.stapler.StaplerOverridable]` is an interface allowing designated objects to selectively override URL mappings.
+  If the designated override objects do not have a handler for the request, the host object (that implements `StaplerOverridable`) will handle the request.
+* `https://javadoc.jenkins.io/component/stapler/org/kohsuke/stapler/StaplerFallback.html[staplerdoc:org.kohsuke.stapler.StaplerFallback]` allows delegating the processing of a URL to another object, similar to `StaplerProxy`, but has the *lowest priority* among all possible URL processing options.
+
+For more information on how Stapler binds (or staples) a Java Object Model to a URL hierarchy, see the link:https://github.com/stapler/stapler/blob/master/README.md[Stapler Reference Documentation].
+
+NOTE: Since Jenkins 2.138.4 and 2.154, Jenkins places restrictions not inherent to Stapler on which methods and fields are eligible for routing.
+xref:handling-requests:stapler-accessible-type.adoc[Learn more]
+
+== Debugging hints
+
+The following static fields can be set to `true` (e.g. via Script Console) while Jenkins is running to enable various debugging aids:
+
+`org.kohsuke.stapler.Dispatcher.TRACE`::
+Stapler responses will include `X-Stapler-Trace-…` headers that explain how the corresponding request was routed.
+Additionally, the 404 error page will also include this information, as well as alternative routes for the last path component (which resulted in the 404 error).
+The corresponding Java system property is xref:user-docs:managing:system-properties.adoc#stapler-trace[`stapler.trace`].
+This is enabled by default if Jenkins is run using `mvn -pl war jetty:run` (core) or `mvn hpi:run` (plugins).
+
+`org.kohsuke.stapler.Dispatcher.TRACE_PER_REQUEST`::
+As above, but only for requests that have the `X-Stapler-Trace` header.
+The corresponding Java system property is xref:user-docs:managing:system-properties.adoc#stapler-trace-per-request[`stapler.trace.per-request`].
+
+.References
+****
+* link:https://github.com/stapler/stapler/blob/master/docs/reference.adoc[Stapler URL Binding Reference]
+* link:https://wiki.jenkins.io/display/JENKINS/Figuring+out+URL+binding+of+Stapler[Figuring out URL binding in Stapler]
+****

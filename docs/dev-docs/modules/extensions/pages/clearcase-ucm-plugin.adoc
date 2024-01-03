@@ -1,0 +1,18 @@
+= Extension Points defined in ClearCase UCM Plugin
+
+https://plugins.jenkins.io/clearcase-ucm-plugin[ClearCase UCM Plugin]
+
+== PollingMode
+
+`jenkinsdoc:clearcase-ucm-https://plugins.jenkins.io/net.praqma.hudson.scm.pollingmode.PollingMode]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/clearcase-ucm-plugin[ClearCase UCM Plugin]: net.+++<wbr/>+++praqma.+++<wbr/>+++hudson.+++<wbr/>+++scm.+++<wbr/>+++pollingmode.+++<wbr/>+++**PollChildMode** (link:https://github.com/jenkinsci/clearcase-ucm-plugin/search?q=PollChildMode&type=Code[view on GitHub])
+* https://plugins.jenkins.io/clearcase-ucm-plugin[ClearCase UCM Plugin]: net.+++<wbr/>+++praqma.+++<wbr/>+++hudson.+++<wbr/>+++scm.+++<wbr/>+++pollingmode.+++<wbr/>+++**PollRebaseMode** (link:https://github.com/jenkinsci/clearcase-ucm-plugin/search?q=PollRebaseMode&type=Code[view on GitHub])
+* https://plugins.jenkins.io/clearcase-ucm-plugin[ClearCase UCM Plugin]: net.+++<wbr/>+++praqma.+++<wbr/>+++hudson.+++<wbr/>+++scm.+++<wbr/>+++pollingmode.+++<wbr/>+++**PollSelfMode** (link:https://github.com/jenkinsci/clearcase-ucm-plugin/search?q=PollSelfMode&type=Code[view on GitHub])
+* https://plugins.jenkins.io/clearcase-ucm-plugin[ClearCase UCM Plugin]: net.+++<wbr/>+++praqma.+++<wbr/>+++hudson.+++<wbr/>+++scm.+++<wbr/>+++pollingmode.+++<wbr/>+++**PollSiblingMode** (link:https://github.com/jenkinsci/clearcase-ucm-plugin/search?q=PollSiblingMode&type=Code[view on GitHub])
+* https://plugins.jenkins.io/clearcase-ucm-plugin[ClearCase UCM Plugin]: net.+++<wbr/>+++praqma.+++<wbr/>+++hudson.+++<wbr/>+++scm.+++<wbr/>+++pollingmode.+++<wbr/>+++**PollSubscribeMode** (link:https://github.com/jenkinsci/clearcase-ucm-plugin/search?q=PollSubscribeMode&type=Code[view on GitHub])
+

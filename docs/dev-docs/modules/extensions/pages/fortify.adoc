@@ -1,0 +1,37 @@
+= Extension Points defined in Fortify Plugin
+
+https://plugins.jenkins.io/fortify[Fortify Plugin]
+
+== ProjectScanType
+
+`jenkinsdoc:fortify:com.fortify.plugin.jenkins.steps.types.ProjectScanType]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++types.+++<wbr/>+++**AdvancedScanType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=AdvancedScanType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++types.+++<wbr/>+++**DevenvScanType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=DevenvScanType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++types.+++<wbr/>+++**DotnetSourceScanType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=DotnetSourceScanType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++types.+++<wbr/>+++**GradleScanType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=GradleScanType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++types.+++<wbr/>+++**JavaScanType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=JavaScanType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++types.+++<wbr/>+++**MavenScanType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=MavenScanType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++types.+++<wbr/>+++**MsbuildScanType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=MsbuildScanType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++types.+++<wbr/>+++**OtherScanType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=OtherScanType&type=Code[view on GitHub])
+
+
+== RemoteAnalysisProjectType
+
+`jenkinsdoc:fortify:com.fortify.plugin.jenkins.steps.remote.RemoteAnalysisProjectType]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++remote.+++<wbr/>+++**GradleProjectType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=GradleProjectType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++remote.+++<wbr/>+++**MSBuildProjectType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=MSBuildProjectType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++remote.+++<wbr/>+++**MavenProjectType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=MavenProjectType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++remote.+++<wbr/>+++**OtherProjectType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=OtherProjectType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++remote.+++<wbr/>+++**PhpProjectType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=PhpProjectType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/fortify[Fortify Plugin]: com.+++<wbr/>+++fortify.+++<wbr/>+++plugin.+++<wbr/>+++jenkins.+++<wbr/>+++steps.+++<wbr/>+++remote.+++<wbr/>+++**PythonProjectType** (link:https://github.com/jenkinsci/fortify-plugin/search?q=PythonProjectType&type=Code[view on GitHub])
+

@@ -1,0 +1,55 @@
+= Extend Jenkins
+
+Jenkins is an extensible automation server with more than 1800 plugins providing integrations for hundreds of tools and services. The resources below will teach you how to extend Jenkins with new features.
+
+.Jenkins Developer Documentation
+****
+This page provides an overview of the documentation in the Jenkins Developer Documentation.
+
+TIP: If you're using Jenkins as a user this is where you should look.
+
+****
+
+If you want to use Jenkins's existing functionality and plugin features only, please refer to the xref:user-docs:ROOT:index.adoc[Jenkins User Documentation] instead.
+
+[%hardbreaks]
+
+.Create a Plugin - Tutorial
+****
+Get started with Jenkins development by writing a simple plugin.
+
+xref:dev-docs:plugin-tutorial:index.adoc[Check Out]
+
+****
+
+.Improve a Plugin - Tutorial
+****
+Improve a Jenkins plugin to make it easier to maintain.
+
+xref:tutorial-improve:index.adoc[Check Out]
+
+****
+
+.How-To Guides
+****
+These guides explain how to solve a specific problem.
+
+xref:guides:index.adoc[Check Out]
+
+****
+
+.Reference Documentation
+****
+The Jenkins developer reference documentation is organized by topics.
+
+xref:reference:index.adoc[Check Out]
+
+****
+
+// .Extensions Index
+// ****
+// An index of all extension points available in core and plugins and their implementations.
+
+// xref::tutorial-improve:index.adoc[Check Out]
+
+// ****

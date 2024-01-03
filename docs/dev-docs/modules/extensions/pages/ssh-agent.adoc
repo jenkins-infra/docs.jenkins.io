@@ -1,0 +1,15 @@
+= Extension Points defined in SSH Agent Plugin
+
+https://plugins.jenkins.io/ssh-agent[SSH Agent Plugin]
+
+== RemoteAgentFactory
+
+`jenkinsdoc:ssh-agent:com.cloudbees.jenkins.plugins.sshagent.RemoteAgentFactory]`
+
++++ Extension point for ssh-agent providers.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/ssh-agent[SSH Agent Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++sshagent.+++<wbr/>+++exec.+++<wbr/>+++**ExecRemoteAgentFactory** (link:https://github.com/jenkinsci/ssh-agent-plugin/search?q=ExecRemoteAgentFactory&type=Code[view on GitHub])
+

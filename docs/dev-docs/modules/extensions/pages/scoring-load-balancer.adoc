@@ -1,0 +1,17 @@
+= Extension Points defined in Scoring Load Balancer Plugin
+
+https://plugins.jenkins.io/scoring-load-balancer[Scoring Load Balancer Plugin]
+
+== ScoringRule
+
+`jenkinsdoc:scoring-load-balancer:jp.ikedam.jenkins.plugins.scoringloadbalancer.ScoringRule]`
+
++++ Scores nodes to determine which is proper to have a task build on.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/scoring-load-balancer[Scoring Load Balancer Plugin]: jp.+++<wbr/>+++ikedam.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++scoringloadbalancer.+++<wbr/>+++rules.+++<wbr/>+++**BuildResultScoringRule** (link:https://github.com/jenkinsci/scoring-load-balancer-plugin/search?q=BuildResultScoringRule&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scoring-load-balancer[Scoring Load Balancer Plugin]: jp.+++<wbr/>+++ikedam.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++scoringloadbalancer.+++<wbr/>+++rules.+++<wbr/>+++**NodeLoadScoringRule** (link:https://github.com/jenkinsci/scoring-load-balancer-plugin/search?q=NodeLoadScoringRule&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scoring-load-balancer[Scoring Load Balancer Plugin]: jp.+++<wbr/>+++ikedam.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++scoringloadbalancer.+++<wbr/>+++rules.+++<wbr/>+++**NodePreferenceScoringRule** (link:https://github.com/jenkinsci/scoring-load-balancer-plugin/search?q=NodePreferenceScoringRule&type=Code[view on GitHub])
+

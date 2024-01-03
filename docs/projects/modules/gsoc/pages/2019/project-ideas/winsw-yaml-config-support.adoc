@@ -1,0 +1,31 @@
+= Jenkins Windows Services: YAML Configuration Support 
+
+*Project goal:* Enhance Jenkins controller and agent service management on Windows by offering new configuration file formats and improving settings validation
+
+*Skills to study/improve:* C#, .NET, Windows, Windows Services, YAML, Java (optional)
+
+This project idea is published as a Google doc. You are welcome to comment on the proposal or to suggest changes in the draft embedded below ( https://docs.google.com/document/d/16Aa3E9D_IYD-LO89bcInZQPwAfTOWfD_UrDbDxy8FKA[Google Doc] )
+
+++++
+<iframe src="https://docs.google.com/document/d/16Aa3E9D_IYD-LO89bcInZQPwAfTOWfD_UrDbDxy8FKA" width="100%" height="600px"></iframe>
+++++
+
+== Potential Mentors
+
+[.avatar]
+image:images:ROOT:avatars/oleg_nenashev.png[,width=30,height=30] Oleg Nenashev
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Arnab Banerjee
+
+== Project Links
+
+* image:https://img.shields.io/badge/gitter-join_chat-light_green?link=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F16Aa3E9D_IYD-LO89bcInZQPwAfTOWfD_UrDbDxy8FKA[Static Badge]
+* xref:gsoc:index.adoc#office-hours[Meetings]
+* https://community.jenkins.io/c/contributing/gsoc[Forum]
+* https://docs.google.com/document/d/16Aa3E9D_IYD-LO89bcInZQPwAfTOWfD_UrDbDxy8FKA[Project Idea Draft]
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2019/project-ideas.adoc[Go back to other GSoC 2019 project ideas]

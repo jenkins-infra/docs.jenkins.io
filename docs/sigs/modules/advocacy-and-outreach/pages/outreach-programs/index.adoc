@@ -1,0 +1,57 @@
+:page-aliases: projects:advocacy-and-outreach:index.adoc
+= Outreach programs
+
+This page lists the current community programs, and the programs we're interested in.
+
+== Current Programs
+
+The Jenkins community participates in the following programs:
+
+=== Google Summer of Code
+
+[.float-group]
+--
+image:images:ROOT:gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=right,role=float-gap]
+https://developers.google.com/open-source/gsoc/[Google Summer of Code] (GSoC) is an annual, international, program which encourages college-aged students to participate with open source projects during the summer break between classes.
+--
+
+Students accepted into the program receive a stipend,
+paid by Google, to work on well-defined projects to improve or enhance the Jenkins project.
+In exchange, numerous Jenkins community members volunteer as "mentors"
+for students to help integrate them into the open source community and succeed
+in completing their summer projects.
+
+For more information, see xref:projects:gsoc:index.adoc[our GSoC project page].
+
+To contact us regarding this program,
+send us a message on the link:https://community.jenkins.io/c/contributing/gsoc/6[Jenkins Community Discourse]
+or contact us on the
+link:https://app.gitter.im/#/room/#jenkinsci_gsoc-sig:gitter.im[GSoC Gitter channel].
+
+// The GSoC logo is a bit tall, so add some empty lines
+{empty} +
+
+=== She Code Africa Contributhon 
+
+[.float-group]
+--
+image:she-code-africa-logo.svg[She Code Africa logo, role=center, float=right, height=180,role=float-gap]
+The https://sites.google.com/shecodeafrica.org/contributhon/home/guide/[She Code Africa Contributhon] is a boot camp where African women are paid to work with open source organizations on selected projects with dedicated mentors. This program aims to create a more diverse, inclusive, and innovative culture within the African open source ecosystem by matching African women in technology with sponsors and mentors of open source organizations.
+--
+
+To contact us regarding this program, send us a message on the
+link:https://app.gitter.im/#/room/#jenkinsci_advocacy-and-outreach-sig:gitter.im[Advocacy and Outreach Gitter channel] or reach out to link:https://www.shecodeafrica.org/[She Code Africa].
+
+=== Hacktoberfest
+
+image:hacktoberfest.jpeg[Hacktoberfest, role=center]
+
+link:https://hacktoberfest.digitalocean.com/[Hacktoberfest]
+is a month long celebration of open source software.
+Its mission is to give back to the open source community.
+
+See the xref:events:hacktoberfest:index.adoc[our Hacktoberfest page] for more information.
+
+== Past Programs
+
+Past projects can be viewed on the xref:advocacy-and-outreach:outreach-programs/outreach-programs-history.adoc[history page].

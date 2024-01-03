@@ -1,0 +1,33 @@
+= EDA Coverage Adapters 
+
+*Project goal:* Create Jenkins plugins for various Electronic Design Automation coverage reports
+
+*Skills to study/improve:* Java, EDA Tools, FPGA, ASIC, Coverage
+
+This project idea is published as a Google doc. You are welcome to comment on the proposal or to suggest changes in the draft embedded below ( https://docs.google.com/document/d/1pW9cSPTSekhMirHWKGnchmsDGsGLeN8MBEpMyN9HDEo[Google Doc] )
+
+++++
+<iframe src="https://docs.google.com/document/d/1pW9cSPTSekhMirHWKGnchmsDGsGLeN8MBEpMyN9HDEo" width="100%" height="600px"></iframe>
+++++
+
+== Potential Mentors
+
+[.avatar]
+image:images:ROOT:avatars/martinda.png[,width=30,height=30] Martin d'Anjou
+image:images:ROOT:avatars/oleg_nenashev.png[,width=30,height=30] Oleg Nenashev
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Udara De Silva
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Shenyu Zheng
+
+== Project Links
+
+* image:https://img.shields.io/badge/gitter-join_chat-light_green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_hw-and-eda-sig%3Agitter.im[Static Badge]
+* xref:gsoc:index.adoc#office-hours[Meetings]
+* https://community.jenkins.io/c/contributing/gsoc[Forum]
+* https://docs.google.com/document/d/1pW9cSPTSekhMirHWKGnchmsDGsGLeN8MBEpMyN9HDEo[Project Idea Draft]
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2019/project-ideas.adoc[Go back to other GSoC 2019 project ideas]

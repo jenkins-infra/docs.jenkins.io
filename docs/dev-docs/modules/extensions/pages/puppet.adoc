@@ -1,0 +1,16 @@
+= Extension Points defined in Puppet Plugin
+
+https://plugins.jenkins.io/puppet[Puppet Plugin]
+
+== PuppetReportProcessor
+
+`jenkinsdoc:puppet:org.jenkinsci.plugins.puppet.track.PuppetReportProcessor]`
+
++++ Extension point for other plugins to look at submitted puppet resources and find intereting MD5 checksums.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/puppet[Puppet Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++puppet.+++<wbr/>+++track.+++<wbr/>+++**FileReportProcessor** (link:https://github.com/jenkinsci/puppet-plugin/search?q=FileReportProcessor&type=Code[view on GitHub])
+* https://plugins.jenkins.io/puppet[Puppet Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++puppet.+++<wbr/>+++track.+++<wbr/>+++**TrackReportProcessor** (link:https://github.com/jenkinsci/puppet-plugin/search?q=TrackReportProcessor&type=Code[view on GitHub])
+

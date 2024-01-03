@@ -1,0 +1,218 @@
+////
+XXX: Pages to mark as deprecated by this document:
+      * https://wiki.jenkins.io/display/JENKINS/Terminology
+////
+
+= Glossary
+
+++++
+<script>
+$(function () {
+    anchors.add('dt');
+})
+</script>
+++++
+
+////
+NOTE: The [glossary] delimiter in AsciiDoctor doesn't autogenerate anchors for
+each of the terms below. Which means that if we want to cross-reference terms
+directly from other documents we need to include an inline anchor.
+
+Additionally, because these inline anchors don't attach to section headings,
+cross-referencing must include the appropriate display text, for example:
+
+  MyTerm [#myterm] this is the definition of MyTerm
+
+Should be cross-referenced with:
+
+  xref:#myterm[MyTerm]
+
+To ensure it is rendered appropriately.
+////
+
+== General Terms
+
+[glossary]
+[#agent]
+=== xref:using-jenkins:using-agents.adoc[Agent] 
+
+An agent is typically a machine, or container, which connects to a Jenkins controller and executes tasks when directed by the controller.
+
+[#artifact]
+=== Artifact
+
+An immutable file generated during a xref:#build[Build] or xref:#pipeline[Pipeline] run which is *archived* onto the Jenkins xref:#controller[Controller] for later retrieval by users.
+
+[#build]
+=== Build
+
+Result of a single execution of a xref:#job[Job]
+
+[#cloud]
+=== Cloud 
+
+A System Configuration which provides dynamic xref:#agent[Agent] provisioning and allocation, such as that provided by the {plugin}azure-vm-agents[Azure VM Agents] or {plugin}ec2[Amazon EC2] plugins.
+
+[#controller]
+=== Controller
+
+The central, coordinating process which stores configuration, loads plugins, and renders the various user interfaces for Jenkins.
+
+[#core]
+=== Core
+
+The primary Jenkins application (`jenkins.war`) which provides the basic web UI, configuration, and foundation upon which xref:#plugin[Plugin] can be built.
+
+[#downstream]
+=== Downstream 
+
+A configured xref:#pipeline[Pipeline] or xref:#job[Job] which is triggered as part of the execution of a separate Pipeline or Job.
+
+[#executor]
+=== Executor 
+
+A slot for execution of work defined by a xref:#pipeline[Pipeline] or xref:#job[Job] on a xref:#node[Node]. A Node may have zero or more Executors configured which corresponds to how many concurrent Jobs or Pipelines are able to execute on that Node.
+
+[#fingerprint]
+=== Fingerprint
+
+A hash considered globally unique to track the usage of an xref:#artifact[Artifact] or other entity across multiple xref:#pipeline[Pipelines] or xref:#job[jobs].
+
+[#folder]
+=== Folder
+
+An organizational container for xref:#pipeline[Pipelines] and/or xref:#job[jobs], similar to folders on a file system.
+
+[#item]
+=== Item
+
+An entity in the web UI corresponding to either a:xref:#folder[Folder], xref:#pipeline[Pipeline], or xref:#job[job].
+
+[#jenkins-url]
+=== Jenkins URL
+
+The main url for the jenkins application, as visited by a user. e.g. https://ci.jenkins.io/
+
+[#job]
+=== Job
+
+A user-configured description of work which Jenkins should perform, such as building a piece of software, etc.
+
+[#kubernetes]
+=== Kubernetes 
+
+Kubernetes (K8s) is an open-source system for automating deployment, scaling, and management of containerized applications. See xref:installing-jenkins:kubernetes.adoc[Installing Jenkins / Kubernetes] for more info.
+
+[#label]
+=== Label 
+
+User-defined text for grouping xref:#agent[Agents], typically by similar functionality or capability. For example `linux` for Linux-based agents or `docker` for Docker-capable agents.
+
+[#lts]
+=== LTS
+
+A long-term support xref:#release[Release] line of Jenkins products, becoming available for downloads every 12 weeks. See https://www.jenkins.io/download/lts[this page] for more info.
+
+[#master]
+=== Master
+
+A deprecated term, synonymous with xref:#controller[Controller].
+
+[#node]
+=== xref:managing:nodes.adoc[Node]
+
+A machine which is part of the Jenkins environment and capable of executing xref:#pipeline[Pipelines] or xref:#job[jobs]. Both the xref:#controller[Controller] and xref:#agent[Agents] are considered to be Nodes.
+
+[#project]
+=== Project [#project]
+
+A deprecated term, synonymous with xref:#job[job].
+
+[#pipeline]
+=== Pipeline
+
+A user-defined model of a continuous delivery pipeline, for more read the xref:user-docs:pipeline:index.adoc[Pipeline chapter] in this handbook.
+
+[#plugin]
+=== Plugin
+
+An extension to Jenkins functionality provided separately from Jenkins xref:#core[Core].
+
+[#publisher]
+=== Publisher
+
+Part of a xref:#build[Build] after the completion of all configured xref:#step[Steps] which publishes reports, sends notifications, etc. A publisher may report xref:#stable[Stable] or xref:#unstable[Unstable] result depending on the result of its processing and its configuration. For example, if a JUnit test fails, then the whole JUnit publisher may report the build result as xref:#unstable[Unstable].
+
+[#resource-root-url]
+=== Resource Root URL 
+
+A secondary url used to serve potentially untrusted content (especially build artifacts). This url is distinct from the xref:#jenkins-url[Jenkins URL].
+
+[#release]
+=== Release
+
+An event, indicating availability of Jenkins distribution products or one of Jenkins plugins. Jenkins products belong either to xref:#lts[LTS] or weekly Release lines.
+
+[#stage]
+=== Stage
+
+`stage` is part of Pipeline, and used for defining a conceptually distinct subset of the entire Pipeline, for example: "Build", "Test", and "Deploy", which is used by many plugins to visualize or present Jenkins Pipeline status/progress.
+
+[#step]
+=== Step
+
+A single task; fundamentally steps tell Jenkins _what_ to do inside of a xref:#pipeline[Pipeline] or xref:#job[job]. See xref:pipeline:getting-started.adoc[Pipelines / Getting Started] and xref:pipeline:jenkinsfile.adoc[Pipeline / Using a jenkinsfile] for more info.
+
+[#trigger]
+=== Trigger 
+
+A criteria for triggering a new xref:#pipeline[Pipeline] run or xref:#job[job].
+
+[#update-center]
+=== Update Center 
+
+Hosted inventory of plugins and plugin metadata to enable plugin installation from within Jenkins.
+
+[#upstream]
+=== Upstream 
+
+A configured xref:#pipeline[Pipeline] or xref:#job[job] which triggers a separate Pipeline or Job as part of its execution.
+
+[#view]
+=== View 
+
+A way of displaying the data of Jenkins in a dashboard style. This is an extensible object, so there are lots of different ways to list xref:#job[jobs], show trends, and analyze data.
+
+[#workspace]
+=== Workspace 
+
+A disposable directory on the file system of a xref:#node[Node] where work can be done by a xref:#pipeline[Pipeline] or xref:#job[job]. Workspaces are typically left in place after a xref:#build[Build] or xref:#pipeline[Pipeline] run completes unless specific Workspace cleanup policies
+have been put in place on the Jenkins xref:#controller[Controller]. 
+
+[#build-status]
+== Build Status
+
+[#aborted]
+=== Aborted
+
+The xref:#build[Build] was interrupted before it reaches its expected end. For example, the user has stopped it manually or there was a time-out.
+
+[#failed]
+=== Failed
+
+The xref:#build[Build] had a fatal error.
+
+[#stable]
+=== Stable
+
+The xref:#build[Build] was xref:#successful[Successful] and no xref:#publisher[Publisher] reports it as xref:#unstable[Unstable].
+
+[#successful]
+=== Successful
+
+The xref:#build[Build] has no compilation errors.
+
+[#unstable]
+=== Unstable
+
+The xref:#build[Build] had some errors, but they were not fatal. A xref:#build[Build] is unstable if it was built successfully and one or more publishers report it unstable. For example if the JUnit publisher is configured and a test fails then the xref:#build[Build] will be marked unstable.

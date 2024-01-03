@@ -1,0 +1,75 @@
+= Extension Points defined in JWT Support Plugin
+
+https://plugins.jenkins.io/jwt-support[JWT Support Plugin]
+
+== JwtAuthenticationService
+
+`jenkinsdoc:jwt-support:io.jenkins.plugin.auth.jwt.JwtAuthenticationService]`
+
++++ JWT endpoint resource. Provides functionality to get JWT token and also provides JWK endpoint to get+++ +++ public key using keyId.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/jwt-support[JWT Support Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugin.+++<wbr/>+++auth.+++<wbr/>+++jwt.+++<wbr/>+++impl.+++<wbr/>+++**JwtAuthenticationServiceImpl** (link:https://github.com/jenkinsci/jwt-support-plugin/search?q=JwtAuthenticationServiceImpl&type=Code[view on GitHub])
+
+
+== JwtAuthenticationStoreFactory
+
+`jenkinsdoc:jwt-support:io.jenkins.plugin.auth.jwt.JwtAuthenticationStoreFactory]`
+
++++ An authentication provider implements this extension point to store enough information in JWT claim so that later on+++ +++ when the token verification happens, using this same claims this authentication object can be re-created.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/jwt-support[JWT Support Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugin.+++<wbr/>+++auth.+++<wbr/>+++jwt.+++<wbr/>+++impl.+++<wbr/>+++**SimpleJwtAuthenticationStore** (link:https://github.com/jenkinsci/jwt-support-plugin/search?q=SimpleJwtAuthenticationStore&type=Code[view on GitHub])
+
+
+== JwtSigningKeyProvider
+
+`jenkinsdoc:jwt-support:io.jenkins.plugin.auth.jwt.JwtSigningKeyProvider]`
+
++++ PublicKey provider, to be used during signing+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/jwt-support[JWT Support Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugin.+++<wbr/>+++auth.+++<wbr/>+++jwt.+++<wbr/>+++impl.+++<wbr/>+++**SigningKeyProviderImpl** (link:https://github.com/jenkinsci/jwt-support-plugin/search?q=SigningKeyProviderImpl&type=Code[view on GitHub])
+
+
+== JwtTokenDecorator
+
+`jenkinsdoc:jwt-support:io.jenkins.plugin.auth.jwt.JwtTokenDecorator]`
+
++++ Participates in the creation of JwtToken+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== JwtTokenServiceEndpoint
+
+`jenkinsdoc:jwt-support:io.jenkins.plugin.auth.jwt.JwtTokenServiceEndpoint]`
+
++++ This extension point serves the JWT token service endpoint+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== JwtTokenVerifier
+
+`jenkinsdoc:jwt-support:io.jenkins.plugin.auth.jwt.JwtTokenVerifier]`
+
++++ If an incoming HTTP request contains JWT token, pick that up, verifies the integrity, then+++ +++ convert that into+++ jenkinsdoc:JwtAuthentication] +++so that the rest of Jenkins can process this request+++ +++ with proper identity of the caller.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/jwt-support[JWT Support Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugin.+++<wbr/>+++auth.+++<wbr/>+++jwt.+++<wbr/>+++impl.+++<wbr/>+++**JwtTokenVerifierImpl** (link:https://github.com/jenkinsci/jwt-support-plugin/search?q=JwtTokenVerifierImpl&type=Code[view on GitHub])
+

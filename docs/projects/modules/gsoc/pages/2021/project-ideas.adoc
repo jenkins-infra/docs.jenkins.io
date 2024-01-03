@@ -1,0 +1,171 @@
+= GSoC 2021 Project Ideas 
+
+[.float-group]
+--
+image:images:ROOT:gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=right,role=float-gap]
+This page aggregates project ideas for Google Summer of Code 2021. See more information about this project and applications on the xref:gsoc:index.adoc[Jenkins Google Summer of Code page].
+
+Below you can find project ideas which have been proposed for this year. New ideas may be proposed by interested mentors or students (e.g. new features in the core, "write a plugin for MY_TOOL_OR_SERVICE", etc.). Project ideas without potential mentors will be considered though applicants may need to work with the community and GSoC org admins to find mentors. To add a new project idea, see: xref:gsoc:proposing-project-ideas.adoc[proposing project ideas].
+--
+
+== Accepted ideas 
+
+Below you can see the list of project ideas that fully match the Jenkins' project idea standard. The scope of these ideas is well known and we don't normally expect deep changes. All ideas have quick start guidelines and newbie-friendly issues referenced. We welcome contributors to join the mentor teams, and we invite students to submit project proposal applications in relation to these ideas.
+
+
+[cols="3,1,1"]
+|===
+|Project	|Category	|Skills to study/improve
+
+|*Automatic Specification Generator for Jenkins REST API*
+
+Find and implement the extraction of the REST APIs from the sources and generate and publish the REST APIs respective documentation.
+
+Potential Mentor(s): 
+Kristin Whetstone
+Oleg Nenashev
+赵晓杰(Rick)
+ Sumit Sarin
+ 
+|Plugins
+
+|Java, REST API, OpenAPI / Swagger
+
+
+|*CloudEvents plugin for Jenkins*
+
+Be able to listen to and emit cloudevents from Jenkins.
+
+Potential Mentor(s): 
+Vibhav Bobade 
+Mauricio Salatino
+
+|Plugins
+
+|Java, Cloudevents sdk, Networking
+
+
+|*Git credentials binding for sh, bat, and powershell*
+
+Allow greater git flexibility from Jenkins Pipelines.
+
+Potential Mentor(s): 
+Mark Waite
+Rishabh Budhouliya
+Jeff Pearce
+Justin Harringa
+
+|Plugins
+
+|Java, Git
+
+
+|*Git credentials binding for sh, bat, and powershell*
+
+Allow greater git flexibility from Jenkins Pipelines.
+
+Potential Mentor(s): 
+Mark Waite
+Rishabh Budhouliya
+Jeff Pearce
+Justin Harringa
+
+|Plugins
+
+|Java, Git
+
+|*Security validator for Jenkins Kubernetes Operator*
+
+Improve security aspects of installing Jenkins plugins in Kubernetes environment..
+
+Potential Mentor(s): 
+Sylwia Brant
+Jakub Al-Khalili
+Bartek Antoniak
+
+|Plugins	
+
+|Go, Kubernetes, Bash
+
+|*Plugin Installation Manager Tool Improvements*
+
+Introduce new features and improvements in the plugin installation manager.
+
+Potential Mentor(s): 
+Oleg Nenashev
+Sladyn Nunes
+
+|Tools	
+
+|Java, YAML, Command line tools, Package management tool theory
+
+|*Jenkins Remoting Monitoring*
+
+Support monitoring of Jenkins remoting networking with open source monitoring tools such as Prometheus, Grafana, etc..
+
+Potential Mentor(s): 
+Oleg Nenashev
+Darshan Kansagara
+Sladyn Nunes
+Sumit Sarin
+
+|Plugins, Core	
+
+|Java, Networking, Docker, Prometheus/Grafana/etc.
+
+|*Tekton Pipelines DSL for Jenkins with the Tekton Client Plugin*
+
+Manage Tekton resources via Pipeline Steps / Jenkinsfile.
+
+Potential Mentor(s): 
+Vibhav Bobade
+Gareth Evans
+
+|Plugins	
+
+|Java, Kubernetes, Tekton Pipelines
+
+|===
+
+== Draft project ideas 
+
+Below you can see draft project ideas, which are currently under review. The scope of such ideas may change during the discussions, but the idea is accepted in principle. You are welcome to comment on the draft and to join the project as a mentor. If you are a student, it is also fine to explore and to apply to the draft project ideas.
+
+
+[cols="3,1,1"]
+|===
+|Project	|Category	|Skills to study/improve
+|*Pipeline Step Documentation Generator improvements*
+
+Enhance the Jenkins Pipeline documentation generator to produce better documentation for thousands of Pipeline developers.
+
+Potential Mentor(s): 
+Kristin Whetstone
+Mark Waite
+Oleg Nenashev
+
+|Dev Tools	
+|Java, Jenkins Pipeline, HTML, CSS, Asciidoc, JavaScript
+
+
+|*Semantic Versioning plugin for Jenkins*
+
+Automatically determine the next semantic version for a repository.
+
+Potential Mentor(s): 
+Gareth Evans
+|Plugins
+|Java, Semver
+
+|===
+
+== Ongoing discussion 
+
+These are proposals in the mailing lists which have not been published as project ideas yet. The feasibility is yet to be defined, and the idea may be dismissed depending on the feedback. Everyone is welcome to participate in the discussion and to join as a potential mentor.
+
+[cols="3,1"]
+|===
+|Project	|Category	
+|
+|
+|===

@@ -1,0 +1,116 @@
+= Advocacy and Outreach
+
+.Connect
+****
+* https://groups.google.com/g/jenkins-advocacy-and-outreach-sig[Mailing List]
+* https://app.gitter.im/#/room/#jenkinsci_advocacy-and-outreach-sig:gitter.im[Gitter]
+* https://docs.google.com/document/d/1K5dTSqe56chFhDSGNfg_MCy-LmseUs_S3ys_tg60sTs/edit#heading=h.9jh09t587y90[Meetings]
+* https://community.jenkins.io/c/contributing/advocacy-and-outreach[Forum]
+****
+
+== Overview
+
+[.float-group]
+--
+image:images:ROOT:logos/chatterbox/256.png[Logo,180,135,float=right,role=float-gap]
+This special interest group offers a venue for discussions around advocacy and outreach in the Jenkins community. Topics covered in this sig may include jenkins.io, events, processes, how to attract new people to the Jenkins project, and how to make the Jenkins community an open and inclusive organization that people want to be part of.
+--
+
+xref:ROOT:index.adoc[(Back to List of Jenkins Special Interest Groups )]
+
+== Members
+
+[.avatar]
+*Leads*:
+image:images:ROOT:avatars/alyssat.jpg[,width=30,height=30] Alyssa Tong
+image:images:ROOT:avatars/markewaite.jpg[,width=30,height=30] Mark Waite
+
+[.avatar]
+*Participants*:
+image:images:ROOT:avatars/jmMeessen.jpg[,width=30,height=30] Jean-Marc Meessen
+image:images:ROOT:avatars/krisstern.png[,width=30,height=30] Kris Stern
+
+== Description
+
+== Topics
+
+* Attracting and onboarding new individual and company contributors
+* Documentation for newbie contributors
+* Coordinating community outreach events: GSoC, Outreachy, Community Bridge,
+  Hacktoberfest, Jenkins Online Meetups, JAMs, hackathons, etc.
+* Facilitating community activities - JEP Process, SIGs, etc.
+* Community Evangelism (Jenkins Ambassadors, etc.)
+* Infrastructure: Community metrics & Co, Hosting/Plugin adoption tooling
+
+== Projects
+
+=== Outreach programs
+
+The special interest groups coordinates various outreach programs which help the project to facilitate contributions and to onboard more contributors.
+For a list of our on-going and planned programs, see the xref:advocacy-and-outreach:outreach-programs/index.adoc[Outreach programs] page.
+
+=== Online Meetup
+
+Our SIG manages the xref:events:online-meetup:index.adoc[Jenkins Online Meetup platform] and helps to organize events on this platform.
+It includes user-focused and contributor-focused events.
+See the linked page for more information.
+
+=== Local Events
+
+Our SIG is interested to help with organizing and promoting local events which focus on Jenkins or have a substantial representation of Jenkins in their agenda.
+These meetups are not limited to xref:projects:jam:index.adoc[Jenkins Area Meetups] or xref:projects:jam:index.adoc[CI/CD Meetups],
+we are interested to help any other meetup group or entities organizing local meetups and conferences related to Jenkins.
+
+The SIG does not manage meetup operations (creating new meetups, delivering swag, etc.),
+but we are ready to help to find proper channels if needed.
+xref:projects:jam:index.adoc[This page] summarizes the current state of meetup operations.
+
+[#social-media]
+=== Social media
+
+Our SIG coordinates Jenkins promotion in social media and other channels,
+including but not limited Twitter, YouTube and LinkedIn.
+If you would like to share any content about Jenkins on these platforms,
+please contact us, and we will try to help.
+
+Channels within our scope:
+
+* **Twitter:** link:https://twitter.com/jenkinsci[@jenkinsci], 
+  link:https://twitter.com/jenkins_release[@jenkins_release],
+  and other local and language group community channels.
+* **LinkedIn:** link:https://www.linkedin.com/company/jenkins-project[Jenkins Project]
+* **YouTube:** link:https://www.youtube.com/c/jenkinscicd[Official Jenkins channel]
+* **Discourse forum:** link:https://community.jenkins.io/[community.jenkins.io]
+* **Reddit:** link:https://www.reddit.com/r/jenkinsci/[/r/jenkinsci]
+
+=== Inclusive naming
+
+The SIG coordinates adoption of inclusive naming in Jenkins,
+including the cleanup of former non-inclusive terms and growing awareness among end users and content creators.
+In 2016, the Jenkins community decided to change the non-inclusive terminology within the project.
+The “slave” term was deprecated and replaced by “agent” in Jenkins 2.0.
+In July 2020 we also adopted the “controller” term instead of “master”, and deprecated the “whitelist/blacklist” terms. 
+
+There are many places where the old terminology still needs to be replaced.
+We invite Jenkins contributors and end users to join us and participate in cleaning up 
+our documentation, Web and CLI interfaces, localizations, codebase, and all other occurrences.
+We want to replace the deprecated terminology by new terms: “controller”, “agent”, “allowlist”, “denylist”, and “main” for branch names.
+We also encourage everyone to spread the word about new terminology inside their companies and communities,
+and to reach out to content creators to facilitate cleanup of old terminology.
+
+.References
+****
+* https://community.jenkins.io/t/jenkins-terminology-cleanup-initiative-coordination/180[Contributing to the initiative and discussion] - 
+  contributing guidelines and issue links are there
+* https://cd.foundation/blog/2020/08/25/jenkins-terminology-changes/[Jenkins Terminology Updates] by link:/blog/authors/slide_o_mix[Alex Earl], CDF Blog, August 2021
+* https://inclusivenaming.org/[Inclusive Naming Initiative] - global initiative focused on 
+  helping projects and companies make consistent, responsible choices to remove harmful language.
+****
+
+
+== Meetings
+
+* Schedule: one meeting every 2 weeks, usually on Thursdays. See the xref:events:ROOT:index.adoc#event-calendar[Event Calendar] for the schedule
+* link:https://zoom.us/j/94535341255?pwd=VHhUNjJVZVNuUk8xRi91SDFub2xhQT09[Meeting link (Zoom)]
+* link:https://docs.google.com/document/d/1K5dTSqe56chFhDSGNfg_MCy-LmseUs_S3ys_tg60sTs/edit#[Agenda]
+* link:https://www.youtube.com/playlist?list=PLN7ajX_VdyaOfJSIQj85tYWds7JGkWdWb[Recordings of the previous Meetings]

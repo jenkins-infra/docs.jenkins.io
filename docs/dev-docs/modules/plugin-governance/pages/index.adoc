@@ -1,0 +1,7 @@
+= Plugin Governance
+
+== Sections
+
+* xref:managing-permissions.adoc[]
+* xref:adopt-a-plugin.adoc[]
+* xref:deprecating-or-removing-plugin.adoc[]

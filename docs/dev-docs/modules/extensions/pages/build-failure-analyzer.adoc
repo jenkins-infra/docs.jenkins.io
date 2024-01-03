@@ -1,0 +1,30 @@
+= Extension Points defined in Build Failure Analyzer Plugin
+
+https://plugins.jenkins.io/build-failure-analyzer[Build Failure Analyzer Plugin]
+
+== DownstreamBuildFinder
+
+`jenkinsdoc:build-failure-analyzer:com.sonyericsson.jenkins.plugins.bfa.model.dbf.DownstreamBuildFinder]`
+
++++ There is no general way to find downstream build in Jenkins Core. Different+++ +++ plugin have there own way of keeping this information.+++ +++ Extend this class and implement+++ ++++++ jenkinsdoc:=getDownstreamBuilds(hudson.model.Run)] ++++++ +++ in a way suitable for the plugin+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/build-failure-analyzer[Build Failure Analyzer Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bfa.+++<wbr/>+++model.+++<wbr/>+++dbf.+++<wbr/>+++**BuildCacheDBF** (link:https://github.com/jenkinsci/build-failure-analyzer-plugin/search?q=BuildCacheDBF&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-failure-analyzer[Build Failure Analyzer Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bfa.+++<wbr/>+++model.+++<wbr/>+++dbf.+++<wbr/>+++**CoreDBF** (link:https://github.com/jenkinsci/build-failure-analyzer-plugin/search?q=CoreDBF&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-failure-analyzer[Build Failure Analyzer Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bfa.+++<wbr/>+++model.+++<wbr/>+++dbf.+++<wbr/>+++**ParameterizedTriggerDBF** (link:https://github.com/jenkinsci/build-failure-analyzer-plugin/search?q=ParameterizedTriggerDBF&type=Code[view on GitHub])
+
+
+== ScanOnDemandBaseAction.+++<wbr/>+++ScanMode
+
+`jenkinsdoc:build-failure-analyzer:com.sonyericsson.jenkins.plugins.bfa.sod.ScanOnDemandBaseAction.ScanMode]`
+
++++ Represents the different scan modes that can be used to re-scan the builds of a Job.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/build-failure-analyzer[Build Failure Analyzer Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bfa.+++<wbr/>+++sod.+++<wbr/>+++**ScanOnDemandBaseAction.+++<wbr/>+++AllBuilds** (link:https://github.com/jenkinsci/build-failure-analyzer-plugin/search?q=ScanOnDemandBaseAction.AllBuilds&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-failure-analyzer[Build Failure Analyzer Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bfa.+++<wbr/>+++sod.+++<wbr/>+++**ScanOnDemandBaseAction.+++<wbr/>+++NonScanned** (link:https://github.com/jenkinsci/build-failure-analyzer-plugin/search?q=ScanOnDemandBaseAction.NonScanned&type=Code[view on GitHub])
+

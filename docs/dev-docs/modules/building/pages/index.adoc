@@ -1,0 +1,11 @@
+= Building and Debugging
+
+For Building and Debugging Jenkins, please refer to the 
+link:https://github.com/jenkinsci/jenkins/blob/master/CONTRIBUTING.md[Jenkins core contributing guide] on 
+link:https://github.com/jenkinsci/jenkins[jenkinsci/jenkins].
+
+.References
+****
+* link:https://github.com/jenkinsci/jenkins/blob/master/CONTRIBUTING.md#building-and-debugging[Building and Debugging Jenkins]
+* link:https://www.jimklimov.com/2019/02/debugging-jenkins-plugins-and-core-with.html[Tracing Jenkins plugins and the Jenkins server itself under the Netbeans IDE (blog)] # TODO convert to guide
+****

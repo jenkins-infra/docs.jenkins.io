@@ -1,0 +1,50 @@
+= Extension Points defined in Build Pipeline Plugin
+
+https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]
+
+== BuildCardExtension
+
+`jenkinsdoc:build-pipeline-https://plugins.jenkins.io/au.com.centrumsystems.hudson.plugin.buildpipeline.extension.BuildCardExtension]`
+
++++
+<p>+++ +++ This class is an extension point for a plugin to provide their own behavior for the 'build cards'+++ +++ that show up in the build pipeline plugin.+++ +++</p>+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**StandardBuildCard** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=StandardBuildCard&type=Code[view on GitHub])
+
+
+== PipelineHeaderExtension
+
+`jenkinsdoc:build-pipeline-https://plugins.jenkins.io/au.com.centrumsystems.hudson.plugin.buildpipeline.extension.PipelineHeaderExtension]`
+
++++ An extension point to provide column and/or row headers for the build pipeline+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**AbstractNameValueHeader** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=AbstractNameValueHeader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**BuildVariablesHeader** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=BuildVariablesHeader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**FilteredVariablesHeader** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=FilteredVariablesHeader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**NullColumnHeader** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=NullColumnHeader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**ParametersActionHeader** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=ParametersActionHeader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**SimpleColumnHeader** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=SimpleColumnHeader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**SimpleRowHeader** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=SimpleRowHeader&type=Code[view on GitHub])
+
+
+== PipelineHeaderExtensionDescriptor
+
+`jenkinsdoc:build-pipeline-https://plugins.jenkins.io/au.com.centrumsystems.hudson.plugin.buildpipeline.extension.PipelineHeaderExtensionDescriptor]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**BuildVariablesHeader.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=BuildVariablesHeader.DescriptorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**FilteredVariablesHeader.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=FilteredVariablesHeader.DescriptorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**NullColumnHeader.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=NullColumnHeader.DescriptorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**ParametersActionHeader.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=ParametersActionHeader.DescriptorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**SimpleColumnHeader.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=SimpleColumnHeader.DescriptorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-pipeline-plugin[Build Pipeline Plugin]: au.+++<wbr/>+++com.+++<wbr/>+++centrumsystems.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++buildpipeline.+++<wbr/>+++extension.+++<wbr/>+++**SimpleRowHeader.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/build-pipeline-plugin/search?q=SimpleRowHeader.DescriptorImpl&type=Code[view on GitHub])
+

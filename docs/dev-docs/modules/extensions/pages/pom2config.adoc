@@ -1,0 +1,17 @@
+= Extension Points defined in pom2config Plugin
+
+https://plugins.jenkins.io/pom2config[pom2config Plugin]
+
+== Handler
+
+`jenkinsdoc:pom2config:org.jenkinsci.plugins.pom2config.Handler]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/pom2config[pom2config Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pom2config.+++<wbr/>+++handler.+++<wbr/>+++**EmailExtHandler** (link:https://github.com/jenkinsci/pom2config-plugin/search?q=EmailExtHandler&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pom2config[pom2config Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pom2config.+++<wbr/>+++handler.+++<wbr/>+++**JobHandler** (link:https://github.com/jenkinsci/pom2config-plugin/search?q=JobHandler&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pom2config[pom2config Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pom2config.+++<wbr/>+++**Pom2ConfigHandler** (link:https://github.com/jenkinsci/pom2config-plugin/search?q=Pom2ConfigHandler&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pom2config[pom2config Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pom2config.+++<wbr/>+++handler.+++<wbr/>+++scm.+++<wbr/>+++**ScmHandler** (link:https://github.com/jenkinsci/pom2config-plugin/search?q=ScmHandler&type=Code[view on GitHub])
+

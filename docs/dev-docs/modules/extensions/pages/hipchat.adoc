@@ -1,0 +1,16 @@
+= Extension Points defined in HipChat Plugin
+
+https://plugins.jenkins.io/hipchat[HipChat Plugin]
+
+== CardProvider
+
+`jenkinsdoc:hipchat:jenkins.plugins.hipchat.CardProvider]`
+
++++ An extension point that can be used to allow full control over HipChat notification cards for individual+++ +++ notifications. The provider itself is globally configured, so any job-specific behavior would be the responsibility+++ +++ of the plugin itself.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/hipchat[HipChat Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++hipchat.+++<wbr/>+++impl.+++<wbr/>+++**DefaultCardProvider** (link:https://github.com/jenkinsci/hipchat-plugin/search?q=DefaultCardProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hipchat[HipChat Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++hipchat.+++<wbr/>+++impl.+++<wbr/>+++**NoopCardProvider** (link:https://github.com/jenkinsci/hipchat-plugin/search?q=NoopCardProvider&type=Code[view on GitHub])
+

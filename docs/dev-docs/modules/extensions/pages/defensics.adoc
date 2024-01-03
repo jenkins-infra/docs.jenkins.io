@@ -1,0 +1,37 @@
+= Extension Points defined in Defensics Plugin
+
+https://plugins.jenkins.io/defensics[Defensics Plugin]
+
+== FuzzBuildStep.+++<wbr/>+++FuzzBuildStepDescriptor
+
+`jenkinsdoc:defensics:com.synopsys.defensics.jenkins.FuzzBuildStep.FuzzBuildStepDescriptor]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== FuzzPipelineStep.+++<wbr/>+++FuzzPipelineDescriptor
+
+`jenkinsdoc:defensics:com.synopsys.defensics.jenkins.FuzzPipelineStep.FuzzPipelineDescriptor]`
+
++++ Descriptor for pipeline step.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== FuzzPostBuildStep.+++<wbr/>+++FuzzPostBuildStepDescriptor
+
+`jenkinsdoc:defensics:com.synopsys.defensics.jenkins.FuzzPostBuildStep.FuzzPostBuildStepDescriptor]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+_(no known implementations)_
+

@@ -1,0 +1,48 @@
+= Extension Points defined in Git Plugin
+
+https://plugins.jenkins.io/git[Git Plugin]
+
+== BuildChooser
+
+`jenkinsdoc:git:hudson.plugins.git.util.BuildChooser]`
+
++++ Interface defining an API to choose which revisions ought to be+++ +++ considered for building.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/git-chooser-alternative[Alternative build chooser Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++chooser.+++<wbr/>+++alternative.+++<wbr/>+++**AlternativeBuildChooser** (link:https://github.com/jenkinsci/git-chooser-alternative-plugin/search?q=AlternativeBuildChooser&type=Code[view on GitHub])
+* https://plugins.jenkins.io/flaky-test-handler[Flaky Test Handler Plugin]: com.+++<wbr/>+++google.+++<wbr/>+++jenkins.+++<wbr/>+++flakyTestHandler.+++<wbr/>+++plugin.+++<wbr/>+++deflake.+++<wbr/>+++**DeflakeGitBuildChooser** (link:https://github.com/jenkinsci/flaky-test-handler-plugin/search?q=DeflakeGitBuildChooser&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gerrit-trigger[Gerrit Trigger Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++gerrit.+++<wbr/>+++trigger.+++<wbr/>+++hudsontrigger.+++<wbr/>+++**GerritTriggerBuildChooser** (link:https://github.com/jenkinsci/gerrit-trigger-plugin/search?q=GerritTriggerBuildChooser&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++**AbstractGitSCMSource.+++<wbr/>+++SpecificRevisionBuildChooser** (link:https://github.com/jenkinsci/git-plugin/search?q=AbstractGitSCMSource.SpecificRevisionBuildChooser&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++util.+++<wbr/>+++**AncestryBuildChooser** (link:https://github.com/jenkinsci/git-plugin/search?q=AncestryBuildChooser&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++util.+++<wbr/>+++**DefaultBuildChooser** (link:https://github.com/jenkinsci/git-plugin/search?q=DefaultBuildChooser&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++util.+++<wbr/>+++**InverseBuildChooser** (link:https://github.com/jenkinsci/git-plugin/search?q=InverseBuildChooser&type=Code[view on GitHub])
+
+
+== GitStatus.+++<wbr/>+++Listener
+
+`jenkinsdoc:git:hudson.plugins.git.GitStatus.Listener]`
+
++++ Other plugins may be interested in listening for these updates.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/backlog[Backlog Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++backlog.+++<wbr/>+++pipeline.+++<wbr/>+++**BacklogPullRequestSCMSource.+++<wbr/>+++ListenerImpl** (link:https://github.com/jenkinsci/backlog-plugin/search?q=BacklogPullRequestSCMSource.ListenerImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gerrit-code-review[Gerrit Code Review Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++gerrit.+++<wbr/>+++**GerritSCMSource.+++<wbr/>+++ListenerImpl** (link:https://github.com/jenkinsci/gerrit-code-review-plugin/search?q=GerritSCMSource.ListenerImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++**GitSCMSource.+++<wbr/>+++ListenerImpl** (link:https://github.com/jenkinsci/git-plugin/search?q=GitSCMSource.ListenerImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++**GitStatus.+++<wbr/>+++JenkinsAbstractProjectListener** (link:https://github.com/jenkinsci/git-plugin/search?q=GitStatus.JenkinsAbstractProjectListener&type=Code[view on GitHub])
+
+
+== GitToolChooser.+++<wbr/>+++RepositorySizeAPI
+
+`jenkinsdoc:git:jenkins.plugins.git.GitToolChooser.RepositorySizeAPI]`
+
++++ Other plugins can estimate the size of repository using this extension point+++ +++ The size is assumed to be in KiBs+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

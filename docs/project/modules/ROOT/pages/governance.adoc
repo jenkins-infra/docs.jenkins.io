@@ -1,0 +1,354 @@
+=  Project Governance Document
+
+== Who we are
+
+The Jenkins project as a community revolves around Jenkins as a piece of software. We are a group of open-source developers and users who develop, use, promote Jenkins, software around Jenkins, and other related activities for our mutual benefit.
+
+The project is a part of the https://cd.foundation/[Continuous Delivery Foundation] and
+affiliated with the link:https://www.linuxfoundation.org/[Linux Foundation] legal entities which legally own the project assets and act as treasury.
+Before 2021, these roles were held by 
+link:https://www.spi-inc.org/[Software in the Public Interest, Inc.] (SPI).
+
+== Our Philosophy
+
+=== Lower barrier of entry
+
+We strive for lower barrier of entry to the project. This is partly achieved by not requiring new contributors to “prove themselves” before they are admitted to the committership. Instead, we assume they are good until proven otherwise, and this principle applies to anybody without arbitrary discrimination. We recognize that every contribution is precious, and we recognize that every added process turn away some potential contributors.
+
+The lower barrier of entry is partly achieved by structuring the project to core, plugins, modules, and other independent pieces, thereby reducing the need for collaboration and communication. We try to let everyone have their own turf where they can work efficiently without bogged down by discussions and compromises. We believe everyone has the right to express their idea in their own plugins.
+
+The lower barrier of entry is also partly achieved by recognizing that people move on. Lots of code in the project is maintained by people other than the original author. We encourage new contributors to take over existing projects that aren’t actively maintained. We believe that “old” contributors deserve respect from “new” contributors, but the inaction on the part of the original contributors shall not block new contributors from making changes.
+
+=== Meritocracy
+
+Our striving to lower barrier of entry doesn’t mean everyone has the equal voice. We value those who contribute more to the project, namely link:https://en.wikipedia.org/wiki/Meritocracy[Meritocracy]. Contribution shouldn’t be narrowly interpreted just to code changes, but rather it includes such activities as helping others in the community, doing PR, running infrastructure, and so on.
+
+=== Transparency
+
+We believe in running the project transparently. This includes everything from decision-making to defects in the code.
+
+[#compatibility-matters]
+=== Compatibility matters
+
+We recognize that users expect their existing data, accumulated under past versions (including Hudson up to 1.395) to continue working under future versions of Jenkins. This includes jobs configurations, build records, and plugin binaries that they are using. The Jenkins project places high value on maintaining this compatibility, and will be very careful in removing functionality.
+
+To enable the above goal, we also recognize that plugin developers expect APIs and other code that they depend on to remain available in future versions of Jenkins. This is not to say we don’t ever remove anything, but we do it very carefully.
+
+Because one plugin can depend on another, we expect the same principle from plugins that many other plugins depend on.
+
+=== Automation
+
+One of the goals of the Jenkins project is to enable more automation, and we apply the same principle in developing Jenkins. Accordingly, we develop and use a number of daemons, bots, and scripts to perform house-keeping activities and day-to-day operations, we use Jenkins ourselves to run many of those.
+
+This not only frees our time to do more creative work, but it also helps reduce the barrier to entry by reducing the blockage of one developer by another. Plus it has the added benefit of eating our own dogfood.
+
+== License
+
+The Jenkins project uses the link:https://opensource.org/licenses/MIT[MIT License] as the primary license of choice, for the code that we develop. Unless otherwise stated, all the code is under the MIT license.
+
+The link:https://github.com/jenkinsci/jenkins[core of Jenkins] is entirely under the MIT license, as is the majority of our link:https://github.com/jenkins-infra[infrastructure code] (that runs the project itself), as well as many plugins. We encourage hosted plugins to use the same MIT license, to simplify the story for users, but plugins are free to choose their own licenses, so long as it’s an link:https://opensource.org/licenses/[OSI-approved] or link:https://en.wikipedia.org/wiki/Public-domain-equivalent_license[public-domain-equivalent] license or dedicated to the public domain.
+
+This is not to be confused with proprietary plugins --- we recognize and encourage plugins that people write on their own for their internal use, without necessarily making the source code available. But no such plugins will be hosted by the Jenkins project.
+
+[#cla]
+=== Contributor License Agreement (CLA)
+
+To further clarify the intellectual property rights around the project, we require that core committers sign a contributor agreement.
+The Jenkins project uses the EasyCLA service provided by the Linux Foundation.
+Refer to the link:https://github.com/jenkinsci/infra-cla/blob/master/README.md[infra-cla README] for contributor license agreement submission instructions.
+More details are available from the Linux Foundation for link:https://docs.linuxfoundation.org/lfx/easycla/v2-current/contributors/individual-contributor[individual contributors] and link:https://docs.linuxfoundation.org/lfx/easycla/v2-current/contributors/corporate-contributor[corporate contributors].
+
+EasyCLA is self service and requires no manual intervention by the board or any other Jenkins project member.
+It is a one-time process, valid for all xref:project:ROOT:conduct.adoc#community-spaces[Jenkins community spaces].
+
+CLAs come in two flavors. Every core contributor needs to sign an Individual CLA (ICLA), and in cases where you as an individual do not own the work you are contributing (such as when your company assigns you to work on Jenkins and therefore your company owns the hard work you produced), the corporation also needs to sign a Corporate CLA (CCLA). See link:https://www.apache.org/licenses/#clas[the discussion in Apache for more details]. The CLA forms can be obtained by following the documentation in the link:https://github.com/jenkinsci/infra-cla[infra-cla] repository.
+
+To balance the additional overhead with the lower barrier to entry, this policy only applies to the core, although we welcome anyone who's willing to submit a CLA for their work on plugins.
+
+Details to submit CLAs are documented in link:https://github.com/jenkinsci/infra-cla/blob/master/README.md[infra-cla README].
+
+=== 3rd party library licenses in the core
+
+The Jenkins project depends heavily on 3rd party libraries. We believe it's better to reuse what we can than to reinvent, so that our precious resources can be spent elsewhere.
+
+Jenkins as a whole needs to be an open-source project, so we've been restricting ourselves to only use 3rd party libraries that are under link:https://www.opensource.org/[OSI-approved] (such as Apache Software License, BSD license, MIT license, Eclipse Public License, and Lesser GNU Public License) or https://en.wikipedia.org/wiki/Public-domain-equivalent_license[public-domain-equivalent] licenses or dedicated to the public domain. In addition, to keep the core reusable for the widest possible use cases, we refuse so-called link:https://en.wikipedia.org/wiki/Copyleft[copyleft licenses] that restrict the overall license to a specific license (such as GNU Public License.) To that end, we designated the following licenses as approved licenses that we can depend on. Additional licenses are subject to the approval by the board:
+
+* link:https://www.apache.org/licenses/[Apache Software License]
+* link:https://opensource.org/licenses/bsd-license.php[BSD license], link:https://opensource.org/licenses/mit-license.php[MIT license]
+* link:https://opensource.org/licenses/W3C.php[W3C software license]
+* link:https://opensource.org/licenses/cddl1.php[CDDL], link:https://opensource.org/licenses/cpl1.0.php[CPL], link:https://opensource.org/licenses/eclipse-1.0.php[EPL], and link:https://opensource.org/licenses/mozilla1.0.php[MPL], and link:https://opensource.org/licenses/lgpl-license.php[LGPL] (these licenses require that derivative works to be under the same license as the original license, so the source code needs to be separated into its own repository, but binaries can be used as dependencies to the core.)
+
+In core, the build process ensure that all the licenses of the dependency libraries are accounted for. In other words, we require that dependency POMs declare their own licenses in the Maven way, or use link:https://github.com/jenkinsci/jenkins/blob/master/licenseCompleter.groovy[the license completion script] to supply one where the POM is missing that information. The completion script is also used in case the library is dual-licensed to pick a specific license. This is done so that the summary list of the 3rd party library licenses do not include copy-left licenses.
+
+The result is packaged into the core and is visible from link:https://ci.jenkins-ci.org/about[within the application itself]. It is also available in the XML format inside the war file.
+
+=== 3rd party library licenses in the plugins
+
+Plugins do not necessarily follow the same formality when it comes to the 3rd party license policy. They obviously need to honor the licenses of the libraries they use, but for example they need not run the same license completion scheme that the core uses.
+
+We encourage plugins to follow the same 3rd party license policy as the core. You may vary from it at your own risk. For example, see link:https://www.gnu.org/licenses/gpl-faq.html#NFUseGPLPlugins[FSF's opinion about GPL plugins with a non-GPL core].
+
+[#trademark]
+== Trademark
+
+See the xref:project:trademark:index.adoc[Trademark and Attribution] page for details.
+
+== Project roles/stakeholders
+
+[#governance-board]
+=== Governance board
+
+The governance board consists of five people who act as public representatives of the project, when such representation is necessary, for example to interface external entities such as SPI or CDF.
+
+The board also acts as the ultimate decision-making authority in case disputes cannot be resolved via the regular project community meeting. The decision-making ability of the board is more symbolic and honorific, and it “rules” like British royalty rather than a dictatorship.
+
+The xref:project:ROOT:board.adoc[Governance Board] page provides further information, including a list of current board members, and how to contact the board.
+
+The process by which the Governance Board is elected can be reviewed in the xref:project:ROOT:board-election-process.adoc[Board Election Process]
+
+
+=== Infrastructure admins
+
+Infrastructure administrators have root access to the various servers and build agents that run `jenkins-ci.org` and other sub-domains. They keep those servers up and running, installing new software, coordinating mirrors, handling keys and certificates, and making sure that we can keep churning out code.
+
+Because of the sensitive nature of this work, infrastructure admins are by invitation only, and some of the activity happen behind closed doors. Infrastructure admins often appoint others to delegate some partial access to the system to complete some tasks.
+
+Infrastructure components are maintained by the xref:projects:infrastructure:index.adoc[infrastructure project].
+See the xref:projects:infrastructure:index.adoc#contributing[contributing guidelines] for more information.
+Open a link:https://github.com/jenkins-infra/helpdesk[help desk issue] for infrastructure problems.
+
+=== Core committers
+
+Core committers are those who have push access to link:https://github.com/jenkinsci/jenkins[the main Jenkins repository] that produces `jenkins.war`. To become a core committer, one needs to sign the xref:#cla[contributor license agreement]. One is not required to have a proven history of contributions before being granted commit access, but that doesn’t mean other core committers will never revert your changes.
+
+The list of CLA signers is be maintained here: https://github.com/jenkinsci/infra-cla
+
+
+=== Plugin committers
+
+Plugin committers are those who have push access to specific plugin repositories hosted under the jenkinsci GitHub organization. One is not required to have a proven history of contributions before being granted commit access. All you have to do is to ask. But that doesn’t mean other existing committers will never revert your changes.
+
+=== Localization contributors
+
+Localization contributors have push access to both the core and hosted plugins. They make localization/internationalization related changes to the code and resources, and they push those changes without seeking approval from the core/plugin committers.
+
+=== Users
+
+Users use Jenkins and its plugins. They contribute to the project by providing feedback, filing bug reports, prioritizing features and fixes for developers, helping other users, and making committers feel like their work is worth while.
+
+== Communication
+
+The communication among people in the community is crucial to the oneness of the project.
+People in the Jenkins project communicate with each other in several different places.
+There is an xref:sigs:advocacy-and-outreach:index.adoc[Advocacy and Outreach] special interest group which focuses on public communications.
+Some of the communication channels are listed below.
+
+Mailing lists::
+We encourage mailing lists as the primary means of developer & user discussion, because of their asynchrony and ability to search the archive. The project website lists xref:community:mailing-lists:index.adoc[the active mailing lists and their purposes].
+
+Chats::
+Jenkins project uses xref:community:chat:index.adoc[IRC and Gitter channels] for real time interactive communications. This is also the place where active members bond with each other.
+
+Twitter::
+link:https://twitter.com/jenkinsci[@jenkinsci] is the official Twitter account of the Jenkins project, run by the team of contributors (jep:10[]).
+There are also a link:https://twitter.com/jenkins_release[@jenkins_release] account for automatic plugin release announcements,
+and other accounts being run by sub-communities like meetup groups.
+
+Special interest group channels::
+There are multiple xref:sigs:ROOT:index.adoc[Special Interest Groups] in the community.
+These groups focus on particular topics and organize dedicated communication channels including chats, mailing lists and regular meetings.
+
+== Infrastructure
+
+This section summarizes the key infrastructure services we run in the project.
+See the xref:projects:infrastructure:index.adoc[Jenkins Infrastructure] page for the full list of services and more details.
+
+Website::
+Jenkins website (jenkins.io) is self-hosted by the Jenkins project.
+It follows the Infrastructure-as-code approach, and everyone can contribute to the website and content by just submitting a pull request.
+Its source codes can be found link:https://github.com/jenkins-infra/jenkins.io/[here].
+
+Source code::
+We host most of our code on GitHub. link:https://github.com/jenkinsci/[jenkinsci] and link:https://github.com/jenkins-infra/[jenkins-infra] are the organizations where we host most of our code.
+More information about the GitHub organization and repository structures can be found xref:community:ROOT:code.adoc#where-to-contribute[here].
+
+User Accounts::
+The infrastructure admins run an LDAP server and link:https://accounts.jenkins.io/[a small frontend program] to let users create accounts on jenkins.io.
+This account is used to access services ran by the Jenkins project: Issue tracker, Maven repository, CI instances, etc.
+
+Issue tracker::
+link:https://issues.jenkins.io/[Our primary bug tracker] is maintained by the Linux Foundation. This uses the LDAP server described above for access.
+
+Jenkins on Jenkins::
+We run a link:https://ci.jenkins.io/[Jenkins instance] for Jenkins core and plugin continuous integration.
+There are also other Jenkins instances which automate releases and infrastructure management.
+
+== Roadmap
+
+Jenkins project offers a public community-driven roadmap.
+It aggregates key initiatives in all areas: features, infrastructure, documentation, community, etc.
+We do NOT commit on delivery dates, and we do not guarantee that an initiative will be implemented at all.
+All initiatives depend on contributions,
+and we invite all interested parties to join us and to contribute towards the roadmap goals.
+
+* link:/project/roadmap[Public Jenkins Roadmap]
+* jep:14[Public Jenkins Roadmap Process]
+
+[#meeting]
+== Decision making
+
+The Jenkins project uses xref:project:governance-meeting:index.adoc[biweekly project meetings] as the primary forum of decision-making for matters that need consensus.
+The meeting is conducted using a video call or xref:community:chat:index.adoc#irc[IRC].
+These meetings are open to anyone, and everyone is welcome to provide their feedback and vote on decisions at the meeting.
+Agenda items can be added by anyone by simply adding your topic to xref:project:governance-meeting:index.adoc[the Governance Meeting Agenda].
+
+The meeting minutes are public:
+
+* xref:project:governance-meeting:index.adoc[Governance Meeting Agenda] for meetings held in as video calls
+* link:http://meetings.jenkins-ci.org/jenkins-meeting/[September 2015 to today]
+* link:http://meetings.jenkins-ci.org/jenkins/[2011 to September 2015]
+
+The board serves as the ultimate decision-making body in case the project meeting fails to reach a consensus on a particular topic.
+
+//TODO(oleg_nenashev): This section is dated and not really relevant to the project governance
+// IMO we should move it elsewhere and leave only Governance-related parts like ownership, teams, consensus building, etc.
+
+== Jenkins Core
+
+The _Jenkins core_ refers to a set of code, modules and libraries that result in the `jenkins.war` binary.
+link:https://github.com/jenkinsci/jenkins[The official core repository] is hosted on GitHub.
+
+The Jenkins core is maintained by a team of long time committers who review and integrate changes submitted through link:https://github.com/jenkinsci/jenkins/pulls[GitHub pull requests].
+They also coordinate the Jenkins releases.
+See the link:https://github.com/jenkinsci/jenkins/blob/master/docs/MAINTAINERS.adoc[Jenkins Core maintainer guidelines] for more information about roles, their responsibilities and maintenance processes.
+
+Core committers generally use their own judgement to decide what to work on.
+Core committers are expected to be attentive to pending pull requests, and try to act on them quickly.
+
+=== Release lines
+
+The Jenkins project provides two release lines for the Jenkins core.
+For both lines we provide multiple distributions including `jenkins.war`, Docker images, installers and native packages.
+They can be downloaded by users link:/download[here].
+
+Regular releases::
+Every week a new release is built from the master branch and released.
+This allows us to get new features and bug fixes into the hands of users relatively quickly.
+See the https://www.jenkins.io/download/weekly/[Regular (Weekly) Release Line] for more details.
+
+LTS Releases::
+Every three months or so we pick a prior release as the new long-term support (LTS) release and then create the ‘stable’ branch, from that release point. This branch gets important bug fixes backported from the master branch, and further patch releases are built roughly every two weeks until the next LTS baseline is chosen. See https://www.jenkins.io/download/lts[LTS Release Line] for more details.
+
+=== Modules
+
+Modules are libraries that are built separately from the core (much like plugins are), but are bundled into the WAR file as a JAR file in `WEB-INF/lib` and therefore it behaves as if it's a part of the core from the users' point of view.
+Modules can be thought of as something in between a library and a plugin.
+It has its own POM, a set of source code, and is built separately, like a library, but it gets the same compile-time processing as plugins do.
+
+This assists splitting a big hair ball (that is the core) into more manageable smaller pieces, and allow OEMs to add/remove functionalities separately.
+
+== Plugins
+
+Plugins are developed autonomously by the people working on the plugin.
+Each gets its own repository, its own Jenkins-on-Jenkins job, its own issue tracker component, and maintains its own release schedule.
+
+Some plugins are actively maintained by a small number of people and they may have their own local culture, such as different coding convention, additional commit policies. We do this so that people can feel ownership and attachment to their effort, and so that they won’t feel like they have to follow externally decided rules.
+
+Since much of such local culture is implicit, it's often difficult to tell from outside the operating culture of a given plugin. The safe rule of thumb is to contact existing developers upfront before doing any commit (but if there's no timely response in a week so, you should feel free to commit.) Less actively maintained plugins tend not to have such local culture, so in those cases, if you feel lucky you can commit changes ahead and send a heads-up simultaneously, (and accept the possibility that the changes get reverted.)
+
+Maintainer information is listed on https://plugins.jenkins.io/ and is defined in the link:https://github.com/jenkins-infra/repository-permissions-updater[repository permissions updater].
+If you have trouble figuring out who to contact, the good fallback option is the developers' mailing list.
+
+=== Plugin Site
+
+Each published plugin has its own page on https://plugins.jenkins.io/, such as link:https://plugins.jenkins.io/git[this].
+These pages provide documentation and information about the plugin: installation statistics, changelogs, known issues, etc.
+Documentation is retrieved from the GitHub repository of the plugin or from an archived copy of the decommissioned Jenkins wiki.
+See the xref:dev-docs:publishing:documentation.adoc[Plugin Documentation Page] in the Developer guide for more information about how it works.
+
+== How we develop code
+
+=== Coding Convention
+
+In the Jenkins core we roughly follow link:https://www.oracle.com/technetwork/java/codeconvtoc-136057.html[Sun coding convention] in the source code, and we use 4 space indentation and don’t use tabs. It's generally more practical and appreciated if you submit changes that don't change the code format too much as it eases the coding review job. Try submitting formatting changes and functional changes in separate commits.
+
+With that said, we do not believe in rigorously enforcing coding convention, and we don’t want to turn down contributions because their code format doesn’t match what we use. So consider this informational.
+
+Jenkins plugins and other components may define their own code conventions.
+
+=== Commit guidelines
+
+See xref:#pull-request[the pull request checklist] for guidelines on submitting code to Jenkins.
+
+=== Copying code from elsewhere
+
+When you have a license to do so, and when that license is compatible with the MIT license, you can copy the code from elsewhere into Jenkins.
+
+The most typical case of this is that the original code is licensed under a certain subset of the open-source licenses, such as ASL, BSD, and MIT license. Copyleft licenses, even though they are open-sourced, cannot be copied, such as EPL and GPL.
+In particular, this means we can copy Oracle Hudson's source code under the MIT license, but not Eclipse Hudson's source code under EPL.
+
+The code to be copied must be clearly marked with the license it is under, and when copying, you need to maintain the copyright/license attribution in the header. Please also indicate the origin of the copy as a part of the commit message.
+
+=== Locally patching dependencies
+
+Sometimes, it is necessary to make bug fixes and changes in the libraries that we use. Where the library is significant to Jenkins and the impact is considerable to our users, we choose to maintain local patch sets to upstream libraries, just like Linux distributions maintain such patches for its packages.
+
+We normally intend such local patches to be integrated into upstream, so we file tickets upstream and provide our diff. When this works, this allows us to go back to the pristine upstream release at some point in the future. Those patch sets are maintained in our git repositories as a parallel branch.
+
+In some cases, the supposed "temporary" patch sets became more permanent for various reasons beyond our control, such as the ceased development in the upstream, but that's only because that's how it turned out, not because we intended it at the outset. With the distributed version control system, maintaining parallel patch release for Jenkins isn't as hard as it used to be.
+
+== How to join the project
+
+=== Bringing in new plugins/tools/libraries
+
+If you develop a plugin, we encourage you to co-host that with the Jenkins project so that other people in the community can participate. See xref:dev-docs:publishing:requesting-hosting.adoc[Hosting Plugins] for more details.
+
+=== Making changes to existing plugins
+
+If you are interested in just making a small number of changes without an intent to stay. It’s the easiest to send in pull requests through GitHub. See xref:#pull-request[using pull requests] for more details. If your pull requests are not getting timely attention, please ping us via the developers' mailing list, so that we can resolve that.
+
+If you’d like to be involved more seriously, in addition to the pull request, we encourage you to consider becoming a committer. Drop us a note in the IRC channel or the dev list, and we’ll set you up with commit access. Try to be courteous to existing developers by sending them heads-up and coordinating with them, but if they aren’t responding, don’t let that block your progress. The seniority of the developers are earned through on-going participation.
+
+=== Helping and taking over dormant plugins
+
+It is often the case that the original developer moves onto other things once the plugin becomes good enough for them (or if the original author changes the job and no longer has incentive to work on the technology.) So we encourage new developers or developers of different plugin to pitch in on other plugins’ pending pull requests or work on issues filed against them.
+
+To that end, we also encourage people to pick up dormant plugins and consider them theirs.
+See the xref:dev-docs:plugin-governance:adopt-a-plugin.adoc[Adopt a Plugin] guidelines for more information.
+
+Many less active plugins do not really have any obvious owner, and they are collaboratively maintained by people making small changes and releasing them whenever the need arises. If in doubt, ask on the dev list.
+
+=== Making changes to core
+
+If you are interested in just making small changes, the same process applies as plugins.
+Just submit a pull request!
+However, because core changes affect a larger number of people, we’d be grateful if you’d try to go the extra distance on the notes described in xref:#pull-request[using pull requests].
+
+If you’d like to be involved more seriously in the Jenkins core, consider joining the Jenkins core maintainers team.
+See the onboarding guidelines link:https://github.com/jenkinsci/jenkins/blob/master/docs/MAINTAINERS.adoc#team[here].
+
+When making changes, use your common sense. For example, if you are thinking about making a big change, it is recommended that you discuss your changes with the developers upfront. Or if you see that the part you’d like to work on has been actively modified by others, give them a heads-up.
+
+=== Contributing localizations
+
+We are always looking for people who can help localize Jenkins to different languages. If you are interested in helping, drop us a note in the dev list to get commit access, and see xref:dev-docs:internationalization:index.adoc[Internationalization] for the details of how to make changes.
+
+[#pull-request]
+=== Using pull requests
+
+As discussed above, Jenkins project uses pull requests as one of the main workflow to get the changes in. When you prepare your pull request, consider the following checklist as the best practice.
+
+* See link:https://help.github.com/articles/creating-a-pull-request/[the github online help] for how to create a pull request
+* We encourage you to file a ticket in link:https://issues.jenkins.io/[the issue tracker] to describe the bug that you are fixing or the feature you are implementing. This creates a permanent record on our system that allows future developers to understand how the code came into the current shape. This is not a requirement (especially for small changes), but we appreciate if you do that.
+* Refer to the ticket in your commit message by using the notation `[JENKINS-1234]` where _JENKINS-1234_ is the ticket ID. This allows our scripts to understand the history and generate changelogs without human help. If you use the notation `[FIX JENKINS-1234]`, our bot will close the ticket automatically when the change is merged into the repository, and when the change is tested in our CI server. These notations create useful cross-references across systems, and are therefore highly recommended.
+* We encourage you to have a test case for the code you added to avoid future regressions. See xref:dev-docs:testing:index.adoc[Testing] for more details about how to write tests.
+* Try to describe your changes so that other people understand what you did.
+* Make sure you didn’t modify portions that aren’t related to your changes (most often caused by IDE auto-fixing import statements and other code formats.)
+
+We do try to be attentive to inbound pull requests, unfortunately we may fail to review some of them in a timely fashion.
+If you notice that your pull requests aren’t getting attended to within a week or two, please drop us a note at the dev list or ping us in the GitHub pull request.
+
+== This document
+
+This document is owned by the community and substantial changes are approved via the project meeting.
+Send your questions to the dev list, or add an item to the xref:project:governance-meeting:index.adoc[next governance meeting's agenda].

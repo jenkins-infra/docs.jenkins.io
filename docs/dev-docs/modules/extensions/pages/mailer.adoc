@@ -1,0 +1,31 @@
+= Extension Points defined in Mailer Plugin
+
+https://plugins.jenkins.io/mailer[Mailer Plugin]
+
+== MailAddressFilter
+
+`jenkinsdoc:mailer:jenkins.plugins.mailer.tasks.MailAddressFilter]`
+
++++ Checks email addresses if they should be excluded from sent emails.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== MailAddressResolver
+
+`jenkinsdoc:mailer:hudson.tasks.MailAddressResolver]`
+
++++ Infers e-mail addresses for the user when none is specified.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/active-directory[Active Directory Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++active_directory.+++<wbr/>+++**ActiveDirectoryMailAddressResolverImpl** (link:https://github.com/jenkinsci/active-directory-plugin/search?q=ActiveDirectoryMailAddressResolverImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/crowd2[Crowd 2 Integration Plugin]: de.+++<wbr/>+++theit.+++<wbr/>+++jenkins.+++<wbr/>+++crowd.+++<wbr/>+++**CrowdMailAddressResolverImpl** (link:https://github.com/jenkinsci/crowd2-plugin/search?q=CrowdMailAddressResolverImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/crowd[Crowd Integration Plugin]: com.+++<wbr/>+++ds.+++<wbr/>+++tools.+++<wbr/>+++hudson.+++<wbr/>+++crowd.+++<wbr/>+++**CrowdMailAddressResolver** (link:https://github.com/jenkinsci/crowd-plugin/search?q=CrowdMailAddressResolver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira[Jira Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++jira.+++<wbr/>+++**JiraMailAddressResolver** (link:https://github.com/jenkinsci/jira-plugin/search?q=JiraMailAddressResolver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/mailmap-resolver[Mail Map Resolver Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++mailmapresolver.+++<wbr/>+++**MailMapAddressResolver** (link:https://github.com/jenkinsci/mailmap-resolver-plugin/search?q=MailMapAddressResolver&type=Code[view on GitHub])
+

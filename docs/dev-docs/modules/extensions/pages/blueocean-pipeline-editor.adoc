@@ -1,0 +1,15 @@
+= Extension Points defined in Blue Ocean Pipeline Editor Plugin
+
+https://plugins.jenkins.io/blueocean-pipeline-editor[Blue Ocean Pipeline Editor Plugin]
+
+== ExportedDescribableParameterDecorator
+
+`jenkinsdoc:blueocean-pipeline-editor:io.blueocean.rest.pipeline.editor.ExportedDescribableParameterDecorator]`
+
++++ Allows plugins to modify property metadata, e.g. providing additional form fields and such+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

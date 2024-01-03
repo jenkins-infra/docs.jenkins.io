@@ -1,0 +1,15 @@
+= Extension Points defined in Gitee Plugin
+
+https://plugins.jenkins.io/gitee[Gitee Plugin]
+
+== GiteeClientBuilder
+
+`jenkinsdoc:gitee:com.gitee.jenkins.gitee.api.GiteeClientBuilder]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/gitee[Gitee Plugin]: com.+++<wbr/>+++gitee.+++<wbr/>+++jenkins.+++<wbr/>+++gitee.+++<wbr/>+++api.+++<wbr/>+++impl.+++<wbr/>+++**GiteeV5ClientBuilder** (link:https://github.com/jenkinsci/gitee-plugin/search?q=GiteeV5ClientBuilder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitee[Gitee Plugin]: com.+++<wbr/>+++gitee.+++<wbr/>+++jenkins.+++<wbr/>+++gitee.+++<wbr/>+++api.+++<wbr/>+++impl.+++<wbr/>+++**ResteasyGiteeClientBuilder** (link:https://github.com/jenkinsci/gitee-plugin/search?q=ResteasyGiteeClientBuilder&type=Code[view on GitHub])
+

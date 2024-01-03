@@ -1,0 +1,23 @@
+= Using Jenkins
+
+This chapter contains topics for typical Jenkins users (of all skill levels)
+about Jenkins usage which is outside the scope of the core Jenkins features:
+Pipeline and Blue Ocean.
+
+If you want to create and configure a Pipeline project through a `Jenkinsfile`
+or through Blue Ocean, or you wish to find out more about these core Jenkins
+features, refer to the relevant topics within the respective
+xref:pipeline:index.adoc[Pipeline] and xref:blueocean:index.adoc[Blue Ocean] chapters.
+
+If you are a Jenkins administrator and want to know more about managing Jenkins
+nodes and instances, see xref:managing:index.adoc[Managing Jenkins].
+
+If you are a system administrator and want to learn how to back-up, restore,
+maintain as Jenkins servers and nodes, see
+xref:system-administration:index.adoc[Jenkins System Administration].
+
+If you are a Jenkins user looking for some troubleshooting tips, 
+see xref:troubleshooting:index.adoc[Troubleshooting Jenkins]
+
+For an overview of content in the Jenkins User Handbook, see
+xref:getting-started:index.adoc[User Handbook Overview].

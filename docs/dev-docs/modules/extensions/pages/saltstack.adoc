@@ -1,0 +1,18 @@
+= Extension Points defined in SaltStack Plugin
+
+https://plugins.jenkins.io/saltstack[SaltStack Plugin]
+
+== BasicClient
+
+`jenkinsdoc:saltstack:com.waytta.clientinterface.BasicClient]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/saltstack[SaltStack Plugin]: com.+++<wbr/>+++waytta.+++<wbr/>+++clientinterface.+++<wbr/>+++**HookClient** (link:https://github.com/jenkinsci/saltstack-plugin/search?q=HookClient&type=Code[view on GitHub])
+* https://plugins.jenkins.io/saltstack[SaltStack Plugin]: com.+++<wbr/>+++waytta.+++<wbr/>+++clientinterface.+++<wbr/>+++**LocalBatchClient** (link:https://github.com/jenkinsci/saltstack-plugin/search?q=LocalBatchClient&type=Code[view on GitHub])
+* https://plugins.jenkins.io/saltstack[SaltStack Plugin]: com.+++<wbr/>+++waytta.+++<wbr/>+++clientinterface.+++<wbr/>+++**LocalClient** (link:https://github.com/jenkinsci/saltstack-plugin/search?q=LocalClient&type=Code[view on GitHub])
+* https://plugins.jenkins.io/saltstack[SaltStack Plugin]: com.+++<wbr/>+++waytta.+++<wbr/>+++clientinterface.+++<wbr/>+++**LocalSubsetClient** (link:https://github.com/jenkinsci/saltstack-plugin/search?q=LocalSubsetClient&type=Code[view on GitHub])
+* https://plugins.jenkins.io/saltstack[SaltStack Plugin]: com.+++<wbr/>+++waytta.+++<wbr/>+++clientinterface.+++<wbr/>+++**RunnerClient** (link:https://github.com/jenkinsci/saltstack-plugin/search?q=RunnerClient&type=Code[view on GitHub])
+

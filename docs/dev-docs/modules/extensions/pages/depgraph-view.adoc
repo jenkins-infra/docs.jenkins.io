@@ -1,0 +1,58 @@
+= Extension Points defined in Dependency Graph Viewer Plugin
+
+https://plugins.jenkins.io/depgraph-view[Dependency Graph Viewer Plugin]
+
+== EdgeProvider
+
+`jenkinsdoc:depgraph-view:hudson.plugins.depgraph_view.model.graph.edge.EdgeProvider]`
+
++++ This is an extension point which makes it possible to add edges+++ +++ to the DependencyGraph which gets drawn. Note that in order to add your own+++ +++ EdgeProvider you must not annotate the corresponding subclass with+++ jenkinsdoc:hudson.Extension] ++++++ +++ but instead add a+++ jenkinsdoc:com.google.inject.Module] +++with a+++ jenkinsdoc:com.google.inject.multibindings.Multibinder] ++++++ +++ which has the+++ jenkinsdoc:hudson.Extension] +++annotation. For example see+++ jenkinsdoc:DependencyGraphModule] ++++++ +++ and+++ jenkinsdoc:DependencyGraphEdgeProvider] ++++++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/depgraph-view[Dependency Graph Viewer Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++depgraph_view.+++<wbr/>+++model.+++<wbr/>+++graph.+++<wbr/>+++edge.+++<wbr/>+++**BuildTriggerEdgeProvider** (link:https://github.com/jenkinsci/depgraph-view-plugin/search?q=BuildTriggerEdgeProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/depgraph-view[Dependency Graph Viewer Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++depgraph_view.+++<wbr/>+++model.+++<wbr/>+++graph.+++<wbr/>+++edge.+++<wbr/>+++**CopyArtifactEdgeProvider** (link:https://github.com/jenkinsci/depgraph-view-plugin/search?q=CopyArtifactEdgeProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/depgraph-view[Dependency Graph Viewer Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++depgraph_view.+++<wbr/>+++model.+++<wbr/>+++graph.+++<wbr/>+++edge.+++<wbr/>+++**DependencyGraphEdgeProvider** (link:https://github.com/jenkinsci/depgraph-view-plugin/search?q=DependencyGraphEdgeProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/depgraph-view[Dependency Graph Viewer Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++depgraph_view.+++<wbr/>+++model.+++<wbr/>+++graph.+++<wbr/>+++edge.+++<wbr/>+++**FanInReverseBuildTriggerEdgeProvider** (link:https://github.com/jenkinsci/depgraph-view-plugin/search?q=FanInReverseBuildTriggerEdgeProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/depgraph-view[Dependency Graph Viewer Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++depgraph_view.+++<wbr/>+++model.+++<wbr/>+++graph.+++<wbr/>+++edge.+++<wbr/>+++**ParameterizedTriggerBuilderEdgeProvider** (link:https://github.com/jenkinsci/depgraph-view-plugin/search?q=ParameterizedTriggerBuilderEdgeProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/depgraph-view[Dependency Graph Viewer Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++depgraph_view.+++<wbr/>+++model.+++<wbr/>+++graph.+++<wbr/>+++edge.+++<wbr/>+++**ParameterizedTriggerEdgeProvider** (link:https://github.com/jenkinsci/depgraph-view-plugin/search?q=ParameterizedTriggerEdgeProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/depgraph-view[Dependency Graph Viewer Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++depgraph_view.+++<wbr/>+++model.+++<wbr/>+++graph.+++<wbr/>+++edge.+++<wbr/>+++**PipelineGraphPublisherEdgeProvider** (link:https://github.com/jenkinsci/depgraph-view-plugin/search?q=PipelineGraphPublisherEdgeProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/depgraph-view[Dependency Graph Viewer Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++depgraph_view.+++<wbr/>+++model.+++<wbr/>+++graph.+++<wbr/>+++edge.+++<wbr/>+++**ReverseBuildTriggerEdgeProvider** (link:https://github.com/jenkinsci/depgraph-view-plugin/search?q=ReverseBuildTriggerEdgeProvider&type=Code[view on GitHub])
+
+
+== EdgeProvider
+
+`jenkinsdoc:depgraph-view:hudson.plugins.depgraph_view.model.graph.EdgeProvider]`
+
++++ This interface is only here to not break other plugin extensions.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/maven-release-cascade[Maven Cascade Release Plugin]: com.+++<wbr/>+++barchart.+++<wbr/>+++jenkins.+++<wbr/>+++cascade.+++<wbr/>+++**GraphEdgeProvider** (link:https://github.com/jenkinsci/maven-release-cascade-plugin/search?q=GraphEdgeProvider&type=Code[view on GitHub])
+
+
+== SubProjectProvider
+
+`jenkinsdoc:depgraph-view:hudson.plugins.depgraph_view.model.graph.project.SubProjectProvider]`
+
++++ This is an extension point which makes it possible to subprojects+++ +++ to the DependencyGraph which gets drawn. Note that in order to add your own+++ +++ EdgeProvider you must not annotate the corresponding subclass with+++ jenkinsdoc:hudson.Extension] ++++++ +++ but instead add a+++ jenkinsdoc:com.google.inject.Module] +++with a+++ jenkinsdoc:com.google.inject.multibindings.Multibinder] ++++++ +++ which has the+++ jenkinsdoc:hudson.Extension] +++annotation. For example see+++ jenkinsdoc:DependencyGraphModule] ++++++ +++ and+++ jenkinsdoc:ParameterizedTriggerSubProjectProvider] ++++++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/depgraph-view[Dependency Graph Viewer Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++depgraph_view.+++<wbr/>+++model.+++<wbr/>+++graph.+++<wbr/>+++project.+++<wbr/>+++**ParameterizedTriggerSubProjectProvider** (link:https://github.com/jenkinsci/depgraph-view-plugin/search?q=ParameterizedTriggerSubProjectProvider&type=Code[view on GitHub])
+
+
+== SubProjectProvider
+
+`jenkinsdoc:depgraph-view:hudson.plugins.depgraph_view.model.graph.SubProjectProvider]`
+
++++ This interface is only here to not break other plugin extensions.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/maven-release-cascade[Maven Cascade Release Plugin]: com.+++<wbr/>+++barchart.+++<wbr/>+++jenkins.+++<wbr/>+++cascade.+++<wbr/>+++**GraphSubProjectProvider** (link:https://github.com/jenkinsci/maven-release-cascade-plugin/search?q=GraphSubProjectProvider&type=Code[view on GitHub])
+

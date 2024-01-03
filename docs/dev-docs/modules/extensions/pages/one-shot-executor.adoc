@@ -1,0 +1,15 @@
+= Extension Points defined in One-Shot Executor Plugin
+
+https://plugins.jenkins.io/one-shot-executor[One-Shot Executor Plugin]
+
+== OneShotProvisioner
+
+`jenkinsdoc:one-shot-executor:org.jenkinsci.plugins.oneshot.OneShotProvisioner]`
+
++++ This provisioner is responsible to create $+++ jenkinsdoc:OneShotSlave] +++s.+++ +++ Plugins to manage lightweight agents can use this extension point to determine jobs which require.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

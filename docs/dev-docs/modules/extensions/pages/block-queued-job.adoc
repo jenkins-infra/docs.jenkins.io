@@ -1,0 +1,17 @@
+= Extension Points defined in Block Queued Job Plugin
+
+https://plugins.jenkins.io/block-queued-job[Block Queued Job Plugin]
+
+== BlockQueueCondition
+
+`jenkinsdoc:block-queued-job:org.jenkinsci.plugins.blockqueuedjob.condition.BlockQueueCondition]`
+
++++ Abstract class for block/unblock conditions+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/block-queued-job[Block Queued Job Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++blockqueuedjob.+++<wbr/>+++condition.+++<wbr/>+++**BuildingBlockQueueCondition** (link:https://github.com/jenkinsci/block-queued-job-plugin/search?q=BuildingBlockQueueCondition&type=Code[view on GitHub])
+* https://plugins.jenkins.io/block-queued-job[Block Queued Job Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++blockqueuedjob.+++<wbr/>+++condition.+++<wbr/>+++**JobResultBlockQueueCondition** (link:https://github.com/jenkinsci/block-queued-job-plugin/search?q=JobResultBlockQueueCondition&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-pullrequest[GitHub Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github.+++<wbr/>+++pullrequest.+++<wbr/>+++extra.+++<wbr/>+++**GitHubPRLabelUnblockQueueCondition** (link:https://github.com/jenkinsci/github-integration-plugin/search?q=GitHubPRLabelUnblockQueueCondition&type=Code[view on GitHub])
+

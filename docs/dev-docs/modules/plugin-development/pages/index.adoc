@@ -1,0 +1,8 @@
+= Plugin Development
+
+.References
+****
+* link:https://github.com/jenkinsci/plugin-pom[Plugin parent POM on GitHub]
+* xref:blueocean-plugin-development:index.adoc[Making your plugin work with Blue Ocean]
+* link:https://github.com/jenkinsci/gradle-jpi-plugin[Gradle JPI Plugin]
+****

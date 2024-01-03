@@ -1,0 +1,237 @@
+= Jenkins Use-cases
+
+++++
+<style>
+.card {
+  background-color: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  min-width: 155px;
+  height:200px;
+  display: inline-flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  border-radius: 0.66rem;
+  padding: 1rem;
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.card .data img{
+    height: 96px;
+    opacity: .55;
+    margin: auto;
+}
+
+.github .data p {
+    filter: invert(1);
+}
+
+.github-image {
+    filter: invert(1);
+    opacity: 50%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title span {
+  position: relative;
+  padding: 0.5rem;
+  background-color: #10B981;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+}
+
+.title span svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  height: 1rem;
+}
+
+.title-text {
+  margin-left: 0.5rem;
+  color: #374151;
+  font-size: 18px;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.data p {
+  margin-top: 1rem;
+  color: #1F2937;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+}
+
+.android{
+    background-color: #3DDC84;
+}
+
+.php{
+    background-color: #777BB4;
+}
+
+.docker{
+    background-color: #2496ED;
+}
+
+.python{
+    background-color: #4786BB;
+}
+
+.ruby{
+    background-color: #C2322D;
+}
+
+.pipeline{
+    background-color: #FEAA2D;
+}
+
+.github{
+    background-color: #181817;
+}
+
+.embedded{
+    background-color: #EE7272;
+}
+
+.bit-bucket{
+    background-color: #0052CC;
+}
+
+.c{
+    background-color: #00599C;
+}
+
+.java{
+    background-color: #0093A6;
+}
+</style>
+
+<div class="flex-container">
+<div class="card android">
+<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/android.html">
+    <div class="data">
+        <p>
+            Android 
+        </p>
+    </div>
+    <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/android.svg">
+</div>
+<div class="card php">
+<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/php.html">
+    <div class="data ">
+        <p>
+            PHP 
+        </p>
+        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/php.svg">
+    </div>
+</div>
+<div class="card docker">
+<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/docker.html">
+    <div class="data ">
+        <p>
+            Docker 
+        </p>
+        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/docker.svg">
+    </div>
+</div>
+<div class="card python">
+<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/python.html">
+    <div class="data ">
+        <p>
+            Python 
+        </p>
+        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/python.svg">
+    </div>
+</div>
+<div class="card ruby">
+<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/ruby.html">
+    <div class="data ">
+        <p>
+            Ruby 
+        </p>
+        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/ruby.svg">
+    </div>
+</div>
+<div class="card pipeline">
+<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/pipeline.html">
+    <div class="data ">
+        <p>
+            Pipeline 
+        </p>
+        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/pipeline.svg">
+    </div>
+</div>
+<div class="card github">
+<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/github.html">
+    <div class="data">
+        <p>
+            Github 
+        </p>
+        <img class="github-image" src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/github.svg">
+    </div>
+</div>
+<div class="card embedded">
+<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/embedded.html">
+    <div class="data ">
+        <p>
+            Embedded 
+        </p>
+        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/embedded.svg">
+    </div>
+</div>
+<div class="card bit-bucket">
+<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/bitbucketserver.html">
+    <div class="data ">
+        <p>
+            Bit Bucket 
+        </p>
+        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/bitbucketserver.svg">
+    </div>
+</div>
+<div class="card c">
+<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/c.html">
+    <div class="data ">
+        <p>
+            C/C++ 
+        </p>
+        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/c.svg">
+    </div>
+</div>
+<div class="card java">
+<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/Java.html">
+    <div class="data ">
+        <p>
+            Java
+        </p>
+        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/java.svg">
+    </div>
+</div>
+</a>
+</div>
+
+++++

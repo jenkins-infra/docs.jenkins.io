@@ -1,0 +1,66 @@
+= Extension Points defined in Config File Provider Plugin
+
+https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]
+
+== ConfigContextResolver
+
+`jenkinsdoc:config-file-provider:org.jenkinsci.plugins.configfiles.ConfigContextResolver]`
+
++++ ConfigContextResolver provides a way for a plugin to specify the context (+++ jenkinsdoc:ItemGroup] +++) used to retrieve+++ +++ configuration files from for classes deriving from+++ jenkinsdoc:ItemGroup] +++it defines.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/promoted-builds[promoted builds Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++promoted_builds.+++<wbr/>+++**JobPropertyImplConfigContextResolver** (link:https://github.com/jenkinsci/promoted-builds-plugin/search?q=JobPropertyImplConfigContextResolver&type=Code[view on GitHub])
+
+
+== ConfigProvider
+
+`jenkinsdoc:config-file-provider:org.jenkinsci.lib.configprovider.ConfigProvider]`
+
++++ A ConfigProvider represents a configuration file (such as Maven's settings.xml) where the user can choose its actual content among several {@linkplain Config concrete contents} that are+++ +++ pre-configured.+++ +++
+<p>+++ ++++++ jenkinsdoc:ConfigProvider] +++is an extension point, and should be implemented and instantiated by each kind of configuration. This abstraction doesn't define where the configuration is placed, or+++ +++ how/when it's used — those semantics should be introduced by a specific instance of+++ jenkinsdoc:ConfigProvider] +++.+++</p>
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++lib.+++<wbr/>+++configprovider.+++<wbr/>+++**AbstractConfigProvider** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=AbstractConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++lib.+++<wbr/>+++configprovider.+++<wbr/>+++**AbstractConfigProviderImpl** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=AbstractConfigProviderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++configfiles.+++<wbr/>+++custom.+++<wbr/>+++**AbstractCustomProvider** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=AbstractCustomProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++configfiles.+++<wbr/>+++maven.+++<wbr/>+++**AbstractMavenSettingsProvider** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=AbstractMavenSettingsProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++configfiles.+++<wbr/>+++properties.+++<wbr/>+++**AbstractPropertiesProvider** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=AbstractPropertiesProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++configfiles.+++<wbr/>+++custom.+++<wbr/>+++**CustomConfig.+++<wbr/>+++CustomConfigProvider** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=CustomConfig.CustomConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++configfiles.+++<wbr/>+++maven.+++<wbr/>+++**GlobalMavenSettingsConfig.+++<wbr/>+++GlobalMavenSettingsConfigProvider** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=GlobalMavenSettingsConfig.GlobalMavenSettingsConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++configfiles.+++<wbr/>+++groovy.+++<wbr/>+++**GroovyScript.+++<wbr/>+++GroovyConfigProvider** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=GroovyScript.GroovyConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++configfiles.+++<wbr/>+++json.+++<wbr/>+++**JsonConfig.+++<wbr/>+++JsonConfigProvider** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=JsonConfig.JsonConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++configfiles.+++<wbr/>+++maven.+++<wbr/>+++**MavenSettingsConfig.+++<wbr/>+++MavenSettingsConfigProvider** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=MavenSettingsConfig.MavenSettingsConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++configfiles.+++<wbr/>+++maven.+++<wbr/>+++**MavenToolchainsConfig.+++<wbr/>+++MavenToolchainsConfigProvider** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=MavenToolchainsConfig.MavenToolchainsConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++configfiles.+++<wbr/>+++properties.+++<wbr/>+++**PropertiesConfig.+++<wbr/>+++PropertiesConfigProvider** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=PropertiesConfig.PropertiesConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++configfiles.+++<wbr/>+++xml.+++<wbr/>+++**XmlConfig.+++<wbr/>+++XmlConfigProvider** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=XmlConfig.XmlConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ivy[Ivy Plugin]: Anonymous class in hudson.+++<wbr/>+++ivy.+++<wbr/>+++**IvyConfig** (link:https://github.com/jenkinsci/ivy-plugin/search?q=IvyConfig.provider.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jclouds-jenkins[JClouds Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jclouds.+++<wbr/>+++config.+++<wbr/>+++**AbstractJCloudsConfigProviderImpl** (link:https://github.com/jenkinsci/jclouds-plugin/search?q=AbstractJCloudsConfigProviderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jclouds-jenkins[JClouds Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jclouds.+++<wbr/>+++config.+++<wbr/>+++**UserDataBoothook.+++<wbr/>+++UserDataBoothookProvider** (link:https://github.com/jenkinsci/jclouds-plugin/search?q=UserDataBoothook.UserDataBoothookProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jclouds-jenkins[JClouds Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jclouds.+++<wbr/>+++config.+++<wbr/>+++**UserDataInclude.+++<wbr/>+++UserDataIncludeProvider** (link:https://github.com/jenkinsci/jclouds-plugin/search?q=UserDataInclude.UserDataIncludeProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jclouds-jenkins[JClouds Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jclouds.+++<wbr/>+++config.+++<wbr/>+++**UserDataIncludeOnce.+++<wbr/>+++UserDataIncludeOnceProvider** (link:https://github.com/jenkinsci/jclouds-plugin/search?q=UserDataIncludeOnce.UserDataIncludeOnceProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jclouds-jenkins[JClouds Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jclouds.+++<wbr/>+++config.+++<wbr/>+++**UserDataPartHandler.+++<wbr/>+++UserDataPartHandlerProvider** (link:https://github.com/jenkinsci/jclouds-plugin/search?q=UserDataPartHandler.UserDataPartHandlerProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jclouds-jenkins[JClouds Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jclouds.+++<wbr/>+++config.+++<wbr/>+++**UserDataScript.+++<wbr/>+++UserDataScriptProvider** (link:https://github.com/jenkinsci/jclouds-plugin/search?q=UserDataScript.UserDataScriptProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jclouds-jenkins[JClouds Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jclouds.+++<wbr/>+++config.+++<wbr/>+++**UserDataUpstart.+++<wbr/>+++UserDataUpstartProvider** (link:https://github.com/jenkinsci/jclouds-plugin/search?q=UserDataUpstart.UserDataUpstartProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jclouds-jenkins[JClouds Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jclouds.+++<wbr/>+++config.+++<wbr/>+++**UserDataYaml.+++<wbr/>+++UserDataYamlProvider** (link:https://github.com/jenkinsci/jclouds-plugin/search?q=UserDataYaml.UserDataYamlProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/managed-scripts[Managed Scripts Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++managedscripts.+++<wbr/>+++**PowerShellConfig.+++<wbr/>+++PowerShellConfigProvider** (link:https://github.com/jenkinsci/managed-scripts-plugin/search?q=PowerShellConfig.PowerShellConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/managed-scripts[Managed Scripts Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++managedscripts.+++<wbr/>+++**ScriptConfig.+++<wbr/>+++ScriptConfigProvider** (link:https://github.com/jenkinsci/managed-scripts-plugin/search?q=ScriptConfig.ScriptConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/managed-scripts[Managed Scripts Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++managedscripts.+++<wbr/>+++**WinBatchConfig.+++<wbr/>+++WinBatchConfigProvider** (link:https://github.com/jenkinsci/managed-scripts-plugin/search?q=WinBatchConfig.WinBatchConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nodejs[NodeJS Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nodejs.+++<wbr/>+++configfiles.+++<wbr/>+++**NPMConfig.+++<wbr/>+++NPMConfigProvider** (link:https://github.com/jenkinsci/nodejs-plugin/search?q=NPMConfig.NPMConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/openstack-cloud[OpenStack Cloud Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++openstack.+++<wbr/>+++compute.+++<wbr/>+++**UserDataConfig.+++<wbr/>+++UserDataConfigProvider** (link:https://github.com/jenkinsci/openstack-cloud-plugin/search?q=UserDataConfig.UserDataConfigProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/xpath-config-viewer[XPath Configuration Viewer Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++viewer.+++<wbr/>+++**XPathConfigProvider** (link:https://github.com/jenkinsci/xpath-config-viewer-plugin/search?q=XPathConfigProvider&type=Code[view on GitHub])
+
+
+== ManagedFile
+
+`jenkinsdoc:config-file-provider:org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+_(no known implementations)_
+

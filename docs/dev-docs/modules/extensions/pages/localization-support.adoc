@@ -1,0 +1,14 @@
+= Extension Points defined in Localization Support Plugin
+
+https://plugins.jenkins.io/localization-support[Localization Support Plugin]
+
+== LocalizationContributor
+
+`jenkinsdoc:localization-support:io.jenkins.plugins.localization.support.LocalizationContributor]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/localization-zh-cn[Localization: Chinese (Simplified) Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++localization_zh_cn.+++<wbr/>+++**LocalizationContributorImpl** (link:https://github.com/jenkinsci/localization-zh-cn-plugin/search?q=LocalizationContributorImpl&type=Code[view on GitHub])
+

@@ -1,0 +1,16 @@
+= Extension Points defined in CloudBees Docker Custom Build Environment Plugin
+
+https://plugins.jenkins.io/docker-custom-build-environment[CloudBees Docker Custom Build Environment Plugin]
+
+== DockerImageSelector
+
+`jenkinsdoc:docker-custom-build-environment:com.cloudbees.jenkins.plugins.docker_build_env.DockerImageSelector]`
+
++++ Let user configure a Docker image to run a container+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/docker-custom-build-environment[CloudBees Docker Custom Build Environment Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++docker_build_env.+++<wbr/>+++**DockerfileImageSelector** (link:https://github.com/jenkinsci/docker-custom-build-environment-plugin/search?q=DockerfileImageSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-custom-build-environment[CloudBees Docker Custom Build Environment Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++docker_build_env.+++<wbr/>+++**PullDockerImageSelector** (link:https://github.com/jenkinsci/docker-custom-build-environment-plugin/search?q=PullDockerImageSelector&type=Code[view on GitHub])
+

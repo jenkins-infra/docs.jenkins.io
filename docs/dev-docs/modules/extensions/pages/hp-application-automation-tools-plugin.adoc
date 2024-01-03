@@ -1,0 +1,62 @@
+= Extension Points defined in Micro Focus Application Automation Tools Plugin
+
+https://plugins.jenkins.io/hp-application-automation-tools-plugin[Micro Focus Application Automation Tools Plugin]
+
+== BuildHandlerExtension
+
+`jenkinsdoc:hp-application-automation-tools-https://plugins.jenkins.io/com.microfocus.application.automation.tools.octane.tests.build.BuildHandlerExtension]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/hp-application-automation-tools-plugin[Micro Focus Application Automation Tools Plugin]: com.+++<wbr/>+++microfocus.+++<wbr/>+++application.+++<wbr/>+++automation.+++<wbr/>+++tools.+++<wbr/>+++octane.+++<wbr/>+++tests.+++<wbr/>+++build.+++<wbr/>+++**MatrixBuildExtension** (link:https://github.com/jenkinsci/hp-application-automation-tools-plugin/search?q=MatrixBuildExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hp-application-automation-tools-plugin[Micro Focus Application Automation Tools Plugin]: com.+++<wbr/>+++microfocus.+++<wbr/>+++application.+++<wbr/>+++automation.+++<wbr/>+++tools.+++<wbr/>+++octane.+++<wbr/>+++tests.+++<wbr/>+++build.+++<wbr/>+++**MavenBuildExtension** (link:https://github.com/jenkinsci/hp-application-automation-tools-plugin/search?q=MavenBuildExtension&type=Code[view on GitHub])
+
+
+== ConfigurationListener
+
+`jenkinsdoc:hp-application-automation-tools-https://plugins.jenkins.io/com.microfocus.application.automation.tools.octane.configuration.ConfigurationListener]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== HealthAnalyzerModel
+
+`jenkinsdoc:hp-application-automation-tools-https://plugins.jenkins.io/com.microfocus.application.automation.tools.common.model.HealthAnalyzerModel]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/hp-application-automation-tools-plugin[Micro Focus Application Automation Tools Plugin]: com.+++<wbr/>+++microfocus.+++<wbr/>+++application.+++<wbr/>+++automation.+++<wbr/>+++tools.+++<wbr/>+++lr.+++<wbr/>+++run.+++<wbr/>+++**HealthAnalyzerLrStep** (link:https://github.com/jenkinsci/hp-application-automation-tools-plugin/search?q=HealthAnalyzerLrStep&type=Code[view on GitHub])
+
+
+== OctaneTestsExtension
+
+`jenkinsdoc:hp-application-automation-tools-https://plugins.jenkins.io/com.microfocus.application.automation.tools.octane.tests.OctaneTestsExtension]`
+
++++ General provider of Octane's tests processing extensions+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/hp-application-automation-tools-plugin[Micro Focus Application Automation Tools Plugin]: com.+++<wbr/>+++microfocus.+++<wbr/>+++application.+++<wbr/>+++automation.+++<wbr/>+++tools.+++<wbr/>+++octane.+++<wbr/>+++tests.+++<wbr/>+++gherkin.+++<wbr/>+++**GherkinTestExtension** (link:https://github.com/jenkinsci/hp-application-automation-tools-plugin/search?q=GherkinTestExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hp-application-automation-tools-plugin[Micro Focus Application Automation Tools Plugin]: com.+++<wbr/>+++microfocus.+++<wbr/>+++application.+++<wbr/>+++automation.+++<wbr/>+++tools.+++<wbr/>+++octane.+++<wbr/>+++tests.+++<wbr/>+++junit.+++<wbr/>+++**JUnitExtension** (link:https://github.com/jenkinsci/hp-application-automation-tools-plugin/search?q=JUnitExtension&type=Code[view on GitHub])
+
+
+== ResultFieldsDetectionExtension
+
+`jenkinsdoc:hp-application-automation-tools-https://plugins.jenkins.io/com.microfocus.application.automation.tools.octane.tests.detection.ResultFieldsDetectionExtension]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/hp-application-automation-tools-plugin[Micro Focus Application Automation Tools Plugin]: com.+++<wbr/>+++microfocus.+++<wbr/>+++application.+++<wbr/>+++automation.+++<wbr/>+++tools.+++<wbr/>+++octane.+++<wbr/>+++tests.+++<wbr/>+++detection.+++<wbr/>+++**MFToolsDetectionExtension** (link:https://github.com/jenkinsci/hp-application-automation-tools-plugin/search?q=MFToolsDetectionExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hp-application-automation-tools-plugin[Micro Focus Application Automation Tools Plugin]: com.+++<wbr/>+++microfocus.+++<wbr/>+++application.+++<wbr/>+++automation.+++<wbr/>+++tools.+++<wbr/>+++octane.+++<wbr/>+++tests.+++<wbr/>+++detection.+++<wbr/>+++**TestNGExtension** (link:https://github.com/jenkinsci/hp-application-automation-tools-plugin/search?q=TestNGExtension&type=Code[view on GitHub])
+

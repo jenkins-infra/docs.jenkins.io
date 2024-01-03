@@ -1,0 +1,18 @@
+= Extension Points defined in Job and Stage monitoring Plugin
+
+https://plugins.jenkins.io/github-autostatus[Job and Stage monitoring Plugin]
+
+== BuildNotifier
+
+`jenkinsdoc:github-autostatus:org.jenkinsci.plugins.githubautostatus.notifiers.BuildNotifier]`
+
++++ A notification subscriber which can send build stats to a particular sink.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/github-autostatus[Job and Stage monitoring Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++githubautostatus.+++<wbr/>+++notifiers.+++<wbr/>+++**GithubBuildNotifier** (link:https://github.com/jenkinsci/github-autostatus-plugin/search?q=GithubBuildNotifier&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-autostatus[Job and Stage monitoring Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++githubautostatus.+++<wbr/>+++notifiers.+++<wbr/>+++**HttpNotifier** (link:https://github.com/jenkinsci/github-autostatus-plugin/search?q=HttpNotifier&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-autostatus[Job and Stage monitoring Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++githubautostatus.+++<wbr/>+++notifiers.+++<wbr/>+++**InfluxDbNotifier** (link:https://github.com/jenkinsci/github-autostatus-plugin/search?q=InfluxDbNotifier&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-autostatus[Job and Stage monitoring Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++githubautostatus.+++<wbr/>+++notifiers.+++<wbr/>+++**StatsdNotifier** (link:https://github.com/jenkinsci/github-autostatus-plugin/search?q=StatsdNotifier&type=Code[view on GitHub])
+

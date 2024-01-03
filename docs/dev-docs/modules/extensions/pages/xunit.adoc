@@ -1,0 +1,16 @@
+= Extension Points defined in xUnit Plugin
+
+https://plugins.jenkins.io/xunit[xUnit Plugin]
+
+== XUnitThreshold
+
+`jenkinsdoc:xunit:org.jenkinsci.plugins.xunit.threshold.XUnitThreshold]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/xunit[xUnit Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++xunit.+++<wbr/>+++threshold.+++<wbr/>+++**FailedThreshold** (link:https://github.com/jenkinsci/xunit-plugin/search?q=FailedThreshold&type=Code[view on GitHub])
+* https://plugins.jenkins.io/xunit[xUnit Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++xunit.+++<wbr/>+++threshold.+++<wbr/>+++**PassedThreshold** (link:https://github.com/jenkinsci/xunit-plugin/search?q=PassedThreshold&type=Code[view on GitHub])
+* https://plugins.jenkins.io/xunit[xUnit Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++xunit.+++<wbr/>+++threshold.+++<wbr/>+++**SkippedThreshold** (link:https://github.com/jenkinsci/xunit-plugin/search?q=SkippedThreshold&type=Code[view on GitHub])
+

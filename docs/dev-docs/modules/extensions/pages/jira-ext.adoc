@@ -1,0 +1,19 @@
+= Extension Points defined in jira-ext Plugin
+
+https://plugins.jenkins.io/jira-ext[jira-ext Plugin]
+
+== IssueStrategyExtension
+
+`jenkinsdoc:jira-ext:org.jenkinsci.plugins.jiraext.view.IssueStrategyExtension]`
+
++++ Extension point for gathering a list of JiraCommits from a given build+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/jira-ext[jira-ext Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jiraext.+++<wbr/>+++view.+++<wbr/>+++**AbstractParsingIssueStrategy** (link:https://github.com/jenkinsci/jira-ext-plugin/search?q=AbstractParsingIssueStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira-ext[jira-ext Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jiraext.+++<wbr/>+++view.+++<wbr/>+++**FirstWordOfCommitStrategy** (link:https://github.com/jenkinsci/jira-ext-plugin/search?q=FirstWordOfCommitStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira-ext[jira-ext Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jiraext.+++<wbr/>+++view.+++<wbr/>+++**FirstWordOfUpstreamCommitStrategy** (link:https://github.com/jenkinsci/jira-ext-plugin/search?q=FirstWordOfUpstreamCommitStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira-ext[jira-ext Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jiraext.+++<wbr/>+++view.+++<wbr/>+++**MentionedInCommitStrategy** (link:https://github.com/jenkinsci/jira-ext-plugin/search?q=MentionedInCommitStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira-ext[jira-ext Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jiraext.+++<wbr/>+++view.+++<wbr/>+++**SingleTicketStrategy** (link:https://github.com/jenkinsci/jira-ext-plugin/search?q=SingleTicketStrategy&type=Code[view on GitHub])
+

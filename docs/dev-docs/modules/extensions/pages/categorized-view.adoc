@@ -1,0 +1,14 @@
+= Extension Points defined in categorized-view Plugin
+
+https://plugins.jenkins.io/categorized-view[categorized-view Plugin]
+
+== CategorizationCriteria
+
+`jenkinsdoc:categorized-view:org.jenkinsci.plugins.categorizedview.CategorizationCriteria]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/categorized-view[categorized-view Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++categorizedview.+++<wbr/>+++**GroupingRule** (link:https://github.com/jenkinsci/categorized-view-plugin/search?q=GroupingRule&type=Code[view on GitHub])
+

@@ -1,0 +1,71 @@
+= GitLab Plugin Modernization
+// *Goal:* Cleaning and modernizing the extensively used GitLab plugin"
+// category: Plugin improvement
+// year: 2023
+// status: published
+// sig: platform
+// skills:
+// - Java
+// - Docker
+// - GitLab
+// mentors:
+// - "krisstern"
+// - "markewaite"
+
+// links:
+//     emailThread: https://community.jenkins.io/t/gsoc-2023-project-idea-active-modernization-of-gitlab-plugin/5039
+//     gitter: "jenkinsci_gitlab-plugin:gitter.im"
+// //   draft: https://docs.google.com/document/d/1s-dLUfU1OK-88bCj-GKaNuFfJQlQNLTWtacKkVMVmHc
+// ---
+
+*Goal:* Cleaning and modernizing the extensively used GitLab plugin
+
+*Status:* Selected
+
+== Team
+
+[.avatar]
+*Students*:
+image:images:ROOT:avatars/harsh-ps-2003.jpg[,width=30,height=30] Harsh Pratap Singh
+
+[.avatar]
+*Mentor(s)*:
+image:images:ROOT:avatars/markewaite.jpg[,width=30,height=30] Mark Waite
+image:images:ROOT:avatars/krisstern.png[,width=30,height=30] Kris Stern
+image:images:ROOT:avatars/freyam.jpg[,width=30,height=30] Freyam Mehta
+
+
+== Details
+=== Abstract
+
+The GitLab plugin enables Jenkins to seamlessly interact with GitLab.
+It allows Jenkins to automatically trigger builds, deploy code, etc., on the basis of GitLab events like Push, Merge Requests and many more.
+This project will replace usages of the very old version of the link:https://resteasy.dev/[RESTEasy] library with usages of https://github.com/gitlab4j/gitlab4j-api[`gitlab4j-api`] via the plugin:gitlab-api[GitLab API] Jenkins library plugin, normalizing the GitLab plugin's use of the GitLab API with regard to the plugin:gitlab-oauth[GitLab Authentication], plugin:gitlab-branch-source[GitLab Branch Source], and plugin:gitlab-logo[GitLab Logo] plugins.
+
+=== Rationale
+
+The plugin will be modernized to reduce future maintenance and to improve implementation consistency with the other GitLab plugins.
+Users will benefit from the actively supported GitLab4J-API and avoid the issues seen with the RESTEasy implementation.
+
+=== Implementation
+
+The RESTEasy implementation using GitLab v3 API calls will be incrementally replaced with GitLab4J-API calls.
+Tests will be adapted, updated, and implemented as needed.
+Care will be taken that errors propagate correctly and that there are no regressions in edge cases related to proxy servers.
+Documentation will also be improved and adapted.
+The implementation will be tested thoroughly before release.
+
+A local instance of GitLab will be configured for functional testing during development.
+Existing code will be exercised against a real GitLab installation, then the ported version be tested to confirm that it still works in the same manner.
+
+=== Office hours
+
+* (General) Official weekly Jenkins office hours: Thursdays 15:00 UTC
+* (Project-based) Details regarding the Weekly project-specific office hours can be found inside our Meeting Document along with important links via the Meetings link below.
+
+== Project Links
+
+* image:https://img.shields.io/badge/gitter-join_chat-light_green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_role-strategy-plugin%3Agitter.im[Static Badge,link=https://app.gitter.im/#/room/#jenkinsci_gitlab-plugin:gitter.im]
+* xref:gsoc:index.adoc#office-hours[Meetings]
+* xref:projects:gsoc:2023/project-ideas/gitlab-plugin-modernization.adoc[Original GSoC project idea]
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines

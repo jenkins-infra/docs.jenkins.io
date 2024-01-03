@@ -1,0 +1,16 @@
+= Extension Points defined in Mock Load Builder Plugin
+
+https://plugins.jenkins.io/mock-load-builder[Mock Load Builder Plugin]
+
+== MockProjectFactory
+
+`jenkinsdoc:mock-load-builder:jenkins.plugin.mockloadbuilder.MockProjectFactory]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/mock-load-builder[Mock Load Builder Plugin]: jenkins.+++<wbr/>+++plugin.+++<wbr/>+++mockloadbuilder.+++<wbr/>+++**FreeStyleMockProjectFactory** (link:https://github.com/jenkinsci/mock-load-builder-plugin/search?q=FreeStyleMockProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/mock-load-builder[Mock Load Builder Plugin]: jenkins.+++<wbr/>+++plugin.+++<wbr/>+++mockloadbuilder.+++<wbr/>+++**MatrixMockProjectFactory** (link:https://github.com/jenkinsci/mock-load-builder-plugin/search?q=MatrixMockProjectFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/mock-load-builder[Mock Load Builder Plugin]: jenkins.+++<wbr/>+++plugin.+++<wbr/>+++mockloadbuilder.+++<wbr/>+++**PipelineMockProjectFactory** (link:https://github.com/jenkinsci/mock-load-builder-plugin/search?q=PipelineMockProjectFactory&type=Code[view on GitHub])
+

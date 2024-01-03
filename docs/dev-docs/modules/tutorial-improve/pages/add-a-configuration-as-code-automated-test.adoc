@@ -1,0 +1,5 @@
+= Add a configuration as code automated test
+
+The configuration as code plugin provides a test framework that allows a plugin to implement a round trip test of configuration as code with very little implementation code.
+
+Insert more details here

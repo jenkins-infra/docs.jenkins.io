@@ -1,0 +1,125 @@
+= Extension Points defined in Folders Plugin
+
+https://plugins.jenkins.io/cloudbees-folder[Folders Plugin]
+
+== AbstractFolderProperty
+
+`jenkinsdoc:cloudbees-folder:com.cloudbees.hudson.plugins.folder.AbstractFolderProperty]`
+
++++ Property potentially applicable to any+++ jenkinsdoc:AbstractFolder] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/onepassword-secrets[1Password Secrets Plugin]: com.+++<wbr/>+++onepassword.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++config.+++<wbr/>+++**OnePasswordFolderConfig** (link:https://github.com/jenkinsci/onepassword-secrets-plugin/search?q=OnePasswordFolderConfig&type=Code[view on GitHub])
+* https://plugins.jenkins.io/azure-ad[Azure AD Plugin]: com.+++<wbr/>+++microsoft.+++<wbr/>+++jenkins.+++<wbr/>+++azuread.+++<wbr/>+++**AzureAdAuthorizationMatrixFolderProperty** (link:https://github.com/jenkinsci/azure-ad-plugin/search?q=AzureAdAuthorizationMatrixFolderProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**NoTriggerOrganizationFolderProperty** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=NoTriggerOrganizationFolderProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**OrganizationChildHealthMetricsProperty** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=OrganizationChildHealthMetricsProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**OrganizationChildOrphanedItemsProperty** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=OrganizationChildOrphanedItemsProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**OrganizationChildTriggersProperty** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=OrganizationChildTriggersProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**OrganizationFolderProperty** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=OrganizationFolderProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**ProjectNameProperty** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=ProjectNameProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/config-file-provider[Config File Provider Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++configfiles.+++<wbr/>+++folder.+++<wbr/>+++**FolderConfigFileProperty** (link:https://github.com/jenkinsci/config-file-provider-plugin/search?q=FolderConfigFileProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/conjur-credentials[Conjur Secrets Plugin]: org.+++<wbr/>+++conjur.+++<wbr/>+++jenkins.+++<wbr/>+++configuration.+++<wbr/>+++**FolderConjurConfiguration** (link:https://github.com/jenkinsci/conjur-credentials-plugin/search?q=FolderConjurConfiguration&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cortex-metrics[Cortex Metrics Plugin]: com.+++<wbr/>+++adobe.+++<wbr/>+++dx.+++<wbr/>+++xeng.+++<wbr/>+++cortexmetrics.+++<wbr/>+++config.+++<wbr/>+++**CortexMetricsFolderConfig** (link:https://github.com/jenkinsci/cortex-metrics-plugin/search?q=CortexMetricsFolderConfig&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-workflow[Docker Pipeline Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++docker.+++<wbr/>+++workflow.+++<wbr/>+++declarative.+++<wbr/>+++**FolderConfig** (link:https://github.com/jenkinsci/docker-workflow-plugin/search?q=FolderConfig&type=Code[view on GitHub])
+* https://plugins.jenkins.io/folder-properties[Folder Properties Plugin]: com.+++<wbr/>+++mig82.+++<wbr/>+++folders.+++<wbr/>+++properties.+++<wbr/>+++**FolderProperties** (link:https://github.com/jenkinsci/folder-properties-plugin/search?q=FolderProperties&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-folder[Folders Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++folder.+++<wbr/>+++properties.+++<wbr/>+++**FolderCredentialsProvider.+++<wbr/>+++FolderCredentialsProperty** (link:https://github.com/jenkinsci/cloudbees-folder-plugin/search?q=FolderCredentialsProvider.FolderCredentialsProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-folder[Folders Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++folder.+++<wbr/>+++**FolderProperty** (link:https://github.com/jenkinsci/cloudbees-folder-plugin/search?q=FolderProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hashicorp-vault-plugin[HashiCorp Vault Plugin]: com.+++<wbr/>+++datapipe.+++<wbr/>+++jenkins.+++<wbr/>+++vault.+++<wbr/>+++configuration.+++<wbr/>+++**FolderVaultConfiguration** (link:https://github.com/jenkinsci/hashicorp-vault-plugin/search?q=FolderVaultConfiguration&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hubot-steps[Hubot Pipeline Steps Plugin]: org.+++<wbr/>+++thoughtslive.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++hubot.+++<wbr/>+++config.+++<wbr/>+++**HubotFolderProperty** (link:https://github.com/jenkinsci/hubot-steps-plugin/search?q=HubotFolderProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira[Jira Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++jira.+++<wbr/>+++**JiraFolderProperty** (link:https://github.com/jenkinsci/jira-plugin/search?q=JiraFolderProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ownership[Job and Node ownership Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++ownership.+++<wbr/>+++model.+++<wbr/>+++folders.+++<wbr/>+++**FolderOwnershipProperty** (link:https://github.com/jenkinsci/ownership-plugin/search?q=FolderOwnershipProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/machine-learning[Machine Learning Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++ml.+++<wbr/>+++**ServerFolderProperty** (link:https://github.com/jenkinsci/machine-learning-plugin/search?q=ServerFolderProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-auth[Matrix Authorization Strategy Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++folder.+++<wbr/>+++properties.+++<wbr/>+++**AuthorizationMatrixProperty** (link:https://github.com/jenkinsci/matrix-auth-plugin/search?q=AuthorizationMatrixProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multibranch-action-triggers[MultiBranch Action Triggers Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++multibranch.+++<wbr/>+++**PipelineTriggerProperty** (link:https://github.com/jenkinsci/multibranch-action-triggers-plugin/search?q=PipelineTriggerProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-maven[Pipeline Maven Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++maven.+++<wbr/>+++**MavenConfigFolderOverrideProperty** (link:https://github.com/jenkinsci/pipeline-maven-plugin/pipeline-maven/search?q=MavenConfigFolderOverrideProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-scm-api[Pipeline SCM API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++credential.+++<wbr/>+++**BlueOceanCredentialsProvider.+++<wbr/>+++FolderPropertyImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueOceanCredentialsProvider.FolderPropertyImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/PrioritySorter[Priority Sorter Plugin]: jenkins.+++<wbr/>+++advancedqueue.+++<wbr/>+++jobinclusion.+++<wbr/>+++strategy.+++<wbr/>+++**JobInclusionFolderProperty** (link:https://github.com/jenkinsci/priority-sorter-plugin/search?q=JobInclusionFolderProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/requests[requests-plugin Plugin]: com.+++<wbr/>+++michelin.+++<wbr/>+++cio.+++<wbr/>+++jenkins.+++<wbr/>+++plugin.+++<wbr/>+++requests.+++<wbr/>+++action.+++<wbr/>+++**RequestDeleteFolderAction** (link:https://github.com/jenkinsci/requests-plugin/search?q=RequestDeleteFolderAction&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sidebar-link[Sidebar Link Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sidebar_link.+++<wbr/>+++**FolderLinks** (link:https://github.com/jenkinsci/sidebar-link-plugin/search?q=FolderLinks&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skip-cron-rebuild[Skip Cron Rebuild Plugin]: ru.+++<wbr/>+++omniverse.+++<wbr/>+++jenkins.+++<wbr/>+++skip_cron_rebuild.+++<wbr/>+++**SkipCronRebuild** (link:https://github.com/jenkinsci/skip-cron-rebuild-plugin/search?q=SkipCronRebuild&type=Code[view on GitHub])
+* https://plugins.jenkins.io/spring-config[Spring Config Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++springconfig.+++<wbr/>+++**SpringProfilesFolderProperty** (link:https://github.com/jenkinsci/spring-config-plugin/search?q=SpringProfilesFolderProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/testinium[Testinium Plugin]: com.+++<wbr/>+++testinium.+++<wbr/>+++jenkinsplugin.+++<wbr/>+++configuration.+++<wbr/>+++**TestiniumPluginFolderConfiguration** (link:https://github.com/jenkinsci/testinium-plugin/search?q=TestiniumPluginFolderConfiguration&type=Code[view on GitHub])
+* https://plugins.jenkins.io/thycotic-vault[Thycotic DevOps Secrets Vault Plugin]: com.+++<wbr/>+++thycotic.+++<wbr/>+++jenkins.+++<wbr/>+++configuration.+++<wbr/>+++**DevOpsSecretsVaultFolderConfiguration** (link:https://github.com/jenkinsci/thycotic-vault-plugin/search?q=DevOpsSecretsVaultFolderConfiguration&type=Code[view on GitHub])
+* https://plugins.jenkins.io/unique-id[Unique ID Library Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++uniqueid.+++<wbr/>+++impl.+++<wbr/>+++**FolderIdStore.+++<wbr/>+++FolderIdProperty** (link:https://github.com/jenkinsci/unique-id-plugin/search?q=FolderIdStore.FolderIdProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/vsphere-cloud[vSphere Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++folder.+++<wbr/>+++**FolderVSphereCloudProperty** (link:https://github.com/jenkinsci/vsphere-cloud-plugin/search?q=FolderVSphereCloudProperty&type=Code[view on GitHub])
+
+
+== FolderIcon
+
+`jenkinsdoc:cloudbees-folder:com.cloudbees.hudson.plugins.folder.FolderIcon]`
+
++++ Renders+++ jenkinsdoc:StatusIcon] +++for a folder.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**MetadataActionFolderIcon** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=MetadataActionFolderIcon&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-folder[Folders Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++folder.+++<wbr/>+++icons.+++<wbr/>+++**StockFolderIcon** (link:https://github.com/jenkinsci/cloudbees-folder-plugin/search?q=StockFolderIcon&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-organization-folder[GitHub Organization Folder Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++orgfolder.+++<wbr/>+++github.+++<wbr/>+++**GitHubOrgIcon** (link:https://github.com/jenkinsci/github-organization-folder-plugin/search?q=GitHubOrgIcon&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-organization-folder[GitHub Organization Folder Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++orgfolder.+++<wbr/>+++github.+++<wbr/>+++**GitHubRepoIcon** (link:https://github.com/jenkinsci/github-organization-folder-plugin/search?q=GitHubRepoIcon&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multi-branch-project-plugin[Multi-Branch Project Plugin (DEPRECATED) Plugin]: com.+++<wbr/>+++github.+++<wbr/>+++mjdetullio.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multibranch.+++<wbr/>+++**BallColorFolderIcon** (link:https://github.com/jenkinsci/multi-branch-project-plugin/search?q=BallColorFolderIcon&type=Code[view on GitHub])
+* https://plugins.jenkins.io/multi-branch-project-plugin[Multi-Branch Project Plugin (DEPRECATED) Plugin]: com.+++<wbr/>+++github.+++<wbr/>+++mjdetullio.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++multibranch.+++<wbr/>+++**SelectJobsBallColorFolderIcon** (link:https://github.com/jenkinsci/multi-branch-project-plugin/search?q=SelectJobsBallColorFolderIcon&type=Code[view on GitHub])
+
+
+== ItemGroupModifier
+
+`jenkinsdoc:cloudbees-folder:com.cloudbees.hudson.plugins.folder.relocate.ItemGroupModifier]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/cloudbees-folder[Folders Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++folder.+++<wbr/>+++relocate.+++<wbr/>+++**ItemGroupModifier.+++<wbr/>+++StandardModifier** (link:https://github.com/jenkinsci/cloudbees-folder-plugin/search?q=ItemGroupModifier.StandardModifier&type=Code[view on GitHub])
+
+
+== OrphanedItemStrategy
+
+`jenkinsdoc:cloudbees-folder:com.cloudbees.hudson.plugins.folder.computed.OrphanedItemStrategy]`
+
++++ A strategy for removing children after they are no longer indexed by an owning+++ jenkinsdoc:ComputedFolder] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/branch-api[Branch API Plugin]: jenkins.+++<wbr/>+++branch.+++<wbr/>+++**OrganizationChildOrphanedItemsProperty.+++<wbr/>+++Inherit** (link:https://github.com/jenkinsci/branch-api-plugin/search?q=OrganizationChildOrphanedItemsProperty.Inherit&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cloudbees-folder[Folders Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++folder.+++<wbr/>+++computed.+++<wbr/>+++**DefaultOrphanedItemStrategy** (link:https://github.com/jenkinsci/cloudbees-folder-plugin/search?q=DefaultOrphanedItemStrategy&type=Code[view on GitHub])
+
+
+== RelocationHandler
+
+`jenkinsdoc:cloudbees-folder:com.cloudbees.hudson.plugins.folder.relocate.RelocationHandler]`
+
++++ Provides some kind of specialized handling for a move.+++ +++ Handlers are chained in extension registration order, so that some can decorate other handlers.+++ +++ It is also possible for a handler to send a placeholder response and schedule a move for later (keeping the rest of the handlers ready).+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/cloudbees-folder[Folders Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++folder.+++<wbr/>+++relocate.+++<wbr/>+++**StandardHandler** (link:https://github.com/jenkinsci/cloudbees-folder-plugin/search?q=StandardHandler&type=Code[view on GitHub])
+
+
+== RelocationUI
+
+`jenkinsdoc:cloudbees-folder:com.cloudbees.hudson.plugins.folder.relocate.RelocationUI]`
+
++++ Extension point to provide a pluggable UI for moving+++ jenkinsdoc:Item] +++instances.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/cloudbees-folder[Folders Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++folder.+++<wbr/>+++relocate.+++<wbr/>+++**DefaultRelocationUI** (link:https://github.com/jenkinsci/cloudbees-folder-plugin/search?q=DefaultRelocationUI&type=Code[view on GitHub])
+
+
+== TransientFolderActionFactory
+
+`jenkinsdoc:cloudbees-folder:com.cloudbees.hudson.plugins.folder.TransientFolderActionFactory]`
+
++++ Extension point for inserting transient+++ jenkinsdoc:Action] +++s into+++ jenkinsdoc:Folder] +++s.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/convert-to-pipeline[Convert To Pipeline Plugin]: com.+++<wbr/>+++infostretch.+++<wbr/>+++labs.+++<wbr/>+++actions.+++<wbr/>+++**ConvertFolderAction.+++<wbr/>+++ActionFolderInjector** (link:https://github.com/jenkinsci/convert-to-pipeline-plugin/search?q=ConvertFolderAction.ActionFolderInjector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sidebar-link[Sidebar Link Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sidebar_link.+++<wbr/>+++**FolderLinks.+++<wbr/>+++TransientFolderActionFactoryImpl** (link:https://github.com/jenkinsci/sidebar-link-plugin/search?q=FolderLinks.TransientFolderActionFactoryImpl&type=Code[view on GitHub])
+

@@ -1,0 +1,14 @@
+= Extension Points defined in Attention Plugin
+
+https://plugins.jenkins.io/attention[Attention Plugin]
+
+== AttentionExtension
+
+`jenkinsdoc:attention:org.jenkinsci.plugins.attention.extensions.AttentionExtension]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/attention[Attention Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++attention.+++<wbr/>+++extensions.+++<wbr/>+++**JunitAttentionExtension** 
+

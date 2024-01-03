@@ -1,0 +1,40 @@
+= Extension Points defined in Periodic Backup Plugin
+
+https://plugins.jenkins.io/periodicbackup[Periodic Backup Plugin]
+
+== FileManagerDescriptor
+
+`jenkinsdoc:periodicbackup:org.jenkinsci.plugins.periodicbackup.FileManagerDescriptor]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/periodicbackup[Periodic Backup Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++periodicbackup.+++<wbr/>+++**ConfigOnly.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/periodicbackup-plugin/search?q=ConfigOnly.DescriptorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/periodicbackup[Periodic Backup Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++periodicbackup.+++<wbr/>+++**FullBackup.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/periodicbackup-plugin/search?q=FullBackup.DescriptorImpl&type=Code[view on GitHub])
+
+
+== LocationDescriptor
+
+`jenkinsdoc:periodicbackup:org.jenkinsci.plugins.periodicbackup.LocationDescriptor]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/periodicbackup[Periodic Backup Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++periodicbackup.+++<wbr/>+++**LocalDirectory.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/periodicbackup-plugin/search?q=LocalDirectory.DescriptorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/periodicbackup[Periodic Backup Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++periodicbackup.+++<wbr/>+++**S3.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/periodicbackup-plugin/search?q=S3.DescriptorImpl&type=Code[view on GitHub])
+
+
+== StorageDescriptor
+
+`jenkinsdoc:periodicbackup:org.jenkinsci.plugins.periodicbackup.StorageDescriptor]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/periodicbackup[Periodic Backup Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++periodicbackup.+++<wbr/>+++**NullStorage.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/periodicbackup-plugin/search?q=NullStorage.DescriptorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/periodicbackup[Periodic Backup Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++periodicbackup.+++<wbr/>+++**TarGzStorage.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/periodicbackup-plugin/search?q=TarGzStorage.DescriptorImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/periodicbackup[Periodic Backup Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++periodicbackup.+++<wbr/>+++**ZipStorage.+++<wbr/>+++DescriptorImpl** (link:https://github.com/jenkinsci/periodicbackup-plugin/search?q=ZipStorage.DescriptorImpl&type=Code[view on GitHub])
+

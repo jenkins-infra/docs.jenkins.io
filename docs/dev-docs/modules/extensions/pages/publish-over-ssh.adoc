@@ -1,0 +1,15 @@
+= Extension Points defined in Publish Over SSH Plugin
+
+https://plugins.jenkins.io/publish-over-ssh[Publish Over SSH Plugin]
+
+== SshDefaults
+
+`jenkinsdoc:publish-over-ssh:jenkins.plugins.publish_over_ssh.options.SshDefaults]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/publish-over-ssh[Publish Over SSH Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++publish_over_ssh.+++<wbr/>+++options.+++<wbr/>+++**SshOverrideDefaults** (link:https://github.com/jenkinsci/publish-over-ssh-plugin/search?q=SshOverrideDefaults&type=Code[view on GitHub])
+* https://plugins.jenkins.io/publish-over-ssh[Publish Over SSH Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++publish_over_ssh.+++<wbr/>+++options.+++<wbr/>+++**SshPluginDefaults** (link:https://github.com/jenkinsci/publish-over-ssh-plugin/search?q=SshPluginDefaults&type=Code[view on GitHub])
+

@@ -1,0 +1,16 @@
+= Extension Points defined in Bitbucket Pipeline for Blue Ocean Plugin
+
+https://plugins.jenkins.io/blueocean-bitbucket-pipeline[Bitbucket Pipeline for Blue Ocean Plugin]
+
+== BitbucketApiFactory
+
+`jenkinsdoc:blueocean-bitbucket-pipeline:io.jenkins.blueocean.blueocean_bitbucket_pipeline.BitbucketApiFactory]`
+
++++ Factory for Bitbucket API. Bitbucket server and cloud APIs are different and+++ +++ different factories are needed to handle it+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-bitbucket-pipeline[Bitbucket Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_bitbucket_pipeline.+++<wbr/>+++cloud.+++<wbr/>+++**BitbucketCloudApi.+++<wbr/>+++BitbucketCloudApiFactory** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BitbucketCloudApi.BitbucketCloudApiFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-bitbucket-pipeline[Bitbucket Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_bitbucket_pipeline.+++<wbr/>+++server.+++<wbr/>+++**BitbucketServerApi.+++<wbr/>+++BitbucketServerApiFactory** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BitbucketServerApi.BitbucketServerApiFactory&type=Code[view on GitHub])
+

@@ -1,0 +1,448 @@
+:page-layout: artwork
+= Artwork
+
+++++
+<style>
+.doc .image img{
+  padding-bottom: 2rem;
+}
+.doc .tableblock strong{
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+.doc th.tableblock {
+    display: none;
+}
+
+.doc p.tableblock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+table.tableblock.frame-all.grid-all.stretch {
+    border-collapse: collapse;
+}
+
+.doc table.grid-all>*>tr>* {
+    border-width: 0;
+}
+
+.doc table.frame-all {
+    border-width: 0;
+}
+</style>
+++++
+
+The original Jenkins logo was created by our friends at https://frontside.io/[Frontside]. Special thanks to https://github.com/cowboyd[Charles Lowell] for his efforts championing the logo's original design. Usage guidelines for the original logo can be found on our https://www.jenkins.io/press[Press] page. This page simply catalogues the many clever variations of Jenkins created by members of the Jenkins community.
+
+These images are also available in various sizes and SVG formats online, or as a zip file. These are licensed under the https://creativecommons.org/licenses/by-sa/3.0/[Creative Commons Attribution-ShareAlike 3.0 Unported License]. Under the terms of this license, you must include an attribution to the Jenkins project, with a link (https://jenkins.io/), if you display these logos or derivatives thereof.
+
+---
+
+|===
+|||
+
+|*JCASC*
+image:logos/JCasC/JCasC.png[height=256]
+Created by Nicolas De loof & Kseniia Nenashevaj
+xref:attachment$logos/JCasC/JCasC.svg[SVG format]
+
+|*Actor*
+image:logos/actor/actor.png[height=256]
+https://www.meetup.com/Los-Angeles-Jenkins-Area-Meetup/[Los Angeles JAM]
+
+|*Alien*
+image:logos/alien/alien.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+https://www.meetup.com/Albuquerque-Jenkins-Area-Meetup/[Albuquerque JAM]
+xref:attachment$logos/alien/alien.svg[SVG format]
+
+|*Amsterdam*
+image:logos/amsterdam/amsterdam.png[height=256]
+https://www.meetup.com/Amsterdam-Jenkins-Area-Meetup[JAMsterdam]
+
+|*Atomium*
+image:logos/atomium/atomium.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+https://www.meetup.com/Belgium-Jenkins-Area-Meetup[Belgium Jenkins Area Meetup]
+xref:attachment$logos/atomium/atomium.svg[SVG format]
+
+|*Willie Nelson*
+image:logos/austin/austin.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+https://www.meetup.com/Austin-Jenkins-Area-Meetup/[Austin Jenkins Area Meetup]
+xref:attachment$logos/austin/austin.svg[SVG format]
+
+|*Automotive*
+image:logos/automotive/automotive.png[height=256]
+https://www.cloudbees.com/event/cloudbees-jenkins-automotive-and-embedded-day[CloudBees - Jenkins Automotive and Embedded Day]
+
+|*Balloon*
+image:logos/balloon/balloon.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+xref:attachment$logos/balloon/balloon.svg[SVG format]
+
+|*Barcelona*
+image:logos/barcelona/barcelona.png[height=256]
+Created by https://www.linkedin.com/in/eija-n%C3%A4rv%C3%A4nen/[Eija Maria Närvänen]
+https://www.meetup.com/Barcelona-Jenkins-Area-Meetup/[Barcelona Jenkins Area Meetup]
+
+|*Jenkins Baturro*
+image:logos/baturro/baturro.png[height=256]
+Created by https://www.linkedin.com/in/marco2704[Marco Davalos]
+https://www.devopszaragoza.com/[DevOps Zaragoza MeetUp]
+xref:attachment$logos/baturro/baturro.svg[SVG format]
+
+|*Beekeeper*
+image:logos/beekeeper/beekeeper.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+xref:attachment$logos/beekeeper/beekeeper.svg[SVG format]
+
+|*Belarus*
+image:logos/belarus/belarus.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+https://www.meetup.com/Belarus-Jenkins-Meetup/[Belarus Jenkins Meetup]
+xref:attachment$logos/belarus/belarus.svg[SVG format]
+
+|*Boston*
+image:logos/boston/boston.png[height=256]
+https://www.meetup.com/Boston-Jenkins-Area-Meetup/[Boston JAM]
+
+|*Brno*
+image:logos/brno/brno.png[height=256]
+https://www.meetup.com/Brno-Jenkins-Area-Meetup/[Brno JAM]
+
+|*Cambridge*
+image:logos/cambridge/cambridge.png[height=256]
+Created by https://www.linkedin.com/in/lorena-paton-16190447[Lorena Paton]
+https://www.meetup.com/Cambridge-Jenkins-Area-Meetup/[Cambridge Jenkins Area Meetup]
+
+|*Captain*
+image:logos/captain/captain.png[height=256]
+Created by https://twitter.com/mehdiBR_[Mehdi_BR]
+
+|*Chatterbox*
+image:logos/chatterbox/chatterbox.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+xref:sigs:advocacy-and-outreach:outreach-programs/index.adoc[Jenkins Advocacy&Outreach SIG]
+
+|*Clown*
+image:logos/clown/clown.png[height=256]
+Created by https://instagram.com/jpeg_yo_yo[Annelise Box - xxhachx@gmail.com]
+xref:attachment$logos/clown/clown.svg[SVG format]
+
+|*Cologne*
+image:logos/cologne/cologne.png[height=256]
+https://www.meetup.com/Cologne-Jenkins-Area-Meetup/[Cologne JAM]
+
+|*Cosmonaut*
+image:logos/cosmonaut/cosmonaut.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+
+|*Cossack*
+image:logos/cossack/cossack.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+xref:attachment$logos/cossack/cossack.svg[SVG format]
+
+|*Cowboy*
+image:logos/cowboy/cowboy.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+Dallas/Fort Worth JAM
+xref:attachment$logos/cowboy/cowboy.svg[SVG format]
+
+|*Cute*
+image:logos/cute/cute.png[height=256]
+xref:attachment$logos/cute/cute.svg[SVG format]
+
+|*Duchess France*
+image:logos/duchess/duchess.png[height=256]
+Created by https://twitter.com/tatoberres[TatoBerres]
+https://www.duchess-france.org/[Duchess France]
+xref:attachment$logos/duchess/duchess.svg[SVG format]
+
+|*Fire*
+image:logos/fire/fire.png[height=256]
+xref:attachment$logos/fire/fire.svg[SVG format]
+
+|*Formal*
+image:logos/formal/formal.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+
+|*Gaucho*
+image:logos/gaucho/gaucho.png[height=256]
+Created by https://instagram.com/vintagefuturist[Juan Rodríguez Peluffo]
+
+|*General*
+image:logos/general/general.png[height=256]
+xref:attachment$logos/general/general.svg[SVG format]
+
+|*Georgia*
+image:logos/georgia/georgia.png[height=256]
+Created by https://twitter.com/highflyer910[Teona Mushambadze - thea.mushambadze@gmail.com]
+xref:attachment$logos/georgia/georgia.svg[SVG format]
+
+|*Googly*
+image:logos/googly/googly.png[height=256]
+Created by https://github.com/Lakhankumawat[Lakhan Kumawat]
+xref:attachment$logos/googly/googly.svg[SVG format]
+
+|*Guadalajara*
+image:logos/guadalajara/guadalajara.png[height=256]
+
+https://www.meetup.com/Guadalajara-Jenkins-Area-Meetup/[Guadalajara JAM]
+
+|*Hyderabad*
+image:logos/hyderabad/hyderabad.png[height=256]
+https://www.meetup.com/Jenkins-Hyderabad/[Hyderabad JAM]
+
+|*Ice Cream*
+image:logos/ice-cream/ice_cream.png[height=256]
+Created by https://www.sarah-moreau.com/[Sarah Moreau - sarahmoreau1995@gmail.com]
+xref:attachment$logos/ice-cream/ice_cream.svg[SVG format]
+
+|*Jenkins of Israel*
+image:logos/israel/JenkinsOfIsrael.png[height=256]
+Created by Shelly Tsymbalov
+
+|*Jenkins*
+image:logos/jenkins/jenkins.png[height=256]
+xref:attachment$logos/jenkins/jenkins.svg[SVG format]
+
+|*Jenkins is the Way*
+image:logos/jenkins-is-the-way/jenkins-is-the-way.png[height=256]
+Created by https://cloudbees.com/[CloudBees]
+https://stories.jenkins.io/[abConsulting Network]
+
+|*Jenkins X*
+image:logos/jenkins-x/jenkins-x.png[height=256]
+Created by https://au.linkedin.com/in/josh-mcdonald-354b135a[Joshua McDonald - jmcdonald@cloudbees.com]
+xref:attachment$logos/jenkins-x/jenkins-x.svg[SVG format]
+
+|*Jenkins Peru*
+image:logos/jenkinsperu/jenkinsperu.jpg[height=256]
+Created by  https://www.cloudbees.com/[CloudBees]
+
+|*Jenkinstein*
+image:logos/jenkinstein/jenkinstein.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+xref:attachment$logos/jenkinstein/jenkinstein.svg[SVG format]
+
+|*Kong Fu*
+image:logos/kongfu/kongfu.png[height=256]
+Created by https://jenkins.io/zh/[Jenkins 中文社区]
+
+|*Jenkins Kubernetes Operator*
+image:logos/kubernetes-operator/kubernetes-operator.png[height=256]
+Created by https://twitter.com/tomaszsek1[Tomasz Sęk]
+https://github.com/jenkinsci/kubernetes-operator[Jenkins Kubernetes Operator]
+
+|*Legolas*
+image:logos/legolas/legolas.png[height=256]
+Created by https://www.linkedin.com/in/rfossi/[Rosa M Fossi]
+
+|*Lima*
+image:logos/lima/lima.png[height=256]
+https://www.meetup.com/Lima-Jenkins-Area-Meetup/[Lima JAM]
+
+|*London*
+image:logos/london/london.png[height=256]
+https://www.meetup.com/London-Jenkins-Area-Meetup/[London JAM]
+
+|*Magician*
+image:logos/magician/magician.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+xref:attachment$logos/magician/magician.svg[SVG format]
+
+|*Magritte*
+image:logos/magritte/magritte.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+https://www.meetup.com/Belgium-Jenkins-Area-Meetup[Belgium Jenkins Area Meetup]
+xref:attachment$logos/magritte/magritte.svg[SVG format]
+
+|*Miner*
+image:logos/miner/miner.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+https://www.meetup.com/San-Francisco-Jenkins-Area-Meetup/[San Francisco JAM]
+xref:attachment$logos/miner/miner.svg[SVG format]
+
+|*Mono*
+image:logos/mono/mono.png[height=256]
+Created by https://www.linkedin.com/in/hoonjo/[Hoon Jo]
+
+|*Musketeer*
+image:logos/musketeer/musketeer.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+xref:attachment$logos/musketeer/musketeer.svg[SVG format]
+
+|*Nerd*
+image:logos/nerd/nerd.png[height=256]
+Created by https://twitter.com/highflyer910[Teona Mushambadze]
+xref:attachment$logos/nerd/nerd.svg[SVG format]
+
+|*Ninja*
+image:logos/ninja/ninja.png[height=256]
+Created by Masanobu Imai
+xref:attachment$logos/ninja/ninja.svg[SVG format]
+
+|*Jenkins serving NUT*
+image:logos/musketeer/musketeer.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+xref:attachment$logos/musketeer/musketeer.svg[SVG format]
+
+|*Oktoberfest*
+image:logos/oktoberfest/oktoberfest.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+xref:attachment$logos/oktoberfest/oktoberfest.svg[SVG format]
+
+|*Parasite*
+image:logos/parasite/parasite.png[height=256]
+Created by https://www.linkedin.com/in/leechungkyu/[Lee ChungKyu]
+
+|*Paris*
+image:logos/paris/paris.png[height=256]
+https://www.meetup.com/Paris-Jenkins-Area-Meetup/[Paris JAM]
+
+|*Paris (Eiffel)*
+image:logos/paris-eiffel/paris-eiffel.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+xref:attachment$logos/paris-eiffel/paris-eiffel.svg[SVG format]
+
+|*PEST Control*
+image:logos/pest-control/pest-control.png[height=256]
+Created by https://www.linkedin.com/in/marco2704[Marco Davalos]
+Platform Engineering Support Team
+xref:attachment$logos/pest-control/pest-control.svg[SVG format]
+
+|*Peter The Great*
+image:logos/peter-the-great/peter-the-great.png[height=256]
+https://www.meetup.com/Paris-Jenkins-Area-Meetup/[Paris JAM]
+
+|*Paris (Eiffel)*
+image:logos/paris-eiffel/paris-eiffel.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+https://www.meetup.com/St-Petersburg-Jenkins-Meetup/[St.Petersburg JAM]
+xref:attachment$logos/peter-the-great/peter-the-great.svg[SVG format]
+
+|*Pixel Art*
+image:logos/pixelart/jenkins-pixelart-32.png[height=256]
+Created by https://subl.ee/[Heungsub Lee]
+
+|*Plumber*
+image:logos/plumber/plumber.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+xref:attachment$logos/plumber/plumber.svg[SVG format]
+
+|*Pride*
+image:logos/pride/pride.png[height=256]
+Created by Pierre Schwang
+xref:attachment$logos/pride/pride.svg[SVG format]
+
+|*Punkins*
+image:logos/punkins/punkins.png[height=256]
+Created by https://github.com/cipo7741[cipo7741]
+xref:attachment$logos/punkins/punkins.svg[SVG format]
+
+|*Raleigh*
+image:logos/raleigh/raleigh.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+https://www.meetup.com/Raleigh-Jenkins-Area-Meetup/[Triangle Jenkins Area Meetup]
+xref:attachment$logos/raleigh/raleigh.svg[SVG format]
+
+|*Accordion Jenkins*
+image:logos/russian/russian.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+
+|*Ron Burgundy*
+image:logos/san-diego/san-diego.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+https://www.meetup.com/San-Diego-Jenkins-Area-Meetup/[San Diego Jenkins Area Meetup]
+xref:attachment$logos/san-diego/san-diego.svg[SVG format]
+
+|*Santa Claus*
+image:logos/santa-claus/santa-claus.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+xref:attachment$logos/santa-claus/santa-claus.svg[SVG format]
+
+|*Seattle*
+image:logos/seattle/seattle.png[height=256]
+https://www.meetup.com/Seattle-Jenkins-Area-Meetup/[Seattle JAM]
+
+|*Seonbi*
+image:logos/seonbi/seonbi.png[height=256]
+Created by https://www.linkedin.com/in/leechungkyu/[Lee ChungKyu]
+
+|*Sherlock*
+image:logos/sherlock/sherlock.png[height=256]
+Created by https://www.linkedin.com/in/knenasheva/[Kseniia Nenasheva]
+
+|*Job Snow*
+image:logos/snow/snow.png[height=256]
+
+|*Stay Safe*
+image:logos/stay-safe/stay-safe.png[height=256]
+Created by Martin Grosche
+
+|*Superhero*
+image:logos/superhero/superhero.png[height=256]
+Created by Masanobu Imai
+xref:attachment$logos/superhero/superhero.svg[SVG format]
+
+|*Switzerland*
+image:logos/switzerland/switzerland.png[height=256]
+Created by https://www.cloudbees.com/[CloudBees]
+https://www.meetup.com/Swiss-Jenkins-Area-Meetup[Switzerland JAM]
+
+|*Sydney*
+image:logos/sydney/sydney.png[height=256]
+Created by https://www.meetup.com/Sydney-Jenkins-Area-Meetup/members/185411794/[Maxwell A.]
+https://www.meetup.com/Sydney-Jenkins-Area-Meetup/photos/27339712/[Sydney Jenkins Area Meetup]
+
+|*Toulouse JAM*
+image:logos/toulousejam/toulousejam.png[height=256]
+Created by https://www.cloudbees.com/[CloudBees]
+https://www.meetup.com/Toulouse-Jenkins-Area-Meetup/[Toulouse Jenkins Area Meetup]
+
+|*Turkey*
+image:logos/turkey/Turkey.png[height=256]
+Created by https://twitter.com/highflyer910[Teona Mushambadze]
+xref:attachment$logos/turkey/Turkey.svg[SVG format]
+
+|*Washington*
+image:logos/washington/washington.png[height=256]
+https://www.meetup.com/Washington-DC-Jenkins-Area-Meetup/[Washington D.C. JAM]
+
+|*Worldwide*
+image:logos/worldwide/worldwide.png[height=256]
+https://www.meetup.com/Jenkins-online-meetup/[Jenkins Online Meetup]
+
+|*Yaroslavl*
+image:logos/yaroslavl/yaroslavl.png[height=256]
+Created by Anastasia Malysheva
+Yaroslavl Jenkins Meetup
+|
+|===
+
+
+== 3D model
+
+3D version of Mr.Jenkins is https://www.shapeways.com/model/2183445/mr-jenkins.html?materialId=26[available here] for order. If you want to print your own, https://drive.google.com/file/d/1tdPch-TKVF6T7w3Et9aVYRnE-fRtm3cR/view?usp=sharing[the data is here].
+
+As per the license of the original artwork, the 3D data model is under the same http://creativecommons.org/licenses/by-sa/3.0/[Creative Commons Attribution-ShareAlike 3.0 Unported License]. The 3D logo design is by https://www.fast-d.com/search/engineers/2798[akiki].
+
+
+== HeroForge 3D model
+
+The HeroForge 3D version of Mr.Jenkins is https://www.heroforge.com/load_config%3D13211607/[available here] for order. If you want to print your own, HeroForge provides STL for purchase.
+
+As per the license of the original artwork, the 3D data model is under the same http://creativecommons.org/licenses/by-sa/3.0/[Creative Commons Attribution-ShareAlike 3.0 Unported License]. The 3D logo design is by https://www.linkedin.com/in/w-douglas-west-0856094/[D. West].
+
+
+== Adding a Logo
+
+In order to add a new logo, please refer to the https://github.com/jenkins-infra/jenkins.io/blob/master/CONTRIBUTING.adoc#adding-a-logo[CONTRIBUTING guidelines].

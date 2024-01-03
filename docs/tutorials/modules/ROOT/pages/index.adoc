@@ -1,0 +1,68 @@
+[#introductory-tutorials]
+= Tutorials overview
+
+This part of the Jenkins User Documentation contains a series of introductory
+tutorials to help you begin building your applications in an automated fashion
+with Jenkins.
+
+If you're a developer who wants to improve your understanding of Continuous
+Integration (CI) / Continuous Delivery (CD) concepts, or you might already be
+familiar with these concepts but don't yet know how to implement them in
+Jenkins, then these tutorials are a great place to start.
+
+[#getting-started]
+== Getting started with Jenkins
+
+* xref:user-docs:pipeline:getting-started.adoc[Guided Tour to Jenkins]
+
+[#pipeline]
+== Pipeline
+
+The following tutorials show how to use key features of Jenkins to facilitate implementing CI/CD
+processes to build your applications:
+
+* xref:user-docs:pipeline:getting-started.adoc[Getting started with Jenkins Pipeline]
+* Publishing HTML Reports in Pipeline (link:/blog/2017/02/10/declarative-html-publisher/[Declarative Pipeline], link:/blog/2016/07/01/html-publisher-plugin/[Scripted Pipeline])
+* Sending Notifications in Pipeline (link:/blog/2017/02/15/declarative-notifications/[Declarative Pipeline], link:/blog/2016/07/18/pipeline-notifications/[Scripted Pipeline])
+* xref:build-a-multibranch-pipeline-project.adoc[End-to-End Multibranch Pipeline Project Creation]
+* link:/blog/2017/02/15/declarative-notifications/#moving-notifications-to-shared-library[Creating a shared library]
+* link:/blog/2016/06/16/parallel-test-executor-plugin/[Faster Pipelines with the Parallel Test Executor Plugin]
+* link:/blog/2017/01/19/converting-conditional-to-pipeline/[Converting Conditional Build Steps to Jenkins Pipeline]
+* link:/blog/2017/05/18/pipeline-dev-tools/[Pipeline Development Tools]
+
+[#blueocean]
+== Blue Ocean
+
+* link:/blog/2017/04/05/welcome-to-blue-ocean/[Getting Started with Blue Ocean]
+* Getting Started with Blue Ocean's Visual Pipeline Editor (xref:create-a-pipeline-in-blue-ocean.adoc[guide], link:/blog/2017/04/06/welcome-to-blue-ocean-editor/[video guide])
+* link:/blog/2017/04/11/welcome-to-blue-ocean-pipeline-activity/[Getting Started with Blue Ocean's Activity View ]
+* link:/blog/2017/04/12/welcome-to-blue-ocean-dashboard/[Getting Started with the Blue Ocean Dashboard]
+
+[#tools]
+== Using build tools
+
+The following tutorials show how to use Jenkins to cover the basics of CI/CD
+concepts based on specific technology stacks.
+
+Choose the tutorial that's relevant to your technology stack or one that you're
+most familiar with:
+
+* xref:build-a-java-app-with-maven.adoc[Build a Java app with Maven]
+* xref:build-a-node-js-and-react-app-with-npm.adoc[Build a Node.js and React app with npm]
+* xref:build-a-python-app-with-pyinstaller.adoc[Build a Python app with PyInstaller]
+* xref:build-a-labview-app.adoc[Build a LabVIEW app]
+* xref:using-jenkinsfile-runner-github-action-to-build-jenkins-pipeline.adoc[Build a Jenkins pipeline by using Jenkinsfile Runner GitHub Actions]
+
+== More tutorials
+
+Cloud tutorials are available including:
+
+* xref:tutorials-for-installing-jenkins-on-Google-Cloud.adoc[Jenkins on Google Cloud]
+* xref:tutorial-for-installing-jenkins-on-AWS.adoc[Jenkins on AWS]
+
+You may find more tutorials in link:/node/tags/tutorial[Tutorial blogposts].
+
+* link:/blog/2017/02/07/declarative-maven-project/[Declarative Pipeline for Maven Projects]
+* link:/blog/2016/08/10/rails-cd-with-pipeline/[Continuous Security for Rails apps with Pipeline and Brakeman]
+* link:/blog/2016/08/29/sauce-pipeline/[Browser-testing with Sauce OnDemand and Pipeline]
+

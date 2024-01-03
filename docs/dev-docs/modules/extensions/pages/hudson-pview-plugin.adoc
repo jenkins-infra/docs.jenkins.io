@@ -1,0 +1,14 @@
+= Extension Points defined in Personal View Plugin
+
+https://plugins.jenkins.io/hudson-pview-plugin[Personal View Plugin]
+
+== UserPersonalViewProperty
+
+`jenkinsdoc:hudson-pview-https://plugins.jenkins.io/de.fspengler.hudson.pview.UserPersonalViewProperty]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+_(no known implementations)_
+

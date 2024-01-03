@@ -1,0 +1,49 @@
+= Extension Points defined in Code Coverage API Plugin
+
+https://plugins.jenkins.io/code-coverage-api[Code Coverage API Plugin]
+
+== CoverageAdapter
+
+`jenkinsdoc:code-coverage-api:io.jenkins.plugins.coverage.adapter.CoverageAdapter]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/cobertura[Cobertura Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++cobertura.+++<wbr/>+++adapter.+++<wbr/>+++**CoberturaReportAdapter** (link:https://github.com/jenkinsci/cobertura-plugin/search?q=CoberturaReportAdapter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/code-coverage-api[Code Coverage API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++coverage.+++<wbr/>+++detector.+++<wbr/>+++**AntPathReportDetector** (link:https://github.com/jenkinsci/code-coverage-api-plugin/search?q=AntPathReportDetector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/code-coverage-api[Code Coverage API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++coverage.+++<wbr/>+++adapter.+++<wbr/>+++**CoberturaReportAdapter** (link:https://github.com/jenkinsci/code-coverage-api-plugin/search?q=CoberturaReportAdapter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/code-coverage-api[Code Coverage API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++coverage.+++<wbr/>+++adapter.+++<wbr/>+++**CoverageReportAdapter** (link:https://github.com/jenkinsci/code-coverage-api-plugin/search?q=CoverageReportAdapter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/code-coverage-api[Code Coverage API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++coverage.+++<wbr/>+++adapter.+++<wbr/>+++**IstanbulCoberturaReportAdapter** (link:https://github.com/jenkinsci/code-coverage-api-plugin/search?q=IstanbulCoberturaReportAdapter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/code-coverage-api[Code Coverage API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++coverage.+++<wbr/>+++adapter.+++<wbr/>+++**JSONCoverageReportAdapter** (link:https://github.com/jenkinsci/code-coverage-api-plugin/search?q=JSONCoverageReportAdapter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/code-coverage-api[Code Coverage API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++coverage.+++<wbr/>+++adapter.+++<wbr/>+++**JacocoReportAdapter** (link:https://github.com/jenkinsci/code-coverage-api-plugin/search?q=JacocoReportAdapter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/code-coverage-api[Code Coverage API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++coverage.+++<wbr/>+++adapter.+++<wbr/>+++**JavaXMLCoverageReportAdapter** (link:https://github.com/jenkinsci/code-coverage-api-plugin/search?q=JavaXMLCoverageReportAdapter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/code-coverage-api[Code Coverage API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++coverage.+++<wbr/>+++detector.+++<wbr/>+++**ReportDetector** (link:https://github.com/jenkinsci/code-coverage-api-plugin/search?q=ReportDetector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/code-coverage-api[Code Coverage API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++coverage.+++<wbr/>+++adapter.+++<wbr/>+++**XMLCoverageReportAdapter** (link:https://github.com/jenkinsci/code-coverage-api-plugin/search?q=XMLCoverageReportAdapter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/dlisting-cov[D Listing Coverage Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++dlisting.+++<wbr/>+++**DListingReportAdapter** (link:https://github.com/jenkinsci/dlisting-cov-plugin/search?q=DListingReportAdapter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/llvm-cov[llvm-cov Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++llvm.+++<wbr/>+++**LLVMCovReportAdapter** (link:https://github.com/jenkinsci/llvm-cov-plugin/search?q=LLVMCovReportAdapter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/opencover[OpenCover Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opencover.+++<wbr/>+++**OpenCoverReportAdapter** (link:https://github.com/jenkinsci/opencover-plugin/search?q=OpenCoverReportAdapter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sonarqube-generic-coverage[SonarQube Generic Coverage Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++sonar.+++<wbr/>+++coverage.+++<wbr/>+++**SonarQubeGenericReportAdapter** (link:https://github.com/jenkinsci/sonarqube-generic-coverage-plugin/search?q=SonarQubeGenericReportAdapter&type=Code[view on GitHub])
+
+
+== SourceFileResolver
+
+`jenkinsdoc:code-coverage-api:io.jenkins.plugins.coverage.source.SourceFileResolver]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/code-coverage-api[Code Coverage API Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++coverage.+++<wbr/>+++source.+++<wbr/>+++**DefaultSourceFileResolver** (link:https://github.com/jenkinsci/code-coverage-api-plugin/search?q=DefaultSourceFileResolver&type=Code[view on GitHub])
+
+
+== Threshold
+
+`jenkinsdoc:code-coverage-api:io.jenkins.plugins.coverage.threshold.Threshold]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+_(no known implementations)_
+

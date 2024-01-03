@@ -1,0 +1,76 @@
+= Semantic Versioning plugin for Jenkins 
+
+*Project goal:* Automatically determine the next semantic version for a repository
+
+*Skills to study/improve:* Java, Semver
+
+NOTE: This idea is published as a draft under active discussion, but it is confirmed in principle. It is FINE to apply to it. The scope and the suggested implementation may change significantly before the final version is published. Sections like quickstart guide and newbie-friendly issues may be also missing. As a contributor, you are welcome to request additional information and to join the discussions using channels linked on this page.
+
+== Background
+
+As the CI/CD world is moving more towards automation and minimal human interaction, the ability to full automate a release, including the determination of the "next" release version becomes desirable.
+
+Semantic/Conventional commits is one way of programmatically understanding the changes made between releases 
+
+For a existing project released at `1.0.0`, the following commit messages would bump the version as follows:
+
+|==
+|Commit Message|Next Version 
+
+|`chore: improve logging`
+|`1.0.1`
+|`fix: minor bug fix`
+|`1.0.1`
+|`feat: add a new feature`
+|`1.1.0`
+|`BREAKING CHANGE: reimplement`
+|`2.0.0`
+|==
+
+=== Project Details
+
+This project idea proposes to implement a Jenkins plugin which will allow the `nextVersion` to be determined from the commit log.
+
+The project requires the student to start with plugin development from scratch and then work with understanding how to integrate this plugin into a Jenkins pipeline.
+
+In the beginning, the student can work on understanding the Jenkins plugin development by writing code for creating a simple Build Step which determines the current version from the latest tag.
+
+This can be extended in the future to support other methods of determining the version e.g. `Chart.yaml` / `pom.xml` / `build.gradle` or `package.json`
+
+== Links
+
+There are many examples of such documentation on the web:
+
+* link:https://semver.org/[Semantic Versioning]
+* link:https://www.conventionalcommits.org/en/v1.0.0/[Conventional Commits]
+* link:https://github.com/jenkins-x-plugins/jx-release-version[JX Release Version]
+
+== Study Links
+
+== Quick-start
+
+The project requires the student to start with plugin development from scratch and then work with understanding the conventional commits messages.
+
+== Newbie-friendly issues
+
+== Skills to improve/study
+
+* Java
+* Semantic Versioning
+* Jenkins
+
+== Potential Mentors 
+
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Gareth Evans
+
+== Links
+
+* image:https://img.shields.io/badge/gitter%20-%20join_chat%20-%20light_green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_gsoc-sig%3Agitter.im[Static Badge]
+* xref:gsoc:index.adoc#office-hours[Office Hours]
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2021/project-ideas.adoc[Go back to other GSoC 2021 project ideas]

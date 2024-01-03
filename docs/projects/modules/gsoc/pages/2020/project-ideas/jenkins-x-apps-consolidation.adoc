@@ -1,0 +1,84 @@
+= Jenkins X: Consolidate the use of Apps / Addons
+
+*Project goal:* Consolidate Apps and Addons inside Jenkins X
+
+*Skills to study/improve:* Go, Kubernetes
+
+== Background
+
+Find out more about the Jenkins X project here: https://jenkins-x.io/
+
+This proposal tries to conslidate Apps and Addons inside Jenkins X to avoid confusion.
+
+Two years ago we added the addon framework to Jenkins X as a way of extending the Jenkins X platform to provide additional capabilities. 
+
+=== We created Addons
+
+ 
+`Addons` were either generic helm charts or a combination of helm chart plus some custom go code to install and integrate them with the Jenkins X platform.
+
+At this point we referred to `apps` as the charts developers created. e.g. the output of `jx create quickstart` was an app and `jx get apps` would list the quickstarts folks had added to `Staging` or `Production`.
+
+=== We created Apps 
+
+We wanted to avoid having to change the `jx` binary to add a new extension to the Jenkins X platform; so we then introduced the `Apps` framework which provided a more generic way of adding charts chatting to Jenkins X such that anybody could create an app without having to modify the underlying `jx` code.
+ 
+
+=== Confusion
+
+That's now left us with confusing over what an App is.
+
+This is made worse by having support for `apps` and `addons` in the current CLI.
+
+Developers like to talk about the `apps` they are developing. 
+
+
+== Proposal
+
+Going forward lets refer to everything as an `App` and deprecate the use of the word `Addon`. 
+
+Then all of these things would be an `App`:
+
+* system charts like knative, gloo, nginx-controller, flagger, prometheus, external-dns, cert-manager
+* instantiations of Quickstarts or repositories that folks import
+
+== Implementation
+
+We would be able to reuse the current `jx add app` and `jx delete app` commands and folks could reuse them to add any app to any environment `dev`, `Staging` or `Production`.
+
+One possible confusion is between `jx promote` and `jx add app`. In many ways `promote` is for promoting a different version to a different environment; `jx add app` adds an app to the current environment (usually `Dev` by default).
+
+== Newbie Friendly issues
+
+The Jenkins X issue tracker is located in github. We also provide a list of issues that are good first issues for people looking to contribute to the project: https://github.com/jenkins-x/jx/labels/good%20first%20issue
+
+We welcome your contributions.
+
+== Quick start
+
+If you're looking to build from source or get started hacking on jx, please see the CONTRIBUTING.MD or our Contributing Guide on the Jenkins X website: https://jenkins-x.io/docs/contributing/code/
+
+== Potential Mentors 
+
+[.avatar]
+image:images:ROOT:avatars/jstrachan.jpeg[,width=30,height=30] James Strachan
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Neha Gupta
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Michael Cirioli
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Oscar Medina
+image:images:ROOT:avatars/marckk.jpg[,width=30,height=30] Kara de la Marck
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Nikhil Da Rocha
+image:images:ROOT:avatars/sahilrkalra.png[,width=30,height=30] Sahil Kalra
+
+== Project Links 
+
+* https://jenkins-x.io/community/#slack[Chat]
+* xref:gsoc:index.adoc#office-hours[Meetings]
+* https://community.jenkins.io/c/contributing/gsoc[Forum]
+* https://github.com/jenkins-x/enhancements/blob/master/proposals/1/README.md[Project Idea Draft]
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2020/project-ideas.adoc[Go back to other GSoC 2020 project ideas]

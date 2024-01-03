@@ -1,0 +1,113 @@
+= Managing Jenkins
+
+Most standard administrative tasks can be performed from the screens
+in the *Manage Jenkins* section of the dashboard.
+In this chapter, we look at these screens and explain how to use them.
+
+The tiles displayed on the *Manage Jenkins* page are grouped logically.
+Here we discuss the pages that are part of the standard installation.
+Plugins may add pages to this screen.
+
+The top of the *Manage Jenkins* screen may contain "Monitors"
+that alert you when a new version
+of the Jenkins software or a security update is available.
+Each monitor includes a description of the issue it is reporting and links to additional information about the issue
+
+Inline help is available on most *Manage Jenkins* pages:
+
+* To access the help, select the `?` icon to the right of each field.
+* Click the `?` icon again to hide the help text.
+
+Other system administration topics are discussed in
+xref:user-docs:system-administration:index.adoc[Jenkins System Administration].
+
+== System Configuration group
+
+Screens for configuring resources for your Jenkins instance.
+
+xref:managing:system-configuration.adoc[System]::
+Configure global settings and paths for the Jenkins instance
+
+xref:managing:tools.adoc[Tools]::
+Configure tools, their locations, and automatic installers
+
+xref:managing:plugins.adoc[Plugins]::
+Add, update, remove, disable/enable plugins
+that extend the functionality of Jenkins.
+
+xref:managing:nodes.adoc[Nodes and Clouds]::
+Add, remove, control, and monitor the nodes used for the agents on which build jobs run.
+
+xref:managing:casc.adoc[Configuration as Code]::
+Configure your Jenkins instance using a human-readable YAML file rather than the UI.
+This is an optional feature that appears in this group
+only when the plugin is installed on your controller.
+
+== Security group
+
+Screens for configuring security features for your Jenkins instance.
+See xref:dev-docs:security:index.adoc[Securing Jenkins] for general information
+about managing Jenkins security.
+
+xref:managing:system-configuration.adoc[Security]::
+Set configuration parameters that secure your Jenkins instance.
+
+xref:user-docs:using-jenkins:using-credentials.adoc#adding-new-global-credentials[Manage Credentials]::
+Configure the credentials that provide secure access
+to third-party sites and applications that interact with Jenkins.
+
+*Credential Providers*::
+Configure credential providers and types
+
+xref:managing:users.adoc[Users]::
+Manage users defined in the Jenkins user database.
+This is not used if you use a different security realm such as LDAP or AD.
+
+== Status Information group
+
+xref:managing:system-info.adoc[System Information]::
+Displays information about the Jenkins environment.
+
+xref:system-administration:viewing-logs.adoc[System Log]::
+Jenkins log that contains all `java.util.logging` output related to Jenkins.
+
+*Load Statistics*::
+Displays information about resource utilization on you Jenkins instance.
+
+xref:managing:about-jenkins.adoc[About Jenkins]::
+Provides version and license information for your Jenkins instance.
+
+== Troubleshooting group
+
+*Manage Old Data*::
+Remove configuration information related to plugins that have been removed from the instance.
+
+== Tools and Actions group
+
+Screens for common management tasks
+and management tools that enable you to do administrative tasks without using the UI.
+
+*Reload Configuration from Disk*::
+Discard all data that is loaded in memory and reload everything from the file system.
+This is useful when you modify configuration files directly on disk.
+
+xref:dev-docs:cli:index.adoc[Jenkins CLI]::
+How to use the Jenkins CLI from a shell or script.
+
+xref:managing:script-console.adoc[Script Console]::
+Execute an Apache Groovy script for administration, troubleshooting, and diagnostics.
+
+Prepare for Shutdown::
+Prevents new builds from starting so that the system can be shut down safely.
+Displays a red banner with a custom message so that users know what is about to happen.
+
+image:user-docs:managing:prepare-for-shutdown.png[Red headband with a custom message]
+
+[NOTE]
+This does not ask Jenkins to stop; this action will just prevent new builds from starting.
+If you need to stop or restart Jenkins, you should use the command line or the `/restart` and `/safeRestart` end points.
+There is also a plugin called https://plugins.jenkins.io/saferestart/[Safe Restart] that will add a `Restart Safely` link in the UI.
+
+== Uncategorized group
+
+Screens for plugins that have not yet declared the category of their page.

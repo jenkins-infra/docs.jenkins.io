@@ -1,0 +1,55 @@
+= Extension Points defined in Pipeline: Groovy Libraries Plugin
+
+https://plugins.jenkins.io/pipeline-groovy-lib[Pipeline: Groovy Libraries Plugin]
+
+== ClasspathAdder
+
+`jenkinsdoc:pipeline-groovy-lib:org.jenkinsci.plugins.workflow.libs.ClasspathAdder]`
+
++++ Allows libraries to be mapped to actual classpath additions.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/pipeline-groovy-lib[Pipeline: Groovy Libraries Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++libs.+++<wbr/>+++**LibraryAdder** (link:https://github.com/jenkinsci/pipeline-groovy-lib-plugin/search?q=LibraryAdder&type=Code[view on GitHub])
+
+
+== LibraryResolver
+
+`jenkinsdoc:pipeline-groovy-lib:org.jenkinsci.plugins.workflow.libs.LibraryResolver]`
+
++++ Allows a provider of libraries to indicate which libraries should be visible to a given job.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/pipeline-github-lib[Pipeline: GitHub Groovy Libraries Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++github.+++<wbr/>+++library.+++<wbr/>+++**GitHubLibraryResolver** (link:https://github.com/jenkinsci/pipeline-github-lib-plugin/search?q=GitHubLibraryResolver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-groovy-lib[Pipeline: Groovy Libraries Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++libs.+++<wbr/>+++**FolderLibraries.+++<wbr/>+++ForJob** (link:https://github.com/jenkinsci/pipeline-groovy-lib-plugin/search?q=FolderLibraries.ForJob&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-groovy-lib[Pipeline: Groovy Libraries Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++libs.+++<wbr/>+++**GlobalLibraries.+++<wbr/>+++ForJob** (link:https://github.com/jenkinsci/pipeline-groovy-lib-plugin/search?q=GlobalLibraries.ForJob&type=Code[view on GitHub])
+
+
+== LibraryRetriever
+
+`jenkinsdoc:pipeline-groovy-lib:org.jenkinsci.plugins.workflow.libs.LibraryRetriever]`
+
++++ A way in which a library can be physically obtained for use in a build.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/pipeline-groovy-lib[Pipeline: Groovy Libraries Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++libs.+++<wbr/>+++**SCMRetriever** (link:https://github.com/jenkinsci/pipeline-groovy-lib-plugin/search?q=SCMRetriever&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-groovy-lib[Pipeline: Groovy Libraries Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++libs.+++<wbr/>+++**SCMSourceRetriever** (link:https://github.com/jenkinsci/pipeline-groovy-lib-plugin/search?q=SCMSourceRetriever&type=Code[view on GitHub])
+* https://plugins.jenkins.io/workflow-cps-global-lib-http[Pipeline: Shared Groovy Libraries through HTTP retrieval Plugin]: com.+++<wbr/>+++amadeus.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++libs.+++<wbr/>+++**HttpRetriever** (link:https://github.com/jenkinsci/workflow-cps-global-lib-http-plugin/search?q=HttpRetriever&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pipeline-global-lib-nexus[Pipeline: Shared Groovy Libraries through Nexus retrieval Plugin]: com.+++<wbr/>+++roylenferink.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++libs.+++<wbr/>+++**NexusRetriever** (link:https://github.com/jenkinsci/pipeline-global-lib-nexus-plugin/search?q=NexusRetriever&type=Code[view on GitHub])
+
+
+== LibraryStepRetrieverVerifier
+
+`jenkinsdoc:pipeline-groovy-lib:org.jenkinsci.plugins.workflow.libs.LibraryStepRetrieverVerifier]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/pipeline-groovy-lib[Pipeline: Groovy Libraries Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++workflow.+++<wbr/>+++libs.+++<wbr/>+++**MultibranchScmRevisionVerifier** (link:https://github.com/jenkinsci/pipeline-groovy-lib-plugin/search?q=MultibranchScmRevisionVerifier&type=Code[view on GitHub])
+

@@ -1,0 +1,15 @@
+= Extension Points defined in Content Security Policy Plugin
+
+https://plugins.jenkins.io/csp[Content Security Policy Plugin]
+
+== ContentSecurityPolicyReceiver
+
+`jenkinsdoc:csp:io.jenkins.plugins.csp.ContentSecurityPolicyReceiver]`
+
++++ Extension point for receivers of Content-Security-Policy reports.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/csp[Content Security Policy Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++csp.+++<wbr/>+++**ContentSecurityPolicyManagementLink** (link:https://github.com/jenkinsci/csp-plugin/search?q=ContentSecurityPolicyManagementLink&type=Code[view on GitHub])
+

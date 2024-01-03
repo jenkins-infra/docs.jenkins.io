@@ -1,0 +1,18 @@
+= Extension Points defined in Simple Theme Plugin
+
+https://plugins.jenkins.io/simple-theme-plugin[Simple Theme Plugin]
+
+== ThemeElement
+
+`jenkinsdoc:simple-theme-https://plugins.jenkins.io/org.jenkinsci.plugins.simpletheme.ThemeElement]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/simple-theme-plugin[Simple Theme Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++simpletheme.+++<wbr/>+++**CssTextThemeElement** (link:https://github.com/jenkinsci/simple-theme-plugin/search?q=CssTextThemeElement&type=Code[view on GitHub])
+* https://plugins.jenkins.io/simple-theme-plugin[Simple Theme Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++simpletheme.+++<wbr/>+++**CssUrlThemeElement** (link:https://github.com/jenkinsci/simple-theme-plugin/search?q=CssUrlThemeElement&type=Code[view on GitHub])
+* https://plugins.jenkins.io/simple-theme-plugin[Simple Theme Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++simpletheme.+++<wbr/>+++**FaviconUrlThemeElement** (link:https://github.com/jenkinsci/simple-theme-plugin/search?q=FaviconUrlThemeElement&type=Code[view on GitHub])
+* https://plugins.jenkins.io/simple-theme-plugin[Simple Theme Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++simpletheme.+++<wbr/>+++**JsUrlThemeElement** (link:https://github.com/jenkinsci/simple-theme-plugin/search?q=JsUrlThemeElement&type=Code[view on GitHub])
+* https://plugins.jenkins.io/simple-theme-plugin[Simple Theme Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++simpletheme.+++<wbr/>+++**UrlThemeElement** (link:https://github.com/jenkinsci/simple-theme-plugin/search?q=UrlThemeElement&type=Code[view on GitHub])
+

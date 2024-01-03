@@ -1,0 +1,43 @@
+= Jenkins and Android
+
+[.youtube-videos]
+.Videos related to Android
+****
+video::AYoAEoOoYFE[youtube]
+video::zm6ntUt-vqY[youtube]
+****
+
+As one of the predominant mobile platforms, Android is attractive to a number
+of developers, but it does bring it's own set of challenges with it. With an
+extremely broad set of devices available on the market, building and testing
+for the matrix of device configurations can be very challenging. With the
+{plugin}android-emulator[Android emulator plugin]
+however, it is possible to build and test on a myriad of emulated devices.
+
+When combined with the
+{plugin}google-play-android-publisher[Google Play Publisher plugin],
+Android developers can build true continuous delivery
+pipeline, sending builds to an alpha channel in Google Play for release or
+further testing.
+
+.Jenkins ♥ Android Articles
+****
+* http://blog.zuehlke.com/en/configure-your-android-project-on-jenkins/[Configure your Android project on Jenkins]
+* https://www.bignerdranch.com/blog/continuous-delivery-for-android/[Continuous Delivery for Android]
+* https://dzone.com/articles/automating-continuous[Automating Android Projects With Gradle using Jenkins on Windows]
+****
+
+.Android plugins for Jenkins
+****
+* {plugin}android-emulator[Android Emulator plugin]
+
+automate many Android tasks during a build, such as launching/destroying emulators
+
+* {plugin}warnings-ng[Warning next generation plugin]
+
+parses output from the Android lint tool for display and analysis
+
+* {plugin}google-play-android-publisher[Google Play Android Publisher plugin]
+
+enables publishing Android APKs directly from Jenkins
+****

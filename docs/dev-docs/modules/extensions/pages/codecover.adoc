@@ -1,0 +1,15 @@
+= Extension Points defined in CodeCover Plugin
+
+https://plugins.jenkins.io/codecover[CodeCover Plugin]
+
+== Rule
+
+`jenkinsdoc:codecover:hudson.plugins.codecover.Rule]`
+
++++ Rule object encapsulates the logic to mark+++ jenkinsdoc:CoverageObject] +++s as "failed".+++ +++ Such logic is used to mark builds as unstable when certain condition is met.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

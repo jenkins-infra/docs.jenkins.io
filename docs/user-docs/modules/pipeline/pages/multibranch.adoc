@@ -1,0 +1,107 @@
+= Branches and Pull Requests
+
+In the xref:./jenkinsfile.adoc[previous section] a `Jenkinsfile` which could be
+checked into source control was implemented. This section covers the concept of
+*Multibranch* Pipelines which build on the `Jenkinsfile` foundation to provide
+more dynamic and automatic functionality in Jenkins.
+
+.Creating a Multibranch Pipeline in Jenkins
+video::B_2FXWI6CWg[youtube,width=800,height=420]
+
+[#creating-a-multibranch-pipeline]
+== Creating a Multibranch Pipeline
+
+The *Multibranch Pipeline* project type enables you to implement different
+Jenkinsfiles for different branches of the same project.
+In a Multibranch Pipeline project, Jenkins automatically discovers, manages and
+executes Pipelines for branches which contain a `Jenkinsfile` in source control.
+
+This eliminates the need for manual Pipeline creation and management.
+
+To create a Multibranch Pipeline:
+
+* Click *New Item* on Jenkins home page.
+
+image::classic-ui-left-column.png[alt="Classic UI left column",width=30%]
+
+* Enter a name for your Pipeline, select *Multibranch Pipeline* and click *OK*.
+
+[CAUTION]
+====
+Jenkins uses the name of the Pipeline to create directories on disk. Pipeline
+names which include spaces may uncover bugs in scripts which do not expect
+paths to contain spaces.
+====
+
+image::new-item-multibranch-creation.png["Enter a name, select *Multibranch Pipeline*, and click *OK*", role=center]
+
+* Add a *Branch Source* (for example, Git) and enter the location of the
+  repository.
+
+image::multibranch-branch-source.png["Add a Branch Source", role=center]
+image::multibranch-branch-source-configuration.png["Add the URL to the project repository", role=center]
+
+
+* *Save* the Multibranch Pipeline project.
+
+Upon *Save*, Jenkins automatically scans the designated repository and creates
+appropriate items for each branch in the repository which contains a
+`Jenkinsfile`.
+
+By default, Jenkins will not automatically re-index the repository for branch
+additions or deletions (unless using an xref:#organization-folders[Organization Folder]),
+so it is often useful to configure a Multibranch Pipeline to periodically
+re-index in the configuration:
+
+image::multibranch-branch-indexing.png["Setting up branch re-indexing", role=center]
+
+
+=== Additional Environment Variables
+
+Multibranch Pipelines expose additional information about the branch being
+built through the `env` global variable, such as:
+
+BRANCH_NAME:: Name of the branch for which this Pipeline is executing, for
+example `master`.
+
+CHANGE_ID:: An identifier corresponding to some kind of change request, such as a pull request number
+
+Additional environment variables are listed in the
+xref:pipeline:getting-started.adoc#global-variable-reference[Global Variable Reference].
+
+
+=== Supporting Pull Requests
+
+Multibranch Pipelines can be used for validating pull/change requests with the appropriate plugin.
+This functionality is provided by the following plugins:
+
+* {plugin}github-branch-source[GitHub Branch Source]
+* {plugin}cloudbees-bitbucket-branch-source[Bitbucket Branch Source]
+* {plugin}gitlab-branch-source[GitLab Branch Source]
+* {plugin}gitea[Gitea]
+* {plugin}tuleap-git-branch-source[Tuleap Git Branch Source]
+* {plugin}aws-codecommit-jobs[AWS CodeCommit Jobs]
+* {plugin}dagshub-branch-source[DAGsHub Branch Source]
+
+Please consult their documentation for further information on how to
+use those plugins.
+
+
+[#organization-folders]
+== Using Organization Folders
+
+Organization Folders enable Jenkins to monitor an entire GitHub
+Organization, Bitbucket Team/Project, GitLab organization, or Gitea organization and automatically create new
+Multibranch Pipelines for repositories which contain branches and pull requests
+containing a `Jenkinsfile`.
+
+Organization folders are implemented for:
+
+* GitHub in the {plugin}github-branch-source[GitHub Branch Source] plugin
+* Bitbucket in the {plugin}cloudbees-bitbucket-branch-source[Bitbucket Branch Source] plugin
+* GitLab in the {plugin}gitlab-branch-source[GitLab Branch Source] plugin
+* Gitea in the {plugin}gitea[Gitea] plugin
+
+// Hints of possible implementations mentioned in xref:dev-docs:extensions:scm-api.adoc#scmnavigator[]
+// AWS Code Commit Jobs Plugin - not really an organization folder, but discovers repositories in AWS CodeCommit
+// Tuleap Git Branch Source Plugin - not mentioned as an organization folder

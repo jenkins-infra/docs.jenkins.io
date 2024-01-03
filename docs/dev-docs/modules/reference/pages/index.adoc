@@ -1,0 +1,5 @@
+= Jenkins Developer Reference
+
+The Jenkins Developer Reference serves as a resource for all serious Jenkins users and developers alike to have one central place where they can look up and refer to for reliable and accurate information related to Jenkins development overall. While this Developer Reference is by no means completely exhaustive, we welcome any contributions to improve and enhance this document, so that everyone who uses it will benefit much.
+
+For more information regarding the relevant reference topic you may be interested in, please refer to the table of contents located on the left-hand side.

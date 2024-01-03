@@ -1,0 +1,17 @@
+= Persistent Objects
+
+Jenkins uses the file system to store its data.
+Directories are created inside `JENKINS_HOME` following the structure of the Java object model.
+Some data, like console output, is stored in plain text files; other data is stored in Java property files.
+But the majority of structured data, such as project configuration and build records, is stored in XML with link:https://x-stream.github.io/[XStream].
+
+This allows object state, whether from core or plugins, to be persisted relatively easily,
+but one must pay attention to what is serialized and take measures to preserve backward compatibility.
+For example, in various parts of Jenkins you see the `transient` keyword (which instructs XStream not to bind the field to XML),
+deprecated fields left behind strictly for backward compatibility,
+or reconstruction of in-memory data structures after data is loaded from disk.
+
+.References
+****
+* link:https://javadoc.jenkins.io/hudson/XmlFile.html[XmlFile Javadoc]
+****

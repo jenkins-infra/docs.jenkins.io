@@ -1,0 +1,74 @@
+= Activity View
+
+The Blue Ocean Activity view shows all activities related to one Pipeline.
+
+include::partial$_blue-ocean-status.adoc[]
+
+== Navigation Bar
+
+The Activity view includes the xref:getting-started.adoc#navigation-bar[standard navigation bar] at the top and a local navigation bar below it.
+
+image::activity/navigation-bars.png[Navigation bars from the Activity view, role=center]
+
+The local navigation bar includes:
+
+* *Pipeline Name* - Selecting this displays the default Activity tab.
+* *Favorites Toggle* - Selecting the favorite icon &#9734; to the right of the Pipeline name, adds a branch to the favorites list shown on the xref:./dashboard.adoc#favorites-list[dashboard's favorites list].
+* *Tabs* (xref:#activity[Activity], xref:#branches[ Branches] xref:#pull-requests[ Pull Requests]) - Selecting one of these navigates to the corresponding information in the Activity view.
+
+[#activity]
+=== Activity
+
+The default tab of the Activity view shows a list of the latest completed or active runs.
+Each line represents the xref:./dashboard.adoc#run-status[status] of a run, run ID, commit information, and when the run completed.
+
+image::activity/overview.png[Default activity tab view of the Activity view, role=center]
+
+* Selecting a run will bring up the xref:glossary:index.adoc#pipeline[Pipeline run details] to provide Pipeline visualization.
+* Active runs can be aborted from this list by selecting the *stop* icon, which is represented by a &#9726; within a circle.
+* Runs that have been completed can be re-run by selecting the
+*re-run* icon &#8634;.
+* The list can be filtered by branch using the "Branch" drop-down in the list header.
+image::activity/branch-filter.png[Branch filter in Blue Ocean activity view, width=17% role=center]
+
+This view does not allow runs to be edited or marked as favorites.
+To perform these actions, select the *Branches* tab.
+
+[#branches]
+=== Branches
+
+The *Branches* tab shows a list of all branches that have a completed or active run in the current Pipeline.
+Each line in the list corresponds to a branch in source control, displaying the xref:./dashboard.adoc#pipeline-health[overall health of the branch] based on the status of the most recent run, branch name, commit information, and when the run completed.
+
+image::activity/branches.png[Branches tab of Activity view, role=center]
+
+Selecting a branch brings up the xref:glossary:index.adoc#pipeline[Pipeline run details] for the latest completed or active run of that branch.
+
+. Pipelines where the latest run has been completed can be run again by selecting the *run* icon, represented by a icon:play[] in a circle.
++
+* Active runs can be aborted, and display a *stop* icon, which is represented by a &#9726; within a circle.
+. Selecting the *history* icon icon:history[] allows you to view the run history for that branch.
+. The *edit* icon, represented by a icon:pencil[], opens the Pipeline editor for that branch.
+. The *favorite* &#9734; icon adds a branch to your favorites list on the xref:./dashboard.adoc#favorites-list[dashboard].
+On the dashboard a branch listed under favorites displays a solid star &#9733;.
+Deselecting the star removes the branch from the favorites list.
+
+[#pull-requests]
+=== Pull Requests
+
+The Pull Requests tab displays a list of all pull requests for the current Pipeline, that have a completed or active run.
+Each line in the list corresponds to a pull request in source control, which displays the status of the most recent run, run ID, summary, author, and when the run completed.
+
+image::activity/pull-requests.png[Activity Pull Requests view, role=center]
+
+Blue Ocean displays pull requests and branches separately, but the lists behave similarly.
+Selecting a pull request in this list will bring up the xref:glossary:index.adoc#pipeline[Pipeline run details] for the latest completed or active run of that pull request.
+
+* Active runs can be aborted from this list by selecting the *stop* icon, which is represented by a &#9726; within a circle.
+* Pull requests whose latest run has been completed can be run again by selecting the *run* icon, represented by a icon:play[] in a circle.
+
+The pull request list does not display xref:./dashboard.adoc#pipeline-health[health icons], and pull requests cannot be edited or marked as favorites.
+
+NOTE: By default, when a pull request is closed, Jenkins removes the Pipeline from Jenkins, and runs for that pull request are no longer accessible from Jenkins.
+The Pipelines removed in this way will need to be cleaned up in the future.
+This can be changed by adjusting the configuration of the underlying multi-branch Pipeline job.

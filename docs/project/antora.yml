@@ -1,0 +1,13 @@
+name: project
+title: The Jenkins Project
+version: ~
+nav:
+  - modules/ROOT/nav.adoc
+  - modules/teams/nav.adoc
+  - modules/trademark/nav.adoc
+  - modules/ROOT/nav.adoc
+  - modules/governance-meeting/nav.adoc
+  - modules/election-walkthrough-screenshots/nav.adoc
+  - modules/roadmap/nav.adoc
+  - modules/adopters/nav.adoc
+

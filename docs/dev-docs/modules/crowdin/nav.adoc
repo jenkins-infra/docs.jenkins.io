@@ -1,0 +1,6 @@
+.xref:index.adoc[]
+* xref:crowdin-integration.adoc[]
+* xref:translating-plugins.adoc[]
+* xref:proofread-content.adoc[]
+* xref:troubleshooting.adoc[]
+

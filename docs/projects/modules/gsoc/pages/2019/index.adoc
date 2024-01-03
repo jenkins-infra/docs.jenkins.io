@@ -1,0 +1,54 @@
+= Jenkins in Google Summer of Code 2019
+
+Jenkins project participated in Google Summer of Code 2019.
+This page contains archive of the 2019-specific information.
+See the xref:projects:gsoc:index.adoc[main GSoC page] for the actual information.
+
+== Projects
+
+Completed projects:
+
+* xref:projects:gsoc:2019/gitlab-support-for-multibranch-pipeline.adoc[Multi-branch Pipeline support for Gitlab]
+* xref:projects:gsoc:2019/plugin-installation-manager-tool-cli.adoc[Plugins Installation Manager CLI Tool/Library]
+* xref:projects:gsoc:2019/remoting-over-apache-kafka-docker-k8s-features.adoc[Remoting over Apache Kafka with Kubernetes features]
+* xref:projects:gsoc:2019/role-strategy-performance.adoc[Role Strategy Plugin Performance Improvement]
+* xref:projects:gsoc:2019/working-hours-improvements.adoc[Working Hours Plugin - UI Improvements]
+
+Cancelled projects:
+
+* xref:projects:gsoc:2019/artifact-promotion-plugin-for-jenkins-pipeline.adoc[Artifact Promotion plugin for Jenkins Pipeline]
+* xref:projects:gsoc:2019/ext-workspace-manager-cloud-features.adoc[Cloud Features for External Workspace Manager Plugin]
+
+== Results and Retrospective
+
+* link:/blog/2020/01/29/gsoc-report/[GSoC 2019 Report by the Jenkins project]
+* link:/blog/2019/10/08/google-summer-of-code-mentor-and-org-admin-perspective/[GSoC Mentor/Org Admin Perspective] by Marky Jackson
+* link:https://docs.google.com/document/d/1qWeuQzMr1lGQUuirgorODwvqEXYH7RiyKkRByIed9co/edit?usp=sharing[GSoC 2019 Public retrospective doc]
+
+== Demos
+
+Youtube links:
+
+* 2019 summer projects final demo - link:https://www.youtube.com/watch?v=g19o24uzy6c[PART 1]
+* 2019 summer projects final demo - link:https://www.youtube.com/watch?v=cMSbdGwGWp0[PART 2]
+* 2019 summer projects final demo - link:https://www.youtube.com/watch?v=41dhyFC5Iak[PART 3]
+
+[#orgadmin]
+== Org admins
+
+GSoC Organization admins in 2019:
+
+* link:https://github.com/martinda[Martin d'Anjou]
+* link:https://github.com/jeffpearce[Jeff Pearce]
+* link:https://github.com/lloydchang[Lloyd Chang]
+* link:https://github.com/markyjackson-taulia/[Marky Jackson]
+* link:https://github.com/oleg-nenashev/[Oleg Nenashev]
+
+== Links
+
+* xref:projects:gsoc:2019/schedule.adoc[GSoC 2019 schedule]
+* xref:sigs:gsoc:index.adoc[Jenkins GSoC Special Interest Group]
+* xref:./project-ideas.adoc[GSoC 2019 project ideas]
+* xref:./application.adoc[GSoC 2019 application draft]
+* link:https://www.jenkins.io//blog/2018/12/26/gsoc-2019-call-for-mentors/[Call for mentors and project ideas]
+* link:https://summerofcode.withgoogle.com/organizations/5489320354381824/[Jenkins page on GSoC website]

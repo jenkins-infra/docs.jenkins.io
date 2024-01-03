@@ -1,0 +1,18 @@
+= Extension Points defined in CAS Plugin
+
+https://plugins.jenkins.io/cas-plugin[CAS Plugin]
+
+== CasProtocol
+
+`jenkinsdoc:cas-https://plugins.jenkins.io/org.jenkinsci.plugins.cas.CasProtocol]`
+
++++ CAS protocol extension point. The protocol determines how to validate a+++ +++ server response, and may define specific configuration options.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/cas-plugin[CAS Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++cas.+++<wbr/>+++protocols.+++<wbr/>+++**Cas10Protocol** (link:https://github.com/jenkinsci/cas-plugin/search?q=Cas10Protocol&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cas-plugin[CAS Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++cas.+++<wbr/>+++protocols.+++<wbr/>+++**Cas20Protocol** (link:https://github.com/jenkinsci/cas-plugin/search?q=Cas20Protocol&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cas-plugin[CAS Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++cas.+++<wbr/>+++protocols.+++<wbr/>+++**Cas30Protocol** (link:https://github.com/jenkinsci/cas-plugin/search?q=Cas30Protocol&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cas-plugin[CAS Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++cas.+++<wbr/>+++protocols.+++<wbr/>+++**Saml11Protocol** (link:https://github.com/jenkinsci/cas-plugin/search?q=Saml11Protocol&type=Code[view on GitHub])
+

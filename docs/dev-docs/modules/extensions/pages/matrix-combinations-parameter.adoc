@@ -1,0 +1,19 @@
+= Extension Points defined in Matrix Combinations Plugin
+
+https://plugins.jenkins.io/matrix-combinations-parameter[Matrix Combinations Plugin]
+
+== MatrixCombinationsShortcut
+
+`jenkinsdoc:matrix-combinations-parameter:hudson.plugins.matrix_configuration_parameter.shortcut.MatrixCombinationsShortcut]`
+
++++ Defines shortcut link to select a set of axes combinations.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/matrix-combinations-parameter[Matrix Combinations Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++matrix_configuration_parameter.+++<wbr/>+++shortcut.+++<wbr/>+++**CombinationFilterShortcut** (link:https://github.com/jenkinsci/matrix-combinations-plugin/search?q=CombinationFilterShortcut&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-combinations-parameter[Matrix Combinations Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++matrix_configuration_parameter.+++<wbr/>+++shortcut.+++<wbr/>+++**MatrixCombinationsShortcut.+++<wbr/>+++All** (link:https://github.com/jenkinsci/matrix-combinations-plugin/search?q=MatrixCombinationsShortcut.All&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-combinations-parameter[Matrix Combinations Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++matrix_configuration_parameter.+++<wbr/>+++shortcut.+++<wbr/>+++**MatrixCombinationsShortcut.+++<wbr/>+++None** (link:https://github.com/jenkinsci/matrix-combinations-plugin/search?q=MatrixCombinationsShortcut.None&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-combinations-parameter[Matrix Combinations Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++matrix_configuration_parameter.+++<wbr/>+++shortcut.+++<wbr/>+++**PreviousShortcut** (link:https://github.com/jenkinsci/matrix-combinations-plugin/search?q=PreviousShortcut&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-combinations-parameter[Matrix Combinations Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++matrix_configuration_parameter.+++<wbr/>+++shortcut.+++<wbr/>+++**ResultShortcut** (link:https://github.com/jenkinsci/matrix-combinations-plugin/search?q=ResultShortcut&type=Code[view on GitHub])
+

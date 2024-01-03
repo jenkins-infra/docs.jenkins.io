@@ -1,0 +1,179 @@
+= Extension Points defined in Matrix Project Plugin
+
+https://plugins.jenkins.io/matrix-project[Matrix Project Plugin]
+
+== Axis
+
+`jenkinsdoc:matrix-project:hudson.matrix.Axis]`
+
++++ Configuration axis.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/browser-axis-plugin[Browser axis Plugin]: jenkinsci.+++<wbr/>+++plugin.+++<wbr/>+++browseraxis.+++<wbr/>+++**BrowserAxis** (link:https://github.com/jenkinsci/browser-axis-plugin/search?q=BrowserAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/browser-axis-plugin[Browser axis Plugin]: jenkinsci.+++<wbr/>+++plugin.+++<wbr/>+++browseraxis.+++<wbr/>+++**BrowserExpAxis** (link:https://github.com/jenkinsci/browser-axis-plugin/search?q=BrowserExpAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cachet-gating[Cachet Gating Plugin]: com.+++<wbr/>+++redhat.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++cachet.+++<wbr/>+++matrix.+++<wbr/>+++**CachetAxis** (link:https://github.com/jenkinsci/cachet-gating-plugin/search?q=CachetAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/dynamic-axis[Dynamic Axis Plugin]: ca.+++<wbr/>+++silvermaplesolutions.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++daxis.+++<wbr/>+++**DynamicAxis** (link:https://github.com/jenkinsci/dynamic-axis-plugin/search?q=DynamicAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ec2-cloud-axis[ec2-cloud-axis Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++ec2axis.+++<wbr/>+++**EC2Axis** (link:https://github.com/jenkinsci/ec2-cloud-axis-plugin/search?q=EC2Axis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/elastic-axis[Elastic Axis Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++elasticaxisplugin.+++<wbr/>+++**ElasticAxis** (link:https://github.com/jenkinsci/elastic-axis-plugin/search?q=ElasticAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matlab[MATLAB Plugin]: com.+++<wbr/>+++mathworks.+++<wbr/>+++ci.+++<wbr/>+++**MatlabInstallationAxis** (link:https://github.com/jenkinsci/matlab-plugin/search?q=MatlabInstallationAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-project[Matrix Project Plugin]: hudson.+++<wbr/>+++matrix.+++<wbr/>+++**JDKAxis** (link:https://github.com/jenkinsci/matrix-project-plugin/search?q=JDKAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-project[Matrix Project Plugin]: hudson.+++<wbr/>+++matrix.+++<wbr/>+++**LabelAxis** (link:https://github.com/jenkinsci/matrix-project-plugin/search?q=LabelAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-project[Matrix Project Plugin]: hudson.+++<wbr/>+++matrix.+++<wbr/>+++**LabelExpAxis** (link:https://github.com/jenkinsci/matrix-project-plugin/search?q=LabelExpAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-project[Matrix Project Plugin]: hudson.+++<wbr/>+++matrix.+++<wbr/>+++**TextAxis** (link:https://github.com/jenkinsci/matrix-project-plugin/search?q=TextAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sauce-ondemand[Sauce OnDemand Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sauce_ondemand.+++<wbr/>+++**AppiumAxis** (link:https://github.com/jenkinsci/sauce-ondemand-plugin/search?q=AppiumAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sauce-ondemand[Sauce OnDemand Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sauce_ondemand.+++<wbr/>+++**BrowserAxis** (link:https://github.com/jenkinsci/sauce-ondemand-plugin/search?q=BrowserAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sauce-ondemand[Sauce OnDemand Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sauce_ondemand.+++<wbr/>+++**WebDriverAxis** (link:https://github.com/jenkinsci/sauce-ondemand-plugin/search?q=WebDriverAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/shiningpanda[ShiningPanda Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++shiningpanda.+++<wbr/>+++matrix.+++<wbr/>+++**PythonAxis** (link:https://github.com/jenkinsci/shiningpanda-plugin/search?q=PythonAxis&type=Code[view on GitHub])
+* https://plugins.jenkins.io/shiningpanda[ShiningPanda Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++shiningpanda.+++<wbr/>+++matrix.+++<wbr/>+++**ToxAxis** (link:https://github.com/jenkinsci/shiningpanda-plugin/search?q=ToxAxis&type=Code[view on GitHub])
+
+
+== MatrixAggregatable
+
+`jenkinsdoc:matrix-project:hudson.matrix.MatrixAggregatable]`
+
+++++++ jenkinsdoc:Publisher] +++,+++ jenkinsdoc:JobProperty] +++,+++ jenkinsdoc:BuildWrapper] +++can optionally implement this interface+++ +++ to perform result aggregation across+++ jenkinsdoc:MatrixRun] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/artifactdeployer[Artifact Deployer Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++artifactdeployer.+++<wbr/>+++**ArtifactDeployerPublisher** (link:https://github.com/jenkinsci/artifactdeployer-plugin/search?q=ArtifactDeployerPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-alias-setter[Build Alias Setter Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildaliassetter.+++<wbr/>+++**BuildAliasSetter** (link:https://github.com/jenkinsci/build-alias-setter-plugin/search?q=BuildAliasSetter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-failure-analyzer[Build Failure Analyzer Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bfa.+++<wbr/>+++model.+++<wbr/>+++**ScannerJobProperty** (link:https://github.com/jenkinsci/build-failure-analyzer-plugin/search?q=ScannerJobProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-name-setter[Build Name and Description Setter Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildnamesetter.+++<wbr/>+++**BuildNameSetter** (link:https://github.com/jenkinsci/build-name-setter-plugin/search?q=BuildNameSetter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/chef-identity[Chef Identity Plugin]: io.+++<wbr/>+++chef.+++<wbr/>+++jenkins.+++<wbr/>+++**ChefIdentityCleanup** (link:https://github.com/jenkinsci/chef-identity-plugin/search?q=ChefIdentityCleanup&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cucumber-testresult-plugin[Cucumber json test reporting Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++cucumber.+++<wbr/>+++jsontestsupport.+++<wbr/>+++**CucumberTestResultArchiver** (link:https://github.com/jenkinsci/cucumber-testresult-plugin/search?q=CucumberTestResultArchiver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/description-setter[description setter Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++descriptionsetter.+++<wbr/>+++**DescriptionSetterPublisher** (link:https://github.com/jenkinsci/description-setter-plugin/search?q=DescriptionSetterPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/downstream-ext[Downstream-Ext Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++downstream_ext.+++<wbr/>+++**DownstreamTrigger** (link:https://github.com/jenkinsci/downstream-ext-plugin/search?q=DownstreamTrigger&type=Code[view on GitHub])
+* https://plugins.jenkins.io/doxygen[Doxygen Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++doxygen.+++<wbr/>+++**DoxygenArchiver** (link:https://github.com/jenkinsci/doxygen-plugin/search?q=DoxygenArchiver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/environment-script[Environment Script Plugin]: com.+++<wbr/>+++lookout.+++<wbr/>+++jenkins.+++<wbr/>+++**EnvironmentScript** (link:https://github.com/jenkinsci/environment-script-plugin/search?q=EnvironmentScript&type=Code[view on GitHub])
+* https://plugins.jenkins.io/flexible-publish[Flexible Publish Plugin]: org.+++<wbr/>+++jenkins_ci.+++<wbr/>+++plugins.+++<wbr/>+++flexible_publish.+++<wbr/>+++**FlexiblePublisher** (link:https://github.com/jenkinsci/flexible-publish-plugin/search?q=FlexiblePublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++**MatrixGitPublisher** (link:https://github.com/jenkinsci/git-plugin/search?q=MatrixGitPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git-push[Git Push Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git_push.+++<wbr/>+++**MatrixGitPush** (link:https://github.com/jenkinsci/git-push-plugin/search?q=MatrixGitPush&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitee[Gitee Plugin]: com.+++<wbr/>+++gitee.+++<wbr/>+++jenkins.+++<wbr/>+++publisher.+++<wbr/>+++**GiteeAcceptPullRequestPublisher** (link:https://github.com/jenkinsci/gitee-plugin/search?q=GiteeAcceptPullRequestPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitee[Gitee Plugin]: com.+++<wbr/>+++gitee.+++<wbr/>+++jenkins.+++<wbr/>+++publisher.+++<wbr/>+++**GiteeMessagePublisher** (link:https://github.com/jenkinsci/gitee-plugin/search?q=GiteeMessagePublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitee[Gitee Plugin]: com.+++<wbr/>+++gitee.+++<wbr/>+++jenkins.+++<wbr/>+++publisher.+++<wbr/>+++**PullRequestNotifier** (link:https://github.com/jenkinsci/gitee-plugin/search?q=PullRequestNotifier&type=Code[view on GitHub])
+* https://plugins.jenkins.io/groovy-postbuild[Groovy Postbuild Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++groovypostbuild.+++<wbr/>+++**GroovyPostbuildRecorder** (link:https://github.com/jenkinsci/groovy-postbuild-plugin/search?q=GroovyPostbuildRecorder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hipchat[HipChat Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++hipchat.+++<wbr/>+++**HipChatNotifier** (link:https://github.com/jenkinsci/hipchat-plugin/search?q=HipChatNotifier&type=Code[view on GitHub])
+* https://plugins.jenkins.io/instant-messaging[instant-messaging Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++im.+++<wbr/>+++**IMPublisher** (link:https://github.com/jenkinsci/instant-messaging-plugin/search?q=IMPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jenkins-reviewbot[jenkins-reviewbot Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jenkinsreviewbot.+++<wbr/>+++**ReviewboardNotifier** 
+* https://plugins.jenkins.io/jira[Jira Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++jira.+++<wbr/>+++**JiraIssueUpdater** (link:https://github.com/jenkinsci/jira-plugin/search?q=JiraIssueUpdater&type=Code[view on GitHub])
+* https://plugins.jenkins.io/join[Join Plugin]: join.+++<wbr/>+++**JoinTrigger** (link:https://github.com/jenkinsci/join-plugin/search?q=JoinTrigger&type=Code[view on GitHub])
+* https://plugins.jenkins.io/labeled-test-groups-publisher[Labeled Test Groups Publisher Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++labeledgroupedtests.+++<wbr/>+++**LabeledTestResultGroupPublisher** (link:https://github.com/jenkinsci/labeled-test-groups-publisher-plugin/search?q=LabeledTestResultGroupPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hp-application-automation-tools-plugin[Micro Focus Application Automation Tools Plugin]: com.+++<wbr/>+++microfocus.+++<wbr/>+++application.+++<wbr/>+++automation.+++<wbr/>+++tools.+++<wbr/>+++results.+++<wbr/>+++**RunResultRecorder** (link:https://github.com/jenkinsci/hp-application-automation-tools-plugin/search?q=RunResultRecorder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hp-application-automation-tools-plugin[Micro Focus Application Automation Tools Plugin]: com.+++<wbr/>+++microfocus.+++<wbr/>+++application.+++<wbr/>+++automation.+++<wbr/>+++tools.+++<wbr/>+++results.+++<wbr/>+++**TestResultToALMUploader** (link:https://github.com/jenkinsci/hp-application-automation-tools-plugin/search?q=TestResultToALMUploader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/perfpublisher[Performance Publisher Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++PerfPublisher.+++<wbr/>+++**PerfPublisherPublisher** (link:https://github.com/jenkinsci/perfpublisher-plugin/search?q=PerfPublisherPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/postbuildscript[PostBuildScript Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++postbuildscript.+++<wbr/>+++**MatrixPostBuildScript** (link:https://github.com/jenkinsci/postbuildscript-plugin/search?q=MatrixPostBuildScript&type=Code[view on GitHub])
+* https://plugins.jenkins.io/postbuildscript[PostBuildScript Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++postbuildscript.+++<wbr/>+++**PostBuildScript** (link:https://github.com/jenkinsci/postbuildscript-plugin/search?q=PostBuildScript&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pretested-integration[Pretested Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pretestedintegration.+++<wbr/>+++**PretestedIntegrationPostCheckout** (link:https://github.com/jenkinsci/pretested-integration-plugin/search?q=PretestedIntegrationPostCheckout&type=Code[view on GitHub])
+* https://plugins.jenkins.io/project-description-setter[Project Description Setter Plugin]: org.+++<wbr/>+++jenkinsCi.+++<wbr/>+++plugins.+++<wbr/>+++projectDescriptionSetter.+++<wbr/>+++**DescriptionSetterWrapper** (link:https://github.com/jenkinsci/project-description-setter-plugin/search?q=DescriptionSetterWrapper&type=Code[view on GitHub])
+* https://plugins.jenkins.io/release[Release Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++release.+++<wbr/>+++**ReleaseWrapper** (link:https://github.com/jenkinsci/release-plugin/search?q=ReleaseWrapper&type=Code[view on GitHub])
+* https://plugins.jenkins.io/robot[Robot Framework Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++robot.+++<wbr/>+++**RobotPublisher** (link:https://github.com/jenkinsci/robot-plugin/search?q=RobotPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/secondary-timestamper-plugin[secondary timestamper Plugin]: org.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++secondarytimestamper.+++<wbr/>+++**SecondaryTimestampPostBuildAction** (link:https://github.com/jenkinsci/secondary-timestamper-plugin/search?q=SecondaryTimestampPostBuildAction&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skype-notifier[Skype notifier Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++skype.+++<wbr/>+++im.+++<wbr/>+++transport.+++<wbr/>+++**SkypePublisher** (link:https://github.com/jenkinsci/skype-im-plugin/search?q=SkypePublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/slack[Slack Notification Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++slack.+++<wbr/>+++**SlackMatrixBridge** (link:https://github.com/jenkinsci/slack-plugin/search?q=SlackMatrixBridge&type=Code[view on GitHub])
+* https://plugins.jenkins.io/suite-test-groups-publisher[suite-test-groups-publisher Plugin]: com.+++<wbr/>+++cwctravel.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++suitegroupedtests.+++<wbr/>+++**SuiteGroupResultPublisher** (link:https://github.com/jenkinsci/suite-test-groups-publisher-plugin/search?q=SuiteGroupResultPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/tap[TAP Plugin]: org.+++<wbr/>+++tap4j.+++<wbr/>+++plugin.+++<wbr/>+++**TapPublisher** (link:https://github.com/jenkinsci/tap-plugin/search?q=TapPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/warnings-ng[Warnings Next Generation Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++analysis.+++<wbr/>+++core.+++<wbr/>+++steps.+++<wbr/>+++**MatrixBridge** (link:https://github.com/jenkinsci/warnings-ng-plugin/search?q=MatrixBridge&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**AddComment** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=AddComment&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**AssociateItemToRelease** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=AssociateItemToRelease&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**CreateRelease** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=CreateRelease&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**CreateSprintsItem** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=CreateSprintsItem&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**FeedStatus** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=FeedStatus&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**UpdatePriority** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=UpdatePriority&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**UpdateReleaseStage** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=UpdateReleaseStage&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**UpdateStatus** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=UpdateStatus&type=Code[view on GitHub])
+
+
+== MatrixAggregator
+
+`jenkinsdoc:matrix-project:hudson.matrix.MatrixAggregator]`
+
++++ Performs the aggregation of+++ jenkinsdoc:MatrixRun] +++results+++ +++ into+++ jenkinsdoc:MatrixBuild] +++.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/artifactdeployer[Artifact Deployer Plugin]: Anonymous class in org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++artifactdeployer.+++<wbr/>+++**ArtifactDeployerPublisher** (link:https://github.com/jenkinsci/artifactdeployer-plugin/search?q=ArtifactDeployerPublisher.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-alias-setter[Build Alias Setter Plugin]: Anonymous class in org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildaliassetter.+++<wbr/>+++**BuildAliasSetter** (link:https://github.com/jenkinsci/build-alias-setter-plugin/search?q=BuildAliasSetter.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-failure-analyzer[Build Failure Analyzer Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bfa.+++<wbr/>+++**FailureCauseMatrixAggregator** (link:https://github.com/jenkinsci/build-failure-analyzer-plugin/search?q=FailureCauseMatrixAggregator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/build-name-setter[Build Name and Description Setter Plugin]: Anonymous class in org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildnamesetter.+++<wbr/>+++**BuildNameSetter** (link:https://github.com/jenkinsci/build-name-setter-plugin/search?q=BuildNameSetter.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/chef-identity[Chef Identity Plugin]: Anonymous class in io.+++<wbr/>+++chef.+++<wbr/>+++jenkins.+++<wbr/>+++**ChefIdentityCleanup** (link:https://github.com/jenkinsci/chef-identity-plugin/search?q=ChefIdentityCleanup.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/description-setter[description setter Plugin]: Anonymous class in hudson.+++<wbr/>+++plugins.+++<wbr/>+++descriptionsetter.+++<wbr/>+++**DescriptionSetterPublisher** (link:https://github.com/jenkinsci/description-setter-plugin/search?q=DescriptionSetterPublisher.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/downstream-ext[Downstream-Ext Plugin]: Anonymous class in hudson.+++<wbr/>+++plugins.+++<wbr/>+++downstream_ext.+++<wbr/>+++**DownstreamTrigger** (link:https://github.com/jenkinsci/downstream-ext-plugin/search?q=DownstreamTrigger.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/doxygen[Doxygen Plugin]: Anonymous class in hudson.+++<wbr/>+++plugins.+++<wbr/>+++doxygen.+++<wbr/>+++**DoxygenArchiver** (link:https://github.com/jenkinsci/doxygen-plugin/search?q=DoxygenArchiver.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/environment-script[Environment Script Plugin]: Anonymous class in com.+++<wbr/>+++lookout.+++<wbr/>+++jenkins.+++<wbr/>+++**EnvironmentScript** (link:https://github.com/jenkinsci/environment-script-plugin/search?q=EnvironmentScript.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/flexible-publish[Flexible Publish Plugin]: org.+++<wbr/>+++jenkins_ci.+++<wbr/>+++plugins.+++<wbr/>+++flexible_publish.+++<wbr/>+++**ConditionalMatrixAggregator** (link:https://github.com/jenkinsci/flexible-publish-plugin/search?q=ConditionalMatrixAggregator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/flexible-publish[Flexible Publish Plugin]: org.+++<wbr/>+++jenkins_ci.+++<wbr/>+++plugins.+++<wbr/>+++flexible_publish.+++<wbr/>+++**FlexibleMatrixAggregator** (link:https://github.com/jenkinsci/flexible-publish-plugin/search?q=FlexibleMatrixAggregator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git[Git Plugin]: Anonymous class in jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++**MatrixGitPublisher** (link:https://github.com/jenkinsci/git-plugin/search?q=MatrixGitPublisher.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git-push[Git Push Plugin]: Anonymous class in io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++git_push.+++<wbr/>+++**MatrixGitPush** (link:https://github.com/jenkinsci/git-push-plugin/search?q=MatrixGitPush.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gitee[Gitee Plugin]: Anonymous class in com.+++<wbr/>+++gitee.+++<wbr/>+++jenkins.+++<wbr/>+++publisher.+++<wbr/>+++**PullRequestNotifier** (link:https://github.com/jenkinsci/gitee-plugin/search?q=PullRequestNotifier.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/groovy-postbuild[Groovy Postbuild Plugin]: Anonymous class in org.+++<wbr/>+++jvnet.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++groovypostbuild.+++<wbr/>+++**GroovyPostbuildRecorder** (link:https://github.com/jenkinsci/groovy-postbuild-plugin/search?q=GroovyPostbuildRecorder.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hipchat[HipChat Plugin]: Anonymous class in jenkins.+++<wbr/>+++plugins.+++<wbr/>+++hipchat.+++<wbr/>+++**HipChatNotifier** (link:https://github.com/jenkinsci/hipchat-plugin/search?q=HipChatNotifier.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/instant-messaging[instant-messaging Plugin]: Anonymous class in hudson.+++<wbr/>+++plugins.+++<wbr/>+++im.+++<wbr/>+++**IMPublisher** (link:https://github.com/jenkinsci/instant-messaging-plugin/search?q=IMPublisher.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jenkins-reviewbot[jenkins-reviewbot Plugin]: Anonymous class in org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jenkinsreviewbot.+++<wbr/>+++**ReviewboardNotifier** 
+* https://plugins.jenkins.io/jira[Jira Plugin]: Anonymous class in hudson.+++<wbr/>+++plugins.+++<wbr/>+++jira.+++<wbr/>+++**JiraIssueUpdater** (link:https://github.com/jenkinsci/jira-plugin/search?q=JiraIssueUpdater.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/join[Join Plugin]: Anonymous class in join.+++<wbr/>+++**JoinTrigger** (link:https://github.com/jenkinsci/join-plugin/search?q=JoinTrigger.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-project[Matrix Project Plugin]: hudson.+++<wbr/>+++tasks.+++<wbr/>+++test.+++<wbr/>+++**TestResultAggregator** (link:https://github.com/jenkinsci/matrix-project-plugin/search?q=TestResultAggregator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/perfpublisher[Performance Publisher Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++PerfPublisher.+++<wbr/>+++**PerfPublisherResultAggregator** (link:https://github.com/jenkinsci/perfpublisher-plugin/search?q=PerfPublisherResultAggregator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/postbuildscript[PostBuildScript Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++postbuildscript.+++<wbr/>+++**ConfigurableMatrixAggregator** (link:https://github.com/jenkinsci/postbuildscript-plugin/search?q=ConfigurableMatrixAggregator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pretested-integration[Pretested Integration Plugin]: Anonymous class in org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pretestedintegration.+++<wbr/>+++**PretestedIntegrationPostCheckout** (link:https://github.com/jenkinsci/pretested-integration-plugin/search?q=PretestedIntegrationPostCheckout.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/project-description-setter[Project Description Setter Plugin]: Anonymous class in org.+++<wbr/>+++jenkinsCi.+++<wbr/>+++plugins.+++<wbr/>+++projectDescriptionSetter.+++<wbr/>+++**DescriptionSetterWrapper** (link:https://github.com/jenkinsci/project-description-setter-plugin/search?q=DescriptionSetterWrapper.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/release[Release Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++release.+++<wbr/>+++**ReleaseWrapper.+++<wbr/>+++ReleaseAggregator** (link:https://github.com/jenkinsci/release-plugin/search?q=ReleaseWrapper.ReleaseAggregator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/robot[Robot Framework Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++robot.+++<wbr/>+++**RobotResultAggregator** (link:https://github.com/jenkinsci/robot-plugin/search?q=RobotResultAggregator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/secondary-timestamper-plugin[secondary timestamper Plugin]: Anonymous class in org.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++secondarytimestamper.+++<wbr/>+++**SecondaryTimestampPostBuildAction** (link:https://github.com/jenkinsci/secondary-timestamper-plugin/search?q=SecondaryTimestampPostBuildAction.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/slack[Slack Notification Plugin]: Anonymous class in jenkins.+++<wbr/>+++plugins.+++<wbr/>+++slack.+++<wbr/>+++**SlackMatrixBridge** (link:https://github.com/jenkinsci/slack-plugin/search?q=SlackMatrixBridge.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/warnings-ng[Warnings Next Generation Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++analysis.+++<wbr/>+++core.+++<wbr/>+++steps.+++<wbr/>+++**IssuesAggregator** (link:https://github.com/jenkinsci/warnings-ng-plugin/search?q=IssuesAggregator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: Anonymous class in io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**AddComment** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=AddComment.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: Anonymous class in io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**AssociateItemToRelease** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=AssociateItemToRelease.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: Anonymous class in io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**CreateRelease** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=CreateRelease.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: Anonymous class in io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**CreateSprintsItem** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=CreateSprintsItem.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: Anonymous class in io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**FeedStatus** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=FeedStatus.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: Anonymous class in io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**UpdatePriority** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=UpdatePriority.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: Anonymous class in io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**UpdateReleaseStage** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=UpdateReleaseStage.createAggregator.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/zohosprints[Zoho Sprints Plugin]: Anonymous class in io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++jenkinswork.+++<wbr/>+++postbuild.+++<wbr/>+++**UpdateStatus** (link:https://github.com/jenkinsci/zohosprints-plugin/search?q=UpdateStatus.createAggregator.&type=Code[view on GitHub])
+
+
+== MatrixBuildListener
+
+`jenkinsdoc:matrix-project:hudson.matrix.listeners.MatrixBuildListener]`
+
++++ Controls which subset of+++ jenkinsdoc:MatrixRun] +++s to rebuild.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/cachet-gating[Cachet Gating Plugin]: com.+++<wbr/>+++redhat.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++cachet.+++<wbr/>+++matrix.+++<wbr/>+++**CachetMatrixListener** (link:https://github.com/jenkinsci/cachet-gating-plugin/search?q=CachetMatrixListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-combinations-parameter[Matrix Combinations Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++matrix_configuration_parameter.+++<wbr/>+++**MatrixCombinationsParameterMatrixBuildListener** (link:https://github.com/jenkinsci/matrix-combinations-plugin/search?q=MatrixCombinationsParameterMatrixBuildListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-reloaded[Matrix Reloaded Plugin]: net.+++<wbr/>+++praqma.+++<wbr/>+++jenkins.+++<wbr/>+++plugin.+++<wbr/>+++reloaded.+++<wbr/>+++**MatrixReloadedBuildListener** (link:https://github.com/jenkinsci/matrix-reloaded-plugin/search?q=MatrixReloadedBuildListener&type=Code[view on GitHub])
+* https://plugins.jenkins.io/naginator[Naginator Plugin]: com.+++<wbr/>+++chikli.+++<wbr/>+++hudson.+++<wbr/>+++plugin.+++<wbr/>+++naginator.+++<wbr/>+++**NaginatorMatrixBuildListner** (link:https://github.com/jenkinsci/naginator-plugin/search?q=NaginatorMatrixBuildListner&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++matrix.+++<wbr/>+++**MatrixBuildListenerImpl** (link:https://github.com/jenkinsci/parameterized-trigger-plugin/search?q=MatrixBuildListenerImpl&type=Code[view on GitHub])
+
+
+== MatrixConfigurationSorter
+
+`jenkinsdoc:matrix-project:hudson.matrix.MatrixConfigurationSorter]`
+
++++ Add sorting for configurations+++ jenkinsdoc:MatrixConfiguration] +++s of matrix job+++ jenkinsdoc:MatrixProject] ++++++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/matrix-project[Matrix Project Plugin]: hudson.+++<wbr/>+++matrix.+++<wbr/>+++**NoopMatrixConfigurationSorter** (link:https://github.com/jenkinsci/matrix-project-plugin/search?q=NoopMatrixConfigurationSorter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/Matrix-sorter-plugin[Matrix sorter Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugin.+++<wbr/>+++matrixconfigsorter.+++<wbr/>+++**LastAxisSorter** (link:https://github.com/jenkinsci/Matrix-sorter-plugin/search?q=LastAxisSorter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/Matrix-sorter-plugin[Matrix sorter Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugin.+++<wbr/>+++matrixconfigsorter.+++<wbr/>+++**ShorterFirstAxisSorter** (link:https://github.com/jenkinsci/Matrix-sorter-plugin/search?q=ShorterFirstAxisSorter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/Matrix-sorter-plugin[Matrix sorter Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugin.+++<wbr/>+++matrixconfigsorter.+++<wbr/>+++**TimeStampAxisSorter** (link:https://github.com/jenkinsci/Matrix-sorter-plugin/search?q=TimeStampAxisSorter&type=Code[view on GitHub])
+
+
+== MatrixExecutionStrategy
+
+`jenkinsdoc:matrix-project:hudson.matrix.MatrixExecutionStrategy]`
+
++++ Controls the execution sequence of+++ jenkinsdoc:MatrixConfiguration] +++when+++ jenkinsdoc:MatrixProject] +++builds,+++ +++ including what degree it gets serialized/parallelled, how the whole build is abandoned when+++ +++ some fails, etc.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/matrix-project[Matrix Project Plugin]: hudson.+++<wbr/>+++matrix.+++<wbr/>+++**DefaultMatrixExecutionStrategyImpl** (link:https://github.com/jenkinsci/matrix-project-plugin/search?q=DefaultMatrixExecutionStrategyImpl&type=Code[view on GitHub])
+

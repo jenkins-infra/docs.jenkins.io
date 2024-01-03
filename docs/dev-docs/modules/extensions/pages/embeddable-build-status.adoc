@@ -1,0 +1,52 @@
+= Extension Points defined in Embeddable Build Status Plugin
+
+https://plugins.jenkins.io/embeddable-build-status[Embeddable Build Status Plugin]
+
+== InternalRunSelectorExtensionPoint
+
+`jenkinsdoc:embeddable-build-status:org.jenkinsci.plugins.badge.extensionpoints.InternalRunSelectorExtensionPoint]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/embeddable-build-status[Embeddable Build Status Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++badge.+++<wbr/>+++extensions.+++<wbr/>+++**BuildIdRunSelectorExtension** (link:https://github.com/jenkinsci/embeddable-build-status-plugin/search?q=BuildIdRunSelectorExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/embeddable-build-status[Embeddable Build Status Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++badge.+++<wbr/>+++extensions.+++<wbr/>+++**BuildParameterRunSelectorExtension** (link:https://github.com/jenkinsci/embeddable-build-status-plugin/search?q=BuildParameterRunSelectorExtension&type=Code[view on GitHub])
+
+
+== JobSelectorExtensionPoint
+
+`jenkinsdoc:embeddable-build-status:org.jenkinsci.plugins.badge.extensionpoints.JobSelectorExtensionPoint]`
+
++++Extension point that allows custom selection of Jobs +++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== ParameterResolverExtensionPoint
+
+`jenkinsdoc:embeddable-build-status:org.jenkinsci.plugins.badge.extensionpoints.ParameterResolverExtensionPoint]`
+
++++Extension point that allows custom selection of Runs +++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/embeddable-build-status[Embeddable Build Status Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++badge.+++<wbr/>+++extensions.+++<wbr/>+++**BuildParameterResolverExtension** (link:https://github.com/jenkinsci/embeddable-build-status-plugin/search?q=BuildParameterResolverExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/embeddable-build-status[Embeddable Build Status Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++badge.+++<wbr/>+++extensions.+++<wbr/>+++**SpecialValueParameterResolverExtension** (link:https://github.com/jenkinsci/embeddable-build-status-plugin/search?q=SpecialValueParameterResolverExtension&type=Code[view on GitHub])
+
+
+== RunSelectorExtensionPoint
+
+`jenkinsdoc:embeddable-build-status:org.jenkinsci.plugins.badge.extensionpoints.RunSelectorExtensionPoint]`
+
++++Extension point that allows custom selection of Runs +++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

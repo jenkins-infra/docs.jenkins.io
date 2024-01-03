@@ -1,0 +1,34 @@
+site:
+  title: Jenkins Docs
+  url: https://docs.jenkins.com
+  start_page: user-docs::index.adoc
+
+content:
+  sources:
+    - url: https://github.com/krisstern/jenkins-io-docs.git
+      branches: [main]
+      start_paths: [docs/tutorials, docs/user-docs, docs/solutions]
+      # developer docs are un-versioned that's why they are to be fetched individually
+    - url: https://github.com/krisstern/jenkins-io-docs.git
+      branches: [main]
+      start_paths: [docs/dev-docs, docs/events, docs/security, docs/sigs, docs/projects, docs/images, docs/books, docs/community, docs/project, docs/about, docs/download]
+
+runtime:
+  cache_dir: ./.cache/antora
+  fetch: true
+  log:
+    level: error
+
+asciidoc:
+  attributes:
+    page-pagination: ''
+    plugin: https://plugins.jenkins.io/
+    jira: https://issues.jenkins.io/browse/
+    jep: https://github.com/jenkinsci/jep/tree/master/jep/
+    matrix: https://matrix.to/#/#
+    email: jenkinsci-users@googlegroups.com
+    
+ui:
+  bundle:
+    url: https://github.com/krisstern/jenkins-io-docs/raw/main/ui/build/ui-bundle.zip
+    snapshot: true

@@ -1,0 +1,467 @@
+= Extensions Index
+
+Jenkins defines extension points, which are interfaces or abstract classes that model an aspect of its behavior.
+Those interfaces define contracts of what need to be implemented, and Jenkins allows plugins to contribute those implementations.
+In general, all you need to do to register an implementation is to mark it with `@Extension`.
+Creating a new extension point is quite easy too, see xref:https://wiki.jenkins-ci.org/display/JENKINS/Defining+a+new+extension+point[defining a new extension point] for details.
+
+This index has been generated automatically. Javadoc excerpts are taken from core and plugin source code, and may have been improperly converted to HTML, so some may appear broken.
+
+
+* xref:jenkins-core.adoc[Extension points defined in Jenkins Core]
+
+* xref:onepassword-secrets.adoc[Extension points defined in 1Password Secrets Plugin]
+
+* xref:adobe-cloud-manager.adoc[Extension points defined in Adobe Cloud Manager Plugin]
+
+* xref:alauda-devops-credentials-provider.adoc[Extension points defined in Alauda DevOps Credentials Provider Plugin]
+
+* xref:alauda-devops-pipeline.adoc[Extension points defined in Alauda DevOps Pipeline Plugin]
+
+* xref:alauda-kubernetes-support.adoc[Extension points defined in Alauda Kubernetes Suport Plugin]
+
+* xref:alibabacloud-ecs.adoc[Extension points defined in Alibaba Cloud ECS Plugin]
+
+* xref:all-changes.adoc[Extension points defined in All changes Plugin]
+
+* xref:android-signing.adoc[Extension points defined in Android Signing Plugin]
+
+* xref:ApicaLoadtest.adoc[Extension points defined in Apica Loadtest Plugin]
+
+* xref:appdome-build-2secure.adoc[Extension points defined in Appdome Build-2secure Plugin]
+
+* xref:artifact-manager-s3.adoc[Extension points defined in Artifact Manager on S3 Plugin]
+
+* xref:attention.adoc[Extension points defined in Attention Plugin]
+
+* xref:audit2db.adoc[Extension points defined in Audit to Database Plugin]
+
+* xref:audit-trail.adoc[Extension points defined in Audit Trail Plugin]
+
+* xref:authorize-project.adoc[Extension points defined in Authorize Project Plugin]
+
+* xref:aws-kinesis-consumer.adoc[Extension points defined in AWS Kinesis Consumer Plugin]
+
+* xref:cloudbees-bitbucket-branch-source.adoc[Extension points defined in Bitbucket Branch Source Plugin]
+
+* xref:blueocean-bitbucket-pipeline.adoc[Extension points defined in Bitbucket Pipeline for Blue Ocean Plugin]
+
+* xref:block-queued-job.adoc[Extension points defined in Block Queued Job Plugin]
+
+* xref:blueocean-pipeline-editor.adoc[Extension points defined in Blue Ocean Pipeline Editor Plugin]
+
+* xref:branch-api.adoc[Extension points defined in Branch API Plugin]
+
+* xref:build-alias-setter.adoc[Extension points defined in Build Alias Setter Plugin]
+
+* xref:build-cause-run-condition.adoc[Extension points defined in Build Cause Run Condition Plugin]
+
+* xref:build-failure-analyzer.adoc[Extension points defined in Build Failure Analyzer Plugin]
+
+* xref:build-keeper-plugin.adoc[Extension points defined in Build Keeper Plugin]
+
+* xref:build-pipeline-plugin.adoc[Extension points defined in Build Pipeline Plugin]
+
+* xref:environment-filter-utils.adoc[Extension points defined in Build Step Environment Filter Utilities Plugin]
+
+* xref:buildtriggerbadge.adoc[Extension points defined in Build Trigger Badge Plugin]
+
+* xref:build-view-column.adoc[Extension points defined in Build View Column Plugin]
+
+* xref:buildcontext-capture.adoc[Extension points defined in BuildContext Capture Plugin]
+
+* xref:buildgraph-view.adoc[Extension points defined in buildgraph-view Plugin]
+
+* xref:cas-plugin.adoc[Extension points defined in CAS Plugin]
+
+* xref:categorized-view.adoc[Extension points defined in categorized-view Plugin]
+
+* xref:checks-api.adoc[Extension points defined in Checks API Plugin]
+
+* xref:chroot.adoc[Extension points defined in Chroot Plugin]
+
+* xref:clearcase.adoc[Extension points defined in ClearCase Plugin]
+
+* xref:clearcase-ucm-plugin.adoc[Extension points defined in ClearCase UCM Plugin]
+
+* xref:electricflow.adoc[Extension points defined in CloudBees CD Plugin]
+
+* xref:docker-custom-build-environment.adoc[Extension points defined in CloudBees Docker Custom Build Environment Plugin]
+
+* xref:docker-traceability.adoc[Extension points defined in CloudBees Docker Traceability Plugin]
+
+* xref:codecover.adoc[Extension points defined in CodeCover Plugin]
+
+* xref:codesonar.adoc[Extension points defined in CodeSonar Plugin]
+
+* xref:blueocean-commons.adoc[Extension points defined in Common API for Blue Ocean Plugin]
+
+* xref:conditional-buildstep.adoc[Extension points defined in Conditional BuildStep Plugin]
+
+* xref:config-file-provider.adoc[Extension points defined in Config File Provider Plugin]
+
+* xref:configuration-as-code-groovy.adoc[Extension points defined in Configuration as Code Plugin - Groovy Scripting Extension Plugin]
+
+* xref:configurationslicing.adoc[Extension points defined in Configuration Slicing Plugin]
+
+* xref:consul.adoc[Extension points defined in Consul Plugin]
+
+* xref:csp.adoc[Extension points defined in Content Security Policy Plugin]
+
+* xref:copyartifact.adoc[Extension points defined in Copy Artifact Plugin]
+
+* xref:credentials.adoc[Extension points defined in Credentials Plugin]
+
+* xref:custom-build-properties.adoc[Extension points defined in Custom Build Properties Plugin]
+
+* xref:CustomHistory.adoc[Extension points defined in CustomHistory Plugin]
+
+* xref:cvs.adoc[Extension points defined in CVS Plugin]
+
+* xref:dashboard-view.adoc[Extension points defined in Dashboard View Plugin]
+
+* xref:database.adoc[Extension points defined in Database Plugin]
+
+* xref:defensics.adoc[Extension points defined in Defensics Plugin]
+
+* xref:delivery-pipeline-plugin.adoc[Extension points defined in Delivery Pipeline Plugin]
+
+* xref:depgraph-view.adoc[Extension points defined in Dependency Graph Viewer Plugin]
+
+* xref:deploy.adoc[Extension points defined in Deploy to container Plugin]
+
+* xref:deployer-framework.adoc[Extension points defined in Deployer Framework Plugin]
+
+* xref:deployhub.adoc[Extension points defined in DeployHub Plugin]
+
+* xref:deployment-notification.adoc[Extension points defined in deployment-notification Plugin]
+
+* xref:design-library.adoc[Extension points defined in Design Library Plugin]
+
+* xref:diagnostics.adoc[Extension points defined in Diagnostics Plugin]
+
+* xref:display-url-api.adoc[Extension points defined in Display URL API Plugin]
+
+* xref:docker-commons.adoc[Extension points defined in Docker Commons Plugin]
+
+* xref:docker-workflow.adoc[Extension points defined in Docker Pipeline Plugin]
+
+* xref:docker-slaves.adoc[Extension points defined in Docker Slaves Plugin]
+
+* xref:docker-build-step.adoc[Extension points defined in docker-build-step Plugin]
+
+* xref:dtkit-api.adoc[Extension points defined in DTKit 2 API Plugin]
+
+* xref:durable-task.adoc[Extension points defined in Durable Task Plugin]
+
+* xref:elasticbox.adoc[Extension points defined in ElasticBox CI Plugin]
+
+* xref:envinject.adoc[Extension points defined in Environment Injector Plugin]
+
+* xref:Exclusion.adoc[Extension points defined in Exclusion Plugin]
+
+* xref:extensible-choice-parameter.adoc[Extension points defined in Extensible Choice Parameter Plugin]
+
+* xref:external-workspace-manager.adoc[Extension points defined in External Workspace Manager Plugin]
+
+* xref:extreme-notification.adoc[Extension points defined in Extreme Notification Plugin]
+
+* xref:favorite.adoc[Extension points defined in Favorite Plugin]
+
+* xref:fstrigger.adoc[Extension points defined in Filesystem Trigger Plugin]
+
+* xref:flexible-publish.adoc[Extension points defined in Flexible Publish Plugin]
+
+* xref:cloudbees-folder.adoc[Extension points defined in Folders Plugin]
+
+* xref:forensics-api.adoc[Extension points defined in Forensics API Plugin]
+
+* xref:fortify.adoc[Extension points defined in Fortify Plugin]
+
+* xref:GatekeeperPlugin.adoc[Extension points defined in Gatekeeper Plugin]
+
+* xref:gating-core.adoc[Extension points defined in Gating Core Plugin]
+
+* xref:gcp-secrets-manager-credentials-provider.adoc[Extension points defined in GCP Secrets Manager Credentials Provider Plugin]
+
+* xref:gerrit-trigger.adoc[Extension points defined in Gerrit Trigger Plugin]
+
+* xref:git-client.adoc[Extension points defined in Git client Plugin]
+
+* xref:git.adoc[Extension points defined in Git Plugin]
+
+* xref:git-server.adoc[Extension points defined in Git server Plugin]
+
+* xref:gitee.adoc[Extension points defined in Gitee Plugin]
+
+* xref:github-oauth.adoc[Extension points defined in GitHub Authentication Plugin]
+
+* xref:github-pullrequest.adoc[Extension points defined in GitHub Integration Plugin]
+
+* xref:github.adoc[Extension points defined in GitHub Plugin]
+
+* xref:gitlab-oauth.adoc[Extension points defined in GitLab Authentication Plugin]
+
+* xref:gnat.adoc[Extension points defined in GNAT Plugin]
+
+* xref:google-cloud-backup.adoc[Extension points defined in Google Cloud Backup Plugin]
+
+* xref:google-cloudbuild.adoc[Extension points defined in Google Cloud Build Plugin]
+
+* xref:google-storage-plugin.adoc[Extension points defined in Google Cloud Storage Plugin]
+
+* xref:google-deployment-manager.adoc[Extension points defined in Google Deployment Manager Plugin]
+
+* xref:google-cloud-health-check.adoc[Extension points defined in Google Health Check Plugin]
+
+* xref:hashicorp-vault-plugin.adoc[Extension points defined in HashiCorp Vault Plugin]
+
+* xref:cloudbees-jenkins-advisor.adoc[Extension points defined in Health Advisor by CloudBees Plugin]
+
+* xref:prqa-plugin.adoc[Extension points defined in Helix QAC Plugin]
+
+* xref:hipchat.adoc[Extension points defined in HipChat Plugin]
+
+* xref:hubot-steps.adoc[Extension points defined in Hubot Pipeline Steps Plugin]
+
+* xref:hyper-slaves.adoc[Extension points defined in Hyper.sh Slaves Plugin]
+
+* xref:instant-messaging.adoc[Extension points defined in instant-messaging Plugin]
+
+* xref:ivy.adoc[Extension points defined in Ivy Plugin]
+
+* xref:jacoco.adoc[Extension points defined in JaCoCo Plugin]
+
+* xref:jira.adoc[Extension points defined in Jira Plugin]
+
+* xref:jira-ext.adoc[Extension points defined in jira-ext Plugin]
+
+* xref:JiraTestResultReporter.adoc[Extension points defined in JiraTestResultReporter Plugin]
+
+* xref:ownership.adoc[Extension points defined in Job and Node ownership Plugin]
+
+* xref:github-autostatus.adoc[Extension points defined in Job and Stage monitoring Plugin]
+
+* xref:jobcacher.adoc[Extension points defined in Job Cacher Plugin]
+
+* xref:jobConfigHistory.adoc[Extension points defined in Job Configuration History Plugin]
+
+* xref:job-dsl.adoc[Extension points defined in Job DSL Plugin]
+
+* xref:job-restrictions.adoc[Extension points defined in Job Restrictions Plugin]
+
+* xref:jobcopy-builder.adoc[Extension points defined in Jobcopy Builder Plugin]
+
+* xref:junit.adoc[Extension points defined in JUnit Plugin]
+
+* xref:blueocean-jwt.adoc[Extension points defined in JWT for Blue Ocean Plugin]
+
+* xref:jwt-support.adoc[Extension points defined in JWT Support Plugin]
+
+* xref:kpp-management-plugin.adoc[Extension points defined in Keychains and Provisioning Profiles Management Plugin]
+
+* xref:kubernetes-credentials-provider.adoc[Extension points defined in Kubernetes Credentials Provider Plugin]
+
+* xref:label-verifier.adoc[Extension points defined in Label Verifier Plugin]
+
+* xref:localization-support.adoc[Extension points defined in Localization Support Plugin]
+
+* xref:logstash.adoc[Extension points defined in Logstash Plugin]
+
+* xref:lucene-search.adoc[Extension points defined in Lucene-Search Plugin]
+
+* xref:mailer.adoc[Extension points defined in Mailer Plugin]
+
+* xref:ca-mat-performance-benchmarking-by-broadcom.adoc[Extension points defined in MAT Performance Benchmarking by Broadcom Plugin]
+
+* xref:matlab.adoc[Extension points defined in MATLAB Plugin]
+
+* xref:matrix-auth.adoc[Extension points defined in Matrix Authorization Strategy Plugin]
+
+* xref:matrix-combinations-parameter.adoc[Extension points defined in Matrix Combinations Plugin]
+
+* xref:matrix-project.adoc[Extension points defined in Matrix Project Plugin]
+
+* xref:maven-artifact-choicelistprovider.adoc[Extension points defined in Maven Artifact ChoiceListProvider (Nexus) Plugin]
+
+* xref:maven-plugin.adoc[Extension points defined in Maven Integration Plugin]
+
+* xref:repository.adoc[Extension points defined in Maven Repository Server Plugin]
+
+* xref:mercurial.adoc[Extension points defined in Mercurial Plugin]
+
+* xref:metrics-aggregation.adoc[Extension points defined in Metrics Aggregation Plugin]
+
+* xref:metrics.adoc[Extension points defined in Metrics Plugin]
+
+* xref:hp-application-automation-tools-plugin.adoc[Extension points defined in Micro Focus Application Automation Tools Plugin]
+
+* xref:misra-compliance-report-generator.adoc[Extension points defined in MISRA Compliance Report Plugin]
+
+* xref:mock-load-builder.adoc[Extension points defined in Mock Load Builder Plugin]
+
+* xref:mq-notifier.adoc[Extension points defined in MQ Notifier Plugin]
+
+* xref:multi-module-tests-publisher.adoc[Extension points defined in multi-module-tests-publisher Plugin]
+
+* xref:nirmata.adoc[Extension points defined in Nirmata Plugin]
+
+* xref:nodelabelparameter.adoc[Extension points defined in Node and Label parameter Plugin]
+
+* xref:node-iterator-api.adoc[Extension points defined in Node Iterator API Plugin]
+
+* xref:node-sharing-executor.adoc[Extension points defined in Node sharing executor Plugin]
+
+* xref:nodejs.adoc[Extension points defined in NodeJS Plugin]
+
+* xref:oauth-credentials.adoc[Extension points defined in OAuth Credentials Plugin]
+
+* xref:octoperf.adoc[Extension points defined in OctoPerf Load Testing Plugin]
+
+* xref:oki-docki.adoc[Extension points defined in oki-docki Plugin]
+
+* xref:one-shot-executor.adoc[Extension points defined in One-Shot Executor Plugin]
+
+* xref:oidc-provider.adoc[Extension points defined in OpenID Connect Provider Plugin]
+
+* xref:openid.adoc[Extension points defined in OpenID Plugin]
+
+* xref:openstack-cloud.adoc[Extension points defined in OpenStack Cloud Plugin]
+
+* xref:macstadium-orka.adoc[Extension points defined in Orka by MacStadium Plugin]
+
+* xref:parameterized-trigger.adoc[Extension points defined in Parameterized Trigger Plugin]
+
+* xref:pending-changes.adoc[Extension points defined in Pending Changes Plugin]
+
+* xref:performance.adoc[Extension points defined in Performance Plugin]
+
+* xref:periodicbackup.adoc[Extension points defined in Periodic Backup Plugin]
+
+* xref:hudson-pview-plugin.adoc[Extension points defined in Personal View Plugin]
+
+* xref:blueocean-pipeline-api-impl.adoc[Extension points defined in Pipeline implementation for Blue Ocean Plugin]
+
+* xref:pipeline-input-notification.adoc[Extension points defined in Pipeline Input Step Notification Plugin]
+
+* xref:pipeline-maven.adoc[Extension points defined in Pipeline Maven Integration Plugin]
+
+* xref:workflow-api.adoc[Extension points defined in Pipeline: API Plugin]
+
+* xref:workflow-cps-global-lib.adoc[Extension points defined in Pipeline: Deprecated Groovy Libraries Plugin]
+
+* xref:workflow-step-api.adoc[Extension points defined in Pipeline: Step API Plugin]
+
+* xref:pom2config.adoc[Extension points defined in pom2config Plugin]
+
+* xref:port-allocator.adoc[Extension points defined in Port Allocator Plugin]
+
+* xref:pretested-integration.adoc[Extension points defined in Pretested Integration Plugin]
+
+* xref:PrioritySorter.adoc[Extension points defined in Priority Sorter Plugin]
+
+* xref:proc-cleaner-plugin.adoc[Extension points defined in Process cleaner Plugin]
+
+* xref:project-inheritance.adoc[Extension points defined in Project Inheritance Plugin]
+
+* xref:promoted-builds.adoc[Extension points defined in promoted builds Plugin]
+
+* xref:protecode-sc.adoc[Extension points defined in Protecode SC Plugin]
+
+* xref:pubsub-light.adoc[Extension points defined in Pub-Sub "light" Bus Plugin]
+
+* xref:publish-over-cifs.adoc[Extension points defined in Publish Over CIFS Plugin]
+
+* xref:publish-over-ftp.adoc[Extension points defined in Publish Over FTP Plugin]
+
+* xref:publish-over-ssh.adoc[Extension points defined in Publish Over SSH Plugin]
+
+* xref:pull-request-monitoring.adoc[Extension points defined in Pull Request Monitoring Plugin]
+
+* xref:puppet.adoc[Extension points defined in Puppet Plugin]
+
+* xref:rabbitmq-consumer.adoc[Extension points defined in RabbitMQ Consumer Plugin]
+
+* xref:rebuild.adoc[Extension points defined in Rebuilder Plugin]
+
+* xref:recipe.adoc[Extension points defined in Recipe Plugin]
+
+* xref:blueocean-rest.adoc[Extension points defined in REST API for Blue Ocean Plugin]
+
+* xref:blueocean-rest-impl.adoc[Extension points defined in REST Implementation for Blue Ocean Plugin]
+
+* xref:run-condition.adoc[Extension points defined in Run Condition Plugin]
+
+* xref:run-selector.adoc[Extension points defined in Run Selector Plugin]
+
+* xref:saltstack.adoc[Extension points defined in SaltStack Plugin]
+
+* xref:scm-api.adoc[Extension points defined in SCM API Plugin]
+
+* xref:scm-manager.adoc[Extension points defined in SCM-Manager Plugin]
+
+* xref:scoring-load-balancer.adoc[Extension points defined in Scoring Load Balancer Plugin]
+
+* xref:script-security.adoc[Extension points defined in Script Security Plugin]
+
+* xref:scriptler.adoc[Extension points defined in Scriptler Plugin]
+
+* xref:sectioned-view.adoc[Extension points defined in Sectioned View Plugin]
+
+* xref:security-inspector.adoc[Extension points defined in Security Inspector Plugin]
+
+* xref:sematext.adoc[Extension points defined in Sematext Plugin]
+
+* xref:shared-objects.adoc[Extension points defined in Shared Objects Plugin]
+
+* xref:simple-theme-plugin.adoc[Extension points defined in Simple Theme Plugin]
+
+* xref:skytap.adoc[Extension points defined in Skytap Cloud CI Plugin]
+
+* xref:slack.adoc[Extension points defined in Slack Notification Plugin]
+
+* xref:ssh-agent.adoc[Extension points defined in SSH Agent Plugin]
+
+* xref:ssh-slaves.adoc[Extension points defined in SSH Build Agents Plugin]
+
+* xref:ssh-credentials.adoc[Extension points defined in SSH Credentials Plugin]
+
+* xref:sshd.adoc[Extension points defined in SSH server Plugin]
+
+* xref:subversion.adoc[Extension points defined in Subversion Plugin]
+
+* xref:suite-test-groups-publisher.adoc[Extension points defined in suite-test-groups-publisher Plugin]
+
+* xref:sumologic-publisher.adoc[Extension points defined in Sumologic Publisher Plugin]
+
+* xref:support-core.adoc[Extension points defined in Support Core Plugin]
+
+* xref:theme-manager.adoc[Extension points defined in Theme Manager Plugin]
+
+* xref:thycotic-vault.adoc[Extension points defined in Thycotic DevOps Secrets Vault Plugin]
+
+* xref:token-macro.adoc[Extension points defined in Token Macro Plugin]
+
+* xref:unique-id.adoc[Extension points defined in Unique ID Library Plugin]
+
+* xref:update-sites-manager.adoc[Extension points defined in UpdateSites Manager Plugin]
+
+* xref:urltrigger.adoc[Extension points defined in URLTrigger Plugin]
+
+* xref:vectorcast-coverage.adoc[Extension points defined in VectorCAST Coverage Plugin]
+
+* xref:vectorcast-execution.adoc[Extension points defined in VectorCAST Execution Plugin]
+
+* xref:vsphere-cloud.adoc[Extension points defined in vSphere Plugin]
+
+* xref:warnings-ng.adoc[Extension points defined in Warnings Next Generation Plugin]
+
+* xref:blueocean-web.adoc[Extension points defined in Web for Blue Ocean Plugin]
+
+* xref:windows-slaves.adoc[Extension points defined in WMI Windows Agents Plugin]
+
+* xref:xunit.adoc[Extension points defined in xUnit Plugin]
+
+* xref:yet-another-docker-plugin.adoc[Extension points defined in Yet Another Docker Plugin]
+
+* xref:zscaler-iac-scan.adoc[Extension points defined in Zscaler IaC Scanner Plugin]

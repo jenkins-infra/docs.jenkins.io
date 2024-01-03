@@ -1,0 +1,15 @@
+= Extension Points defined in UpdateSites Manager Plugin
+
+https://plugins.jenkins.io/update-sites-manager[UpdateSites Manager Plugin]
+
+== DescribedUpdateSite
+
+`jenkinsdoc:update-sites-manager:jp.ikedam.jenkins.plugins.updatesitesmanager.DescribedUpdateSite]`
+
++++ Base for UpdateSite that have Descriptor.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/update-sites-manager[UpdateSites Manager Plugin]: jp.+++<wbr/>+++ikedam.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++updatesitesmanager.+++<wbr/>+++**ManagedUpdateSite** (link:https://github.com/jenkinsci/update-sites-manager-plugin/search?q=ManagedUpdateSite&type=Code[view on GitHub])
+

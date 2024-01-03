@@ -1,0 +1,73 @@
+= Plugin(s) for Electronic Design Automation tools 
+
+*Project goal:* Create a new Jenkins plugin for one of widely used EDA tools
+
+*Skills to study/improve:* Java, EDA Tools
+
+== Details
+
+The idea is to create a Jenkins plugin or a xref:user-docs:pipeline:shared-libraries.adoc[Pipeline Shared library] for one of widely used EDA tools.
+Both ASIC or FPGA design flow are acceptable, the tool should be proposed by the potential student.
+Open-source EDA tools would be preferable (e.g. Yosys, FuseSoC, ArachnePnR, icetools), but we also consider
+conditionally-free tools (like FPGA design EDAs).
+
+Examples of tool integration:
+
+* Tool launch and publishing steps for Free-style and/or Pipeline jobs
+* Integration with {plugin}warnings-ng[Warnings Next Generation Plugin] for analysis report parsing.
+* Integration with {plugin}xunit[xUnit Plugin] for test results parsing
+* Reporting of FPGA resource utilization (per build + trends)
+* Timing report trend publishing
+* Integrating UVM reports into Jenkins build and project pages
+
+== Special requirements
+
+In the case of FPGA tools integration, a prototyping board will be required unless the project can be done in simulation tools only.
+
+== Quick Start
+
+The main objective for an applicant is to select EDA tools for the project.
+An applicant is expected to define a list of tools for a project and to come up with some automation use-cases which could be implemented in a Jenkins.
+
+Recommended steps:
+
+1. Explore a tool, review its automation capabilities (availability of command-line interfaces or API)
+2. Try running demos for a tool to explore it
+3. Try automating the demos in Jenkins using existing tools and plugins. Jenkins Pipeline is recommended
+4. Explore ways to improve the user experience by a plugin (tool management, configuration, reporting, etc.)
+
+Project applications may benefit from some prototype implementations  
+
+== Newbie-friendly issues
+
+Currently there are only few relevant plugins in the Jenkins project.
+It is recommended to focus on generic newbie-friendly issues related to tool management and integrations in Jenkins.
+
+== References
+
+Below you can find a list of existing plugins and libraries which can be used for inspiration:
+
+* link:https://github.com/jenkinsci/mentor-questa-vrm-plugin[Plugin for Mentor Graphics Questa Verification Run Manager (VRM)]
+* link:https://github.com/jenkinsci/vmanager-plugin[Cadence vManager Plugin for Jenkins]
+* link:https://github.com/librecores/librecores-pipeline-lib[Librecores Jenkins Pipeline Library] (FuseSoC, Yosys)
+* link:https://github.com/jenkinsci/custom-tools-plugin[Custom Tools Plugin] - generic plugin for tool management
+
+== Potential Mentors 
+
+[.avatar]
+image:images:ROOT:avatars/oleg_nenashev.png[,width=30,height=30] Oleg Nenashev
+image:images:ROOT:avatars/ayush_agarwal.png[,width=30,height=30] Ayush Agarwal
+
+== Project Links 
+
+* image:https://img.shields.io/badge/gitter%20-%20join_chat%20-%20light_green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_hw-and-eda-sig%3Agitter.im[Static Badge]
+* xref:gsoc:index.adoc#office-hours[Meetings]
+* https://community.jenkins.io/c/contributing/gsoc[Forum]
+* https://docs.google.com/document/d/1v54zvQVp2HqWyxZ5b4QZ-THeTRQYiIAsIOX4hbvGPa0[Project Idea Draft]
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2020/project-ideas.adoc[Go back to other GSoC 2020 project ideas]

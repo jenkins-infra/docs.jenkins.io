@@ -1,0 +1,181 @@
+= Extension Points defined in Support Core Plugin
+
+https://plugins.jenkins.io/support-core[Support Core Plugin]
+
+== BundleNameInstanceTypeProvider
+
+`jenkinsdoc:support-core:com.cloudbees.jenkins.support.BundleNameInstanceTypeProvider]`
+
++++
+<p>Extension point allowing to customize the support bundle naming strategy.</p>+++ +++
+<p>+++ +++ It will work the following way:+++ +++</p>+++ +++
+<ol>
++++ +++
+<li>If an implementation of+++ jenkinsdoc:BundleNameInstanceTypeProvider] +++is found, it will be used.<br>+++ +++ <strong>WARNING: </strong>if many are found, then a warning will be issued, and the first extension found will+++ +++ be used.</li>+++ +++
+<li>If not, then it will check for the presence of the+++ jenkinsdoc:=SUPPORT_BUNDLE_NAMING_INSTANCE_SPEC_PROPERTY] ++++++ +++ system property, and will use its value if provided.</li>+++ +++
+<li>If not, then will fallback to the original behaviour, which is simply an empty String</li>+++ +++
+</ol>+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++**BundleNameInstanceTypeProvider.+++<wbr/>+++DEFAULT_STRATEGY** (link:https://github.com/jenkinsci/support-core-plugin/search?q=BundleNameInstanceTypeProvider.DEFAULT_STRATEGY&type=Code[view on GitHub])
+
+
+== Component
+
+`jenkinsdoc:support-core:com.cloudbees.jenkins.support.api.Component]`
+
++++ Represents a component of a support bundle.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/gerrit-trigger[Gerrit Trigger Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++gerrit.+++<wbr/>+++trigger.+++<wbr/>+++diagnostics.+++<wbr/>+++support.+++<wbr/>+++**BuildMemoryComponent** (link:https://github.com/jenkinsci/gerrit-trigger-plugin/search?q=BuildMemoryComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gerrit-trigger[Gerrit Trigger Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++gerrit.+++<wbr/>+++trigger.+++<wbr/>+++diagnostics.+++<wbr/>+++support.+++<wbr/>+++**EventListenersComponent** (link:https://github.com/jenkinsci/gerrit-trigger-plugin/search?q=EventListenersComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**AboutBrowser** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AboutBrowser&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**AboutJenkins** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AboutJenkins&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**AboutUser** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AboutUser&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**AbstractItemDirectoryComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AbstractItemDirectoryComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**AdministrativeMonitors** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AdministrativeMonitors&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**AdvancedProcFilesRetriever** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AdvancedProcFilesRetriever&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**AgentProtocols** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AgentProtocols&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++configfiles.+++<wbr/>+++**AgentsConfigFile** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AgentsConfigFile&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**BuildQueue** (link:https://github.com/jenkinsci/support-core-plugin/search?q=BuildQueue&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++configfiles.+++<wbr/>+++**ConfigFileComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=ConfigFileComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**CustomLogs** (link:https://github.com/jenkinsci/support-core-plugin/search?q=CustomLogs&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++timer.+++<wbr/>+++**DeadlockRequestComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=DeadlockRequestComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**DirectoryComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=DirectoryComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**DumpExportTable** (link:https://github.com/jenkinsci/support-core-plugin/search?q=DumpExportTable&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**EnvironmentVariables** (link:https://github.com/jenkinsci/support-core-plugin/search?q=EnvironmentVariables&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**FileDescriptorLimit** (link:https://github.com/jenkinsci/support-core-plugin/search?q=FileDescriptorLimit&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++timer.+++<wbr/>+++**FileListCapComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=FileListCapComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**GCLogs** (link:https://github.com/jenkinsci/support-core-plugin/search?q=GCLogs&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**HeapUsageHistogram** (link:https://github.com/jenkinsci/support-core-plugin/search?q=HeapUsageHistogram&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++threaddump.+++<wbr/>+++**HighLoadComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=HighLoadComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**ItemsContent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=ItemsContent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**JVMProcessSystemMetricsContents** (link:https://github.com/jenkinsci/support-core-plugin/search?q=JVMProcessSystemMetricsContents&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**JVMProcessSystemMetricsContents.+++<wbr/>+++Agents** (link:https://github.com/jenkinsci/support-core-plugin/search?q=JVMProcessSystemMetricsContents.Agents&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**JVMProcessSystemMetricsContents.+++<wbr/>+++Master** (link:https://github.com/jenkinsci/support-core-plugin/search?q=JVMProcessSystemMetricsContents.Master&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**JenkinsLogs** (link:https://github.com/jenkinsci/support-core-plugin/search?q=JenkinsLogs&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**LoadStats** (link:https://github.com/jenkinsci/support-core-plugin/search?q=LoadStats&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**LoggerManager** (link:https://github.com/jenkinsci/support-core-plugin/search?q=LoggerManager&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**Metrics** (link:https://github.com/jenkinsci/support-core-plugin/search?q=Metrics&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**NetworkInterfaces** (link:https://github.com/jenkinsci/support-core-plugin/search?q=NetworkInterfaces&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**NodeMonitors** (link:https://github.com/jenkinsci/support-core-plugin/search?q=NodeMonitors&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**NodeRemoteDirectoryComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=NodeRemoteDirectoryComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++api.+++<wbr/>+++**ObjectComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=ObjectComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++configfiles.+++<wbr/>+++**OtherConfigFilesComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=OtherConfigFilesComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**OtherLogs** (link:https://github.com/jenkinsci/support-core-plugin/search?q=OtherLogs&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**ProcFilesRetriever** (link:https://github.com/jenkinsci/support-core-plugin/search?q=ProcFilesRetriever&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**RemotingDiagnostics** (link:https://github.com/jenkinsci/support-core-plugin/search?q=RemotingDiagnostics&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**ReverseProxy** (link:https://github.com/jenkinsci/support-core-plugin/search?q=ReverseProxy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**RootCAs** (link:https://github.com/jenkinsci/support-core-plugin/search?q=RootCAs&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**RunDirectoryComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=RunDirectoryComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**RunningBuilds** (link:https://github.com/jenkinsci/support-core-plugin/search?q=RunningBuilds&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**SlaveCommandStatistics** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SlaveCommandStatistics&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**SlaveLaunchLogs** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SlaveLaunchLogs&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**SlaveLogs** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SlaveLogs&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++slowrequest.+++<wbr/>+++**SlowRequestComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SlowRequestComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++**SupportPlugin.+++<wbr/>+++NonExistentComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SupportPlugin.NonExistentComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**SystemConfiguration** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SystemConfiguration&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**SystemConfiguration.+++<wbr/>+++Agents** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SystemConfiguration.Agents&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**SystemConfiguration.+++<wbr/>+++Master** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SystemConfiguration.Master&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**SystemProperties** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SystemProperties&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**TaskLogs** (link:https://github.com/jenkinsci/support-core-plugin/search?q=TaskLogs&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**ThreadDumps** (link:https://github.com/jenkinsci/support-core-plugin/search?q=ThreadDumps&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++timer.+++<wbr/>+++**UnfilteredFileListCapComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=UnfilteredFileListCapComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**UpdateCenter** (link:https://github.com/jenkinsci/support-core-plugin/search?q=UpdateCenter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**UserCount** (link:https://github.com/jenkinsci/support-core-plugin/search?q=UserCount&type=Code[view on GitHub])
+
+
+== ContentFilter
+
+`jenkinsdoc:support-core:com.cloudbees.jenkins.support.filter.ContentFilter]`
+
++++ Provides a strategy to filter support bundle written contents. This is primarily useful to anonymize data written+++ +++ to the bundle, though more complex filtering can be achieved.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++filter.+++<wbr/>+++**AllContentFilters** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AllContentFilters&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++filter.+++<wbr/>+++**ContentMapping** (link:https://github.com/jenkinsci/support-core-plugin/search?q=ContentMapping&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++filter.+++<wbr/>+++**InetAddressContentFilter** (link:https://github.com/jenkinsci/support-core-plugin/search?q=InetAddressContentFilter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++filter.+++<wbr/>+++**SensitiveContentFilter** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SensitiveContentFilter&type=Code[view on GitHub])
+
+
+== DataFaker
+
+`jenkinsdoc:support-core:com.cloudbees.jenkins.support.filter.DataFaker]`
+
++++ Provides a way to generate random names.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== DirectoryComponent
+
+`jenkinsdoc:support-core:com.cloudbees.jenkins.support.impl.DirectoryComponent]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**AbstractItemDirectoryComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AbstractItemDirectoryComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**NodeRemoteDirectoryComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=NodeRemoteDirectoryComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**RunDirectoryComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=RunDirectoryComponent&type=Code[view on GitHub])
+
+
+== NameProvider
+
+`jenkinsdoc:support-core:com.cloudbees.jenkins.support.filter.NameProvider]`
+
++++ Strategy for providing a stream of names to anonymize along with an accompanying name generator.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== ObjectComponent
+
+`jenkinsdoc:support-core:com.cloudbees.jenkins.support.api.ObjectComponent]`
+
++++ Represents a component of a support bundle for a specific model object.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**AbstractItemDirectoryComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AbstractItemDirectoryComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**AdvancedProcFilesRetriever** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AdvancedProcFilesRetriever&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++configfiles.+++<wbr/>+++**AgentsConfigFile** (link:https://github.com/jenkinsci/support-core-plugin/search?q=AgentsConfigFile&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**DirectoryComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=DirectoryComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**DumpExportTable** (link:https://github.com/jenkinsci/support-core-plugin/search?q=DumpExportTable&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**JVMProcessSystemMetricsContents** (link:https://github.com/jenkinsci/support-core-plugin/search?q=JVMProcessSystemMetricsContents&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**JVMProcessSystemMetricsContents.+++<wbr/>+++Agents** (link:https://github.com/jenkinsci/support-core-plugin/search?q=JVMProcessSystemMetricsContents.Agents&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**JVMProcessSystemMetricsContents.+++<wbr/>+++Master** (link:https://github.com/jenkinsci/support-core-plugin/search?q=JVMProcessSystemMetricsContents.Master&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**NodeRemoteDirectoryComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=NodeRemoteDirectoryComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**ProcFilesRetriever** (link:https://github.com/jenkinsci/support-core-plugin/search?q=ProcFilesRetriever&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**RunDirectoryComponent** (link:https://github.com/jenkinsci/support-core-plugin/search?q=RunDirectoryComponent&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**SlaveLaunchLogs** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SlaveLaunchLogs&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**SystemConfiguration** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SystemConfiguration&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**SystemConfiguration.+++<wbr/>+++Agents** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SystemConfiguration.Agents&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**SystemConfiguration.+++<wbr/>+++Master** (link:https://github.com/jenkinsci/support-core-plugin/search?q=SystemConfiguration.Master&type=Code[view on GitHub])
+* https://plugins.jenkins.io/support-core[Support Core Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++support.+++<wbr/>+++impl.+++<wbr/>+++**ThreadDumps** (link:https://github.com/jenkinsci/support-core-plugin/search?q=ThreadDumps&type=Code[view on GitHub])
+
+
+== SupportProvider
+
+`jenkinsdoc:support-core:com.cloudbees.jenkins.support.api.SupportProvider]`
+
++++ The provider of support.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

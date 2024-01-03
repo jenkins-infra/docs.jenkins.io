@@ -1,0 +1,92 @@
+= Docker-based Jenkins quickstart examples
+// *Goal:* Provide examples, sample code, and documentation on how to start a local Jenkins instance."
+// category: Tools
+// year: 2023
+// status: published
+// sig: platform
+// skills:
+// - Java
+// - YAML
+// - Command line tools
+// - Package management tool theory
+// mentors:
+// - "gounthar"
+// - "berviantoleo"
+// - "sbostandoust"
+// links:
+//     emailThread: https://community.jenkins.io/t/gsoc-2023-project-idea-building-jenkins-io-with-docker-compose/4866
+// //   gitter: "jenkinsci_plugin-installation-manager-cli-tool:gitter.im"
+// //   draft: https://docs.google.com/document/d/1s-dLUfU1OK-88bCj-GKaNuFfJQlQNLTWtacKkVMVmHc
+// ---
+
+*Project goal:* Provide examples, sample code, and documentation on how to start a local Jenkins instance.
+
+*Skills to study/improve:* Java, YAML, Command line tools, Package management tool theory
+
+== Details
+=== Background
+
+We already have a xref:user-docs:installing-jenkins:docker.adoc[section] dedicated to docker in the documentation, but it's too difficult to use for beginners, and even too complex to begin with. 
+We need to provide a simple way to get started with Jenkins and Docker.
+
+We could have a set of `docker-compose` files representing various types of Jenkins instances (simple Docker, Kubernetes, …).
+
+These examples would be described in the documentation, and would also (*and that’s the main point*) be tested every week thanks to ci.jenkins.io so that we know they are still working.
+
+As the documentation is using link:https://asciidoc.org/[`asciidoc`] we could use the link:https://docs.asciidoctor.org/asciidoc/latest/directives/include-uri/[Include Content by URI] feature to have an up-to-date documentation when it comes to code snippets and at the same time, have link:https://ci.jenkins.io[`ci.jenkins.io`] test these same code snippets.
+
+Of course, these snippets could also be run thanks to link:https://www.gitpod.io/[GitPod].
+
+=== Quick Start
+
+* link:https://docs.docker.com/compose/install/[Install Docker Compose]
+* Clone a link:https://github.com/gounthar/MyFirstAndroidAppBuiltByJenkins[repo] that already uses docker-compose for Jenkins.
+* Run `docker-compose up` and wait for the Jenkins instance to be up and running.
+* Study the `docker-compose.yml` file to understand what it does.
+
+=== Skills to Study and Improve
+
+* link:https://docs.docker.com/compose/[Docker Compose]
+* link:https://docs.docker.com/compose/compose-file/compose-file-v3/[Docker Compose file format v3]
+* xref:projects:jcasc:index.adoc[Jenkins Configuration as Code]
+* link:https://plugins.jenkins.io/job-dsl/[Job DSL]
+* xref:user-docs:installing-jenkins:kubernetes.adoc[Kubernetes]
+
+=== Project Difficulty Level
+
+Beginner to Intermediate
+
+=== Project Size
+
+175 hours
+
+=== Expected outcomes
+
+* A set of docker-compose files that can be used to get started with Jenkins and Docker or Kubernetes on Windows, Linux, macOs, Vagrant and GitPod.
+* The documentation that describes how to use these docker-compose files.
+* A link:https://ci.jenkins.io[`ci.jenkins.io`] job that tests these docker-compose files every week.
+
+
+//
+// Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase. 
+// 
+// === Newbie Friendly Issues
+
+== Potential Mentors
+
+[.avatar]
+image:images:ROOT:avatars/gounthar.png[,width=30,height=30] Bruno Verachten
+image:images:ROOT:avatars/berviantoleo.jpg[,width=30,height=30] Bervianto Leo Pratama
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Saeid Bostandoust
+
+== Project Links
+
+* image:https://img.shields.io/badge/gitter-join_chat-light_green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_role-strategy-plugin%3Agitter.im[Static Badge,link=https://app.gitter.im/#/room/#jenkinsci_gsoc-sig:gitter.im]
+* xref:gsoc:index.adoc#office-hours[Meetings]
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2023/project-ideas.adoc[Go back to other GSoC 2023 project ideas]

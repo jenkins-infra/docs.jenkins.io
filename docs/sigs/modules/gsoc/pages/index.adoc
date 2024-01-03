@@ -1,0 +1,45 @@
+= Google Summer of Code
+
+.Connect
+****
+* https://app.gitter.im/#/room/#jenkinsci_gsoc-sig:gitter.im[Gitter]
+* https://community.jenkins.io/c/contributing/gsoc[Forum]
+****
+
+== Overview
+
+[.float-group]
+--
+image:images:ROOT:gsoc/jenkins-gsoc-logo_small.png[Logo,width=192,float=right,role=float-gap]
+This special interest group organizes Google Summer of Code program within the Jenkins 
+organization. The scope of work includes coordinating GSoC activities and working with potentials 
+mentors and contributors in order to form GSoC project teams.
+--
+xref:ROOT:index.adoc[(Back to List of Jenkins Special Interest Groups )]
+
+== Members
+
+[.avatar]
+*Leads*:
+image:images:ROOT:avatars/alyssat.jpg[,width=30,height=30] Alyssa Tong
+image:images:ROOT:avatars/jmMeessen.jpg[,width=30,height=30] Jean-Marc Meessen
+image:images:ROOT:avatars/krisstern.png[,width=30,height=30] Kris Stern
+
+[.avatar]
+*Participants*:
+image:images:ROOT:avatars/markewaite.jpg[,width=30,height=30] Mark Waite
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Kristin Whetstone
+
+This SIG focuses on link:https://summerofcode.withgoogle.com/[Google Summer of Code] and other similar events.
+The group drives the xref:projects:gsoc:index.adoc[GSoC sub-project] within the Jenkins organization.
+The scope of work includes organizing the events and working with potentials mentors and contributors in order to organize GSoC teams.
+
+You can find more info about GSoC in Jenkins xref:projects:gsoc:index.adoc[here].
+
+== Meetings
+
+* GSoC SIG topics are discussed during the Advocacy & Outreach topics. See its xref:advocacy-and-outreach:index.adoc[information page] for further details. 
+// * link:https://docs.google.com/document/d/1H0gJt1zdr37YDpuSLXSeFqYco_a_CIrAuZ1f0Oyl4XE/edit#heading=h.szu3oyozkdfv[Meeting minutes]
+* See the xref:projects:gsoc:index.adoc[GSoC sub-project] for the list of public events
+  within Google Summer of Code time frame
+* Other meetings will be announced on Gitter.

@@ -1,0 +1,40 @@
+= Cloud Features for External Workspace Manager Plugin 
+
+*Goal:* Add support of provisioning workspaces from cloud services
+
+*Status:* Cancelled (student withdrawn)
+
+== Team
+
+[.avatar]
+*Student*: 
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Yufei Zhang
+
+[.avatar]
+*Mentor(s):*
+image:images:ROOT:avatars/martinda.png[,width=30,height=30] Martin d'Anjou
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Patrick Hynes
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Alexandru Somai
+
+ 
+We wish to add Cloud features to the Jenkins External Workspace Manager Plugin.
+The current design documentation is : https://docs.google.com/document/d/1XqUoG8QuyxwVzEAa9tN4PMUwhApBlZ1IIKW8WLOjUFI/edit?usp=sharing
+This would allow Jenkins workspaces to be cloud based or located remotely, rather than being local.
+These features include:
+
+* Cloud-based storage support (link:https://groups.google.com/d/msg/jenkinsci-dev/z40kn8IqFb8/YkdgbuScCgAJ[discussion])
+* Support use of multiple discard strategies
+* Integration with the core's “Discard old builds” feature
+* Improvements to data retention policies (e.g.
+{jira}JENKINS-48715[],
+{jira}JENKINS-2111[],
+{jira}JENKINS-38764[])
+* Workspace usage statistics
+* Improvements to workspace usage statistics
+* Better workspace cleanup management, e.g. matrix workspaces cleanup link:https://issues.jenkins.io/browse/JENKINS-27329[JENKINS-27329]
+
+== Links 
+
+* image:https://img.shields.io/badge/gitter%20-%20join_chat%20-%20light_green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_external-workspace-manager-plugin%3Agitter.im[Static Badge]
+* xref:gsoc:index.adoc#office-hours[Meetings]
+* xref:index.adoc[Jenkins GSoC page]

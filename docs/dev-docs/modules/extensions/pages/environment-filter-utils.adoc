@@ -1,0 +1,29 @@
+= Extension Points defined in Build Step Environment Filter Utilities Plugin
+
+https://plugins.jenkins.io/environment-filter-utils[Build Step Environment Filter Utilities Plugin]
+
+== DescriptorMatcher
+
+`jenkinsdoc:environment-filter-utils:io.jenkins.plugins.environment_filter_utils.matchers.descriptor.DescriptorMatcher]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/environment-filter-utils[Build Step Environment Filter Utilities Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++environment_filter_utils.+++<wbr/>+++matchers.+++<wbr/>+++descriptor.+++<wbr/>+++**All** (link:https://github.com/jenkinsci/environment-filter-utils-plugin/search?q=All&type=Code[view on GitHub])
+* https://plugins.jenkins.io/environment-filter-utils[Build Step Environment Filter Utilities Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++environment_filter_utils.+++<wbr/>+++matchers.+++<wbr/>+++descriptor.+++<wbr/>+++**Multiple** (link:https://github.com/jenkinsci/environment-filter-utils-plugin/search?q=Multiple&type=Code[view on GitHub])
+* https://plugins.jenkins.io/environment-filter-utils[Build Step Environment Filter Utilities Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++environment_filter_utils.+++<wbr/>+++matchers.+++<wbr/>+++descriptor.+++<wbr/>+++**Single** (link:https://github.com/jenkinsci/environment-filter-utils-plugin/search?q=Single&type=Code[view on GitHub])
+
+
+== RunMatcher
+
+`jenkinsdoc:environment-filter-utils:io.jenkins.plugins.environment_filter_utils.matchers.run.RunMatcher]`
+
++++ Utility class that allows matching a build.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/environment-filter-utils[Build Step Environment Filter Utilities Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++environment_filter_utils.+++<wbr/>+++matchers.+++<wbr/>+++run.+++<wbr/>+++**ExactJobFullNameRunMatcher** (link:https://github.com/jenkinsci/environment-filter-utils-plugin/search?q=ExactJobFullNameRunMatcher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/environment-filter-utils[Build Step Environment Filter Utilities Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++environment_filter_utils.+++<wbr/>+++matchers.+++<wbr/>+++run.+++<wbr/>+++**RegexJobFullNameRunMatcher** (link:https://github.com/jenkinsci/environment-filter-utils-plugin/search?q=RegexJobFullNameRunMatcher&type=Code[view on GitHub])
+

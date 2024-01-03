@@ -1,0 +1,37 @@
+= Internationalizing Messages in Groovy Views
+
+WARNING: We do not encourage creating views in Groovy for internationalization, Jelly is the preferred way to do this.
+
+== Introduction
+
+In Jenkins, you need add a similar `.properties` file with the `.groovy` file in the same directory. Any changes of `.properties` does not need restart Jenkins or plugins.
+
+== Example
+
+As an example, consider the following groovy page:
+
+`src/main/resources/org/example/package/index.groovy`:
+[source, groovy]
+----
+package jenkins.security.DownloadSettings
+
+def f = namespace(lib.FormTagLib)
+
+f.section(title:_("title.pluginManager")) {
+	f.entry(field: "useBrowser", title:_("useBrowser"))
+		f.checkbox(title: _("title.browserCheckbox"))
+	}
+}
+----
+
+Then you could add, for example, a Chinese localization file simply as:
+
+`src/main/resources/org/example/package/index_zh_CN.properties`:
+[source, properties]
+----
+title.pluginManager=\u63D2\u4EF6\u7BA1\u7406
+field.useBrowser=\u4F7F\u7528\u6D4F\u89C8\u5668
+title.browserCheckbox=\u4F7F\u7528\u6D4F\u89C8\u5668\u4E0B\u8F7D\u5143\u6570\u636E
+----
+
+In property files all non-ASCII characters need to be converted into hexcode. Modern IDEs do it automatically, so you can be just writing localizations in the target languages there.

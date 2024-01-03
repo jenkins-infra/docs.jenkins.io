@@ -1,0 +1,31 @@
+= Extension Points defined in Skytap Cloud CI Plugin
+
+https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]
+
+== SkytapBuilder.+++<wbr/>+++SkytapAction
+
+`jenkinsdoc:skytap:org.jenkinsci.plugins.skytap.SkytapBuilder.SkytapAction]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**AddConfigurationToProjectStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=AddConfigurationToProjectStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**AddTemplateToProjectStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=AddTemplateToProjectStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**ChangeConfigurationStateStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=ChangeConfigurationStateStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**ChangeContainerStateStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=ChangeContainerStateStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**ChangeVMContainerHostStatus** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=ChangeVMContainerHostStatus&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**ConnectToVPNTunnelStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=ConnectToVPNTunnelStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**CreateConfigurationStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=CreateConfigurationStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**CreateContainerStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=CreateContainerStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**CreatePublishURLStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=CreatePublishURLStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**CreatePublishedServiceStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=CreatePublishedServiceStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**CreateTemplateFromConfigurationStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=CreateTemplateFromConfigurationStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**DeleteConfigurationStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=DeleteConfigurationStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**DeleteContainerStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=DeleteContainerStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**GetContainerMetaDataStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=GetContainerMetaDataStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**ListPublishedURLForConfigurationStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=ListPublishedURLForConfigurationStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**ListVMPublishedServiceStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=ListVMPublishedServiceStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**MergeTemplateIntoConfigurationStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=MergeTemplateIntoConfigurationStep&type=Code[view on GitHub])
+* https://plugins.jenkins.io/skytap[Skytap Cloud CI Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++skytap.+++<wbr/>+++**NetworkConnectStep** (link:https://github.com/jenkinsci/skytap-cloud-plugin/search?q=NetworkConnectStep&type=Code[view on GitHub])
+

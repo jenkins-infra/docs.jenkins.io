@@ -1,0 +1,32 @@
+////
+This file is only meant to be included as a snippet in other documents.
+There is a version of this file for the general 'Installing Jenkins' page
+(index.adoc) and another for tutorials (_run-jenkins-in-docker.adoc).
+This file is for the index.adoc page used in the general 'Installing Jenkins'
+page.
+////
+
+== Prerequisites
+
+Minimum hardware requirements:
+
+* 256 MB of RAM
+* 1 GB of drive space (although 10 GB is a recommended minimum if running
+  Jenkins as a Docker container)
+
+Recommended hardware configuration for a small team:
+
+* 4 GB+ of RAM
+* 50 GB+ of drive space
+
+Comprehensive hardware recommendations:
+
+* Hardware: see the xref:scaling:hardware-recommendations.adoc[Hardware Recommendations] page
+
+Software requirements:
+
+* Java: see the xref:platform-information:support-policy-java.adoc[Java Requirements] page
+* Web browser: see the xref:platform-information:support-policy-web-browsers.adoc[Web Browser Compatibility] page
+* For Windows operating system: xref:user-docs:administration:windows.adoc[Windows Support Policy]
+* For Linux operating system: xref:platform-information:support-policy-linux.adoc[Linux Support Policy]
+* For servlet containers: xref:platform-information:support-policy-servlet-containers.adoc[Servlet Container Support Policy]

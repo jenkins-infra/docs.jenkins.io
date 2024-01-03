@@ -1,0 +1,14 @@
+= Extension Points defined in Amazon EC2 Plugin
+
+https://plugins.jenkins.io/ec2[Amazon EC2 Plugin]
+
+== AmazonEC2Factory
+
+`jenkinsdoc:ec2:hudson.plugins.ec2.util.AmazonEC2Factory]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/ec2[Amazon EC2 Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++ec2.+++<wbr/>+++util.+++<wbr/>+++**AmazonEC2FactoryImpl** (link:https://github.com/jenkinsci/ec2-plugin/search?q=AmazonEC2FactoryImpl&type=Code[view on GitHub])
+

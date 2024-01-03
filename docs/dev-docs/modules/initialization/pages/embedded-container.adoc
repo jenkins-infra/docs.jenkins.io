@@ -1,0 +1,8 @@
+= Embedded Winstone
+:page-layout: wip
+
+// summary: Why java -jar jenkins.war works
+.References
+****
+* link:https://github.com/jenkinsci/winstone/[Winstone-Jetty on GitHub]
+****

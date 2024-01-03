@@ -1,0 +1,153 @@
+= Jenkins Sub-projects
+
+At the heart of the Jenkins project exists the automation engine's
+link:https://github.com/jenkinsci/jenkins[core] and hundreds of
+link:https://plugins.jenkins.io[plugins]. There are
+however other collaborative initiatives going on under the umbrella of the
+Jenkins project which grow or expand the project in new ways.
+
+== Blue Ocean
+
+image:images:ROOT:sunnyblueocean.png["Blue Ocean", width=128]
+
+Blue Ocean is a project that rethinks the user experience of Jenkins, modelling
+and presenting the process of software delivery by surfacing information that's
+important to development teams with as few clicks as possible, while still
+staying true to the extensibility that Jenkins always has had as a core value.
+
+
+Blue Ocean also incorporates "The Jenkins Design Language (JDL)" which is a
+standardized set of components and a style guide that help developers create
+plugins which effortlessly retain the look and feel of the Blue Ocean user
+experience.
+
+include::user-docs:blueocean:partial$_blue-ocean-status.adoc[]
+
+xref:user-docs:blueocean:getting-started.adoc[*Learn more*]
+
+---
+
+
+== Document Jenkins on Kubernetes
+
+image:images:ROOT:gsod/gsod.png["Google Season of Docs", width=128]
+
+Kubernetes is a platform-agnostic container orchestration tool created 
+by Google and heavily supported by the open-source community as a project 
+of the Cloud Native Computing Foundation. Kubernetes is compatible with the 
+majority of CI/CD tools which allow developers to run tests, deploy builds 
+in Kubernetes and update applications with no downtime.
+
+
+Jenkins on Kubernetes is a popular theme for Jenkins users. There are a lot 
+of presentations and articles about running Jenkins on Kubernetes, however, 
+there's currently no central location for documentation describing Jenkins 
+on Kubernetes. This project would create a new Kubernetes Volume which would 
+describe the concepts, techniques, and choices for Kubernetes users running Jenkins.
+
+
+
+xref:other:document-jenkins-on-kubernetes.adoc[*Learn more*]
+
+---
+
+
+== Google Summer of Code
+
+image:images:ROOT:gsoc/jenkins-gsoc-logo_small.png["Summer of Code", width=128]
+
+The
+link:https://summerofcode.withgoogle.com/archive/[Google Summer of Code]
+(GSoC) project is an annual, international, program which encourages
+college-aged students to participate with open source projects during the summer
+break between classes. Students accepted into the program receive a stipend,
+paid by Google, to work well-defined projects to improve or enhance the Jenkins
+project.  In exchange, numerous Jenkins community members volunteer as "mentors"
+for students to help integrate them into the open source community and succeed
+in completing their summer projects.
+
+xref:gsoc:index.adoc[*Learn more*]
+
+---
+
+
+== Infrastructure
+
+image:images:ROOT:network-workgroup.png["Infrastructure", width=128]
+
+As an independent open source project, Jenkins maintains most of its own
+infrastructure including services which help keep the project running.
+The kinds of things that fall into "infrastructure" can span from operating
+virtual machines and distribution networks, to project-specific applications
+developed to make the development of Jenkins core and plugins more efficient.
+
+There are various sub-groups and opportunities to contribute to the
+link:https://github.com/jenkins-infra[Jenkins project's infrastructure].
+
+xref:infrastructure:index.adoc[*Learn more*]
+
+---
+
+[#jam]
+== Jenkins Area Meetups
+
+image:images:ROOT:user.svg["Social Jenkins events", width=128]
+
+Jenkins Area Meetups (JAMs) are local meetups intended to bring Jenkins users
+and contributors together for socializing and learning.
+JAMs are organized by local Jenkins community members who have a passion for
+sharing new Jenkins concepts, patterns and tools. JAMs can be found
+link:https://www.meetup.com/pro/cicd-cdf/[around the world], and if there isn't a
+JAM in your city, you could be the one to start it!
+
+Jenkins Area Meetups are driven by local organizers but receive support from
+the Jenkins project via swag (stickers, etc), promotion, and help bootstrapping
+and operating the meetup group.
+
+xref:projects:jam:index.adoc[*Learn more*]
+
+---
+
+== Jenkins Remoting
+
+image:images:ROOT:network-workgroup.png["Infrastructure", width=128]
+
+Jenkins Remoting is a library, and executable Java archive, which implements the communication layer in Jenkins.
+This includes the TCP-based communication protocols, remote procedure calls, class loading, data streaming, etc.
+Currently Remoting is primarily used in communications between the Jenkins controller and its agents.
+It is also used for the Remoting-based CLI and the {plugin}maven-plugin[Maven Integration plugin].
+
+The Remoting sub-project includes the Remoting library itself, package for agents, and a number of Remoting-specific plugins and core modules.
+
+
+xref:remoting:index.adoc[*Learn more*]
+
+---
+
+[#jcasc]
+== Jenkins Configuration as Code
+
+image:images:ROOT:logos/JCasC/JCasC.svg["Jenkins Configuration as Code", width=128]
+
+Setting up Jenkins is a complex process, as both Jenkins and its plugins require some tuning and configuration,
+with dozens of parameters to set within the web UI manage section.
+
+Jenkins Configuration as Code allows to define this whole configuration as a simple, human-friendly, plain text yaml syntax. Without any manual step this configuration can be validated and applied to a Jenkins controller in fully a reproducible way. With JCasC setting up a new Jenkins controller will become a no-brainer event.
+
+xref:jcasc:index.adoc[*Learn more*]
+
+---
+
+== Jenkins Operator for Kubernetes
+
+image:images:ROOT:logos/kubernetes-operator/256.png["Jenkins Operator", width=128]
+
+The Jenkins Operator is a link:https://kubernetes.io/docs/concepts/extend-kubernetes/operator/[*Kubernetes Native Operator*] which manages operations for Jenkins on Kubernetes.
+It has been built with Immutability and declarative Configuration as Code in mind.
+
+This project enables community to run Jenkins in a cloud-native environments like Kubernetes.
+Also, supports most of the public cloud providers (AWS, Azure, GCP) in terms of additional capabilities like backups, observability and cloud security.
+
+xref:jenkins-operator:index.adoc[*Learn more*]
+
+---

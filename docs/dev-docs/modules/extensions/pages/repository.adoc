@@ -1,0 +1,15 @@
+= Extension Points defined in Maven Repository Server Plugin
+
+https://plugins.jenkins.io/repository[Maven Repository Server Plugin]
+
+== RepositoryExtensionPoint
+
+`jenkinsdoc:repository:com.nirima.jenkins.repo.RepositoryExtensionPoint]`
+
++++ Extension point for repositories+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/repository[Maven Repository Server Plugin]: com.+++<wbr/>+++nirima.+++<wbr/>+++jenkins.+++<wbr/>+++repository.+++<wbr/>+++**ToolsRepository** 
+

@@ -1,0 +1,45 @@
+= Extension Points defined in OpenTelemetry Plugin
+
+https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]
+
+== ElasticLogsBackend
+
+`jenkinsdoc:opentelemetry:io.jenkins.plugins.opentelemetry.backend.elastic.ElasticLogsBackend]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opentelemetry.+++<wbr/>+++backend.+++<wbr/>+++elastic.+++<wbr/>+++**ElasticLogsBackendWithJenkinsVisualization** (link:https://github.com/jenkinsci/opentelemetry-plugin/search?q=ElasticLogsBackendWithJenkinsVisualization&type=Code[view on GitHub])
+* https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opentelemetry.+++<wbr/>+++backend.+++<wbr/>+++elastic.+++<wbr/>+++**ElasticLogsBackendWithoutJenkinsVisualization** (link:https://github.com/jenkinsci/opentelemetry-plugin/search?q=ElasticLogsBackendWithoutJenkinsVisualization&type=Code[view on GitHub])
+* https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opentelemetry.+++<wbr/>+++backend.+++<wbr/>+++elastic.+++<wbr/>+++**NoElasticLogsBackend** (link:https://github.com/jenkinsci/opentelemetry-plugin/search?q=NoElasticLogsBackend&type=Code[view on GitHub])
+
+
+== ObservabilityBackend
+
+`jenkinsdoc:opentelemetry:io.jenkins.plugins.opentelemetry.backend.ObservabilityBackend]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opentelemetry.+++<wbr/>+++backend.+++<wbr/>+++**CustomObservabilityBackend** (link:https://github.com/jenkinsci/opentelemetry-plugin/search?q=CustomObservabilityBackend&type=Code[view on GitHub])
+* https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opentelemetry.+++<wbr/>+++backend.+++<wbr/>+++**DynatraceBackend** (link:https://github.com/jenkinsci/opentelemetry-plugin/search?q=DynatraceBackend&type=Code[view on GitHub])
+* https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opentelemetry.+++<wbr/>+++backend.+++<wbr/>+++**ElasticBackend** (link:https://github.com/jenkinsci/opentelemetry-plugin/search?q=ElasticBackend&type=Code[view on GitHub])
+* https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opentelemetry.+++<wbr/>+++backend.+++<wbr/>+++**GrafanaBackend** (link:https://github.com/jenkinsci/opentelemetry-plugin/search?q=GrafanaBackend&type=Code[view on GitHub])
+* https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opentelemetry.+++<wbr/>+++backend.+++<wbr/>+++**JaegerBackend** (link:https://github.com/jenkinsci/opentelemetry-plugin/search?q=JaegerBackend&type=Code[view on GitHub])
+* https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opentelemetry.+++<wbr/>+++backend.+++<wbr/>+++**ZipkinBackend** (link:https://github.com/jenkinsci/opentelemetry-plugin/search?q=ZipkinBackend&type=Code[view on GitHub])
+
+
+== OtlpAuthentication
+
+`jenkinsdoc:opentelemetry:io.jenkins.plugins.opentelemetry.authentication.OtlpAuthentication]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opentelemetry.+++<wbr/>+++authentication.+++<wbr/>+++**BearerTokenAuthentication** (link:https://github.com/jenkinsci/opentelemetry-plugin/search?q=BearerTokenAuthentication&type=Code[view on GitHub])
+* https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opentelemetry.+++<wbr/>+++authentication.+++<wbr/>+++**HeaderAuthentication** (link:https://github.com/jenkinsci/opentelemetry-plugin/search?q=HeaderAuthentication&type=Code[view on GitHub])
+* https://plugins.jenkins.io/opentelemetry[OpenTelemetry Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++opentelemetry.+++<wbr/>+++authentication.+++<wbr/>+++**NoAuthentication** (link:https://github.com/jenkinsci/opentelemetry-plugin/search?q=NoAuthentication&type=Code[view on GitHub])
+

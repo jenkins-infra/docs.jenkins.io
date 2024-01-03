@@ -1,0 +1,73 @@
+= Using environment variables
+
+Environment variables can be set globally, like the example below, or per
+stage. As you might expect, setting environment variables per stage means they
+will only apply to the stage in which they're defined.
+
+
+[pipeline]
+----
+// Declarative //
+pipeline {
+    agent {
+        label '!windows'
+    }
+
+    environment {
+        DISABLE_AUTH = 'true'
+
+        DB_ENGINE    = 'sqlite'
+
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Database engine is ${DB_ENGINE}"
+                echo "DISABLE_AUTH is ${DISABLE_AUTH}"
+                sh 'printenv'
+            }
+        }
+    }
+}
+// Scripted //
+node('!windows') {
+    withEnv(['DISABLE_AUTH=true',
+             'DB_ENGINE=sqlite']) {
+        stage('Build') {
+            echo "Database engine is ${DB_ENGINE}"
+            echo "DISABLE_AUTH is ${DISABLE_AUTH}"
+            sh 'printenv'
+        }
+    }
+}
+----
+
+This approach to defining environment variables from within the `Jenkinsfile`
+can be very useful for instructing scripts, such as a `Makefile`, to configure
+the build or tests differently to run them inside of Jenkins.
+
+See *xref:user-docs:pipeline:jenkinsfile.adoc#using-environment-variables["Using Environment Variables"]* for more details on using environment variables in Pipelines.
+
+Environment variables may also be set by Jenkins plugins.
+Refer to the documentation of the specific plugins for environment variable names and descriptions for those plugins.
+
+Another common use for environment variables is to set or override "dummy"
+credentials in build or test scripts. Because it's (_obviously_) a bad idea to
+put credentials directly into a `Jenkinsfile`, Jenkins Pipeline allows users to quickly
+and safely access pre-defined credentials in the `Jenkinsfile` without ever
+needing to know their values.
+
+== Credentials in the Environment
+
+See xref:user-docs:pipeline:jenkinsfile.adoc#handling-credentials[Handling
+credentials] in the xref:user-docs:ROOT:index.adoc[User Handbook] for more information.
+
+**xref:./tests-and-artifacts.adoc[Continue to "Recording tests and artifacts"]**
+
+'''
+////
+++++
+include::_partials/_feedback-footer.html[]
+++++
+////

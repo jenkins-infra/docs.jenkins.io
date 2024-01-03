@@ -1,0 +1,15 @@
+= Extension Points defined in Hubot Pipeline Steps Plugin
+
+https://plugins.jenkins.io/hubot-steps[Hubot Pipeline Steps Plugin]
+
+== HubotJobProperty
+
+`jenkinsdoc:hubot-steps:org.thoughtslive.jenkins.plugins.hubot.config.HubotJobProperty]`
+
++++ Associates+++ jenkinsdoc:Job] +++with+++ jenkinsdoc:HubotSite] +++.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

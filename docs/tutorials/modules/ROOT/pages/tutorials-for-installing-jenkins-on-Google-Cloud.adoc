@@ -1,0 +1,12 @@
+= Jenkins on Google Cloud
+
+You should have a Google Cloud account, otherwise you can https://cloud.google.com/gcp/getting-started[start here].
+At the end of the tutorial you will have a Jenkins up and running on the Google Cloud.
+
+== Jenkins on Google Compute Engine
+
+This tutorial assumes you are familiar with the following software:
+
+* **Packer** tool for creating images.
+
+Dive into https://cloud.google.com/solutions/using-jenkins-for-distributed-builds-on-compute-engine[this tutorial] for more detailed How-To explanation.

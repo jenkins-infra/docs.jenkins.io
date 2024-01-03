@@ -1,0 +1,14 @@
+= Extension Points defined in Pipeline Input Step Notification Plugin
+
+https://plugins.jenkins.io/pipeline-input-notification[Pipeline Input Step Notification Plugin]
+
+== InputNotifier
+
+`jenkinsdoc:pipeline-input-notification:io.jenkins.plugins.pipeline.input.notifiers.InputNotifier]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/pipeline-input-notification[Pipeline Input Step Notification Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++pipeline.+++<wbr/>+++input.+++<wbr/>+++notifiers.+++<wbr/>+++**HttpNotifier** (link:https://github.com/jenkinsci/pipeline-input-notification-plugin/search?q=HttpNotifier&type=Code[view on GitHub])
+

@@ -1,0 +1,69 @@
+:page-aliases: sigs:chinese-localization:index.adoc, sigs:cloud-native:index.adoc, sigs:hw-and-eda:index.adoc, sigs:pipeline-authoring:index.adoc
+= Jenkins Special Interest Groups
+
+This page lists active Jenkins Special Interest Groups (SIGs).
+See https://github.com/jenkinsci/jep/tree/master/jep/4[JEP-4] for more information about SiGs and the process for creating new ones.
+
+== Advocacy and Outreach
+
+[.float-group]
+--
+image:images:ROOT:logos/chatterbox/256.png[Logo,height=115,float=right,role=float-gap]
+This special interest group offers a venue for discussions around advocacy and outreach in the Jenkins community. Topics covered in this sig may include jenkins.io, events, processes, how to attract new people to the Jenkins project, and how to make the Jenkins community an open and inclusive organization that people want to be part of.
+--
+
+* https://groups.google.com/g/jenkins-advocacy-and-outreach-sig[Mailist List]
+
+* image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_gsoc-sig%3Agitter.im[Static Badge]
+
+xref:advocacy-and-outreach:index.adoc[*Learn More*]
+
+== Documentation
+
+[.float-group]
+--
+image:images:ROOT:logos/needs-you/Jenkins_Needs_You-02.png[Logo,height=115,float=right,role=float-gap]
+This special interest group improves Jenkins use and adoption through documentation. The SIG encourages, creates, and reviews documentation contributions and improves documentation with contributors and external communities.
+--
+
+* image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkins%2Fdocs%3Amatrix.org[Static Badge]
+
+xref:docs:index.adoc[*Learn More*]
+
+== Google Summer of Code
+
+[.float-group]
+--
+image:images:ROOT:gsoc/jenkins-gsoc-logo_small.png[Logo,height=115,float=right,role=float-gap]
+This special interest group organizes Google Summer of Code program within the Jenkins organization. The scope of work includes coordinating GSoC activities and working with potentials mentors and contributors in order to form GSoC project teams.
+--
+
+* image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_gsoc-sig%3Agitter.im[Static Badge]
+
+
+xref:gsoc:index.adoc[*Learn More*]
+
+== Platform
+
+[.float-group]
+--
+image:images:ROOT:logos/formal/256.png[Logo,height=115,float=right,role=float-gap]
+This special interest group offers a venue for all kinds of platform support discussions: Java, Operating Systems, Architectures, Docker, Packaging, Web Containers, etc. The SIG works on defining platform support policies, coordinating platform support efforts with contributors and external communities, and reviewing proposals in the area.
+--
+
+* image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_platform-sig%3Agitter.im[Static Badge]
+
+
+xref:platform:index.adoc[*Learn More*]
+
+== User Experience
+
+[.float-group]
+--
+image:images:ROOT:sigs/ux/logo.svg[Logo,height=115,float=right,role=float-gap]
+The User Experience SIG focuses on improving the Jenkins' user interface and user experience. The SIG seeks regular feedback from the community on the current UI and UX and new designs proposed by SIG members and others. We will discuss alternatives, identify compromises, and test implementations to improve the Jenkins UI / UX.
+--
+
+* image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci%2Fux-sig%3Amatrix.org[Static Badge]
+
+xref:ux:index.adoc[*Learn More*]

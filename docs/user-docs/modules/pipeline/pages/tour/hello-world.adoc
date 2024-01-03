@@ -1,0 +1,223 @@
+= Creating your first Pipeline
+
+== What is a Jenkins Pipeline?
+
+Jenkins Pipeline (or simply "Pipeline") is a suite of plugins which supports
+implementing and integrating _continuous delivery pipelines_ into Jenkins.
+
+A _continuous delivery pipeline_ is an automated expression of your process for
+getting software from version control right through to your users and customers.
+
+Jenkins Pipeline provides an extensible set of tools for modeling
+simple-to-complex delivery pipelines "as code". The definition of a Jenkins
+Pipeline is typically written into a text file (called a `Jenkinsfile`) which in
+turn is checked into a project's source control repository.
+footnote:scm[link:https://en.wikipedia.org/wiki/Source_control_management[Source Control Management]]
+
+For more information about Pipeline and what a `Jenkinsfile` is, refer to the
+respective xref:user-docs:pipeline:index.adoc[Pipeline] and
+xref:user-docs:pipeline:jenkinsfile.adoc[Using a Jenkinsfile] sections of the User
+Handbook.
+
+To get started quickly with Pipeline:
+
+. Install the link:https://plugins.jenkins.io/docker-workflow/[*Docker Pipeline plugin*] through the *Manage Jenkins > Plugins* page
+. After installing the plugin, restart Jenkins so that the plugin is ready to use
+. Copy one of the xref:#examples[ examples below] into your repository and name it `Jenkinsfile`
+. Click the *New Item* menu within Jenkins
+image:user-docs:pipeline:classic-ui-left-column.png[alt="Classic UI left column",width=40%]
+. Provide a name for your new item (e.g. *My-Pipeline*) and select *Multibranch Pipeline*
+. Click the *Add Source* button, choose the type of repository you want to use and fill in the details
+. Click the *Save* button and watch your first Pipeline run
+
+You may need to modify one of the example ``Jenkinsfile``'s to make it run with your project. Try modifying the `sh` command to run the same command you would run on your local machine.
+
+After you have setup your Pipeline, Jenkins will automatically detect any new Branches or Pull Requests that are created in your repository and start running Pipelines for them.
+
+**xref:running-multiple-steps.adoc[Continue to "Run multiple steps"]**
+
+[#examples]
+== Quick Start Examples
+
+Below are some easily copied and pasted examples of a simple Pipeline with
+various languages.
+
+=== Java
+
+[pipeline]
+----
+// Declarative //
+/* Requires the Docker Pipeline plugin */
+pipeline {
+    agent { docker { image 'maven:3.9.6-eclipse-temurin-17-alpine' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+    }
+}
+// Scripted //
+/* Requires the Docker Pipeline plugin */
+node {
+    stage('Build') {
+        docker.image('maven:3.9.6-eclipse-temurin-17-alpine').inside {
+            sh 'mvn --version'
+        }
+    }
+}
+----
+
+=== Node.js / JavaScript
+
+[pipeline]
+----
+// Declarative //
+/* Requires the Docker Pipeline plugin */
+pipeline {
+    agent { docker { image 'node:20.10.0-alpine3.19' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'node --version'
+            }
+        }
+    }
+}
+// Scripted //
+/* Requires the Docker Pipeline plugin */
+node {
+    stage('Build') {
+        docker.image('node:20.10.0-alpine3.19').inside {
+            sh 'node --version'
+        }
+    }
+}
+----
+
+=== Ruby
+
+[pipeline]
+----
+// Declarative //
+/* Requires the Docker Pipeline plugin */
+pipeline {
+    agent { docker { image 'ruby:3.2.2-alpine3.19' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'ruby --version'
+            }
+        }
+    }
+}
+// Scripted //
+/* Requires the Docker Pipeline plugin */
+node {
+    stage('Build') {
+        docker.image('ruby:3.2.2-alpine3.19').inside {
+            sh 'ruby --version'
+        }
+    }
+}
+----
+
+=== Python
+
+[pipeline]
+----
+// Declarative //
+/* Requires the Docker Pipeline plugin */
+pipeline {
+    agent { docker { image 'python:3.12.1-alpine3.19' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'python --version'
+            }
+        }
+    }
+}
+// Scripted //
+/* Requires the Docker Pipeline plugin */
+node {
+    stage('Build') {
+        docker.image('python:3.12.1-alpine3.19').inside {
+            sh 'python --version'
+        }
+    }
+}
+----
+
+=== PHP
+
+[pipeline]
+----
+// Declarative //
+/* Requires the Docker Pipeline plugin */
+pipeline {
+    agent { docker { image 'php:8.3.0-alpine3.18' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'php --version'
+            }
+        }
+    }
+}
+// Scripted //
+/* Requires the Docker Pipeline plugin */
+node {
+    stage('Build') {
+        docker.image('php:8.1.11-alpine').inside {
+            sh 'php --version'
+        }
+    }
+}
+----
+
+=== Go
+
+[pipeline]
+----
+// Declarative //
+/* Requires the Docker Pipeline plugin */
+pipeline {
+    agent { docker { image 'golang:1.21.5-alpine3.19' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'go version'
+            }
+        }
+    }
+}
+// Scripted //
+/* Requires the Docker Pipeline plugin */
+node {
+    stage('Build') {
+        docker.image('golang:1.19.1-alpine').inside {
+            sh 'go version'
+        }
+    }
+}
+----
+
+---
+**xref:running-multiple-steps.adoc[Continue to "Running multiple steps"]**
+
+== Additional Resources
+
+* See more detailed instructions on xref:user-docs:pipeline:getting-started.adoc[Getting Started with Pipeline]
+* Review other xref:tutorials:ROOT:index.adoc#pipeline[Pipeline tutorials]
+
+.How to Write a Pipeline Script in Jenkins
+video::TiTrcFEsj7A[youtube,width=800,height=420]
+
+'''
+////
+++++
+include::_partials/_feedback-footer.html[]
+++++
+////

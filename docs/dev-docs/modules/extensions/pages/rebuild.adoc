@@ -1,0 +1,49 @@
+= Extension Points defined in Rebuilder Plugin
+
+https://plugins.jenkins.io/rebuild[Rebuilder Plugin]
+
+== RebuildActionDispatcher
+
+`jenkinsdoc:rebuild:com.sonyericsson.rebuild.RebuildActionDispatcher]`
+
++++ Extension point to propagate additional actions to the rebuild.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== RebuildParameterProvider
+
+`jenkinsdoc:rebuild:com.sonyericsson.rebuild.RebuildParameterProvider]`
+
++++ Extension point to provide views to show parameters in rebuild page.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/agent-server-parameter[Agent Server Parameter Plugin]: com.+++<wbr/>+++bluersw.+++<wbr/>+++**AgentParameterRebuild** (link:https://github.com/jenkinsci/agent-server-parameter-plugin/search?q=AgentParameterRebuild&type=Code[view on GitHub])
+* https://plugins.jenkins.io/custom-checkbox-parameter[Custom Checkbox Parameter Plugin]: com.+++<wbr/>+++bluersw.+++<wbr/>+++**CheckboxParameterRebuild** (link:https://github.com/jenkinsci/custom-checkbox-parameter-plugin/search?q=CheckboxParameterRebuild&type=Code[view on GitHub])
+* https://plugins.jenkins.io/filesystem-list-parameter-plugin[Filesystem List Parameter Plugin]: alex.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++**FileSystemListParameterRebuild** (link:https://github.com/jenkinsci/filesystem-list-parameter-plugin/search?q=FileSystemListParameterRebuild&type=Code[view on GitHub])
+* https://plugins.jenkins.io/gerrit-trigger[Gerrit Trigger Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++gerrit.+++<wbr/>+++trigger.+++<wbr/>+++hudsontrigger.+++<wbr/>+++parameters.+++<wbr/>+++**Base64EncodedStringParameterProvider** (link:https://github.com/jenkinsci/gerrit-trigger-plugin/search?q=Base64EncodedStringParameterProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/git-parameter[Git Parameter Plugin]: net.+++<wbr/>+++uaznia.+++<wbr/>+++lukanus.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++gitparameter.+++<wbr/>+++**GitParameterRebuild** (link:https://github.com/jenkinsci/git-parameter-plugin/search?q=GitParameterRebuild&type=Code[view on GitHub])
+* https://plugins.jenkins.io/list-git-branches-parameter[List Git Branches Parameter Plugin]: com.+++<wbr/>+++syhuang.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++listgitbranchesparameter.+++<wbr/>+++**ListGitBranchesParameterRebuild** (link:https://github.com/jenkinsci/list-git-branches-parameter-plugin/search?q=ListGitBranchesParameterRebuild&type=Code[view on GitHub])
+* https://plugins.jenkins.io/matrix-combinations-parameter[Matrix Combinations Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++matrix_configuration_parameter.+++<wbr/>+++**MatrixCombinationsRebuildParameterProvider** (link:https://github.com/jenkinsci/matrix-combinations-plugin/search?q=MatrixCombinationsRebuildParameterProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-metadata-plugin[Maven Metadata Plugin for Jenkins CI server Plugin]: eu.+++<wbr/>+++markov.+++<wbr/>+++jenkins.+++<wbr/>+++plugin.+++<wbr/>+++mvnmeta.+++<wbr/>+++**MavenMetadataRebuildParameterProvider** (link:https://github.com/jenkinsci/maven-metadata-plugin/search?q=MavenMetadataRebuildParameterProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/promoted-builds[promoted builds Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++promoted_builds.+++<wbr/>+++parameters.+++<wbr/>+++**PromotedBuildRebuildParameterProvider** (link:https://github.com/jenkinsci/promoted-builds-plugin/search?q=PromotedBuildRebuildParameterProvider&type=Code[view on GitHub])
+
+
+== RebuildValidator
+
+`jenkinsdoc:rebuild:com.sonyericsson.rebuild.RebuildValidator]`
+
++++ Extension point for allowing disabling of the rebuild-action, in case+++ +++ other plug-ins provides similar functionality.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/gerrit-trigger[Gerrit Trigger Plugin]: com.+++<wbr/>+++sonyericsson.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++gerrit.+++<wbr/>+++trigger.+++<wbr/>+++**GerritRebuildValidator** (link:https://github.com/jenkinsci/gerrit-trigger-plugin/search?q=GerritRebuildValidator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/project-inheritance[Project Inheritance Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++project_inheritance.+++<wbr/>+++projects.+++<wbr/>+++rebuild.+++<wbr/>+++**RebuildValidatorSuppressor** 
+* https://plugins.jenkins.io/promoted-builds[promoted builds Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++promoted_builds.+++<wbr/>+++**PromotionRebuildValidator** (link:https://github.com/jenkinsci/promoted-builds-plugin/search?q=PromotionRebuildValidator&type=Code[view on GitHub])
+

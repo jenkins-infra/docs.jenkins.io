@@ -1,0 +1,68 @@
+= Extension Points defined in Job DSL Plugin
+
+https://plugins.jenkins.io/job-dsl[Job DSL Plugin]
+
+== ContextExtensionPoint
+
+`jenkinsdoc:job-dsl:javaposse.jobdsl.plugin.ContextExtensionPoint]`
+
++++ An ExtensionPoint for the job-dsl-plugin to extend it with new DSL methods.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/android-signing[Android Signing Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++androidsigning.+++<wbr/>+++**SignApksDslContext** (link:https://github.com/jenkinsci/android-signing-plugin/search?q=SignApksDslContext&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ansible[Ansible Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++ansible.+++<wbr/>+++jobdsl.+++<wbr/>+++**AnsibleJobDslExtension** (link:https://github.com/jenkinsci/ansible-plugin/search?q=AnsibleJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/applitools-eyes[Applitools Eyes Plugin]: com.+++<wbr/>+++applitools.+++<wbr/>+++jenkins.+++<wbr/>+++**ApplitoolsJobDsl** (link:https://github.com/jenkinsci/applitools-eyes-plugin/search?q=ApplitoolsJobDsl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/aws-batch[AWS Batch Plugin]: njnm.+++<wbr/>+++plugins.+++<wbr/>+++aws_batch.+++<wbr/>+++**JobsDslExt** (link:https://github.com/jenkinsci/aws-batch-plugin/search?q=JobsDslExt&type=Code[view on GitHub])
+* https://plugins.jenkins.io/bitbucket[Bitbucket Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++extensions.+++<wbr/>+++dsl.+++<wbr/>+++**BitbucketHookJobDslExtension** (link:https://github.com/jenkinsci/bitbucket-plugin/search?q=BitbucketHookJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/bitbucket-push-and-pull-request[Bitbucket Push and Pull Request Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++bitbucketpushandpullrequest.+++<wbr/>+++extensions.+++<wbr/>+++dsl.+++<wbr/>+++**BitBucketPPRHookJobDslExtension** (link:https://github.com/jenkinsci/bitbucket-push-and-pull-request-plugin/search?q=BitBucketPPRHookJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/BlazeMeterJenkinsPlugin[BlazeMeter Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++blazemeter.+++<wbr/>+++**PerformanceBuilderDSLExtension** (link:https://github.com/jenkinsci/blazemeter-plugin/search?q=PerformanceBuilderDSLExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/clearcase-ucm-plugin[ClearCase UCM Plugin]: net.+++<wbr/>+++praqma.+++<wbr/>+++hudson.+++<wbr/>+++scm.+++<wbr/>+++**ClearCaseUcmJobDslExtension** (link:https://github.com/jenkinsci/clearcase-ucm-plugin/search?q=ClearCaseUcmJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/codesonar[CodeSonar Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++codesonar.+++<wbr/>+++**CodeSonarJobDslExtension** (link:https://github.com/jenkinsci/codesonar-plugin/search?q=CodeSonarJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/dingding-json-pusher[Dingding JSON Pusher Plugin]: com.+++<wbr/>+++zintow.+++<wbr/>+++dingding.+++<wbr/>+++**DingdingDSLExtension** (link:https://github.com/jenkinsci/dingding-json-pusher-plugin/search?q=DingdingDSLExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/drmemory-plugin[Dr. Memory Plugin]: net.+++<wbr/>+++praqma.+++<wbr/>+++jenkins.+++<wbr/>+++plugin.+++<wbr/>+++drmemory.+++<wbr/>+++**DrMemoryJobDslExtension** (link:https://github.com/jenkinsci/drmemory-plugin/search?q=DrMemoryJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/alibabacloud-edas[EDAS Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++alicloud.+++<wbr/>+++edas.+++<wbr/>+++**EDASJobDslExtension** (link:https://github.com/jenkinsci/alibabacloud-edas-plugin/search?q=EDASJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/environment-dashboard[Environment Dashboard Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++environmentdashboard.+++<wbr/>+++**EnvDashboardDslContextExtension** (link:https://github.com/jenkinsci/environment-dashboard-plugin/search?q=EnvDashboardDslContextExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/file-operations[File Operations Plugin]: sp.+++<wbr/>+++sd.+++<wbr/>+++fileoperations.+++<wbr/>+++dsl.+++<wbr/>+++**FileOperationsJobDslExtension** (link:https://github.com/jenkinsci/file-operations-plugin/search?q=FileOperationsJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/flyway-runner[Flyway Runner Plugin]: sp.+++<wbr/>+++sd.+++<wbr/>+++flywayrunner.+++<wbr/>+++dsl.+++<wbr/>+++**FlywayRunnerJobDslExtension** (link:https://github.com/jenkinsci/flyway-runner-plugin/search?q=FlywayRunnerJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-pullrequest[GitHub Integration Plugin]: com.+++<wbr/>+++github.+++<wbr/>+++kostyasha.+++<wbr/>+++github.+++<wbr/>+++integration.+++<wbr/>+++branch.+++<wbr/>+++dsl.+++<wbr/>+++**GitHubBranchJobDslExtenstion** (link:https://github.com/jenkinsci/github-integration-plugin/search?q=GitHubBranchJobDslExtenstion&type=Code[view on GitHub])
+* https://plugins.jenkins.io/github-pullrequest[GitHub Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++github.+++<wbr/>+++pullrequest.+++<wbr/>+++dsl.+++<wbr/>+++**GitHubPRJobDslExtension** (link:https://github.com/jenkinsci/github-integration-plugin/search?q=GitHubPRJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jgiven[JGiven Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jgiven.+++<wbr/>+++**JgivenDslContextExtension** (link:https://github.com/jenkinsci/jgiven-plugin/search?q=JgivenDslContextExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira-ext[jira-ext Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jiraext.+++<wbr/>+++dsl.+++<wbr/>+++**ContextExtensionPointImpl** (link:https://github.com/jenkinsci/jira-ext-plugin/search?q=ContextExtensionPointImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira-ext[jira-ext Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jiraext.+++<wbr/>+++dsl.+++<wbr/>+++**IssueStrategyContext** (link:https://github.com/jenkinsci/jira-ext-plugin/search?q=IssueStrategyContext&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira-ext[jira-ext Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jiraext.+++<wbr/>+++dsl.+++<wbr/>+++**JiraOperationsContext** (link:https://github.com/jenkinsci/jira-ext-plugin/search?q=JiraOperationsContext&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jira-ext[jira-ext Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jiraext.+++<wbr/>+++dsl.+++<wbr/>+++**UpdateJiraExtContext** (link:https://github.com/jenkinsci/jira-ext-plugin/search?q=UpdateJiraExtContext&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jmh-report[JMH Report Plugin]: io.+++<wbr/>+++morethan.+++<wbr/>+++jenkins.+++<wbr/>+++jmhreport.+++<wbr/>+++**JmhPublisherDslExtension** (link:https://github.com/jenkinsci/jmh-report-plugin/search?q=JmhPublisherDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/liquibase-runner[Liquibase Runner Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++liquibase.+++<wbr/>+++dsl.+++<wbr/>+++**LiquibaseRunnerDslExtension** (link:https://github.com/jenkinsci/liquibase-runner-plugin/search?q=LiquibaseRunnerDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/logging[Logging Plugin]: net.+++<wbr/>+++praqma.+++<wbr/>+++logging.+++<wbr/>+++**LoggingJobDslExtension** (link:https://github.com/jenkinsci/logging-plugin/search?q=LoggingJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/next-build-number[Next Build Number Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++hudson.+++<wbr/>+++plugins.+++<wbr/>+++nextbuildnumber.+++<wbr/>+++**JobDslExtension** (link:https://github.com/jenkinsci/next-build-number-plugin/search?q=JobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nexus-artifact-uploader[Nexus Artifact Uploader Plugin]: sp.+++<wbr/>+++sd.+++<wbr/>+++nexusartifactuploader.+++<wbr/>+++dsl.+++<wbr/>+++**NexusArtifactUploaderJobDslExtension** (link:https://github.com/jenkinsci/nexus-artifact-uploader-plugin/search?q=NexusArtifactUploaderJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/octoperf[OctoPerf Load Testing Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++octoperf.+++<wbr/>+++**OctoPerfBuilderDSLExtension** (link:https://github.com/jenkinsci/octoperf-plugin/search?q=OctoPerfBuilderDSLExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ontrack[ontrack Jenkins Plugin]: net.+++<wbr/>+++nemerosa.+++<wbr/>+++ontrack.+++<wbr/>+++jenkins.+++<wbr/>+++extension.+++<wbr/>+++**OntrackBuildParametersContextExtensionPoint** (link:https://github.com/jenkinsci/ontrack-plugin/search?q=OntrackBuildParametersContextExtensionPoint&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ontrack[ontrack Jenkins Plugin]: net.+++<wbr/>+++nemerosa.+++<wbr/>+++ontrack.+++<wbr/>+++jenkins.+++<wbr/>+++extension.+++<wbr/>+++**OntrackPublisherContextExtensionPoint** (link:https://github.com/jenkinsci/ontrack-plugin/search?q=OntrackPublisherContextExtensionPoint&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ontrack[ontrack Jenkins Plugin]: net.+++<wbr/>+++nemerosa.+++<wbr/>+++ontrack.+++<wbr/>+++jenkins.+++<wbr/>+++extension.+++<wbr/>+++**OntrackStepContextExtensionPoint** (link:https://github.com/jenkinsci/ontrack-plugin/search?q=OntrackStepContextExtensionPoint&type=Code[view on GitHub])
+* https://plugins.jenkins.io/ontrack[ontrack Jenkins Plugin]: net.+++<wbr/>+++nemerosa.+++<wbr/>+++ontrack.+++<wbr/>+++jenkins.+++<wbr/>+++extension.+++<wbr/>+++**OntrackTriggerContextExtensionPoint** (link:https://github.com/jenkinsci/ontrack-plugin/search?q=OntrackTriggerContextExtensionPoint&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pretested-integration[Pretested Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pretestedintegration.+++<wbr/>+++**PretestedIntegrationJobDslExtension** (link:https://github.com/jenkinsci/pretested-integration-plugin/search?q=PretestedIntegrationJobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/promoted-builds[promoted builds Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++promoted_builds.+++<wbr/>+++integrations.+++<wbr/>+++jobdsl.+++<wbr/>+++**PromotionsExtensionPoint** (link:https://github.com/jenkinsci/promoted-builds-plugin/search?q=PromotionsExtensionPoint&type=Code[view on GitHub])
+* https://plugins.jenkins.io/results-cache[Results Cache Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++resultscache.+++<wbr/>+++**JobDslExtension** (link:https://github.com/jenkinsci/results-cache-plugin/search?q=JobDslExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++scm.+++<wbr/>+++jobdsl.+++<wbr/>+++**BranchSourcesExtension** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=BranchSourcesExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/scm-manager[SCM-Manager Plugin]: com.+++<wbr/>+++cloudogu.+++<wbr/>+++scmmanager.+++<wbr/>+++scm.+++<wbr/>+++jobdsl.+++<wbr/>+++**NavigatorExtension** (link:https://github.com/jenkinsci/scm-manager-plugin/search?q=NavigatorExtension&type=Code[view on GitHub])
+* https://plugins.jenkins.io/telegram-notifications[Telegram Bot Plugin]: jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++telegrambot.+++<wbr/>+++dsl.+++<wbr/>+++**BuilderJobDsl** (link:https://github.com/jenkinsci/telegram-notifications-plugin/search?q=BuilderJobDsl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/telegram-notifications[Telegram Bot Plugin]: jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++telegrambot.+++<wbr/>+++dsl.+++<wbr/>+++**PublisherJobDsl** (link:https://github.com/jenkinsci/telegram-notifications-plugin/search?q=PublisherJobDsl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/winrm-client[WinRM Client Plugin]: com.+++<wbr/>+++spcow.+++<wbr/>+++plugins.+++<wbr/>+++winrmclient.+++<wbr/>+++**WinRMClientJobDslExtension** (link:https://github.com/jenkinsci/winrm-client-plugin/search?q=WinRMClientJobDslExtension&type=Code[view on GitHub])
+
+
+== ScriptSource
+
+`jenkinsdoc:job-dsl:javaposse.jobdsl.plugin.casc.ScriptSource]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/job-dsl[Job DSL Plugin]: javaposse.+++<wbr/>+++jobdsl.+++<wbr/>+++plugin.+++<wbr/>+++casc.+++<wbr/>+++**ConfigurableScriptSource** (link:https://github.com/jenkinsci/job-dsl-plugin/search?q=ConfigurableScriptSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/job-dsl[Job DSL Plugin]: javaposse.+++<wbr/>+++jobdsl.+++<wbr/>+++plugin.+++<wbr/>+++casc.+++<wbr/>+++**FromFileScriptSource** (link:https://github.com/jenkinsci/job-dsl-plugin/search?q=FromFileScriptSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/job-dsl[Job DSL Plugin]: javaposse.+++<wbr/>+++jobdsl.+++<wbr/>+++plugin.+++<wbr/>+++casc.+++<wbr/>+++**FromUrlScriptSource** (link:https://github.com/jenkinsci/job-dsl-plugin/search?q=FromUrlScriptSource&type=Code[view on GitHub])
+* https://plugins.jenkins.io/job-dsl[Job DSL Plugin]: javaposse.+++<wbr/>+++jobdsl.+++<wbr/>+++plugin.+++<wbr/>+++casc.+++<wbr/>+++**InlineGroovyScriptSource** (link:https://github.com/jenkinsci/job-dsl-plugin/search?q=InlineGroovyScriptSource&type=Code[view on GitHub])
+

@@ -1,0 +1,10 @@
+= Review ci.jenkins.io build status
+
+The GitHub checks tab includes a link to the ci.jenkins.io job that evaluates the pull request.
+Open the GitHub checks tab and confirm that you can see the ci.jenkins.io link
+
+image::dev-docs:tutorial-improve:image2.png[Use parent pom, width=700px]
+The ci.jenkins.io job evaluates a broad range of Java runtimes on Windows and Linux.
+It is a good way to confirm that your change is ready for review by others.
+
+image::dev-docs:tutorial-improve:image6.png[schedule-build-plugin, width=700px]

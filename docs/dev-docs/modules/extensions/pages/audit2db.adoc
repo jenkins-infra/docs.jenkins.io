@@ -1,0 +1,21 @@
+= Extension Points defined in Audit to Database Plugin
+
+https://plugins.jenkins.io/audit2db[Audit to Database Plugin]
+
+== DbAuditReport
+
+`jenkinsdoc:audit2db:org.jenkins.plugins.audit2db.reports.DbAuditReport]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/audit2db[Audit to Database Plugin]: org.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++audit2db.+++<wbr/>+++internal.+++<wbr/>+++reports.+++<wbr/>+++**AbstractDbAuditReport** (link:https://github.com/jenkinsci/audit2db-plugin/search?q=AbstractDbAuditReport&type=Code[view on GitHub])
+* https://plugins.jenkins.io/audit2db[Audit to Database Plugin]: org.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++audit2db.+++<wbr/>+++reports.+++<wbr/>+++**JobHistoryByNameReport** (link:https://github.com/jenkinsci/audit2db-plugin/search?q=JobHistoryByNameReport&type=Code[view on GitHub])
+* https://plugins.jenkins.io/audit2db[Audit to Database Plugin]: org.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++audit2db.+++<wbr/>+++reports.+++<wbr/>+++**JobHistoryReport** (link:https://github.com/jenkinsci/audit2db-plugin/search?q=JobHistoryReport&type=Code[view on GitHub])
+* https://plugins.jenkins.io/audit2db[Audit to Database Plugin]: org.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++audit2db.+++<wbr/>+++internal.+++<wbr/>+++reports.+++<wbr/>+++**JobHistoryReportImpl** (link:https://github.com/jenkinsci/audit2db-plugin/search?q=JobHistoryReportImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/audit2db[Audit to Database Plugin]: org.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++audit2db.+++<wbr/>+++reports.+++<wbr/>+++**JobsByDateReport** (link:https://github.com/jenkinsci/audit2db-plugin/search?q=JobsByDateReport&type=Code[view on GitHub])
+* https://plugins.jenkins.io/audit2db[Audit to Database Plugin]: org.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++audit2db.+++<wbr/>+++internal.+++<wbr/>+++reports.+++<wbr/>+++**JobsByDateReportImpl** (link:https://github.com/jenkinsci/audit2db-plugin/search?q=JobsByDateReportImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/audit2db[Audit to Database Plugin]: org.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++audit2db.+++<wbr/>+++reports.+++<wbr/>+++**JobsByParamReport** (link:https://github.com/jenkinsci/audit2db-plugin/search?q=JobsByParamReport&type=Code[view on GitHub])
+* https://plugins.jenkins.io/audit2db[Audit to Database Plugin]: org.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++audit2db.+++<wbr/>+++internal.+++<wbr/>+++reports.+++<wbr/>+++**JobsByParamReportImpl** (link:https://github.com/jenkinsci/audit2db-plugin/search?q=JobsByParamReportImpl&type=Code[view on GitHub])
+

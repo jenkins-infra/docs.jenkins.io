@@ -1,0 +1,17 @@
+= Extension Points defined in SSH server Plugin
+
+https://plugins.jenkins.io/sshd[SSH server Plugin]
+
+== SshCommandFactory
+
+`jenkinsdoc:sshd:org.jenkinsci.main.modules.sshd.SshCommandFactory]`
+
++++ Extension point for adding commands invokable via SSH.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/git-server[Git server Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++gitserver.+++<wbr/>+++ssh.+++<wbr/>+++**SshCommandFactoryImpl** (link:https://github.com/jenkinsci/git-server-plugin/search?q=SshCommandFactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/remote-terminal-access[Remote Terminal Access Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++remote_terminal_access.+++<wbr/>+++ssh.+++<wbr/>+++**CommandFactoryImpl** (link:https://github.com/jenkinsci/remote-terminal-access-plugin/search?q=CommandFactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sshd[SSH server Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++main.+++<wbr/>+++modules.+++<wbr/>+++sshd.+++<wbr/>+++**CLICommandAdapter** (link:https://github.com/jenkinsci/sshd-plugin/search?q=CLICommandAdapter&type=Code[view on GitHub])
+

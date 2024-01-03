@@ -1,0 +1,57 @@
+=a title
+*Goal:*  Goal"
+category: Tools
+
+
+
+
+
+
+// links:
+//   gitter: "jenkinsci/plugin-installation-manager-cli-tool"
+//   draft: https://docs.google.com/document/d/1s-dLUfU1OK-88bCj-GKaNuFfJQlQNLTWtacKkVMVmHc
+---
+// === Background
+
+// TBD
+//
+// === Quick Start
+
+// TBD
+//
+// === Skills to Study and Improve
+
+// * TBD
+//
+// === Project Difficulty Level
+
+// 
+// Beginner to Intermediate
+// 
+// === Project Size
+
+// 
+// 175 hours
+// 
+// === Expected outcomes
+
+// 
+// New feature
+// 
+// Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase. 
+// 
+// === Newbie Friendly Issues
+
+== Potential Mentors
+
+[.avatar]
+* image:images:ROOT:avatars/no_image.svg[,width=30,height=30] name
+
+== Project Links
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2022/project-ideas.adoc[Go back to other GSoC 2022 project ideas]

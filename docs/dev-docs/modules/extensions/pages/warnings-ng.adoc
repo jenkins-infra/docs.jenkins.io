@@ -1,0 +1,15 @@
+= Extension Points defined in Warnings Next Generation Plugin
+
+https://plugins.jenkins.io/warnings-ng[Warnings Next Generation Plugin]
+
+== LabelProviderFactory.+++<wbr/>+++StaticAnalysisToolFactory
+
+`jenkinsdoc:warnings-ng:io.jenkins.plugins.analysis.core.model.LabelProviderFactory.StaticAnalysisToolFactory]`
+
++++ Provides additional+++ jenkinsdoc:StaticAnalysisLabelProvider] +++instances that are created dynamically.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/warnings-ng[Warnings Next Generation Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++analysis.+++<wbr/>+++warnings.+++<wbr/>+++groovy.+++<wbr/>+++**ParserConfiguration.+++<wbr/>+++ParserFactory** (link:https://github.com/jenkinsci/warnings-ng-plugin/search?q=ParserConfiguration.ParserFactory&type=Code[view on GitHub])
+

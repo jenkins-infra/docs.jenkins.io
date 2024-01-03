@@ -1,0 +1,19 @@
+= Extension Points defined in Audit Trail Plugin
+
+https://plugins.jenkins.io/audit-trail[Audit Trail Plugin]
+
+== AuditLogger
+
+`jenkinsdoc:audit-trail:hudson.plugins.audit_trail.AuditLogger]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/audit-trail[Audit Trail Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++audit_trail.+++<wbr/>+++**AbstractLogFileAuditLogger** (link:https://github.com/jenkinsci/audit-trail-plugin/search?q=AbstractLogFileAuditLogger&type=Code[view on GitHub])
+* https://plugins.jenkins.io/audit-trail[Audit Trail Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++audit_trail.+++<wbr/>+++**ConsoleAuditLogger** (link:https://github.com/jenkinsci/audit-trail-plugin/search?q=ConsoleAuditLogger&type=Code[view on GitHub])
+* https://plugins.jenkins.io/audit-trail[Audit Trail Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++audit_trail.+++<wbr/>+++**ElasticSearchAuditLogger** (link:https://github.com/jenkinsci/audit-trail-plugin/search?q=ElasticSearchAuditLogger&type=Code[view on GitHub])
+* https://plugins.jenkins.io/audit-trail[Audit Trail Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++audit_trail.+++<wbr/>+++**LogFileAuditLogger** (link:https://github.com/jenkinsci/audit-trail-plugin/search?q=LogFileAuditLogger&type=Code[view on GitHub])
+* https://plugins.jenkins.io/audit-trail[Audit Trail Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++audit_trail.+++<wbr/>+++**LogFileDailyRotationAuditLogger** (link:https://github.com/jenkinsci/audit-trail-plugin/search?q=LogFileDailyRotationAuditLogger&type=Code[view on GitHub])
+* https://plugins.jenkins.io/audit-trail[Audit Trail Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++audit_trail.+++<wbr/>+++**SyslogAuditLogger** (link:https://github.com/jenkinsci/audit-trail-plugin/search?q=SyslogAuditLogger&type=Code[view on GitHub])
+

@@ -1,0 +1,27 @@
+= Publishing Plugins
+
+This chapter will give an overview about the Jenkins project infrastructure related to plugin hosting, distribution, and documentation.
+The guides will teach you what you need to know about publishing your plugin to Jenkins users around the world.
+
+== Sections
+
+* xref:style-guides.adoc[]
+* xref:source-code-hosting.adoc[]
+* xref:artifact-repository.adoc[]
+* xref:documentation.adoc[]
+* xref:wiki-page.adoc[]
+* xref:plugin-site.adoc[]
+* xref:continuous-integration.adoc[]
+* xref:usage-statistics.adoc[]
+
+[#how-to-guides]
+== How-to Guides
+
+* xref:preparation.adoc[]
+* xref:new-plugin.adoc[]
+* xref:requesting-hosting.adoc[]
+* xref:releasing.adoc[]
+* xref:releasing-cd.adoc[]
+* xref:releasing-manually.adoc[]
+* xref:removing-from-distribution.adoc[]
+* xref:releasing-experimental-updates.adoc[]

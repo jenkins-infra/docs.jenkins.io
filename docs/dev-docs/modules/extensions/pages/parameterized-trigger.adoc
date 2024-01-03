@@ -1,0 +1,48 @@
+= Extension Points defined in Parameterized Trigger Plugin
+
+https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]
+
+== AbstractBuildParameterFactory
+
+`jenkinsdoc:parameterized-trigger:hudson.plugins.parameterizedtrigger.AbstractBuildParameterFactory]`
+
++++ Generates Build Parameters. These will can be used in the TriggerBuilder to trigger the same projects with many different+++ +++ parameters.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/jobgenerator[Job Generator Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jobgenerator.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**CounterGeneratorParameterFactory** (link:https://github.com/jenkinsci/jobgenerator-plugin/search?q=CounterGeneratorParameterFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jobgenerator[Job Generator Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jobgenerator.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**FileGeneratorParameterFactory** (link:https://github.com/jenkinsci/jobgenerator-plugin/search?q=FileGeneratorParameterFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nodelabelparameter[Node and Label parameter Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nodelabelparameter.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**AllNodesBuildParameterFactory** (link:https://github.com/jenkinsci/nodelabelparameter-plugin/search?q=AllNodesBuildParameterFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nodelabelparameter[Node and Label parameter Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nodelabelparameter.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**AllNodesForLabelBuildParameterFactory** (link:https://github.com/jenkinsci/nodelabelparameter-plugin/search?q=AllNodesForLabelBuildParameterFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nodelabelparameter[Node and Label parameter Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nodelabelparameter.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**NodeListBuildParameterFactory** (link:https://github.com/jenkinsci/nodelabelparameter-plugin/search?q=NodeListBuildParameterFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parallel-test-executor[Parallel Test Executor Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++parallel_test_executor.+++<wbr/>+++**MultipleBinaryFileParameterFactory** (link:https://github.com/jenkinsci/parallel-test-executor-plugin/search?q=MultipleBinaryFileParameterFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**BinaryFileParameterFactory** (link:https://github.com/jenkinsci/parameterized-trigger-plugin/search?q=BinaryFileParameterFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**CounterBuildParameterFactory** (link:https://github.com/jenkinsci/parameterized-trigger-plugin/search?q=CounterBuildParameterFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**FileBuildParameterFactory** (link:https://github.com/jenkinsci/parameterized-trigger-plugin/search?q=FileBuildParameterFactory&type=Code[view on GitHub])
+
+
+== AbstractBuildParameters
+
+`jenkinsdoc:parameterized-trigger:hudson.plugins.parameterizedtrigger.AbstractBuildParameters]`
+
++++ Extension point to produce an+++ jenkinsdoc:Action] +++to invoke child projects with.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/git[Git Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++git.+++<wbr/>+++**GitRevisionBuildParameters** (link:https://github.com/jenkinsci/git-plugin/search?q=GitRevisionBuildParameters&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jobgenerator[Job Generator Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jobgenerator.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**GeneratorCurrentParameters** (link:https://github.com/jenkinsci/jobgenerator-plugin/search?q=GeneratorCurrentParameters&type=Code[view on GitHub])
+* https://plugins.jenkins.io/jobgenerator[Job Generator Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++jobgenerator.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**PredefinedGeneratorParameters** (link:https://github.com/jenkinsci/jobgenerator-plugin/search?q=PredefinedGeneratorParameters&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nodelabelparameter[Node and Label parameter Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nodelabelparameter.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**NodeLabelBuildParameter** (link:https://github.com/jenkinsci/nodelabelparameter-plugin/search?q=NodeLabelBuildParameter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parallel-test-executor[Parallel Test Executor Plugin]: Anonymous class in org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++parallel_test_executor.+++<wbr/>+++**MultipleBinaryFileParameterFactory** (link:https://github.com/jenkinsci/parallel-test-executor-plugin/search?q=MultipleBinaryFileParameterFactory.getParameters.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parallel-test-executor[Parallel Test Executor Plugin]: Anonymous class in org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++parallel_test_executor.+++<wbr/>+++**ParallelTestExecutor** (link:https://github.com/jenkinsci/parallel-test-executor-plugin/search?q=ParallelTestExecutor.createTriggerBuilder.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]: Anonymous class in hudson.+++<wbr/>+++plugins.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**BinaryFileParameterFactory** (link:https://github.com/jenkinsci/parameterized-trigger-plugin/search?q=BinaryFileParameterFactory.getParameters.&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**BooleanParameters** (link:https://github.com/jenkinsci/parameterized-trigger-plugin/search?q=BooleanParameters&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**CurrentBuildParameters** (link:https://github.com/jenkinsci/parameterized-trigger-plugin/search?q=CurrentBuildParameters&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**FileBuildParameters** (link:https://github.com/jenkinsci/parameterized-trigger-plugin/search?q=FileBuildParameters&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++matrix.+++<wbr/>+++**MatrixSubsetBuildParameters** (link:https://github.com/jenkinsci/parameterized-trigger-plugin/search?q=MatrixSubsetBuildParameters&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**NodeParameters** (link:https://github.com/jenkinsci/parameterized-trigger-plugin/search?q=NodeParameters&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**PredefinedBuildParameters** (link:https://github.com/jenkinsci/parameterized-trigger-plugin/search?q=PredefinedBuildParameters&type=Code[view on GitHub])
+* https://plugins.jenkins.io/parameterized-trigger[Parameterized Trigger Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++parameterizedtrigger.+++<wbr/>+++**SubversionRevisionBuildParameters** (link:https://github.com/jenkinsci/parameterized-trigger-plugin/search?q=SubversionRevisionBuildParameters&type=Code[view on GitHub])
+

@@ -1,0 +1,4 @@
+* xref:index.adoc[]
+.Previous Year Archive
+** xref:archive/2021-10.adoc[]
+** xref:archive/2021-06.adoc[]

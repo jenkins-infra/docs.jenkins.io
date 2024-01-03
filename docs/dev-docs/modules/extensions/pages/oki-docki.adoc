@@ -1,0 +1,16 @@
+= Extension Points defined in oki-docki Plugin
+
+https://plugins.jenkins.io/oki-docki[oki-docki Plugin]
+
+== DockerImageSelector
+
+`jenkinsdoc:oki-docki:com.cloudbees.jenkins.plugins.okidocki.DockerImageSelector]`
+
++++ Let user configure a Docker image to run a container+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/oki-docki[oki-docki Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++okidocki.+++<wbr/>+++**DockerfileImageSelector** (link:https://github.com/jenkinsci/oki-docki-plugin/search?q=DockerfileImageSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/oki-docki[oki-docki Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++okidocki.+++<wbr/>+++**PullDockerImageSelector** (link:https://github.com/jenkinsci/oki-docki-plugin/search?q=PullDockerImageSelector&type=Code[view on GitHub])
+

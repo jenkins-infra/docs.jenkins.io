@@ -1,0 +1,15 @@
+= Extension Points defined in Conditional BuildStep Plugin
+
+https://plugins.jenkins.io/conditional-buildstep[Conditional BuildStep Plugin]
+
+== BuilderDescriptorLister
+
+`jenkinsdoc:conditional-buildstep:org.jenkinsci.plugins.conditionalbuildstep.lister.BuilderDescriptorLister]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/any-buildstep[Any Build Step Plugin]: org.+++<wbr/>+++jenkins_ci.+++<wbr/>+++plugins.+++<wbr/>+++any_buildstep.+++<wbr/>+++builder.+++<wbr/>+++**BuilderLister** (link:https://github.com/jenkinsci/any-buildstep-plugin/search?q=BuilderLister&type=Code[view on GitHub])
+* https://plugins.jenkins.io/conditional-buildstep[Conditional BuildStep Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++conditionalbuildstep.+++<wbr/>+++lister.+++<wbr/>+++**DefaultBuilderDescriptorLister** (link:https://github.com/jenkinsci/conditional-buildstep-plugin/search?q=DefaultBuilderDescriptorLister&type=Code[view on GitHub])
+

@@ -1,0 +1,73 @@
+= Extension Points defined in Maven Integration Plugin
+
+https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]
+
+== LocalRepositoryLocator
+
+`jenkinsdoc:maven-https://plugins.jenkins.io/hudson.maven.local_repo.LocalRepositoryLocator]`
+
++++ Strategy pattern that decides the location of the Maven local repository for a build.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++local_repo.+++<wbr/>+++**DefaultLocalRepositoryLocator** (link:https://github.com/jenkinsci/maven-plugin/search?q=DefaultLocalRepositoryLocator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++local_repo.+++<wbr/>+++**PerExecutorLocalRepositoryLocator** (link:https://github.com/jenkinsci/maven-plugin/search?q=PerExecutorLocalRepositoryLocator&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++local_repo.+++<wbr/>+++**PerJobLocalRepositoryLocator** (link:https://github.com/jenkinsci/maven-plugin/search?q=PerJobLocalRepositoryLocator&type=Code[view on GitHub])
+
+
+== MavenReporter
+
+`jenkinsdoc:maven-https://plugins.jenkins.io/hudson.maven.MavenReporter]`
+
++++ Listens to the build execution of+++ jenkinsdoc:MavenBuild] +++,+++ +++ and normally records some information and exposes thoses+++ +++ in+++ jenkinsdoc:MavenBuild] +++later.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/doclinks[DocLinks Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++doclinks.+++<wbr/>+++m2.+++<wbr/>+++**DocLinksMavenReporter** (link:https://github.com/jenkinsci/doclinks-plugin/search?q=DocLinksMavenReporter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/javancss[JavaNCSS Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++helpers.+++<wbr/>+++**AbstractMavenReporterImpl** (link:https://github.com/jenkinsci/javancss-plugin/search?q=AbstractMavenReporterImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/javancss[JavaNCSS Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++javancss.+++<wbr/>+++**JavaNCSSMavenPublisher** (link:https://github.com/jenkinsci/javancss-plugin/search?q=JavaNCSSMavenPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/junit-realtime-test-reporter[JUnit Realtime Test Reporter Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++junitrealtimetestreporter.+++<wbr/>+++**MavenAttacher** (link:https://github.com/jenkinsci/junit-realtime-test-reporter-plugin/search?q=MavenAttacher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++reporters.+++<wbr/>+++**AbstractMavenJavadocArchiver** (link:https://github.com/jenkinsci/maven-plugin/search?q=AbstractMavenJavadocArchiver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++reporters.+++<wbr/>+++**BuildInfoRecorder** (link:https://github.com/jenkinsci/maven-plugin/search?q=BuildInfoRecorder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++reporters.+++<wbr/>+++**MavenArtifactArchiver** (link:https://github.com/jenkinsci/maven-plugin/search?q=MavenArtifactArchiver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++reporters.+++<wbr/>+++**MavenFingerprinter** (link:https://github.com/jenkinsci/maven-plugin/search?q=MavenFingerprinter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++reporters.+++<wbr/>+++**MavenJavadocArchiver** (link:https://github.com/jenkinsci/maven-plugin/search?q=MavenJavadocArchiver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++reporters.+++<wbr/>+++**MavenMailer** (link:https://github.com/jenkinsci/maven-plugin/search?q=MavenMailer&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++reporters.+++<wbr/>+++**MavenSiteArchiver** (link:https://github.com/jenkinsci/maven-plugin/search?q=MavenSiteArchiver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++reporters.+++<wbr/>+++**MavenTestJavadocArchiver** (link:https://github.com/jenkinsci/maven-plugin/search?q=MavenTestJavadocArchiver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++reporters.+++<wbr/>+++**ReportCollector** (link:https://github.com/jenkinsci/maven-plugin/search?q=ReportCollector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++reporters.+++<wbr/>+++**SurefireArchiver** (link:https://github.com/jenkinsci/maven-plugin/search?q=SurefireArchiver&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++reporters.+++<wbr/>+++**TestFailureDetector** (link:https://github.com/jenkinsci/maven-plugin/search?q=TestFailureDetector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/testabilityexplorer[Testability Explorer Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++testabilityexplorer.+++<wbr/>+++publisher.+++<wbr/>+++**AbstractMavenReporterImpl** (link:https://github.com/jenkinsci/testabilityexplorer-plugin/search?q=AbstractMavenReporterImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/testabilityexplorer[Testability Explorer Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++testabilityexplorer.+++<wbr/>+++publisher.+++<wbr/>+++**MavenPublisher** (link:https://github.com/jenkinsci/testabilityexplorer-plugin/search?q=MavenPublisher&type=Code[view on GitHub])
+* https://plugins.jenkins.io/violations[Violations Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++violations.+++<wbr/>+++hudson.+++<wbr/>+++maven.+++<wbr/>+++**ViolationsMavenReporter** (link:https://github.com/jenkinsci/violations-plugin/search?q=ViolationsMavenReporter&type=Code[view on GitHub])
+* https://plugins.jenkins.io/whitesource[White Source Plugin]: org.+++<wbr/>+++whitesource.+++<wbr/>+++jenkins.+++<wbr/>+++extractor.+++<wbr/>+++maven.+++<wbr/>+++**MavenDependenciesRecorder** (link:https://github.com/jenkinsci/whitesource-plugin/search?q=MavenDependenciesRecorder&type=Code[view on GitHub])
+
+
+== PlexusModuleContributorFactory
+
+`jenkinsdoc:maven-https://plugins.jenkins.io/hudson.maven.PlexusModuleContributorFactory]`
+
++++ Contributes additional code into Plexus container when we run Maven.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== TcpSocketHostLocator
+
+`jenkinsdoc:maven-https://plugins.jenkins.io/hudson.maven.TcpSocketHostLocator]`
+
++++ Identify the Host name to use from maven-agent to connect to to Jenkins agent TCP socket.+++ +++
+<p>+++ +++ In simple scenarios both agent and maven process do live on same host without specific network+++ +++ constraints, but for some virtualization usages maven process just can't bind a socket on wildcard+++ +++ host network. This extension give infrastructure plugins a chance to configure the adequate hostname.+++ +++ to handle such network constraints+++</p>
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/docker-custom-build-environment[CloudBees Docker Custom Build Environment Plugin]: com.+++<wbr/>+++cloudbees.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++docker_build_env.+++<wbr/>+++**MavenPluginHelper** (link:https://github.com/jenkinsci/docker-custom-build-environment-plugin/search?q=MavenPluginHelper&type=Code[view on GitHub])
+* https://plugins.jenkins.io/maven-plugin[Maven Integration Plugin]: hudson.+++<wbr/>+++maven.+++<wbr/>+++**AbstractMavenProcessFactory.+++<wbr/>+++UserInetTcpSocketHostLocator** (link:https://github.com/jenkinsci/maven-plugin/search?q=AbstractMavenProcessFactory.UserInetTcpSocketHostLocator&type=Code[view on GitHub])
+

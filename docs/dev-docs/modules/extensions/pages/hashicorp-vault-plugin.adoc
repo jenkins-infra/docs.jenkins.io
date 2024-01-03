@@ -1,0 +1,15 @@
+= Extension Points defined in HashiCorp Vault Plugin
+
+https://plugins.jenkins.io/hashicorp-vault-plugin[HashiCorp Vault Plugin]
+
+== VaultConfigResolver
+
+`jenkinsdoc:hashicorp-vault-https://plugins.jenkins.io/com.datapipe.jenkins.vault.configuration.VaultConfigResolver]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/hashicorp-vault-plugin[HashiCorp Vault Plugin]: com.+++<wbr/>+++datapipe.+++<wbr/>+++jenkins.+++<wbr/>+++vault.+++<wbr/>+++configuration.+++<wbr/>+++**FolderVaultConfiguration.+++<wbr/>+++ForJob** (link:https://github.com/jenkinsci/hashicorp-vault-plugin/search?q=FolderVaultConfiguration.ForJob&type=Code[view on GitHub])
+* https://plugins.jenkins.io/hashicorp-vault-plugin[HashiCorp Vault Plugin]: com.+++<wbr/>+++datapipe.+++<wbr/>+++jenkins.+++<wbr/>+++vault.+++<wbr/>+++configuration.+++<wbr/>+++**GlobalVaultConfiguration.+++<wbr/>+++ForJob** (link:https://github.com/jenkinsci/hashicorp-vault-plugin/search?q=GlobalVaultConfiguration.ForJob&type=Code[view on GitHub])
+

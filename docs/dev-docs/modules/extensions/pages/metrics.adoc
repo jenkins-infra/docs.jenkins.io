@@ -1,0 +1,57 @@
+= Extension Points defined in Metrics Plugin
+
+https://plugins.jenkins.io/metrics[Metrics Plugin]
+
+== HealthCheckProvider
+
+`jenkinsdoc:metrics:jenkins.metrics.api.HealthCheckProvider]`
+
++++ Provides+++ jenkinsdoc:HealthCheck] +++instances to register.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/metrics[Metrics Plugin]: jenkins.+++<wbr/>+++metrics.+++<wbr/>+++impl.+++<wbr/>+++**JenkinsHealthCheckProviderImpl** (link:https://github.com/jenkinsci/metrics-plugin/search?q=JenkinsHealthCheckProviderImpl&type=Code[view on GitHub])
+
+
+== MetricProvider
+
+`jenkinsdoc:metrics:jenkins.metrics.api.MetricProvider]`
+
++++ Provides metrics to register.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/metrics-diskusage[Metrics Disk Usage Plugin]: jenkins.+++<wbr/>+++metrics.+++<wbr/>+++impl.+++<wbr/>+++diskusage.+++<wbr/>+++**DiskUsageMetricProviderImpl** (link:https://github.com/jenkinsci/metrics-diskusage-plugin/search?q=DiskUsageMetricProviderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/metrics[Metrics Plugin]: jenkins.+++<wbr/>+++metrics.+++<wbr/>+++impl.+++<wbr/>+++**JenkinsMetricProviderImpl** (link:https://github.com/jenkinsci/metrics-plugin/search?q=JenkinsMetricProviderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/metrics[Metrics Plugin]: jenkins.+++<wbr/>+++metrics.+++<wbr/>+++impl.+++<wbr/>+++**JenkinsVersionsProviderImpl** (link:https://github.com/jenkinsci/metrics-plugin/search?q=JenkinsVersionsProviderImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/metrics[Metrics Plugin]: jenkins.+++<wbr/>+++metrics.+++<wbr/>+++api.+++<wbr/>+++**Metrics.+++<wbr/>+++HealthCheckMetricsProvider** (link:https://github.com/jenkinsci/metrics-plugin/search?q=Metrics.HealthCheckMetricsProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/metrics[Metrics Plugin]: jenkins.+++<wbr/>+++metrics.+++<wbr/>+++api.+++<wbr/>+++**Metrics.+++<wbr/>+++HeathCheckMetricsProvider** (link:https://github.com/jenkinsci/metrics-plugin/search?q=Metrics.HeathCheckMetricsProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/metrics[Metrics Plugin]: jenkins.+++<wbr/>+++metrics.+++<wbr/>+++impl.+++<wbr/>+++**VMMetricProviderImpl** (link:https://github.com/jenkinsci/metrics-plugin/search?q=VMMetricProviderImpl&type=Code[view on GitHub])
+
+
+== MetricsAccessKey.+++<wbr/>+++Provider
+
+`jenkinsdoc:metrics:jenkins.metrics.api.MetricsAccessKey.Provider]`
+
++++ An extension point that allows for plugins to provide their own set of access keys.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/metrics[Metrics Plugin]: jenkins.+++<wbr/>+++metrics.+++<wbr/>+++api.+++<wbr/>+++**MetricsAccessKey.+++<wbr/>+++AbstractProvider** (link:https://github.com/jenkinsci/metrics-plugin/search?q=MetricsAccessKey.AbstractProvider&type=Code[view on GitHub])
+* https://plugins.jenkins.io/metrics[Metrics Plugin]: jenkins.+++<wbr/>+++metrics.+++<wbr/>+++api.+++<wbr/>+++**MetricsAccessKey.+++<wbr/>+++FixedListProviderImpl** (link:https://github.com/jenkinsci/metrics-plugin/search?q=MetricsAccessKey.FixedListProviderImpl&type=Code[view on GitHub])
+
+
+== QueueItemMetricsListener
+
+`jenkinsdoc:metrics:jenkins.metrics.api.QueueItemMetricsListener]`
+
++++ Receives details of metrics events about queue items.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+

@@ -1,0 +1,19 @@
+= Extension Points defined in Sectioned View Plugin
+
+https://plugins.jenkins.io/sectioned-view[Sectioned View Plugin]
+
+== SectionedViewSection
+
+`jenkinsdoc:sectioned-view:hudson.plugins.sectioned_view.SectionedViewSection]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/sectioned-view[Sectioned View Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sectioned_view.+++<wbr/>+++**FolderViewSection** (link:https://github.com/jenkinsci/sectioned-view-plugin/search?q=FolderViewSection&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sectioned-view[Sectioned View Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sectioned_view.+++<wbr/>+++**JobGraphsSection** (link:https://github.com/jenkinsci/sectioned-view-plugin/search?q=JobGraphsSection&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sectioned-view[Sectioned View Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sectioned_view.+++<wbr/>+++**ListViewSection** (link:https://github.com/jenkinsci/sectioned-view-plugin/search?q=ListViewSection&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sectioned-view[Sectioned View Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sectioned_view.+++<wbr/>+++**TestResultViewSection** (link:https://github.com/jenkinsci/sectioned-view-plugin/search?q=TestResultViewSection&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sectioned-view[Sectioned View Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sectioned_view.+++<wbr/>+++**TextSection** (link:https://github.com/jenkinsci/sectioned-view-plugin/search?q=TextSection&type=Code[view on GitHub])
+* https://plugins.jenkins.io/sectioned-view[Sectioned View Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++sectioned_view.+++<wbr/>+++**ViewListingSection** (link:https://github.com/jenkinsci/sectioned-view-plugin/search?q=ViewListingSection&type=Code[view on GitHub])
+

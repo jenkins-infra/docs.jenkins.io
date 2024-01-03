@@ -1,0 +1,220 @@
+= Jenkins and PHP
+
+Most web applications are changed and adapted quite frequently and quickly.
+Their environment, for example the size and the behaviour of the user base, are
+constantly changing. What was sufficient yesterday can be insufficient today.
+Especially in a web environment it is important to monitor and continuously
+improve the internal quality not only when developing, but also when
+maintaining the software.
+
+This guide provides a basic configuration for testing and reporting for PHP
+projects with Jenkins.
+
+In addition to running and reporting tests, you'll get reports on test run
+times, test coverage (including visualizations), and static analysis checks,
+including trend graphs, and new and fixed issues compared to the master /
+reference branch.
+
+Use the *pipeline step reference* link on the plugin pages for full
+documentation and options for Jenkinsfile.
+
+
+== Configuring PHP Tools
+
+This guide uses Jenkinsfile based pipelines and assumes you already have a
+basic Jenkinsfile.
+
+This guide assumes that you already have each of the tools mentioned
+configured for use outside of Jenkins. Only the necessary configuration
+options for working with Jenkins are mentioned.
+
+This guide uses the `build/` directory for storing generated logs and reports.
+
+It's assumed that all tools configuration files are in the repository root and
+PHP code is in the `src` subdirectory.
+
+=== PHPUnit Test & Coverage Reports
+
+The following configuration will set up 3 reports for PHPUnit tests:
+
+* Pass/fail monitoring via the {plugin}xunit[xUnit plugin]
+* Coverage stats via the {plugin}code-coverage-api[Code Coverage API plugin] (using the cobertura adaptor)
+* HTML coverage report via the {plugin}htmlpublisher[HTML Publisher plugin]
+
+In the PHPUnit config file (`phpunit.xml` or `phpunit.xml.dist`):
+
+[source,xml]
+----
+<phpunit>
+    <coverage>
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+        <report>
+            <html outputDirectory="build/coverage" />
+            <cobertura outputFile="build/logs/cobertura.xml"/>
+        </report>
+    </coverage>
+    <logging>
+        <junit outputFile="build/logs/junit.xml" />
+    </logging>
+</phpunit>
+----
+
+In the Jenkinsfile:
+
+[source,groovy]
+----
+stage('Unit Tests') {
+    steps {
+        sh 'vendor/bin/phpunit'
+        xunit([
+            thresholds: [
+                failed ( failureThreshold: "0" ),
+                skipped ( unstableThreshold: "0" )
+            ],
+            tools: [
+                PHPUnit(pattern: 'build/logs/junit.xml', stopProcessingIfError: true, failIfNotNew: true)
+            ]
+        ])
+        publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: false,
+            reportDir: 'build/coverage',
+            reportFiles: 'index.html',
+            reportName: 'Coverage Report (HTML)',
+            reportTitles: ''
+        ])
+        publishCoverage adapters: [coberturaAdapter('build/logs/cobertura.xml')]
+    }
+}
+----
+
+=== PHPStan and CodeSniffer Static Analysis Reports
+
+In this example, PHPCS is shown running with 2 different configurations (mainly
+to show this can be done).
+
+Reports are processed using the CheckStyle format report and the
+{plugin}warnings-ng[Warnings Next Generation plugin]
+
+This is done because PHPCompatibility checks are run across the `vendor/`
+directory to aid in monitoring potential problems for version updates.
+
+This example setup shows running the static analysis tools in parallel, which
+may result in faster build times.
+
+In Jenkinsfile:
+[source,groovy]
+----
+stages {
+    stage('Static Analysis') {
+        parallel {
+          stage('CodeSniffer') {
+              steps {
+                  sh 'vendor/bin/phpcs --standard=phpcs.xml .'
+              }
+          }
+          stage('PHP Compatibility Checks') {
+              steps {
+                  sh 'vendor/bin/phpcs --standard=phpcs-compatibility.xml .'
+              }
+          }
+          stage('PHPStan') {
+              steps {
+                  sh 'vendor/bin/phpstan analyse --error-format=checkstyle --no-progress -n . > build/logs/phpstan.checkstyle.xml'
+              }
+          }
+        }
+    }
+    post {
+        always {
+            recordIssues([
+                sourceCodeEncoding: 'UTF-8',
+                enabledForFailure: true,
+                aggregatingResults: true,
+                blameDisabled: true,
+                referenceJobName: "repo-name/master",
+                tools: [
+                    phpCodeSniffer(id: 'phpcs', name: 'CodeSniffer', pattern: 'build/logs/phpcs.checkstyle.xml', reportEncoding: 'UTF-8'),
+                    phpStan(id: 'phpstan', name: 'PHPStan', pattern: 'build/logs/phpstan.checkstyle.xml', reportEncoding: 'UTF-8'),
+                    phpCodeSniffer(id: 'phpcompat', name: 'PHP Compatibility', pattern: 'build/logs/phpcs-compat.checkstyle.xml', reportEncoding: 'UTF-8')
+                ]
+            ])
+        }
+    }
+}
+----
+
+You'll want to change the `repo-name` in the `referenceJobName` directive to
+match your repository. This tells Jenkins which job to compare the results
+against for branches and PR jobs.
+
+Set the report location in CodeSniffers configuration file (`phpcs.xml`):
+[source,xml]
+----
+<ruleset name="Default">
+    <arg name="report-checkstyle" value="build/logs/phpcs.checkstyle.xml" />
+</ruleset>
+----
+
+==== Ignoring tool run failures / tuning failure conditions
+
+If you want the build to pass regardless of the results of tools (ie. ignore
+the exit code), you can append `|| exit 0` to the end of the `sh` command.
+
+Alternatively, for CodeSniffer you can add the following into the configuration
+file (`phpcs.xml`):
+[source,xml]
+----
+<ruleset name="default">
+    <config name="ignore_errors_on_exit" value="1" />
+    <config name="ignore_warnings_on_exit" value="1" />
+</ruleset>
+----
+
+You can then fine-tune the failure conditions using the
+link:/doc/pipeline/steps/warnings-ng/[Warnings-NG pipeline configuration]
+
+==== Results Caching
+
+You can improve build times (for each run after the first) using caching
+features available in both CodeSniffer and PHPStan.
+
+In CodeSniffers configuration file (`phpcs.xml`):
+[source,xml]
+----
+<ruleset name="default">
+    <arg name="cache" value="build/cache/codesniffer.phpcs" />
+</ruleset>
+----
+
+If you have multiple CodeSniffer configurations as in the example Jenkinsfile
+above, be sure to set different cache paths.
+
+In PHPStan's configuration file (`phpstan.neon`):
+[source]
+----
+parameters:
+    tmpDir: build/cache/phpstan
+----
+
+.PHP plugins for Jenkins
+****
+{plugin}xunit[xUnit]
+
+processing PHPUnit's JUnit XML logfile
+
+{plugin}warnings-ng[Warnings Next Generation plugin]
+
+collects PHP compiler warnings and issues from static analysis tools such as PHP_CodeSniffer, PHPMD and phpcpd
+
+{plugin}code-coverage-api[Code Coverage API]
+
+for processing PHPUnit's code coverage data
+
+{plugin}htmlpublisher[HTML Publisher]
+
+for publishing documentation generated by phpDox, for instance
+****

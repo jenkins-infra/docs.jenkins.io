@@ -1,0 +1,31 @@
+= Extension Points defined in Unique ID Library Plugin
+
+https://plugins.jenkins.io/unique-id[Unique ID Library Plugin]
+
+== IdStore
+
+`jenkinsdoc:unique-id:org.jenkinsci.plugins.uniqueid.IdStore]`
+
++++ An abstraction to persistently store and retrieve unique id's+++ +++ for various Jenkins model objects.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/unique-id[Unique ID Library Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++uniqueid.+++<wbr/>+++implv2.+++<wbr/>+++**PersistenceRootIdStore** (link:https://github.com/jenkinsci/unique-id-plugin/search?q=PersistenceRootIdStore&type=Code[view on GitHub])
+* https://plugins.jenkins.io/unique-id[Unique ID Library Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++uniqueid.+++<wbr/>+++implv2.+++<wbr/>+++**RunIdStore** (link:https://github.com/jenkinsci/unique-id-plugin/search?q=RunIdStore&type=Code[view on GitHub])
+* https://plugins.jenkins.io/unique-id[Unique ID Library Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++uniqueid.+++<wbr/>+++implv2.+++<wbr/>+++**UserIdStore** (link:https://github.com/jenkinsci/unique-id-plugin/search?q=UserIdStore&type=Code[view on GitHub])
+
+
+== LegacyIdStore
+
+`jenkinsdoc:unique-id:org.jenkinsci.plugins.uniqueid.impl.LegacyIdStore]`
+
++++ An abstraction to persistently store and retrieve unique id's+++ +++ for various Jenkins model objects.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/unique-id[Unique ID Library Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++uniqueid.+++<wbr/>+++impl.+++<wbr/>+++**FolderIdStore** (link:https://github.com/jenkinsci/unique-id-plugin/search?q=FolderIdStore&type=Code[view on GitHub])
+* https://plugins.jenkins.io/unique-id[Unique ID Library Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++uniqueid.+++<wbr/>+++impl.+++<wbr/>+++**JobIdStore** (link:https://github.com/jenkinsci/unique-id-plugin/search?q=JobIdStore&type=Code[view on GitHub])
+* https://plugins.jenkins.io/unique-id[Unique ID Library Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++uniqueid.+++<wbr/>+++impl.+++<wbr/>+++**RunIdStore** (link:https://github.com/jenkinsci/unique-id-plugin/search?q=RunIdStore&type=Code[view on GitHub])
+

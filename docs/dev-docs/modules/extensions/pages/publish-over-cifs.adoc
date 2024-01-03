@@ -1,0 +1,15 @@
+= Extension Points defined in Publish Over CIFS Plugin
+
+https://plugins.jenkins.io/publish-over-cifs[Publish Over CIFS Plugin]
+
+== CifsDefaults
+
+`jenkinsdoc:publish-over-cifs:jenkins.plugins.publish_over_cifs.options.CifsDefaults]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/publish-over-cifs[Publish Over CIFS Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++publish_over_cifs.+++<wbr/>+++options.+++<wbr/>+++**CifsOverrideDefaults** (link:https://github.com/jenkinsci/publish-over-cifs-plugin/search?q=CifsOverrideDefaults&type=Code[view on GitHub])
+* https://plugins.jenkins.io/publish-over-cifs[Publish Over CIFS Plugin]: jenkins.+++<wbr/>+++plugins.+++<wbr/>+++publish_over_cifs.+++<wbr/>+++options.+++<wbr/>+++**CifsPluginDefaults** (link:https://github.com/jenkinsci/publish-over-cifs-plugin/search?q=CifsPluginDefaults&type=Code[view on GitHub])
+

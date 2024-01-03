@@ -1,0 +1,34 @@
+= Extension Points defined in docker-build-step Plugin
+
+https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]
+
+== DockerCommand
+
+`jenkinsdoc:docker-build-step:org.jenkinsci.plugins.dockerbuildstep.cmd.DockerCommand]`
+
++++ Parent class of all Docker commands.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**CommitCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=CommitCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**CreateContainerCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=CreateContainerCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**CreateImageCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=CreateImageCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**ExecCreateAndStartCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=ExecCreateAndStartCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**ExecCreateCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=ExecCreateCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**ExecStartCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=ExecStartCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**KillCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=KillCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**PullImageCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=PullImageCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**PushImageCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=PushImageCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**RemoveAllCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=RemoveAllCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**RemoveCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=RemoveCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**RemoveImageCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=RemoveImageCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**RestartCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=RestartCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**SaveImageCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=SaveImageCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**StartByImageIdCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=StartByImageIdCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**StartCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=StartCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**StopAllCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=StopAllCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**StopByImageIdCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=StopByImageIdCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**StopCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=StopCommand&type=Code[view on GitHub])
+* https://plugins.jenkins.io/docker-build-step[docker-build-step Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++dockerbuildstep.+++<wbr/>+++cmd.+++<wbr/>+++**TagImageCommand** (link:https://github.com/jenkinsci/docker-build-step-plugin/search?q=TagImageCommand&type=Code[view on GitHub])
+

@@ -1,0 +1,17 @@
+= Extension Points defined in Nirmata Plugin
+
+https://plugins.jenkins.io/nirmata[Nirmata Plugin]
+
+== ActionBuilder
+
+`jenkinsdoc:nirmata:io.jenkins.plugins.nirmata.ActionBuilder]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/nirmata[Nirmata Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nirmata.+++<wbr/>+++**DeleteEnvAppBuilder** (link:https://github.com/jenkinsci/nirmata-plugin/search?q=DeleteEnvAppBuilder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nirmata[Nirmata Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nirmata.+++<wbr/>+++**DeployEnvAppBuilder** (link:https://github.com/jenkinsci/nirmata-plugin/search?q=DeployEnvAppBuilder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nirmata[Nirmata Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nirmata.+++<wbr/>+++**UpdateCatAppBuilder** (link:https://github.com/jenkinsci/nirmata-plugin/search?q=UpdateCatAppBuilder&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nirmata[Nirmata Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nirmata.+++<wbr/>+++**UpdateEnvAppBuilder** (link:https://github.com/jenkinsci/nirmata-plugin/search?q=UpdateEnvAppBuilder&type=Code[view on GitHub])
+

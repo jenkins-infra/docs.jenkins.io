@@ -1,0 +1,30 @@
+= Extension Points defined in Pretested Integration Plugin
+
+https://plugins.jenkins.io/pretested-integration[Pretested Integration Plugin]
+
+== AbstractSCMBridge
+
+`jenkinsdoc:pretested-integration:org.jenkinsci.plugins.pretestedintegration.AbstractSCMBridge]`
+
++++ Abstract class representing an SCM bridge.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/pretested-integration[Pretested Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pretestedintegration.+++<wbr/>+++scm.+++<wbr/>+++git.+++<wbr/>+++**GitBridge** (link:https://github.com/jenkinsci/pretested-integration-plugin/search?q=GitBridge&type=Code[view on GitHub])
+
+
+== IntegrationStrategy
+
+`jenkinsdoc:pretested-integration:org.jenkinsci.plugins.pretestedintegration.IntegrationStrategy]`
+
++++ Abstract class representing a strategy to apply when merging pretested commits into the integration integrationBranch.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/pretested-integration[Pretested Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pretestedintegration.+++<wbr/>+++scm.+++<wbr/>+++git.+++<wbr/>+++**AccumulatedCommitStrategy** (link:https://github.com/jenkinsci/pretested-integration-plugin/search?q=AccumulatedCommitStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pretested-integration[Pretested Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pretestedintegration.+++<wbr/>+++scm.+++<wbr/>+++git.+++<wbr/>+++**FFOnlyStrategy** (link:https://github.com/jenkinsci/pretested-integration-plugin/search?q=FFOnlyStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pretested-integration[Pretested Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pretestedintegration.+++<wbr/>+++scm.+++<wbr/>+++git.+++<wbr/>+++**GitIntegrationStrategy** (link:https://github.com/jenkinsci/pretested-integration-plugin/search?q=GitIntegrationStrategy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/pretested-integration[Pretested Integration Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++pretestedintegration.+++<wbr/>+++scm.+++<wbr/>+++git.+++<wbr/>+++**SquashCommitStrategy** (link:https://github.com/jenkinsci/pretested-integration-plugin/search?q=SquashCommitStrategy&type=Code[view on GitHub])
+

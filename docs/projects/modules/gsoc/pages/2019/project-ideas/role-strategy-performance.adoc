@@ -1,0 +1,59 @@
+= Role Strategy Plugin performance 
+
+*Project goal:* Improve performance of one of the most popular authorization plugins in Jenkins
+
+*Skills to study/improve:* Java, Performance Testing
+
+ 
+{plugin}role-strategy[Role Strategy Plugin] is widely used in Jenkins as an authorization engine,
+but it has known performance limitations for large-scale setups.
+In this project the proposal is to improve the plugin's performance and to create a proper testing framework for Jenkins security plugins.
+
+The project may include:
+
+* Perform profiling of the plugin, together with the mentor
+* Optimize memory and CPU usage by updating internal
+  (refactor string operations, redesign APIs, etc.)
+* Introduce better caching logic for role groups and assignments
+* Setup test automation in order to verify the plugin's performance
+  in Jenkins pull request builds
+
+See link:https://issues.jenkins.io/issues/?jql=labels%20%3D%20performance%20and%20component%20%3D%20role-strategy-plugin%20and%20labels%20%3D%20gsoc-2019-project-idea%20[this JIRA query]
+for more potential tasks for performance improvements.
+
+== Quickstart
+
+1. Create a Jenkins instance with many projects and user roles defined by the plugin
+** link:https://github.com/oleg-nenashev/demo-jenkins-config-as-code[oleg-nenashev/demo-jenkins-config-as-code]
+can be used as an example of such configuration
+** Configuration-as-code approach is recommended,
+because it may be needed to automate generation of roles, users and projects for this task
+2. Setup complex roles with heavy regular expressions,
+   try to get visible performance degradation of the plugin
+
+== Newbie-friendly tasks
+
+See link:https://issues.jenkins.io/issues/?jql=component%20%3D%20role-strategy-plugin%20and%20labels%20%3D%20newbie-friendly%20[this JIRA query].
+More issues can be added to the list if needed,
+please do not hesitate to ask in the task.
+
+== Potential Mentors
+
+[.avatar]
+image:images:ROOT:avatars/oleg_nenashev.png[,width=30,height=30] Oleg Nenashev
+image:images:ROOT:avatars/runzexia.jpg[,width=30,height=30] 夏润泽(RunZe Xia)
+image:images:ROOT:avatars/pvtuan10.jpeg[,width=30,height=30] Pham Vu Tuan
+
+== Project Links
+
+* image:https://img.shields.io/badge/gitter-join_chat-light_green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_role-strategy-plugin%3Agitter.im[Static Badge]
+* xref:gsoc:index.adoc#office-hours[Meetings]
+* https://community.jenkins.io/c/contributing/gsoc[Forum]
+* [Project Idea Draft]
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2019/project-ideas.adoc[Go back to other GSoC 2019 project ideas]

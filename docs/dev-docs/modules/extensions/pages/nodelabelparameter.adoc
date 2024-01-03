@@ -1,0 +1,16 @@
+= Extension Points defined in Node and Label parameter Plugin
+
+https://plugins.jenkins.io/nodelabelparameter[Node and Label parameter Plugin]
+
+== NodeEligibility
+
+`jenkinsdoc:nodelabelparameter:org.jvnet.jenkins.plugins.nodelabelparameter.node.NodeEligibility]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/nodelabelparameter[Node and Label parameter Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nodelabelparameter.+++<wbr/>+++node.+++<wbr/>+++**AllNodeEligibility** (link:https://github.com/jenkinsci/nodelabelparameter-plugin/search?q=AllNodeEligibility&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nodelabelparameter[Node and Label parameter Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nodelabelparameter.+++<wbr/>+++node.+++<wbr/>+++**IgnoreOfflineNodeEligibility** (link:https://github.com/jenkinsci/nodelabelparameter-plugin/search?q=IgnoreOfflineNodeEligibility&type=Code[view on GitHub])
+* https://plugins.jenkins.io/nodelabelparameter[Node and Label parameter Plugin]: org.+++<wbr/>+++jvnet.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++nodelabelparameter.+++<wbr/>+++node.+++<wbr/>+++**IgnoreTempOfflineNodeEligibility** (link:https://github.com/jenkinsci/nodelabelparameter-plugin/search?q=IgnoreTempOfflineNodeEligibility&type=Code[view on GitHub])
+

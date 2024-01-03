@@ -1,0 +1,8 @@
+:page-layout: wip
+= Model
+
+.References
+****
+* link:https://wiki.jenkins.io/display/JENKINS/Hierarchical+projects+support[Hierarchical projects support]
+* link:https://wiki.jenkins.io/display/JENKINS/Exposing+data+to+the+remote+API[Exposing data to the remote API]
+****

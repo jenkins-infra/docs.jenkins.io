@@ -1,0 +1,21 @@
+= Extension Points defined in Shared Objects Plugin
+
+https://plugins.jenkins.io/shared-objects[Shared Objects Plugin]
+
+== SharedObjectType
+
+`jenkinsdoc:shared-objects:org.jenkinsci.plugins.sharedobjects.SharedObjectType]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/shared-objects[Shared Objects Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++sharedobjects.+++<wbr/>+++type.+++<wbr/>+++**ClearcaseSharedObjectType** (link:https://github.com/jenkinsci/shared-objects-plugin/search?q=ClearcaseSharedObjectType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/shared-objects[Shared Objects Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++sharedobjects.+++<wbr/>+++type.+++<wbr/>+++**FileURLPropertiesSharedObjectType** (link:https://github.com/jenkinsci/shared-objects-plugin/search?q=FileURLPropertiesSharedObjectType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/shared-objects[Shared Objects Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++sharedobjects.+++<wbr/>+++type.+++<wbr/>+++**GroovySharedObjectType** (link:https://github.com/jenkinsci/shared-objects-plugin/search?q=GroovySharedObjectType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/shared-objects[Shared Objects Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++sharedobjects.+++<wbr/>+++**MultipleSharedObjectType** (link:https://github.com/jenkinsci/shared-objects-plugin/search?q=MultipleSharedObjectType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/shared-objects[Shared Objects Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++sharedobjects.+++<wbr/>+++type.+++<wbr/>+++**PublicFilePathSharedObjectType** (link:https://github.com/jenkinsci/shared-objects-plugin/search?q=PublicFilePathSharedObjectType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/shared-objects[Shared Objects Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++sharedobjects.+++<wbr/>+++**SimpleSharedObjectType** (link:https://github.com/jenkinsci/shared-objects-plugin/search?q=SimpleSharedObjectType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/shared-objects[Shared Objects Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++sharedobjects.+++<wbr/>+++type.+++<wbr/>+++**StringValueSharedObjectType** (link:https://github.com/jenkinsci/shared-objects-plugin/search?q=StringValueSharedObjectType&type=Code[view on GitHub])
+* https://plugins.jenkins.io/shared-objects[Shared Objects Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++sharedobjects.+++<wbr/>+++type.+++<wbr/>+++**URLPropertiesSharedObjectType** (link:https://github.com/jenkinsci/shared-objects-plugin/search?q=URLPropertiesSharedObjectType&type=Code[view on GitHub])
+

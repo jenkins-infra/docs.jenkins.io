@@ -1,0 +1,29 @@
+= Extension Points defined in CVS Plugin
+
+https://plugins.jenkins.io/cvs[CVS Plugin]
+
+== CvsModuleLocation
+
+`jenkinsdoc:cvs:hudson.scm.CvsModuleLocation]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/cvs[CVS Plugin]: hudson.+++<wbr/>+++scm.+++<wbr/>+++**CvsModuleLocation.+++<wbr/>+++BranchModuleLocation** (link:https://github.com/jenkinsci/cvs-plugin/search?q=CvsModuleLocation.BranchModuleLocation&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cvs[CVS Plugin]: hudson.+++<wbr/>+++scm.+++<wbr/>+++**CvsModuleLocation.+++<wbr/>+++HeadModuleLocation** (link:https://github.com/jenkinsci/cvs-plugin/search?q=CvsModuleLocation.HeadModuleLocation&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cvs[CVS Plugin]: hudson.+++<wbr/>+++scm.+++<wbr/>+++**CvsModuleLocation.+++<wbr/>+++TagModuleLocation** (link:https://github.com/jenkinsci/cvs-plugin/search?q=CvsModuleLocation.TagModuleLocation&type=Code[view on GitHub])
+
+
+== CvsRepositoryLocation
+
+`jenkinsdoc:cvs:hudson.scm.CvsRepositoryLocation]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/cvs[CVS Plugin]: hudson.+++<wbr/>+++scm.+++<wbr/>+++**CvsRepositoryLocation.+++<wbr/>+++BranchRepositoryLocation** (link:https://github.com/jenkinsci/cvs-plugin/search?q=CvsRepositoryLocation.BranchRepositoryLocation&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cvs[CVS Plugin]: hudson.+++<wbr/>+++scm.+++<wbr/>+++**CvsRepositoryLocation.+++<wbr/>+++HeadRepositoryLocation** (link:https://github.com/jenkinsci/cvs-plugin/search?q=CvsRepositoryLocation.HeadRepositoryLocation&type=Code[view on GitHub])
+* https://plugins.jenkins.io/cvs[CVS Plugin]: hudson.+++<wbr/>+++scm.+++<wbr/>+++**CvsRepositoryLocation.+++<wbr/>+++TagRepositoryLocation** (link:https://github.com/jenkinsci/cvs-plugin/search?q=CvsRepositoryLocation.TagRepositoryLocation&type=Code[view on GitHub])
+

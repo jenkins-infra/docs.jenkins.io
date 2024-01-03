@@ -1,0 +1,65 @@
+= CloudEvents plugin for Jenkins
+
+*Project goal:* Be able to listen to and emit cloudevents from Jenkins.
+
+*Skills to study/improve:* Java, Cloudevents sdk, Networking
+
+== Details
+=== Background
+
+As the CI/CD world is moving more towards interoperability between multiple platforms, Jenkins should also be compatible with the same interoperability standards. Some of these standards with respect to communication between different CI/CD platforms are put forth by the CloudEvents specification. This spec outlines the structure of CloudEvents, which are produced or consumed by entities which support it, hence making those entities compatible with other CI/CD platforms which also support them allowing them to work together.
+
+Jenkins currently does not support CloudEvents, making it hard for users to use it with other platforms which support them.
+
+
+==== Project Details
+This project idea proposes to implement a Jenkins plugin which extends the Jenkins to make CloudEvents both discoverable and subscribable. Users should be able to set a global configuration to allow users to subscribe and discover CloudEvents.
+
+The project requires the student to start with plugin development from scratch and then work with understanding how to use the CloudEvents Java SDK to create and read events.
+
+In the beginning, the student can work on understanding the Jenkins plugin development by writing code for creating a simple Build Step which creates a CloudEvent, and from there we can move to the GlobalPluginConfiguration on how Jenkins should listen to the CloudEvents.
+
+
+=== Links
+There are many examples of such documentation on the web:
+
+* link:https://CloudEvents.io/[CloudEvents website]
+* link:https://github.com/CloudEvents/sdk-java[CloudEvents Java SDK]
+
+
+=== Study Links
+* link:https://en.wikipedia.org/wiki/Event-driven_architecture[Event-driven architecture]
+* link:https://www.youtube.com/watch?v=STKCRSUsyP0&t=944s[The many meanings of event driven architecture by Martin Fowler]
+
+
+=== Quick-start
+
+The project requires the student to start with plugin development from scratch and then work with understanding how to use the CloudEvents Java SDK to create and read events.
+
+In the beginning, the student can work on understanding the Jenkins plugin development by writing code for creating a simple Build Step which creates a CloudEvent, and from there we can move to the GlobalPluginConfiguration on how Jenkins should listen to the CloudEvents.
+
+
+=== Skills to improve/study
+* Java
+* Go
+* Networking
+* Jenkins
+
+
+== Potential Mentors 
+
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Vibhav Bobade
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Mauricio Salatino
+
+== Links
+
+* https://app.gitter.im/#/room/#jenkinsci_gsoc-sig:gitter.im[Join chat]
+* xref:gsoc:index.adoc#office-hours[Office Hours]
+* https://docs.google.com/document/d/1xsI6nkEPzXId5npXLrjz3Ydj7jx9Rf8g7SWnTldpeQc/edit#heading=h.f09or9ek462l[Project Idea Draft]
+
+== Organization Links 
+
+* xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
+* xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
+* https://issues.jenkins.io/issues/?jql=project%20%3D%20JENKINS%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20labels%20%3D%20newbie-friendly%20[Newbie-friendly issues] - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+> xref:2021/project-ideas.adoc[Go back to other GSoC 2021 project ideas]

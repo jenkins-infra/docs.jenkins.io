@@ -1,0 +1,15 @@
+= Extension Points defined in Build Alias Setter Plugin
+
+https://plugins.jenkins.io/build-alias-setter[Build Alias Setter Plugin]
+
+== AliasProvider
+
+`jenkinsdoc:build-alias-setter:org.jenkinsci.plugins.buildaliassetter.AliasProvider]`
+
++++ Provide custom aliases to be attached to the build.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/build-alias-setter[Build Alias Setter Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++buildaliassetter.+++<wbr/>+++**TokenMacroAliasProvider** (link:https://github.com/jenkinsci/build-alias-setter-plugin/search?q=TokenMacroAliasProvider&type=Code[view on GitHub])
+

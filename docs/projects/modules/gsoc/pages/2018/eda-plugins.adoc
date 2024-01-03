@@ -1,0 +1,33 @@
+= GSoC 2018. EDA Plugins for Jenkins 
+
+*Goal:*
+
+*Status:* Cancelled (student withdrawn)
+
+== Team
+
+[.avatar]
+*Student*: 
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Udara De Silva
+
+[.avatar]
+*Mentor(s):*
+image:images:ROOT:avatars/martinda.png[,width=30,height=30] Martin d'Anjou
+image:images:ROOT:avatars/oleg_nenashev.png[,width=30,height=30] Oleg Nenashev
+
+
+
+This project will enable Jenkins to be used as a CI platform for ASIC/FPGA designs.
+
+The desired features of a CI platform for IP cores includes reporting gate count, memory(flop) count and coverage.
+These plugins will report these values and incremental changes from last check-in.
+Three plugins will be developed for three EDA tools which will cover the simulation, coverage and synthesis status of the code base.
+
+link:https://docs.google.com/document/d/1-6YeTcaWof5kwTxJ7q6og6Ixly4CwzhH1_ZrBOrbwYk/edit[More info about the project]
+
+== Links 
+
+* image:https://img.shields.io/badge/gitter-Join_Chat-green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_remoting%3Agitter.im[]
+* xref:gsoc:index.adoc#office-hours[Meetings]
+* https://community.jenkins.io/c/contributing/gsoc[Forum]
+* xref:index.adoc[Jenkins GSoC page]

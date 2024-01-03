@@ -1,0 +1,61 @@
+= Build and Run the Plugin
+
+- xref:prepare.adoc[Step 1: Preparing for Plugin Development]
+- xref:create.adoc[Step 2: Create a Plugin]
+- xref:run.adoc[*Step 3: Build and Run the Plugin*]
+- xref:extend.adoc[Step 4: Extend the Plugin]
+
+The Maven HPI Plugin is used to build and package Jenkins plugins.
+It also provides a convenient way to run a Jenkins instance with your plugin:
+
+[source,bash]
+----
+mvn hpi:run
+----
+
+NOTE: You may need to specify a port number for your plugin to use. You can specify a port like this 
+[source,bash]
+----
+mvn hpi:run -Dport=5000
+----
+
+NOTE: To learn more about Maven HPI Plugin and the goals it provides, see link:https://jenkinsci.github.io/maven-hpi-plugin/[its documentation].
+
+This will set up a Jenkins instance on `\http://localhost:8080/jenkins/`. Wait for the following console output, then open a web browser and look at what the plugin does.
+
+[listing]
+INFO: Jenkins is fully up and running
+
+NOTE: The Jenkins home directory used is the `work/` directory in the plugin directory. This means that subsequent runs will keep their data.
+
+Create a new freestyle project in Jenkins, and give it any name.
+
+Then add the "Say hello world" build step. It will look like this:
+
+image::images:ROOT:developer/tutorial/job-config.png[Freestyle job configuration]
+
+Enter a name, save the project, and start a new build. Navigate to the build on the UI, and click _Console Output_ to view the build log.
+It will contain a message written by the build step that was just configured:
+
+[listing]
+----
+Started by user anonymous
+Building in workspace /Users/mrjenkins/demo/work/workspace/testjob
+Hello, Jenkins! // <1>
+Finished: SUCCESS
+----
+<1> The Greeting added by the build step
+
+// TODO This is not present in version 1.2 of the archetype
+//Additionally, the build step has global configuration options. Go to _Manage Jenkins » System_ and you'll see this:
+//
+//image::developer/tutorial/system-config.png[System configuration]
+
+Let's stop Jenkins by pressing `Ctrl-C` (or your system's equivalent) in the terminal.
+
+Next step: xref:extend.adoc[Extend the plugin].
+
+
+== Troubleshooting
+
+NOTE: Anything not working for you? Ask for help in xref:community:chat:index.adoc[chat] or xref:community:mailing-lists:index.adoc[on the jenkinsci-dev mailing list].

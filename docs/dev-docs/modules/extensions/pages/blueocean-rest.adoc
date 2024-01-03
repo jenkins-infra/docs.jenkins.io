@@ -1,0 +1,294 @@
+= Extension Points defined in REST API for Blue Ocean Plugin
+
+https://plugins.jenkins.io/blueocean-rest[REST API for Blue Ocean Plugin]
+
+== AdditionalAnalyticsProperties
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.analytics.AdditionalAnalyticsProperties]`
+
++++ Enhance a request with properties when tracking an analytics event+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++analytics.+++<wbr/>+++**BrowserAndOperatingSystemAnalyticsProperties** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BrowserAndOperatingSystemAnalyticsProperties&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++analytics.+++<wbr/>+++**ServerInfoAdditionalAnalyticsProperties** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=ServerInfoAdditionalAnalyticsProperties&type=Code[view on GitHub])
+
+
+== Analytics
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.analytics.Analytics]`
+
++++ Facade for reporting user analytics+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++analytics.+++<wbr/>+++**AbstractAnalytics** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=AbstractAnalytics&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++analytics.+++<wbr/>+++**KeenAnalyticsImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=KeenAnalyticsImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++analytics.+++<wbr/>+++**NullAnalytics** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=NullAnalytics&type=Code[view on GitHub])
+
+
+== ApiRoutable
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.ApiRoutable]`
+
++++ Marks the REST API endpoints that are exposed by+++ jenkinsdoc:ApiHead] ++++++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-pipeline-editor[Blue Ocean Pipeline Editor Plugin]: io.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++pipeline.+++<wbr/>+++editor.+++<wbr/>+++**PipelineMetadataService** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineMetadataService&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-i18n[i18n for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++i18n.+++<wbr/>+++**BlueI18n** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueI18n&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest[REST API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++analytics.+++<wbr/>+++**AnalyticsRoute** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=AnalyticsRoute&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest[REST API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++model.+++<wbr/>+++**BlueExtensionClassContainer** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueExtensionClassContainer&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest[REST API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++model.+++<wbr/>+++**BlueOrganizationContainer** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueOrganizationContainer&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest[REST API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++model.+++<wbr/>+++**BlueUserContainer** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueUserContainer&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**ExtensionClassContainerImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=ExtensionClassContainerImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**OrganizationContainerImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=OrganizationContainerImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**UserContainerImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=UserContainerImpl&type=Code[view on GitHub])
+
+
+== BlueExtensionClassContainer
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.model.BlueExtensionClassContainer]`
+
++++ Map representation of+++ jenkinsdoc:BlueExtensionClass] +++es+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**ExtensionClassContainerImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=ExtensionClassContainerImpl&type=Code[view on GitHub])
+
+
+== BlueFavoriteResolver
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.factory.BlueFavoriteResolver]`
+
++++ Resolves favorite for a given model object+++ jenkinsdoc:Item] ++++++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++**MultiBranchPipelineImpl.+++<wbr/>+++FavoriteResolverImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=MultiBranchPipelineImpl.FavoriteResolverImpl&type=Code[view on GitHub])
+
+
+== BlueIssueFactory
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.factory.BlueIssueFactory]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-github-pipeline[GitHub Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_github_pipeline.+++<wbr/>+++**GithubIssue.+++<wbr/>+++FactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=GithubIssue.FactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-jira[JIRA Integration for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++jira.+++<wbr/>+++**BlueJiraIssue.+++<wbr/>+++FactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueJiraIssue.FactoryImpl&type=Code[view on GitHub])
+
+
+== BlueOceanConfigFactory
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.factory.BlueOceanConfigFactory]`
+
++++ Blue Ocean configuration factory which allows different extensions to return configuration values.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-config[Config API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++config.+++<wbr/>+++**BlueOceanConfigImpl.+++<wbr/>+++BlueOceanConfigFactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueOceanConfigImpl.BlueOceanConfigFactoryImpl&type=Code[view on GitHub])
+
+
+== BlueOceanUIProvider
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.BlueOceanUIProvider]`
+
++++ BlueOcean UI provider.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++**BlueOceanRootAction.+++<wbr/>+++BlueOceanUIProviderImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueOceanRootAction.BlueOceanUIProviderImpl&type=Code[view on GitHub])
+
+
+== BlueOceanUrlMapper
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.factory.BlueOceanUrlMapper]`
+
++++ Maps Jenkins+++ jenkinsdoc:ModelObject] +++to BlueOcean front end URL+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++**BlueOceanUrlMapperImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueOceanUrlMapperImpl&type=Code[view on GitHub])
+
+
+== BlueOceanUrlObjectFactory
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.factory.BlueOceanUrlObjectFactory]`
+
+++++++ jenkinsdoc:hudson.ExtensionPoint] +++to provide+++ jenkinsdoc:BlueOceanUrlObject] +++for Jenkins model object+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++**BlueOceanUrlObjectFactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueOceanUrlObjectFactoryImpl&type=Code[view on GitHub])
+
+
+== BlueOrganizationContainer
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.model.BlueOrganizationContainer]`
+
++++ Container of BlueOcean+++ jenkinsdoc:BlueOrganization] +++s+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**OrganizationContainerImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=OrganizationContainerImpl&type=Code[view on GitHub])
+
+
+== BluePipelineFactory
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.factory.BluePipelineFactory]`
+
++++ Factory that gives instance of+++ jenkinsdoc:BluePipeline] ++++++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-github-pipeline[GitHub Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_github_pipeline.+++<wbr/>+++**GithubOrganizationFolder.+++<wbr/>+++OrganizationFolderFactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=GithubOrganizationFolder.OrganizationFolderFactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++**BranchImpl.+++<wbr/>+++PipelineFactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BranchImpl.PipelineFactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++**MatrixProjectImpl.+++<wbr/>+++PipelineFactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=MatrixProjectImpl.PipelineFactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++**MultiBranchPipelineImpl.+++<wbr/>+++PipelineFactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=MultiBranchPipelineImpl.PipelineFactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++**OrganizationFolderPipelineImpl.+++<wbr/>+++OrganizationFolderFactory** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=OrganizationFolderPipelineImpl.OrganizationFolderFactory&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++**PipelineImpl.+++<wbr/>+++PipelineFactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineImpl.PipelineFactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**AbstractPipelineImpl.+++<wbr/>+++PipelineFactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=AbstractPipelineImpl.PipelineFactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**FreeStylePipeline.+++<wbr/>+++FactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=FreeStylePipeline.FactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**PipelineFolderImpl.+++<wbr/>+++PipelineFactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineFolderImpl.PipelineFactoryImpl&type=Code[view on GitHub])
+
+
+== BlueRunFactory
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.factory.BlueRunFactory]`
+
++++ Factory that gives instance of+++ jenkinsdoc:BlueRun] ++++++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++**PipelineRunImpl.+++<wbr/>+++FactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineRunImpl.FactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**DefaultRunImpl.+++<wbr/>+++FactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=DefaultRunImpl.FactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**FreeStyleRunImpl.+++<wbr/>+++FactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=FreeStyleRunImpl.FactoryImpl&type=Code[view on GitHub])
+
+
+== BlueTestResultFactory
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.factory.BlueTestResultFactory]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++junit.+++<wbr/>+++**BlueJUnitTestResult.+++<wbr/>+++FactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueJUnitTestResult.FactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/robot[Robot Framework Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++robot.+++<wbr/>+++blueocean.+++<wbr/>+++**BlueRobotTestResult.+++<wbr/>+++FactoryImpl** (link:https://github.com/jenkinsci/robot-plugin/search?q=BlueRobotTestResult.FactoryImpl&type=Code[view on GitHub])
+
+
+== BlueTrendFactory
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.factory.BlueTrendFactory]`
+
++++ Allows extensions to attach+++ jenkinsdoc:BlueTrend] +++data to a+++ jenkinsdoc:BluePipeline] +++for reports and visualization.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++**StageDurationTrend.+++<wbr/>+++FactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=StageDurationTrend.FactoryImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++junit.+++<wbr/>+++**BlueJUnitTrend.+++<wbr/>+++FactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueJUnitTrend.FactoryImpl&type=Code[view on GitHub])
+
+
+== BlueUserContainer
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.model.BlueUserContainer]`
+
++++ User API.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**UserContainerImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=UserContainerImpl&type=Code[view on GitHub])
+
+
+== LinkResolver
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.hal.LinkResolver]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++**LinkResolverImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=LinkResolverImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++**LinkResolverImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=LinkResolverImpl&type=Code[view on GitHub])
+
+
+== OmniSearch
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.OmniSearch]`
+
++++ Extension point to contribute the search capability+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++credential.+++<wbr/>+++**CredentialSearch** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=CredentialSearch&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**PipelineSearch** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineSearch&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**RunSearch** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=RunSearch&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++rest.+++<wbr/>+++**UserSearch** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=UserSearch&type=Code[view on GitHub])
+
+
+== OrganizationFactory
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.factory.organization.OrganizationFactory]`
+
++++ Maps BlueOcean organization and+++ jenkinsdoc:ItemGroup] +++s.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++**OrganizationFactoryImpl** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=OrganizationFactoryImpl&type=Code[view on GitHub])
+
+
+== OrganizationRoute
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.OrganizationRoute]`
+
++++ Route contributing to+++ jenkinsdoc:io.jenkins.blueocean.rest.model.BlueOrganization] +++: url path /organization/:id/:organizationRoute.urlName()+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++credential.+++<wbr/>+++**CredentialContainer** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=CredentialContainer&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++impl.+++<wbr/>+++pipeline.+++<wbr/>+++scm.+++<wbr/>+++**ScmContainer** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=ScmContainer&type=Code[view on GitHub])
+
+
+== RootRoutable
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.RootRoutable]`
+
++++ Additional+++ jenkinsdoc:Routable] +++s that augment+++ jenkinsdoc:BlueOceanUIProvider=getUrlBasePrefix()] +++root object.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-git-pipeline[Git Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++blueocean_git_pipeline.+++<wbr/>+++**RepositoryCloneProgressEndpoint** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=RepositoryCloneProgressEndpoint&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest[REST API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++rest.+++<wbr/>+++**ApiHead** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=ApiHead&type=Code[view on GitHub])
+
+
+== UserRoute
+
+`jenkinsdoc:blueocean-rest:io.jenkins.blueocean.rest.UserRoute]`
+
++++ Route contributing to+++ jenkinsdoc:io.jenkins.blueocean.rest.model.BlueUser] +++: url path /organization/:id/users/:user/:userRoute.urlName()+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-git-pipeline[Git Pipeline for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++ssh.+++<wbr/>+++**UserPublicKeyRoute** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=UserPublicKeyRoute&type=Code[view on GitHub])
+

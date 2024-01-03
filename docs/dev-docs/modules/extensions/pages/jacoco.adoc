@@ -1,0 +1,15 @@
+= Extension Points defined in JaCoCo Plugin
+
+https://plugins.jenkins.io/jacoco[JaCoCo Plugin]
+
+== Rule
+
+`jenkinsdoc:jacoco:hudson.plugins.jacoco.Rule]`
+
++++ Rule object encapsulates the logic to mark+++ jenkinsdoc:CoverageObject] +++s as "failed".+++ +++ Such logic is used to mark builds as unstable when certain condition is met.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/jacoco[JaCoCo Plugin]: hudson.+++<wbr/>+++plugins.+++<wbr/>+++jacoco.+++<wbr/>+++rules.+++<wbr/>+++**LineCoveragePerSourceFileRule** (link:https://github.com/jenkinsci/jacoco-plugin/search?q=LineCoveragePerSourceFileRule&type=Code[view on GitHub])
+

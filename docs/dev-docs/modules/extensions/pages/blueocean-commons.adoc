@@ -1,0 +1,26 @@
+= Extension Points defined in Common API for Blue Ocean Plugin
+
+https://plugins.jenkins.io/blueocean-commons[Common API for Blue Ocean Plugin]
+
+== PageStatePreloader
+
+`jenkinsdoc:blueocean-commons:io.jenkins.blueocean.commons.PageStatePreloader]`
+
++++ Page state "preloader" extension point.+++ +++
+<p>+++ +++ Allows the loading page's JavaScript blueocean global scope to+++ +++ be pre-populated with data that we know the page is going to need, thereby+++ +++ providing a mechanism for eliminating the request overhead for that data.+++</p>
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/blueocean-config[Config API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++config.+++<wbr/>+++**BlueOceanConfigStatePreloader** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueOceanConfigStatePreloader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-config[Config API for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++config.+++<wbr/>+++**JenkinsJSExtensionsStatePreloader** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=JenkinsJSExtensionsStatePreloader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++preload.+++<wbr/>+++**BlueRunChangesetPreloader** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=BlueRunChangesetPreloader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++preload.+++<wbr/>+++**FavoriteListStatePreloader** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=FavoriteListStatePreloader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++preload.+++<wbr/>+++**FavoritesStatePreloader** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=FavoritesStatePreloader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++preload.+++<wbr/>+++**OrganizationStatePreloader** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=OrganizationStatePreloader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++preload.+++<wbr/>+++**PipelineActivityStatePreloader** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineActivityStatePreloader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++preload.+++<wbr/>+++**PipelineBranchRunStatePreloader** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineBranchRunStatePreloader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++preload.+++<wbr/>+++**PipelineStatePreloader** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=PipelineStatePreloader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-pipeline-api-impl[Pipeline implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++preload.+++<wbr/>+++**RESTFetchPreloader** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=RESTFetchPreloader&type=Code[view on GitHub])
+* https://plugins.jenkins.io/blueocean-rest-impl[REST Implementation for Blue Ocean Plugin]: io.+++<wbr/>+++jenkins.+++<wbr/>+++blueocean.+++<wbr/>+++service.+++<wbr/>+++embedded.+++<wbr/>+++**UserStatePreloader** (link:https://github.com/jenkinsci/blueocean-plugin/search?q=UserStatePreloader&type=Code[view on GitHub])
+

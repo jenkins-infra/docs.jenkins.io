@@ -1,0 +1,134 @@
+= Extension Points defined in Kubernetes Plugin
+
+https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]
+
+== InProvisioning
+
+`jenkinsdoc:kubernetes:org.csanchez.jenkins.plugins.kubernetes.InProvisioning]`
+
++++ Collects the Kubernetes agents currently in provisioning.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++**DefaultInProvisioning** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=DefaultInProvisioning&type=Code[view on GitHub])
+
+
+== KubernetesComputerFactory
+
+`jenkinsdoc:kubernetes:org.csanchez.jenkins.plugins.kubernetes.KubernetesComputerFactory]`
+
++++ A factory of+++ jenkinsdoc:KubernetesComputer] +++instances.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== PlannedNodeBuilderFactory
+
+`jenkinsdoc:kubernetes:org.csanchez.jenkins.plugins.kubernetes.PlannedNodeBuilderFactory]`
+
++++ A factory of+++ jenkinsdoc:PlannedNodeBuilder] +++instances.+++
+
+
+**Implementations:**
+
+_(no known implementations)_
+
+
+== PodDecorator
+
+`jenkinsdoc:kubernetes:org.csanchez.jenkins.plugins.kubernetes.pod.decorator.PodDecorator]`
+
++++ Allows to alter a pod definition after it has been built from the yaml and DSL/GUI configuration.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++decorator.+++<wbr/>+++**DefaultNodeSelector** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=DefaultNodeSelector&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++decorator.+++<wbr/>+++**DefaultRestartPolicy** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=DefaultRestartPolicy&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++decorator.+++<wbr/>+++**DefaultWorkspaceVolume** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=DefaultWorkspaceVolume&type=Code[view on GitHub])
+
+
+== PodRetention
+
+`jenkinsdoc:kubernetes:org.csanchez.jenkins.plugins.kubernetes.pod.retention.PodRetention]`
+
++++ <code>PodRetention</code> instances determine if the Kubernetes pod running a Jenkins agent+++ +++ should be deleted after Jenkins terminates the agent.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++retention.+++<wbr/>+++**Always** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=Always&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++retention.+++<wbr/>+++**Default** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=Default&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++retention.+++<wbr/>+++**Never** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=Never&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++retention.+++<wbr/>+++**OnFailure** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=OnFailure&type=Code[view on GitHub])
+
+
+== PodTemplateFilter
+
+`jenkinsdoc:kubernetes:org.csanchez.jenkins.plugins.kubernetes.PodTemplateFilter]`
+
++++ Filters a pod template according to criteria.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++**PodTemplateLabelFilter** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=PodTemplateLabelFilter&type=Code[view on GitHub])
+
+
+== PodTemplateSource
+
+`jenkinsdoc:kubernetes:org.csanchez.jenkins.plugins.kubernetes.PodTemplateSource]`
+
++++ A source of pod templates.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++**KubernetesCloud.+++<wbr/>+++PodTemplateSourceImpl** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=KubernetesCloud.PodTemplateSourceImpl&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pipeline.+++<wbr/>+++**PodTemplateMap.+++<wbr/>+++PodTemplateSourceImpl** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=PodTemplateMap.PodTemplateSourceImpl&type=Code[view on GitHub])
+
+
+== Reaper.+++<wbr/>+++Listener
+
+`jenkinsdoc:kubernetes:org.csanchez.jenkins.plugins.kubernetes.pod.retention.Reaper.Listener]`
+
++++ Listener called when a Kubernetes event related to a Kubernetes agent happens.+++
+
+
+**Implementations:**
+
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++retention.+++<wbr/>+++**Reaper.+++<wbr/>+++RemoveAgentOnPodDeleted** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=Reaper.RemoveAgentOnPodDeleted&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++retention.+++<wbr/>+++**Reaper.+++<wbr/>+++TerminateAgentOnContainerTerminated** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=Reaper.TerminateAgentOnContainerTerminated&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++retention.+++<wbr/>+++**Reaper.+++<wbr/>+++TerminateAgentOnImagePullBackOff** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=Reaper.TerminateAgentOnImagePullBackOff&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++retention.+++<wbr/>+++**Reaper.+++<wbr/>+++TerminateAgentOnPodFailed** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=Reaper.TerminateAgentOnPodFailed&type=Code[view on GitHub])
+
+
+== TemplateEnvVar
+
+`jenkinsdoc:kubernetes:org.csanchez.jenkins.plugins.kubernetes.model.TemplateEnvVar]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++**ContainerEnvVar** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=ContainerEnvVar&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++model.+++<wbr/>+++**KeyValueEnvVar** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=KeyValueEnvVar&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++**PodEnvVar** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=PodEnvVar&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++model.+++<wbr/>+++**SecretEnvVar** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=SecretEnvVar&type=Code[view on GitHub])
+
+
+== YamlMergeStrategy
+
+`jenkinsdoc:kubernetes:org.csanchez.jenkins.plugins.kubernetes.pod.yaml.YamlMergeStrategy]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++yaml.+++<wbr/>+++**Merge** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=Merge&type=Code[view on GitHub])
+* https://plugins.jenkins.io/kubernetes[Kubernetes Plugin]: org.+++<wbr/>+++csanchez.+++<wbr/>+++jenkins.+++<wbr/>+++plugins.+++<wbr/>+++kubernetes.+++<wbr/>+++pod.+++<wbr/>+++yaml.+++<wbr/>+++**Overrides** (link:https://github.com/jenkinsci/kubernetes-plugin/search?q=Overrides&type=Code[view on GitHub])
+

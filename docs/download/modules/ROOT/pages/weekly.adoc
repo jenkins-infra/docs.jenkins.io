@@ -1,0 +1,48 @@
+= Weekly Release Line
+
+The Jenkins _Weekly Release Line_ delivers bug fixes and new features rapidly to users and plugin developers who need them.
+These releases are generally delivered on a weekly cadence, hence the name.
+For more conservative users, there is also a 
+https://www.jenkins.io/download/lts[Long-Term Support (LTS)] line.
+
+== Model
+
+The "weekly" release cadence is **aspirational**.
+Generally we target releasing Jenkins every week, but sometimes we do out-of-order releases.
+To get notifications about new releases, it is possible to subscribe to link:/changelog/rss.xml[releases RSS feed].
+
+Conditions for new releases of the _Weekly Release Line_:
+
+* **Regular releases** with all features, improvements, and bug fixes integrated since the last release.
+** Currently these releases happen on a weekly basis on Tuesdays.
+* **Security releases** for the Jenkins core (see the xref:security:ROOT:index.adocJenkins Security] page).
+** We coordinate Jenkins Weekly and LTS releases so that the vulnerabilities are fixed at the same time in all release lines.
+   Jenkins security team sends notifications about upcoming security releases to xref:security:ROOT:index.adoc#advisories[Jenkins Security Advisory Channels].
+** Usually these releases happen on Wednesdays.
+   If we release security updates on Wednesday, there will be no regular release the day before.
+   xref:security:ROOT:scheduling.adoc[Learn more about how we schedule security advisories].
+* **Out-of-order releases** in the case of major regressions and/or other reasons.
+
+Weekly releases are managed by Jenkins core maintainers
+who review the suggested pull requests, integrate changes and deliver the releases.
+The team also manages link:/changelog[changelogs] and the LTS backporting process.
+See link:https://github.com/jenkinsci/jenkins/blob/master/docs/MAINTAINERS.adoc[this page] for more information about Jenkins core maintenance.
+
+== No Backporting
+
+Unlike for the LTS line,
+there is no backporting process for the _Weekly Release Line_.
+Bug fixes, including fixes for regressions will be integrated towards the next release.
+While that release may be expedited (see out-of-order releases above), there won't be patches for previous releases.
+
+== Switching Between Release Lines
+
+It is possible to switch between Jenkins Weekly and LTS release lines when needed.
+See the documentation xref:download:ROOT:lts.adoc#switching-between-release-lines[here].
+
+.References
+****
+* link:/changelog[Jenkins Weekly Release changelog]
+* https://www.jenkins.io/download/lts[Long-Term Support (LTS) Release Line]
+* xref:security:ROOT:index.adocJenkins Security Process]
+****

@@ -1,0 +1,16 @@
+= Extension Points defined in Environment Injector Plugin
+
+https://plugins.jenkins.io/envinject[Environment Injector Plugin]
+
+== EnvInjectJobPropertyContributor
+
+`jenkinsdoc:envinject:org.jenkinsci.plugins.envinject.model.EnvInjectJobPropertyContributor]`
+
+_This extension point has no Javadoc documentation._
+
+**Implementations:**
+
+* https://plugins.jenkins.io/ontrack[ontrack Jenkins Plugin]: net.+++<wbr/>+++nemerosa.+++<wbr/>+++ontrack.+++<wbr/>+++jenkins.+++<wbr/>+++**OntrackDSLEnvInjectJobPropertyContributor** (link:https://github.com/jenkinsci/ontrack-plugin/search?q=OntrackDSLEnvInjectJobPropertyContributor&type=Code[view on GitHub])
+* https://plugins.jenkins.io/shared-objects[Shared Objects Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++sharedobjects.+++<wbr/>+++**SharedObjectJobProperty** (link:https://github.com/jenkinsci/shared-objects-plugin/search?q=SharedObjectJobProperty&type=Code[view on GitHub])
+* https://plugins.jenkins.io/shared-objects[Shared Objects Plugin]: org.+++<wbr/>+++jenkinsci.+++<wbr/>+++plugins.+++<wbr/>+++sharedobjects.+++<wbr/>+++**ToolInstallationJobProperty** (link:https://github.com/jenkinsci/shared-objects-plugin/search?q=ToolInstallationJobProperty&type=Code[view on GitHub])
+
