@@ -1,11 +1,12 @@
-# Antora Documentation
+= Antora Documentation
 
 * User documentation
 * Developer documentation
 * Tutorials
 
-## File Structure
-```
+== File Structure
+[source,bash]
+----
 ├── dev-docs                
 │ ├── antora.yml
 │ └── modules
@@ -37,8 +38,9 @@
 └── user-docs
     ├── antora.yml
     └── modules
-```
+----
 
-`images` contains all the globally used images.
-* To reference the images like avatars follow this format {avatars}name-of-image-file.extension
-make sure to get the correct extension like JPG and JPEG.
+Note: `images` contains all the globally used images.
+
+* To reference the images like avatars follow the format {avatars}name-of-image-file.extension. 
+* Make sure to get the correct extension like JPG and JPEG.
