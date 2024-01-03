@@ -25,3 +25,7 @@ antora:
 clean:
 	rm -rf ui/build
 	rm -rf playbook/build
+
+# Show this help message.
+help:
+	@awk '/^#/{c=substr($$0,3);next}c&&/^[[:alpha:]][[:alnum:]_-]+:/{print substr($$1,1,index($$1,":")),c}1{c=0}' $(MAKEFILE_LIST) | column -s: -t | sort
