@@ -1,6 +1,5 @@
 = Using JMeter with Jenkins
 
-
 There are several advantages to using JMeter and Jenkins together.
 Continuous integration and test automation have become standards in the DevOps world, but the performance levels and system complexity are constantly increasing.
 

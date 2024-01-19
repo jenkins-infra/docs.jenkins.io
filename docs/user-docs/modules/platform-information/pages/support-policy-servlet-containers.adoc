@@ -49,7 +49,8 @@ a|
 |===
 
 .References
-***** xref:installing-jenkins:servlet-containers.adoc[Installation instructions]
+****
+* xref:installing-jenkins:servlet-containers.adoc[Installation instructions]
 * link:https://www.eclipse.org/jetty/[Jetty versions]
 * link:https://tomcat.apache.org/whichversion.html[Tomcat versions]
 * link:https://www.wildfly.org/news/2022/11/09/WildFly27-Final-Released/[WildFly 27 release announcement]

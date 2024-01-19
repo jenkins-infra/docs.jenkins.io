@@ -1,4 +1,6 @@
 .xref:index.adoc[]
+* xref:best-practices.adoc[]
+* xref:working-with-projects.adoc[]
 * xref:using-credentials.adoc[]
 * xref:searchbox.adoc[]
 * xref:referencing-another-project-by-name.adoc[]
@@ -8,7 +10,6 @@
 * xref:change-time-zone.adoc[]
 * xref:remote-api.adoc[]
 * xref:executor-starvation.adoc[]
-
 * xref:using-agents.adoc[]
-
 * xref:using-jmeter-with-jenkins.adoc[]
+* xref:pluggable-storage.adoc[]
