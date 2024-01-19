@@ -44,18 +44,18 @@ video::gQKbJoNbTpA[youtube, width=640, height=360, align="center"]
 +++ <details><summary> +++
 Jenkins Contributor Summit, 2018:
 +++ </summary><div> +++
-image:images:ROOT:conferences/contributor_summit_sf.jpg[Jenkins Contributor Summit, 2018, role=center]
+image::images:ROOT:conferences/contributor_summit_sf.jpg[Jenkins Contributor Summit, 2018, role=center]
 +++ </div></details> +++
 
 +++ <details><summary> +++
 Jenkins World | DevOps World, 2019:
 +++ </summary><div> +++
-image:images:ROOT:post-images/jenkinsworld2019/1D5_1376.jpg[Jenkins World 2019, role=center]
-image:images:ROOT:post-images/role-strategy-performance/dwjw-16.jpg[Jenkins World 2019 - Ask the experts, role=center]
+image::images:ROOT:post-images/jenkinsworld2019/1D5_1376.jpg[Jenkins World 2019, role=center]
+image::images:ROOT:post-images/role-strategy-performance/dwjw-16.jpg[Jenkins World 2019 - Ask the experts, role=center]
 +++ </div></details> +++
 
 +++ <details><summary> +++
 Tolouse Jenkins Area Meetup 2017:
 +++ </summary><div> +++
-image:images:ROOT:post-images/2017-03-toulousejam-workshop/workshop-overview-3.jpg[Tolouse JAM 2017, role=center]
+image::images:ROOT:post-images/2017-03-toulousejam-workshop/workshop-overview-3.jpg[Tolouse JAM 2017, role=center]
 +++ </div></details> +++
