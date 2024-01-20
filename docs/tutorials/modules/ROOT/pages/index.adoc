@@ -13,7 +13,7 @@ Jenkins, then these tutorials are a great place to start.
 [#getting-started]
 == Getting started with Jenkins
 
-* xref:user-docs:pipeline:getting-started.adoc[Guided Tour to Jenkins]
+* xref:user-docs:pipeline:tour/getting-started.adoc[Guided Tour to Jenkins]
 
 [#pipeline]
 == Pipeline
