@@ -9,13 +9,13 @@ See the xref:projects:gsoc:index.adoc[main GSoC page] for the actual information
 All seven projects have been successfully completed in 2020.
 You can find the project information on the project pages:
 
-* xref:projects:gsoc:2020/projects/custom-jenkins-distribution-build-service.adoc[Custom Jenkins distribution build service] by link:/blog/authors/sladyn98[Sladyn Nunes]
-* xref:projects:gsoc:2020/projects/external-fingerprint-storage.adoc[External Fingerprint Storage] by link:/blog/authors/stellargo[Sumit Sarin]
-* xref:projects:gsoc:2020/projects/git-plugin-performance.adoc[Git Plugin Performance Improvements] by link:/blog/authors/rishabhbudhouliya[Rishabh Budhouliya]
-* xref:projects:gsoc:2020/projects/github-checks.adoc[GitHub Checks API for Jenkins Plugins] by link:/blog/authors/XiongKezhi[Kezhi Xiong]
-* xref:projects:gsoc:2020/projects/jenkins-x-apps-consolidation.adoc[Jenkins X: Apps/Addons consolidation] by link:/blog/authors/nodece[Zixuan Liu]
-* xref:projects:gsoc:2020/projects/machine-learning.adoc[Machine Learning Plugins for Data Science] by link:/blog/authors/loghijiaha[Loghi Perinpanayagam]
-* xref:projects:gsoc:2020/projects/winsw-yaml-configs.adoc[Jenkins Windows Services: YAML Configuration Support] by link:/blog/authors/buddhikac96[Buddhika Chathuranga]
+* xref:projects:gsoc:2020/projects/custom-jenkins-distribution-build-service.adoc[Custom Jenkins distribution build service] by link:https://www.jenkins.io/blog/authors/sladyn98[Sladyn Nunes]
+* xref:projects:gsoc:2020/projects/external-fingerprint-storage.adoc[External Fingerprint Storage] by link:https://www.jenkins.io/blog/authors/stellargo[Sumit Sarin]
+* xref:projects:gsoc:2020/projects/git-plugin-performance.adoc[Git Plugin Performance Improvements] by link:https://www.jenkins.io/blog/authors/rishabhbudhouliya[Rishabh Budhouliya]
+* xref:projects:gsoc:2020/projects/github-checks.adoc[GitHub Checks API for Jenkins Plugins] by link:https://www.jenkins.io/blog/authors/XiongKezhi[Kezhi Xiong]
+* xref:projects:gsoc:2020/projects/jenkins-x-apps-consolidation.adoc[Jenkins X: Apps/Addons consolidation] by link:https://www.jenkins.io/blog/authors/nodece[Zixuan Liu]
+* xref:projects:gsoc:2020/projects/machine-learning.adoc[Machine Learning Plugins for Data Science] by link:https://www.jenkins.io/blog/authors/loghijiaha[Loghi Perinpanayagam]
+* xref:projects:gsoc:2020/projects/winsw-yaml-configs.adoc[Jenkins Windows Services: YAML Configuration Support] by link:https://www.jenkins.io/blog/authors/buddhikac96[Buddhika Chathuranga]
 
 == Demos and results
 
@@ -33,10 +33,10 @@ and they are not public unless referenced from the project pages.
 == Org admins
 
 GSoC Organization admins in 2020:
-link:/blog/authors/martinda[Martin d'Anjou],
-link:/blog/authors/markyjackson-taulia/[Marky Jackson],
-link:/blog/authors/oleg_nenashev[Oleg Nenashev],
-link:/blog/authors/marckk[Kara de la Marck].
+link:https://www.jenkins.io/blog/authors/martinda[Martin d'Anjou],
+link:https://www.jenkins.io/blog/authors/markyjackson-taulia/[Marky Jackson],
+link:https://www.jenkins.io/blog/authors/oleg_nenashev[Oleg Nenashev],
+link:https://www.jenkins.io/blog/authors/marckk[Kara de la Marck].
 
 Jenkins Org Admins mailing list: `jenkins-gsoc2020-org-admins@googlegroups.com`.
 Use this mailing list if you need to discuss something privately with org admins, such as communication difficulties

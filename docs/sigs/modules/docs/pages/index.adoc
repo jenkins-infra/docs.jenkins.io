@@ -66,7 +66,7 @@ The group focuses on documentation for Jenkins, including:
 * xref:user-docs:ROOT:index.adoc[User documentation] - Using Jenkins
 ** xref:tutorials:ROOT:index.adoc[Tutorials]
 ** xref:user-docs:ROOT:index.adoc[User Handbook]
-** References like xref:user-docs:pipeline:syntax.adoc[Pipeline Syntax] and link:/doc/pipeline/steps/[Pipeline Steps]
+** References like xref:user-docs:pipeline:syntax.adoc[Pipeline Syntax] and link:https://www.jenkins.io/doc/pipeline/steps/[Pipeline Steps]
 ** xref:dev-docs:publishing:index.adoc#how-to-guides[How-to Guides]
 * xref:dev-docs:ROOT:index.adoc[Developer documentation] - Extending Jenkins
 ** xref:dev-docs:plugin-tutorial:index.adoc[Tutorials]
@@ -80,8 +80,8 @@ For example, we cooperate with the xref:platform:index.adoc[Platform SIG] on pla
 s
 == Topics
 
-* Reviewing link:/changelog/[weekly changelogs]
-* Creating and reviewing link:/changelog-stable/[LTS changelogs] and link:/doc/upgrade-guide/[LTS upgrade guides]
+* Reviewing link:https://www.jenkins.io/changelog/[weekly changelogs]
+* Creating and reviewing link:https://www.jenkins.io/changelog-stable/[LTS changelogs] and link:https://www.jenkins.io/doc/upgrade-guide/[LTS upgrade guides]
 * Creating new documentation
 * Improving existing documentation
 * Reviewing documentation contributions
@@ -123,7 +123,7 @@ It is also a great opportunity to update and copy-edit the documentation.
 
 Useful links:
 
-* link:/blog/2019/10/21/plugin-docs-on-github/[Documentation migration guidelines blog post]
+* link:https://www.jenkins.io/blog/2019/10/21/plugin-docs-on-github/[Documentation migration guidelines blog post]
 * {jira}JENKINS-59467[Template issue for plugin documentation migration to GitHub]
 * link:https://groups.google.com/forum/#!topic/jenkinsci-dev/VSdfVMDIW-A[Announcement in the developer mailing list]
 * xref:dev-docs:publishing:documentation.adoc#plugin-pages[Using GitHub as a source of plugin documentation]

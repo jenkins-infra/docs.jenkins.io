@@ -18,6 +18,6 @@ While not complete replacements for Blue Ocean, contributions are encouraged fro
 The xref:user-docs:pipeline:getting-started.adoc#snippet-generator[Pipeline syntax snippet generator] assists users as they define Pipeline steps with their arguments.
 It is the preferred tool for Jenkins Pipeline creation, as it provides online help for the Pipeline steps available in your Jenkins controller.
 It uses the plugins installed on your Jenkins controller to generate the Pipeline syntax.
-Refer to the link:/doc/pipeline/steps/[Pipeline steps reference] page for information on all available Pipeline steps.
+Refer to the link:https://www.jenkins.io/doc/pipeline/steps/[Pipeline steps reference] page for information on all available Pipeline steps.
 
 ====

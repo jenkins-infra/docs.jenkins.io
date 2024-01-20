@@ -34,18 +34,18 @@ Belgium +
 
 Who's attending:
 
-* @link:/blog/authors/kohsuke/[
+* @link:https://www.jenkins.io/blog/authors/kohsuke/[
 (kohsuke)] (attendance, organizing)
-* link:/blog/authors/rtyler/[@R. Tyler Croy] (attendance,
+* link:https://www.jenkins.io/blog/authors/rtyler/[@R. Tyler Croy] (attendance,
 organizing)
-* link:/blog/authors/alyssat[(atong)]
+* link:https://www.jenkins.io/blog/authors/alyssat[(atong)]
 (attendance, organizing)
-* link:/blog/authors/markewaite[(markewaite)]
+* link:https://www.jenkins.io/blog/authors/markewaite[(markewaite)]
 (attendance, organizing)
-* link:/blog/authors/daniel-beck/[(danielbeck)]
-* link:/blog/authors/batmat[(batmat)]
-* link:/blog/authors/jglick[(jglick)]
-* link:/blog/authors/olblak[
+* link:https://www.jenkins.io/blog/authors/daniel-beck/[(danielbeck)]
+* link:https://www.jenkins.io/blog/authors/batmat[(batmat)]
+* link:https://www.jenkins.io/blog/authors/jglick[(jglick)]
+* link:https://www.jenkins.io/blog/authors/olblak[
 (olblak)] (attendance, organizing)
 
 [#FOSDEM2018-Jenkinsmerchandise]

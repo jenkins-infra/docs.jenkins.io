@@ -58,7 +58,7 @@ You can contribute to the security of Jenkins and its plugin ecosystem even with
   Plugin maintainers may be unaware of our process, so this helps ensure all security updates are properly announced.
 * Document security best practices for Jenkins administrators and Jenkins developers.
 * As a Jenkins developer, develop features and improvements that help admins secure their instance.
-  link:/security/improvements/[Check out these improvements delivered by security team members over the years.]
+  link:https://www.jenkins.io/security/improvements/[Check out these improvements delivered by security team members over the years.]
 * As a plugin maintainer:
 ** Be responsive when contacted by the security team.
 ** Consider the security impact of features and improvements you consider adding.

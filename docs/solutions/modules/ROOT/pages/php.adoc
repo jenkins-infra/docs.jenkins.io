@@ -175,7 +175,7 @@ file (`phpcs.xml`):
 ----
 
 You can then fine-tune the failure conditions using the
-link:/doc/pipeline/steps/warnings-ng/[Warnings-NG pipeline configuration]
+link:https://www.jenkins.io/doc/pipeline/steps/warnings-ng/[Warnings-NG pipeline configuration]
 
 ==== Results Caching
 

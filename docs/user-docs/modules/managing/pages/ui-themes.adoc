@@ -34,7 +34,7 @@ See the plugin documentation for the detailed usage guidelines and links to samp
 === Customizing the login screen
 
 Since Jenkins 2.128 themes configured using Simple Theme Plugin do not allow you to customize the login screen
-(link:/blog/2018/06/27/new-login-page/[announcement]).
+(link:https://www.jenkins.io/blog/2018/06/27/new-login-page/[announcement]).
 To customize the login screen you can install the {plugin}login-theme[Login Theme Plugin].
 
 
@@ -46,14 +46,14 @@ The Jenkins core, plugins and other component updates may break theme compatibil
 At the moment, the Jenkins project does not provide specification for layouts/CSS,
 and we cannot guarantee backward or forward compatibility.
 We try to reflect major changes in changelogs
-(e.g. see the ‘developer’ changes in the link:/changelog/[Jenkins changelog]),
+(e.g. see the ‘developer’ changes in the link:https://www.jenkins.io/changelog/[Jenkins changelog]),
 but minor changes may not be included there.
 
 === Why?
 
 There is an ongoing effort focused on improving Jenkins look-and-feel, accessibility, and user experience.
 This area is mission-critical to the project.
-There are multiple initiatives in the link:/project/roadmap/[Jenkins Roadmap] being coordinated by the xref:sigs:ux:index.adoc[Jenkins User Experience SIG].
+There are multiple initiatives in the link:https://www.jenkins.io/project/roadmap/[Jenkins Roadmap] being coordinated by the xref:sigs:ux:index.adoc[Jenkins User Experience SIG].
 
 Major UI changes imply incompatible changes in layouts and the CSS structure which is critical for theme plugins.
 Historically Jenkins had no explicit support policy for themes,

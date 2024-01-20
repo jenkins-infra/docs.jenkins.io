@@ -13,7 +13,7 @@ Unfortunately, as of Jenkins 2.372, the Jenkins classic UI is not yet compatible
 
 This guide documents how to identify components that will be incompatible with CSP rules and how to write and adapt UI code in a manner that is expected to be compatible with future use of CSP directives on the Jenkins UI.
 
-NOTE: Most of this page focuses on problems caused by the `script-src` CSP directive as that is the most common issue across Jenkins plugins and non-compliant code is most likely to result in link:/blog/2020/07/15/xss-severity/[severe vulnerabilities].
+NOTE: Most of this page focuses on problems caused by the `script-src` CSP directive as that is the most common issue across Jenkins plugins and non-compliant code is most likely to result in link:https://www.jenkins.io/blog/2020/07/15/xss-severity/[severe vulnerabilities].
 
 
 == Statically Identifying Affected Code and Plugins

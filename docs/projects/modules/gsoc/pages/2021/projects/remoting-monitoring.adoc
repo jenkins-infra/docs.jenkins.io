@@ -57,7 +57,7 @@ Which OpenTelemetry endpoint to use and how to visualize the data are up to user
 User survey::
 
 Our team conducted a user survey to understand the pain point regarding the Jenkins Remoting.
-Please see the link:/blog/2021/07/31/remoting-monitoring-phase-1/#user-survey[User survey section]
+Please see the link:https://www.jenkins.io/blog/2021/07/31/remoting-monitoring-phase-1/#user-survey[User survey section]
 in the phase 1 blog post for details.
 
 Proof of Concept::
@@ -71,7 +71,7 @@ image:images:ROOT:post-images/2021-07-31-remoting-monitoring-phase-1/install-mon
 
 +
 Then, I decided to take the second approach.
-Please see link:/blog/2021/07/31/remoting-monitoring-phase-1/#how-to-deliver-the-monitoring-program-to-agents[the relevant section]
+Please see link:https://www.jenkins.io/blog/2021/07/31/remoting-monitoring-phase-1/#how-to-deliver-the-monitoring-program-to-agents[the relevant section]
 in the phase 1 blog post for details.
 
 +
@@ -92,7 +92,7 @@ Metrics::
 We implemented a feature to collect general metrics (e.g., System CPU load, JVM memory usage)
 and export them to an OTLP endpoint.
 The list of metric types collected in the phase1 is listed
-link:/blog/2021/07/31/remoting-monitoring-phase-1/#metrics[here].
+link:https://www.jenkins.io/blog/2021/07/31/remoting-monitoring-phase-1/#metrics[here].
 
 == Phase 2 summary.
 

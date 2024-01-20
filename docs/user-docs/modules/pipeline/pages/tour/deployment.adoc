@@ -145,7 +145,7 @@ configured to handle practically _any_ aspect of automation. To learn more
 about what Jenkins can do, check out the
 xref:user-docs:ROOT:index.adoc[User Handbook],
 or the
-link:/node[Jenkins blog] for the latest events, tutorials, and updates.
+link:https://www.jenkins.io/node[Jenkins blog] for the latest events, tutorials, and updates.
 
 '''
 ////

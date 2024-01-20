@@ -17,7 +17,7 @@ image:images:ROOT:avatars/markewaite.jpg[,width=30,height=30] Mark Waite
 
 == Abstract
 
-This project aims to improve the link:/doc/pipeline/steps/[Pipeline Steps Reference] that is generated automatically with the help of the plugin manager associated with a mock Jenkins instance. The improvements will lead to a smoother user experience and better usability of the generated documentation.
+This project aims to improve the link:https://www.jenkins.io/doc/pipeline/steps/[Pipeline Steps Reference] that is generated automatically with the help of the plugin manager associated with a mock Jenkins instance. The improvements will lead to a smoother user experience and better usability of the generated documentation.
 
 == Rationale
 
@@ -54,5 +54,5 @@ Apart from these changes, minor changes will be done to refactor the code and re
 * https://github.com/jenkins-infra/pipeline-metadata-utils/[Pipeline Metadata Utils Repository]
 * https://github.com/jenkins-infra/jenkins.io/[Website Repository]
 * https://github.com/jenkins-infra/pipeline-steps-doc-generator/[Steps Generator Repository]
-* link:/doc/pipeline/steps/[Pipeline Steps Reference]
+* link:https://www.jenkins.io/doc/pipeline/steps/[Pipeline Steps Reference]
 * https://www.figma.com/file/r5GwVJBaL6XdR4dBJZlNIM/Layout-Improvements?node-id=5%3A3[Website Wireframes]

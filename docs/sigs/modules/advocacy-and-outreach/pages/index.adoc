@@ -102,7 +102,7 @@ and to reach out to content creators to facilitate cleanup of old terminology.
 ****
 * https://community.jenkins.io/t/jenkins-terminology-cleanup-initiative-coordination/180[Contributing to the initiative and discussion] - 
   contributing guidelines and issue links are there
-* https://cd.foundation/blog/2020/08/25/jenkins-terminology-changes/[Jenkins Terminology Updates] by link:/blog/authors/slide_o_mix[Alex Earl], CDF Blog, August 2021
+* https://cd.foundation/blog/2020/08/25/jenkins-terminology-changes/[Jenkins Terminology Updates] by link:https://www.jenkins.io/blog/authors/slide_o_mix[Alex Earl], CDF Blog, August 2021
 * https://inclusivenaming.org/[Inclusive Naming Initiative] - global initiative focused on 
   helping projects and companies make consistent, responsible choices to remove harmful language.
 ****

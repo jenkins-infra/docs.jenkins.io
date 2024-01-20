@@ -209,7 +209,7 @@ project.setScm(new ExtractResourceSCM(getClass().getResource("files-and-folders.
 
 Pipeline projects don't have the concept of a single SCM, like Freestyle projects do, but offer a variety of ways to places files into a workspace.
 
-At its most simple, you can use the link:/doc/pipeline/steps/workflow-basic-steps/#writefile-write-file-to-workspace[`writeFile`] step from the {plugin}workflow-basic-steps[Pipeline: Basic Steps plugin]. For example:
+At its most simple, you can use the link:https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/#writefile-write-file-to-workspace[`writeFile`] step from the {plugin}workflow-basic-steps[Pipeline: Basic Steps plugin]. For example:
 
 [source,java]
 ----
@@ -229,7 +229,7 @@ At its most simple, you can use the link:/doc/pipeline/steps/workflow-basic-step
 ----
 <1> The `node` allocates a workspace on an agent, so that we have somewhere to write files to.
 
-Alternatively, you can use the link:/doc/pipeline/steps/pipeline-utility-steps/#unzip-extract-zip-file[`unzip`] step from the {plugin}pipeline-utility-steps[Pipeline Utility Steps plugin] to copy multiple files and folders into the workspace.
+Alternatively, you can use the link:https://www.jenkins.io/doc/pipeline/steps/pipeline-utility-steps/#unzip-extract-zip-file[`unzip`] step from the {plugin}pipeline-utility-steps[Pipeline Utility Steps plugin] to copy multiple files and folders into the workspace.
 
 First, add the plugin to your POM as a test dependency — you can find the `groupId` and `artifactId` values in the link:https://github.com/jenkinsci/pipeline-utility-steps-plugin/blob/master/pom.xml[plugin POM]:
 [source,xml]
@@ -490,7 +490,7 @@ link:https://openjdk.java.net/projects/code-tools/jmh/[Java Microbenchmark Harne
 
 To use them in your plugin, please find documentation here:
 
-* link:/blog/2019/06/21/performance-testing-jenkins/[Blog post on running benchmarks]
+* link:https://www.jenkins.io/blog/2019/06/21/performance-testing-jenkins/[Blog post on running benchmarks]
 * link:https://github.com/jenkinsci/jenkins-test-harness/blob/master/docs/jmh-benchmarks.adoc[Creating Benchmarks]
 * link:https://github.com/jenkinsci/configuration-as-code-plugin/blob/master/docs/benchmarks/jmh-benchmarks.md[Using Configuration As Code to set up benchmarks]
 * link:https://github.com/jenkinsci/plugin-pom#running-benchmarks[Maven profile that runs benchmarks]

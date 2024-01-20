@@ -57,7 +57,7 @@ harvest results and reports.
 ** archiveArtifacts section
 * Basic interface to parse and get build specifications from YAML file.
 
-link:/blog/2018/06/15/simple-pull-request-plugin/[Phase 1 Blog Post](June 15, 2018)
+link:https://www.jenkins.io/blog/2018/06/15/simple-pull-request-plugin/[Phase 1 Blog Post](June 15, 2018)
 link:https://www.youtube.com/watch?v=qWHM8S0fzUw[Phase 1 Presentation video](June 14, 2018)
 link:https://speakerdeck.com/gautamabhishek46/simple-pull-request-plugin-gsoc-2018-phase-1-evaluation[Phase 1 Presentation Slides](June 14, 2018)
 
@@ -67,12 +67,12 @@ link:https://speakerdeck.com/gautamabhishek46/simple-pull-request-plugin-gsoc-20
 ** Limitations:
 *** Difficulty with Enums (Resolved now by JCasC plugin developers)
 *** Difficulty with “JiraTestDataPublisher.class” and may be other classes
-* A format for “Jenkinsfile.yaml”. (All details present in link:/blog/2018/07/17/simple-pull-request-plugin/[Phase 2 Blog Post])
+* A format for “Jenkinsfile.yaml”. (All details present in link:https://www.jenkins.io/blog/2018/07/17/simple-pull-request-plugin/[Phase 2 Blog Post])
 * Tools property in agent section of Jenkinsfile.yaml.
 * Some tests for the plugin.
 * Documentation for yaml examples written
 
-link:/blog/2018/07/17/simple-pull-request-plugin/[Phase 2 Blog Post](July 17, 2018)
+link:https://www.jenkins.io/blog/2018/07/17/simple-pull-request-plugin/[Phase 2 Blog Post](July 17, 2018)
 link:https://www.youtube.com/watch?v=tuTODhJOTBU&t=3229s[Phase 2 Presentation video](July 12, 2018)
 link:https://www.slideshare.net/AbhishekGautam185/yaml-as-pipeline-gsoc-218-phase-2-evaluation[Phase 2 Presentation Slides](July 12, 2018)
 
@@ -86,7 +86,7 @@ link:https://www.slideshare.net/AbhishekGautam185/yaml-as-pipeline-gsoc-218-phas
 * Unit tests were written for extensions.
 * Documentation improved.
 
-link:/blog/2018/08/14/simple-pull-request-plugin-final-evaluation/[Phase 3 Blog Post]
+link:https://www.jenkins.io/blog/2018/08/14/simple-pull-request-plugin-final-evaluation/[Phase 3 Blog Post]
 link:https://www.youtube.com/watch?v=GGEtN4nbtng[Phase 3 Presentation video](August 13, 2018)
 link:https://speakerdeck.com/gautamabhishek46/yaml-as-pipeline-gsoc-2108-phase-3-evaluation[Phase 3 Presentation Slides](August 13, 2018)
 

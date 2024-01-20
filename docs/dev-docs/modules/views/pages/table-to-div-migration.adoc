@@ -14,7 +14,7 @@ The vast majority of plugins do not require any changes at all because they use 
 
 If you are experiencing configuration form problems (e.g., form controls not working, the save button not working, etc.):
 
-. Verify that you followed the instructions in the link:/doc/upgrade-guide/2.277/#upgrading-to-jenkins-lts-2-277-1[Jenkins 2.277.1 upgrade guide], including updating plugins after installing Jenkins 2.277.1.
+. Verify that you followed the instructions in the link:https://www.jenkins.io/doc/upgrade-guide/2.277/#upgrading-to-jenkins-lts-2-277-1[Jenkins 2.277.1 upgrade guide], including updating plugins after installing Jenkins 2.277.1.
 . Refer to the link:https://issues.jenkins.io/secure/Dashboard.jspa?selectPageId=20741[known broken plugins dashboard]; if you are using a plugin that is known to be broken, disable it and upvote the issue.
 . Disable any plugins that are no longer in use, particularly if those plugins are https://github.com/jenkins-infra/update-center2/blob/master/resources/artifact-ignores.properties[no longer distributed on the Jenkins update site] (including Team Foundation Server and Perforce).
 

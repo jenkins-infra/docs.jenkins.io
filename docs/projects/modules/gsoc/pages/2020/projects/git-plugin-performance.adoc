@@ -49,8 +49,8 @@ Here is the link:https://github.com/jenkinsci/git-client-plugin/pull/521[PR-521]
 
 The graphical results for various benchmarks performed throughout the projects are present in: +
 
-  * link:/blog/2020/07/09/git-performance-improvement-phase1/#benchmarks[Git fetch benchmark analysis]
-  * link:/blog/2020/07/29/git-performance-improvement-phase2/#jmh-benchmarks-in-multiple-environments[Benchmarks in multiple environments]
+  * link:https://www.jenkins.io/blog/2020/07/09/git-performance-improvement-phase1/#benchmarks[Git fetch benchmark analysis]
+  * link:https://www.jenkins.io/blog/2020/07/29/git-performance-improvement-phase2/#jmh-benchmarks-in-multiple-environments[Benchmarks in multiple environments]
 
 == Performance enhancement in the checkout step
 
@@ -80,7 +80,7 @@ image:images:ROOT:post-images/gsoc-git-performance-improvement/git-perf-improv.p
   - link:https://github.com/jenkinsci/git-client-plugin/pull/556[Optimising benchmarks module]
   - link:https://github.com/jenkinsci/git-plugin/pull/904[Fixing JENKINS-49757]
   - link:https://github.com/jenkinsci/git-plugin/pull/927[Adding a safety switch to retain second fetch]
-. link:/blog/2020/07/09/git-performance-improvement-phase1/[Coding phase 1 summary blog]
+. link:https://www.jenkins.io/blog/2020/07/09/git-performance-improvement-phase1/[Coding phase 1 summary blog]
 . link:https://docs.google.com/presentation/d/1kaSuYWLBnSvWJWq4lkH5ecOdN-m8n-uymdYHVXcv-EU/edit?usp=sharing[Slides]
 . Phase 1 demo and presentation:
 
@@ -100,7 +100,7 @@ video::HQLhakpx5mk[youtube,start=1791,width=800,height=420]
 
 . Pull Requests:
   - link:https://github.com/jenkinsci/git-plugin/pull/931[Adding GitToolChooser]
-. link:/blog/2020/07/29/git-performance-improvement-phase2/[Coding phase 2 summary blog with benchmark results]
+. link:https://www.jenkins.io/blog/2020/07/29/git-performance-improvement-phase2/[Coding phase 2 summary blog with benchmark results]
 . link:https://docs.google.com/presentation/d/1aIr1aOZSE59KeQ8-Hr_mbOYMctZLUlCELJNVuzWAcz4/edit?usp=sharing[Slides]
 . Phase 2 demo and presentation: 
 
@@ -124,7 +124,7 @@ This phase marked the release of the git plugin with all of the performance impr
   - link:https://github.com/jenkinsci/git-plugin/pull/931[GitToolChooser]
   - link:https://github.com/jenkinsci/git-client-plugin/pull/594[Add UnsupportedCommand to the git client plugin]
   - link:https://github.com/jenkinsci/git-client-plugin/pull/601[Bug fix related to UnsupportedCommand]
-. link:/blog/2020/08/29/git-performance-improvement-phase3/[Coding phase 3 and releases blog]
+. link:https://www.jenkins.io/blog/2020/08/29/git-performance-improvement-phase3/[Coding phase 3 and releases blog]
 . link:https://docs.google.com/presentation/d/1rAjjF_pBjtGDaaC8rgReqVzd9WJ4Z0jZTvaPHabk3SI/edit?usp=sharing[Slides]
 . Phase 3 presentation and results
 

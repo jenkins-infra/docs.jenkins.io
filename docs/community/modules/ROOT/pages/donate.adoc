@@ -14,7 +14,7 @@ image:images:ROOT:governance/funding/lfx_crowdfunding.png[Donate via LFX Crowdfu
 
 Your donations help to keep the project going and to accelerate its evolution:
 
-* Facilitating key initiatives within the link:/project/roadmap/[Jenkins Roadmap]:
+* Facilitating key initiatives within the link:https://www.jenkins.io/project/roadmap/[Jenkins Roadmap]:
   new features, documentation, user experience improvement, etc.
 ** Organizing community events and outreach programs
 ** Running self-funded xref:sigs:advocacy-and-outreach:index.adoc[mentorship programs] like Outreachy and Community Bridge

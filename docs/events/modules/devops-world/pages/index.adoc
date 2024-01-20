@@ -52,13 +52,13 @@ For organization matters, please use the xref:community:mailing-lists:index.adoc
 
 === Previous events
 
-* link:/blog/2021/09/21/jenkins-at-devops-world/#content-top[DevOps World 2021]
-* link:/blog/2020/09/19/jenkins-at-devops-world-2020/[DevOps World 2020] 
-* link:/blog/2020/12/11/devops-world-2020-jenkins-contributors-awarded-top-honors-at-devops-worlds-2020/[DevOps World 2020 Contributors Awards] 
-* link:/blog/2020/02/07/trip-to-dwjw/[DevOps World 2019 experience report] - Abhyudaya Sharma
-* link:/blog/2019/08/22/devops-world/[DevOps World 2019 experience report] - Natasha Stopa
-* link:/blog/2020/02/19/jenkins-world-lisbon-with-love-from-india/[DevOps World 2019 experience report] - Parichay Barpanda
-* link:/blog/2019/11/01/devops-world-jenkins-world-san-francisco-in-living-colors/[DevOps World in living color]
+* link:https://www.jenkins.io/blog/2021/09/21/jenkins-at-devops-world/#content-top[DevOps World 2021]
+* link:https://www.jenkins.io/blog/2020/09/19/jenkins-at-devops-world-2020/[DevOps World 2020] 
+* link:https://www.jenkins.io/blog/2020/12/11/devops-world-2020-jenkins-contributors-awarded-top-honors-at-devops-worlds-2020/[DevOps World 2020 Contributors Awards] 
+* link:https://www.jenkins.io/blog/2020/02/07/trip-to-dwjw/[DevOps World 2019 experience report] - Abhyudaya Sharma
+* link:https://www.jenkins.io/blog/2019/08/22/devops-world/[DevOps World 2019 experience report] - Natasha Stopa
+* link:https://www.jenkins.io/blog/2020/02/19/jenkins-world-lisbon-with-love-from-india/[DevOps World 2019 experience report] - Parichay Barpanda
+* link:https://www.jenkins.io/blog/2019/11/01/devops-world-jenkins-world-san-francisco-in-living-colors/[DevOps World in living color]
 
 === Gallery
 

@@ -165,7 +165,7 @@ before updating, if needed.
 
 == Solaris, OmniOS, SmartOS, and other siblings
 
-Generally it should suffice to install a xref:platform-information:support-policy-java.adoc[supported Java version], link:/download[download] the
+Generally it should suffice to install a xref:platform-information:support-policy-java.adoc[supported Java version], link:https://www.jenkins.io/download[download] the
 `jenkins.war`, and run it as a standalone process.
 
 

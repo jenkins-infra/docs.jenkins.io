@@ -3,7 +3,7 @@
 The macOS installer for Jenkins is maintained outside the Jenkins project.
 Refer to documentation based on the version of Jenkins to be run.
 
-* link:/download/lts/macos[Installing Jenkins LTS on macOS]
-* link:/download/weekly/macos[Installing Jenkins Weekly on macOS]
+* link:https://www.jenkins.io/download/lts/macos[Installing Jenkins LTS on macOS]
+* link:https://www.jenkins.io/download/weekly/macos[Installing Jenkins Weekly on macOS]
 
 include::partial$_setup-wizard.adoc[]

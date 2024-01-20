@@ -167,7 +167,7 @@ to 51000 (for example), then you would need to re-run Jenkins (via this
 Jenkins controller and the first value is the port number on the machine hosting
 the Jenkins controller. Inbound Jenkins agents communicate with the
 Jenkins controller on that port (52000 in this example).
-Note that link:/blog/2020/02/02/web-socket/[WebSocket agents] do not need this configuration.
+Note that link:https://www.jenkins.io/blog/2020/02/02/web-socket/[WebSocket agents] do not need this configuration.
 <7> Maps the `/var/jenkins_home` directory in the container to the Docker
 link:https://docs.docker.com/engine/admin/volumes/volumes/[volume] with the name
 `jenkins-data`. Instead of mapping the `/var/jenkins_home` directory to a Docker
@@ -186,9 +186,9 @@ to connect to the Docker daemon available in the path specified by the
 <9> Maps the `$HOME` directory on the host (i.e. your local) machine (usually
 the `/Users/<your-username>` directory) to the `/home` directory in the
 container. Used to access local changes to the tutorial repository.
-<10> Configure the Docker container restart policy to restart on failure as described in the link:/blog/2022/05/27/docker-image-new-lifecycle/[blog post].
+<10> Configure the Docker container restart policy to restart on failure as described in the link:https://www.jenkins.io/blog/2022/05/27/docker-image-new-lifecycle/[blog post].
 <11> Allow local checkout for the tutorial.
-See link:/security/advisory/2022-05-17/#SECURITY-2478[SECURITY-2478] for the reasons why this argument should not be used on a production installation.
+See link:https://www.jenkins.io/security/advisory/2022-05-17/#SECURITY-2478[SECURITY-2478] for the reasons why this argument should not be used on a production installation.
 <12> The name of the Docker image, which you built in the previous step.
 +
 *Note:* If copying and pasting the command snippet above does not work, try

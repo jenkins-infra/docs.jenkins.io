@@ -11,12 +11,12 @@ http://www.timeanddate.com/worldclock/fixedtime.html?msg=Jenkins+Governance+Meet
 14th 19:00 UTC], which should be 11am PST, 2pm EST, 8pm CET, 4am Tokyo.
 
 * Recap last meeting's action items
-* Infra update (link:/blog/authors/rtyler/[
+* Infra update (link:https://www.jenkins.io/blog/authors/rtyler/[
 (rtyler)])
-* Add link:/blog/authors/aheritier[
+* Add link:https://www.jenkins.io/blog/authors/aheritier[
 (aheritier)] to the "users-core" puppet module, giving him administrator
 access on all Jenkins infrastructure machines.
-(link:/blog/authors/rtyler/[(rtyler)])
+(link:https://www.jenkins.io/blog/authors/rtyler/[(rtyler)])
 
 MINUTES
 http://meetings.jenkins-ci.org/jenkins/2011/jenkins.2011-12-14-19.03.html[summary]
@@ -31,17 +31,17 @@ http://www.timeanddate.com/worldclock/fixedtime.html?msg=Jenkins+Governance+Meet
 30th 19:00 UTC], which should be 11am PST, 2pm EST, 8pm CET, 4am Tokyo.
 
 * Recap last meeting action items
-* infra update (link:/blog/authors/rtyler/[
+* infra update (link:https://www.jenkins.io/blog/authors/rtyler/[
 (rtyler)])
 * Discuss plans for exhibiting at
 http://www.socallinuxexpo.org/scale10x/jenkins-ci[SCALE 10x] on January
 20-22 in Los Angeles, CA.
-(link:/blog/authors/rtyler/[(rtyler)])
+(link:https://www.jenkins.io/blog/authors/rtyler/[(rtyler)])
 * Discuss plans for http://www.fosdem.org/2012/[FOSDEM 2012]. What
 should we do (dev room talk? lightning talk? Jenkins stand?), and who
-will be going? (link:/blog/authors/rtyler/[
+will be going? (link:https://www.jenkins.io/blog/authors/rtyler/[
 (rtyler)])
-* Jenkins CIA program link:/blog/authors/kohsuke/[(kohsuke)]
+* Jenkins CIA program link:https://www.jenkins.io/blog/authors/kohsuke/[(kohsuke)]
 * Context: people like http://t.co/CYzvqOUB[those Jenkins stickers].
 We'd like to use them well to spread words about Jenkins.
 * LTS 1.424.1 release (vjuranek)
@@ -71,14 +71,14 @@ http://jenkins.361315.n4.nabble.com/Error-launching-JNLP-slave-when-running-huds
 * Add (jieryn) to
 the "users-core" puppet module, giving him administrator access on all
 Jenkins infrastructure machines.
-(link:/blog/authors/rtyler/[(rtyler)])
+(link:https://www.jenkins.io/blog/authors/rtyler/[(rtyler)])
 * Appprove CloudBees request for the "Jenkins Enterprise from CloudBees"
 use request as per
 https://wiki.jenkins.io/display/JENKINS/Governance+Document[Governance
-Document] (link:/blog/authors/kohsuke/[
+Document] (link:https://www.jenkins.io/blog/authors/kohsuke/[
 (kohsuke)])
 * LTS discussion. Branch is ready, I say time for RC
-(link:/blog/authors/kohsuke/[(kohsuke)])
+(link:https://www.jenkins.io/blog/authors/kohsuke/[(kohsuke)])
 ** Augmenting LTS Test Matrix with written test plans
 (ryan)
 ** Backport of JENKINS-10989 and SECURITY-17 as
@@ -106,7 +106,7 @@ http://jenkins.361315.n4.nabble.com/Error-building-Jenkins-core-java-lang-NoSuch
 http://jenkins.361315.n4.nabble.com/Error-launching-JNLP-slave-when-running-hudson-dev-run-td3772780.html[here]
 ** What can we do about it?
 * Bringing old Jenkins plugins up to a common requiredCore (@jieryn)
-* Infra update (link:/blog/authors/rtyler/[
+* Infra update (link:https://www.jenkins.io/blog/authors/rtyler/[
 (rtyler)])
 ** SPI donation status for cucumber
 
@@ -243,7 +243,7 @@ which should be 11am PDT, 2pm EDT, 8pm CET, 3am Tokyo.
 EMailer]' ?
 ** Maybe to get things going again, deprecate the built-in EMailer and
 deliver email-ext bundled?
-* Infra update from link:/blog/authors/rtyler/[
+* Infra update from link:https://www.jenkins.io/blog/authors/rtyler/[
 (rtyler)] regarding new machines at the http://osuosl.org/[OSUOSL]
 * CLA discussion. We should start collecting CLA for core, and our
 current plan on the record was to reuse Apache CLA.

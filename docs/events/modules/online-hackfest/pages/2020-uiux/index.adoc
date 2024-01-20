@@ -6,7 +6,7 @@ Results are being processed at the moment, this page will be updated later.
 _UI/UX Online Hackfest_ is an online event, it will take place on May 25-29.
 The goal to improve the Jenkins user experience, including but not limited to user interface and documentation.
 We also invite participants to share experiences about Jenkins and to participate in UX testing.
-The event will have the link:/blog/2020/04/30/jenkins-is-the-way/[Jenkins is the Way] theme.
+The event will have the link:https://www.jenkins.io/blog/2020/04/30/jenkins-is-the-way/[Jenkins is the Way] theme.
 The most active contributors will get special edition swag and other prizes, see below!
 
 image:images:ROOT:post-images/jenkins-is-the-way/jenkins-is-the-way.png[Jenkins Is The Way, role=center, float=right, height=284]
@@ -202,7 +202,7 @@ a| If you are interested to do UX testing, Jenkins installation guidelines could
 * Test xref:user-docs:installing-jenkins:index.adoc[installation guidelines] and xref:tutorials:ROOT:index.adoc[tutorials],
   submit patches and discovered issues.
 * Renew the Windows installation guide for Jenkins weekly releases that use the new Windows installer.
-  See link:/blog/2019/02/01/windows-installers/[this blogpost] for an overview of the new Windows Installer.
+  See link:https://www.jenkins.io/blog/2019/02/01/windows-installers/[this blogpost] for an overview of the new Windows Installer.
 * **Advanced:** Rewrite the xref:user-docs:installing-jenkins:docker.adoc[Docker installation guide] to use the `jenkins/jenkins` image instead of the Blue Ocean images.
 
 | Document Jenkins use-cases
@@ -220,7 +220,7 @@ a| We are moving plugin documentation from Jenkins Wiki to Documentation as Code
    We invite contributors to help with migrating plugin pages and improving existing ones.
    xref:sigs:docs:index.adoc#plugin-documentation-on-github[More info].
 
-* Migrate plugin documentation as documented in these link:/blog/2019/10/21/plugin-docs-on-github/[guidelines]).
+* Migrate plugin documentation as documented in these link:https://www.jenkins.io/blog/2019/10/21/plugin-docs-on-github/[guidelines]).
   List of plugins for grabs can be found in the link:https://reports.jenkins.io/jenkins-plugin-migration.html[plugin migration progress report].
 * Review and renew the existing plugin documentation,
   e.g. cleanup the agent terminology usage as suggested in the {jira}JENKINS-42816[] EPIC
@@ -239,7 +239,7 @@ Such information is essential to Jenkins users when they search for solutions.
 Below you can find some ideas about how you could contribute:
 
 * Write user stories for link:https://stories.jenkins.io/[Jenkins Is The Way] site!
-* Write case studies and feature overviews for the link:/blog[Jenkins blog] and other resources.
+* Write case studies and feature overviews for the link:https://www.jenkins.io/blog[Jenkins blog] and other resources.
 * Tweet/post about your Jenkins user experience and new features, use the `#jenkinsIsTheWay` hashtag.
 * Record videos and publish them on YouTube or other services, use the `#jenkinsIsTheWay` label there.
 * Create new demos for Jenkins features.
@@ -262,41 +262,41 @@ You can find materrials from all these sessions link:https://github.com/jenkinsc
   **_Hackfest kick-off_**
   (link:https://www.meetup.com/Jenkins-online-meetup/events/270644129/[details])
 * May 25, 03:00-04:00 PM UTC -
-  _Beautify the UI of Jenkins reporter plugins_ by link:/blog/authors/uhafner/[Ullrich Hafner]
+  _Beautify the UI of Jenkins reporter plugins_ by link:https://www.jenkins.io/blog/authors/uhafner/[Ullrich Hafner]
   (link:https://www.meetup.com/Jenkins-online-meetup/events/270767392/[details])
 * May 25, 04:00-04:30 PM UTC -
-  _Jenkins is The Way program overview_ by link:/blog/authors/alyssat/[Alyssa Tong]
+  _Jenkins is The Way program overview_ by link:https://www.jenkins.io/blog/authors/alyssat/[Alyssa Tong]
   (link:https://www.meetup.com/Jenkins-online-meetup/events/270767571/[details])
 * May 26, 10:00-10:45 AM UTC -
-  _Migrating plugins to Documentation-as-Code_ by link:/blog/authors/oleg_nenashev/[Oleg Nenashev]
+  _Migrating plugins to Documentation-as-Code_ by link:https://www.jenkins.io/blog/authors/oleg_nenashev/[Oleg Nenashev]
   (link:https://www.meetup.com/Jenkins-online-meetup/events/270775512[details])
 * May 26, 13:00-14:00 PM UTC -
-  _System Read Permission: Demo and contributing_ by link:/blog/authors/timja/[Tim Jacomb]
+  _System Read Permission: Demo and contributing_ by link:https://www.jenkins.io/blog/authors/timja/[Tim Jacomb]
   (link:https://www.meetup.com/Jenkins-online-meetup/events/270775558/[details])
 * May 26, 15:00-16:00 PM UTC -
-  _Migrating documentation to jenkins.io_ by link:/blog/authors/markewaite/[Mark Waite]
+  _Migrating documentation to jenkins.io_ by link:https://www.jenkins.io/blog/authors/markewaite/[Mark Waite]
   (link:https://www.meetup.com/Jenkins-online-meetup/events/270776103[details])
 * May 27, 04:00-05:00 PM UTC -
   _UX SIG meeting: mid-term hackfest updates and demos_
   (xref:sigs:ux:index.adoc#meetings[meeting links])
 * May 27, 10:00-11:00 AM UTC -
   _Using and developing Jenkins themes + new dark theme project_
-  by link:https://github.com/TobiX/[Tobias Gruetzmacher], link:/blog/authors/oleg_nenashev/[Oleg Nenashev], and link:/blog/authors/timja/[Tim Jacomb]
+  by link:https://github.com/TobiX/[Tobias Gruetzmacher], link:https://www.jenkins.io/blog/authors/oleg_nenashev/[Oleg Nenashev], and link:https://www.jenkins.io/blog/authors/timja/[Tim Jacomb]
   (link:https://www.meetup.com/Jenkins-online-meetup/events/270881117/[details])
 * May 29, 11:00-12:00 AM UTC -
   _Demo: GitHub Checks API Plugin prototype_
-  by link:/blog/authors/xiongkezhi/[Kezhi Xiong]
+  by link:https://www.jenkins.io/blog/authors/xiongkezhi/[Kezhi Xiong]
   (link:https://www.meetup.com/Jenkins-online-meetup/events/270931234/[details])
 * May 29, 03:00-05:00 PM UTC -
   _Demo Sessions by hackfest participants_
   (link:https://www.meetup.com/Jenkins-online-meetup/events/270932348/[details])
 * Jun 01, 11:00-12:00 AM UTC -
   _Demo: Custom Jenkins Distribution build service_
-  by link:/blog/authors/sladyn98/[Sladyn Nunes]
+  by link:https://www.jenkins.io/blog/authors/sladyn98/[Sladyn Nunes]
   (link:https://www.meetup.com/Jenkins-online-meetup/events/270974407/[details])
 * Jun 01, 02:00-03:00 PM UTC -
   _Hackfest results_
-  by link:/blog/authors/oleg_nenashev/[Oleg Nenashev] and link:/blog/authors/markewaite/[Mark Waite]
+  by link:https://www.jenkins.io/blog/authors/oleg_nenashev/[Oleg Nenashev] and link:https://www.jenkins.io/blog/authors/markewaite/[Mark Waite]
   (link:https://www.meetup.com/Jenkins-online-meetup/events/270934525/[details])
 
 More links:

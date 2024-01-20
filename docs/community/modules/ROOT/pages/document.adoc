@@ -64,7 +64,7 @@ Choose an issue, add a comment, and start writing.
 === Migrating Plugin Documentation to GitHub
 
 Currently we are working on migrating the documentation from Jenkins Wiki to GitHub and jenkins.io.
-See link:/blog/2019/10/21/plugin-docs-on-github/[this blog post] for more information about the reasons why we do this migration.
+See link:https://www.jenkins.io/blog/2019/10/21/plugin-docs-on-github/[this blog post] for more information about the reasons why we do this migration.
 This migration involves modification of hundreds of pages and repositories, and we invite everyone to contribute.
 
 xref:dev-docs:publishing:wiki-page.adoc#migrating-from-wiki-to-github[**Migrating plugin documentation to GitHub**]
@@ -88,4 +88,4 @@ link:https://github.com/jenkins-infra/jenkins.io/blob/master/CONTRIBUTING.adoc#m
 
 video::KB-NPlRvLoY[youtube,width=640,height=360]
 
-There are also other ongoing projects which you can find on the xref:sigs:docs:index.adoc#ongoing-projects[Documentation SIG page] and in the link:/project/roadmap[project roadmap].
+There are also other ongoing projects which you can find on the xref:sigs:docs:index.adoc#ongoing-projects[Documentation SIG page] and in the link:https://www.jenkins.io/project/roadmap[project roadmap].

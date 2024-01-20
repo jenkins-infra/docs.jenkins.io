@@ -27,7 +27,7 @@ Expected output of `jarsigner -verify -verbose jenkins.war`:
     Signature algorithm: SHA256withRSA, 2048-bit key
 ----
 
-The SHA-256 checksums of the latest weekly and LTS releases are published link:/download[on the downloads page] next to the respective .war download option.
+The SHA-256 checksums of the latest weekly and LTS releases are published link:https://www.jenkins.io/download[on the downloads page] next to the respective .war download option.
 The SHA-1 and SHA-256 checksums of past releases are published https://updates.jenkins.io/download/war/[here].
 
 

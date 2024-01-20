@@ -44,7 +44,7 @@ Jenkins GSoC Office Hours: Wednesdays at 2:00 PM UTC
 
 The micro-benchmarking framework was made available to everyone through Jenkins Test Harness link:https://github.com/jenkinsci/jenkins-test-harness/releases/tag/jenkins-test-harness-2.51[2.51]
 and Plugin POM link:https://github.com/jenkinsci/plugin-pom/releases/tag/plugin-3.46[3.46].
-A blog post summarizing how to use the framework was published and can be seen link:/blog/2019/06/21/performance-testing-jenkins/[here].
+A blog post summarizing how to use the framework was published and can be seen link:https://www.jenkins.io/blog/2019/06/21/performance-testing-jenkins/[here].
 
 A demo of the framework was held on May 31 and can be found
 at: https://www.youtube.com/watch?v=sr28UADG1AE .
@@ -68,7 +68,7 @@ change avoids having to calculate all implying permissions whenever a permission
 needed to be checked. These performance improvements were released for everyone
 in Role Strategy Plugin link:https://github.com/jenkinsci/role-strategy-plugin/releases/tag/role-strategy-2.13[2.13].
 To learn more about the changes made to the plugin and the improvements in
-performance, please check out the link:/blog/2019/08/26/role-strategy-performance/[blog post].
+performance, please check out the link:https://www.jenkins.io/blog/2019/08/26/role-strategy-performance/[blog post].
 
 == The new Folder Authorization Plugin
 
@@ -84,7 +84,7 @@ The plugin can be installed on your Jenkins through the Update Center.
 The demo for the Phase 2 evaluations can be found at https://youtu.be/tnoObQqGhyM?t=1101
 and the slides for the presentation are available at https://drive.google.com/file/d/1IVe3T8WdTILmb62PAIJveR4KbBWzPt1k/view?usp=sharing
 
-To know more about this plugin, please check out the link:/blog/2019/08/16/folder-auth-plugin/[blog post].
+To know more about this plugin, please check out the link:https://www.jenkins.io/blog/2019/08/16/folder-auth-plugin/[blog post].
 The demo for the final evaluations can be found at https://www.youtube.com/watch?v=tAUHfYYQrpo
 
 == Getting the Code

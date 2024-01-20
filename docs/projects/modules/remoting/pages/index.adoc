@@ -10,7 +10,7 @@ The Remoting sub-project includes the Remoting library itself, package for agent
 
 * Agent executables (`remoting.jar` is a named `agent.jar` or `slave.jar` in Jenkins)
 * Controller to Agent communication protocols being used in various Agent types, including Java Web Start (aka JNLP) and {plugin}ssh-slaves[SSH] agents 
-* xref:user-docs:managing:cli.adoc[Jenkins CLI], Remoting mode is **deprecated since 2.54** (link:/blog/2017/04/11/new-cli.adoc[announcement])
+* xref:user-docs:managing:cli.adoc[Jenkins CLI], Remoting mode is **deprecated since 2.54** (link:https://www.jenkins.io/blog/2017/04/11/new-cli.adoc[announcement])
 * Communication with Maven instance in the {plugin}maven-plugin[Maven Integration plugin].
 
 == Project Components

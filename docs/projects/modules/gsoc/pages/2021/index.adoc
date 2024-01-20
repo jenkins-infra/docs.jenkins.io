@@ -18,7 +18,7 @@ You can find the project information on the project pages:
 == Demos and results
 
 * link:https://youtu.be/bBat90NUMsg[Final project demos]
-* link:/blog/2021/09/24/gsoc-report/[Summary blogpost]
+* link:https://www.jenkins.io/blog/2021/09/24/gsoc-report/[Summary blogpost]
 
 == Retrospective
 
@@ -29,9 +29,9 @@ and they are not public unless referenced from the project pages.
 == Org admins
 
 GSoC Organization admins in 2021:
-link:/blog/authors/marckk[Kara de la Marck],
-link:/blog/authors/martinda[Martin d'Anjou],
-link:/blog/authors/oleg_nenashev[Oleg Nenashev],
+link:https://www.jenkins.io/blog/authors/marckk[Kara de la Marck],
+link:https://www.jenkins.io/blog/authors/martinda[Martin d'Anjou],
+link:https://www.jenkins.io/blog/authors/oleg_nenashev[Oleg Nenashev],
 and Tara Hernandez.
 
 == Other materials

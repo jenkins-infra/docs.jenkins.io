@@ -75,8 +75,8 @@ For more details, see this Google Doc -  https://docs.google.com/document/d/1aPf
   
 == Blogs
 
-  * link:/blog/2019/10/08/jcasc-phase1-blog/[VSCode Blog]
-  * link:/blog/2020/02/25/vscode-caseStudy/[VSCode Case Study]
+  * link:https://www.jenkins.io/blog/2019/10/08/jcasc-phase1-blog/[VSCode Blog]
+  * link:https://www.jenkins.io/blog/2020/02/25/vscode-caseStudy/[VSCode Case Study]
 
 == Other links
 

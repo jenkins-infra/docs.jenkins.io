@@ -28,7 +28,7 @@ The first release of each LTS line is effectively a major update for Jenkins LTS
 When publishing security fixes for Jenkins (core), we generally try to schedule these for the second or third release in an LTS line to make it easier for admins to update quickly.
 If we decide to publish security fixes for the first release in an LTS line, we will also publish an additional release for the previous LTS line.
 
-For example, link:/security/advisory/2019-09-25/[in September 2019], we published a security advisory for Jenkins (core) and plugins that announced security fixes in 2.190.1.
+For example, link:https://www.jenkins.io/security/advisory/2019-09-25/[in September 2019], we published a security advisory for Jenkins (core) and plugins that announced security fixes in 2.190.1.
 Since that was the first release of its LTS line, we also published an additional release for the previous LTS line, 2.176.4, so that admins could safely and quickly upgrade to a release containing these security fixes.
 
 === Changes in Security Updates

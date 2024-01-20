@@ -15,7 +15,7 @@ If an administrator then views the job or build, they are attacked and a malicio
 To circumvent this, Jenkins by default serves archived artifacts, including HTML reports, as well as workspace contents using Content-Security-Policy headers when using the `DirectoryBrowserSupport` class.
 This protection must not be circumvented by plugins.
 
-If reports look broken due to these restrictions, Jenkins administrators should set up a link:/doc/upgrade-guide/2.204/#resource-domain-support[Resource Root URL] from which Jenkins would service user content like archived artifacts without compromising security.
+If reports look broken due to these restrictions, Jenkins administrators should set up a link:https://www.jenkins.io/doc/upgrade-guide/2.204/#resource-domain-support[Resource Root URL] from which Jenkins would service user content like archived artifacts without compromising security.
 
 == Rendering Reports Inline
 

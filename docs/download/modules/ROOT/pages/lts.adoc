@@ -85,7 +85,7 @@ This concludes the cycle for a given baseline and the new one is started immedia
 
 The baseline release is typically between 0-3 weeks old when it is chosen, so X.1 LTS releases are published about 6-9 weeks after their baseline.
 
-See the link:/content/event-calendar[event calendar] for the specific LTS RC/release dates in the near future.
+See the link:https://www.jenkins.io/content/event-calendar[event calendar] for the specific LTS RC/release dates in the near future.
 
 [#backporting-process]
 == Backporting Process

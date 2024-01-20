@@ -41,7 +41,7 @@ Once fixes are ready, or xref:security:ROOT:plugins.adoc[we've determined that a
 == What is a Security Advisory?
 
 A security advisory is a public announcement with information about security issues, including workarounds and fixes.
-In the Jenkins project, we publish all security advisories link:/security/advisories[here] and announce them through various channels.
+In the Jenkins project, we publish all security advisories link:https://www.jenkins.io/security/advisories[here] and announce them through various channels.
 
 
 == How are Security Advisories Announced?
@@ -51,7 +51,7 @@ We announce the publication of a new security advisory through multiple channels
 
 * We send an email notification to the public link:https://groups.google.com/g/jenkinsci-advisories[`jenkinsci-advisories`] Google group with a short overview of affected components and a link to the security advisory. Only Jenkins security team members can post. You can mailto:jenkinsci-advisories+subscribe@googlegroups.com[subscribe] and mailto:jenkinsci-advisories+unsubscribe@googlegroups.com[unsubscribe] via email.
 * We send an email notification to the link:https://oss-security.openwall.org/wiki/mailing-lists/oss-security[`oss-security`] mailing list with excerpts of the security advisory.
-* We publish an link:/security/advisories/rss.xml[RSS feed] for the Security Advisories page.
+* We publish an link:https://www.jenkins.io/security/advisories/rss.xml[RSS feed] for the Security Advisories page.
 
 Additionally, Jenkins administrators are informed about published security issues directly in Jenkins if they have affected versions of Jenkins or plugins installed.
 // Copy from index.adoc end

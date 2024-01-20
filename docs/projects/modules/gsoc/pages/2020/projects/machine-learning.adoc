@@ -35,7 +35,7 @@ The main goal of this project is integrating Machine Learning workflow including
 The community bonding period is all about, well, community bonding. Rather than jumping straight into coding, I've got some time to learn about Jenkins's processes - release and otherwise - developer interactions, codes of conduct, etc.
 
 - Blog post 
-** link:/blog/2020/06/03/machine-learning-plugin-community-bonding/[Community Bonding summary]
+** link:https://www.jenkins.io/blog/2020/06/03/machine-learning-plugin-community-bonding/[Community Bonding summary]
 
 == Phase 1
 
@@ -46,7 +46,7 @@ The community bonding period is all about, well, community bonding. Rather than 
 * Increase the test coverage and documentation
 
 * Blog post
-** link:/blog/2020/06/30/machine-learning-plugin-coding-phase1/[Coding Phase 1 summary]
+** link:https://www.jenkins.io/blog/2020/06/30/machine-learning-plugin-coding-phase1/[Coding Phase 1 summary]
 
 * Change log
 ** link:https://github.com/jenkinsci/machine-learning-plugin/blob/master/CHANGELOG.md#machine-learning-01-alpha-1-2020-06-30[Change log for alpha 1 release]
@@ -60,7 +60,7 @@ The community bonding period is all about, well, community bonding. Rather than 
 * Discuss with mentors about phase 3 coding
 
 * Blog post
-** link:/blog/2020/07/27/machine-learning-plugin-coding-phase2/[Coding Phase 2 summary]
+** link:https://www.jenkins.io/blog/2020/07/27/machine-learning-plugin-coding-phase2/[Coding Phase 2 summary]
 
 * Change log
 ** link:https://github.com/jenkinsci/machine-learning-plugin/blob/master/CHANGELOG.md#machine-learning-01-alpha-2-2020-07-24[Change log for alpha 2 release]
@@ -75,7 +75,7 @@ The community bonding period is all about, well, community bonding. Rather than 
 * User documentation and examples
 
 * Blog post
-** link:/blog/2020/08/27/machine-learning-plugin-coding-phase3/[Coding Phase 3 summary]
+** link:https://www.jenkins.io/blog/2020/08/27/machine-learning-plugin-coding-phase3/[Coding Phase 3 summary]
 
 * Change log
 ** link:https://github.com/jenkinsci/machine-learning-plugin/blob/master/CHANGELOG.md#machine-learning-101-2020-08-24[Change log for v1.0.1 release]
