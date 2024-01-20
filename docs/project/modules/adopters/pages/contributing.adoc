@@ -11,7 +11,7 @@ There are multiple ways to do it:
 
 * Your organization's or your personal blog
 * link:https://community.jenkins.io/c/using-jenkins/showing-off/9[community.jenkins.io] website in the "Using Jenkins" / "Showing Off" category
-* link:/blog[Jenkins community blog] on jenkins.io
+* link:https://www.jenkins.io/blog[Jenkins community blog] on jenkins.io
   (link:https://github.com/jenkins-infra/jenkins.io/blob/master/CONTRIBUTING.adoc#adding-a-blog-post[HOWTO])
 * link:https://stories.jenkins.io/[stories.jenkins.io] website with Jenkins user stories
 * Any other blog or professional network

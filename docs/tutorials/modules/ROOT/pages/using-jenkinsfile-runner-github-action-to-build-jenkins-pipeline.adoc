@@ -416,5 +416,5 @@ You can also find additional examples in the link:https://github.com/jenkinsci/j
 
 To learn more about the contributions of Jenkinsfile Runner GitHub Actions, refer to:
 
-* link:/blog/2022/09/07/jenkinsfile-runner-as-github-actions/[The related GSoC blog post]
+* link:https://www.jenkins.io/blog/2022/09/07/jenkinsfile-runner-as-github-actions/[The related GSoC blog post]
 * link:https://jenkinsci.github.io/jfr-action-doc/developer-guide[The official developer guide]

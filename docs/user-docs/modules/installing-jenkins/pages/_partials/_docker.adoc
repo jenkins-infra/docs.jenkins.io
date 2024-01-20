@@ -134,7 +134,7 @@ You can change this port number on your Jenkins controller through the xref:user
 For example, if you update the *TCP port for inbound Jenkins agents* of your Jenkins controller to 51000, you need to re-run Jenkins via the `docker run ...` command.
 Specify the "publish" option as follows: the first value is the port number on the machine hosting the Jenkins controller, and the last value matches the changed value on the Jenkins controller, for example,`--publish 52000:51000`.
 Inbound Jenkins agents communicate with the Jenkins controller on that port (52000 in this example).
-Note that link:/blog/2020/02/02/web-socket/[WebSocket agents] do not need this configuration.
+Note that link:https://www.jenkins.io/blog/2020/02/02/web-socket/[WebSocket agents] do not need this configuration.
 <8> Maps the `/var/jenkins_home` directory in the container to the Docker link:https://docs.docker.com/engine/admin/volumes/volumes/[volume] with the name `jenkins-data`.
 Instead of mapping the `/var/jenkins_home` directory to a Docker volume, you can also map this directory to one on your machine's local file system.
 For example, specify the option `--volume $HOME/jenkins:/var/jenkins_home` to map the container's `/var/jenkins_home` directory to the `jenkins` subdirectory within the `$HOME` directory on your local machine -- typically `/Users/<your-username>/jenkins` or `/home/<your-username>/jenkins`.

@@ -7,7 +7,7 @@ For the pros and cons of each, refer to the xref:#compare[Compare].
 
 As discussed at the xref:pipeline:getting-started.adoc[start of this chapter], the most fundamental part of a Pipeline is the "step". Basically, steps tell Jenkins _what_ to do and serve as the basic building block for both Declarative and Scripted Pipeline syntax.
 
-For an overview of available steps, please refer to the link:/doc/pipeline/steps[Pipeline Steps reference] which contains a comprehensive list of steps built into Pipeline as well as steps provided by plugins.
+For an overview of available steps, please refer to the link:https://www.jenkins.io/doc/pipeline/steps[Pipeline Steps reference] which contains a comprehensive list of steps built into Pipeline as well as steps provided by plugins.
 
 [role=syntax]
 [#declarative-pipeline]
@@ -1012,7 +1012,7 @@ pipeline {
 
 ==== input
 
-The `input` directive on a `stage` allows you to prompt for input, using the link:/doc/pipeline/steps/pipeline-input-step/#input-wait-for-interactive-input[`input` step].
+The `input` directive on a `stage` allows you to prompt for input, using the link:https://www.jenkins.io/doc/pipeline/steps/pipeline-input-step/#input-wait-for-interactive-input[`input` step].
 The `stage` will pause after any `options` have been applied, and before entering the `agent` block for that `stage` or evaluating the `when` condition of the `stage`.
 If the `input` is approved, the `stage` will then continue.
 Any parameters provided as part of the `input` submission will be available in the environment for the rest of the `stage`.
@@ -1990,7 +1990,7 @@ pipeline {
 [#declarative-steps]
 === Steps
 
-Declarative Pipelines may use all the available steps documented in the link:/doc/pipeline/steps[Pipeline Steps reference], which contains a comprehensive list of steps, with the addition of the steps listed below which are *only supported* in Declarative Pipeline.
+Declarative Pipelines may use all the available steps documented in the link:https://www.jenkins.io/doc/pipeline/steps[Pipeline Steps reference], which contains a comprehensive list of steps, with the addition of the steps listed below which are *only supported* in Declarative Pipeline.
 
 ==== script
 
@@ -2084,7 +2084,7 @@ node {
 As discussed at the xref:pipeline:syntax.adoc[start of this chapter], the most fundamental part of a Pipeline is the "step".
 Fundamentally, steps tell Jenkins _what_ to do and serve as the basic building block for both Declarative and Scripted Pipeline syntax.
 
-Scripted Pipeline does *not* introduce any steps which are specific to its syntax; link:/doc/pipeline/steps[Pipeline Steps reference] contains a comprehensive list of steps provided by Pipeline and plugins.
+Scripted Pipeline does *not* introduce any steps which are specific to its syntax; link:https://www.jenkins.io/doc/pipeline/steps[Pipeline Steps reference] contains a comprehensive list of steps provided by Pipeline and plugins.
 
 
 === Differences from plain Groovy

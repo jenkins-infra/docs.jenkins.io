@@ -29,9 +29,9 @@ Please use this link for any queries and feedback regarding the elections.
 == Process
 
 . The Governance Board includes five members
-** link:/blog/authors/kohsuke[Kohsuke] holds a permanent board seat until such a time he decides to resign.
+** link:https://www.jenkins.io/blog/authors/kohsuke[Kohsuke] holds a permanent board seat until such a time he decides to resign.
 ** Four members are elected.
-If link:/blog/authors/kohsuke[Kohsuke] decides to resign, all five members will be elected.
+If link:https://www.jenkins.io/blog/authors/kohsuke[Kohsuke] decides to resign, all five members will be elected.
 . Election occurs every year, normally electing two people to the board in each year.
 . There will be a period of at least six weeks designated for the board to encourage the community to submit nominations.
 The board will meet in private to select final candidates.
@@ -104,7 +104,7 @@ Contributing does not only mean a _code contribution_, as xref:community:ROOT:in
 * xref:community:ROOT:document.adoc[Contributing to Jenkins documentation]
 * xref:community:ROOT:design.adoc[Creating art or updating the Jenkins UI]
 * xref:community:ROOT:review-changes.adoc[Reviewing open pull requests]
-* link:/donate/[Donating to Jenkins]
+* link:https://www.jenkins.io/donate/[Donating to Jenkins]
 
 As long as you are contributing to the Jenkins project or community, you are eligible to register for voting.
 
@@ -185,16 +185,16 @@ At the same time, we wanted to preserve stability by limiting voting rights to o
 
 == Previous elections
 
-* 2022 - link:/blog/2022/10/20/jenkins-election-announcement/[announcement]
+* 2022 - link:https://www.jenkins.io/blog/2022/10/20/jenkins-election-announcement/[announcement]
 ** No results available. The candidates up for election have been selected without a vote, as there was only one candidate per seat and role.
 
-* 2021 - link:/blog/2021/12/03/election-results[results], link:/blog/2021/09/20/election-period-opened[announcement]
+* 2021 - link:https://www.jenkins.io/blog/2021/12/03/election-results[results], link:https://www.jenkins.io/blog/2021/09/20/election-period-opened[announcement]
 
 * 2020 -
-link:/blog/2020/12/03/election-results[results], link:/blog/2020/10/28/election-candidates[candidates], link:/blog/2020/09/24/board-elections[announcement]
+link:https://www.jenkins.io/blog/2020/12/03/election-results[results], link:https://www.jenkins.io/blog/2020/10/28/election-candidates[candidates], link:https://www.jenkins.io/blog/2020/09/24/board-elections[announcement]
 
 * 2019 -
-link:/blog/2019/12/16/board-election-results/[results], link:/blog/2019/09/25/board-elections/[announcement], link:https://docs.google.com/document/d/1Htgjq2Gnojz6a-FE62kgjIq6AVR8ctPcARbd-m2KctQ/edit?usp=sharing[retrospective], link:https://groups.google.com/forum/#!msg/jenkinsci-dev/vKi9JpxTQxY/2KgDsKUeAQAJ[dev list discussion]
+link:https://www.jenkins.io/blog/2019/12/16/board-election-results/[results], link:https://www.jenkins.io/blog/2019/09/25/board-elections/[announcement], link:https://docs.google.com/document/d/1Htgjq2Gnojz6a-FE62kgjIq6AVR8ctPcARbd-m2KctQ/edit?usp=sharing[retrospective], link:https://groups.google.com/forum/#!msg/jenkinsci-dev/vKi9JpxTQxY/2KgDsKUeAQAJ[dev list discussion]
 
 == Change History
 
@@ -236,7 +236,7 @@ Decisions:
 * Formally approve the Governance board election process.
 This page represents the process.
 * Expand the board from three people to five people;
-link:/blog/authors/kohsuke[Kohsuke] holding a permanent board seat until such a time he decides to resign.
+link:https://www.jenkins.io/blog/authors/kohsuke[Kohsuke] holding a permanent board seat until such a time he decides to resign.
 
 Related decisions:
 

@@ -191,7 +191,7 @@ We do NOT commit on delivery dates, and we do not guarantee that an initiative w
 All initiatives depend on contributions,
 and we invite all interested parties to join us and to contribute towards the roadmap goals.
 
-* link:/project/roadmap[Public Jenkins Roadmap]
+* link:https://www.jenkins.io/project/roadmap[Public Jenkins Roadmap]
 * jep:14[Public Jenkins Roadmap Process]
 
 [#meeting]
@@ -229,7 +229,7 @@ Core committers are expected to be attentive to pending pull requests, and try t
 
 The Jenkins project provides two release lines for the Jenkins core.
 For both lines we provide multiple distributions including `jenkins.war`, Docker images, installers and native packages.
-They can be downloaded by users link:/download[here].
+They can be downloaded by users link:https://www.jenkins.io/download[here].
 
 Regular releases::
 Every week a new release is built from the master branch and released.

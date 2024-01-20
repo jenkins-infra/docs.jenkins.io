@@ -147,7 +147,7 @@ This stage will involve implementing RootAction associated to a Jenkins object w
 === Chat
 
 We use the `#gsoc-2021-jenkins-cloudevents-plugin` channel in the CDF Slack workspace.
-link:/chat/#continuous-delivery-foundation[How to join CDF Slack].
+link:https://www.jenkins.io/chat/#continuous-delivery-foundation[How to join CDF Slack].
 
 === Office hours
 

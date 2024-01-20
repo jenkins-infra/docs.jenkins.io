@@ -11,8 +11,8 @@ NOTE: This idea is published as a draft under active discussion, but it is confi
 The Jenkins Pipeline Step reference is difficult to read, even to the initiated, mostly due to its format.
 This project aims to improve the way the documentation is formatted.
 
-For example, when you read the link:/doc/pipeline/steps/workflow-basic-steps/#readfile-read-file-from-workspace[readFile step documentation], the documentation format makes it difficult to see that the obvious usage is : `readFile('filename')`.
-When you read the link:/doc/pipeline/steps/workflow-scm-step/[checkout documentation], you are shown a single web page with collapsible sections that when expanded and printed would be 62 pages long.
+For example, when you read the link:https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/#readfile-read-file-from-workspace[readFile step documentation], the documentation format makes it difficult to see that the obvious usage is : `readFile('filename')`.
+When you read the link:https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/[checkout documentation], you are shown a single web page with collapsible sections that when expanded and printed would be 62 pages long.
 That is too large a page for usable navigation.
 We should consider logical partitions of that page, possibly with a single page per SCM provider (like checkout-git, checkout-p4, checkout-svn, checkout-cvs).
 Redirects would be needed within the checkout page to link users to the correct page per SCM provider.
@@ -32,7 +32,7 @@ A potential stretch goal could  be something like an embedded pipeline steps gen
 == Links
 
 * xref:user-docs:pipeline:index.adoc[Pipeline documentation]
-* Documentation for link:/doc/pipeline/steps/workflow-basic-steps/#code-readfile-code-read-file-from-workspace[readFile step], link:/doc/pipeline/steps/workflow-scm-step/#checkout-check-out-from-version-control[checkout step], and link:/doc/pipeline/steps/workflow-multibranch/#properties-set-job-properties[properties step]
+* Documentation for link:https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/#code-readfile-code-read-file-from-workspace[readFile step], link:https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/#checkout-check-out-from-version-control[checkout step], and link:https://www.jenkins.io/doc/pipeline/steps/workflow-multibranch/#properties-set-job-properties[properties step]
 * link:https://github.com/jenkins-infra/pipeline-steps-doc-generator/[Pipeline steps doc generator source code]
 * link:https://github.com/jenkins-infra/pipeline-library[Jenkins pipeline library for ci.jenkins.io]
 

@@ -73,5 +73,5 @@ These annotations are provided in a standalone annotation dependency and can be 
 
 .References
 ****
-* link:/security/advisory/2019-07-17/#SECURITY-534['SECURITY-534 security fix']
+* link:https://www.jenkins.io/security/advisory/2019-07-17/#SECURITY-534['SECURITY-534 security fix']
 ****

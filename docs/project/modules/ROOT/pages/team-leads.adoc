@@ -25,7 +25,7 @@ All Jenkins officers and team leads have the following responsibilities:
 * Mentorship and knowledge sharing within the team to ensure healthy officer rotation in the project,
   with opportunity for team leads to move on to other roles or to take a break when needed.
 * Facilitating initiatives within the scope of the responsibility, maintaining the team's roadmap,
-  and ensuring that key team initiatives reflected on the link:/project/roadmap/[public Jenkins roadmap].
+  and ensuring that key team initiatives reflected on the link:https://www.jenkins.io/project/roadmap/[public Jenkins roadmap].
 * Representing the Jenkins project and community within the area of their responsibility.
 
 
@@ -53,7 +53,7 @@ Oversees the Jenkins project infrastructure. This is an **elected role**.
 * Ensure the security of Jenkins project infrastructure
 * Encourage contributors to INFRA project
 * Communicate maintenance windows and manage execution of those windows
-* Coordinate Jenkins Infrastructure initiatives and define priorities, get key initiatives reflected on the link:/project/roadmap/[public Jenkins roadmap]
+* Coordinate Jenkins Infrastructure initiatives and define priorities, get key initiatives reflected on the link:https://www.jenkins.io/project/roadmap/[public Jenkins roadmap]
 
 [#events]
 === Events Officer

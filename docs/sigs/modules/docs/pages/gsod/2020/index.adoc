@@ -14,9 +14,9 @@ You can find the project information on the project page:
 
 * xref:user-docs:installing-jenkins:kubernetes.adoc[Installing Jenkins on Kubernetes]
 * xref:user-docs:scaling:scaling-jenkins-on-kubernetes.adoc[Scaling Jenkins on Kubernetes]
-* link:/blog/2020/09/25/document-jenkins-on-kubernetes-introduction/[Introductory blogpost]
-* link:/blog/2020/11/05/installing-jenkins-on-kubernetes/[Progress report blogpost]
-* link:/blog/2020/12/04/gsod-project-report/[Final report blogpost]
+* link:https://www.jenkins.io/blog/2020/09/25/document-jenkins-on-kubernetes-introduction/[Introductory blogpost]
+* link:https://www.jenkins.io/blog/2020/11/05/installing-jenkins-on-kubernetes/[Progress report blogpost]
+* link:https://www.jenkins.io/blog/2020/12/04/gsod-project-report/[Final report blogpost]
 
 == Retrospective
 

@@ -158,7 +158,7 @@ Features in the demo:
 * https://wiki.jenkins.io/display/JENKINS/Remoting+Kafka+Plugin[Wiki]
 * https://plugins.jenkins.io/remoting-kafka[Plugin Site]
 * xref:projects:gsoc:2018/remoting-over-message-bus.adoc[Project Info]
-* link:/blog/2018/06/18/remoting-over-message-bus/[Introduction Blogpost]
+* link:https://www.jenkins.io/blog/2018/06/18/remoting-over-message-bus/[Introduction Blogpost]
 * https://docs.google.com/presentation/d/1GxkI17lZYQ6_pyAOR9sXNXq1K3LwkqjigXdxxf81VkE/edit?usp=sharing[Phase 1 Evaluation Slides]
 * https://docs.google.com/presentation/d/1TW31N-opvoFwSkD-FChhjCsXNWmeDjkecxJv8Lb6X-A/edit?usp=sharing[Phase 2 Evaluation Slides]
 * https://youtu.be/qWHM8S0fzUw[Phase 1 Evaluation Video]

@@ -18,7 +18,7 @@ Even Jenkins project uses YAML definitions for jobs, e.g. in the link:https://gi
 
 During GSoC 2018 we implemented a link:https://github.com/jenkinsci/simple-pull-request-job-plugin[Simple Pull Request Job Plugin] which allows defining Pipelines as YAML 
 which is close to the Declarative Pipeline syntax-wise.
-See the alpha release announcement link:/blog/2018/07/17/simple-pull-request-plugin/[here].
+See the alpha release announcement link:https://www.jenkins.io/blog/2018/07/17/simple-pull-request-plugin/[here].
 We have never finalized it, but it could be used as a base for a new project.
 Similarly, there are plugins like link:https://plugins.jenkins.io/travis-yml[Travis YML] which implement YAML definition support for Pipeline.
 
@@ -44,7 +44,7 @@ e.g. Declarative Pipeline improvements or support of other syntaxes in Jenkins (
 
 * Install Jenkins locally (xref:user-docs:installing-jenkins:index.adoc[guidelines])
 * Download the link:https://github.com/jenkinsci/simple-pull-request-job-plugin[Simple Pull Request Job Plugin] from the experimental update center or build it from the source code
-* Try out examples documented in the repository and in the link:/blog/2018/07/17/simple-pull-request-plugin/[Pipeline as YAML blog post]
+* Try out examples documented in the repository and in the link:https://www.jenkins.io/blog/2018/07/17/simple-pull-request-plugin/[Pipeline as YAML blog post]
 * Explore the link:https://github.com/jenkinsci/pipeline-as-yaml-plugin[Pipeline as YAML] project by Autunc Beken.
   It might be one of possible base implementation to build the project on.
 
@@ -65,9 +65,9 @@ Also, you can submit patches to existing Pipeline libraries which introduce supp
 .References
 ****
 * link:https://github.com/jenkinsci/simple-pull-request-job-plugin[Simple Pull Request Job Plugin]
-* link:/blog/2018/07/17/simple-pull-request-plugin/[Pipeline as YAML blog post]
+* link:https://www.jenkins.io/blog/2018/07/17/simple-pull-request-plugin/[Pipeline as YAML blog post]
 * link:https://jenkins-x.io/v3/develop/pipelines/[Jenkins X Pipelines]
-* link:/blog/2019/01/08/mpl-modular-pipeline-library/[Modular Pipeline Library]
+* link:https://www.jenkins.io/blog/2019/01/08/mpl-modular-pipeline-library/[Modular Pipeline Library]
 * link:https://github.com/tmobile/POET-pipeline-library[POET Pipeline Library]
 ****
 

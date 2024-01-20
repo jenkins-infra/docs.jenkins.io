@@ -60,7 +60,7 @@ int stuff(FilePath workspace, String arg) throws IOException, InterruptedExcepti
 
 == Usages in XStream
 
-If you have accidentally used an anonymous inner class as a field in some object serialized via XStream, your XML files are going to be a mess. This is a worse problem than for Remoting since not only can you suffer from link:/blog/2018/01/13/jep-200[JEP-200-related] security blocks, but the mistake has been persisted to disk so you need to take into account possible saved settings.
+If you have accidentally used an anonymous inner class as a field in some object serialized via XStream, your XML files are going to be a mess. This is a worse problem than for Remoting since not only can you suffer from link:https://www.jenkins.io/blog/2018/01/13/jep-200[JEP-200-related] security blocks, but the mistake has been persisted to disk so you need to take into account possible saved settings.
 
 If the field was not really valuable, make it `+transient+` (so it will not be saved), and _also_ rename it so Jenkins will not even try to load existing values from disk.
 

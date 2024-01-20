@@ -62,12 +62,12 @@ who have committed to assist contributors and to provide quick turnaround in pul
 |=========================================================
 |Project/component | Keywords | Ideas and links
 
-| link:/[Jenkins Website]
+| link:https://www.jenkins.io/[Jenkins Website]
 | Documentation, +
   Asciidoc, +
   CSS, +
   Ruby
-| Extend and improve Jenkins documentation, help to improve the website's look&feel, create link:/blog/[a new blogpost], a technology-specific solution page or a tutorial.
+| Extend and improve Jenkins documentation, help to improve the website's look&feel, create link:https://www.jenkins.io/blog/[a new blogpost], a technology-specific solution page or a tutorial.
 
   link:https://github.com/jenkins-infra/jenkins.io/blob/master/CONTRIBUTING.adoc[Contributing guidelines],
   link:https://github.com/jenkins-infra/jenkins.io/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22[Good first issues]
@@ -167,7 +167,7 @@ link:https://github.com/jenkinsci/helm-charts/issues?q=is%3Aissue+is%3Aopen+labe
 a| We are moving plugin documentation from Jenkins Wiki to GitHub,
   and it is a great opportunity to create small pull requests that benefit all Jenkins users.
 
-  * Migrate plugin documentation as documented in these link:/blog/2019/10/21/plugin-docs-on-github/[guidelines]).
+  * Migrate plugin documentation as documented in these link:https://www.jenkins.io/blog/2019/10/21/plugin-docs-on-github/[guidelines]).
   Plugins to convert can be found in the link:https://reports.jenkins.io/jenkins-plugin-migration.html[plugin migration progress report].
   * Move or improve existing documentation based on link:https://github.com/search?q=org%3Ajenkinsci+is%3Aissue+is%3Aopen+label%3Adocumentation[GitHub issues]
   * Review and renew the existing plugin documentation.  For example, cleanup the agent terminology usage as suggested in the {jira}JENKINS-42816[] EPIC
@@ -253,12 +253,12 @@ See xref:events:hacktoberfest:faq.adoc[Hacktoberfest in Jenkins FAQ].
 
 == Previous years
 
-* link:/blog/2022/11/17/hacktoberfest-recap/[2022]
-* link:/blog/2021/10/31/hacktoberfest-results-2021/[2021]
-* link:/blog/2021/01/12/new-year-report/#jenkins-in-hacktoberfest-2020[2020]
-* link:/blog/2019/10/01/hacktoberfest/[2019]
-* link:/blog/2018/10/01/hacktoberfest/[2018]
-* link:/blog/2017/10/06/hacktoberfest/[2017]
+* link:https://www.jenkins.io/blog/2022/11/17/hacktoberfest-recap/[2022]
+* link:https://www.jenkins.io/blog/2021/10/31/hacktoberfest-results-2021/[2021]
+* link:https://www.jenkins.io/blog/2021/01/12/new-year-report/#jenkins-in-hacktoberfest-2020[2020]
+* link:https://www.jenkins.io/blog/2019/10/01/hacktoberfest/[2019]
+* link:https://www.jenkins.io/blog/2018/10/01/hacktoberfest/[2018]
+* link:https://www.jenkins.io/blog/2017/10/06/hacktoberfest/[2017]
 
 ////
 // Need confirmation from maintainers before we add them to featured projects

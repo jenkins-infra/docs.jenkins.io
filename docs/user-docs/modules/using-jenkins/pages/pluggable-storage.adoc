@@ -11,7 +11,7 @@ A major pain point is the usage of local disk as all-purpose storage, which caus
 We believe that by using cloud provided services the overall usability, performance and scalability can be improved while enabling new demanded functionality.
 
 You can find more information about Pluggable Storage and priorities
-in link:/blog/2018/07/30/introducing-cloud-native-sig/[this blogpost].
+in link:https://www.jenkins.io/blog/2018/07/30/introducing-cloud-native-sig/[this blogpost].
 
 === Status summary
 
@@ -123,7 +123,7 @@ Jenkins core:
 The list above is not complete.
 Other storage types may be considered according to the feedback.
 You can find more information about Pluggable Storage and priorities
-in link:/blog/2018/07/30/introducing-cloud-native-sig/[this blogpost].
+in link:https://www.jenkins.io/blog/2018/07/30/introducing-cloud-native-sig/[this blogpost].
 
 === Artifact Storage
 

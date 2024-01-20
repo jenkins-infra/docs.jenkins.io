@@ -21,15 +21,15 @@ We are applying to be a mentoring organization in Google Summer of Code 2024.
 
 // The selected projects are
 //
-// * link:/projects/gsoc/2023/projects/gitlab-plugin-modernization[GitLab Plugin Modernization] with link:https://github.com/harsh-ps-2003[Harsh Pratap Singh] as GSoC contributor.
-// * link:/projects/gsoc/2023/projects/add-probes-to-plugin-health-score[Add probes to "Plugin Health Score"] with link:https://github.com/Jagrutiti[Jagruti Tiwari] as GSoC contributor.
-// * link:/projects/gsoc/2023/projects/alternative-jenkinsio-build-tool[Building Jenkins.io with alternative tools] with link:/blog/authors/vandit1604/[Vandit Singh] as GSoC contributor.
-// * link:/projects/gsoc/2023/projects/docker-compose-build[Docker-based Jenkins quickstart examples] with link:/blog/authors/ash-sxn/[Ashutosh Saxena] as GSoC contributor.
+// * link:https://www.jenkins.io/projects/gsoc/2023/projects/gitlab-plugin-modernization[GitLab Plugin Modernization] with link:https://github.com/harsh-ps-2003[Harsh Pratap Singh] as GSoC contributor.
+// * link:https://www.jenkins.io/projects/gsoc/2023/projects/add-probes-to-plugin-health-score[Add probes to "Plugin Health Score"] with link:https://github.com/Jagrutiti[Jagruti Tiwari] as GSoC contributor.
+// * link:https://www.jenkins.io/projects/gsoc/2023/projects/alternative-jenkinsio-build-tool[Building Jenkins.io with alternative tools] with link:https://www.jenkins.io/blog/authors/vandit1604/[Vandit Singh] as GSoC contributor.
+// * link:https://www.jenkins.io/projects/gsoc/2023/projects/docker-compose-build[Docker-based Jenkins quickstart examples] with link:https://www.jenkins.io/blog/authors/ash-sxn/[Ashutosh Saxena] as GSoC contributor.
 
 // They were proposed and selected from these link:./2024/project-ideas[project ideas].
 
 We are currently collecting project ideas.
-Add your ideas by submitting an ad-hoc pull request as explained in our previous link:/blog/2022/11/16/gsoc-2023/[GSoC blog post].
+Add your ideas by submitting an ad-hoc pull request as explained in our previous link:https://www.jenkins.io/blog/2022/11/16/gsoc-2023/[GSoC blog post].
 
 The 2024 GSoC project ideas link:./2024/project-ideas[can be found here].
 
@@ -80,7 +80,7 @@ The following checklists and documents describe the role:
 [#contacts]
 == Contacts
 
-* We use the link:/sigs/gsoc[GSoC SIG] for communications about GSoC.
+* We use the link:https://www.jenkins.io/sigs/gsoc[GSoC SIG] for communications about GSoC.
 Projects may also have their own mailing lists, chats and meetings.
 See details on project pages.
 * We use link:https://community.jenkins.io/c/contributing/gsoc/6[Discourse] for discussions.
@@ -99,7 +99,7 @@ The purpose of GSoC Discourse is for all public communications on GSoC such as n
 
 * link:https://app.gitter.im/#/room/#jenkinsci_gsoc-sig:gitter.im[GSoC Gitter channel] for organizational topics related to Jenkins in GSoC
 * Project-specific chats, see project and project idea pages
-* link:/chat/[Common developer chats] for technical topics
+* link:https://www.jenkins.io/chat/[Common developer chats] for technical topics
 
 [#office-hours]
 === Office hours
@@ -113,7 +113,7 @@ Use the xref:events:ROOT:index.adoc[Jenkins event calendar] to view the meeting 
 * Meetings are commonly recorded on-demand and posted link:https://www.youtube.com/playlist?list=PLN7ajX_VdyaO1f6bvkcSzW4PdWKkLktRG[here].
 
 This meeting will be used for Q&A with GSoC applicants/contributors and mentors before the announcement of accepted projects as well as during the GSoC program.
-You can add the office hours to your calendar when you visit the link:/event-calendar[Jenkins event calendar].
+You can add the office hours to your calendar when you visit the link:https://www.jenkins.io/event-calendar[Jenkins event calendar].
 More slots may be added on-demand, e.g. for project-specific discussions.
 
 In addition to these organization-wide meetings,
@@ -136,7 +136,7 @@ See the project pages for the schedule.
 //
 // * link:./2023/project-ideas[GSoC 2023 project ideas]
 // //* link:https://summerofcode.withgoogle.com/programs/2022/organizations/jenkins-wp/[Jenkins page on the GSoC website]
-// * link:/blog/2022/11/16/gsoc-2023/[Jenkins GSoC 2023 announcement]
+// * link:https://www.jenkins.io/blog/2022/11/16/gsoc-2023/[Jenkins GSoC 2023 announcement]
 // * link:https://opensource.googleblog.com/2022/11/get-ready-for-google-summer-of-code-2023.html[Google GSoC 2023 announcement blog]
 
 .References

@@ -62,7 +62,7 @@ Phase 1 focused on extracting the link:https://github.com/jenkinsci/docker/blob/
 The first alpha version of the library and CLI tool was released. It implemented basic functionality
 of the install-plugins.sh script to take in plugins and download them to a user-specified directory.
 
-The alpha release was announced in the following link:/blog/2019/07/02/plugin-management-tool-alpha-release/[blog post]
+The alpha release was announced in the following link:https://www.jenkins.io/blog/2019/07/02/plugin-management-tool-alpha-release/[blog post]
 and a live demo can be seen in link:https://youtu.be/MDs0Vr7gnnA?t=196[the Phase 1 evaluation recording]
 (link:https://docs.google.com/presentation/d/12Bo8w9SinrG5n82w-Unjx4MNq0mjkHFEOMc3Jf6rTQQ/edit#slide=id.p1[slides]).
 
@@ -78,7 +78,7 @@ to installation, and view if any of these plugins had available updates or secur
 some of the plugin download and dependency resolution logic so that all plugins and their recursive dependencies are resolved
 before the time of download.
 
-The blog post announcing the new features can be found link:/blog/2019/07/30/plugin-management-tool-phase2-updates/[here] and the demo
+The blog post announcing the new features can be found link:https://www.jenkins.io/blog/2019/07/30/plugin-management-tool-phase2-updates/[here] and the demo
 for this coding phase can be found link:https://www.youtube.com/watch?v=HlENuZZq7zc&feature=youtu.be&t=221[here]
 (link:https://docs.google.com/presentation/d/1wsM09IGgoA7gSsA9tW5fHlFAhl6B9fXlr-4iEP89SCk/edit?usp=sharing[slides])
 
@@ -95,7 +95,7 @@ Contributor Summit and for the link:https://devopsworldjenkinsworld2019.sched.co
 image::images:ROOT:post-images/gsoc-plugin-management-tool/devopsworld.jpeg[DevOps World Demo]
 
 Here are the link:https://docs.google.com/presentation/d/1f8aPNCs-Nxq_yvAnM_epWtP5jXQXQzB6SybxNFFbR_s/edit?usp=sharing[slides]
-from my presentation. I detailed my time at DevOps World link:/blog/2019/08/22/devops-world/[here].
+from my presentation. I detailed my time at DevOps World link:https://www.jenkins.io/blog/2019/08/22/devops-world/[here].
 
 I also presented my Phase 3 work at a Jenkins Online Meetup link:https://docs.google.com/presentation/d/14yiudx6uJ_FEyoSnVMsRwYdSr5KqpgXcZKVenp1ebgM/edit?usp=sharing[(slides)].
 

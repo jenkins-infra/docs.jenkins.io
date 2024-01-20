@@ -49,7 +49,7 @@ If you want to contribute we recommend that you join the Jenkins UX SIG. You can
 [#ongoing-projects]
 == Projects
 
-The special interest group drives a number of initiatives within the link:/project/roadmap/[Jenkins roadmap].
+The special interest group drives a number of initiatives within the link:https://www.jenkins.io/project/roadmap/[Jenkins roadmap].
 Here are the most important ones:
 
 [#project-ui-look-and-feel]

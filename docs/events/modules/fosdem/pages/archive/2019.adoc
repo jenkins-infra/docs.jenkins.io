@@ -41,11 +41,11 @@ summit and or hackathon]  +
 
 Who's attending:
 
-* @link:/blog/authors/kohsuke/[
+* @link:https://www.jenkins.io/blog/authors/kohsuke/[
 (kohsuke)] (attendance, organizing)
-* link:/blog/authors/alyssat[(atong)]
+* link:https://www.jenkins.io/blog/authors/alyssat[(atong)]
 (attendance, organizing)
-* link:/blog/authors/daniel-beck/[(danielbeck)]
-* link:/blog/authors/batmat[(batmat)]
-* link:/blog/authors/olblak[
+* link:https://www.jenkins.io/blog/authors/daniel-beck/[(danielbeck)]
+* link:https://www.jenkins.io/blog/authors/batmat[(batmat)]
+* link:https://www.jenkins.io/blog/authors/olblak[
 (olblak)] (attendance, organizing)

@@ -59,7 +59,7 @@ Jenkins project contains lots of materials about contributing to the project.
 Here are some links which may help:
 
 * xref:community:ROOT:index.adoc[Participate] - landing page for newcomer contributors
-* link:/blog/2017/08/07/intro-to-plugin-development/[Plugin Development Tutorials]
+* link:https://www.jenkins.io/blog/2017/08/07/intro-to-plugin-development/[Plugin Development Tutorials]
 * xref:dev-docs:ROOT:index.adoc[Developer Documentation]
 * link:https://app.gitter.im/#/room/#jenkinsci_hacktoberfest:gitter.im[Gitter channel] for Q&A
 

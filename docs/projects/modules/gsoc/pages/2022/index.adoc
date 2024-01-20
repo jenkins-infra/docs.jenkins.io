@@ -119,7 +119,7 @@ See the project pages for the schedule.
 
 * xref:gsoc:2022/project-ideas.adoc[GSoC 2022 project ideas]
 * link:https://summerofcode.withgoogle.com/programs/2022/organizations/jenkins-wp/[Jenkins page on the GSoC website]
- * link:/blog/2022/01/07/gsoc-2022/[GSoC 2022 announcement]
+ * link:https://www.jenkins.io/blog/2022/01/07/gsoc-2022/[GSoC 2022 announcement]
 ****
 
 .References

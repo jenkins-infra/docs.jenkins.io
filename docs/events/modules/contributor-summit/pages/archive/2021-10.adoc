@@ -16,10 +16,10 @@ Presentations and working sessions focused on helping new contributors quickly a
 
 Presentations included:
 
-* link:https://youtu.be/NU2g373wHNo?t=907[Improving code coverage user experience] - link:/blog/authors/uhafner/[Ullrich Hafner]
-* link:https://youtu.be/NU2g373wHNo&t=2330s[Migrating plugin documentation to GitHub] - link:/blog/authors/markewaite[Mark Waite]
-* link:https://youtu.be/NU2g373wHNo&t=3369s[Implementing Content Security Policy (CSP) in Jenkins] - link:/blog/authors/wadeck[Wadeck Follonier]
-* link:https://youtu.be/NU2g373wHNo&t=6633s[Modernizing plugins] - link:/blog/authors/markewaite[Mark Waite]
+* link:https://youtu.be/NU2g373wHNo?t=907[Improving code coverage user experience] - link:https://www.jenkins.io/blog/authors/uhafner/[Ullrich Hafner]
+* link:https://youtu.be/NU2g373wHNo&t=2330s[Migrating plugin documentation to GitHub] - link:https://www.jenkins.io/blog/authors/markewaite[Mark Waite]
+* link:https://youtu.be/NU2g373wHNo&t=3369s[Implementing Content Security Policy (CSP) in Jenkins] - link:https://www.jenkins.io/blog/authors/wadeck[Wadeck Follonier]
+* link:https://youtu.be/NU2g373wHNo&t=6633s[Modernizing plugins] - link:https://www.jenkins.io/blog/authors/markewaite[Mark Waite]
 
 After the presentations, we hosted question and answer sessions to assist new contributors with their specific issues and concerns.
 

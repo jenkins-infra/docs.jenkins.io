@@ -175,7 +175,7 @@ in increasing level of difficulty.
 * xref:project:ROOT:governance.adoc[Project Governance]
 * xref:community:ROOT:index.adoc[Participate and Contribute]
 * link:https://wiki.jenkins.io/display/JENKINS/Plugin+tutorial[Plugin tutorial]
-* link:/blog/2017/08/07/intro-to-plugin-development/[Plugin Development Tutorials, Videos, and More]
+* link:https://www.jenkins.io/blog/2017/08/07/intro-to-plugin-development/[Plugin Development Tutorials, Videos, and More]
 * link:https://github.com/jenkinsci/jenkins/blob/master/CONTRIBUTING.md[Contributing to the Jenkins core]
 
 There is also a
@@ -313,10 +313,10 @@ Repeating a presentation numerous times will help you breeze through it with flu
 Past years presentations and blog posts may inspire you. Here are some links:
 
 * GSoC 2018 blog posts:
-** link:/blog/2018/07/23/remoting-kafka-plugin-1/[Remoting over Kafka]
-** link:/blog/2018/08/17/code-coverage-api-plugin-1/[Code Coverage API]
+** link:https://www.jenkins.io/blog/2018/07/23/remoting-kafka-plugin-1/[Remoting over Kafka]
+** link:https://www.jenkins.io/blog/2018/08/17/code-coverage-api-plugin-1/[Code Coverage API]
 * GSoC 2016 blog post:
-** link:/node/tags/external-workspace-manager/[External Workspace Manager]
+** link:https://www.jenkins.io/node/tags/external-workspace-manager/[External Workspace Manager]
 
 [#codestyle]
 == Code Style Best Practices

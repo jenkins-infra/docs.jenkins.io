@@ -24,7 +24,7 @@ Please report issues present in the following components:
 * Jenkins, including installers and Docker images published by the Jenkins project
 * Jenkins plugins published by the Jenkins project (listed on https://plugins.jenkins.io/[plugins.jenkins.io] and/or hosted in https://github.com/jenkinsci[the jenkinsci GitHub organization])
 * Additional components published by the Jenkins project for general use, such as Docker images for Jenkins agents
-* Jenkins infrastructure projects, such as link:/[jenkins.io] or more generally the repositories hosted in the https://github.com/jenkins-infra[jenkins-infra GitHub organization]
+* Jenkins infrastructure projects, such as link:https://www.jenkins.io/[jenkins.io] or more generally the repositories hosted in the https://github.com/jenkins-infra[jenkins-infra GitHub organization]
 
 
 The following components are out of scope:
@@ -129,4 +129,4 @@ Currently there is no program to reward vulnerability reporters.
 
 == Security Advisories
 
-We publish Jenkins core and plugin security advisories link:/security/advisories[on this site] and notify users via xref:security:ROOT:index.adoc#advisories[various mailing lists] as well as through security warnings on the Jenkins UI.
+We publish Jenkins core and plugin security advisories link:https://www.jenkins.io/security/advisories[on this site] and notify users via xref:security:ROOT:index.adoc#advisories[various mailing lists] as well as through security warnings on the Jenkins UI.

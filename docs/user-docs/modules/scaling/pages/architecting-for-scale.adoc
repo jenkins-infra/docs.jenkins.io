@@ -511,7 +511,7 @@ CAUTION: No data migration is handled by Jenkins when using those settings.
 So you either want to use them from the beginning, or make sure you take into consideration which data you would like to be moved to the right place before using the following switches.
 
 It is possible to separate customize some of the layout to better separate pure job configurations from less durable data, like build data or logs.
-footnote:[These switches are used to configure out of the box link:/blog/2018/04/06/jenkins-essentials/[Jenkins Essentials] instances.]
+footnote:[These switches are used to configure out of the box link:https://www.jenkins.io/blog/2018/04/06/jenkins-essentials/[Jenkins Essentials] instances.]
 
 ===== Configure a different _jobs build data_ layout
 

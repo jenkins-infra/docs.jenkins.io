@@ -50,10 +50,10 @@ For organization matters, please use the xref:community:mailing-lists:index.adoc
 
 * xref:events:contributor-summit:archive/2021-10.adoc[Online Contributor Summit on Oct 2, 2021 and Oct 9, 2021]
 * xref:events:contributor-summit:archive/2021-06.adoc[Online Contributor Summit on Jun 25, 2021]
-* link:/blog/2021/02/16/contributor-summit-online/[Online Contributor Summit on Feb 23-25, 2021]
+* link:https://www.jenkins.io/blog/2021/02/16/contributor-summit-online/[Online Contributor Summit on Feb 23-25, 2021]
 * link:https://www.meetup.com/jenkinsmeetup/events/267684785/[2020 contributor summit at FOSDEM]
-* link:/blog/2019/08/25/jenkinsworld-contrib-summit-ask-the-expert-booth/[2019 contributor summit blog post]
-* link:/blog/2018/10/18/contributor-summit-summary/[2018 contributor summit summary]
+* link:https://www.jenkins.io/blog/2019/08/25/jenkinsworld-contrib-summit-ask-the-expert-booth/[2019 contributor summit blog post]
+* link:https://www.jenkins.io/blog/2018/10/18/contributor-summit-summary/[2018 contributor summit summary]
 * link:https://www.meetup.com/jenkinsmeetup/events/236370750/[2017 contributor hackathon]
 * link:https://www.meetup.com/jenkinsmeetup/events/227463345/[2016 contributor summit at FOSDEM]
 

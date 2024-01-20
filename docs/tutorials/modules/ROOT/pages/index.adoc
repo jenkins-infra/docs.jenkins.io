@@ -22,21 +22,21 @@ The following tutorials show how to use key features of Jenkins to facilitate im
 processes to build your applications:
 
 * xref:user-docs:pipeline:getting-started.adoc[Getting started with Jenkins Pipeline]
-* Publishing HTML Reports in Pipeline (link:/blog/2017/02/10/declarative-html-publisher/[Declarative Pipeline], link:/blog/2016/07/01/html-publisher-plugin/[Scripted Pipeline])
-* Sending Notifications in Pipeline (link:/blog/2017/02/15/declarative-notifications/[Declarative Pipeline], link:/blog/2016/07/18/pipeline-notifications/[Scripted Pipeline])
+* Publishing HTML Reports in Pipeline (link:https://www.jenkins.io/blog/2017/02/10/declarative-html-publisher/[Declarative Pipeline], link:https://www.jenkins.io/blog/2016/07/01/html-publisher-plugin/[Scripted Pipeline])
+* Sending Notifications in Pipeline (link:https://www.jenkins.io/blog/2017/02/15/declarative-notifications/[Declarative Pipeline], link:https://www.jenkins.io/blog/2016/07/18/pipeline-notifications/[Scripted Pipeline])
 * xref:build-a-multibranch-pipeline-project.adoc[End-to-End Multibranch Pipeline Project Creation]
-* link:/blog/2017/02/15/declarative-notifications/#moving-notifications-to-shared-library[Creating a shared library]
-* link:/blog/2016/06/16/parallel-test-executor-plugin/[Faster Pipelines with the Parallel Test Executor Plugin]
-* link:/blog/2017/01/19/converting-conditional-to-pipeline/[Converting Conditional Build Steps to Jenkins Pipeline]
-* link:/blog/2017/05/18/pipeline-dev-tools/[Pipeline Development Tools]
+* link:https://www.jenkins.io/blog/2017/02/15/declarative-notifications/#moving-notifications-to-shared-library[Creating a shared library]
+* link:https://www.jenkins.io/blog/2016/06/16/parallel-test-executor-plugin/[Faster Pipelines with the Parallel Test Executor Plugin]
+* link:https://www.jenkins.io/blog/2017/01/19/converting-conditional-to-pipeline/[Converting Conditional Build Steps to Jenkins Pipeline]
+* link:https://www.jenkins.io/blog/2017/05/18/pipeline-dev-tools/[Pipeline Development Tools]
 
 [#blueocean]
 == Blue Ocean
 
-* link:/blog/2017/04/05/welcome-to-blue-ocean/[Getting Started with Blue Ocean]
-* Getting Started with Blue Ocean's Visual Pipeline Editor (xref:create-a-pipeline-in-blue-ocean.adoc[guide], link:/blog/2017/04/06/welcome-to-blue-ocean-editor/[video guide])
-* link:/blog/2017/04/11/welcome-to-blue-ocean-pipeline-activity/[Getting Started with Blue Ocean's Activity View ]
-* link:/blog/2017/04/12/welcome-to-blue-ocean-dashboard/[Getting Started with the Blue Ocean Dashboard]
+* link:https://www.jenkins.io/blog/2017/04/05/welcome-to-blue-ocean/[Getting Started with Blue Ocean]
+* Getting Started with Blue Ocean's Visual Pipeline Editor (xref:create-a-pipeline-in-blue-ocean.adoc[guide], link:https://www.jenkins.io/blog/2017/04/06/welcome-to-blue-ocean-editor/[video guide])
+* link:https://www.jenkins.io/blog/2017/04/11/welcome-to-blue-ocean-pipeline-activity/[Getting Started with Blue Ocean's Activity View ]
+* link:https://www.jenkins.io/blog/2017/04/12/welcome-to-blue-ocean-dashboard/[Getting Started with the Blue Ocean Dashboard]
 
 [#tools]
 == Using build tools
@@ -60,9 +60,9 @@ Cloud tutorials are available including:
 * xref:tutorials-for-installing-jenkins-on-Google-Cloud.adoc[Jenkins on Google Cloud]
 * xref:tutorial-for-installing-jenkins-on-AWS.adoc[Jenkins on AWS]
 
-You may find more tutorials in link:/node/tags/tutorial[Tutorial blogposts].
+You may find more tutorials in link:https://www.jenkins.io/node/tags/tutorial[Tutorial blogposts].
 
-* link:/blog/2017/02/07/declarative-maven-project/[Declarative Pipeline for Maven Projects]
-* link:/blog/2016/08/10/rails-cd-with-pipeline/[Continuous Security for Rails apps with Pipeline and Brakeman]
-* link:/blog/2016/08/29/sauce-pipeline/[Browser-testing with Sauce OnDemand and Pipeline]
+* link:https://www.jenkins.io/blog/2017/02/07/declarative-maven-project/[Declarative Pipeline for Maven Projects]
+* link:https://www.jenkins.io/blog/2016/08/10/rails-cd-with-pipeline/[Continuous Security for Rails apps with Pipeline and Brakeman]
+* link:https://www.jenkins.io/blog/2016/08/29/sauce-pipeline/[Browser-testing with Sauce OnDemand and Pipeline]
 

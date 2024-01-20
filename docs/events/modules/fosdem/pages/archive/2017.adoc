@@ -23,19 +23,19 @@ d'Espagne) 
 
 Who's coming?
 
-* link:/blog/authors/rtyler/[(rtyler)]
+* link:https://www.jenkins.io/blog/authors/rtyler/[(rtyler)]
 (attendance, organizing)
-* link:/blog/authors/daniel-beck/[(danielbeck)]
+* link:https://www.jenkins.io/blog/authors/daniel-beck/[(danielbeck)]
 (attendance, organizing)
-* link:/blog/authors/kohsuke/[(kohsuke)]
+* link:https://www.jenkins.io/blog/authors/kohsuke/[(kohsuke)]
 (attendance, organizing)
 * Alyssa Tong (not attending, organizing)
 * Victor Martinez (attendance)
-* link:/blog/authors/abayer[(abayer)]
+* link:https://www.jenkins.io/blog/authors/abayer[(abayer)]
 (attendance, speaking)
-* link:/blog/authors/rsandell[(rsandell)]
-* link:/blog/authors/aheritier[(aheritier)]
-* link:/blog/authors/carlossg[
+* link:https://www.jenkins.io/blog/authors/rsandell[(rsandell)]
+* link:https://www.jenkins.io/blog/authors/aheritier[(aheritier)]
+* link:https://www.jenkins.io/blog/authors/carlossg[
 (csanchez)] (attendance, speaking)
 
 [#FOSDEM2017-Jenkinsmerchandise]

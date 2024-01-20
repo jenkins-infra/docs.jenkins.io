@@ -357,7 +357,7 @@ To learn more about what Jenkins can do, check out:
   Jenkins, such as xref:user-docs:pipeline:index.adoc[Pipelines] (in particular
   xref:user-docs:pipeline:syntax.adoc[Pipeline syntax]) and the
   xref:user-docs:blueocean:index.adoc[Blue Ocean] interface.
-* The link:/node[Jenkins blog] for the latest events, other tutorials and
+* The link:https://www.jenkins.io/node[Jenkins blog] for the latest events, other tutorials and
   updates.
 
 

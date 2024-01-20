@@ -12,7 +12,7 @@ include::user-docs:installing-jenkins:partial$_installation_requirements.adoc[]
 
 The Jenkins Web application ARchive (WAR) file can be started from the command line like this:
 
-. Download the link:/download[latest Jenkins WAR file] to an appropriate directory on your machine
+. Download the link:https://www.jenkins.io/download[latest Jenkins WAR file] to an appropriate directory on your machine
 . Open up a terminal/command prompt window to the download directory
 . Run the command `java -jar jenkins.war`
 . Browse to `\http://localhost:8080` and wait until the *Unlock Jenkins* page appears
