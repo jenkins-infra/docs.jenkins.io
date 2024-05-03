@@ -6,15 +6,11 @@ site:
 
 content:
   sources:
-    - url: https://github.com/jenkins-infra/jenkins-io-docs.git
+    - url: https://github.com/jenkins-infra/docs.jenkins.io.git
       branches: [main]
-      start_paths: [
-        docs/solutions,
-        docs/tutorials,
-        docs/user-docs
-      ]
-      # developer docs are un-versioned that's why they're fetched individually
-    - url: https://github.com/jenkins-infra/jenkins-io-docs.git
+      start_paths: [docs/tutorials, docs/user-docs, docs/solutions]
+      # developer docs are un-versioned that's why they are to be fetched individually
+    - url: https://github.com/jenkins-infra/docs.jenkins.io.git
       branches: [main]
       start_paths: [
         docs/about,
@@ -47,5 +43,5 @@ asciidoc:
 
 ui:
   bundle:
-    url: https://github.com/jenkins-infra/jenkins-io-docs/blob/main/ui/build/ui-bundle.zip
+    url: https://github.com/jenkins-infra/docs.jenkins.io/blob/main/ui/build/ui-bundle.zip
     snapshot: true
