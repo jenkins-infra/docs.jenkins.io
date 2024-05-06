@@ -39,7 +39,7 @@
     "gulp-postcss": "~8.0",
     "gulp-stylelint": "~13.0",
     "gulp-uglify": "~3.0",
-    "gulp-vinyl-zip": "~2.2",
+    "gulp-vinyl-zip": "~2.5.0",
     "handlebars": "~4.7",
     "highlight.js": "9.18.3",
     "js-yaml": "~3.13",
