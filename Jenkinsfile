@@ -71,5 +71,34 @@ pipeline {
         }
       }
     }
+
+    stage('Deploy to production') {
+      when {
+        allOf{
+          expression { env.BRANCH_IS_PRIMARY }
+          // Only deploy from infra.ci.jenkins.io
+          expression { infra.isInfra() }
+        }
+      }
+      steps {
+        script {
+          infra.withFileShareServicePrincipal([
+            servicePrincipalCredentialsId: 'infraci-docs-jenkins-io-fileshare-service-principal-writer',
+            fileShare: 'docs-jenkins-io',
+            fileShareStorageAccount: 'docsjenkinsio'
+          ]) {
+            sh '''
+            # Synchronize the File Share content
+            set +x
+            azcopy sync \
+              --skip-version-check \
+              --recursive=true \
+              --delete-destination=true \
+              ./playbook/build/site/ "${FILESHARE_SIGNED_URL}"
+            '''
+          }
+        }
+      }
+    }
   }
 }
