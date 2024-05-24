@@ -32,7 +32,9 @@ module.exports = (src, dest, preview) => () => {
           .map((importedPath) => fs.stat(importedPath).then(({ mtime }) => mtime))
       ).then((mtimes) => {
         const newestMtime = mtimes.reduce((max, curr) => (!max || curr > max ? curr : max), file.stat.mtime)
-        if (newestMtime > file.stat.mtime) file.stat.mtimeMs = +(file.stat.mtime = newestMtime)
+        if (newestMtime > file.stat.mtime) {
+          file.stat.mtimeMs = +(file.stat.mtime = newestMtime)
+        }
       }),
     postcssUrl([
       {
@@ -99,7 +101,11 @@ module.exports = (src, dest, preview) => () => {
     vfs.src('helpers/*.js', opts),
     vfs.src('layouts/*.hbs', opts),
     vfs.src('partials/*.hbs', opts),
-    vfs.src('static/**/*[!~]', { ...opts, base: ospath.join(src, 'static'), dot: true })
+    vfs.src('static/**/*[!~]', {
+      ...opts,
+      base: ospath.join(src, 'static'),
+      dot: true,
+    })
   ).pipe(vfs.dest(dest, { sourcemaps: sourcemaps && '.' }))
 }
 
@@ -111,14 +117,23 @@ function bundle ({ base: basedir, ext: bundleExt = '.bundle.js' }) {
       browserify(file.relative, { basedir, detectGlobals: false })
         .plugin('browser-pack-flat/plugin')
         .on('file', (bundledPath) => {
-          if (bundledPath !== bundlePath) mtimePromises.push(fs.stat(bundledPath).then(({ mtime }) => mtime))
+          if (bundledPath !== bundlePath) {
+            mtimePromises.push(fs.stat(bundledPath).then(({ mtime }) => mtime))
+          }
         })
         .bundle((bundleError, bundleBuffer) =>
           Promise.all(mtimePromises).then((mtimes) => {
             const newestMtime = mtimes.reduce((max, curr) => (curr > max ? curr : max), file.stat.mtime)
-            if (newestMtime > file.stat.mtime) file.stat.mtimeMs = +(file.stat.mtime = newestMtime)
+            if (newestMtime > file.stat.mtime) {
+              file.stat.mtimeMs = +(file.stat.mtime = newestMtime)
+            }
             if (bundleBuffer !== undefined) file.contents = bundleBuffer
-            next(bundleError, Object.assign(file, { path: file.path.slice(0, file.path.length - 10) + '.js' }))
+            next(
+              bundleError,
+              Object.assign(file, {
+                path: file.path.slice(0, file.path.length - 10) + '.js',
+              })
+            )
           })
         )
       return

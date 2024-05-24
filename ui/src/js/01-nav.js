@@ -61,8 +61,12 @@
           while ((current = current.parentNode) && current !== ceiling) {
             var id = current.id
             // NOTE: look for section heading
-            if (!id && (id = SECT_CLASS_RX.test(current.className))) id = (current.firstElementChild || {}).id
-            if (id && (navLink = menuPanel.querySelector('.nav-link[href="#' + id + '"]'))) break
+            if (!id && (id = SECT_CLASS_RX.test(current.className))) {
+              id = (current.firstElementChild || {}).id
+            }
+            if (id && (navLink = menuPanel.querySelector('.nav-link[href="#' + id + '"]'))) {
+              break
+            }
           }
         }
       }
@@ -108,7 +112,9 @@
       var rect = this.getBoundingClientRect()
       var menuPanelRect = menuPanel.getBoundingClientRect()
       var overflowY = (rect.bottom - menuPanelRect.top - menuPanelRect.height + padding).toFixed()
-      if (overflowY > 0) menuPanel.scrollTop += Math.min((rect.top - menuPanelRect.top - padding).toFixed(), overflowY)
+      if (overflowY > 0) {
+        menuPanel.scrollTop += Math.min((rect.top - menuPanelRect.top - padding).toFixed(), overflowY)
+      }
     }
   }
 
@@ -121,7 +127,9 @@
     navContainer.classList.add('is-active')
     var bounds = nav.getBoundingClientRect()
     var expectedHeight = window.innerHeight - Math.round(bounds.top)
-    if (Math.round(bounds.height) !== expectedHeight) nav.style.height = expectedHeight + 'px'
+    if (Math.round(bounds.height) !== expectedHeight) {
+      nav.style.height = expectedHeight + 'px'
+    }
     html.addEventListener('click', hideNav)
   }
 
@@ -142,7 +150,9 @@
     var rect = panel.getBoundingClientRect()
     var effectiveHeight = rect.height
     var navStyle = window.getComputedStyle(nav)
-    if (navStyle.position === 'sticky') effectiveHeight -= rect.top - parseFloat(navStyle.top)
+    if (navStyle.position === 'sticky') {
+      effectiveHeight -= rect.top - parseFloat(navStyle.top)
+    }
     panel.scrollTop = Math.max(0, (el.getBoundingClientRect().height - effectiveHeight) * 0.5 + el.offsetTop)
   }
 

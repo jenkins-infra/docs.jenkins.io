@@ -13,13 +13,13 @@ spec:
         app: jenkins
     spec:
       containers:
-      - name: jenkins
-        image: jenkins/jenkins:lts-jdk11
-        ports:
-        - containerPort: 8080
-        volumeMounts:
-        - name: jenkins-home
-          mountPath: /var/jenkins_home
+        - name: jenkins
+          image: jenkins/jenkins:lts-jdk11
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: jenkins-home
+              mountPath: /var/jenkins_home
       volumes:
-      - name: jenkins-home
-        emptyDir: { }
+        - name: jenkins-home
+          emptyDir: {}

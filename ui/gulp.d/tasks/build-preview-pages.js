@@ -12,7 +12,12 @@ const map = (transform = () => {}, flush = undefined) => new Transform({ objectM
 const vfs = require('vinyl-fs')
 const yaml = require('js-yaml')
 
-const ASCIIDOC_ATTRIBUTES = { experimental: '', icons: 'font', sectanchors: '', 'source-highlighter': 'highlight.js' }
+const ASCIIDOC_ATTRIBUTES = {
+  experimental: '',
+  icons: 'font',
+  sectanchors: '',
+  'source-highlighter': 'highlight.js',
+}
 
 module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
   Promise.all([
@@ -30,7 +35,9 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
       })
       const asciidoc = { extensions }
       for (const component of baseUiModel.site.components) {
-        for (const version of component.versions || []) version.asciidoc = asciidoc
+        for (const version of component.versions || []) {
+          version.asciidoc = asciidoc
+        }
       }
       baseUiModel = { ...baseUiModel, env: process.env }
       delete baseUiModel.asciidoc
@@ -49,7 +56,10 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
             if (file.stem === '404') {
               uiModel.page = { layout: '404', title: 'Page Not Found' }
             } else {
-              const doc = Asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
+              const doc = Asciidoctor.load(file.contents, {
+                safe: 'safe',
+                attributes: ASCIIDOC_ATTRIBUTES,
+              })
               uiModel.page.attributes = Object.entries(doc.getAttributes())
                 .filter(([name, val]) => name.startsWith('page-'))
                 .reduce((accum, [name, val]) => {
@@ -104,7 +114,13 @@ function compileLayouts (src) {
     map(
       (file, enc, next) => {
         const srcName = path.join(src, file.relative)
-        layouts.set(file.stem, handlebars.compile(file.contents.toString(), { preventIndent: true, srcName }))
+        layouts.set(
+          file.stem,
+          handlebars.compile(file.contents.toString(), {
+            preventIndent: true,
+            srcName,
+          })
+        )
         next()
       },
       function (done) {
@@ -127,7 +143,9 @@ function resolvePage (spec, context = {}) {
 }
 
 function resolvePageURL (spec, context = {}) {
-  if (spec) return '/' + (spec = spec.split(':').pop()).slice(0, spec.lastIndexOf('.')) + '.html'
+  if (spec) {
+    return '/' + (spec = spec.split(':').pop()).slice(0, spec.lastIndexOf('.')) + '.html'
+  }
 }
 
 function transformHandlebarsError ({ message, stack }, layout) {

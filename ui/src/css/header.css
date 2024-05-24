@@ -102,7 +102,10 @@ body {
 }
 
 .navbar-burger:not(.is-active) span {
-  transition: transform ease-out 0.25s, opacity 0s 0.25s, margin-top ease-out 0.25s 0.25s;
+  transition:
+    transform ease-out 0.25s,
+    opacity 0s 0.25s,
+    margin-top ease-out 0.25s 0.25s;
 }
 
 .navbar-burger span + span {

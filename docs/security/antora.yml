@@ -1,7 +1,7 @@
 name: security
 title: Security Advisories
 version: ~
-display_version: 'latest'
+display_version: "latest"
 nav:
   - modules/ROOT/nav-adminstrator.adoc
   - modules/ROOT/nav-reporter.adoc
