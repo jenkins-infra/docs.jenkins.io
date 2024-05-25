@@ -150,7 +150,7 @@ Chats::
 Jenkins project uses xref:community:chat:index.adoc[IRC and Gitter channels] for real time interactive communications. This is also the place where active members bond with each other.
 
 Twitter::
-link:https://twitter.com/jenkinsci[@jenkinsci] is the official Twitter account of the Jenkins project, run by the team of contributors (jep:10[]).
+link:https://twitter.com/jenkinsci[@jenkinsci] is the official Twitter account of the Jenkins project, run by the team of contributors ({jep}10[JEP-10]).
 There are also a link:https://twitter.com/jenkins_release[@jenkins_release] account for automatic plugin release announcements,
 and other accounts being run by sub-communities like meetup groups.
 
@@ -192,7 +192,7 @@ All initiatives depend on contributions,
 and we invite all interested parties to join us and to contribute towards the roadmap goals.
 
 * link:https://www.jenkins.io/project/roadmap[Public Jenkins Roadmap]
-* jep:14[Public Jenkins Roadmap Process]
+* {jep}14[Public Jenkins Roadmap Process]
 
 [#meeting]
 == Decision making

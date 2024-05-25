@@ -77,7 +77,7 @@ Scope of interest:
 * Official controller and agent images for Windows
 * Support Multi-architecture Docker images
 * Enabling continuous delivery for Jenkins packaging
-** Experimental DockerHub organization and deployments from ci.jenkins.io ( {jep}217/README.adoc[] )
+** Experimental DockerHub organization and deployments from ci.jenkins.io ( {jep}217/README.adoc[JEP-217] )
 
 == Plugin management
 
