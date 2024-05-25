@@ -1,7 +1,7 @@
 name: community
 title: Community
 version: ~
-display_version: "latest"
+display_version: 'latest'
 nav:
   - modules/ROOT/nav.adoc
   - modules/chat/nav.adoc

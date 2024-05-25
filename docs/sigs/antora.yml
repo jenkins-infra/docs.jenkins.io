@@ -1,7 +1,7 @@
 name: sigs
 title: Special Interest Groups (SIGs)
 version: ~
-display_version: "latest"
+display_version: 'latest'
 nav:
   - modules/gsoc/nav.adoc
   - modules/ROOT/nav.adoc

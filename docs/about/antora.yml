@@ -1,6 +1,6 @@
 name: about
 title: About Jenkins
 version: ~
-display_version: "latest"
+display_version: 'latest'
 nav:
   - modules/ROOT/nav.adoc
