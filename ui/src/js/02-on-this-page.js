@@ -3,7 +3,9 @@
 
   var sidebar = document.querySelector('aside.toc.sidebar')
   if (!sidebar) return
-  if (document.querySelector('body.-toc')) return sidebar.parentNode.removeChild(sidebar)
+  if (document.querySelector('body.-toc')) {
+    return sidebar.parentNode.removeChild(sidebar)
+  }
   var levels = parseInt(sidebar.dataset.levels || 2, 10)
   if (levels < 0) return
 
@@ -13,7 +15,9 @@
   for (var level = 0; level <= levels; level++) {
     var headingSelector = [articleSelector]
     if (level) {
-      for (var l = 1; l <= level; l++) headingSelector.push((l === 2 ? '.sectionbody>' : '') + '.sect' + l)
+      for (var l = 1; l <= level; l++) {
+        headingSelector.push((l === 2 ? '.sectionbody>' : '') + '.sect' + l)
+      }
       headingSelector.push('h' + (level + 1) + '[id]')
     } else {
       headingSelector.push('h1[id].sect0')
@@ -69,7 +73,9 @@
         var fragment = '#' + heading.id
         if (idx === lastIdx || heading.getBoundingClientRect().top + getNumericStyleVal(heading, 'paddingTop') > ceil) {
           activeFragments.push(fragment)
-          if (lastActiveFragment.indexOf(fragment) < 0) links[fragment].classList.add('is-active')
+          if (lastActiveFragment.indexOf(fragment) < 0) {
+            links[fragment].classList.add('is-active')
+          }
         } else if (~lastActiveFragment.indexOf(fragment)) {
           links[lastActiveFragment.shift()].classList.remove('is-active')
         }
@@ -86,12 +92,16 @@
     }
     var activeFragment
     headings.some(function (heading) {
-      if (heading.getBoundingClientRect().top + getNumericStyleVal(heading, 'paddingTop') - buffer > ceil) return true
+      if (heading.getBoundingClientRect().top + getNumericStyleVal(heading, 'paddingTop') - buffer > ceil) {
+        return true
+      }
       activeFragment = '#' + heading.id
     })
     if (activeFragment) {
       if (activeFragment === lastActiveFragment) return
-      if (lastActiveFragment) links[lastActiveFragment].classList.remove('is-active')
+      if (lastActiveFragment) {
+        links[lastActiveFragment].classList.remove('is-active')
+      }
       var activeLink = links[activeFragment]
       activeLink.classList.add('is-active')
       if (list.scrollHeight > list.offsetHeight) {

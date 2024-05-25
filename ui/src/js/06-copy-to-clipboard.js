@@ -55,19 +55,25 @@
       toolbox.appendChild(copy)
     }
     pre.parentNode.appendChild(toolbox)
-    if (copy) copy.addEventListener('click', writeToClipboard.bind(copy, code))
+    if (copy) {
+      copy.addEventListener('click', writeToClipboard.bind(copy, code))
+    }
   })
 
   function extractCommands (text) {
     var cmds = []
     var m
-    while ((m = CMD_RX.exec(text))) cmds.push(m[1].replace(LINE_CONTINUATION_RX, '$1$2'))
+    while ((m = CMD_RX.exec(text))) {
+      cmds.push(m[1].replace(LINE_CONTINUATION_RX, '$1$2'))
+    }
     return cmds.join(' && ')
   }
 
   function writeToClipboard (code) {
     var text = code.innerText.replace(TRAILING_SPACE_RX, '')
-    if (code.dataset.lang === 'console' && text.startsWith('$ ')) text = extractCommands(text)
+    if (code.dataset.lang === 'console' && text.startsWith('$ ')) {
+      text = extractCommands(text)
+    }
     window.navigator.clipboard.writeText(text).then(
       function () {
         this.classList.add('clicked')
