@@ -7,7 +7,7 @@
 * xref:shared-libraries.adoc[]
 * xref:development.adoc[]
 * xref:syntax.adoc[]
-* xref:pipeline-as-code[]
+* xref:pipeline-as-code.adoc[]
 * xref:pipeline-best-practices.adoc[]
 * xref:scaling-pipeline.adoc[]
 * xref:cps-method-mismatches.adoc[]
