@@ -24,7 +24,7 @@ image:images:ROOT:gsod/gsod.png[Google Season of Docs, role=center, float=right,
 The https://developers.google.com/season-of-docs/[Google Season of Docs] program brings together open source and technical writers communities for the benefit of both. The program raises awareness of open source, of docs, and of technical writing.
 --
 The Jenkins organization was accepted to Google Season of Docs in 2020.
-The xref:2.426.x@user-docs:installing-jenkins:kubernetes.adoc[Jenkins on Kubernetes project] created an installation guide for Jenkins on Kubernetes.
+The xref:2.452.x@user-docs:installing-jenkins:kubernetes.adoc[Jenkins on Kubernetes project] created an installation guide for Jenkins on Kubernetes.
 See the link:https://www.jenkins.io/blog/2020/12/04/gsod-project-report/[project report] by link:https://www.jenkins.io/blog/authors/zaycodes/[Zainab Abubakar] for details of the 2020 project.
 We look forward to additional Jenkins project opportunities with Google Season of Docs.
 
