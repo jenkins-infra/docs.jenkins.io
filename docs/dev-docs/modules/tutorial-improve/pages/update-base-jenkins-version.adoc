@@ -21,7 +21,7 @@ Update the minimum required Jenkins version by setting a `jenkins.version` value
 [source,xml,subs="attributes+"]
 ----
    <properties>
-     <jenkins.version>2.414.3</jenkins.version>
+     <jenkins.version>2.440.3</jenkins.version>
    </properties>
 ----
 
@@ -36,16 +36,19 @@ The `git diff` might look like this:
     <dependencies>
       <dependency>
         <groupId>io.jenkins.tools.bom</groupId>
--        <artifactId>bom-2.332.x</artifactId>
-+        <artifactId>bom-2.401.x</artifactId>
--        <version>1757.vf3c66da_b_7492</version>
-+        <version>2643.vfa_93ff299d20</version>
+-        <artifactId>bom-2.361.x</artifactId>
++        <artifactId>bom-2.426.x</artifactId>
+-        <version>2102.v854b_fec19c92</version>
++        <version>3080.vfa_b_e4a_a_39b_44</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
 ----
+
+// Compile the plugin
+include::dev-docs:tutorial-improve:partial$_compile-the-plugin.adoc[]
 
 // Create a pull request
 include::dev-docs:tutorial-improve:partial$_create-a-pull-request.adoc[]

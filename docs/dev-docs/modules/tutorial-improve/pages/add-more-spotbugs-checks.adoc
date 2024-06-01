@@ -4,8 +4,6 @@
 // :task-identifier: add-spotbugs-checks
 // :task-description: Increase spotbugs effort and threshold
 
-// = Add more spotbugs checks
-
 .Add more thorough spotbugs checks
 video::2c8wK2jkcIA[youtube,width=800,height=420,start=255]
 
@@ -21,10 +19,10 @@ To increase the spotbugs analysis checks, add the spotbugs properties entries in
 
 [source,xml]
 ----
-<properties>
-    <spotbugs.effort>Max</spotbugs.effort>
-    <spotbugs.threshold>Low</spotbugs.threshold>
-</properties>
+   <properties>
+     <spotbugs.effort>Max</spotbugs.effort>
+     <spotbugs.threshold>Low</spotbugs.threshold>
+   </properties>
 ----
 
 == Review and fix spotbugs warnings
@@ -100,6 +98,12 @@ An example excludes filter file is also included here:
   </Match>
 </FindBugsFilter>
 ----
+
+// Compile the plugin
+include::dev-docs:tutorial-improve:partial$_compile-the-plugin.adoc[]
+
+Confirm that no spotbugs warnings are reported.
+If spotbugs warnings are reported, resolve them.
 
 // Create a pull request
 include::dev-docs:tutorial-improve:partial$_create-a-pull-request.adoc[]
