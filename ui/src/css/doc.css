@@ -5,7 +5,7 @@
   line-height: var(--doc-line-height);
   margin: var(--doc-margin);
   max-width: var(--doc-max-width);
-  padding: 1rem 0;
+  padding: 1rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -332,7 +332,18 @@
 }
 
 .doc .admonitionblock {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   margin: 1.4rem 0 0;
 }
 
@@ -501,7 +512,9 @@
 .doc .quoteblock {
   padding: 0.25rem 2rem 1.25rem;
   background-color: #e7f3ff;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 0 0 1px rgba(27, 31, 35, 0.15);
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.02),
+    0 0 0 1px rgba(27, 31, 35, 0.15);
 }
 
 .doc .quoteblock .attribution {
@@ -526,7 +539,9 @@
   font-size: 1.15em;
   padding: 1rem 2rem;
   background-color: #e7f3ff;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 0 0 1px rgba(27, 31, 35, 0.15);
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.02),
+    0 0 0 1px rgba(27, 31, 35, 0.15);
 }
 
 .doc .verseblock pre {
@@ -893,8 +908,12 @@
   overflow-x: auto;
   padding: 0.875em;
   background-color: #e7f3ff;
-  font-family: Source Code Pro, monospace;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
+  font-family:
+    Source Code Pro,
+    monospace;
+  box-shadow:
+    rgba(0, 0, 0, 0.02) 0 1px 3px 0,
+    rgba(27, 31, 35, 0.15) 0 0 0 1px;
 }
 
 .doc .listingblock > .content {
@@ -1075,7 +1094,8 @@
 }
 
 .doc b.button {
-  white-space: nowrap; /* effectively ignores hyphens setting */
+  white-space: nowrap;
+  /* effectively ignores hyphens setting */
 }
 
 .doc b.button::before {
@@ -1094,10 +1114,13 @@
   background: var(--kbd-background);
   border: 1px solid var(--kbd-border-color);
   border-radius: 0.25em;
-  box-shadow: 0 1px 0 var(--kbd-border-color), 0 0 0 0.1em var(--body-background) inset;
+  box-shadow:
+    0 1px 0 var(--kbd-border-color),
+    0 0 0 0.1em var(--body-background) inset;
   padding: 0.25em 0.5em;
   vertical-align: text-bottom;
-  white-space: nowrap; /* effectively ignores hyphens setting */
+  white-space: nowrap;
+  /* effectively ignores hyphens setting */
 }
 
 .doc kbd,

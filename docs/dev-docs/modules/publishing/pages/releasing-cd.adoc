@@ -1,6 +1,6 @@
 = Setting up automated plugin release
 
-NOTE: Continuous Delivery of Jenkins Components and Plugin (jep:229[]) is relatively new.
+NOTE: Continuous Delivery of Jenkins Components and Plugin ({jep}229[JEP-229]) is relatively new.
 Any feedback from early adopters will be appreciated.
 
 == Introduction

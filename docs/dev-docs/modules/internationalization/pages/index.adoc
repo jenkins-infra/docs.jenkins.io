@@ -38,7 +38,7 @@ Translators need to perform the following tasks for Jenkins core and plugins tha
 == Chinese localization
 
 If you want to contribute Chinese localization, please create a PR in the link:https://github.com/jenkinsci/localization-zh-cn-plugin[Simplified Chinese Plugin].
-More details on the Chinese localization plugin are available from {jep}216/README.adoc[].
+More details on the Chinese localization plugin are available from {jep}216/README.adoc[JEP-216].
 
 == IntelliJ IDEA plugin
 
