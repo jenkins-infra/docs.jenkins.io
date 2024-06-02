@@ -114,7 +114,7 @@ It works best when combined with the _ExtendedRead_ permission that allows read-
 
 This permission can be enabled by setting xref:user-docs:managing:system-properties.adoc#jenkins-security-systemreadpermission[the system property `jenkins.security.SystemReadPermission` to `true`] or installing the {plugin}extended-read-permission[Extended Read Permission] plugin.
 
-Learn more in jep:224[].
+Learn more in {jep}224[JEP-224].
 
 NOTE: This permission was added in Jenkins 2.222.
 Some features, especially those provided by plugins, may not yet support this permission.
@@ -131,7 +131,7 @@ Options generally considered critical to the security of Jenkins are not availab
 
 This permission can be enabled by setting xref:user-docs:managing:system-properties.adoc#jenkins-security-managepermission[the system property `jenkins.security.ManagePermission` to `true`] or installing the {plugin}manage-permission[Overall/Manage permission enabler] plugin.
 
-Learn more in jep:223[].
+Learn more in {jep}223[JEP-223].
 
 NOTE: This permission was added in Jenkins 2.222.
 Some features, especially those provided by plugins, may not yet support this permission.

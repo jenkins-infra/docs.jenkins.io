@@ -476,4 +476,4 @@ For purposes of class loading, these components behave like anything else bundle
 For Maven dependency management purposes, plugins can declare `provided`-scope dependencies on these modules if they wish to use their APIs,
 taking care to select the same version as is bundled in the baseline version of core.
 
-{jep}230/README.adoc[] removed this system at least from the default Jenkins distribution.
+{jep}230/README.adoc[JEP-230] removed this system at least from the default Jenkins distribution.

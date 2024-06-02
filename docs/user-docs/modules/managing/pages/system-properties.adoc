@@ -994,7 +994,7 @@ See link:https://www.jenkins.io/doc/upgrade-guide/2.303///SECURITY-2458[the desc
 *Description*::
 Allow or disallow the deserialization of specified types.
 Comma-separated class names, entries are whitelisted unless prefixed with `!`.
-See jep:200//backwards-compatibility[JEP-200] and https://issues.jenkins.io/browse/JENKINS-47736[JENKINS-47736].
+See {jep}200/backwards-compatibility[JEP-200] and https://issues.jenkins.io/browse/JENKINS-47736[JENKINS-47736].
 
 ===== name: hudson.scheduledRetention
 
