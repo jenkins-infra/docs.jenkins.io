@@ -67,7 +67,7 @@ repository] was also created for the purpose of this project and
 link:https://github.com/jenkinsci/postgresql-fingerprint-storage-plugin/blob/master/README.adoc[README] contains
 installation and usage instructions.
 
-* The external fingerprint storage API ({jep}226[]) was created in link:https://github.com/jenkinsci/jenkins/README.adoc[
+* The external fingerprint storage API ({jep}226[JEP-226]) was created in link:https://github.com/jenkinsci/jenkins/README.adoc[
 Jenkins core]. Following are the relevant PRs:
 
 ** link:https://github.com/jenkinsci/jenkins/pull/4731[PR-4731]
@@ -106,7 +106,7 @@ link:https://docs.google.com/presentation/d/1QL5m-7QGtep_G1ysEYKRauAHzDq8nTtOdcn
 == The External Fingerprint Storage API
 
 This section explains the external fingerprint storage API that was created in Jenkins core.
-For further details, please refer to {jep}226/README.adoc[] which explains the design decisions in detail.
+For further details, please refer to {jep}226/README.adoc[JEP-226] which explains the design decisions in detail.
 
 image:images:ROOT:post-images/gsoc-external-fingerprint-storage-for-jenkins/overview.png[title="External Fingerprint
 Storage for Jenkins Overview" role="center" width=700 height=400 ]
