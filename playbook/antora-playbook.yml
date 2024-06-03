@@ -8,27 +8,24 @@ content:
   sources:
     - url: https://github.com/jenkins-infra/docs.jenkins.io.git
       branches: [main]
-      start_paths: [
-        docs/solutions,
-        docs/tutorials,
-        docs/user-docs
-      ]
+      start_paths: [docs/solutions, docs/tutorials, docs/user-docs]
       # developer docs are un-versioned that's why they're fetched individually
     - url: https://github.com/jenkins-infra/docs.jenkins.io.git
       branches: [main]
-      start_paths: [
-        docs/about,
-        docs/books,
-        docs/community,
-        docs/dev-docs,
-        docs/download,
-        docs/events,
-        docs/images,
-        docs/project,
-        docs/projects,
-        docs/security,
-        docs/sigs
-      ]
+      start_paths:
+        [
+          docs/about,
+          docs/books,
+          docs/community,
+          docs/dev-docs,
+          docs/download,
+          docs/events,
+          docs/images,
+          docs/project,
+          docs/projects,
+          docs/security,
+          docs/sigs,
+        ]
 
 runtime:
   cache_dir: ./.cache/antora
