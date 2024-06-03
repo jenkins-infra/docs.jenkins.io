@@ -43,7 +43,7 @@
     "gulp-vinyl-zip": "~2.5.0",
     "handlebars": "~4.7",
     "highlight.js": "9.18.5",
-    "js-yaml": "~3.13",
+    "js-yaml": "~3.14.0",
     "merge-stream": "~2.0",
     "postcss-calc": "~7.0",
     "postcss-custom-properties": "~9.1",
