@@ -20,7 +20,7 @@
     "@asciidoctor/core": "~2.2",
     "@fontsource/roboto": "~4.5",
     "@fontsource/roboto-mono": "~4.5",
-    "autoprefixer": "~9.7",
+    "autoprefixer": "~9.8.0",
     "browser-pack-flat": "~3.4",
     "browserify": "~16.5",
     "cssnano": "~4.1",
