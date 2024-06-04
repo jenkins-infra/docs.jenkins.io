@@ -1,7 +1,12 @@
 ROOT_DIR=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 # Rule to build everything after cleaning
-all:	clean	ui	antora
+all:	install	clean	ui	antora
+
+# Rule to install dependencies
+install:
+	@echo "Installing dependencies"
+	cd $(ROOT_DIR) && npm i
 
 # Rule to clean cache
 clean:
