@@ -9,15 +9,13 @@ clean:
 	rm -rf playbook/build
 
 # Rule to build the UI before building the docs
-ui:
-	clean
+ui:	clean
 	@echo "Building UI"
 	@echo $(ROOT_DIR)
 	cd $(ROOT_DIR)/ui && npm i && npx gulp bundle
 
 # Rule to build the Antora documentation
-antora:
-	ui
+antora:	ui
 	@echo "Building documentation"
 	cd $(ROOT_DIR)/playbook && npm i
 	cd $(ROOT_DIR)/playbook && npx antora --fetch local-antora-playbook.yml
