@@ -1,4 +1,1 @@
----
-layout: redirect
-redirect_url: /projects/gsoc
----
+:page-aliases: projects:gsoc/index.adoc
