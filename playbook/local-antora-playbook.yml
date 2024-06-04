@@ -7,12 +7,12 @@ content:
   sources:
     - url: ../
       # Change the branch name to the one you are working on for preview
-      branches: [main]
+      branches: [HEAD]
       start_paths: [docs/solutions, docs/tutorials, docs/user-docs]
       # developer docs are un-versioned that's why they're fetched individually
     - url: ../
       # Change the branch name to the one you are working on for preview
-      branches: [main]
+      branches: [HEAD]
       start_paths:
         [
           docs/about,
