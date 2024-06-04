@@ -40,7 +40,7 @@ xref:guides:index.adoc[Check Out]
 
 .Reference Documentation
 ****
-The Jenkins developer reference documentation is organised by topics.
+The Jenkins developer reference documentation is organized by topics.
 
 xref:reference:index.adoc[Check Out]
 
