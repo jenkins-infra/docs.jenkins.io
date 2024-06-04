@@ -4,7 +4,7 @@
 
 - Begin by creating a dedicated branch for a new release, following semantic versioning, for example, _2.452.x_ since software release aren't mapped to patch releases but to LTS stable releases.
  
-NOTE: The main branch will contain documentation for the next release and when a release candidate will be released and another branch is created from the `main` branch. In simple terms, The `main` branch will always contains documentation for the next release and some time before the release, we will create a versioned branch. 
+NOTE: The main branch will contain documentation for the next release and when a release candidate will be released and another branch is created from the `main` branch. In simple terms, The `main` branch will always contain documentation for the next release and some time before the release, we will create a versioned branch.
 
 == 2. Update `antora.yml` in Versioned Branches:
 
