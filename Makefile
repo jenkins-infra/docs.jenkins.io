@@ -1,7 +1,14 @@
 ROOT_DIR=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
-# Rule to build everything after cleaning
-all:	clean	ui	antora
+
+# Rule to install dependencies, clean and build everything
+all:	install clean	ui	antora
+
+# Rule to install antora and other dependencies
+install:
+	npm i -g @antora/cli@3.1 @antora/site-generator@3.1
+	npm i -g gulp
+	npm i -g http-server 
 
 # Rule to clean cache
 clean:
@@ -9,15 +16,13 @@ clean:
 	rm -rf playbook/build
 
 # Rule to build the UI before building the docs
-ui:
-	clean
+ui:	clean
 	@echo "Building UI"
 	@echo $(ROOT_DIR)
 	cd $(ROOT_DIR)/ui && npm i && npx gulp bundle
 
 # Rule to build the Antora documentation
-antora:
-	ui
+antora:	ui
 	@echo "Building documentation"
 	cd $(ROOT_DIR)/playbook && npm i
 	cd $(ROOT_DIR)/playbook && npx antora --fetch local-antora-playbook.yml
