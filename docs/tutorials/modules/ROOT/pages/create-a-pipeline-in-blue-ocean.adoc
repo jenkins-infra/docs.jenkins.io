@@ -23,7 +23,7 @@ If you've already run though xref:ROOT:index.adoc[another tutorial], you can ski
 include::partial$fork-sample-repository.adoc[forking the sample repository].
 If you need to restart Jenkins, follow the restart instructions in xref:user-docs:installing-jenkins:partial$_setup-wizard-for-tutorials.adoc[run Jenkins in Docker] and then proceed.
 
-include::partial$prerequisites.adoc[prerequisites]
+include::partial$_prerequisites.adoc[prerequisites]
 
 [#run-jenkins-in-docker]
 include::user-docs:installing-jenkins:partial$_run-jenkins-in-docker.adoc[]

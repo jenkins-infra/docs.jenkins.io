@@ -1,4 +1,3 @@
-:page-aliases: projects:gsoc:2024/index.adoc
 = Jenkins in Google Summer of Code 2023
 
 // image:images:ROOT:gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=left]

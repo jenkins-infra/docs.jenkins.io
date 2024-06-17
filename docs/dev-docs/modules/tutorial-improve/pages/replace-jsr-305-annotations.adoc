@@ -24,14 +24,10 @@ Replace imports of `javax.annotation.CheckForNull` with imports of `edu.umd.cs.f
 If the pom file includes a `jsr305` dependency, remove it.
 The spotbugs annotations are provided by the parent pom.
 
-== Compile and test
+// Compile the plugin
+include::dev-docs:tutorial-improve:partial$_compile-the-plugin.adoc[]
 
-Compile and test the updated code with the command:
-
-[source,bash]
-----
-mvn clean verify
-----
+Confirm that JSR-305 is not mentioned in the compiler output and that compilation succeeds.
 
 // Create a pull request
 include::dev-docs:tutorial-improve:partial$_create-a-pull-request.adoc[]

@@ -31,7 +31,7 @@ xref:#stopping-and-restarting-jenkins[Stopping and restarting Jenkins] and then
 proceed on.
 
 [#prerequisites]
-include::partial$prerequisites.adoc[]
+include::partial$_prerequisites.adoc[]
 ** link:https://git-scm.com/downloads[Git] and optionally link:https://desktop.github.com/[GitHub Desktop].
 
 include::user-docs:installing-jenkins:partial$_run-jenkins-in-docker.adoc[]

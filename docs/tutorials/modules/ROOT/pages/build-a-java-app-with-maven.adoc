@@ -14,12 +14,13 @@ You can stop this tutorial at any time and continue from where you left off.
 
 Make sure you have link:https://git-scm.com/downloads[Git] installed locally.
 
+[#prerequisites]
 include::tutorials:ROOT:partial$_new_prerequisites.adoc[]
 
 ** link:https://git-scm.com/downloads[Git], and optionally link:https://desktop.github.com/[GitHub Desktop].
 
-[[fork-sample-repository]]
-[[fork-and-clone-the-sample-repository-on-github]]
+[#fork-sample-repository]
+[#fork-and-clone-the-sample-repository-on-github]
 === Fork and clone the sample repository
 
 Get the "Hello world!" Java application from GitHub, by forking the sample repository of the application's source code into your own GitHub account, and then cloning this fork locally.
@@ -50,7 +51,12 @@ git clone https://github.com/YOUR-GITHUB-ACCOUNT-NAME/simple-java-maven-app
 === Start your Jenkins instance
 
 1. Obtain the latest Jenkins instance, customized for this tutorial, by cloning the link:https://github.com/jenkins-docs/quickstart-tutorials.git[quickstart-tutorials repository].
-2. After cloning, navigate to the `quickstart-tutorials` directory, and execute the command `docker compose up -d maven` to run the example.
+2. After cloning, navigate to the `quickstart-tutorials` directory, and execute the command
++
+----
+docker compose --profile maven up -d
+----
+to run the example.
 3. Once the containers are running successfully (you can verify this with `docker compose ps`), the controller can be accessed at http://localhost:8080.
 
 If you are unable to install `docker compose` on your machine for any reason, you can still run the example in the cloud for free thanks to link:https://www.gitpod.io/[GitPod]. GitPod link:https://www.gitpod.io/pricing[is free] for 50 hours per month.
@@ -59,6 +65,7 @@ Click on link:https://gitpod.io/?autostart=true#https://github.com/jenkins-docs/
 
 Now, log in using the `admin` username and `admin` password.
 
+[#create-your-initial-pipeline-as-a-jenkinsfile]
 === Create your Pipeline project in Jenkins
 
 . In Jenkins, select *New Item* under *Dashboard >* at the top left.
@@ -110,6 +117,7 @@ Within the `simple-java-maven-app` directory, run the commands:
 .. `git commit -m "Add initial Jenkinsfile"`
 .. `git push` to push your changes to your forked repository on GitHub, so it can be picked up by Jenkins.
 
+. Now select *Build Now* on the left pane of your Pipeline project in Jenkins.
 After making a clone of your local `simple-java-maven-app` Git repository itself, Jenkins:
 
 . Initially queues the project to be run on the agent.
@@ -300,7 +308,7 @@ To learn more about what Jenkins can do, check out:
 * The xref:user-docs:ROOT:index.adoc[User Handbook] for more detailed information about using Jenkins, such as xref:user-docs:pipeline:index.adoc[Pipelines] (in particular xref:user-docs:pipeline:syntax.adoc[Pipeline syntax]) and the xref:user-docs:blueocean:index.adoc[Blue Ocean] interface.
 * The link:https://www.jenkins.io/node[Jenkins blog] for the latest events, other tutorials and updates.
 
-If you want to clean up your environment, you can stop the containers with `docker compose down -v --remove-orphans`.
+If you want to clean up your environment, you can stop the containers with `docker compose --profile maven down -v --remove-orphans`.
 
 [[appendix]]
 

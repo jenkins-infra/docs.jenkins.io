@@ -19,9 +19,11 @@ It is generally recommended to frequently update to a recent plugin parent POM f
 // For example, plugins depending on the plugins parent POM 1.637 (with maven-hpi-plugin 1.110) or newer will need to specify the <code>escape-by-default</code> in all Jelly files for the InjectedTest to pass. Plugins depending on older releases may have hidden XSS vulnerabilities.
 * Recent versions of the tools (inherited from the parent plugins POM) allow developers to use more advanced tools like the https://github.com/jenkinsci/plugin-compat-tester[plugin compatibility tester] to determine whether their plugin is compatible with newest Jenkins releases.
 
+
 .References
 ****
 * xref:plugin-development:updating-parent.adoc[Guide to Updating Your Maven Parent POM]
+* link:https://youtu.be/Fev8KfFsPZE[video]
 * link:https://github.com/jenkinsci/plugin-pom/[Plugin parent POM 2.x and up]
 * link:https://github.com/jenkinsci/maven-hpi-plugin/[Maven HPI Plugin]
 ****
