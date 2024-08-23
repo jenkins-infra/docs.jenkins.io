@@ -4,6 +4,7 @@ This guided tour introduces you to the basics of using Jenkins and its main
 feature, Jenkins Pipeline. This tour uses the "standalone" Jenkins distribution,
 which runs locally on your own machine.
 
+[#prerequisites]
 == Prerequisites
 
 For this tour, you will require:
@@ -27,7 +28,7 @@ For this tour, you will require:
 When the installation is complete, you can start putting Jenkins to work!
 
 ---
-**xref:hello-world.adoc[Continue to "Create your first Pipeline"]**
+**xref:user-docs:pipeline:getting-started.adoc[Continue to "Create your first Pipeline"]**
 
 '''
 ////

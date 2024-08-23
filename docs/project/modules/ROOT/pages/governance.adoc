@@ -208,7 +208,7 @@ The meeting minutes are public:
 * link:http://meetings.jenkins-ci.org/jenkins-meeting/[September 2015 to today]
 * link:http://meetings.jenkins-ci.org/jenkins/[2011 to September 2015]
 
-The board serves as the ultimate decision-making body in case the project meeting fails to reach a consensus on a particular topic.
+The board serves as the ultimate decision-making body in case the meeting fails to reach a consensus on a particular topic.
 
 //TODO(oleg_nenashev): This section is dated and not really relevant to the project governance
 // IMO we should move it elsewhere and leave only Governance-related parts like ownership, teams, consensus building, etc.
