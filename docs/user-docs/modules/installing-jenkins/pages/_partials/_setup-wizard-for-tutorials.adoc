@@ -65,8 +65,7 @@ Finally, Jenkins asks you to create your first administrator user.
   *Restart*.
 * If the page doesn't automatically refresh after a minute, use your web browser
   to refresh the page manually.
-. If required, log in to Jenkins with the credentials of the user you just
-  created and you're ready to start using Jenkins!
+. If required, log in to Jenkins with the credentials of the user you just created, and you're ready to start using Jenkins!
 
 [#stopping-and-restarting-jenkins]
 ==== Stopping and restarting Jenkins

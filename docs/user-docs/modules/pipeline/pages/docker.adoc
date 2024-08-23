@@ -1,4 +1,4 @@
-= Using Docker with pipeline
+= Using Docker with Pipeline
 
 Many organizations use link:https://www.docker.com[Docker] to unify their build and test environments across machines, and to provide an efficient mechanism for deploying applications.
 Starting with Pipeline versions 2.5 and higher, Pipeline has built-in support for interacting with Docker from within a `Jenkinsfile`.
@@ -18,7 +18,7 @@ Any tool that can be link:https://hub.docker.com[packaged in a Docker container]
 // Declarative //
 pipeline {
     agent {
-        docker { image 'node:20.10.0-alpine3.19' }
+        docker { image 'node:20.11.1-alpine3.19' }
     }
     stages {
         stage('Test') {
@@ -31,7 +31,7 @@ pipeline {
 // Script //
 node {
     /* Requires the Docker Pipeline plugin to be installed */
-    docker.image('node:20.10.0-alpine3.19').inside {
+    docker.image('node:20.11.1-alpine3.19').inside {
         stage('Test') {
             sh 'node --version'
         }
@@ -127,7 +127,7 @@ pipeline {
 // Script //
 node {
     /* Requires the Docker Pipeline plugin to be installed */
-    docker.image('maven:3.9.6-eclipse-temurin-17-alpine').inside('-v $HOME/.m2:/root/.m2') {
+    docker.image('maven:3.9.7-eclipse-temurin-17-alpine').inside('-v $HOME/.m2:/root/.m2') {
         stage('Build') {
             sh 'mvn -B'
         }
@@ -149,7 +149,7 @@ pipeline {
     stages {
         stage('Back-end') {
             agent {
-                docker { image 'maven:3.9.6-eclipse-temurin-17-alpine' }
+                docker { image 'maven:3.9.7-eclipse-temurin-17-alpine' }
             }
             steps {
                 sh 'mvn --version'
@@ -157,7 +157,7 @@ pipeline {
         }
         stage('Front-end') {
             agent {
-                docker { image 'node:20.10.0-alpine3.19' }
+                docker { image 'node:20.11.1-alpine3.19' }
             }
             steps {
                 sh 'node --version'
@@ -170,13 +170,13 @@ node {
     /* Requires the Docker Pipeline plugin to be installed */
 
     stage('Back-end') {
-        docker.image('maven:3.9.6-eclipse-temurin-17-alpine').inside {
+        docker.image('maven:3.9.7-eclipse-temurin-17-alpine').inside {
             sh 'mvn --version'
         }
     }
 
     stage('Front-end') {
-        docker.image('node:20.10.0-alpine3.19').inside {
+        docker.image('node:20.11.1-alpine3.19').inside {
             sh 'node --version'
         }
     }
@@ -194,7 +194,7 @@ Reusing an example from above, with a more custom `Dockerfile`:
 .Dockerfile
 [source]
 ----
-FROM node:20.10.0-alpine3.19
+FROM node:20.11.1-alpine3.19
 
 RUN apk add -U subversion
 ----
