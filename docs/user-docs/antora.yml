@@ -1,6 +1,6 @@
 name: user-docs
 title: User Documentation
-version: '2.426.x'
+version: "2.452.x"
 start_page: index.adoc
 nav:
   - modules/ROOT/nav.adoc

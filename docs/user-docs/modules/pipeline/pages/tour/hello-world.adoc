@@ -34,7 +34,7 @@ You may need to modify one of the example ``Jenkinsfile``'s to make it run with 
 
 After you have setup your Pipeline, Jenkins will automatically detect any new Branches or Pull Requests that are created in your repository and start running Pipelines for them.
 
-**xref:running-multiple-steps.adoc[Continue to "Run multiple steps"]**
+**xref:./running-multiple-steps.adoc[Continue to "Run multiple steps"]**
 
 [#examples]
 == Quick Start Examples
@@ -49,7 +49,7 @@ various languages.
 // Declarative //
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'maven:3.9.6-eclipse-temurin-17-alpine' } }
+    agent { docker { image 'maven:3.9.7-eclipse-temurin-17-alpine' } }
     stages {
         stage('build') {
             steps {
@@ -62,7 +62,7 @@ pipeline {
 /* Requires the Docker Pipeline plugin */
 node {
     stage('Build') {
-        docker.image('maven:3.9.6-eclipse-temurin-17-alpine').inside {
+        docker.image('maven:3.9.7-eclipse-temurin-17-alpine').inside {
             sh 'mvn --version'
         }
     }
@@ -76,7 +76,7 @@ node {
 // Declarative //
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'node:20.10.0-alpine3.19' } }
+    agent { docker { image 'node:20.11.1-alpine3.19' } }
     stages {
         stage('build') {
             steps {
@@ -89,7 +89,7 @@ pipeline {
 /* Requires the Docker Pipeline plugin */
 node {
     stage('Build') {
-        docker.image('node:20.10.0-alpine3.19').inside {
+        docker.image('node:20.11.1-alpine3.19').inside {
             sh 'node --version'
         }
     }
@@ -103,7 +103,7 @@ node {
 // Declarative //
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'ruby:3.2.2-alpine3.19' } }
+    agent { docker { image 'ruby:3.3.2-alpine3.20' } }
     stages {
         stage('build') {
             steps {
@@ -116,7 +116,7 @@ pipeline {
 /* Requires the Docker Pipeline plugin */
 node {
     stage('Build') {
-        docker.image('ruby:3.2.2-alpine3.19').inside {
+        docker.image('ruby:3.3.2-alpine3.20').inside {
             sh 'ruby --version'
         }
     }
@@ -157,7 +157,7 @@ node {
 // Declarative //
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'php:8.3.0-alpine3.18' } }
+    agent { docker { image 'php:8.3.7-alpine3.20' } }
     stages {
         stage('build') {
             steps {
@@ -184,7 +184,7 @@ node {
 // Declarative //
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'golang:1.21.5-alpine3.19' } }
+    agent { docker { image 'golang:1.22.3-alpine3.20' } }
     stages {
         stage('build') {
             steps {
