@@ -24,7 +24,7 @@
 == Team
 
 [.avatar]
-*Students*:
+*Contributor*:
 image:images:ROOT:avatars/jagruti.jpg[,width=30,height=30] Jagruti Tiwari
 
 [.avatar]
@@ -87,5 +87,5 @@ Health percentage categories
 
 * xref:gsoc:index.adoc[Jenkins GSoC page] - documentation, application guidelines
 * xref:community:ROOT:index.adoc[Participate and contribute to Jenkins] - landing page for newcomer contributors
-* xref:projects:gsoc:2023/project-ideas/add-probes-to-plugin-health-score.adoc[Original GSoC project idea]
+* xref:projects:gsoc:2024/project-ideas/automating-rpu-for-jenkinsci-organization.adoc[Original GSoC project idea]
 * xref:gsoc:index.adoc[Jenkins GSoC page]

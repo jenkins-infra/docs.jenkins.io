@@ -47,6 +47,6 @@ A new `jenkins/jenkins` image is published each time a new release of Jenkins Do
 You can see a list of previously published versions of the `jenkins/jenkins` image on the link:https://hub.docker.com/r/jenkins/jenkins/tags/[tags] page.
 ====
 
-include::user-docs:installing-jenkins:partial_docker.adoc[]
+include::user-docs:installing-jenkins:partial$_docker.adoc[]
 
-include::user-docs:installing-jenkins:partial_setup-wizard.adoc[]
+include::user-docs:installing-jenkins:partial$_setup-wizard.adoc[]
