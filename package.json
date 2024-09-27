@@ -19,7 +19,7 @@
     "Antora",
     "AsciiDoc"
   ],
-  "author": "The Jenkins community",
+  "author": "Jenkins community",
   "overrides": {
     "ini": "^4.1.1",
     "js-yaml": "^4.1.0",
