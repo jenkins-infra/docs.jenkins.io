@@ -1,4 +1,4 @@
-image: node:10.14.2-stretch
+image: node:10.24.1-stretch
 stages: [setup, verify, deploy]
 install:
   stage: setup
