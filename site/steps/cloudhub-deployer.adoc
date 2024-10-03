@@ -1,0 +1,270 @@
+= CloudHub Deployer
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/cloudhub-deployer">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `cloudhubDeployer`: CloudHub Deployment
+++++
+<ul><li><code>environmentId : String</code>
+</li>
+<li><code>orgId : String</code>
+</li>
+<li><code>appName : String</code>
+<div><div>
+ The application name identifies your application not only in Runtime Manager but also in the public cloudhub.io domain. For example, an application named myapplication is accessible at http://myapplication.cloudhub.io. To avoid domain conflicts, the application name must be globally unique across CloudHub.The application name can contain between 3 and 42 alphanumeric characters (a-z, A-Z, 0-9) and dashes (-). They cannot contain spaces or other characters.
+</div></div>
+
+</li>
+<li><code>muleVersion : String</code>
+<div><div>
+ The runtime version must be the same Mule version used to develop your application.
+</div></div>
+
+</li>
+<li><code>filePath : String</code>
+<div><div>
+ Workspace-relative path of the artifact file to upload (it should resolve to a single file). Can use wildcards like module/dist/**/*.jar, See the @includes of <a href="http://ant.apache.org/manual/Types/fileset.html" rel="nofollow">Ant fileset</a> for the exact format. Examples: File, like target/my-mule-app.jar or target/**/*.jar : The jar file will be uploaded to cloudhub.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ Jenkins credentials containing The Anypoint Platform account username and password with sufficient access to perform deployment related activities on CloudHub.
+</div></div>
+
+</li>
+<li><code>requestMode</code> (optional)
+<div><div>
+ Type of Operation to perform on CloudHub. CREATE - Deploy/Create new application UPDATE - Update application with new package and settings provided. UPDATE_FILE - Update just the zip/jar file of application, rest all settings ignored. CREATE_OR_UPDATE - Deploy/Create new application(if not already present) or update the existing application. RESTART - Restart the application already present. DELETE - Delete the application.
+</div></div>
+
+<ul><li><b>Values:</b> <code>CREATE</code>, <code>UPDATE</code>, <code>CREATE_OR_UPDATE</code>, <code>UPDATE_FILE</code>, <code>RESTART</code>, <code>DELETE</code></li></ul></li>
+<li><code>region : String</code> (optional)
+<div><div>
+ If you have global deployment enabled on your account, you can change the deployment region.
+</div></div>
+
+</li>
+<li><code>autoScalePolicy</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>autoScalePolicyName : String</code> (optional)
+<div><div>
+ The auto scaling policy name.
+</div></div>
+
+</li>
+<li><code>enableAutoScalePolicy : boolean</code> (optional)
+</li>
+<li><code>id : String</code> (optional)
+</li>
+<li><code>maxScale : int</code> (optional)
+<div><div>
+ The maximum number of workers or size of workers for auto scaling. Allowed Values: 0.1, 0.2, 1, 2, 3, 4, 5, 6, 7, 8, 16
+</div></div>
+
+</li>
+<li><code>minScale : int</code> (optional)
+<div><div>
+ The minimum number of workers or size of workers for auto scaling. Allowed values: 0.1, 0.2, 1, 2, 3, 4, 5, 6, 7, 8, 16
+</div></div>
+
+</li>
+<li><code>scaleBasedOn : String</code> (optional)
+<div><div>
+ The metric based on which auto scaling policy scales. Allowed values: CPU, MEMORY
+</div></div>
+
+</li>
+<li><code>scaleDown</code> (optional)
+<ul><li><b>Type:</b> <code>class org.jenkinsci.plugins.cloudhubdeployer.data.Scale</code></li>
+</ul></li>
+<li><code>scaleDownNextScaleWaitMins : int</code> (optional)
+<div><div>
+ Number of minutes to wait before applying new scale down policy.
+</div></div>
+
+</li>
+<li><code>scaleDownPeriodCount : int</code> (optional)
+<div><div>
+ The time in minutes to monitor the CPU/memory for low usage before scaling down.
+</div></div>
+
+</li>
+<li><code>scaleDownValue : int</code> (optional)
+<div><div>
+ The CPU or memory usage below which scale down policy will take effect.
+</div></div>
+
+</li>
+<li><code>scaleType : String</code> (optional)
+<div><div>
+ The scale type of the auto scaling policy. Allowed values: WORKER_COUNT, WORKER_SIZE
+</div></div>
+
+</li>
+<li><code>scaleUp</code> (optional)
+<ul><li><b>Type:</b> <code>class org.jenkinsci.plugins.cloudhubdeployer.data.Scale</code></li>
+</ul></li>
+<li><code>scaleUpNextScaleWaitMins : int</code> (optional)
+<div><div>
+ Number of minutes to wait before applying new scale up policy.
+</div></div>
+
+</li>
+<li><code>scaleUpPeriodCount : int</code> (optional)
+<div><div>
+ The time in minutes to monitor the CPU/memory for high usage before scaling up.
+</div></div>
+
+</li>
+<li><code>scaleUpValue : int</code> (optional)
+<div><div>
+ The CPU or memory usage above which scale up policy will take effect.
+</div></div>
+
+</li>
+</ul></li>
+<li><code>autoStart : boolean</code> (optional)
+<div><div>
+ Check this flag to autostart the application after it is deployed
+</div></div>
+
+</li>
+<li><code>debugMode</code> (optional)
+<div><div>
+ Use this to log additional details/info from the http requests.
+</div></div>
+
+<ul><li><b>Values:</b> <code>ENABLED</code>, <code>DISABLED</code></li></ul></li>
+<li><code>enableAutoScalePolicy : boolean</code> (optional)
+</li>
+<li><code>envVars</code> (optional)
+<div><div>
+ you can specify properties (key-value pairs) that the application uses during deployment and while running.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code> (optional)
+</li>
+<li><code>value : String</code> (optional)
+</li>
+</ul></li>
+<li><code>ignoreGlobalSettings : boolean</code> (optional)
+<div><div>
+ If checked settings from global configuration will be used that are under manage jenkins.
+</div></div>
+
+</li>
+<li><code>logLevels</code> (optional)
+<div><div>
+ You can configure the logging level (DEBUG, WARN, ERROR, or INFO) for the application
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>levelCategory</code> (optional)
+<ul><li><b>Values:</b> <code>DEBUG</code>, <code>WARN</code>, <code>ERROR</code>, <code>INFO</code></li></ul></li>
+<li><code>packageName : String</code> (optional)
+</li>
+</ul></li>
+<li><code>loggingNgEnabled : boolean</code> (optional)
+<div><div>
+ Check this if you want to use your own logging solution using Log4j configuration.
+</div></div>
+
+</li>
+<li><code>monitoringAutoRestart : boolean</code> (optional)
+<div><div>
+ CloudHub automatically restarts your application when the monitoring system discovers an issue.
+</div></div>
+
+</li>
+<li><code>monitoringEnabled : boolean</code> (optional)
+<div><div>
+ Use Anypoint Monitoring and Visualizer for Mule applications running on supported versions of Mule.
+</div></div>
+
+</li>
+<li><code>objectStoreV1 : boolean</code> (optional)
+<div><div>
+ Object Store v2 is enabled by default in Mule 4. In Mule 3, select this option to use Object Store v1.
+</div></div>
+
+</li>
+<li><code>persistentQueues : boolean</code> (optional)
+<div><div>
+ You can use persistent queues on your application to store data in an input queue to disk. Persistent queues protect against message loss and enable you to distribute workloads across a set of workers.
+</div></div>
+
+</li>
+<li><code>persistentQueuesEncrypted : boolean</code> (optional)
+<div><div>
+ If you enable persistent queues, you can optionally encrypt the data stored in the input queue on disk.
+</div></div>
+
+</li>
+<li><code>timeoutConnection : int</code> (optional)
+<div><div>
+ Max time to try before failing the request.
+</div></div>
+
+</li>
+<li><code>timeoutResponse : int</code> (optional)
+<div><div>
+ Max time to wait for response before failing the request.
+</div></div>
+
+</li>
+<li><code>verifyDeployments : boolean</code> (optional)
+<div><div>
+ Verify if API is stated after deployment.
+</div></div>
+
+</li>
+<li><code>verifyIntervalInSeconds : int</code> (optional)
+</li>
+<li><code>workerAmount : int</code> (optional)
+<div><div>
+ No of workers to run for API.
+</div></div>
+
+</li>
+<li><code>workerCpu : String</code> (optional)
+<div><div>
+ Compute Capacity for each worker(vCores). Check MuleSoft Documentation for available sizes(<a href="https://docs.mulesoft.com/runtime-manager/deploying-to-cloudhub#worker-size-and-vcores" rel="nofollow">worker-size-and-vcores</a>). Example Values :- 0.1, 2 or 16
+</div></div>
+
+</li>
+<li><code>workerMemory : String</code> (optional)
+<div><div>
+ Heap memory (Or Ram) for each worker. Check MuleSoft Documentation for available sizes (<a href="https://docs.mulesoft.com/runtime-manager/deploying-to-cloudhub#worker-size-and-vcores" rel="nofollow">worker-size-and-vcores</a>. Example Values :- "500 MB", "1.5 GB" or "32 GB"
+</div></div>
+
+</li>
+<li><code>workerType : String</code> (optional)
+<div><div>
+ Type of worker to use "Micro", "Small", "Medium" or "Large". Check MuleSoft Documentation for additional details.
+</div></div>
+
+</li>
+<li><code>workerWeight : String</code> (optional)
+<div><div>
+ Weight for worker type. Check MuleSoft Documentation for available sizes(<a href="https://docs.mulesoft.com/runtime-manager/deploying-to-cloudhub#worker-size-and-vcores" rel="nofollow">worker-size-and-vcores</a>). Example Values :- 0.1, 0.2 or 1
+</div></div>
+
+</li>
+</ul>
+
+
+++++

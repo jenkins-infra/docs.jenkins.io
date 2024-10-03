@@ -1,0 +1,77 @@
+= Matrix Communication Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/matrix-communication">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `matrixSendMessage`: Send message to a Matrix room
+++++
+<ul><li><code>accessTokenCredentialsId : String</code> (optional)
+<div><div>
+ The id of the credentials holding the <a href="https://spec.matrix.org/v1.7/client-server-api/#using-access-tokens" rel="nofollow">Matrix access token</a>. The access token must be stored in the password-side of the credentials.
+</div></div>
+
+</li>
+<li><code>body : String</code> (optional)
+<div><div>
+ The body of the message to be sent. e.g. <code>Hello World</code>.
+</div></div>
+
+</li>
+<li><code>format : String</code> (optional)
+<div><div>
+ The <a href="https://spec.matrix.org/v1.7/client-server-api/#mroommessage-msgtypes" rel="nofollow">format</a> of the message to be sent. Defaults to <code>org.matrix.custom.html</code>.
+</div></div>
+
+</li>
+<li><code>formattedBody : String</code> (optional)
+<div><div>
+ The <a href="https://spec.matrix.org/v1.7/client-server-api/#mroommessage-msgtypes" rel="nofollow">formatted body</a> of the message to be sent. e.g. <code>Hello &lt;b&gt;world&lt;/b&gt;</code>.
+</div></div>
+
+</li>
+<li><code>hostname : String</code> (optional)
+<div><div>
+ The <a href="https://matrix.org" rel="nofollow">Matrix</a> server's hostname. e.g. <code>matrix.example.org</code>
+</div></div>
+
+</li>
+<li><code>https : boolean</code> (optional)
+<div><div>
+ True if <code>https</code> should be used. False otherwise. Defaults to true.
+</div></div>
+
+</li>
+<li><code>port : int</code> (optional)
+<div><div>
+ The <a href="https://matrix.org" rel="nofollow">Matrix</a> server's port. If no port is provided, port <code>80</code> will be used if https is false, port <code>443</code> otherwise.
+</div></div>
+
+</li>
+<li><code>roomId : String</code> (optional)
+<div><div>
+ The <a href="https://matrix.org" rel="nofollow">Matrix</a> room's id. e.g. <code>!HIJfQqFiHZGMlVPdYE:example.org</code>
+</div></div>
+
+</li>
+<li><code>type : String</code> (optional)
+<div><div>
+ The <a href="https://spec.matrix.org/v1.7/client-server-api/#mroommessage-msgtypes" rel="nofollow">type</a> of the message to be sent. Defaults to <code>m.text</code>.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

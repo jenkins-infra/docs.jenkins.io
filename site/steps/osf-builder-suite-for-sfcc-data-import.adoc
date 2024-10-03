@@ -1,0 +1,49 @@
+= OSF Builder Suite For Salesforce Commerce Cloud :: Data Import
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/osf-builder-suite-for-sfcc-data-import">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `osfBuilderSuiteForSFCCDataImport`: OSF Builder Suite For Salesforce Commerce Cloud :: Data Import
+++++
+<ul><li><code>hostname : String</code> (optional)
+</li>
+<li><code>tfCredentialsId : String</code> (optional)
+</li>
+<li><code>ocCredentialsId : String</code> (optional)
+</li>
+<li><code>ocVersion : String</code> (optional)
+</li>
+<li><code>archiveName : String</code> (optional)
+</li>
+<li><code>sourcePath : String</code> (optional)
+</li>
+<li><code>includePatterns</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>includePattern : String</code>
+</li>
+</ul></li>
+<li><code>excludePatterns</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>excludePattern : String</code>
+</li>
+</ul></li>
+<li><code>importStrategy : String</code> (optional)
+</li>
+<li><code>tempDirectory : String</code> (optional)
+</li>
+</ul>
+
+
+++++

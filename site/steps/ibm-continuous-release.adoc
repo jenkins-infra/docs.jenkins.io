@@ -1,0 +1,26 @@
+= IBM Continuous Release
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/ibm-continuous-release">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'ContinuousReleaseProperties'])`: Pass Properties to Continuous Release Version
+++++
+<ul><li><code>properties</code>
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+</ul>
+
+
+++++

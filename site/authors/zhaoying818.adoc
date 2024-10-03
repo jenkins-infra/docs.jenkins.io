@@ -1,0 +1,7 @@
+= About the Author
+:page-layout: author
+:page-author_name: ZhaoYing
+:page-github: zhaoying818
+
+
+ZhaoYing is a contributor of the Jenkins China community.

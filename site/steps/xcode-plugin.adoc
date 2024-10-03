@@ -1,0 +1,379 @@
+= Xcode integration
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/xcode-plugin">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `importDeveloperProfile`: Import developer profile
+++++
+<ul><li><code>importIntoExistingKeychain : boolean</code> (optional)
+</li>
+<li><code>keychainId : String</code> (optional)
+</li>
+<li><code>keychainName : String</code> (optional)
+</li>
+<li><code>keychainPath : String</code> (optional)
+</li>
+<li><code>keychainPwd</code> (optional)
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>profileId : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `exportIpa`: Export IPA
+++++
+<ul><li><code>appURL : String</code> (optional)
+</li>
+<li><code>archiveDir : String</code> (optional)
+<div><div>
+ <p>Specify the location of the path (usually BUILD_DIR specified by xcodebuild) to read the Archive for exporting the IPA file. <br>
+   Supports all macros and also environment and <a href="http://ci.jenkins-ci.org/env-vars.html" rel="nofollow">build variables</a> from the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Token+Macro+Plugin" rel="nofollow">Token Macro Plugin</a>.<br>
+   For example you can use the value :<br></p>
+ <pre>${WORKSPACE}/build</pre>
+</div></div>
+
+</li>
+<li><code>assetPackManifestURL : String</code> (optional)
+</li>
+<li><code>compileBitcode : boolean</code> (optional)
+</li>
+<li><code>copyProvisioningProfile : boolean</code> (optional)
+</li>
+<li><code>developmentTeamID : String</code> (optional)
+</li>
+<li><code>developmentTeamName : String</code> (optional)
+</li>
+<li><code>displayImageURL : String</code> (optional)
+</li>
+<li><code>fullSizeImageURL : String</code> (optional)
+</li>
+<li><code>ipaExportMethod : String</code> (optional)
+</li>
+<li><code>ipaName : String</code> (optional)
+</li>
+<li><code>ipaOutputDirectory : String</code> (optional)
+</li>
+<li><code>keychainId : String</code> (optional)
+</li>
+<li><code>keychainName : String</code> (optional)
+</li>
+<li><code>keychainPath : String</code> (optional)
+</li>
+<li><code>keychainPwd</code> (optional)
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>manualSigning : boolean</code> (optional)
+</li>
+<li><code>packResourcesAsset : boolean</code> (optional)
+</li>
+<li><code>provisioningProfiles</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>provisioningProfileAppId : String</code>
+</li>
+<li><code>provisioningProfileUUID : String</code>
+</li>
+</ul></li>
+<li><code>resourcesAssetURL : String</code> (optional)
+</li>
+<li><code>signingMethod : String</code> (optional)
+</li>
+<li><code>stripSwiftSymbols : boolean</code> (optional)
+</li>
+<li><code>symRoot : String</code> (optional)
+</li>
+<li><code>thinning : String</code> (optional)
+</li>
+<li><code>unlockKeychain : boolean</code> (optional)
+</li>
+<li><code>uploadBitcode : boolean</code> (optional)
+</li>
+<li><code>uploadSymbols : boolean</code> (optional)
+</li>
+<li><code>xcodeName : String</code> (optional)
+</li>
+<li><code>xcodeProjectPath : String</code> (optional)
+</li>
+<li><code>xcodeSchema : String</code> (optional)
+</li>
+<li><code>xcodeWorkspaceFile : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `unlockMacOSKeychain`: Unlock macOS X Keychain
+++++
+<ul><li><code>keychainId : String</code> (optional)
+</li>
+<li><code>keychainName : String</code> (optional)
+</li>
+<li><code>keychainPath : String</code> (optional)
+</li>
+<li><code>keychainPwd</code> (optional)
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `xcodeBuild`: Xcode
+++++
+<ul><li><code>allowFailingBuildResults : boolean</code> (optional)
+<div><div>
+ <p>Checking this option will prevent a build step from failing if xcodebuild exits with a non-zero return code.<br>
+   This can be useful for build steps that run unit tests and also have a post-build task to publish unit test results: the test step will not fail the entire build for a failing unit test, but will instead mark the build unstable in the "publish test" phase.<br></p>
+</div></div>
+
+</li>
+<li><code>appURL : String</code> (optional)
+</li>
+<li><code>assetPackManifestURL : String</code> (optional)
+</li>
+<li><code>assetPacksBaseURL : String</code> (optional)
+</li>
+<li><code>assetPacksInBundle : boolean</code> (optional)
+</li>
+<li><code>buildDir : String</code> (optional)
+<div><div>
+ <p>The value to use for the BUILD_DIR setting. You only need to supply this value if you want the product of the Xcode build to be in a location other than the one specified in project settings and this job 'SYMROOT' parameter.<br>
+   Supports all macros and also environment and <a href="http://ci.jenkins-ci.org/env-vars.html" rel="nofollow">build variables</a> from the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Token+Macro+Plugin" rel="nofollow">Token Macro Plugin</a>.<br>
+   For example you can use the value :<br></p>
+ <pre>${WORKSPACE}/build</pre>
+</div></div>
+
+</li>
+<li><code>buildIpa : boolean</code> (optional)
+<div><div>
+ <p>Checking this option will create a .ipa for each .app found in the build directory.<br>
+   An .ipa is basically a zipped up .app.<br>
+   This is quite handy for distributing ad-hoc builds to testers as they can just double-click the .ipa and it will import into iTunes.</p>
+</div></div>
+
+</li>
+<li><code>bundleID : String</code> (optional)
+<div><div>
+ <p>The new bundle ID. Usually something like com.companyname.projectname.</p>
+</div></div>
+
+</li>
+<li><code>bundleIDInfoPlistPath : String</code> (optional)
+<div><div>
+ <p>The path to the info.plist file which contains the CFBundleIdentifier of your project.<br>
+   Usually something like:</p>
+ <ul>
+  <li>${WORKSPACE}/ProjectName/Project-Info.plist</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>cfBundleShortVersionStringValue : String</code> (optional)
+<div><div>
+ <p>This will set the CFBundleShortVersionString to the specified string.<br>
+   Supports all macros and also environment and <a href="http://ci.jenkins-ci.org/env-vars.html" rel="nofollow">build variables</a> from the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Token+Macro+Plugin" rel="nofollow">Token Macro Plugin</a>.<br></p>
+</div></div>
+
+</li>
+<li><code>cfBundleVersionValue : String</code> (optional)
+<div><div>
+ <p>This will set the CFBundleVersion to the specified string.<br>
+   Supports all macros and also environment and <a href="http://ci.jenkins-ci.org/env-vars.html" rel="nofollow">build variables</a> from the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Token+Macro+Plugin" rel="nofollow">Token Macro Plugin</a>.<br>
+   For example the value ${BUILD_NUMBER} will be replaced with the current build number.<br>
+   We advice you to generate a unique value for each build if you want for example deploy it into a private store.<br>
+   In that case, for example, you can use : ${JOB_NAME}-${BUILD_NUMBER}</p>
+</div></div>
+
+</li>
+<li><code>changeBundleID : boolean</code> (optional)
+<div><div>
+ <p>Checking this option will replace the bundle identifier. <br>
+   You will need to specify which bundle ID (CFBundleIdentifier) to use and where is the Info.plist file located.<br>
+   This is handy for example when you want to use a different code signing identity in your development projects.</p>
+</div></div>
+
+</li>
+<li><code>cleanBeforeBuild : boolean</code> (optional)
+<div><div>
+ <p>This will delete the build directories before invoking the build. This will force the rebuilding of ALL dependencies and can make large projects take a lot longer.</p>
+</div></div>
+
+</li>
+<li><code>cleanResultBundlePath : boolean</code> (optional)
+<div><div>
+ <p>This will delete the ResultBundlePath before invoking the build.<br>
+   If the directory already exists in the location specified by ResultBundlePath, xcodebuild will be an error and should be checked.</p>
+</div></div>
+
+</li>
+<li><code>cleanTestReports : boolean</code> (optional)
+</li>
+<li><code>compileBitcode : boolean</code> (optional)
+</li>
+<li><code>configuration : String</code> (optional)
+<div><div>
+ <p>This is the name of the configuration as defined in the Xcode project.<br>
+   By default there are Debug and Release configurations.</p>
+</div></div>
+
+</li>
+<li><code>copyProvisioningProfile : boolean</code> (optional)
+</li>
+<li><code>developmentTeamID : String</code> (optional)
+</li>
+<li><code>developmentTeamName : String</code> (optional)
+</li>
+<li><code>displayImageURL : String</code> (optional)
+</li>
+<li><code>fullSizeImageURL : String</code> (optional)
+</li>
+<li><code>generateArchive : boolean</code> (optional)
+<div><div>
+ <p>Checking this option will create an .xcarchive .app found in the build directory.<br>
+   An .xcarchive is useful for submission to the app store or third party crash reporters.<br>
+   You must specify a Scheme to perform an archive.</p>
+</div></div>
+
+</li>
+<li><code>ignoreTestResults : boolean</code> (optional)
+</li>
+<li><code>interpretTargetAsRegEx : boolean</code> (optional)
+<div><div>
+ <p>Build all entries listed under the "Targets:" section of the xcodebuild -list output that match the regexp.</p>
+</div></div>
+
+</li>
+<li><code>ipaExportMethod : String</code> (optional)
+</li>
+<li><code>ipaName : String</code> (optional)
+</li>
+<li><code>ipaOutputDirectory : String</code> (optional)
+</li>
+<li><code>keychainId : String</code> (optional)
+</li>
+<li><code>keychainName : String</code> (optional)
+<div><div>
+ <p>The name of this configured keychain. Each job will specify a keychain configuration by the name.</p>
+</div></div>
+
+</li>
+<li><code>keychainPath : String</code> (optional)
+<div><div>
+ <p>The path of the keychain to use to retrieve certificates to sign the package (default : ${HOME}/Library/Keychains/login.keychain).</p>
+</div></div>
+
+</li>
+<li><code>keychainPwd</code> (optional)
+<div><div>
+ <p>The password of the keychain to use to retrieve certificates to sign the package.</p>
+</div></div>
+
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>logfileOutputDirectory : String</code> (optional)
+<div><div>
+ <p>Specify the directory to output the log of xcodebuild.<br>
+   If you leave it blank, it will be output to "project directory/builds/${BUILD_NUMBER}/log" with other logs.<br>
+   If an output path is specified, it is output as a xcodebuild.log file in a relative directory under the "build output directory"</p>
+</div></div>
+
+</li>
+<li><code>manualSigning : boolean</code> (optional)
+</li>
+<li><code>noConsoleLog : boolean</code> (optional)
+</li>
+<li><code>provideApplicationVersion : boolean</code> (optional)
+</li>
+<li><code>provisioningProfiles</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>provisioningProfileAppId : String</code>
+</li>
+<li><code>provisioningProfileUUID : String</code>
+</li>
+</ul></li>
+<li><code>resultBundlePath : String</code> (optional)
+<div><div>
+ <p>Specify the directory to output the output the test result.<br>
+   If you leave it blank, it will not output a test result and will not analyze the test results.<br>
+   If an output path is specified, it is output as a test result in a relative directory under the "ResultBundlePath".<br>
+   The plug-in analyzes the test result here and outputs a JUnit compatible XML file under the ${WORKSPACE}/test-reports.</p>
+</div></div>
+
+</li>
+<li><code>sdk : String</code> (optional)
+<div><div>
+ <p>You only need to supply this value if you want to specify the SDK to build against. If empty, the SDK will be determined by Xcode. If you wish to run OCUnit tests, you will need to use the iPhone Simulator's SDK, for example:</p>
+ <pre>/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/</pre>
+</div></div>
+
+</li>
+<li><code>signingMethod : String</code> (optional)
+</li>
+<li><code>stripSwiftSymbols : boolean</code> (optional)
+</li>
+<li><code>symRoot : String</code> (optional)
+<div><div>
+ <p>You only need to supply this value if you want to specify the SYMROOT path to use.<br>
+   If empty, the default SYMROOT path will be used (it could be different depending of your Xcode version).<br>
+   Supports all macros and also environment and <a href="http://ci.jenkins-ci.org/env-vars.html" rel="nofollow">build variables</a> from the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Token+Macro+Plugin" rel="nofollow">Token Macro Plugin</a>.<br>
+   For example you can use the value : <br></p>
+ <pre>${WORKSPACE}/symroot</pre>
+</div></div>
+
+</li>
+<li><code>target : String</code> (optional)
+<div><div>
+ <p>The target to build. If left empty, this will build all targets in the project.<br>
+   If you wish to build your binary and the unit test module, it is best to do this as two separate steps each with their own target.<br>
+   This was, the iPhone Simulator SDK can be specified for the unit tests.</p>
+</div></div>
+
+</li>
+<li><code>thinning : String</code> (optional)
+</li>
+<li><code>unlockKeychain : boolean</code> (optional)
+</li>
+<li><code>uploadBitcode : boolean</code> (optional)
+</li>
+<li><code>uploadSymbols : boolean</code> (optional)
+</li>
+<li><code>useLegacyBuildSystem : boolean</code> (optional)
+<div><div>
+ <p>Instead of "New Builld System" which became available from Xcode 9, we build the application using the legacy build system.<br>
+   There is a possibility that you can handle old projects that cause problems with the new build system.<br>
+   Also, since new output formats of logs are changed in the new build system, it is also useful when you want to handle logs with legacy third party tools.</p>
+</div></div>
+
+</li>
+<li><code>xcodeName : String</code> (optional)
+</li>
+<li><code>xcodeProjectFile : String</code> (optional)
+</li>
+<li><code>xcodeProjectPath : String</code> (optional)
+</li>
+<li><code>xcodeSchema : String</code> (optional)
+</li>
+<li><code>xcodeWorkspaceFile : String</code> (optional)
+</li>
+<li><code>xcodebuildArguments : String</code> (optional)
+<div><div>
+ <p>Extra xcodebuild parameters, added after the command that jenkins generates based on the rest of the config</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

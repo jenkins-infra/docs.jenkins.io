@@ -1,0 +1,171 @@
+= Github Release Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/github-release">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `createGitHubRelease`: createGitHubRelease
+++++
+<ul><li><code>bodyFile : String</code> (optional)
+<div><div>
+ <p>File containing text describing the contents of the tag. The text can be formatted with Markdown.</p>
+</div></div>
+
+</li>
+<li><code>bodyText : String</code> (optional)
+<div><div>
+ <p>Text describing the contents of the tag. The text can be formatted with Markdown.</p>
+</div></div>
+
+</li>
+<li><code>categoryName : String</code> (optional)
+<div><div>
+ <p>If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. For more information, see <a href="https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository" rel="nofollow">"Managing categories for discussions in your repository."</a></p>
+</div></div>
+
+</li>
+<li><code>commitish : String</code> (optional)
+<div><div>
+ <p>Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch.</p>
+</div></div>
+
+</li>
+<li><code>credentialId : String</code> (optional)
+<div><div>
+ <p>The token that will be used to connect to GitHub. The "Kind" of the credential must be "Secret text."</p>
+</div></div>
+
+</li>
+<li><code>draft : boolean</code> (optional)
+<div><div>
+ <p>true to create a draft (unpublished) release, false to create a published one.</p>
+ <p>Default: <b>false</b></p>
+</div></div>
+
+</li>
+<li><code>githubServer : String</code> (optional)
+<div><div>
+ <p>The GitHub Server to connect to.</p>
+ <p>The default value of blank will connect to the public instance of GitHub. https://api.github.com/</p>
+</div></div>
+
+</li>
+<li><code>name : String</code> (optional)
+<div><div>
+ <p>The name of the release. If blank the tag will be used.</p>
+</div></div>
+
+</li>
+<li><code>prerelease : boolean</code> (optional)
+<div><div>
+ <p>true to identify the release as a prerelease. false to identify the release as a full release.</p>
+ <p>Default: <b>false</b></p>
+</div></div>
+
+</li>
+<li><code>repository : String</code> (optional)
+<div><div>
+ <p>The GitHub repository to connect to.</p>
+ <p>Example: jenkinsci/jenkins</p>
+</div></div>
+
+</li>
+<li><code>tag : String</code> (optional)
+<div><div>
+ <p>The name of the name of the git tag to create.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `listGitHubReleases`: listGitHubReleases
+++++
+<ul><li><code>credentialId : String</code> (optional)
+<div><div>
+ <p>The token that will be used to connect to GitHub. The "Kind" of the credential must be "Secret text."</p>
+</div></div>
+
+</li>
+<li><code>githubServer : String</code> (optional)
+<div><div>
+ <p>The GitHub Server to connect to.</p>
+ <p>The default value of blank will connect to the public instance of GitHub. https://api.github.com/</p>
+</div></div>
+
+</li>
+<li><code>includeDrafts : boolean</code> (optional)
+</li>
+<li><code>repository : String</code> (optional)
+<div><div>
+ <p>The GitHub repository to connect to.</p>
+ <p>Example: jenkinsci/jenkins</p>
+</div></div>
+
+</li>
+<li><code>sortAscending : boolean</code> (optional)
+</li>
+<li><code>sortBy : String</code> (optional)
+</li>
+<li><code>tagNamePattern : String</code> (optional)
+<div><div>
+ <p>Java regex that will be used to <b>find()</b> releases. The <b>find()</b> method on the pattern will be called.</p>
+ <p>Examples:</p>
+ <ul>
+  <li>Find 1.0.x - ^1\.0\.\d+</li>
+ </ul>
+ <p><a href="https://www.regexplanet.com/advanced/java/index.html" rel="nofollow">Java Regex Tester</a> is a helpful resource.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `uploadGithubReleaseAsset`: uploadGithubReleaseAsset
+++++
+<ul><li><code>tagName : String</code> (optional)
+</li>
+<li><code>credentialId : String</code> (optional)
+<div><div>
+ <p>The token that will be used to connect to GitHub. The "Kind" of the credential must be "Secret text."</p>
+</div></div>
+
+</li>
+<li><code>githubServer : String</code> (optional)
+<div><div>
+ <p>The GitHub Server to connect to.</p>
+ <p>The default value of blank will connect to the public instance of GitHub. https://api.github.com/</p>
+</div></div>
+
+</li>
+<li><code>repository : String</code> (optional)
+<div><div>
+ <p>The GitHub repository to connect to.</p>
+ <p>Example: jenkinsci/jenkins</p>
+</div></div>
+
+</li>
+<li><code>uploadAssets</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>filePath : String</code> (optional)
+</li>
+<li><code>contentType : String</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++

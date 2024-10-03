@@ -1,0 +1,44 @@
+= Synopsys Rapid Scan Static Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/synopsys-sigma">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `sigma`: Execute Synopsys Rapid Scan Static
+++++
+<ul><li><code>commandLine : String</code> (optional)
+<div><div>
+ <p>The command line arguments to execute for Rapid Scan Static which override the default analyze command. This allows for any Rapid Scan Static command line options to be specified. <br><br>
+   If this field is empty the default command will be: <br><br>
+   'sigma analyze --format jenkins'</p>
+</div></div>
+
+</li>
+<li><code>ignorePolicies : boolean</code> (optional)
+<div><div>
+ <p>Prevents Rapid Scan Static from failing the build based on violated policies. <br>
+   If selected, then the '--ignore-policies' command line argument will be added to the Rapid Scan Static analyze sub-command.</p>
+</div></div>
+
+</li>
+<li><code>sigmaToolName : String</code> (optional)
+<div><div>
+ <p>Select the name of the Rapid Scan Static tool installation to execute Rapid Scan Static with this build step.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

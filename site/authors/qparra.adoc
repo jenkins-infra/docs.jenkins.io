@@ -1,0 +1,6 @@
+= About the Author
+:page-layout: author
+:page-author_name: Quentin Parra
+
+
+Quentin is a cybersecurity engineer who participated in a hands on project related to Jenkins security during his last year of master.

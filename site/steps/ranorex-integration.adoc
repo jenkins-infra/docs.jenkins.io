@@ -1,0 +1,156 @@
+= Ranorex Test Execution Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/ranorex-integration">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `ranorex`: Run a Ranorex test suite
+++++
+<ul><li><code>cmdLineArgs : String</code> (optional)
+<div><div>
+ Allows you to add Ranorex command line arguments. Some of the most important ones include: 
+ <br>
+ <table>
+  <tbody>
+   <tr>
+    <th>Flag</th>
+    <th>Function</th>
+   </tr>
+   <tr>
+    <td>config | cfg:&lt;config parameter name&gt;=&lt;value&gt;</td>
+    <td>&nbsp;Set values for configuration parameters.</td>
+   </tr>
+   <tr>
+    <td>reportlevel | rl: Debug|Info|Warn|Error|Success|Failure|&lt;any integer&gt;</td>
+    <td>&nbsp;Sets the minimum report level that log messages need to have in order to be included in the log file. Specify 'None' to completely disable reporting. These levels correspond to the following integer values: Debug=10,Info=20,Warn=30,Error=40,Success=110,Failure=120</td>
+   </tr>
+   <tr>
+    <td>testcase | tc:&lt;name or guid of test case&gt;</td>
+    <td>Runs this test case only.</td>
+   </tr>
+   <tr>
+    <td>testsuite | ts:&lt;path to test suite file&gt;</td>
+    <td>Runs the test cases defined by the test suite (rxtst) file. By default the rxtst file with the same name as the &lt;TestSuiteExe&gt; is used or the first rxtst file in the same folder as &lt;TestSuiteExe&gt;.</td>
+   </tr>
+   <tr>
+    <td>module | mo:&lt;module name or guid&gt;</td>
+    <td>Runs the module with the specified name or guid. Assemblies loaded by &lt;TestSuiteExe&gt; and assemblies referenced in the rxtst file are searched.</td>
+   </tr>
+   <tr>
+    <td>testcaseparam | tcpa:&lt;name or guid of test case&gt;:&lt;parameter name&gt;=&lt;value&gt;</td>
+    <td>Creates or overrides values for testcase parameters specified in the test suite.</td>
+   </tr>
+   <tr>
+    <td>runlabel | rul:&lt;custom value&gt;</td>
+    <td>Sets a custom runlabel for the test run.</td>
+   </tr>
+   <tr>
+    <td>testcasedatarange | tcdr:&lt;name or guid of test case&gt;=&lt;data range&gt;</td>
+    <td>Sets the data range for a testcase.</td>
+   </tr>
+  </tbody>
+ </table>
+</div></div>
+
+</li>
+<li><code>rxGlobalParameter : String</code> (optional)
+<div><div>
+ Allows you to create or override values for global parameters set in the test suite. Enter parameters according to the following pattern: "ParameterName=Value" Separate parameters with semicolons or add one parameter per line.
+</div></div>
+
+</li>
+<li><code>rxJUnitReport : boolean</code> (optional)
+</li>
+<li><code>rxReportDirectory : String</code> (optional)
+<div><div>
+ Allows you to specify the directory that your report will be saved to. If no path is specified, the location of your Ranorex Test Suite file will be used.
+</div></div>
+
+</li>
+<li><code>rxReportExtension : String</code> (optional)
+</li>
+<li><code>rxReportFile : String</code> (optional)
+<div><div>
+ Allows you to specify the file name of the report with the standard placeholders available in the <a href="https://www.ranorex.com/support/user-guide-20/lesson-4-ranorex-test-suite.html#c16095" rel="nofollow">test suite settings</a>. By default, the following pattern is used (%S_%Y%M%D_%T).
+</div></div>
+
+</li>
+<li><code>rxRunConfiguration : String</code> (optional)
+<div><div>
+ Runs the test suite using one of the run configurations available in the test suite. Enter the exact name of the run configuration you want to use. By default, the run configuration currently selected in the test suite is used. If you want to create or edit run configurations, please use Ranorex Studio or the Ranorex Test Suite Runner.
+</div></div>
+
+</li>
+<li><code>rxTestRail : boolean</code> (optional)
+<div><div>
+ Reports the test run results to TestRail via API. Requires 'Test Rail User' and 'Test Rail Password'.
+</div></div>
+
+</li>
+<li><code>rxTestRailPassword : String</code> (optional)
+<div><div>
+ Password or API key for the user specified in 'Test Rail User'.
+</div></div>
+
+</li>
+<li><code>rxTestRailRID : String</code> (optional)
+<div><div>
+ (Optional) The identifier of an existing test run in TestRail to report test results to. Without this argument a new test run is created.
+</div></div>
+
+</li>
+<li><code>rxTestRailRunName : String</code> (optional)
+<div><div>
+ (Optional) Creates a new test run in TestRail with the specified name to report test results to. Without this argument the default name is used.
+</div></div>
+
+</li>
+<li><code>rxTestRailUser : String</code> (optional)
+<div><div>
+ Email used to sign in to TestRail.
+</div></div>
+
+</li>
+<li><code>rxTestSuiteFilePath : String</code> (optional)
+<div><div>
+ Enter the path to the test suite file (*.rxtst) located in the output folder of your solution.
+</div></div>
+
+</li>
+<li><code>rxZippedReport : boolean</code> (optional)
+<div><div>
+ Compresses the report and the associated files into a single archive with the .rxzlog extension. The following additional input fields will appear when this option is enabled: 
+ <ul>
+  <li>Compressed report directory</li>
+  <li>Compressed report file name</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>rxZippedReportDirectory : String</code> (optional)
+<div><div>
+ Allows you to specify the directory that your compressed report will be saved to. If no path is specified, the location of your Ranorex Test Suite file will be used.
+</div></div>
+
+</li>
+<li><code>rxZippedReportFile : String</code> (optional)
+<div><div>
+ Allows you to specify the file name of the compressed report with the standard placeholders available in the <a href="https://www.ranorex.com/support/user-guide-20/lesson-4-ranorex-test-suite.html#c16095" rel="nofollow">test suite settings</a>. If no filename is specified, the same name as the "Ranorex Report File Name" is used.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

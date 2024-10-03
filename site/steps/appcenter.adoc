@@ -1,0 +1,106 @@
+= App Center
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/appcenter">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `appCenter`: Upload app to AppCenter
+++++
+<ul><li><code>apiToken : String</code>
+<div><div>
+ <p>An API Token is used for authentication for all App Center API calls. Must have full access.</p>
+ <p>Visit <a href="https://docs.microsoft.com/en-us/appcenter/api-docs/index" rel="nofollow">https://docs.microsoft.com/en-us/appcenter/api-docs/index</a> for further information.</p>
+</div></div>
+
+</li>
+<li><code>ownerName : String</code>
+<div><div>
+ <p>The name of the owner in AppCenter. <strong>NOTE:</strong> This may differ to the display name that you see in the web UI.</p>
+ <p>Visit <a href="https://appcenter.ms/apps" rel="nofollow">https://appcenter.ms/apps</a>, select your app, inspect the URL.</p>
+ <p>For example the URL in AppCenter might look like: <code>https://appcenter.ms/users/xiola-3/apps/casey-1</code>. Here, the <code>ownerName</code> is <code>xiola-3</code>.</p>
+</div></div>
+
+</li>
+<li><code>appName : String</code>
+<div><div>
+ <p>The name of the app in AppCenter. <strong>NOTE:</strong> This may differ to the display name that you see in the web UI.</p>
+ <p>Visit <a href="https://appcenter.ms/apps" rel="nofollow">https://appcenter.ms/apps</a>, select your app, inspect the URL.</p>
+ <p>For example the URL in AppCenter might look like: <code>https://appcenter.ms/users/xiola-3/apps/casey-1</code>. Here, the <code>appName</code> is <code>casey-1</code>.</p>
+</div></div>
+
+</li>
+<li><code>pathToApp : String</code>
+<div><div>
+ <p>Relative path to app. Supports variable substitution.</p>
+ <p>For example: <code>three/days/xiola.apk</code> or <code>three/days/${APP}.apk</code></p>
+</div></div>
+
+</li>
+<li><code>distributionGroups : String</code>
+<div><div>
+ <p><strong>NOTE:</strong> Distribution groups must have permission for this app to be distributed to.</p>
+ <p>Check your distribution groups at <a href="https://appcenter.ms/apps" rel="nofollow">https://appcenter.ms/apps</a>.</p>
+ <p>For example <code>perry, dave, stephen, eric</code></p>
+</div></div>
+
+</li>
+<li><code>branchName : String</code> (optional)
+<div><div>
+ <p>Name of the branch being built. Supports variable substitution.</p>
+ <p>For example: <code>origin/master</code> or <code>$GIT_BRANCH</code></p>
+</div></div>
+
+</li>
+<li><code>buildVersion : String</code> (optional)
+<div><div>
+ <p><strong>NOTE:</strong> Build version might be mandatory on certain platform releases. Supports variable substitution.</p>
+ <p>For example: <code>1.2.0</code> or <code>${version}</code></p>
+</div></div>
+
+</li>
+<li><code>commitHash : String</code> (optional)
+<div><div>
+ <p>Commit hash of the commit being build. Supports variable substitution.</p>
+ <p>For example: <code>0e62d85530892a9178ff2b55ac30e8ede56c9c0e</code> or <code>$GIT_COMMIT</code></p>
+</div></div>
+
+</li>
+<li><code>mandatoryUpdate : boolean</code> (optional)
+</li>
+<li><code>notifyTesters : boolean</code> (optional)
+</li>
+<li><code>pathToDebugSymbols : String</code> (optional)
+<div><div>
+ <p>Relative path to debug symbols. Supports variable substitution.</p>
+ <p>For example: <code>three/days/casey.apk</code> or <code>three/days/${SYMBOLS}.apk</code></p>
+</div></div>
+
+</li>
+<li><code>pathToReleaseNotes : String</code> (optional)
+<div><div>
+ <p>Relative path to release notes. Supports variable substitution. Supports Markdown syntax. <strong>NOTE:</strong> Limited to 5000 characters or less.</p>
+ <p>For example: <code>three/days/linearnotes.md</code> or <code>three/days/${NOTES}.md</code></p>
+</div></div>
+
+</li>
+<li><code>releaseNotes : String</code> (optional)
+<div><div>
+ <p>Supports Markdown syntax. <strong>NOTE:</strong> Limited to 5000 characters or less.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

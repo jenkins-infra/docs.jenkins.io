@@ -1,0 +1,45 @@
+= Stoplight Report Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/stoplightio-report">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `publishStoplight`: Publish Stoplight Report
+++++
+<ul><li><code>consoleOrFile : String</code>
+</li>
+<li><code>resultFile : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'StoplightReportPublisher'])`: Publish Stoplight Report
+++++
+<ul><li><code>consoleOrFile : String</code>
+<div><div>
+ Choose here if the plugin should parse either the standard output of Jenkins or another file.
+</div></div>
+
+</li>
+<li><code>resultFile : String</code>
+<div><div>
+ Points to the result file of Stoplight/Scenario.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

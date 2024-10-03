@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Guadalajara JAM
+:page-eventStartDate: 2017-06-17T09:00:00
+:page-eventLink: https://www.meetup.com/Guadalajara-Jenkins-Area-Meetup/events/240303838/
+---
+Workshop: Jenkins Design and Creation of Pipelines

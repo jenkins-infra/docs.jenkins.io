@@ -1,0 +1,10 @@
+
+= Jenkins Contributor Summit
+:page-eventLocation: Online
+:page-eventStartDate: 2021-06-25T09:00:00
+:page-eventLink: /events/contributor-summit
+
+
+
+The Jenkins Contributor Summit brings together current and future contributors to the Jenkins project.
+The summit brings together community members to learn, meet, and help shape the future of Jenkins.

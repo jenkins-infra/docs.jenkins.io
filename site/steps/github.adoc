@@ -1,0 +1,207 @@
+= GitHub plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/github">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'GitHubCommitNotifier'])`: Set build status on GitHub commit [deprecated]
+++++
+<div><div>
+ This notifier will set GH commit status. <b>This step is DEPRECATED and will be migrated to new step in one of the next major plugin releases.</b>
+ <br>
+  Please refer to new universal step.
+</div></div>
+<ul><li><code>resultOnFailure : String</code>
+</li>
+<li><code>statusMessage</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>content : String</code>
+<div><div>
+ Message content that will be expanded using core variable expansion i.e. ${WORKSPACE}
+ <br>
+  and <a href="https://wiki.jenkins-ci.org/display/JENKINS/Token+Macro+Plugin" rel="nofollow">Token Macro Plugin</a> tokens.
+ <br>
+</div></div>
+
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `step([$class: 'GitHubCommitStatusSetter'])`: Set GitHub commit status (universal)
+++++
+<div><div>
+ Using GitHub status api sets status of the commit.
+</div></div>
+<ul><li><code>commitShaSource</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'BuildDataRevisionShaSource'</code><div>
+<div><div>
+ Uses data-action (located at ${build.url}/git/) to determine actual SHA.
+</div></div>
+<ul></ul></div></li>
+<li><code>$class: 'ManuallyEnteredShaSource'</code><div>
+<div><div>
+ Allows to define commit SHA manually.
+</div></div>
+<ul><li><code>sha : String</code>
+<div><div>
+ Allows env vars and token macro.
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>contextSource</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'DefaultCommitContextSource'</code><div>
+<div><div>
+ Uses display name property defined in "GitHub project property" with fallback to job name.
+</div></div>
+<ul></ul></div></li>
+<li><code>$class: 'ManuallyEnteredCommitContextSource'</code><div>
+<div><div>
+ You can define context name manually.
+</div></div>
+<ul><li><code>context : String</code>
+<div><div>
+ Allows env vars and token macros.
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>errorHandlers</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'ChangingBuildStatusErrorHandler'</code><div>
+<ul><li><code>result : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'ShallowAnyErrorHandler'</code><div>
+<ul></ul></div></li>
+</ul></li>
+<li><code>reposSource</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'AnyDefinedRepositorySource'</code><div>
+<div><div>
+ Any repository provided by the programmatic contributors list.
+</div></div>
+<ul></ul></div></li>
+<li><code>$class: 'ManuallyEnteredRepositorySource'</code><div>
+<div><div>
+ A manually entered repository URL.
+</div></div>
+<ul><li><code>url : String</code>
+<div><div>
+ A GitHub repository URL.
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>statusBackrefSource</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'BuildRefBackrefSource'</code><div>
+<div><div>
+ Points commit status backref back to the producing build page.
+</div></div>
+<ul></ul></div></li>
+<li><code>$class: 'ManuallyEnteredBackrefSource'</code><div>
+<div><div>
+ A manually entered backref URL.
+</div></div>
+<ul><li><code>backref : String</code>
+<div><div>
+ A backref URL. Allows env vars and token macro.
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>statusResultSource</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'ConditionalStatusResultSource'</code><div>
+<div><div>
+ You can define in which cases you want to publish exact state and message for the commit. You can define multiple cases. First match (starting from top) wins. If no one matches, <i>PENDING</i> status + warn message will be used.
+</div></div>
+<ul><li><code>results</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'AnyBuildResult'</code><div>
+<ul><li><code>message : String</code> (optional)
+</li>
+<li><code>state : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BetterThanOrEqualBuildResult'</code><div>
+<ul><li><code>message : String</code> (optional)
+<div><div>
+ Allows env vars and token macro.
+</div></div>
+
+</li>
+<li><code>result : String</code> (optional)
+</li>
+<li><code>state : String</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'DefaultStatusResultSource'</code><div>
+<div><div>
+ Writes simple message about build result and duration.
+</div></div>
+<ul></ul></div></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `step([$class: 'GitHubSetCommitStatusBuilder'])`: Set build status to "pending" on GitHub commit
+++++
+<ul><li><code>contextSource</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'DefaultCommitContextSource'</code><div>
+<div><div>
+ Uses display name property defined in "GitHub project property" with fallback to job name.
+</div></div>
+<ul></ul></div></li>
+<li><code>$class: 'ManuallyEnteredCommitContextSource'</code><div>
+<div><div>
+ You can define context name manually.
+</div></div>
+<ul><li><code>context : String</code>
+<div><div>
+ Allows env vars and token macros.
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>statusMessage</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>content : String</code>
+<div><div>
+ Message content that will be expanded using core variable expansion i.e. ${WORKSPACE}
+ <br>
+  and <a href="https://wiki.jenkins-ci.org/display/JENKINS/Token+Macro+Plugin" rel="nofollow">Token Macro Plugin</a> tokens.
+ <br>
+</div></div>
+
+</li>
+</ul></li>
+</ul>
+
+
+++++

@@ -1,0 +1,96 @@
+= Google Analyze Code Security
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/google-analyze-code-security">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'CodeScanBuildStep'])`: Perform Code Scan During Build
+++++
+<ul><li><code>orgID : String</code>
+<div><div>
+ The Google Cloud organization ID which owns the resources under modification.
+</div></div>
+
+</li>
+<li><code>scanFileName : String</code>
+<div><div>
+ The absolute name of the Terraform plan file (json format) to be scanned. If file path relative to workspace directory is "/xyz/mainplan.json", please input "mainplan.json". This tool scans the workspace directory and it's subdirectories for the file if the Scan File Path field below is empty. ..
+</div></div>
+
+</li>
+<li><code>filePath : String</code>
+</li>
+<li><code>scanTimeOut : int</code>
+<div><div>
+ The time after which the scan is terminated. Based on Plugin Failure Config build status would be determined.
+</div></div>
+
+</li>
+<li><code>failSilentlyOnPluginFailure : boolean</code>
+<div><div>
+ Configuration for determining build status when plugin execution fails.
+</div></div>
+
+</li>
+<li><code>ignoreAssetViolation : boolean</code>
+</li>
+<li><code>assetViolationConfigs</code>
+<div><div>
+ Threshold configuration for various violation severity types reported during the scan. This threshold is used to evaluate Build Fail Condition for corresponding Severity type.
+</div></div>
+
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'CriticalSeverityConfig'</code><div>
+<ul><li><code>count : int</code> (optional)
+<div><div>
+ How many critical severity errors must exist before the build fails.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'HighSeverityConfig'</code><div>
+<ul><li><code>count : int</code> (optional)
+<div><div>
+ How many high severity errors must exist before the build fails.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'LowSeverityConfig'</code><div>
+<ul><li><code>count : int</code> (optional)
+<div><div>
+ How many low severity errors must exist before the build fails.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'MediumSeverityConfig'</code><div>
+<ul><li><code>count : int</code> (optional)
+<div><div>
+ How many medium severity errors must exist before the build fails.
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>configAggregator</code>
+<div><div>
+ The aggregator for the build fail conditions. If set to AND, all conditions must be true for the build to fail. If set to OR, only one of the conditions must be true for the build to fail.
+</div></div>
+
+<ul><li><b>Values:</b> <code>AND</code>, <code>OR</code></li></ul></li>
+</ul>
+
+
+++++

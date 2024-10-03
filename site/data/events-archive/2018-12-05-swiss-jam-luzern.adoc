@@ -1,0 +1,8 @@
+---
+:page-eventTitle: Luzern, JUG Switzerland
+:page-eventStartDate: 2018-12-05T17:15:00
+:page-eventLink: https://www.jug.ch/html/events/2018/jenkins.html
+---
+
+Gerald Mücke, Dinner for One - Jenkins in 3 acts.
+Jenkins advantages, pitfalls and best practices for DevOps.

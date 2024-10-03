@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Madrid JAM
+:page-eventStartDate: 2017-09-12T19:00:00
+:page-eventLink: https://www.meetup.com/Madrid-Jenkins-Area-Meetup/events/240908350/
+---
+Jenkins Pipelines: Continuous Testing

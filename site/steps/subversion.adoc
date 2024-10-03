@@ -1,0 +1,48 @@
+= Subversion Plug-in
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/subversion">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `svn`: Subversion
+++++
+<div><div>
+ <p>SVN step. It performs a checkout from the specified repository.</p>
+ <p>Note that this step is shorthand for the generic SCM step:</p>
+ <pre>checkout([$class: 'SubversionSCM', remote: 'http://sv-server/repository/trunk']]])
+    </pre>
+ <p></p>
+</div></div>
+<ul><li><code>url : String</code>
+</li>
+<li><code>changelog : boolean</code> (optional)
+<div><div>
+ Enable or Disable 'Include in changelog': 
+ <p>If 'Include in changelog' is enabled for an SCM source, then when a build occurs, the changes from that SCM source will be included in the changelog.</p>
+ <p>If 'Include in changelog' is disabled, then when a build occurs, the changes from this SCM source will not be included in the changelog.</p>
+</div></div>
+
+</li>
+<li><code>poll : boolean</code> (optional)
+<div><div>
+ Enable or Disable 'Include in polling' 
+ <p>If 'Include in polling' is enabled or 'Include in changelog' is enabled, then when polling occurs, the job will be started if changes are detected from this SCM source.</p>
+ <p>If 'Include in polling' is disabled and 'Include in changelog' is disabled, then when polling occurs, changes that are detected from this repository will be ignored.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

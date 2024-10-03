@@ -1,0 +1,54 @@
+= Breachlock DAST Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/breachlock-dast">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `DASTScan`: Breachlock DAST scan
+++++
+<ul><li><code>apikey</code> (optional)
+<div><div>
+ <p>Your API key can be found on the <a href="https://app.breachlock.com" rel="nofollow">Breachlock Platform</a> under</p>
+ <p></p><em><strong><code>Organization settings &gt; Integrations &gt; Jenkins</code></strong></em>
+ <p></p>
+ <div></div>
+</div></div>
+
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>asset : String</code> (optional)
+<div><div>
+ <p>Select the asset that will be scanned on build.</p>
+ <p>If the asset you are looking for is missing:</p>
+ <ul>
+  <li>Make sure it's registered on the <a href="https://app.breachlock.com" rel="nofollow">Breachlock Platform</a>.</li>
+  <li>Check if your Jenkins installation can connect to <a href="https://app.breachlock.com" rel="nofollow">https://app.breachlock.com/</a>.</li>
+  <li>Contact support if the problem keeps persisting.</li>
+ </ul>
+ <div></div>
+</div></div>
+
+</li>
+<li><code>email : String</code> (optional)
+<div><div>
+ <p>The email-address you registered on <a href="https://app.breachlock.com" rel="nofollow">Breachlock Platform</a>.</p>
+ <p></p>
+ <div></div>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

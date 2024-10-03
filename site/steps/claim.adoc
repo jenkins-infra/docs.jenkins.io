@@ -1,0 +1,23 @@
+= Claim Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/claim">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'ClaimPublisher'])`: Allow broken build claiming
+++++
+<ul></ul>
+
+
+++++

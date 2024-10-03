@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Triangle JAM
+:page-eventStartDate: 2017-02-21T18:00:00
+:page-eventLink: https://www.meetup.com/Raleigh-Jenkins-Area-Meetup/events/237147700/
+---
+CI/CD & DevOps

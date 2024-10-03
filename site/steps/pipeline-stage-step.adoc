@@ -1,0 +1,30 @@
+= Pipeline: Stage Step
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/pipeline-stage-step">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `stage`: Stage
+++++
+<div><div>
+ Creates a labeled block.
+</div></div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>concurrency : int</code> (optional)
+</li>
+</ul>
+
+
+++++

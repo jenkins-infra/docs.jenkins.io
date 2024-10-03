@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Amsterdam JAM
+:page-eventStartDate: 2016-05-10T18:30:00
+:page-eventLink: https://www.meetup.com/Amsterdam-Jenkins-Area-Meetup/events/229689216/
+---
+Jenkins certification pre-exam cramming session

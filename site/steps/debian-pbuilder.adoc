@@ -1,0 +1,115 @@
+= Debian Pbuilder
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/debian-pbuilder">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `debianPbuilder`: Build Debian packages in a pbuilder environment
+++++
+<ul><li><code>additionalBuildResults : String</code> (optional)
+<div><p>When running a build in the chroot environment, there are occasionally files that you must retrieve from the chroot that are not part of the normal build. For example, some files that you may need to get back would include test results, auto-generated files, etc.<br><br>
+  Set this variable in order to get the files back from the chroot build environment.<br><br>
+  The files that are retrieved will also automatically be archived as well with the other build results.<br><br>
+  This must be a comma-separated list; spaces are allowed.</p></div>
+
+</li>
+<li><code>architecture : String</code> (optional)
+<div><p>The architecture to build this as. <br><br>
+  If the project is using the Matrix Build plugin, leave this blank (the architectures to build for are defined by the 'architecture' environment variable). <br><br>
+  This is mostly to support Pipeline, however it can be used as a normal parameter as well.</p></div>
+
+</li>
+<li><code>artifactoryRepoName : String</code> (optional)
+<div><p>If you are generating a spec file for use with Artifactory, this defines the repository that you would like to upload it to.</p></div>
+
+</li>
+<li><code>binariesDir : String</code> (optional)
+<div><p>The directory in the workspace to put the built binaries in. If not set, a random temp directory will be made. This is generally useful if you build multiple packages at once and/or need a stable location to find all of the binaries that have been built.</p></div>
+
+</li>
+<li><code>bindMounts : String</code> (optional)
+<div><p>Additional directories to mount in the pbuilder chroot. Corresponds to the BINDMOUNTS variable in pbuilderrc.</p></div>
+
+</li>
+<li><code>buildAsTag : boolean</code> (optional)
+<div><p>Set this to mark this as building a tag. When a build comes from a tag, the deb version does not get incremented(i.e. it is exactly as set in the debian/changelog file). If using SVN, this plugin automatically looks at the SVN_URL_1 environment variable to see if the string "tags/" exists. If it does, the build will act as though this parameter is set. If using Git, this plugin automatically looks at the GIT_BRANCH environment variable to see if the string "tags/" exists. If it does, the build will act as though this parameter is set. Alternatively, you can also set the environment variable DEB_PBUILDER_BUILDING_TAG to either true or false.</p></div>
+
+</li>
+<li><code>components : String</code> (optional)
+<div><p>The components to build with. By default, pbuilder sets this to 'main'. If you're building an Ubuntu package, you may need to set this to "main restricted universe multiverse"<br><br>
+  The setting guessComponents must be false for this setting to be honored.</p></div>
+
+</li>
+<li><code>debianDirLocation : String</code> (optional)
+<div><div>
+ <p>The location of the debian/ directory, relative to workspace root</p>
+ <p>This may also be set globally</p>
+</div></div>
+
+</li>
+<li><code>distribution : String</code> (optional)
+<div><div>
+ <p>The distribution to build for. By default, this checks the distribution that is set in debian/changelog. If the version in the changelog is UNRELEASED, it attempts to use the currently running distribution if this parameter is NULL or a 0-length string.</p>
+</div></div>
+
+</li>
+<li><code>extraPackages : String</code> (optional)
+<div><div>
+ <p>Extra packages to install in the chroot environment. Corresponds to EXTRAPACKAGES in the pbuilder configuration</p>
+</div></div>
+
+</li>
+<li><code>generateArtifactorySpecFile : boolean</code> (optional)
+<div><p>Generate a spec file to be used with Artifactory in order to upload files. By default, this will generate the file with the .deb, .tar* and .gz files for uploading. <br><br>
+  This will generate a spec file in the workspace called artifactory-spec-debian-pbuilder/debian-pbuilder.spec which you can then use to upload the binaries to Artifactory. This is intended to be used in conjunction with the Artifactory Jenkins plugin.</p></div>
+
+</li>
+<li><code>guessComponents : boolean</code> (optional)
+<div><p>If set to true, automatically try to guess the components. This means that if we think we are building an Ubuntu package on Debian, our components will be automatically set to "main restricted universe multiverse"<br></p></div>
+
+</li>
+<li><code>keyring : String</code> (optional)
+<div><div>
+ <p>The keyring to build with. By default, we will attempt to figure out if we are building a Debian package on Ubuntu, and if we think that we are this will be set to /usr/share/keyrings/debian-archive-keyring.gpg. This file is part of the debian-archive-keyring package. If you need to use a custom keyring, put it in here. If for some reason the auto-detection is not working properly, set this to the string 'disabled' and no keyring settings for pbuilder will be set.</p>
+</div></div>
+
+</li>
+<li><code>mirrorSite : String</code> (optional)
+<div><div>
+ <p>The mirror site to use. If this is not set or a 0-length string, then the default mirror site for this distribution will be used. The default mirror site is defined in /etc/pbuilderrc</p>
+</div></div>
+
+</li>
+<li><code>numberCores : int</code> (optional)
+<div><div>
+ <p>The number of cores to use when building. By default, this is 1. Set to -1 in order to use as many cores as possible when building. In order for this to take effect, you need to make sure that your debian/rules is setup properly. See <a href="http://askubuntu.com/questions/337093/how-to-run-parallel-make-with-debuild" rel="nofollow"> this post.</a></p>
+</div></div>
+
+</li>
+<li><code>otherMirror : String</code> (optional)
+<div><div>
+ <p>The extra mirror to use. Corresponds to OTHERMIRROR configuration option in pbuilder</p>
+</div></div>
+
+</li>
+<li><code>pbuilderType : String</code> (optional)
+</li>
+<li><code>pristineTarName : String</code> (optional)
+<div><p>If this field set, and if source/format indicates that this is a quilt package, we will attempt to checkout the given original tar file.</p></div>
+
+</li>
+</ul>
+
+
+++++

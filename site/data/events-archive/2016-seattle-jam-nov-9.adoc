@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Seattle JAM
+:page-eventStartDate: 2016-11-09
+:page-eventLink: https://www.meetup.com/Seattle-Jenkins-Area-Meetup/events/234933462/
+---
+Scaling Your Jenkins Jobs

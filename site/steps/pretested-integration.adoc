@@ -1,0 +1,23 @@
+= Pretested Integration Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/pretested-integration">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `pretestedIntegrationPublisher`: Pretested Integration publisher to push to integration branch
+++++
+<ul></ul>
+
+
+++++

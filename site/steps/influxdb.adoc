@@ -1,0 +1,123 @@
+= InfluxDB Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/influxdb">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `influxDbPublisher`: Publish build data to InfluxDB
+++++
+<ul><li><code>selectedTarget : String</code>
+<div>InfluxDB target to send data to. Targets have to be configured in the global Jenkins settings.</div>
+
+</li>
+<li><code>customData</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+<li><code>customDataMap</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt;</code></li>
+</ul></li>
+<li><code>customDataMapTags</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.util.Map&lt;java.lang.String, java.lang.String&gt;&gt;</code></li>
+</ul></li>
+<li><code>customDataTags</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>customPrefix : String</code> (optional)
+<div>A custom prefix that gets prepended to the job name, for example to prevent several 'master' metrics for different jobs in multi branch pipeline jobs.</div>
+
+</li>
+<li><code>customProjectName : String</code> (optional)
+<div>Sets a custom value for the InfluxDB 'project_name' tag key, that overrides the default, which is the job name. 
+<p>Useful to easily group metrics for different jobs in multi branch pipeline jobs.</p></div>
+
+</li>
+<li><code>jenkinsEnvParameterField : String</code> (optional)
+<div>Custom field set that will be added to the default measurement 'jenkins_data', configured as key-value pairs (one per line, in Java Properties file format). 
+<p>Current build parameters and/or environment variables can be used in the form of ${PARAM}</p>
+<ul>
+ <li>KEY=${PARAM}</li>
+ <li>KEY=PREFIX_${PARAM}_SUFFIX</li>
+ <li>KEY=VALUE</li>
+</ul></div>
+
+</li>
+<li><code>jenkinsEnvParameterTag : String</code> (optional)
+<div>Custom tag set that will be added to all measurements, configured as key-value pairs (one per line, in Java Properties file format). 
+<p>Current build parameters and/or environment variables can be used in the form of ${PARAM}</p>
+<ul>
+ <li>KEY=${PARAM}</li>
+ <li>KEY=PREFIX_${PARAM}_SUFFIX</li>
+ <li>KEY=VALUE</li>
+</ul></div>
+
+</li>
+<li><code>measurementName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'InfluxDbPublisher'])`: Publish build data to InfluxDB
+++++
+<ul><li><code>selectedTarget : String</code> (optional)
+<div>InfluxDB target to send data to. Targets have to be configured in the global Jenkins settings.</div>
+
+</li>
+<li><code>customData</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+<li><code>customDataMap</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt;</code></li>
+</ul></li>
+<li><code>customDataMapTags</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.util.Map&lt;java.lang.String, java.lang.String&gt;&gt;</code></li>
+</ul></li>
+<li><code>customDataTags</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>customPrefix : String</code> (optional)
+<div>A custom prefix that gets prepended to the job name, for example to prevent several 'master' metrics for different jobs in multi branch pipeline jobs.</div>
+
+</li>
+<li><code>customProjectName : String</code> (optional)
+<div>Sets a custom value for the InfluxDB 'project_name' tag key, that overrides the default, which is the job name. 
+<p>Useful to easily group metrics for different jobs in multi branch pipeline jobs.</p></div>
+
+</li>
+<li><code>jenkinsEnvParameterField : String</code> (optional)
+<div>Custom field set that will be added to the default measurement 'jenkins_data', configured as key-value pairs (one per line, in Java Properties file format). 
+<p>Current build parameters and/or environment variables can be used in the form of ${PARAM}</p>
+<ul>
+ <li>KEY=${PARAM}</li>
+ <li>KEY=PREFIX_${PARAM}_SUFFIX</li>
+ <li>KEY=VALUE</li>
+</ul></div>
+
+</li>
+<li><code>jenkinsEnvParameterTag : String</code> (optional)
+<div>Custom tag set that will be added to all measurements, configured as key-value pairs (one per line, in Java Properties file format). 
+<p>Current build parameters and/or environment variables can be used in the form of ${PARAM}</p>
+<ul>
+ <li>KEY=${PARAM}</li>
+ <li>KEY=PREFIX_${PARAM}_SUFFIX</li>
+ <li>KEY=VALUE</li>
+</ul></div>
+
+</li>
+<li><code>measurementName : String</code> (optional)
+</li>
+</ul>
+
+
+++++

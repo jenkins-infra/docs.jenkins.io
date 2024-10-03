@@ -1,0 +1,81 @@
+= teamscale-upload
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/teamscale-upload">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `teamscale`: Teamscale Upload
+++++
+<div><div>
+ Plugin for uploading <a href="https://docs.teamscale.com/reference/upload-formats-and-samples/#supported-formats-for-upload" rel="nofollow">external reports</a> to your Teamscale server.
+</div></div>
+<ul><li><code>url : String</code>
+<div><div>
+ URL to the Teamscale server.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+<div><div>
+ Uses "username + password" of global jenkins credentials. 
+ <br>
+  Credentials-ID = Important for plugin usage in pipelines.
+ <br>
+  Username = Teamscale username.
+ <br>
+  Password = <a href="https://docs.teamscale.com/glossary/#access-key" rel="nofollow">Access-key</a>
+ <br>
+</div></div>
+
+</li>
+<li><code>teamscaleProject : String</code>
+<div><div>
+ The teamscale <a href="https://docs.teamscale.com/howto/creating-a-project/#summary" rel="nofollow">project</a> to upload data to.
+</div></div>
+
+</li>
+<li><code>partition : String</code>
+<div><div>
+ The <a href="https://docs.teamscale.com/glossary/#partition" rel="nofollow">partition</a> to which to upload the external reports.
+</div></div>
+
+</li>
+<li><code>uploadMessage : String</code>
+<div><div>
+ The upload message for the Teamscale server.
+</div></div>
+
+</li>
+<li><code>includePattern : String</code>
+<div><div>
+ Include pattern (ant-style) to select files to upload.
+</div></div>
+
+</li>
+<li><code>reportFormatId : String</code>
+<div><div>
+ One of our <a href="https://docs.teamscale.com/reference/upload-formats-and-samples/#supported-formats-for-upload" rel="nofollow">supported report formats</a>.
+</div></div>
+
+</li>
+<li><code>revision : String</code> (optional)
+<div><div>
+ Required in piplines because the environment variables containing the SCM revisions are not set in these builds.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

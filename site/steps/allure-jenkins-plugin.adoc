@@ -1,0 +1,74 @@
+= Allure Jenkins Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/allure-jenkins-plugin">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `allure`: Allure Report
+++++
+<ul><li><code>results</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>path : String</code>
+</li>
+</ul></li>
+<li><code>commandline : String</code> (optional)
+</li>
+<li><code>config</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>results</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>path : String</code>
+</li>
+</ul></li>
+<li><code>commandline : String</code> (optional)
+</li>
+<li><code>configPath : String</code> (optional)
+</li>
+<li><code>includeProperties : boolean</code> (optional)
+</li>
+<li><code>jdk : String</code> (optional)
+</li>
+<li><code>properties</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>reportBuildPolicy</code> (optional)
+<ul><li><b>Values:</b> <code>ALWAYS</code>, <code>UNSTABLE</code>, <code>UNSUCCESSFUL</code></li></ul></li>
+</ul></li>
+<li><code>configPath : String</code> (optional)
+</li>
+<li><code>disabled : boolean</code> (optional)
+</li>
+<li><code>includeProperties : boolean</code> (optional)
+</li>
+<li><code>jdk : String</code> (optional)
+</li>
+<li><code>properties</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>report : String</code> (optional)
+</li>
+<li><code>reportBuildPolicy</code> (optional)
+<ul><li><b>Values:</b> <code>ALWAYS</code>, <code>UNSTABLE</code>, <code>UNSUCCESSFUL</code></li></ul></li>
+</ul>
+
+
+++++

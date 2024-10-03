@@ -1,0 +1,239 @@
+= Code Coverage Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/code-coverage-api">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `publishCoverage`: Publish Coverage Report [deprecated]
+++++
+<ul><li><code>adapters</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>antPath</code><div>
+<ul><li><code>path : String</code>
+</li>
+</ul></div></li>
+<li><code>dListingAdapter</code><div>
+<ul><li><code>path : String</code>
+</li>
+<li><code>mergeToOneReport : boolean</code> (optional)
+</li>
+<li><code>thresholds</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>thresholdTarget : String</code>
+</li>
+<li><code>failUnhealthy : boolean</code> (optional)
+</li>
+<li><code>unhealthyThreshold : float</code> (optional)
+</li>
+<li><code>unstableThreshold : float</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>istanbulCoberturaAdapter</code><div>
+<ul><li><code>path : String</code>
+</li>
+<li><code>mergeToOneReport : boolean</code> (optional)
+</li>
+<li><code>thresholds</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>thresholdTarget : String</code>
+</li>
+<li><code>failUnhealthy : boolean</code> (optional)
+</li>
+<li><code>unhealthyThreshold : float</code> (optional)
+</li>
+<li><code>unstableThreshold : float</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>jacocoAdapter</code><div>
+<ul><li><code>path : String</code>
+</li>
+<li><code>mergeToOneReport : boolean</code> (optional)
+</li>
+<li><code>thresholds</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>thresholdTarget : String</code>
+</li>
+<li><code>failUnhealthy : boolean</code> (optional)
+</li>
+<li><code>unhealthyThreshold : float</code> (optional)
+</li>
+<li><code>unstableThreshold : float</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>llvmAdapter</code><div>
+<ul><li><code>path : String</code>
+</li>
+<li><code>mergeToOneReport : boolean</code> (optional)
+</li>
+<li><code>thresholds</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>thresholdTarget : String</code>
+</li>
+<li><code>failUnhealthy : boolean</code> (optional)
+</li>
+<li><code>unhealthyThreshold : float</code> (optional)
+</li>
+<li><code>unstableThreshold : float</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>opencoverAdapter</code><div>
+<ul><li><code>path : String</code>
+</li>
+<li><code>mergeToOneReport : boolean</code> (optional)
+</li>
+<li><code>thresholds</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>thresholdTarget : String</code>
+</li>
+<li><code>failUnhealthy : boolean</code> (optional)
+</li>
+<li><code>unhealthyThreshold : float</code> (optional)
+</li>
+<li><code>unstableThreshold : float</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>sonarGenericCoverageAdapter</code><div>
+<ul><li><code>path : String</code>
+</li>
+<li><code>mergeToOneReport : boolean</code> (optional)
+</li>
+<li><code>thresholds</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>thresholdTarget : String</code>
+</li>
+<li><code>failUnhealthy : boolean</code> (optional)
+</li>
+<li><code>unhealthyThreshold : float</code> (optional)
+</li>
+<li><code>unstableThreshold : float</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>coberturaAdapter</code><div>
+<ul><li><code>path : String</code>
+</li>
+<li><code>mergeToOneReport : boolean</code> (optional)
+</li>
+<li><code>thresholds</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>thresholdTarget : String</code>
+</li>
+<li><code>failUnhealthy : boolean</code> (optional)
+</li>
+<li><code>unhealthyThreshold : float</code> (optional)
+</li>
+<li><code>unstableThreshold : float</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>cobertura</code><div>
+<ul><li><code>path : String</code>
+</li>
+<li><code>mergeToOneReport : boolean</code> (optional)
+</li>
+<li><code>thresholds</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>thresholdTarget : String</code>
+</li>
+<li><code>failUnhealthy : boolean</code> (optional)
+</li>
+<li><code>unhealthyThreshold : float</code> (optional)
+</li>
+<li><code>unstableThreshold : float</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+</ul></li>
+<li><code>applyThresholdRecursively : boolean</code> (optional)
+<div>By default, this plugins will only apply threshold at report level. If this option is set to true, it will apply threshold to all levels. For example, if this option is true, and if you have specified a `Line` threshold, this plugin will check all modules, directories, files...</div>
+
+</li>
+<li><code>calculateDiffForChangeRequests : boolean</code> (optional)
+<div>If it is a change request build, calculate code coverage diff with a target branch build</div>
+
+</li>
+<li><code>checksName : String</code> (optional)
+<div><div>
+ If provided, and publishing checks enabled, the plugin will use this name when publishing results to corresponding SCM hosting platforms. If not, the default of "Code Coverage" will be used.
+</div></div>
+
+</li>
+<li><code>failBuildIfCoverageDecreasedInChangeRequest : boolean</code> (optional)
+<div>Fail the build in case if code coverage decreased in comparison with the target branch</div>
+
+</li>
+<li><code>failNoReports : boolean</code> (optional)
+<div>Fail the build if no coverage reports found.</div>
+
+</li>
+<li><code>failUnhealthy : boolean</code> (optional)
+<div>Fail the step if coverage is lower than healthy threshold.</div>
+
+</li>
+<li><code>failUnstable : boolean</code> (optional)
+<div>Fail the build if coverage is lower than stable threshold.</div>
+
+</li>
+<li><code>globalThresholds</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>thresholdTarget : String</code>
+</li>
+<li><code>failUnhealthy : boolean</code> (optional)
+</li>
+<li><code>unhealthyThreshold : float</code> (optional)
+</li>
+<li><code>unstableThreshold : float</code> (optional)
+</li>
+</ul></li>
+<li><code>scm : String</code> (optional)
+</li>
+<li><code>skipPublishingChecks : boolean</code> (optional)
+<div>If unchecked, the plugin will automatically publish the coverage to corresponding SCM platforms. For example, if you are using this feature for a GitHub organization project, the coverage will be published to GitHub through the Checks API.</div>
+
+</li>
+<li><code>sourceCodeEncoding : String</code> (optional)
+<div><div>
+ In order to correctly show all your affected source code files in the detail views, the plugin must open these files with the correct character encoding (UTF-8, ISO-8859-1, etc.). If you leave this field empty then the default encoding of the platform will be used. This might work but is not recommended.
+</div></div>
+
+</li>
+<li><code>sourceDirectories</code> (optional)
+<div><div>
+ Since the plugin also reads the affected source code files it needs to copy these files from the agent to the controller. If these files are not part of the workspace (or checked out into a sub folder of the workspace) they are not automatically found. So you can add one or more source code directories where the plugin tries to find these files. Note, that due to security restrictions additional paths outside the workspace need to be registered in Jenkins system configuration before they can be used here.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>path : String</code>
+<div><div>
+ Select the path to your source code files. This plugin copies source code files to Jenkins' build folder so that these files can be rendered in the user interface together with the plugin results. If these files are referenced with relative paths then they cannot be found by the plugin. In these cases you need to specify one or more relative paths within the workspace where the plugin can locate them. Alternatively, you can also specify absolute paths if the source code files are stored outside the workspace (in a directory on the agent). All absolute paths must be additionally approved by an administrator in Jenkins' global configuration page.
+</div></div>
+
+</li>
+</ul></li>
+<li><code>sourceFileResolver</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>level</code>
+<ul><li><b>Values:</b> <code>NEVER_STORE</code>, <code>STORE_LAST_BUILD</code>, <code>STORE_ALL_BUILD</code></li></ul></li>
+</ul></li>
+<li><code>tag : String</code> (optional)
+</li>
+</ul>
+
+
+++++

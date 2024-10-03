@@ -1,0 +1,6 @@
+---
+:page-eventTitle: London JAM
+:page-eventStartDate: 2016-06-14T18:00:00
+:page-eventLink: https://www.meetup.com/London-Jenkins-Area-Meetup/events/229929937/
+---
+Jenkins 2.0 : Inaugural London Jenkins Area Meetup

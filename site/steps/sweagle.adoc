@@ -1,0 +1,281 @@
+= SWEAGLE Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/sweagle">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `SWEAGLEExport`: SWEAGLE Get Config
+++++
+<ul><li><code>actionName : String</code>
+<div><div>
+ Give each action a descriptive name to precede the job's output in the console.
+</div></div>
+
+</li>
+<li><code>mdsName : String</code>
+<div><div>
+ Exact name of pending config data set for which the data should be exported
+</div></div>
+
+</li>
+<li><code>args : String</code> (optional)
+<div><div>
+ Use comma separated values for exporter variables
+</div></div>
+
+</li>
+<li><code>exporter : String</code> (optional)
+<div><div>
+ The SWEAGLE exporter to use when retrieving the config data.
+</div></div>
+
+</li>
+<li><code>fileLocation : String</code> (optional)
+<div><div>
+ Location of file within the Jenkins workspace to save the exported data.
+</div></div>
+
+</li>
+<li><code>format : String</code> (optional)
+<div><div>
+ Select the supported format of the file to be uploaded.
+</div></div>
+
+</li>
+<li><code>mapToVariables : String</code> (optional)
+<div><div>
+ Sets a Jenkins Environment variable to value of a configuration data item. One variable on each line. format is colon seperated key value pair VARIABLE:Path.to.node.cdi Example: INTERNAL_IP:PRD.infra.db023.ipInternal
+</div></div>
+
+</li>
+<li><code>markFailed : boolean</code> (optional)
+<div><div>
+ Mark the build as "Failed" should the data export fail.
+</div></div>
+
+</li>
+<li><code>showResults : boolean</code> (optional)
+<div><div>
+ Show the results of the API call in the Jenkins job console log.
+</div></div>
+
+</li>
+<li><code>tag : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `SWEAGLESnapshot`: SWEAGLE Snapshot
+++++
+<ul><li><code>actionName : String</code>
+<div><div>
+ Give each action a descriptive name to precede the job's output in the console.
+</div></div>
+
+</li>
+<li><code>mdsName : String</code>
+<div><div>
+ Exact name of pending config data set for which the snapshot should be taken.
+</div></div>
+
+</li>
+<li><code>description : String</code> (optional)
+<div><div>
+ A description for the snapshot
+</div></div>
+
+</li>
+<li><code>markFailed : boolean</code> (optional)
+<div><div>
+ Mark the build as "Failed" should the snapshot fail.
+</div></div>
+
+</li>
+<li><code>showResults : boolean</code> (optional)
+<div><div>
+ Show the results of the API call in the Jenkins job console log. Warning !!! The API results of a snapshot will include the entire Config Data set.
+</div></div>
+
+</li>
+<li><code>tag : String</code> (optional)
+<div><div>
+ A single string as TAG for that snapshot - cannot contain spaces but can utilize Jenkins variable4s ex "release1.2.${BUILD_ID}"
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `SWEAGLEUpload`: SWEAGLE Upload
+++++
+<ul><li><code>actionName : String</code>
+<div><div>
+ Give each action a descriptive name to precede the job's output in the console.
+</div></div>
+
+</li>
+<li><code>fileLocation : String</code>
+<div><div>
+ Fullpath of file relatove to the Jenkins workspace using Ant file filter format for selecting multiple files with wildcard. Details <a href="https://ant.apache.org/manual/api/org/apache/tools/ant/DirectoryScanner.html" rel="nofollow">here</a>. Examples: myconfig.json *.json subdirectory/*.json
+</div></div>
+
+</li>
+<li><code>format : String</code>
+<div><div>
+ Select the supported format of the file to be uploaded.
+</div></div>
+
+</li>
+<li><code>nodePath : String</code>
+<div><div>
+ Enter the path where the data should be uploaded. Separate the nodenames in the path with a comma. In case the nodes do not yet exist, they will be created automatically.
+</div></div>
+
+</li>
+<li><code>allowDelete : boolean</code> (optional)
+<div><div>
+ <p><b>Allow Delete</b> If checked will delete any nodes and MDIs that are not part of the upload. If the nodes are included or inherited the nodes and MDIs at points of inclusion will also be deleted unless "Only Parent" is also checked.</p>
+</div></div>
+
+</li>
+<li><code>autoRecognize : boolean</code> (optional)
+</li>
+<li><code>description : String</code> (optional)
+<div><div>
+ A description for the snapshot
+</div></div>
+
+</li>
+<li><code>filenameNodes : boolean</code> (optional)
+<div><div>
+ <p><b>Create Filename Nodes</b> If checked, nodes will be created for all matching files names in the file location and file data will be placed under file name node.</p>
+</div></div>
+
+</li>
+<li><code>identifierWords : String</code> (optional)
+<div><div>
+ <p><b>Identifier Words</b> To make nodes part of an array uniquely identifiable, a comma separated list of 'identifier words' can be added. If no identifierWords are provided, the behavior will default to the identifierWords listed in the find.identity_attributes_discovery.word_list preference</p>
+</div></div>
+
+</li>
+<li><code>markFailed : boolean</code> (optional)
+<div><div>
+ Mark the build as "Failed" should the data upload fail for any reason.
+</div></div>
+
+</li>
+<li><code>onlyParent : boolean</code> (optional)
+<div><div>
+ <p><b>Only Parent</b> This controls if in case the allowDelete flag is set to true if the deletion of nodes and CDIs will only happen at the node itself, or also at any other place where the node is included or in every child node that is inheriting.</p>
+</div></div>
+
+</li>
+<li><code>showResults : boolean</code> (optional)
+<div><div>
+ Show the results of the API call in the Jenkins job console log.
+</div></div>
+
+</li>
+<li><code>subDirectories : boolean</code> (optional)
+<div><div>
+ <p><b>Search Sub-directories</b> If checked sub-directories will also be searched recursively for matching files.</p>
+</div></div>
+
+</li>
+<li><code>tag : String</code> (optional)
+<div><div>
+ A single string as TAG for that snapshot - cannot contain spaces but can utilize Jenkins variable4s ex "release1.2.${BUILD_ID}"
+</div></div>
+
+</li>
+<li><code>withSnapshot : boolean</code> (optional)
+<div><div>
+ <p><b>Allow Delete</b> If checked will delete any nodes and MDIs that are not part of the upload. In case the nodes are included or inherited, also the nodes and MDIs at points of inclusion will be deleted</p>
+ <p><b>Only Parent</b> If checked will delete any nodes and MDIs that are not part of the upload. In case the nodes are included or inherited, also the nodes and MDIs at points of inclusion will be deleted</p>
+ <p><b>Store Snapshot</b>. This controls if automatically a snapshot should be created for each of the impacted config data sets by this data upload.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `SWEAGLEValidate`: SWEAGLE Validate
+++++
+<ul><li><code>actionName : String</code>
+<div><div>
+ Give each action a descriptive name to precede the job's output in the console.
+</div></div>
+
+</li>
+<li><code>mdsName : String</code>
+<div><div>
+ The exact name of the config data set which should be validated.
+</div></div>
+
+</li>
+<li><code>errMax : int</code> (optional)
+<div><div>
+ Fail build on validate errors. Set thresholds used to determine if the build should be failed based on the number of validation errors or warnings.&nbsp; Use -1 to ignore either threshold.
+</div></div>
+
+</li>
+<li><code>markFailed : boolean</code> (optional)
+<div><div>
+ Fail build on validate errors or if the pending data set fails to show up after all the retry attempts have completed.
+</div></div>
+
+</li>
+<li><code>noPending : boolean</code> (optional)
+<div><div>
+ Fail build if no data is found for the Config Data Set (CDS).
+</div></div>
+
+</li>
+<li><code>retryCount : int</code> (optional)
+<div><div>
+ Number of retry attempts while waiting for a pending config data set. Combined with with Retry Interval to force a timeout after attempts have completed. Use "-1" for unlimited retries.
+</div></div>
+
+</li>
+<li><code>retryInterval : int</code> (optional)
+<div><div>
+ Number of seconds between each attempt to find a matching config data set for validation. Combine with with Retry Count to force a timeout after attempts have completed.
+</div></div>
+
+</li>
+<li><code>showResults : boolean</code> (optional)
+<div><div>
+ Show the results of the API call in the Jenkins job console log.
+</div></div>
+
+</li>
+<li><code>stored : boolean</code> (optional)
+<div><div>
+ Validate the stored snapshot for the config data set instead of the pending data.
+</div></div>
+
+</li>
+<li><code>warnMax : int</code> (optional)
+<div><div>
+ Fail build on validate errors. Set thresholds used to determine if the build should be failed based on the number of validation errors or warnings.&nbsp; Use -1 to ignore either threshold.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

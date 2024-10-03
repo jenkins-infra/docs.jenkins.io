@@ -1,0 +1,5 @@
+= About the Author
+:page-layout: author
+:page-author_name: Philip Stroh
+:page-github: pstrh
+

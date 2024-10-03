@@ -1,0 +1,117 @@
+= GeneXus Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/genexus">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `gxserver`: Checks out (or updates) a GeneXus Knowledge Base from a GeneXus Server
+++++
+<div><div>
+ GeneXus&nbsp;Server step. It checks out (or updates) a Knowledge Base from a GeneXus&nbsp;Server.
+</div></div>
+<ul><li><code>serverURL : String</code>
+<div><div>
+ URL of the GeneXus&nbsp;Server from which to obtain (or update) a local copy of a Knowledge&nbsp;Base (eg:&nbsp;"https://sandbox.genexusserver.com/v16").
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+<div><div>
+ <p>Credentials to use when authenticating to the GeneXus&nbsp;Server.</p>
+ <p>Select the credentials you want to use or click "Add" to enter a new user/password pair.</p>
+</div></div>
+
+</li>
+<li><code>kbName : String</code>
+<div><div>
+ Name of the Knowledge&nbsp;Base in GeneXus&nbsp;Server from which to obtain (or update) a local copy.
+</div></div>
+
+</li>
+<li><code>changelog : boolean</code> (optional)
+<div><div>
+ <p>Compute changelog for this job. Default is '<code>true</code>'.</p>
+ <p>If <code>changelog</code> is false, then the changelog will not be computed for this job. If <code>changelog</code> is true or is not set, then the changelog will be computed.</p>
+</div></div>
+
+</li>
+<li><code>gxCustomPath : String</code> (optional)
+</li>
+<li><code>gxInstallationId : String</code> (optional)
+<div><div>
+ GeneXus installation to use when creating (or updating) a local copy of a Knowledge&nbsp;Base from a GeneXus&nbsp;Server.
+</div></div>
+
+</li>
+<li><code>kbDbCredentialsId : String</code> (optional)
+<div><div>
+ <p>Credentials to use when to connecting to SQL&nbsp;Server.</p>
+ <p>Select "none" for Windows Authentication.</p>
+</div></div>
+
+</li>
+<li><code>kbDbInSameFolder : boolean</code> (optional)
+<div><div>
+ <p>Create the database files in the same folder as the Knowledge&nbsp;Base when checking out. Default is '<code>true</code>'.</p>
+ <p>If <code>kbDbInSameFolder</code> is true or not set, then the database files will be created in the same folder as the Knowledge&nbsp;Base. If <code>kbDbInSameFolder</code> is false, then the database files will be created in the default folder configured for the SQL Server at <code>kbDbServerInstance (optional)</code>.</p>
+</div></div>
+
+</li>
+<li><code>kbDbName : String</code> (optional)
+<div><div>
+ <p>Name of the SQL Server database used for the local Knowledge&nbsp;Base.</p>
+ <p>Leave it blank to use the default database name.</p>
+</div></div>
+
+</li>
+<li><code>kbDbServerInstance : String</code> (optional)
+<div><div>
+ SQL Server used by GeneXus for the local Knowledge Base.
+</div></div>
+
+</li>
+<li><code>kbVersion : String</code> (optional)
+<div><div>
+ <p>Name of the Version that will be selected when creating a local copy of the Knowledge Base.</p>
+ <p>If you leave it blank the 'Trunk' version will be selected by default.</p>
+</div></div>
+
+</li>
+<li><code>localKbPath : String</code> (optional)
+<div><div>
+ <p>Path to the local Knowledge Base to use as working copy.</p>
+ <p>If you leave it blank the default <code>${WORKSPACE}\KBname</code> will apply.</p>
+</div></div>
+
+</li>
+<li><code>localKbVersion : String</code> (optional)
+<div><div>
+ <p>Name of the Version in the local Knowledge Base that is linked to the Version in the server.</p>
+ <p>If you leave it blank the 'Trunk' version will be selected by default.</p>
+</div></div>
+
+</li>
+<li><code>msbuildCustomPath : String</code> (optional)
+</li>
+<li><code>poll : boolean</code> (optional)
+<div><div>
+ <p>Poll GeneXus&nbsp;Server for changes. Default is '<code>true</code>'.</p>
+ <p>If <code>poll</code> is true or is not set, then the GeneXus&nbsp;Server will be polled for changes.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

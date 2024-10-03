@@ -1,0 +1,169 @@
+= Publish Over CIFS
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/publish-over-cifs">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'CifsPromotionPublisherPlugin'])`: Send build artifacts to a windows share
+++++
+<div><div>
+ Send build artifacts to a windows share as a build step during a promotion process
+</div></div>
+<ul><li><code>publishers</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>configName : String</code>
+</li>
+<li><code>verbose : boolean</code>
+</li>
+<li><code>transfers</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>sourceFiles : String</code>
+</li>
+<li><code>excludes : String</code>
+</li>
+<li><code>remoteDirectory : String</code>
+</li>
+<li><code>removePrefix : String</code>
+</li>
+<li><code>remoteDirectorySDF : boolean</code>
+</li>
+<li><code>flatten : boolean</code>
+</li>
+<li><code>cleanRemote : boolean</code>
+</li>
+<li><code>noDefaultExcludes : boolean</code>
+</li>
+<li><code>makeEmptyDirs : boolean</code>
+</li>
+<li><code>patternSeparator : String</code>
+</li>
+</ul></li>
+<li><code>useWorkspaceInPromotion : boolean</code>
+</li>
+<li><code>usePromotionTimestamp : boolean</code>
+</li>
+<li><code>retry</code>
+<ul><b>Nested Object</b>
+<li><code>retries : int</code>
+</li>
+<li><code>retryDelay : long</code>
+</li>
+</ul></li>
+<li><code>label</code>
+<ul><b>Nested Object</b>
+<li><code>label : String</code>
+</li>
+</ul></li>
+</ul></li>
+<li><code>continueOnError : boolean</code>
+</li>
+<li><code>failOnError : boolean</code>
+</li>
+<li><code>alwaysPublishFromMaster : boolean</code>
+</li>
+<li><code>masterNodeName : String</code>
+</li>
+<li><code>paramPublish</code>
+<ul><b>Nested Object</b>
+<li><code>parameterName : String</code>
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `cifsPublisher`: Send build artifacts to a windows share
+++++
+<div><div>
+ Send build artifacts to a windows share
+</div></div>
+<ul><li><code>alwaysPublishFromMaster : boolean</code> (optional)
+</li>
+<li><code>continueOnError : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>masterNodeName : String</code> (optional)
+</li>
+<li><code>paramPublish</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'BapFtpParamPublish'</code><div>
+<ul><li><code>parameterName : String</code>
+<div><div>
+ The name of the parameter or environment variable that will contain the expression for matching the labels.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'BapSshParamPublish'</code><div>
+<ul><li><code>parameterName : String</code>
+<div><div>
+ The name of the parameter or environment variable that will contain the expression for matching the labels.
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>publishWhenFailed : boolean</code> (optional)
+</li>
+<li><code>publishers</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>configName : String</code>
+</li>
+<li><code>verbose : boolean</code>
+</li>
+<li><code>transfers</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>sourceFiles : String</code>
+</li>
+<li><code>excludes : String</code>
+</li>
+<li><code>remoteDirectory : String</code>
+</li>
+<li><code>removePrefix : String</code>
+</li>
+<li><code>remoteDirectorySDF : boolean</code>
+</li>
+<li><code>flatten : boolean</code>
+</li>
+<li><code>cleanRemote : boolean</code>
+</li>
+<li><code>noDefaultExcludes : boolean</code>
+</li>
+<li><code>makeEmptyDirs : boolean</code>
+</li>
+<li><code>patternSeparator : String</code>
+</li>
+</ul></li>
+<li><code>useWorkspaceInPromotion : boolean</code>
+</li>
+<li><code>usePromotionTimestamp : boolean</code>
+</li>
+<li><code>retry</code>
+<ul><b>Nested Object</b>
+<li><code>retries : int</code>
+</li>
+<li><code>retryDelay : long</code>
+</li>
+</ul></li>
+<li><code>label</code>
+<ul><b>Nested Object</b>
+<li><code>label : String</code>
+</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+++++

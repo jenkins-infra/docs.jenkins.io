@@ -1,0 +1,41 @@
+= SD Elements Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/sdelements">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `sdelements`: SD Elements
+++++
+<ul><li><code>projectId : int</code>
+<div><div>
+ The id of the project to use.
+</div></div>
+
+</li>
+<li><code>connectionName : String</code>
+<div><div>
+ The name of the connection
+</div></div>
+
+</li>
+<li><code>markUnstable : boolean</code> (optional)
+<div><div>
+ When this checkbox is checked, non compliant results from an SD Elements project will mark the build unstable instead of failing it
+</div></div>
+
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,13 @@
+
+
+= DevOps World
+:page-eventLocation: Online
+:page-eventStartDate: 2021-09-29T09:00:00
+:page-eventEndDate: 2021-09-30T18:00:00
+:page-eventLink: https://www.cloudbees.com/devops-world
+
+
+
+Jenkins will be represented at the DevOps World conference.
+There will be community and Continuous Delivery Foundation tracks,
+and many talks from Jenkins practitioners.

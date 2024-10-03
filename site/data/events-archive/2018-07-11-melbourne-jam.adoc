@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Jenkins in the Pub Melbourne JAM
+:page-eventStartDate: 2018-07-11T16:00:00
+:page-eventLink: https://www.meetup.com/Melbourne-Jenkins-Area-Meetup/events/252416316/
+---
+Jenkins in the Pub 

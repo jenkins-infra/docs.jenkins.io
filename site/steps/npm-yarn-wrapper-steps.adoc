@@ -1,0 +1,49 @@
+= NPM and Yarn Wrapper and Steps
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/npm-yarn-wrapper-steps">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `npm`: Run an npm command
+++++
+<ul><li><code>command : String</code>
+</li>
+<li><code>workspaceSubdirectory : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `yarn`: Run a yarn command
+++++
+<ul><li><code>command : String</code>
+</li>
+<li><code>workspaceSubdirectory : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `withNPMWrapper`: Set NPM Environment
+++++
+<ul><li><code>credentialsId : String</code>
+</li>
+<li><code>workspaceSubdirectory : String</code> (optional)
+</li>
+<li><code>yarnEnabled : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

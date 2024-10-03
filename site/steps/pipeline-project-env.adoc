@@ -1,0 +1,29 @@
+= Pipeline Project-Env Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/pipeline-project-env">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `withProjectEnv`: WithProjectEnvStep
+++++
+<ul><li><code>cliDebug : boolean</code> (optional)
+</li>
+<li><code>cliVersion : String</code> (optional)
+</li>
+<li><code>configFile : String</code> (optional)
+</li>
+</ul>
+
+
+++++

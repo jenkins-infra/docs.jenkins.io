@@ -1,0 +1,6 @@
+---
+:page-eventTitle: DFW JAM
+:page-eventStartDate: 2017-11-07T18:30:00
+:page-eventLink: https://www.meetup.com/DFW-Jenkins-Area-Meetup/events/244249721/
+---
+Simplify your Jenkins Projects with Docker Multi-Stage Builds

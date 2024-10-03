@@ -1,0 +1,113 @@
+= User1st uTester Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/user1st-utester">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `uTesterPageCountTask`: Execute uTester Page Count Task
+++++
+<ul><li><code>initialUrl : String</code>
+<div><div>
+ The initial URL to check.
+</div></div>
+
+</li>
+<li><code>urlsWhiteList : String</code>
+<div><div>
+ A list of URLs (one per line) to whitelist.
+</div></div>
+
+</li>
+<li><code>pageCount : int</code>
+<div><div>
+ The Page Count.
+</div></div>
+
+</li>
+<li><code>rulesList</code>
+<div><div>
+ A list of JSON rules to evaluate.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>rule : String</code>
+</li>
+</ul></li>
+<li><code>complianceMinimum : float</code>
+<div><div>
+ The minimum compliance level needed to pass (if multiple data results exist this will check each).
+</div></div>
+
+</li>
+<li><code>allowSimultaneousLogins : boolean</code>
+</li>
+<li><code>loginFlowJson : String</code>
+</li>
+<li><code>useRunner : boolean</code>
+</li>
+<li><code>fetchResponseTimeout : int</code>
+<div><div>
+ The number of seconds to wait for a response from the User1st API before failing (default of 120).
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `uTesterUrlListTask`: Execute uTester URL List Task
+++++
+<ul><li><code>initialUrl : String</code>
+<div><div>
+ A list of URLs (one per line) to check.
+</div></div>
+
+</li>
+<li><code>urlsWhiteList : String</code>
+<div><div>
+ A list of URLs (one per line) to whitelist.
+</div></div>
+
+</li>
+<li><code>rulesList</code>
+<div><div>
+ A list of JSON rules to evaluate.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>rule : String</code>
+</li>
+</ul></li>
+<li><code>complianceMinimum : float</code>
+<div><div>
+ The minimum compliance level needed to pass (if multiple data results exist this will check each).
+</div></div>
+
+</li>
+<li><code>allowSimultaneousLogins : boolean</code>
+</li>
+<li><code>loginFlowJson : String</code>
+</li>
+<li><code>useRunner : boolean</code>
+</li>
+<li><code>fetchResponseTimeout : int</code>
+<div><div>
+ The number of seconds to wait for a response from the User1st API before failing (default of 120).
+</div></div>
+
+</li>
+</ul>
+
+
+++++

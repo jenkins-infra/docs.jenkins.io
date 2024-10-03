@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Philadelphia Jenkins Area Meetup
+:page-eventStartDate: 2018-09-05T18:00:00
+:page-eventLink: https://www.meetup.com/Philadelphia-Jenkins-Area-Meetup/events/253586835/
+---
+Jenkins Area Meetup

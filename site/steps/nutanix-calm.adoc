@@ -1,0 +1,95 @@
+= Nutanix Calm Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/nutanix-calm">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'BlueprintLaunch'])`: Nutanix Calm Blueprint Launch
+++++
+<ul><li><code>projectName : String</code>
+<div><div>
+ <p>Project selection is mandatory.</p>
+</div></div>
+
+</li>
+<li><code>blueprintName : String</code>
+<div><div>
+ <p>Blueprint selection is mandatory.</p>
+</div></div>
+
+</li>
+<li><code>applicationName : String</code>
+<div><div>
+ <p>Application Name is mandatory.</p>
+ <p>This is the Application name used for blueprint launch in Nutanix Calm. Appending the _${BUILD_ID} to the Application name is recommended for unique application names. Other Jenkins Environment Variables may also be used.</p>
+</div></div>
+
+</li>
+<li><code>appProfileName : String</code>
+<div><div>
+ <p>Application Profile selection is mandatory.</p>
+</div></div>
+
+</li>
+<li><code>actionName : String</code>
+<div><div>
+ <p>The field is mandatory</p>
+ <br>
+ <p>Select the required action need to run after the application launch from the list of actions, else please select none.</p>
+</div></div>
+
+</li>
+<li><code>runtimeVariables : String</code>
+<div><div>
+ <p>Click on Fetch Runtime Variables to fetch all editable variables for the selected Application Profile in JSON format. Modify the key values from the defaults as needed.The values can also reference jenkins environment variables.</p>
+</div></div>
+
+</li>
+<li><code>waitForSuccessFulLaunch : boolean</code>
+</li>
+<li><code>blueprintDescription : String</code>
+<div><div>
+ <p>Description is fetched from the selected Calm blueprint</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'RunApplicationAction'])`: Nutanix Calm Application Action Run
+++++
+<ul><li><code>applicationName : String</code>
+<div><div>
+ <p>Application selection is mandatory</p>
+ <p>Select an existing Application in Calm or the ones provisioned in Nutanix Calm Blueprint Launch Steps.</p>
+</div></div>
+
+</li>
+<li><code>actionName : String</code>
+<div><div>
+ <p>Application Action selection is mandatory</p>
+</div></div>
+
+</li>
+<li><code>runtimeVariables : String</code>
+<div><div>
+ <p>Click on Fetch Runtime Variables to fetch all editable variables for the selected Action in JSON format. Modify the key values from the defaults as needed.The values can also reference jenkins environment variables.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

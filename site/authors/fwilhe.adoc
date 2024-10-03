@@ -1,0 +1,8 @@
+= About the Author
+:page-layout: author
+:page-author_name: Florian Wilhelm
+:page-twitter: fwilhe
+:page-github: fwilhe
+:page-authoravatar: ../../images/images/avatars/fwilhe.jpg
+
+Software Developer working on CI/CD at SAP Innovation Center in Potsdam. I am employed by SAP, but thoughts here are my own. --.

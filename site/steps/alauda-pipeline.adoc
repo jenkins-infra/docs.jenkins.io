@@ -1,0 +1,261 @@
+= Alauda Pipeline Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/alauda-pipeline">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `AlaudaDeleteBuild`: AlaudaDeleteBuild
+++++
+<ul><li><code>buildID : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaDeployComponent`: Alauda deploy component
+++++
+<ul><li><code>applicationName : String</code> (optional)
+</li>
+<li><code>async : boolean</code> (optional)
+</li>
+<li><code>componentName : String</code> (optional)
+</li>
+<li><code>payload</code> (optional)
+<ul><li><b>Type:</b> <code>class io.alauda.model.Kubernete</code></li>
+</ul></li>
+<li><code>resourceType : String</code> (optional)
+</li>
+<li><code>rollback : boolean</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaDeployService`: Alauda deploy service
+++++
+<ul><li><code>async : boolean</code> (optional)
+</li>
+<li><code>createPayload</code> (optional)
+<ul><li><b>Type:</b> <code>class io.alauda.model.ServiceCreatePayload</code></li>
+</ul></li>
+<li><code>projectName : String</code> (optional)
+</li>
+<li><code>rollback : boolean</code> (optional)
+</li>
+<li><code>serviceID : String</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+<li><code>updatePayload</code> (optional)
+<ul><li><b>Type:</b> <code>class io.alauda.model.ServiceUpdatePayload</code></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `alaudaNotify`: AlaudaNotifier
+++++
+<ul><li><code>name : String</code> (optional)
+</li>
+<li><code>body : String</code> (optional)
+</li>
+<li><code>spaceName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaSendNotification`: SendNotification
+++++
+<ul><li><code>name : String</code> (optional)
+</li>
+<li><code>params</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+<li><code>spaceName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaStartBuild`: alaudaStartBuild
+++++
+<ul><li><code>buildConfigName : String</code> (optional)
+</li>
+<li><code>async : boolean</code> (optional)
+</li>
+<li><code>branch : String</code> (optional)
+</li>
+<li><code>commitID : String</code> (optional)
+</li>
+<li><code>spaceName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `AlaudaDeleteBuild`: AlaudaDeleteBuild
+++++
+<ul><li><code>buildID : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaStartBuild`: alaudaStartBuild
+++++
+<ul><li><code>buildConfigName : String</code> (optional)
+</li>
+<li><code>async : boolean</code> (optional)
+</li>
+<li><code>branch : String</code> (optional)
+</li>
+<li><code>commitID : String</code> (optional)
+</li>
+<li><code>spaceName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaNotify`: AlaudaNotifier
+++++
+<ul><li><code>name : String</code> (optional)
+</li>
+<li><code>body : String</code> (optional)
+</li>
+<li><code>spaceName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaSendNotification`: SendNotification
+++++
+<ul><li><code>name : String</code> (optional)
+</li>
+<li><code>params</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+<li><code>spaceName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaDeployComponent`: Alauda deploy component
+++++
+<ul><li><code>applicationName : String</code> (optional)
+</li>
+<li><code>async : boolean</code> (optional)
+</li>
+<li><code>componentName : String</code> (optional)
+</li>
+<li><code>payload</code> (optional)
+<ul><li><b>Type:</b> <code>class io.alauda.model.Kubernete</code></li>
+</ul></li>
+<li><code>resourceType : String</code> (optional)
+</li>
+<li><code>rollback : boolean</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaRetrieveComponent`: Retrieve the Component
+++++
+<ul><li><code>applicationName : String</code> (optional)
+</li>
+<li><code>componentName : String</code> (optional)
+</li>
+<li><code>resourceType : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaRetrieveIntegration`: Retrieve the integration
+++++
+<ul><li><code>instanceUUID : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaDeployService`: Alauda deploy service
+++++
+<ul><li><code>async : boolean</code> (optional)
+</li>
+<li><code>createPayload</code> (optional)
+<ul><li><b>Type:</b> <code>class io.alauda.model.ServiceCreatePayload</code></li>
+</ul></li>
+<li><code>projectName : String</code> (optional)
+</li>
+<li><code>rollback : boolean</code> (optional)
+</li>
+<li><code>serviceID : String</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+<li><code>updatePayload</code> (optional)
+<ul><li><b>Type:</b> <code>class io.alauda.model.ServiceUpdatePayload</code></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `alaudaRetrieveService`: Retrieve the service
+++++
+<ul><li><code>serviceID : String</code> (optional)
+</li>
+<li><code>serviceName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaRetrieveComponent`: Retrieve the Component
+++++
+<ul><li><code>applicationName : String</code> (optional)
+</li>
+<li><code>componentName : String</code> (optional)
+</li>
+<li><code>resourceType : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaRetrieveIntegration`: Retrieve the integration
+++++
+<ul><li><code>instanceUUID : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `alaudaRetrieveService`: Retrieve the service
+++++
+<ul><li><code>serviceID : String</code> (optional)
+</li>
+<li><code>serviceName : String</code> (optional)
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,38 @@
+= GitHub Coverage Reporter
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/github-coverage-reporter">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `publishCoverageGithub`: Publish Coverage reports to Github
+++++
+<ul><li><code>filepath : String</code>
+</li>
+<li><code>coverageXmlType : String</code>
+</li>
+<li><code>coverageRateType : String</code>
+</li>
+<li><code>comparisonOption</code>
+<ul><b>Nested Object</b>
+<li><code>value : String</code> (optional)
+</li>
+<li><code>sonarProject : String</code> (optional)
+</li>
+<li><code>fixedCoverage : String</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++

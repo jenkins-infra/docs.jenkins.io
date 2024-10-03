@@ -1,0 +1,49 @@
+= ElasTest Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/elastest">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `elastest`: Integrate Jenkins with ElasTest
+++++
+<ul><li><code>TJobId : long</code> (optional)
+</li>
+<li><code>monitoring : boolean</code> (optional)
+</li>
+<li><code>project : String</code> (optional)
+</li>
+<li><code>surefireReportsPattern : String</code> (optional)
+</li>
+<li><code>sut : long</code> (optional)
+</li>
+<li><code>sutParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>tss : Array / List of String</code> (optional)
+<ul></ul></li>
+</ul>
+
+
+++++
+=== `wrap([$class: 'ElasTestBuildWrapper'])`: Integrate Jenkins with ElasTest
+++++
+<div><div>
+ <p>It allows you to send the logs of the Job Execution to ElasTest and if you need a browser in your test you can use the EUS service.</p>
+</div></div>
+<ul><li><code>eus : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,198 @@
+= HTTP Request Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/http_request">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `httpRequest`: Perform an HTTP Request and return a response object
+++++
+<div><div>
+ <p>Performs an HTTP request, and returns a response object.</p>
+ <p>Usage example:</p>
+ <pre>        def response = httpRequest 'http://localhost:8080/jenkins/api/json?pretty=true'
+        println("Status: "+response.status)
+        println("Content: "+response.content)
+        </pre>
+ <p>If Jenkins restarts after the HTTP request is made, but before the HTTP response is received, the HTTP request fails.</p>
+ <p>validResponseCodes is a comma-separated string of single values or from:to ranges. For example '200' to accept only 200 or '201,301:303' to accept 201 as well as the range from 301 to 303.</p>
+ <p></p>
+ <p>The methods of the response object are:</p>
+ <ul>
+  <li>String getContent(): The HTTP Response entity. This means the text of the response without the headers. If the response does not contain an entity, getContent() returns null.</li>
+  <li>int getStatus(): The HTTP status code.</li>
+ </ul>
+ <p></p>
+</div></div>
+<ul><li><code>url : String</code>
+<div><div>
+ Specify an URL to be requested.
+</div></div>
+
+</li>
+<li><code>acceptType</code> (optional)
+<div><div>
+ Add <code>Accept: foo</code> HTTP request header where <code>foo</code> is the HTTP content type to accept.
+</div></div>
+
+<ul><li><b>Values:</b> <code>NOT_SET</code>, <code>TEXT_HTML</code>, <code>TEXT_PLAIN</code>, <code>APPLICATION_FORM</code>, <code>APPLICATION_FORM_DATA</code>, <code>APPLICATION_JSON</code>, <code>APPLICATION_JSON_UTF8</code>, <code>APPLICATION_TAR</code>, <code>APPLICATION_ZIP</code>, <code>APPLICATION_OCTETSTREAM</code></li></ul></li>
+<li><code>authentication : String</code> (optional)
+<div><div>
+ Authentication that will be used before this request. Authentications are created in global configuration under a key name that is selected here.
+</div></div>
+
+</li>
+<li><code>consoleLogResponseBody : boolean</code> (optional)
+<div><div>
+ This allows to turn off writing the response body to the log.
+</div></div>
+
+</li>
+<li><code>contentType</code> (optional)
+<div><div>
+ Add <code>Content-Type: foo</code> HTTP request header where <code>foo</code> is the HTTP content type the request is using.
+</div></div>
+
+<ul><li><b>Values:</b> <code>NOT_SET</code>, <code>TEXT_HTML</code>, <code>TEXT_PLAIN</code>, <code>APPLICATION_FORM</code>, <code>APPLICATION_FORM_DATA</code>, <code>APPLICATION_JSON</code>, <code>APPLICATION_JSON_UTF8</code>, <code>APPLICATION_TAR</code>, <code>APPLICATION_ZIP</code>, <code>APPLICATION_OCTETSTREAM</code></li></ul></li>
+<li><code>customHeaders</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>maskValue : boolean</code>
+</li>
+</ul></li>
+<li><code>formData</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>uploadFile : String</code>
+</li>
+<li><code>name : String</code>
+</li>
+<li><code>fileName : String</code>
+</li>
+<li><code>contentType : String</code>
+</li>
+<li><code>body : String</code>
+</li>
+</ul></li>
+<li><code>httpMode</code> (optional)
+<div><div>
+ The HTTP mode of the request such as 'GET' or 'POST'.
+</div></div>
+
+<ul><li><b>Values:</b> <code>GET</code>, <code>HEAD</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>MKCOL</code></li></ul></li>
+<li><code>httpProxy : String</code> (optional)
+<div><div>
+ Use a proxy to process the HTTP request. Example: http://mycorpproxy:80
+</div></div>
+
+</li>
+<li><code>ignoreSslErrors : boolean</code> (optional)
+<div><div>
+ If set to true, a request with HTTPS will trust in the certificate even when it is invalid or expired.
+</div></div>
+
+</li>
+<li><code>multipartName : String</code> (optional)
+<div><div>
+ Multipart entity name used in the <i>Content-Disposition</i> header in conjunction with the upload file path.
+</div></div>
+
+</li>
+<li><code>outputFile : String</code> (optional)
+<div><div>
+ Name of the file in which to write response data.
+</div></div>
+
+</li>
+<li><code>proxyAuthentication : String</code> (optional)
+</li>
+<li><code>quiet : boolean</code> (optional)
+<div><div>
+ This allows to turn off all logging output.
+</div></div>
+
+</li>
+<li><code>requestBody : String</code> (optional)
+<div><div>
+ <p>The raw body of the request.</p>
+ <p>Parameters will be resolved.</p>
+</div></div>
+
+</li>
+<li><code>responseHandle</code> (optional)
+<div><div>
+ How response should be handled.
+ <br>
+  STRING(default) will transform the response in string.
+ <br>
+  NONE will not read the response content and will close the response after the job execution.
+ <br>
+  LEAVE_OPEN will not read the response content but leaves an open input stream to be read outside the job execution. Using LEAVE_OPEN it is your responsibility to close it after use. 'response.close();'
+ <br>
+</div></div>
+
+<ul><li><b>Values:</b> <code>NONE</code>, <code>LEAVE_OPEN</code>, <code>STRING</code></li></ul></li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ Specify a timeout value in seconds (default is 0 which implies no timeout).
+</div></div>
+
+</li>
+<li><code>uploadFile : String</code> (optional)
+<div><div>
+ Path to the upload file, relative to build workspace or absolute path.
+ <p></p> Can be used to upload a file as <i>multipart/form-data</i> <b>POST</b> request. The according content type should be set above, defaults to <i>application/octet-stream</i> otherwise.
+</div></div>
+
+</li>
+<li><code>useNtlm : boolean</code> (optional)
+</li>
+<li><code>useSystemProperties : boolean</code> (optional)
+<div><div>
+ Use <a href="https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/client/HttpClientBuilder.html" rel="nofollow">system properties</a> to configure the client.
+</div></div>
+
+</li>
+<li><code>validResponseCodes : String</code> (optional)
+<div><div>
+ Configure response code to mark an execution as <b>success</b>.
+ <br>
+  You can configure simple code such as "200" or multiple codes separeted by <b>comma(',')</b> e.g. "200,404,500"
+ <br>
+  Interval of codes should be in format <b>From:To</b> e.g. "100:399".
+ <br>
+  The default (as if empty) is to fail to 4xx and 5xx. That means success from 100 to 399 <b>"100:399"</b>.
+ <br>
+  To ignore any response code use "100:599".
+</div></div>
+
+</li>
+<li><code>validResponseContent : String</code> (optional)
+<div><div>
+ If set response must contain this string to mark an execution as <b>success</b>.
+ <br>
+</div></div>
+
+</li>
+<li><code>wrapAsMultipart : boolean</code> (optional)
+<div><div>
+ If set to false an upload file will be set directly as body of the request and will not be wrapped as <i>multipart/form-data</i>.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,47 @@
+= view-cloner
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/view-cloner">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'ViewCloner'])`: View clone
+++++
+<ul><li><code>url : String</code>
+<div>Absolute url to the view you want to clone</div>
+
+</li>
+<li><code>replacePatternString : String</code>
+<div>Comma separated list of oldValue=newValue 
+<br>
+ Example: 
+<br>
+ 1.1-SNAPSHOT=1.2-SNAPSHOT, slave1=slave2</div>
+
+</li>
+<li><code>niewViewName : String</code>
+<div>Name of the view that will be created</div>
+
+</li>
+<li><code>password : String</code>
+<div>Password for the user</div>
+
+</li>
+<li><code>username : String</code>
+<div>User to authenticate with</div>
+
+</li>
+</ul>
+
+
+++++
