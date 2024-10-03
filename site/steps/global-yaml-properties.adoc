@@ -1,0 +1,51 @@
+= Global YAML Properties
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/global-yaml-properties">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `getGlobalYAMLCategories`: Get all categories defined in Global YAML Properties
+++++
+<ul></ul>
+
+
+++++
+=== `getGlobalYAMLConfigNames`: Get list of all defined config names
+++++
+<ul></ul>
+
+
+++++
+=== `getGlobalYAMLConfigNamesByCategory`: Get list of configs by category
+++++
+<ul><li><code>category : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `getGlobalYAMLProperties`: Get Global YAML Properties in HashMap format
+++++
+<ul><li><code>configName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `getLocalYAMLProperties`: Get Local YAML Properties in HashMap format
+++++
+<ul></ul>
+
+
+++++

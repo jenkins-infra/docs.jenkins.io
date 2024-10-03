@@ -1,0 +1,6 @@
+---
+:page-eventTitle: First Montreal Jenkins Area Meetup
+:page-eventStartDate: “2019-01-24T17:15:00” 
+:page-eventLink: https://www.meetup.com/Montreal-Jenkins-Area-Meetup/events/256952425/
+---
+First Montreal Jenkins Area Meetup

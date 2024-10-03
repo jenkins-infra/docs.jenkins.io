@@ -1,0 +1,6 @@
+---
+:page-eventTitle: LA JAM
+:page-eventStartDate: 2017-03-21T19:00:00
+:page-eventLink: https://www.meetup.com/Los-Angeles-Jenkins-Area-Meetup/events/238235112/
+---
+Applying Jenkins to College

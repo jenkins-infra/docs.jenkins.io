@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Ottawa Mobile Development Meetup
+:page-eventStartDate: 2017-05-24T18:30:00
+:page-eventLink: https://www.meetup.com/Ottawa-Mobile-Development-Meetup/events/239168072/
+---
+Python pytests using Docker in a Jenkins Pipeline

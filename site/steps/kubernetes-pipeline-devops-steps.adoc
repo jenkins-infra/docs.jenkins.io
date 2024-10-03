@@ -1,0 +1,79 @@
+= Kubernetes :: Pipeline :: DevOps Steps
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/kubernetes-pipeline-devops-steps">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `approveReceivedEvent`: Updates an Approve event in Elasticsearch
+++++
+<ul><li><code>id : String</code>
+</li>
+<li><code>approved : boolean</code>
+</li>
+</ul>
+
+
+++++
+=== `approveRequestedEvent`: Creates an Approve requested event in Elasticsearch
+++++
+<ul><li><code>app : String</code>
+</li>
+<li><code>environment : String</code>
+</li>
+</ul>
+
+
+++++
+=== `createEvent`: Creates a JSON payload event in Elasticsearch
+++++
+<ul><li><code>json : String</code>
+</li>
+<li><code>index : String</code>
+</li>
+</ul>
+
+
+++++
+=== `kubernetesApply`: Apply resources to Kubernetes, lazily creating environments and routes
+++++
+<ul><li><code>file : String</code>
+</li>
+<li><code>environment : String</code>
+</li>
+<li><code>environmentName : String</code>
+</li>
+<li><code>registry : String</code>
+</li>
+<li><code>readinessTimeout : long</code>
+</li>
+<li><code>createNewResources : boolean</code>
+</li>
+<li><code>servicesOnly : boolean</code>
+</li>
+<li><code>ignoreServices : boolean</code>
+</li>
+<li><code>ignoreRunningOAuthClients : boolean</code>
+</li>
+<li><code>processTemplatesLocally : boolean</code>
+</li>
+<li><code>deletePodsOnReplicationControllerUpdate : boolean</code>
+</li>
+<li><code>rollingUpgrades : boolean</code>
+</li>
+<li><code>rollingUpgradePreserveScale : boolean</code>
+</li>
+</ul>
+
+
+++++

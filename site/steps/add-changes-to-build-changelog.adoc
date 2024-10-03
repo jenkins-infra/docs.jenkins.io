@@ -1,0 +1,27 @@
+= Add Changes to Build Changelog
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/add-changes-to-build-changelog">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `addchangestobuildchangelog`: Add Changes to Build Changelog
+++++
+<ul><li><code>changelogPath : String</code>
+</li>
+<li><code>changelogText : String</code>
+</li>
+</ul>
+
+
+++++

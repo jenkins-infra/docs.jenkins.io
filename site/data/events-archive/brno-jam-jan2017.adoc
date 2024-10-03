@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Brno JAM
+:page-eventStartDate: 2017-01-28T15:30:00
+:page-eventLink: https://www.meetup.com/Brno-Jenkins-Area-Meetup/events/236606276/
+---
+JAM @ Devconf

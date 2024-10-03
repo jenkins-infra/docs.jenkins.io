@@ -1,0 +1,62 @@
+= SCM HttpClient
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/scm-httpclient">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `scmHttpClient`: SCM HttpClient
+++++
+<ul><li><code>url : String</code>
+</li>
+<li><code>addScmPath : String</code> (optional)
+<div><p>added custom paths to each affected scm path.</p>
+<p>e.g., Add scmPath: testOne</p>
+<p>assuming you get the current scm affected path list: [["src/main/java/Test.java"],["app/src/main/java/HelloWorld.java"]]</p>
+<p>With the handle, the result: you will get a new affected path list: [["testOne","src/main/java/Test.java"],["testOne","src/main/java/HelloWorld.java"]]</p>
+<p>if you need to add more, Add scmPath can be use like: testOne,testTwo,testThird</p></div>
+
+</li>
+<li><code>contentType</code> (optional)
+<ul><li><b>Values:</b> <code>NOT_SET</code>, <code>TEXT_HTML</code>, <code>TEXT_PLAIN</code>, <code>APPLICATION_FORM</code>, <code>APPLICATION_JSON</code>, <code>APPLICATION_JSON_UTF8</code>, <code>APPLICATION_TAR</code>, <code>APPLICATION_ZIP</code>, <code>APPLICATION_OCTETSTREAM</code></li></ul></li>
+<li><code>credentialId : String</code> (optional)
+</li>
+<li><code>httpMode</code> (optional)
+<ul><li><b>Values:</b> <code>GET</code>, <code>HEAD</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>, <code>OPTIONS</code>, <code>PATCH</code></li></ul></li>
+<li><code>regexString : String</code> (optional)
+<div><p>using regular expression to handle each affected scm path.</p>
+<p>eg: Regex string: src.*java</p>
+<p>assuming you get the current scm affected path list: [["src/main/java/Test.java"],["app/src/main/java/HelloWorld.java"]]</p>
+<p>With the handle, the result: you will get a new affected path list: [["src/main/java/Test.java"],["src/main/java/HelloWorld.java"]]</p></div>
+
+</li>
+<li><code>requestBody : String</code> (optional)
+</li>
+<li><code>saveAffectedPath : boolean</code> (optional)
+<div><p>it will be use like $(AFFECTED_PATH) on request body.</p></div>
+
+</li>
+<li><code>saveJobBuildMessage : boolean</code> (optional)
+<div><p>it will be use like $(JOB_BUILD_MESSAGE) on request body.</p></div>
+
+</li>
+<li><code>sendHttpRequest : boolean</code> (optional)
+</li>
+<li><code>validResponseCodes : String</code> (optional)
+</li>
+<li><code>validResponseContent : String</code> (optional)
+</li>
+</ul>
+
+
+++++

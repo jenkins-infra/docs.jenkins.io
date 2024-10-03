@@ -1,0 +1,7 @@
+= About the Author
+:page-layout: author
+:page-author_name: Steven Christou
+:page-github: christ66
+:page-irc: schristou
+
+

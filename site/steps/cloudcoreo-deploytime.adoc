@@ -1,0 +1,43 @@
+= CloudCoreo DeployTime Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/cloudcoreo-deploytime">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'CloudCoreoPublisher'])`: Analyze CloudCoreo Results
+++++
+<ul><li><code>blockOnHigh : boolean</code>
+</li>
+<li><code>blockOnMedium : boolean</code>
+</li>
+<li><code>blockOnLow : boolean</code>
+</li>
+</ul>
+
+
+++++
+=== `wrap([$class: 'CloudCoreoBuildWrapper'])`: CloudCoreo Enabled for Workload Analysis
+++++
+<ul><li><code>teamName : String</code>
+<div><div>
+ Name your CloudCoreo Team. This is a nickname that will be used only in Jenkinsn It has no correlation to the name within the CloudCoreo webapp. It is only to ease the selection when creating or modifying jobs.
+</div></div>
+
+</li>
+<li><code>context : String</code>
+</li>
+</ul>
+
+
+++++

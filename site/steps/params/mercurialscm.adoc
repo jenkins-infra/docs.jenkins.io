@@ -1,0 +1,127 @@
+= $class: 'MercurialSCM'
+:page-layout: pipelinesteps
+== $class: 'MercurialSCM'
+
+++++
+<li><code>$class: 'MercurialSCM'</code><div>
+<ul><li><code>source : String</code>
+<div><div>
+ Specify the repository to track. This can be URL or a local file path. If you are specifying HTTP credentials, do <em>not</em> include a username in the URL.
+</div></div>
+
+</li>
+<li><code>browser</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'FishEye'</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ Specify the root URL serving this repository, such as: http://www.example.org/browse/hg/
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'GoogleCode'</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ Specify the root URL serving this repository (such as <a href="http://code.google.com/p/PROJECTNAME/source/" rel="nofollow">this</a>).
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'HgWeb'</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ Specify the root URL serving this repository (such as <a href="https://www.mercurial-scm.org/repo/hg/" rel="nofollow">this</a>).
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'Kallithea'</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ Specify the root URL serving this repository (such as <a href="https://rhodecode.server/repo_name" rel="nofollow">this</a>).
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'KilnHG'</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ Specify the root URL serving this repository (such as <a href="https://acme.kilnhg.com/Repo/Repositories/Group/PROJECTNAME" rel="nofollow">this</a>).
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'RhodeCode'</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ Specify the root URL serving this repository (such as <a href="https://rhodecode.server/repo_name" rel="nofollow">this</a>).
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'RhodeCodeLegacy'</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ Specify the root URL serving this repository (such as <a href="https://rhodecode.server/repo_name" rel="nofollow">this</a>).
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'ScmManager'</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ Specify the root URL serving this repository (such as <code>http://YOURSCMMANAGER/scm/repo/NAMESPACE/NAME/</code>).
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>clean : boolean</code> (optional)
+<div><div>
+ When this option is checked, each build will wipe any local modifications or untracked files in the repository checkout. This is often a convenient way to ensure that a build is not using any artifacts from earlier builds.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ Optional credentials to use when cloning or pulling from the remote repository. Supports username/password with HTTP(S) URLs, and SSH private key with SSH URLs.
+</div></div>
+
+</li>
+<li><code>disableChangeLog : boolean</code> (optional)
+<div><div>
+ When checked, Hudson will not calculate the Mercurial changelog for each build. Disabling the changelog can decrease the amount of time needed to update a very large repository.
+</div></div>
+
+</li>
+<li><code>installation : String</code> (optional)
+</li>
+<li><code>modules : String</code> (optional)
+<div><div>
+ Reduce unnecessary builds by specifying a comma or space delimited list of "modules" within the repository. A module is a directory name within the repository that this project lives in. If this field is set, changes outside the specified modules will not trigger a build (even though the whole repository is checked out anyway due to the Mercurial limitation.)
+</div></div>
+
+</li>
+<li><code>revision : String</code> (optional)
+<div><div>
+ Specify the branch or tag name you would like to track. (If you do not type anything, the default value is the <code>default</code> branch.)
+</div></div>
+
+</li>
+<li><code>revisionType</code> (optional)
+<div><div>
+ Specify the kind of revision you expect Jenkins to update your working copy to.
+</div></div>
+
+<ul><li><b>Values:</b> <code>BRANCH</code>, <code>TAG</code>, <code>CHANGESET</code>, <code>REVSET</code></li></ul></li>
+<li><code>subdir : String</code> (optional)
+<div><div>
+ If not empty, check out the Mercurial repository into this subdirectory of the job's workspace. For example: <code>my/sources</code> (use forward slashes). If changing this entry, you probably want to clean the workspace first.
+</div></div>
+
+</li>
+</ul></div></li>
+
+
+++++

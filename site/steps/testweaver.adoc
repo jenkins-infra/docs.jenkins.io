@@ -1,0 +1,57 @@
+= TestWeaver Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/testweaver">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `testweaver`: TestWeaver
+++++
+<ul><li><code>projectPath : String</code>
+</li>
+<li><code>experimentName : String</code>
+</li>
+<li><code>jUnitReportDirectory : String</code>
+</li>
+<li><code>acceptInconclusiveWatchers : boolean</code> (optional)
+</li>
+<li><code>exportAsCsvDecimalSeparator : String</code> (optional)
+</li>
+<li><code>exportAsCsvDirectory : String</code> (optional)
+</li>
+<li><code>exportAsCsvNoQuote : boolean</code> (optional)
+</li>
+<li><code>exportAsCsvQuote : String</code> (optional)
+</li>
+<li><code>exportAsCsvReports : String</code> (optional)
+</li>
+<li><code>exportAsCsvSeparator : String</code> (optional)
+</li>
+<li><code>htmlReportDirectory : String</code> (optional)
+</li>
+<li><code>instrumentView : boolean</code> (optional)
+</li>
+<li><code>namespacePattern : String</code> (optional)
+</li>
+<li><code>parameterValues : String</code> (optional)
+</li>
+<li><code>runScenarioLimit : int</code> (optional)
+</li>
+<li><code>runTimeLimit : long</code> (optional)
+</li>
+<li><code>silverParameters : String</code> (optional)
+</li>
+</ul>
+
+
+++++

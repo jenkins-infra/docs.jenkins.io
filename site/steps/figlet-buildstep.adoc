@@ -1,0 +1,25 @@
+= Figlet Buildstep
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/figlet-buildstep">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `figlet`: Figlet
+++++
+<ul><li><code>message : String</code>
+</li>
+</ul>
+
+
+++++

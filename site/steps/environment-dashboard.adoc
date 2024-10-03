@@ -1,0 +1,84 @@
+= Environment Dashboard Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/environment-dashboard">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `environmentDashboard`: Details for Environment dashboard
+++++
+<ul><li><code>nameOfEnv : String</code>
+<div><div>
+ Specify the environment name that you are deploying to. 
+ <br>
+  You can use jenkins environment variable in the text area. 
+ <br>
+  E.g: DEV or TEST or PROD
+</div></div>
+
+</li>
+<li><code>componentName : String</code>
+<div><div>
+ Specify the component name that you are deploying to. 
+ <br>
+  You can use jenkins environment variable in the text area. 
+ <br>
+  E.g: WEBAPP or DB or JBoss
+</div></div>
+
+</li>
+<li><code>buildNumber : String</code>
+<div><div>
+ The build name or value that should be displayed. 
+ <br>
+  You can use jenkins environment variables here. 
+ <br>
+  E.g: ${BUILD_NUMBER}
+</div></div>
+
+</li>
+<li><code>buildJob : String</code>
+<div><div>
+ Enter the name of the Jenkins job that built the code being deployed (so that the dashboard can link to it) <i>(Optional)</i>
+ <br>
+  Do not use unless your build number refers to a Jenkins build number!
+</div></div>
+
+</li>
+<li><code>packageName : String</code>
+<div><div>
+ Package name is an optional value that can be set along with the build number. 
+ <br>
+  Some projects may use this to describe what the build being deployed is all about. 
+ <br>
+</div></div>
+
+</li>
+<li><code>addColumns : boolean</code>
+<div><div>
+ Use this to add additional columns to the dashboard history pop-ups. 
+ <br>
+</div></div>
+
+</li>
+<li><code>data</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>columnName : String</code>
+</li>
+<li><code>contents : String</code>
+</li>
+</ul></li>
+</ul>
+
+
+++++

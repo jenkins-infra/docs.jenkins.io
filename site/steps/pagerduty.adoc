@@ -1,0 +1,124 @@
+= PagerDuty Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/pagerduty">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `pagerduty`: PagerDuty trigger/resolve step
+++++
+<ul><li><code>routingKey : String</code>
+</li>
+<li><code>dedupKey : String</code> (optional)
+</li>
+<li><code>incidentClass : String</code> (optional)
+</li>
+<li><code>incidentComponent : String</code> (optional)
+</li>
+<li><code>incidentGroup : String</code> (optional)
+</li>
+<li><code>incidentSeverity : String</code> (optional)
+</li>
+<li><code>incidentSource : String</code> (optional)
+</li>
+<li><code>incidentSummary : String</code> (optional)
+</li>
+<li><code>numPreviousBuildsToProbe : int</code> (optional)
+</li>
+<li><code>resolve : boolean</code> (optional)
+</li>
+<li><code>resolveOnBackToNormal : boolean</code> (optional)
+</li>
+<li><code>triggerOnAborted : boolean</code> (optional)
+</li>
+<li><code>triggerOnFailure : boolean</code> (optional)
+</li>
+<li><code>triggerOnNotBuilt : boolean</code> (optional)
+</li>
+<li><code>triggerOnSuccess : boolean</code> (optional)
+</li>
+<li><code>triggerOnUnstable : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `pagerdutyChangeEvent`: PagerDuty Change Event step
+++++
+<ul><li><code>integrationKey : String</code>
+</li>
+<li><code>customDetails : String</code> (optional)
+</li>
+<li><code>summaryText : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'ChangeEvents'])`: PagerDuty Change Events
+++++
+<div><div>
+ Create Change Events on PagerDuty services when jobs complete.
+</div></div>
+<ul><li><code>integrationKey : String</code>
+<div><div>
+ This is the 32 character Integration Key for an Integration on a Service, or a token that resolves to the key. The token must use the form ${ENV, var="token"}. Ex. ${ENV, var="my_integration_key"}
+</div></div>
+
+</li>
+<li><code>createOnAborted : boolean</code> (optional)
+<div><div>
+ Create a PagerDuty Change Event if the job ends as ABORTED.
+</div></div>
+
+</li>
+<li><code>createOnFailure : boolean</code> (optional)
+<div><div>
+ Create a PagerDuty Change Event if the job ends as FAILURE.
+</div></div>
+
+</li>
+<li><code>createOnNotBuilt : boolean</code> (optional)
+<div><div>
+ Create a PagerDuty Change Event if the job ends as NOT_BUILT.
+</div></div>
+
+</li>
+<li><code>createOnSuccess : boolean</code> (optional)
+<div><div>
+ Create a PagerDuty Change Event if the job ends as SUCCESS.
+</div></div>
+
+</li>
+<li><code>createOnUnstable : boolean</code> (optional)
+<div><div>
+ Create a PagerDuty Change Event if the job ends as UNSTABLE.
+</div></div>
+
+</li>
+<li><code>customDetails : String</code> (optional)
+<div><div>
+ The JSON to be included in the custom details of the change event. Token macro substitution is enabled for this field, but must use the form ${ENV, var="token"}. Ex. {"field":"${ENV, var="my_token"}"}
+</div></div>
+
+</li>
+<li><code>summaryText : String</code> (optional)
+<div><div>
+ This is an alternate summary text, that can be passed onto Pager duty change events. If omitted it will default to current build's fullDisplayName. Token macro substitution is enabled for this field, but must use the form ${ENV, var="token"}. Ex. Build completed for ${ENV, var="my_build_product"}
+</div></div>
+
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,107 @@
+= Rundeck plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/rundeck">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'RundeckNotifier'])`: Rundeck
+++++
+<ul><li><code>rundeckInstance : String</code>
+</li>
+<li><code>jobId : String</code>
+</li>
+<li><code>options : String</code>
+<div><div>
+ <p>This is the list of options for the Rundeck job you want to execute. It should be in the Java-Properties format, 1 option per line : <strong>key=value</strong>.</p>
+ <p>You can use Jenkins environment variables ($BUILD_NUMBER, $BUILD_ID, $JOB_NAME, $WORKSPACE, etc) or System environment variables ($HOME, $PATH, etc) in your options, and we will expand them when notifying Rundeck.</p>
+ <p>We will also expand the special token "$ARTIFACT_NAME{regex}" (where "regex" is a java-regex) to the name of the first matching artifact found.<br>
+   For example, $ARTIFACT_NAME{.*\.war} will matches your WAR artifact, while $ARTIFACT_NAME{.*-sources\.jar} will matches your sources artifact.</p>
+</div></div>
+
+</li>
+<li><code>nodeFilters : String</code>
+<div><div>
+ <p>This is a list of filters to optionally <strong>filter the nodes</strong> on which your Rundeck will run.<br>
+   You can specify which node to <strong>include</strong> using a single value, a list of values, or a regular expression (for example the .* pattern will match any text) as the argument to the following options.</p>
+ <p><strong>Inclusion filters</strong></p>
+ <ul>
+  <li><strong>hostname</strong> : hostname of the node</li>
+  <li><strong>name</strong> : resource name of the node, which may be different than hostname</li>
+  <li><strong>type</strong> : type name of the node, typically "Node"</li>
+  <li><strong>tags</strong> : a set of user defined tags. If you have multiple tags, the separator is either the comma "," for an OR between them, or a plus "+" for an AND between them. Example : "web,prod" (either "web" or "prod"), "web+prod" (both "web" and "prod").</li>
+  <li><strong>os-name</strong> : operating system name, e.g. "Linux", "Macintosh OS X"</li>
+  <li><strong>os-family</strong> : operating system family, e.g. "windows","unix"</li>
+  <li><strong>os-arch</strong> : operating system CPU architecture, e.g. "x86", "x386"</li>
+  <li><strong>os-version</strong> : operating system version number</li>
+ </ul>
+ <p></p>
+ <p>This field should be written in the <strong>Java-Properties format</strong>, 1 option per line : <strong>key=value</strong>.<br>
+   You can use Jenkins environment variables ($JOB_NAME, $WORKSPACE, etc) or System environment variables ($OSTYPE, $USER, etc) in your values, and we will expand them when notifying Rundeck.</p>
+ <p>Example : <br></p>
+ <pre>            name = .*
+            tags = web+prod
+            exclude-os-family = windows
+        </pre>
+ <p></p>
+</div></div>
+
+</li>
+<li><code>tags : String</code>
+</li>
+<li><code>shouldWaitForRundeckJob : boolean</code>
+<div><div>
+ If checked, then Jenkins builds will wait for Rundeck job executions to finish. Otherwise, we will just trigger the execution of a Rundeck job, and move on. Also, if the build does not wait for the RunDeck job, the RunDeck job logging will not be tailed into the Jenkins job log.
+</div></div>
+
+</li>
+<li><code>shouldFailTheBuild : boolean</code>
+<div><div>
+ If checked, then a failure to schedule the job execution on Rundeck will fail the Jenkins build. Otherwise, the Rundeck integration won't interact with the result of your Jenkins build (even if Rundeck is down).
+</div></div>
+
+</li>
+<li><code>notifyOnAllStatus : boolean</code>
+<div><div>
+ Normally, Rundeck will only be notified on a SUCCESS status. If checked, Rundeck will be notifed regardless of status. This can be especially useful in post.
+</div></div>
+
+</li>
+<li><code>includeRundeckLogs : boolean</code>
+<div><div>
+ If checked, then Jenkins builds will include the rundeck job output. shouldWaitForRundeckJob is required.
+</div></div>
+
+</li>
+<li><code>tailLog : boolean</code>
+<div><div>
+ If checked, the RunDeck job logging be tailed into the Jenkins job log. Note that RunDeck job logging is never tailed if <em>Wait for RunDeck job to finish ?</em> checkbox is not checked.
+</div></div>
+
+</li>
+<li><code>jobUser : String</code>
+<div><div>
+ <p>This is an alternative rundeck userid, which should be used instead of the global configured id. 'User password' is mandatory with 'job user', also a token can be used for authentication.</p>
+</div></div>
+
+</li>
+<li><code>jobPassword</code>
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>jobToken</code>
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+</ul>
+
+
+++++

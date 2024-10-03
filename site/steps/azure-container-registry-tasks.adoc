@@ -1,0 +1,123 @@
+= Azure Container Registry Tasks Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/azure-container-registry-tasks">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `acrQuickTask`: Queue an ACR Quick Task
+++++
+<ul><li><code>azureCredentialsId : String</code>
+</li>
+<li><code>resourceGroupName : String</code>
+<div><div>
+ The resource group name that the app will be associated with.
+</div></div>
+
+</li>
+<li><code>registryName : String</code>
+<div><div>
+ The Azure Container Registry name, the built image will be pushed to.
+</div></div>
+
+</li>
+<li><code>architecture : String</code> (optional)
+<div><div>
+ The OS architecture.
+</div></div>
+
+</li>
+<li><code>buildArgs</code> (optional)
+<div><div>
+ Set build-time variables as <code>docker build --build-arg</code>.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>secrecy : boolean</code>
+</li>
+</ul></li>
+<li><code>dockerfile : String</code> (optional)
+<div><div>
+ Relative path to the source control management(git path or local directory) for the Dockerfile.
+</div></div>
+
+</li>
+<li><code>gitPath : String</code> (optional)
+<div><div>
+ Relative path in the git repo's selected branch, which will be used as docker build path. Empty means root path in the git repo.
+</div></div>
+
+</li>
+<li><code>gitRefspec : String</code> (optional)
+</li>
+<li><code>gitRepo : String</code> (optional)
+<div><div>
+ Git repo which contains source code and Dockerfile, which will be used to build image. <em>Please use the URL with HTTP(S) protocol instead of SSH protocol</em> Use <code>https://PAT@github.com/user/repo.git</code> for private repo.
+</div></div>
+
+</li>
+<li><code>imageNames</code> (optional)
+<div><div>
+ After Azure Container Registry finishes building image, it pushes the image to registry with tags provided. Single Built image can be pushed with multiple repositories and tags. If no image name provided, Azure Container Registry **<b>WILL NOT</b>** push any image to registry after building.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>image : String</code>
+</li>
+</ul></li>
+<li><code>local : String</code> (optional)
+<div><div>
+ Build docker image from a local directory. This directory will be uploaded to Azure Container Registry. It also will be used as docker build path.
+</div></div>
+
+</li>
+<li><code>noCache : boolean</code> (optional)
+<div><div>
+ Do not use cache when building the image. Enable the <code>no-cache</code> flag when build as <code>docker build --no-cache</code>
+</div></div>
+
+</li>
+<li><code>os : String</code> (optional)
+<div><div>
+ The operating system type required for the run.
+</div></div>
+
+</li>
+<li><code>sourceType : String</code> (optional)
+</li>
+<li><code>tarball : String</code> (optional)
+<div><div>
+ Files in a compressed archive on a remote web server. e.g.<code>http://remoteserver/myapp.tar.gz</code>
+</div></div>
+
+</li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ Maximum duration for a docker build to execute in seconds. Should be in 300 to 28800.
+</div></div>
+
+</li>
+<li><code>variant : String</code> (optional)
+<div><div>
+ Variant of the CPU.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

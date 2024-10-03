@@ -1,0 +1,428 @@
+= Pipeline Maven Integration Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/pipeline-maven">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `withMaven`: Provide Maven environment
+++++
+<div><div>
+ Configures maven environment to use within a pipeline job by calling <code>sh mvn</code> or <code>bat mvn</code>. The selected maven installation will be configured and prepended to the path.
+</div></div>
+<ul><li><code>globalMavenSettingsConfig : String</code> (optional)
+<div><div>
+ Select a global maven settings element from File Config Provider. The settings element in the <code>settings.xml</code> file contains elements used to define values which configure Maven execution in various ways, like the <code>pom.xml</code>, but should not be bundled to any specific project, or distributed to an audience. These include values such as the local repository location, alternate remote repository servers, and authentication information. 
+ <p>see also: <a href="http://maven.apache.org/settings.html" rel="nofollow"><code>settings.xml</code> reference</a></p>
+</div></div>
+
+</li>
+<li><code>globalMavenSettingsFilePath : String</code> (optional)
+<div><div>
+ Specify a global maven settings.xml file. The specified path can be absolute or relative to the workspace. Shell-like environment variable expansions work in this field, by using the <code>${VARIABLE}</code> syntax. The file existence is checked on the build agent, if found, that one is used. If not found it will be checked on the master. The settings element in the <code>settings.xml</code> file contains elements used to define values which configure Maven execution in various ways, like the <code>pom.xml</code>, but should not be bundled to any specific project, or distributed to an audience. These include values such as the local repository location, alternate remote repository servers, and authentication information. 
+ <br>
+  There are two locations where a <code>settings.xml</code> file per default may live: 
+ <ul>
+  <li>The Maven install - default: <code>$M2_HOME/conf/settings.xml</code></li>
+  <li>A user's install - default: <code>${user.home}/.m2/settings.xml</code></li>
+ </ul> The former settings.xml are also called global settings, the latter settings.xml are referred to as user settings. If both files exists, their contents gets merged, with the user-specific settings.xml being dominant. 
+ <p>see also: <a href="http://maven.apache.org/settings.html" rel="nofollow"><code>settings.xml</code> reference</a></p>
+</div></div>
+
+</li>
+<li><code>jdk : String</code> (optional)
+<div><div>
+ Select a JDK installation. If auto-install is enabled, the JDK will be downloaded and made available for the pipeline job. 
+ <p><strong>Note</strong>: This option does not work with <code>docker.image('xxx').inside</code> or <code>container('xxx')</code>, the preinstalled JDK on the docker image will be used.</p>
+</div></div>
+
+</li>
+<li><code>maven : String</code> (optional)
+<div><div>
+ Select a Maven installation. If auto-install is enabled, maven will be downloaded and made available for the pipeline job. 
+ <p><strong>Note</strong>: This option does not work with <code>docker.image('xxx').inside</code> or <code>container('xxx')</code>, the preinstalled maven on the docker image will be used.</p>
+</div></div>
+
+</li>
+<li><code>mavenLocalRepo : String</code> (optional)
+<div><div>
+ Specify a custom local repository path. Shell-like environment variable expansions work with this field, by using the ${VARIABLE} syntax. Normally, Jenkins uses the local Maven repository as determined by Maven, by default <code>~/.m2/repository</code> and can be overridden by &lt;localRepository&gt; in <code>~/.m2/settings.xml</code> (see <a href="https://maven.apache.org/guides/mini/guide-configuring-maven.html#Configuring_your_Local_Repository" rel="nofollow">Configuring your Local Repository</a>)) 
+ <p>This normally means that all the jobs that are executed on the same node shares a single Maven repository. The upside of this is that you can save the disk space, the downside is that the repository is not multi process safe and having multiple builds run concurrently can corrupt it. Additionally builds could interfere with each other by sharing incorrect or partially built artifacts. For example, you might end up having builds incorrectly succeed, just because your have all the dependencies in your local repository, despite that fact that none of the repositories in POM might have them.</p>
+ <p>By using this option, Jenkins will tell Maven to use a custom path for the build as the local Maven repository by using <code>-Dmaven.repo.local</code> <br>
+   If specified as a relative path then this value well be resolved against the workspace root and not the current working directory. <br>
+   ie. if <code>.repository</code> is specified then <code>$WORKSPACE/.repository</code> will be used.</p>
+ <p>This means each job could get its own isolated Maven repository just for itself. It fixes the above problems, at the expense of additional disk space consumption.</p>
+ <p>When using this option, consider setting up a Maven artifact manager so that you don't have to hit remote Maven repositories too often.</p>
+</div></div>
+
+</li>
+<li><code>mavenOpts : String</code> (optional)
+<div><div>
+ Specify JVM specific options needed when launching Maven as an external process, these are not maven specific options. See: <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html#CBBIJCHG" rel="nofollow">Java Options</a>
+ <p>Shell-like environment variable expansions work in this field, by using the <code>${VARIABLE}</code> syntax.</p>
+</div></div>
+
+</li>
+<li><code>mavenSettingsConfig : String</code> (optional)
+<div><div>
+ Select a maven settings element from File Config Provider. The settings element in the <code>settings.xml</code> file contains elements used to define values which configure Maven execution in various ways, like the <code>pom.xml</code>, but should not be bundled to any specific project, or distributed to an audience. These include values such as the local repository location, alternate remote repository servers, and authentication information. 
+ <p>see also: <a href="http://maven.apache.org/settings.html" rel="nofollow"><code>settings.xml</code> reference</a></p>
+</div></div>
+
+</li>
+<li><code>mavenSettingsFilePath : String</code> (optional)
+<div><div>
+ Specify a maven settings.xml file. The specified path can be absolute or relative to the workspace. Shell-like environment variable expansions work in this field, by using the <code>${VARIABLE}</code> syntax. The file existence is checked on the build agent, if found, that one is used. If not found it will be checked on the master. The settings element in the <code>settings.xml</code> file contains elements used to define values which configure Maven execution in various ways, like the <code>pom.xml</code>, but should not be bundled to any specific project, or distributed to an audience. These include values such as the local repository location, alternate remote repository servers, and authentication information. 
+ <br>
+  There are two locations where a <code>settings.xml</code> file per default may live: 
+ <ul>
+  <li>The Maven install - default: <code>$M2_HOME/conf/settings.xml</code></li>
+  <li>A user's install - default: <code>${user.home}/.m2/settings.xml</code></li>
+ </ul> The former settings.xml are also called global settings, the latter settings.xml are referred to as user settings. If both files exists, their contents gets merged, with the user-specific settings.xml being dominant. 
+ <p>see also: <a href="http://maven.apache.org/settings.html" rel="nofollow"><code>settings.xml</code> reference</a></p>
+</div></div>
+
+</li>
+<li><code>options</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>concordionPublisher</code><div>
+<div><div>
+ Publish <a href="http://concordion.org/" rel="nofollow">Concordion</a> reports, if found, regarding the given pattern.
+ <br>
+  Test results are by default published if the <a href="https://wiki.jenkins.io/display/JENKINS/HTML+Publisher+Plugin" rel="nofollow">Jenkins HTMLPublisher Plugin</a> is installed.
+</div></div>
+<ul><li><code>disabled : boolean</code> (optional)
+<div><div>
+ Skip the publishing of tests reports.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>dependenciesFingerprintPublisher</code><div>
+<div><div>
+ Fingerprint the Maven dependencies used by the maven project.
+ <br>
+</div></div>
+<ul><li><code>disabled : boolean</code> (optional)
+<div><div>
+ Skip the fingerprinting of the dependencies of the maven project.
+</div></div>
+
+</li>
+<li><code>includeReleaseVersions : boolean</code> (optional)
+</li>
+<li><code>includeScopeCompile : boolean</code> (optional)
+</li>
+<li><code>includeScopeProvided : boolean</code> (optional)
+</li>
+<li><code>includeScopeRuntime : boolean</code> (optional)
+</li>
+<li><code>includeScopeTest : boolean</code> (optional)
+</li>
+<li><code>includeSnapshotVersions : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>findbugsPublisher</code><div>
+<div><div>
+ Publish FindBugs reports generated by "<code>org.codehaus.mojo:findbugs-maven-plugin:findbugs</code>".
+ <br>
+  FindBugs results are by default published if the <a href="https://wiki.jenkins-ci.org/display/JENKINS/FindBugs+Plugin" rel="nofollow">Jenkins FindBugs Plugin</a> is installed.
+</div></div>
+<ul><li><code>disabled : boolean</code> (optional)
+<div><div>
+ Skip the publishing of findbugs reports.
+</div></div>
+
+</li>
+<li><code>healthy : String</code> (optional)
+</li>
+<li><code>thresholdLimit : String</code> (optional)
+</li>
+<li><code>unHealthy : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>artifactsPublisher</code><div>
+<div><div>
+ Archive and fingerprint the artifact and the attached artifacts generated by the maven project.
+ <br>
+</div></div>
+<ul><li><code>archiveFilesDisabled : boolean</code> (optional)
+</li>
+<li><code>disabled : boolean</code> (optional)
+<div><div>
+ Skip the archiving and the fingerprinting of generated artifacts.
+</div></div>
+
+</li>
+<li><code>fingerprintFilesDisabled : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>invokerPublisher</code><div>
+<div><div>
+ Publish Invoker reports generated by "<code>org.apache.maven.plugins:maven-invoker-plugin:run</code>".
+ <br>
+  Invoker results are by default published if the <a href="https://wiki.jenkins.io/display/JENKINS/Maven+Invoker+Plugin" rel="nofollow">Jenkins Maven Invoker Plugin</a> is installed.
+</div></div>
+<ul><li><code>disabled : boolean</code> (optional)
+<div><div>
+ Skip the publishing of invoker reports.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>jgivenPublisher</code><div>
+<div><div>
+ Publish <a href="http://jgiven.org/" rel="nofollow">JGiven</a> reports, if found.
+ <br>
+  Test results are by default published if the <a href="https://wiki.jenkins.io/display/JENKINS/JGiven+Plugin" rel="nofollow">Jenkins JGiven Plugin</a> is installed.
+</div></div>
+<ul><li><code>disabled : boolean</code> (optional)
+<div><div>
+ Skip the publishing of tests reports.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>jacocoPublisher</code><div>
+<div><div>
+ Publish <a href="https://www.eclemma.org/jacoco/" rel="nofollow">JaCoCo Java Code Coverage Library</a> reports, if found.
+ <br>
+  Test results are by default published if the <a href="https://wiki.jenkins.io/display/JENKINS/JaCoCo+Plugin" rel="nofollow">Jenkins JaCoCo Plugin</a> is installed.
+</div></div>
+<ul><li><code>disabled : boolean</code> (optional)
+<div><div>
+ Skip the publishing of JaCoCo reports.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>junitPublisher</code><div>
+<div><div>
+ Publish tests reports generated by "<code>maven-surefire-plugin:test</code>" or by "<code>maven-failsafe-plugin:integration-test</code>".
+ <br>
+  Test results are by default published if the <a href="http://wiki.jenkins-ci.org/display/JENKINS/JUnit+Plugin" rel="nofollow">Jenkins JUnit Plugin</a> is installed.
+</div></div>
+<ul><li><code>disabled : boolean</code> (optional)
+<div><div>
+ Skip the publishing of tests reports.
+</div></div>
+
+</li>
+<li><code>healthScaleFactor : double</code> (optional)
+<div><div>
+ The amplification factor to apply to test failures when computing the test result contribution to the build health score. 
+ <br>
+  The default factor is <code>1.0</code>
+ <ul>
+  <li>A factor of <code>0.0</code> will disable the test result contribution to build health score.</li>
+  <li>A factor of <code>0.1</code> means that 10% of tests failing will score 99% health</li>
+  <li>A factor of <code>0.5</code> means that 10% of tests failing will score 95% health</li>
+  <li>A factor of <code>1.0</code> means that 10% of tests failing will score 90% health</li>
+  <li>A factor of <code>2.0</code> means that 10% of tests failing will score 80% health</li>
+  <li>A factor of <code>2.5</code> means that 10% of tests failing will score 75% health</li>
+  <li>A factor of <code>5.0</code> means that 10% of tests failing will score 50% health</li>
+  <li>A factor of <code>10.0</code> means that 10% of tests failing will score 0% health</li>
+ </ul> The factor is persisted with the build results, so changes will only be reflected in new builds.
+</div></div>
+
+</li>
+<li><code>ignoreAttachments : boolean</code> (optional)
+<div><div>
+ Skip the publishing of tests reports attachments.
+ <br>
+  Test result attachments are by default published if the <a href="https://wiki.jenkins-ci.org/display/JENKINS/JUnit+Attachments+Plugin" rel="nofollow">Jenkins JUnit Attachments Plugin</a> is installed.
+</div></div>
+
+</li>
+<li><code>keepLongStdio : boolean</code> (optional)
+<div><div>
+ If checked, any standard output or error from a test suite will be retained in the test results after the build completes. (This refers only to additional messages printed to console, not to a failure stack trace.) Such output is always kept if the test failed, but by default lengthy output from passing tests is truncated to save space. Check this option if you need to see every log message from even passing tests, but beware that Jenkins's memory consumption can substantially increase as a result, even if you never look at the test results!
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>mavenLinkerPublisher</code><div>
+<div><div>
+ This publisher generates and publishes the links (url) of deployed Maven artifacts.
+ <br>
+</div></div>
+<ul><li><code>disabled : boolean</code> (optional)
+<div><div>
+ Skip generating and publishing the links.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>pipelineGraphPublisher</code><div>
+<div><div>
+ Build a graph of pipelines based on their Maven dependencies and on the Maven artifacts they generate.
+ <br>
+</div></div>
+<ul><li><code>disabled : boolean</code> (optional)
+<div><div>
+ Skip the depedencies graph computing of the maven project, and triggering of dependent pipelines.
+</div></div>
+
+</li>
+<li><code>ignoreUpstreamTriggers : boolean</code> (optional)
+</li>
+<li><code>includeReleaseVersions : boolean</code> (optional)
+</li>
+<li><code>includeScopeCompile : boolean</code> (optional)
+</li>
+<li><code>includeScopeProvided : boolean</code> (optional)
+</li>
+<li><code>includeScopeRuntime : boolean</code> (optional)
+</li>
+<li><code>includeScopeTest : boolean</code> (optional)
+</li>
+<li><code>includeSnapshotVersions : boolean</code> (optional)
+</li>
+<li><code>lifecycleThreshold : String</code> (optional)
+<div><div>
+ <p>Threshold to trigger downstream pipelines based on the <a href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html" rel="nofollow">Maven lifecycle</a> phase successfully reached during the Maven execution.</p>
+ <p>If "install" is selected then downstream pipelines will be triggered for "<code>mvn clean install</code>", "<code>mvn clean deploy</code>" but NOT "<code>mvn clean verify</code>" or "<code>mvn clean package</code>".</p>
+ <h2>Example</h2>
+ <p>Configure a Jenkins Multibranch Pipeline with</p>
+ <ul>
+  <li>Threshold: "<code>deploy</code>"</li>
+  <li>execution of "<code>mvn clean deploy</code>" on branches (incl. master) and execution of "<code>mvn clean verify</code> on pull requests</li>
+ </ul> So that: 
+ <ul>
+  <li>The builds of branches (incl. "master") would upload the generated jar/war file to your enterprise Maven repository and would trigger downstream pipelines</li>
+  <li>The builds of pull request would only build the package but NOT upload the generated jar/war file to your enterprise Maven repository and would NOT trigger downstream pipelines</li>
+ </ul>
+ <p></p>
+</div></div>
+
+</li>
+<li><code>skipDownstreamTriggers : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>spotbugsPublisher</code><div>
+<div><div>
+ Publish SpotBugs reports generated by "<code>com.github.spotbugs:spotbugs-maven-plugin:spotbugs</code>".
+ <br>
+  SpotBugs results are by default published if the <a href="https://wiki.jenkins-ci.org/display/JENKINS/FindBugs+Plugin" rel="nofollow">Jenkins FindBugs Plugin</a> is installed.
+</div></div>
+<ul><li><code>disabled : boolean</code> (optional)
+<div><div>
+ Skip the publishing of SpotBugs reports.
+</div></div>
+
+</li>
+<li><code>healthy : String</code> (optional)
+</li>
+<li><code>thresholdLimit : String</code> (optional)
+</li>
+<li><code>unHealthy : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>openTasksPublisher</code><div>
+<div><div>
+ Publish Open Task Scanner reports.
+ <br>
+  Open Task Scanner reports are by default published if the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Task+Scanner+Plugin" rel="nofollow">Jenkins Task Scanner Plugin</a> is installed.
+ <br>
+  The default setup is to look in Java source code for "<code>FIXME</code>" comments as high priority tasks and for "<code>TODO</code>" comments as normal priority tasks.
+</div></div>
+<ul><li><code>asRegexp : boolean</code> (optional)
+<div><div>
+ Use task identifiers as regular expressions.
+</div></div>
+
+</li>
+<li><code>disabled : boolean</code> (optional)
+<div><div>
+ Skip the publishing of Task Scanner reports.
+</div></div>
+
+</li>
+<li><code>excludePattern : String</code> (optional)
+<div><div>
+ Ant style pattern of exclude source code.
+</div></div>
+
+</li>
+<li><code>healthy : String</code> (optional)
+</li>
+<li><code>highPriorityTaskIdentifiers : String</code> (optional)
+<div><div>
+ Coma separated list of high priority task identifiers.
+</div></div>
+
+</li>
+<li><code>ignoreCase : boolean</code> (optional)
+<div><div>
+ Ignore case when scanning task identifiers.
+</div></div>
+
+</li>
+<li><code>lowPriorityTaskIdentifiers : String</code> (optional)
+<div><div>
+ Coma separated list of low priority task identifiers.
+</div></div>
+
+</li>
+<li><code>normalPriorityTaskIdentifiers : String</code> (optional)
+<div><div>
+ Coma separated list of normal priority task identifiers.
+</div></div>
+
+</li>
+<li><code>pattern : String</code> (optional)
+<div><div>
+ Ant style pattern of the source code to scan for task identifiers.
+</div></div>
+
+</li>
+<li><code>thresholdLimit : String</code> (optional)
+</li>
+<li><code>unHealthy : String</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>publisherStrategy</code> (optional)
+<div><div>
+ <table>
+  <tbody>
+   <tr>
+    <td><code>IMPLICIT</code></td>
+    <td>All Maven publishers are implicitly enabled and used, even if they are not configured in "<code>withMaven(options:...)</code>".</td>
+   </tr>
+   <tr>
+    <td><code>EXPLICIT</code></td>
+    <td>Only the Maven publishers explicitly configured in "<code>withMaven(options:...)</code>" are used.</td>
+   </tr>
+  </tbody>
+ </table>
+</div></div>
+
+<ul><li><b>Values:</b> <code>IMPLICIT</code>, <code>EXPLICIT</code></li></ul></li>
+<li><code>tempBinDir : String</code> (optional)
+<div><div>
+ Specify a custom temporary binaries directory. Allow to have a constant path to the maven binaries, then a constant environment for reproducible compilations. Some tools detect an environment change as a sources change, which will retrigger the compilation of all sources.
+</div></div>
+
+</li>
+<li><code>traceability : boolean</code> (optional)
+<div><div>
+ Should additional information be added to the script execution. 
+ <p><strong>Note</strong>: This option adds <code>--show-version</code> to the maven execution and marks the beginning of the maven wrapper script with <code>----- withMaven Wrapper script -----</code>.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

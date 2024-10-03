@@ -1,0 +1,64 @@
+= Tekton Client Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/tekton-client">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'CreateCustomTaskrun'])`: Tekton : Create TaskRun
+++++
+<ul><li><code>name : String</code>
+</li>
+<li><code>generateName : String</code>
+</li>
+<li><code>namespace : String</code>
+</li>
+<li><code>clusterName : String</code>
+</li>
+<li><code>workspaces</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>claimName : String</code>
+</li>
+</ul></li>
+<li><code>params</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>taskRef : String</code>
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'DeleteRaw'])`: Tekton : Delete Resource (Raw)
+++++
+<ul><li><code>deleteAllStatus</code>
+<ul><b>Nested Object</b>
+<li><code>resourceName : String</code>
+</li>
+</ul></li>
+<li><code>resourceType : String</code> (optional)
+</li>
+<li><code>clusterName : String</code> (optional)
+</li>
+<li><code>resourceName : String</code> (optional)
+</li>
+</ul>
+
+
+++++

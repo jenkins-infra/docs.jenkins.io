@@ -1,0 +1,159 @@
+= MathWorks Polyspace Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/mathworks-polyspace">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'PolyspacePostBuildActions'])`: Polyspace Notification
+++++
+<ul><li><code>fileToAttach : String</code> (optional)
+</li>
+<li><code>mailBody : String</code> (optional)
+</li>
+<li><code>mailBodyBaseName : String</code> (optional)
+</li>
+<li><code>mailSubject : String</code> (optional)
+</li>
+<li><code>mailSubjectBaseName : String</code> (optional)
+</li>
+<li><code>queryBaseName : String</code> (optional)
+</li>
+<li><code>recipients : String</code> (optional)
+</li>
+<li><code>sendToOwners : boolean</code> (optional)
+<div><h3>Send different e-mails to individual recipients</h3>
+<p>Send a different e-mail notification to each recipient with filtered results in attachment. For instance, if you use <code>$ps_helper -report-filter</code> in the <strong>Build</strong> section of this project to filter results for a file owner, you can send the filtered report to that file owner. Each time you use <code>$ps_helper -report-filter</code> with an owner name, the name is appended to a list of owners. You can send an individual e-mail to all owners in this list.</p>
+<p>Specify a base name for file attachments and files containing mail subject and mail body. The recipient name (or owner name) is appended to this base name to create a personalized e-mail for each recipient. The recipient name also determines the e-mail address where this personalized e-mail is sent.</p>
+<p>For instance, suppose you specify the following:</p>
+<ul>
+ <li><strong>Attachment file base name</strong>: report.tsv</li>
+ <li><strong>Mail subject file base name</strong>: subject.txt</li>
+ <li><strong>Mail body file base name</strong>: body.txt</li>
+</ul>
+<p>If the list of recipients contains the names <code>userA</code> and <code>userB</code>:</p>
+<ul>
+ <li>An e-mail is sent to <code>userA@emailExtension.com</code>. The email contains the file <code>report_userA.tsv</code> in attachment. The mail subject comes from <code>subject_userA.txt</code> and the mail body comes from <code>body_userA.txt</code>.</li>
+ <li>An e-mail is sent to <code>userB@emailExtension.com</code>. The email contains the file <code>report_userB.tsv</code> in attachment. The mail subject comes from <code>subject_userB.txt</code> and the mail body comes from <code>body_userB.txt</code>.</li>
+</ul>
+<p>The full e-mail address is determined from the server specified in the E-mail Notification section on the <a rel="nofollow">Configure System</a> page. You can create files for attachments and e-mail content through scripts in the <strong>Build</strong> section of this project. For instance, you can calculate the number of new findings for each owner and use the number in the mail subject for the owner.</p>
+<p>To test this personalized e-mail notification, enter an e-mail username (or e-mail address) in the field <strong>Unique recipients - Debug only</strong>. Instead of separate e-mail notifications to individual recipients, all e-mails are sent to this address. After checking the e-mail content in the notifications, clear this field for later builds.</p></div>
+
+</li>
+<li><code>sendToRecipients : boolean</code> (optional)
+<div><h3>Send common e-mail</h3>
+<p>Send a common e-mail notification to multiple users. Specify a comma-separated list of e-mail usernames (or full e-mail addresses). If e-mail usernames are provided, the full e-mail address is determined from the server specified in the E-mail Notification section on the <a rel="nofollow">Configure System</a> page.</p>
+<p>By default, the e-mail contains the status of the Jenkins build and has no attachment. You can customize the mail subject and body and send a Polyspace report (<code>.tsv</code> file) or another file in attachment. Specify the custom subject and body in text files. You can create files for attachments and e-mail content through scripts in the <strong>Build</strong> section of this project.</p>
+<p>For instance, you can enter this specification:</p>
+<ul>
+ <li><strong>E-mail usernames</strong>: <code>johndoe, janedoe</code></li>
+ <li><strong>Attachment filename</strong>: <code>Results_All.tsv</code></li>
+ <li><strong>Mail subject filename</strong>: <code>mailsubject_common.txt</code></li>
+ <li><strong>Mail body filename</strong>: <code>mailbody_common.txt</code></li>
+</ul></div>
+
+</li>
+<li><code>uniqueRecipients : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `wrap([$class: 'PolyspaceBuildWrapper'])`: Select Polyspace installation settings
+++++
+<ul><li><code>binConfig : String</code> (optional)
+<div><h2>Polyspace installation folder</h2>
+<p>Choose the Polyspace installation folder to be used in this project, as defined on the <a rel="nofollow">Configure System</a> page.</p>
+<p>You can then use Polyspace commands such as <code>polyspace-configure</code>, <code>polyspace-bug-finder-server</code> and <code>polyspace-code-prover-server</code> directly in scripts without specifying the installation folder.</p>
+<p>You can also use the helper utility <code>ps_helper</code> in scripts in the <strong>Build</strong> section of this project to filter results, report a pass/fail status and obtain other project information. For instance, in a Shell script, use the utility with the syntax <code>$ps_helper</code>. In a Windows batch file, use the syntax <code>%ps_helper%</code>. In the syntax descriptions below, <code><em>report</em></code> refers to the results file obtained using the command <code>polyspace-access -export</code> or <code>polyspace-report-generator -generate-results-list-file</code>.</p>
+<ul>
+ <li>
+  <pre>$ps_helper -report-filter <em>report</em> <em>filtered_report</em> [<em>owner</em>] [<em>title1</em> <em>value1</em>] [<em>title2</em> <em>value2</em>] ...</pre>
+  <p>Filters <code><em>report</em></code> for results with <code><em>title1</em></code> set to <code><em>value1</em></code>, etc. and saves to <code><em>filtered_report</em></code> (with name suffix <code>_<em>owner</em></code>). The name <em>owner</em> is added to a list of owners for personalized e-mail notification later.</p>
+  <p>For instance:</p>
+  <pre>$ps_helper -report-filter Results_List.tsv Results_Users.tsv userA Group Programming Function "get()"</pre>
+  <ol>
+   <li>Filters the file <code>Results_List.tsv</code> for results with <code>Group</code> set to <code>Programming</code> and <code>Function</code> set to <code>get()</code>.</li>
+   <li>Stores the filtered report in the file <code>Results_Users_userA.tsv</code>. You can later use the base name <code>Results_Users</code> to e-mail filtered reports to multiple users as a post-build action. For instance, you can send file <code>Results_Users_userA.tsv</code> to <code>userA@emailExtension.com</code>, file <code>Results_Users_userB.tsv</code> to <code>userB@emailExtension.com</code>, etc.</li>
+  </ol></li>
+ <li>
+  <pre>$ps_helper -report-count-findings <em>report</em></pre>
+  <p>Stores the number of findings in <code><em>report</em></code> (original or filtered).</p>
+  <p>For instance:</p>
+  <pre>NB_FINDINGS_USERA=$($ps_helper -report-count-findings Results_Users_userA.tsv)</pre>
+  <p>Returns the number of findings in <code>Results_Users_userA.tsv</code> to the variable <code>NB_FINDINGS_USERA</code>.</p></li>
+ <li>
+  <pre>$ps_helper -report-status <em>report</em>  <em>max</em></pre>
+  <p>Prints an analysis status based on number of findings in <code><em>report</em></code>. If the number is greater than <code><em>max</em></code>, the build status is <code>UNSTABLE</code>. Otherwise, the status is <code>SUCCESS</code>.</p>
+  <p>For instance:</p>
+  <pre>BUILD_STATUS=$($ps_helper -report-status Results_All.tsv 10)</pre>
+  <p>Returns <code>UNSTABLE</code> to <code>BUILD_STATUS</code> if the number of findings in <code>Results_All.tsv</code> is greater than 10.</p></li>
+ <li>
+  <pre>$ps_helper -print-runid <em>upload_out</em></pre>
+  <pre>$ps_helper -print-projectid <em>upload_out</em></pre>
+  <pre>$ps_helper -print-projecturl <em>upload_out</em></pre>
+  <p>Obtains a project id, run id and project URL in Polyspace Access for the current upload. The file <code><em>upload_out</em></code> is obtained when uploading a result with the command:</p>
+  <pre>polyspace-access -o <em>upload_out</em> -upload ...</pre>
+  <p>For instance:</p>
+  <ul>
+   <li>
+    <pre>PROJECT_ID=$($ps_helper -print-projectid <em>upload_out</em>)</pre>
+    <p>Returns the ID of the project for the current upload to <code>PROJECT_ID</code>.</p></li>
+   <li>
+    <pre>PROJECT_URL=$($ps_helper -print-projecturl <em>upload_out</em> $POLYSPACE_ACCESS_URL)</pre>
+    <p>Returns the URL of the project for the current upload to <code>PROJECT_URL</code>. The variable <code>$POLYSPACE_ACCESS_URL</code> represents the URL of the Polyspace Access interface (created from specified server settings).</p></li>
+  </ul></li>
+</ul>
+<p>You can use the helper utility only when no Jenkins slave is used as the helper libraries are part of the Polyspace Jenkins plugin.</p></div>
+
+</li>
+<li><code>metricsConfig : String</code> (optional)
+<div><h2>Polyspace Metrics server</h2>
+<p>Choose the Polyspace Metrics server to be used in this project, as defined on the <a rel="nofollow">Configure System</a> page.</p>
+<p>You can then use these variables in scripts in the <strong>Build</strong> section of this project. For instance, in a Shell script, use these variables with the syntax <code>$VAR</code>. In a Windows batch file, use the syntax <code>%VAR%</code>.</p>
+<ul>
+ <li><code>POLYSPACE_METRICS_HOST</code> is the hostname of the Polyspace Metrics server.</li>
+ <li><code>POLYSPACE_METRICS_PORT</code> is the port number of the Polyspace Metrics server.</li>
+ <li><code>POLYSPACE_METRICS_URL</code> is the URL of the Polyspace Metrics server.</li>
+ <li><code>ps_helper_metrics_upload</code> is a helper utlity to upload Polyspace results to the specified server. Syntax (shell scripts): 
+  <pre>$ps_helper_metrics_upload ResultsDir</pre> where <code>ResultsDir</code> is a folder containing Polyspace results.</li>
+</ul></div>
+
+</li>
+<li><code>polyspaceAccessCredentialId : String</code> (optional)
+<div><h2>Polyspace Access username and encrypted password</h2>
+<p>Select an username and encrypted password used to log on to Polyspace Access. You can also add a username and password. To update, delete or otherwise manage login credentials, go to the <a rel="nofollow">Configure Credentials</a> page.</p>
+<p>To obtain an encrypted password, at the command line, enter:.</p>
+<pre><pre>polyspace-access -host <em>hostname</em> -port <em>portnumber</em> -encrypt-password</pre></pre> Provide an LDAP login and password. 
+<p></p></div>
+
+</li>
+<li><code>serverConfig : String</code> (optional)
+<div><h2>Polyspace Access server</h2>
+<p>Choose the Polyspace Access server to be used in this project, as defined in the <a rel="nofollow">Configure System</a> page.</p>
+<p>You can then use these variables in scripts in the <strong>Build</strong> section of this project. For instance, in a Shell script, use these variables with the syntax <code>$VAR</code>. In a Windows batch file, use the syntax <code>%VAR%</code>.</p>
+<ul>
+ <li><code>POLYSPACE_ACCESS_HOST</code> is the hostname of the Polyspace Access server.</li>
+ <li><code>POLYSPACE_ACCESS_PROTOCOL</code> is the protocol (http or https) of the Polyspace Access server.</li>
+ <li><code>POLYSPACE_ACCESS_PORT</code> is the port number of the Polyspace Access server.</li>
+ <li><code>POLYSPACE_ACCESS_URL</code> is the URL of the Polyspace Access server.</li>
+ <li><code>ps_helper_access</code> is a helper utlity to interact with the specified Polyspace Access server. Syntax (shell scripts): 
+  <pre>$ps_helper_access -upload ResultsDir</pre> where <code>ResultsDir</code> is a folder containing Polyspace results. The helper utility expands to: 
+  <pre>polyspace-access -host <em>hostname</em> -port <em>portnumber</em> -login <em>username</em> -encrpyted-password <em>pwd</em></pre> where the specified server settings and login credentials are used.</li>
+</ul></div>
+
+</li>
+</ul>
+
+
+++++

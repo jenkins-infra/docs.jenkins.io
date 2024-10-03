@@ -1,0 +1,480 @@
+= CloudBees CD
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/electricflow">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `cloudBeesFlowCallRestApi`: CloudBees CD - Call REST API
+++++
+<div><div>
+ Call CloudBees CD REST API. For more information on CloudBees CD/RO REST API, refer to <a href="https://docs.cloudbees.com/docs/cloudbees-cd-api-rest/latest/" rel="nofollow">Use the CloudBees CD/RO RESTful API</a>.
+</div></div>
+<ul><li><code>parameters</code> (optional)
+<div><div>
+ Specify the parameters for the REST API. Parameters are transformed into a JSON object and sent within the HTTP request body. For help with API parameters, refer to the <a href="https://docs.cloudbees.com/docs/cloudbees-cd-api-rest/latest/#_access_the_swagger_ui" rel="nofollow">CloudBees CD/RO Swagger UI</a>.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>body : String</code> (optional)
+<div><div>
+ Specify the body for the REST API. This parameter is not used if <b>Parameters</b> are provided. For help with API parameters, refer to <a href="https://docs.cloudbees.com/docs/cloudbees-cd-api-rest/latest/#_access_the_swagger_ui" rel="nofollow">CloudBees CD/RO Swagger UI</a>.
+</div></div>
+
+</li>
+<li><code>configuration : String</code> (optional)
+<div><div>
+ Specify the name of the CloudBees CD configuration.
+</div></div>
+
+</li>
+<li><code>envVarNameForResult : String</code> (optional)
+<div><div>
+ If provided, the result of CloudBees REST API calls are stored as JSON within this environment variable and accessible within builds.
+</div></div>
+
+</li>
+<li><code>httpMethod : String</code> (optional)
+<div><div>
+ Specify the HTTP Method to use.
+</div></div>
+
+</li>
+<li><code>overrideCredential</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>credentialId : String</code>
+</li>
+</ul></li>
+<li><code>urlPath : String</code> (optional)
+<div><div>
+ Specify the URL Path for the REST API.
+ <br>
+  Some API parameters have specific query strings that must be included within the <b>URL Path</b>. For more information, refer to <a href="https://plugins.jenkins.io/electricflow/#plugin-content-calling-cloudbees-cd-rest-api" rel="nofollow">plugin documentation</a> and <a href="https://docs.cloudbees.com/docs/cloudbees-cd-api-rest/latest/#_access_the_swagger_ui" rel="nofollow">Swagger UI</a>.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `cloudBeesFlowAssociateBuildToRelease`: CloudBees CD - Associate Build To Release
+++++
+<div><div>
+ Updates the specified CloudBees CD release to include information about this build run.
+</div></div>
+<ul><li><code>configuration : String</code> (optional)
+<div><div>
+ Specify the name of the CloudBees CD configuration.
+</div></div>
+
+</li>
+<li><code>flowRuntimeId : String</code> (optional)
+</li>
+<li><code>overrideCredential</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>credentialId : String</code>
+</li>
+</ul></li>
+<li><code>projectName : String</code> (optional)
+<div><div>
+ Specify the CloudBees CD project name.
+</div></div>
+
+</li>
+<li><code>releaseName : String</code> (optional)
+<div><div>
+ Specify the CloudBees CD release name.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `cloudBeesFlowDeployApplication`: CloudBees CD - Deploy Application
+++++
+<div><div>
+ Deploy application using CloudBees CD.
+</div></div>
+<ul><li><code>applicationName : String</code> (optional)
+<div><div>
+ Specify the CloudBees CD application process name
+</div></div>
+
+</li>
+<li><code>applicationProcessName : String</code> (optional)
+<div><div>
+ Specify parameters for the CloudBees CD pipeline.
+</div></div>
+
+</li>
+<li><code>configuration : String</code> (optional)
+<div><div>
+ Specify the name of the CloudBees CD configuration.
+</div></div>
+
+</li>
+<li><code>deployParameters : String</code> (optional)
+</li>
+<li><code>environmentName : String</code> (optional)
+<div><div>
+ Specify the CloudBees CD environment name
+</div></div>
+
+</li>
+<li><code>environmentProjectName : String</code> (optional)
+<div><div>
+ (Optional) Specify the CloudBees CD environment project name if it is different than project for application
+</div></div>
+
+</li>
+<li><code>overrideCredential</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>credentialId : String</code>
+</li>
+</ul></li>
+<li><code>projectName : String</code> (optional)
+<div><div>
+ Specify the CloudBees CD project name.
+</div></div>
+
+</li>
+<li><code>runAndWaitOption</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>checkInterval : int</code> (optional)
+</li>
+<li><code>dependOnCdJobOutcome : boolean</code> (optional)
+</li>
+<li><code>throwExceptionIfFailed : boolean</code> (optional)
+</li>
+</ul></li>
+<li><code>validationTrigger : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'ElectricFlowGenericRestApi'])`: CloudBees CD - Call REST API
+++++
+<div><div>
+ Call CloudBees CD REST API. For more information on CloudBees CD/RO REST API, refer to <a href="https://docs.cloudbees.com/docs/cloudbees-cd-api-rest/latest/" rel="nofollow">Use the CloudBees CD/RO RESTful API</a>.
+</div></div>
+<ul><li><code>parameters</code> (optional)
+<div><div>
+ Specify the parameters for the REST API. Parameters are transformed into a JSON object and sent within the HTTP request body. For help with API parameters, refer to the <a href="https://docs.cloudbees.com/docs/cloudbees-cd-api-rest/latest/#_access_the_swagger_ui" rel="nofollow">CloudBees CD/RO Swagger UI</a>.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>body : String</code> (optional)
+<div><div>
+ Specify the body for the REST API. This parameter is not used if <b>Parameters</b> are provided. For help with API parameters, refer to <a href="https://docs.cloudbees.com/docs/cloudbees-cd-api-rest/latest/#_access_the_swagger_ui" rel="nofollow">CloudBees CD/RO Swagger UI</a>.
+</div></div>
+
+</li>
+<li><code>configuration : String</code> (optional)
+<div><div>
+ Specify the name of the CloudBees CD configuration.
+</div></div>
+
+</li>
+<li><code>envVarNameForResult : String</code> (optional)
+<div><div>
+ If provided, the result of CloudBees REST API calls are stored as JSON within this environment variable and accessible within builds.
+</div></div>
+
+</li>
+<li><code>httpMethod : String</code> (optional)
+<div><div>
+ Specify the HTTP Method to use.
+</div></div>
+
+</li>
+<li><code>overrideCredential</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>credentialId : String</code>
+</li>
+</ul></li>
+<li><code>urlPath : String</code> (optional)
+<div><div>
+ Specify the URL Path for the REST API.
+ <br>
+  Some API parameters have specific query strings that must be included within the <b>URL Path</b>. For more information, refer to <a href="https://plugins.jenkins.io/electricflow/#plugin-content-calling-cloudbees-cd-rest-api" rel="nofollow">plugin documentation</a> and <a href="https://docs.cloudbees.com/docs/cloudbees-cd-api-rest/latest/#_access_the_swagger_ui" rel="nofollow">Swagger UI</a>.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `cloudBeesFlowRunPipeline`: CloudBees CD - Run Pipeline
+++++
+<div><div>
+ Run a CloudBees CD pipeline.
+</div></div>
+<ul><li><code>addParam : String</code> (optional)
+</li>
+<li><code>additionalOption</code> (optional)
+<ul><li><b>Type:</b> <code>class net.sf.json.JSONArray</code></li>
+</ul></li>
+<li><code>configuration : String</code> (optional)
+<div><div>
+ Specify the name of the CloudBees CD configuration.
+</div></div>
+
+</li>
+<li><code>overrideCredential</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>credentialId : String</code>
+</li>
+</ul></li>
+<li><code>pipelineName : String</code> (optional)
+<div><div>
+ Specify the CloudBees CD pipeline name.
+</div></div>
+
+</li>
+<li><code>projectName : String</code> (optional)
+<div><div>
+ Specify the CloudBees CD project name.
+</div></div>
+
+</li>
+<li><code>runAndWaitOption</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>checkInterval : int</code> (optional)
+</li>
+<li><code>dependOnCdJobOutcome : boolean</code> (optional)
+</li>
+<li><code>throwExceptionIfFailed : boolean</code> (optional)
+</li>
+</ul></li>
+<li><code>stageOption : String</code> (optional)
+</li>
+<li><code>stagesToRun : String</code> (optional)
+</li>
+<li><code>startingStage : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `cloudBeesFlowCreateAndDeployAppFromJenkinsPackage`: CloudBees CD - Create/Deploy Application from Deployment Package
+++++
+<div><div>
+ Create/Deploy an application in CloudBees CD from a deployment package.
+</div></div>
+<ul><li><code>configuration : String</code>
+<div><div>
+ Specify the name of the CloudBees CD configuration.
+</div></div>
+
+</li>
+<li><code>filePath : String</code>
+<div><div>
+ Specify the location or path for the deployment package to be published to CloudBees CD. E.g., MyProject/target. Please note that your path or pattern should include manifest.json and all files that are declared in manifest.json. This field supports ant-style path pattern matching and build-time environment variables. 
+ <br>
+ For example: 
+ <br>
+ <pre>"?" matches one character. Application.?ar will match both Application.war and Application.jar.
+"*" matches zero or more characters. Report.*ml will match Report.html and Report.xml.
+"**" matches zero or more 'directories' in a path. target/**/*.war will match all war files in any directory inside "target"
+    </pre> To reference environment variable value, "$" should be used. For example, to reference the current build number: $BUILD_NUMBER. 
+ <br>
+  E.g., MyProject/**/*-$BUILD_NUMBER.war.
+</div></div>
+
+</li>
+<li><code>overrideCredential</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>credentialId : String</code>
+</li>
+</ul></li>
+<li><code>runAndWaitOption</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>checkInterval : int</code> (optional)
+</li>
+<li><code>dependOnCdJobOutcome : boolean</code> (optional)
+</li>
+<li><code>throwExceptionIfFailed : boolean</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `cloudBeesFlowRunProcedure`: CloudBees CD - Run Procedure
+++++
+<div><div>
+ Run a procedure in CloudBees CD.
+</div></div>
+<ul><li><code>configuration : String</code> (optional)
+<div><div>
+ Specify the name of the CloudBees CD configuration.
+</div></div>
+
+</li>
+<li><code>overrideCredential</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>credentialId : String</code>
+</li>
+</ul></li>
+<li><code>procedureName : String</code> (optional)
+<div><div>
+ Specify the CloudBees CD procedure name
+</div></div>
+
+</li>
+<li><code>procedureParameters : String</code> (optional)
+</li>
+<li><code>projectName : String</code> (optional)
+<div><div>
+ Specify the CloudBees CD project name.
+</div></div>
+
+</li>
+<li><code>runAndWaitOption</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>checkInterval : int</code> (optional)
+</li>
+<li><code>dependOnCdJobOutcome : boolean</code> (optional)
+</li>
+<li><code>throwExceptionIfFailed : boolean</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `cloudBeesFlowTriggerRelease`: CloudBees CD - Trigger Release
+++++
+<div><div>
+ Trigger release in CloudBees CD
+</div></div>
+<ul><li><code>configuration : String</code> (optional)
+<div><div>
+ Specify the name of the CloudBees CD configuration.
+</div></div>
+
+</li>
+<li><code>overrideCredential</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>credentialId : String</code>
+</li>
+</ul></li>
+<li><code>parameters : String</code> (optional)
+</li>
+<li><code>projectName : String</code> (optional)
+<div><div>
+ Specify the CloudBees CD project name.
+</div></div>
+
+</li>
+<li><code>releaseName : String</code> (optional)
+<div><div>
+ Specify the CloudBees CD release name.
+</div></div>
+
+</li>
+<li><code>runAndWaitOption</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>checkInterval : int</code> (optional)
+</li>
+<li><code>dependOnCdJobOutcome : boolean</code> (optional)
+</li>
+<li><code>throwExceptionIfFailed : boolean</code> (optional)
+</li>
+</ul></li>
+<li><code>startingStage : String</code> (optional)
+<div><div>
+ <ul>
+  <li>Starting Stage: Specify starting stage to run in the CloudBees CD release pipeline (Parameter is required if ‘Stages to run’ is not used)</li>
+  <li>Stages to run: Specify stages to run in the CloudBees CD release pipeline (Parameter is required if ‘Starting Stage’ is not used. Parameter is ignored if ‘Starting Stage’ is used)</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>validationTrigger : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `cloudBeesFlowPublishArtifact`: CloudBees CD - Publish Artifact
+++++
+<div><div>
+ Publish artifact to CloudBees CD Artifact Repository.
+</div></div>
+<ul><li><code>repositoryName : String</code>
+<div><div>
+ Specify the name of the CloudBees CD Repository.
+</div></div>
+
+</li>
+<li><code>artifactName : String</code>
+<div><div>
+ Specify the name of the application artifact using the format &lt;group_id&gt;:&lt;artifact_key&gt;. For e.g., "com.example:helloworld"
+</div></div>
+
+</li>
+<li><code>artifactVersion : String</code>
+<div><div>
+ Specify the version of the application artifact. For e.g., you can specify 1.0 or 1.0-$BUILD_TAG that is based on Jenkins environment variable.
+</div></div>
+
+</li>
+<li><code>filePath : String</code>
+<div><div>
+ Specify the location or path for the artifact files to be published to CloudBees CD. This field supports ant-style path pattern matching and build-time environment variables. 
+ <br>
+ For example: 
+ <br>
+ <pre>"?" matches one character. Application.?ar will match both Application.war and Application.jar.
+"*" matches zero or more characters. Report.*ml will match Report.html and Report.xml.
+"**" matches zero or more 'directories' in a path. target/**/*.war will match all war files in any directory inside "target"
+    </pre> To reference environment variable value, "$" should be used. For example, to reference the current build number: $BUILD_NUMBER. 
+ <br>
+  E.g., MyProject/**/*-$BUILD_NUMBER.war.
+</div></div>
+
+</li>
+<li><code>configuration : String</code>
+<div><div>
+ Specify the name of the CloudBees CD configuration.
+</div></div>
+
+</li>
+<li><code>overrideCredential</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>credentialId : String</code>
+</li>
+</ul></li>
+<li><code>relativeWorkspace : String</code> (optional)
+<div><div>
+ Specify the relative workspace (relative to workspace root) for artifact path.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

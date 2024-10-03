@@ -1,0 +1,5 @@
+---
+:page-eventTitle: Bangalore JAM #1
+:page-eventStartDate: 2016-08-27T10:00:00
+:page-eventLink: https://www.meetup.com/Bangalore-Jenkins-Area-Meetup/events/232474364/
+---

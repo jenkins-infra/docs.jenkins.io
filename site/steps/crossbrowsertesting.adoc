@@ -1,0 +1,57 @@
+= CrossBrowserTesting.com Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/crossbrowsertesting">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `cbt`: CrossBrowserTesting.com
+++++
+<ul><li><code>useLocalTunnel : boolean</code>
+</li>
+<li><code>useTestResults : boolean</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>tunnelName : String</code>
+</li>
+<li><code>localTunnelPath : String</code>
+</li>
+</ul>
+
+
+++++
+=== `cbtScreenshotsTest`: Run a CrossbrowserTesting.com Screenshots Test
+++++
+<ul><li><code>browserList : String</code>
+</li>
+<li><code>loginProfile : String</code>
+</li>
+<li><code>url : String</code>
+</li>
+</ul>
+
+
+++++
+=== `cbtSeleniumTest`: Run a CrossbrowserTesting.com Selenium Test
+++++
+<ul><li><code>operatingSystem : String</code>
+</li>
+<li><code>browser : String</code>
+</li>
+<li><code>resolution : String</code>
+</li>
+</ul>
+
+
+++++

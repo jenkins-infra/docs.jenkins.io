@@ -1,0 +1,69 @@
+= Venafi Machine Identity Management
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/venafi-vcert">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `venafiVcertRequestCertificate`: Venafi Machine Identity Management: request certificate
+++++
+<ul><li><code>connectorName : String</code>
+</li>
+<li><code>zoneConfigName : String</code>
+<div><p>The name of the zone configuration to use.</p>
+<p>When using Venafi as a Service, zone names are in the format of <code>app name\api alias</code></p></div>
+
+</li>
+<li><code>commonName : String</code>
+</li>
+<li><code>privKeyOutput : String</code>
+</li>
+<li><code>certOutput : String</code>
+</li>
+<li><code>certChainOutput : String</code>
+</li>
+<li><code>country : String</code> (optional)
+</li>
+<li><code>dnsNames</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>hostName : String</code>
+</li>
+</ul></li>
+<li><code>emailAddresses</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>address : String</code>
+</li>
+</ul></li>
+<li><code>expirationWindow : int</code> (optional)
+<div>Number of hours before certificate expiry to request a new certificate.</div>
+
+</li>
+<li><code>ipAddresses</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>address : String</code>
+</li>
+</ul></li>
+<li><code>keyType</code> (optional)
+<ul><li><b>Values:</b> <code>RSA</code>, <code>ECDSA</code></li></ul></li>
+<li><code>locality : String</code> (optional)
+</li>
+<li><code>organization : String</code> (optional)
+</li>
+<li><code>organizationalUnit : String</code> (optional)
+</li>
+<li><code>province : String</code> (optional)
+</li>
+</ul>
+
+
+++++

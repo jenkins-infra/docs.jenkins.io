@@ -1,0 +1,96 @@
+= SonarQube Scanner for Jenkins
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/sonar">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `waitForQualityGate`: Wait for SonarQube analysis to be completed and return quality gate status
+++++
+<div><div>
+ <p>This step pauses Pipeline execution and wait for previously submitted SonarQube analysis to be completed and returns quality gate status. Setting the parameter <code>abortPipeline</code> to true will abort the pipeline if quality gate status is not green.</p>
+ <p>Note: This step doesn't require an executor.</p>
+ <p>Requirements:</p>
+ <ul>
+  <li>SonarQube server 6.2+</li>
+  <li><a href="https://redirect.sonarsource.com/doc/webhooks.html" rel="nofollow">Configure a webhook</a> in your SonarQube server pointing to <code>&lt;your Jenkins instance&gt;/sonarqube-webhook/</code>. <strong>The trailing slash is mandatory!</strong></li>
+  <li>Use <code>withSonarQubeEnv</code> step to run your analysis prior to use this step</li>
+ </ul>
+ <p></p>
+ <p>Example using declarative pipeline:<br><code></code></p>
+ <pre><code>
+      pipeline {
+        agent none
+        stages {
+          stage("build &amp; SonarQube analysis") {
+            agent any
+            steps {
+              withSonarQubeEnv('My SonarQube Server') {
+                sh 'mvn clean package sonar:sonar'
+              }
+            }
+          }
+          stage("Quality Gate") {
+            steps {
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }
+        }
+      }
+      </code></pre>
+ <p></p>
+ <p>Example using scripted pipeline:<br><code></code></p>
+ <pre><code>
+      stage("build &amp; SonarQube analysis") {
+          node {
+              withSonarQubeEnv('My SonarQube Server') {
+                 sh 'mvn clean package sonar:sonar'
+              }    
+          }
+      }
+      
+      stage("Quality Gate"){
+          timeout(time: 1, unit: 'HOURS') {
+              def qg = waitForQualityGate()
+              if (qg.status != 'OK') {
+                  error "Pipeline aborted due to quality gate failure: ${qg.status}"
+              }
+          }
+      }        
+      </code></pre>
+ <p></p>
+</div></div>
+<ul><li><code>abortPipeline : boolean</code>
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>webhookSecretId : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `withSonarQubeEnv`: Prepare SonarQube Scanner environment
+++++
+<ul><li><code>installationName : String</code>
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>envOnly : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

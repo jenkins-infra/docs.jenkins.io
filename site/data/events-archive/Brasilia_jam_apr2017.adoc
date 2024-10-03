@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Brasilia JAM
+:page-eventStartDate: 2017-04-08T14:00:00
+:page-eventLink: https://www.meetup.com/Brasilia-Jenkins-Area-Meetup/events/238645566/
+---
+CI/CD, DevOps and Hands-on Jenkins Install

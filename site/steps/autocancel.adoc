@@ -1,0 +1,50 @@
+= Autocancel Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/autocancel">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `autocancelBranchBuildsOnPullRequestBuilds`: Autocancel branch builds on pull request builds
+++++
+<div><p>Autocancel branch builds on pull request builds will ensure running source branch builds are aborted when a new pull request build starts.</p>
+<p>This could happen when a branch is pushed and immediately filed as a pull request, where branch build becomes redundant.</p>
+<p>To match pull requests, the plugin leverages <code>env.CHANGE_BRANCH</code>, which should be set to the matching source branch name. Then, the plugin looks for branch jobs named as the source branch name under multibranch pipeline parent job to abort any running builds.</p>
+<p>If <code>env.CHANGE_BRANCH</code> is not defined, the step will do nothing.</p>
+<p><code> </code></p>
+<pre><code>autocancelBranchBuildsOnPullRequestBuilds()
+
+node {
+    // Steps
+}
+        </code></pre><code> </code>
+<p></p></div>
+<ul></ul>
+
+
+++++
+=== `autocancelConsecutiveBuilds`: Autocancel consecutive builds
+++++
+<div><p>Autocancel consecutive builds will ensure running builds are aborted when a new build start, leaving always the last build running.</p>
+<p><code> </code></p>
+<pre><code>autocancelConsecutiveBuilds()
+
+node {
+    // Steps
+}
+        </code></pre><code> </code>
+<p></p></div>
+<ul></ul>
+
+
+++++

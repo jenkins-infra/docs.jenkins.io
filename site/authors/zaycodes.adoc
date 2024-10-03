@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: Zainab Daodu
+:page-twitter: zaycodes
+:page-github: zaycodes
+:page-linkedin: zaycodes
+:page-authoravatar: ../../images/images/avatars/zaycodes.jpg
+
+Zainab is a Software Engineer and Technical Writer with over 4 years of experience developing, testing, and maintaining enterprise software applications. Passionate about contributing to open source, improving technical documentation and advocating for gender diversity in open source collaboration. She started contributing to Jenkins documentation during the technical writer exploration phase for link:https://developers.google.com/season-of-docs[Google Season of Docs] 2020. She completed the link:/sigs/docs/#jenkins-on-kubernetes[Documentation for Jenkins on Kubernetes] project as part of Google Season of Docs 2020.

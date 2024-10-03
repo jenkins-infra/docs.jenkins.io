@@ -1,0 +1,27 @@
+= Hyper.sh Build Step Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/hyper-build-step">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'HyperBuilder'])`: Execute shell in Hyper.sh
+++++
+<ul><li><code>image : String</code>
+</li>
+<li><code>commands : String</code>
+</li>
+</ul>
+
+
+++++

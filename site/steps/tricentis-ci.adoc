@@ -1,0 +1,57 @@
+= Tricentis Continuous Integration
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/tricentis-ci">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `tricentisCI`: Tricentis Continuous Integration
+++++
+<ul><li><code>newTricentisClientPath : String</code>
+</li>
+<li><code>newEndpoint : String</code>
+</li>
+<li><code>configurationFilePath : String</code> (optional)
+<div><div>
+ <p>Specify the path to the Tricentis CI <a href="https://support.tricentis.com/community/manuals_detail.do?lang=en&amp;url=continuous_integration/configure_execution_command.htm#CreatetheXMLfile" rel="nofollow">test execution configuration XML file</a>. The test configuration file includes more details about which items you would like to execute.<br></p>
+ <p>If you use this setting, leave the TestEvents setting of this page empty. Otherwise, this build step fails.</p>
+</div></div>
+
+</li>
+<li><code>endpoint : String</code> (optional)
+<div><div>
+ <p>Specify the address of the webservice. This component triggers the test execution.</p>
+ <p>If you execute your tests via <a href="https://support.tricentis.com/community/manuals_detail.do?lang=en&amp;url=continuous_integration/set_up_ci_remote.htm" rel="nofollow">Tosca Remote Service</a>, the endpoint needs to point to the TOSCARemoteExecutionService (e.g.&nbsp;<span>http://servername:8732/TOSCARemoteExecutionService/). </span></p>
+ <p>If you execute your tests via <a href="https://support.tricentis.com/community/manuals_detail.do?lang=en&amp;url=continuous_integration/set_up_ci_dex.htm" rel="nofollow">Tosca Distributed Execution</a>,&nbsp;the endpoint needs to point to the Manager Service of the Tosca Distribution Server (e.g. <span>http://servername:8732/DistributionServerService/ManagerService.svc). </span></p>
+</div></div>
+
+</li>
+<li><code>testEvents : String</code> (optional)
+<div><div>
+ <p>Input the <a href="https://support.tricentis.com/community/manuals_detail.do?lang=en&amp;url=tosca_commander/creating_events.htm" rel="nofollow">TestEvents</a> that you want to execute, separated by semicolons. You can identify the TestEvents with their name or their <a href="https://support.tricentis.com/community/manuals_detail.do?lang=en&amp;url=continuous_integration/configure_execution_command_dex.htm" rel="nofollow">system ID</a>.</p>
+ <p>This field is optional. It can only be used if you execute your tests via Tosca Distributed Execution.</p>
+ <p>If you use this setting, leave the Configuration File setting of this page empty. Otherwise, this build step fails.</p>
+</div></div>
+
+</li>
+<li><code>tricentisClientPath : String</code> (optional)
+<div><div>
+ <p>Specify the path to the Tricentis CI <a href="https://support.tricentis.com/community/manuals_detail.do?lang=en&amp;url=continuous_integration/configure_execution_command.htm#CreatetheXMLfile" rel="nofollow">test execution configuration XML file</a>. The test configuration file includes more details about which items you would like to execute.<br></p>
+ <p>If you use this setting, leave the TestEvents setting of this page empty. Otherwise, this build step fails.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

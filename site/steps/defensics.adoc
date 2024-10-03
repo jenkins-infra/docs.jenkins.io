@@ -1,0 +1,122 @@
+= Defensics
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/defensics">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `defensics`: Defensics fuzz test
+++++
+<ul><li><code>configurationFilePath : String</code>
+<div><div>
+ <p>The file path where the test configuration file (*.set or *.testplan) for this job can be found, relative to the project's workspace.</p>
+ <p>A test configuration file defines what kind of testing is to be done, and can be created using Defensics. Configure a test suite in Defensics and save the settings file in File -&gt; Save Settings.</p>
+</div></div>
+
+</li>
+<li><code>configurationOverrides : String</code> (optional)
+<div><div>
+ <p>Additional test configuration settings that override the settings saved in the test configuration file. This can be useful if, for example, the test target address needs to be set dynamically.</p>
+ <p>The available settings are the same as the Defensics command line settings. Each setting should follow the format '--setting-name value'. Multiple settings are separated with spaces.</p>
+ <p>Example for HTTP Server Test Suite:</p>
+ <pre>--uri https://example.com --http-status-filter "1xx 2xx 3xx" </pre>
+ <p></p>
+</div></div>
+
+</li>
+<li><code>defensicsInstance : String</code> (optional)
+<div><div>
+ Select Defensics instance to use for running tests. Instances can be added in Jenkins' global configuration under the Defensics section.
+</div></div>
+
+</li>
+<li><code>saveResultPackage : boolean</code> (optional)
+<div><div>
+ Check this if you want Jenkins to download the Defensics result package and store it for the build. The result package includes all logs for the test run. The package can be downloaded from the build status page. Use with caution as the package filesize can be large.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'FuzzBuildStep'])`: Defensics fuzz test
+++++
+<ul><li><code>configurationFilePath : String</code>
+<div><div>
+ <p>The file path where the test configuration file (*.set or *.testplan) for this job can be found, relative to the project's workspace.</p>
+ <p>A test configuration file defines what kind of testing is to be done, and can be created using Defensics. Configure a test suite in Defensics and save the settings file in File -&gt; Save Settings.</p>
+</div></div>
+
+</li>
+<li><code>configurationOverrides : String</code> (optional)
+<div><div>
+ <p>Additional test configuration settings that override the settings saved in the test configuration file. This can be useful if, for example, the test target address needs to be set dynamically.</p>
+ <p>The available settings are the same as the Defensics command line settings. Each setting should follow the format '--setting-name value'. Multiple settings are separated with spaces.</p>
+ <p>Example for HTTP Server Test Suite:</p>
+ <pre>--uri https://example.com --http-status-filter "1xx 2xx 3xx" </pre>
+ <p></p>
+</div></div>
+
+</li>
+<li><code>defensicsInstance : String</code> (optional)
+<div><div>
+ Select Defensics instance to use for running tests. Instances can be added in Jenkins' global configuration under the Defensics section.
+</div></div>
+
+</li>
+<li><code>saveResultPackage : boolean</code> (optional)
+<div><div>
+ Check this if you want Jenkins to download the Defensics result package and store it for the build. The result package includes all logs for the test run. The package can be downloaded from the build status page. Use with caution as the package filesize can be large.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'FuzzPostBuildStep'])`: Defensics fuzz test
+++++
+<ul><li><code>configurationFilePath : String</code>
+<div><div>
+ <p>The file path where the test configuration file (*.set or *.testplan) for this job can be found, relative to the project's workspace.</p>
+ <p>A test configuration file defines what kind of testing is to be done, and can be created using Defensics. Configure a test suite in Defensics and save the settings file in File -&gt; Save Settings.</p>
+</div></div>
+
+</li>
+<li><code>configurationOverrides : String</code> (optional)
+<div><div>
+ <p>Additional test configuration settings that override the settings saved in the test configuration file. This can be useful if, for example, the test target address needs to be set dynamically.</p>
+ <p>The available settings are the same as the Defensics command line settings. Each setting should follow the format '--setting-name value'. Multiple settings are separated with spaces.</p>
+ <p>Example for HTTP Server Test Suite:</p>
+ <pre>--uri https://example.com --http-status-filter "1xx 2xx 3xx" </pre>
+ <p></p>
+</div></div>
+
+</li>
+<li><code>defensicsInstance : String</code> (optional)
+<div><div>
+ Select Defensics instance to use for running tests. Instances can be added in Jenkins' global configuration under the Defensics section.
+</div></div>
+
+</li>
+<li><code>saveResultPackage : boolean</code> (optional)
+<div><div>
+ Check this if you want Jenkins to download the Defensics result package and store it for the build. The result package includes all logs for the test run. The package can be downloaded from the build status page. Use with caution as the package filesize can be large.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

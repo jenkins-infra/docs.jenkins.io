@@ -1,0 +1,150 @@
+= HCL AppScan
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/appscan">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `appscan`: Run AppScan on Cloud/AppScan 360° Security Test
+++++
+<ul><li><code>scanner</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>dynamic_analyzer</code><div>
+<ul><li><code>target : String</code>
+</li>
+<li><code>hasOptions : boolean</code>
+</li>
+<li><code>extraField : String</code> (optional)
+</li>
+<li><code>loginPassword : String</code> (optional)
+</li>
+<li><code>loginType : String</code> (optional)
+</li>
+<li><code>loginUser : String</code> (optional)
+</li>
+<li><code>optimization : String</code> (optional)
+</li>
+<li><code>presenceId : String</code> (optional)
+</li>
+<li><code>scanFile : String</code> (optional)
+</li>
+<li><code>scanType : String</code> (optional)
+</li>
+<li><code>trafficFile : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>software_composition_analysis</code><div>
+<ul><li><code>target : String</code>
+</li>
+<li><code>hasOptions : boolean</code>
+</li>
+</ul></div></li>
+<li><code>static_analyzer</code><div>
+<ul><li><code>target : String</code>
+</li>
+<li><code>hasOptions : boolean</code>
+</li>
+<li><code>openSourceOnly : boolean</code> (optional)
+</li>
+<li><code>scanMethod : String</code> (optional)
+</li>
+<li><code>scanSpeed : String</code> (optional)
+</li>
+<li><code>sourceCodeOnly : boolean</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>name : String</code>
+</li>
+<li><code>type : String</code>
+</li>
+<li><code>application : String</code>
+</li>
+<li><code>credentials : String</code>
+</li>
+<li><code>email : boolean</code> (optional)
+</li>
+<li><code>failBuild : boolean</code> (optional)
+</li>
+<li><code>failBuildNonCompliance : boolean</code> (optional)
+</li>
+<li><code>failureConditions</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>failureType : String</code>
+</li>
+<li><code>threshold : int</code>
+</li>
+</ul></li>
+<li><code>intervention : boolean</code> (optional)
+</li>
+<li><code>target : String</code> (optional)
+</li>
+<li><code>wait : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `appscanenterprise`: Run AppScan Enterprise Security Test
+++++
+<ul><li><code>credentials : String</code>
+</li>
+<li><code>folder : String</code>
+</li>
+<li><code>testPolicy : String</code>
+</li>
+<li><code>template : String</code>
+</li>
+<li><code>jobName : String</code>
+</li>
+<li><code>accessId : String</code> (optional)
+</li>
+<li><code>agent : String</code> (optional)
+</li>
+<li><code>application : String</code> (optional)
+</li>
+<li><code>contact : String</code> (optional)
+</li>
+<li><code>description : String</code> (optional)
+</li>
+<li><code>email : boolean</code> (optional)
+</li>
+<li><code>exploreData : String</code> (optional)
+</li>
+<li><code>failBuild : boolean</code> (optional)
+</li>
+<li><code>failureConditions</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>failureType : String</code>
+</li>
+<li><code>threshold : int</code>
+</li>
+</ul></li>
+<li><code>loginType : String</code> (optional)
+</li>
+<li><code>scanType : String</code> (optional)
+</li>
+<li><code>secretKey : String</code> (optional)
+</li>
+<li><code>target : String</code> (optional)
+</li>
+<li><code>testOptimization : String</code> (optional)
+</li>
+<li><code>trafficFile : String</code> (optional)
+</li>
+<li><code>wait : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

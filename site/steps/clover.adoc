@@ -1,0 +1,54 @@
+= Clover plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/clover">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `clover`: Publish OpenClover coverage report
+++++
+<ul><li><code>cloverReportDir : String</code>
+</li>
+<li><code>cloverReportFileName : String</code>
+</li>
+<li><code>healthyTarget</code>
+<ul><b>Nested Object</b>
+<li><code>methodCoverage : int</code>
+</li>
+<li><code>conditionalCoverage : int</code>
+</li>
+<li><code>statementCoverage : int</code>
+</li>
+</ul></li>
+<li><code>unhealthyTarget</code>
+<ul><b>Nested Object</b>
+<li><code>methodCoverage : int</code>
+</li>
+<li><code>conditionalCoverage : int</code>
+</li>
+<li><code>statementCoverage : int</code>
+</li>
+</ul></li>
+<li><code>failingTarget</code>
+<ul><b>Nested Object</b>
+<li><code>methodCoverage : int</code>
+</li>
+<li><code>conditionalCoverage : int</code>
+</li>
+<li><code>statementCoverage : int</code>
+</li>
+</ul></li>
+</ul>
+
+
+++++

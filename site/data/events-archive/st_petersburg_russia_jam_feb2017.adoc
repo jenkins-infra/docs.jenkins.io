@@ -1,0 +1,6 @@
+---
+:page-eventTitle: St.Petersburg, Russia JAM
+:page-eventStartDate: 2017-02-15T19:00:00
+:page-eventLink: https://www.meetup.com/St-Petersburg-Jenkins-Meetup/events/237123659/
+---
+Jenkins & Cloud Technologies

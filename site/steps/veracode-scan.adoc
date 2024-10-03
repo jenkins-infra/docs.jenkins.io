@@ -1,0 +1,427 @@
+= Veracode Scan
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/veracode-scan">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `veracodeDynamicAnalysisReview`: Review Veracode Dynamic Analysis Results
+++++
+<ul><li><code>waitForResultsDuration : int</code> (optional)
+<div><div>
+ <p>The number of hours to wait for the Veracode Dynamic Analysis results to be available. If the results are not available after the specified wait time, the Jenkins build fails.</p>
+</div></div>
+
+</li>
+<li><code>failBuildForPolicyViolation : boolean</code> (optional)
+</li>
+<li><code>debug : boolean</code> (optional)
+<div><div>
+ Enable to display additional information in the console output.
+</div></div>
+
+</li>
+<li><code>useProxy : boolean</code> (optional)
+</li>
+<li><code>pHost : String</code> (optional)
+<div><div>
+ Enter the proxy host.
+</div></div>
+
+</li>
+<li><code>pPort : String</code> (optional)
+<div><div>
+ Enter the port number for the proxy host.
+</div></div>
+
+</li>
+<li><code>pUser : String</code> (optional)
+<div><div>
+ Enter the username for the proxy server, if required.
+</div></div>
+
+</li>
+<li><code>pPassword : String</code> (optional)
+<div><div>
+ Enter the password for the proxy server, if required.
+</div></div>
+
+</li>
+<li><code>vid : String</code> (optional)
+<div><div>
+ <p>For added security, Veracode highly recommends to use the Credentials Binding plugin to store Veracode API credentials. Jenkins binds the credentials to environment variables that appear in scripts instead of the actual credentials.</p>
+ <p>Enter the environment variable reference to bind your Veracode API ID. If you are using an environment variable, delete the quotes around the value for vid in the pipeline script.</p>
+</div></div>
+
+</li>
+<li><code>vkey : String</code> (optional)
+<div><div>
+ <p>For added security, Veracode highly recommends to use the Credentials Binding plugin to store Veracode API credentials. Jenkins binds the credentials to environment variables that appear in scripts instead of the actual credentials.</p>
+ <p>Enter the environment variable reference to bind your Veracode API key. If you are using an environment variable, delete the quotes around the value for vkey in the pipeline script.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `veracodeDynamicAnalysisResubmit`: Resubmit Veracode Dynamic Analysis
+++++
+<ul><li><code>analysisName : String</code> (optional)
+<div><div>
+ <p>Enter a name for the Dynamic Analysis. This name must match the Dynamic Analysis name configured on the Veracode Platform, or the Dynamic Analysis scan fails.</p>
+</div></div>
+
+</li>
+<li><code>maximumDuration : int</code> (optional)
+<div><div>
+ <p>The number of hours that the Dynamic Analysis can run. The default duration is three days (72 hours) and the maximum duration is 25 days (600 hours).</p>
+</div></div>
+
+</li>
+<li><code>failBuildAsScanFailed : boolean</code> (optional)
+<div><div>
+ <p>Enable to fail the Jenkins build if the Dynamic Analysis post-build actions fails.</p>
+</div></div>
+
+</li>
+<li><code>vid : String</code> (optional)
+<div><div>
+ <p>For added security, Veracode highly recommends to use the Credentials Binding plugin to store Veracode API credentials. Jenkins binds the credentials to environment variables that appear in scripts instead of the actual credentials.</p>
+ <p>Enter the environment variable reference to bind your Veracode API ID. If you are using an environment variable, delete the quotes around the value for vid in the pipeline script.</p>
+</div></div>
+
+</li>
+<li><code>vkey : String</code> (optional)
+<div><div>
+ <p>For added security, Veracode highly recommends to use the Credentials Binding plugin to store Veracode API credentials. Jenkins binds the credentials to environment variables that appear in scripts instead of the actual credentials.</p>
+ <p>Enter the environment variable reference to bind your Veracode API key. If you are using an environment variable, delete the quotes around the value for vkey in the pipeline script.</p>
+</div></div>
+
+</li>
+<li><code>debug : boolean</code> (optional)
+<div><div>
+ Enable to display additional information in the console output.
+</div></div>
+
+</li>
+<li><code>useProxy : boolean</code> (optional)
+</li>
+<li><code>pHost : String</code> (optional)
+<div><div>
+ Enter the proxy host.
+</div></div>
+
+</li>
+<li><code>pPort : String</code> (optional)
+<div><div>
+ Enter the port number for the proxy host.
+</div></div>
+
+</li>
+<li><code>pUser : String</code> (optional)
+<div><div>
+ Enter the username for the proxy server, if required.
+</div></div>
+
+</li>
+<li><code>pPassword : String</code> (optional)
+<div><div>
+ Enter the password for the proxy server, if required.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `veracodeDynamicRescan`: Dynamic Rescan with Veracode Pipeline
+++++
+<ul><li><code>applicationName : String</code> (optional)
+<div><div>
+ <p>Enter the name of the application.</p>
+ <p>You can either use the name of an application that already exists in the Veracode Platform, or enter $projectname to use the Jenkins project name as the application name.</p>
+</div></div>
+
+</li>
+<li><code>dvrEnabled : boolean</code> (optional)
+<div><div>
+ <p>Selecting this checkbox enables Dynamic Vulnerability Rescan.</p>
+</div></div>
+
+</li>
+<li><code>canFailJob : boolean</code> (optional)
+<div><div>
+ Select this option if you want the Jenkins job to fail if the upload and scan or dynamic rescan post-build action fails. If you do not select this option and either of these post-build actions does fail, the log will show the failure but you will not be notified.
+</div></div>
+
+</li>
+<li><code>debug : boolean</code> (optional)
+<div><div>
+ Select the checkbox to display additional information in the console output window, including the supplied credentials.
+</div></div>
+
+</li>
+<li><code>useProxy : boolean</code> (optional)
+</li>
+<li><code>pHost : String</code> (optional)
+<div><div>
+ Enter the proxy host.
+</div></div>
+
+</li>
+<li><code>pPort : int</code> (optional)
+<div><div>
+ Enter the port number if the proxy host has a port.
+</div></div>
+
+</li>
+<li><code>pUser : String</code> (optional)
+<div><div>
+ If the proxy server is password protected, enter your username and password in the Username and Password fields.
+</div></div>
+
+</li>
+<li><code>pPassword : String</code> (optional)
+<div><div>
+ If the proxy server is password protected, enter your username and password in the Username and Password fields.
+</div></div>
+
+</li>
+<li><code>vid : String</code> (optional)
+<div><div>
+ Enter your Veracode API ID. For instructions on generating your API credentials, search for "Credentials" in the Veracode Documentation.
+</div></div>
+
+</li>
+<li><code>vkey : String</code> (optional)
+<div><div>
+ Enter your Veracode API key. For instructions on generating your API credentials, search for "Credentials" in the Veracode Documentation.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `veracode`: Upload and Scan with Veracode Pipeline
+++++
+<ul><li><code>applicationName : String</code> (optional)
+<div><div>
+ <p>Enter the name of the application. This can be an application that already exists on the Veracode Platform, or a new one that Jenkins creates.</p>
+</div></div>
+
+</li>
+<li><code>criticality : String</code> (optional)
+<div><div>
+ Enter the business criticality for the application.
+</div></div>
+
+</li>
+<li><code>sandboxName : String</code> (optional)
+<div><div>
+ <p>Enter the name of the sandbox. This can be a sandbox that already exists on the Veracode Platform, or a new one that Jenkins creates.</p>
+ <p>If you leave this field empty, no sandbox is used.</p>
+</div></div>
+
+</li>
+<li><code>scanName : String</code> (optional)
+<div><div>
+ <p>Enter a name for the static scan you want to submit to the Veracode Platform for this application. Scan name is equivalent to Version or Build in the Veracode API.</p>
+</div></div>
+
+</li>
+<li><code>waitForScan : boolean</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ This option will submit the scan and wait the given amount of time. If the scan does not complete and pass policy compliance within the allotted time, then the build will fail.
+</div></div>
+
+</li>
+<li><code>deleteIncompleteScanLevel : String</code> (optional)
+<div><div>
+ <p>Select one of these levels for deleting an incomplete scan:</p>
+ <ul>
+  <li><b>0</b> to not delete an incomplete scan when running the uploadandscan action.</li>
+  <li><b>1</b> to delete a scan with a status of incomplete, no modules defined, failed, or canceled to proceed with the uploadandscan action. If errors occur when running uploadandscan, the Java wrapper will automatically delete the scan.</li>
+  <li><b>2</b> to delete a scan with any status except for "Results Ready" to proceed with the uploadandscan action. If errors occur when running uploadandscan, the Java wrapper will automatically delete the scan.</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>createProfile : boolean</code> (optional)
+<div><div>
+ <p>Selecting this checkbox creates a new application if a matching application is not found on the Veracode Platform.</p>
+ <p>If the checkbox is not selected and a matching application is not found on the Veracode Platform, the Jenkins build will fail.</p>
+</div></div>
+
+</li>
+<li><code>teams : String</code> (optional)
+<div><div>
+ <p>Enter the name of the teams to which you want to assign this application.</p>
+ <ul>
+  <li>You must enter a team name if you have any user account role other than Security Lead. If you leave this field empty, the job will fail.</li>
+  <li>Use a comma-separated list for multiple team names.</li>
+  <li>The team name is case-sensitive and must exactly match the team name as entered in the Veracode Platform.</li>
+  <li>If you assign the application to a non-existent team, the job will fail.</li>
+ </ul>
+ <p></p>
+</div></div>
+
+</li>
+<li><code>createSandbox : boolean</code> (optional)
+<div><div>
+ <p>Selecting this checkbox creates a new sandbox if a sandbox name is provided and a matching sandbox is not found on the Veracode Platform.</p>
+ <p>If the checkbox is not selected, a sandbox name is provided, and a matching sandbox is not found on the Veracode Platform, the Jenkins build will fail.</p>
+</div></div>
+
+</li>
+<li><code>timeoutFailsJob : boolean</code> (optional)
+</li>
+<li><code>canFailJob : boolean</code> (optional)
+<div><div>
+ Fail the Jenkins job if a Veracode task fails or the application fails to pass a security policy.
+</div></div>
+
+</li>
+<li><code>unstableBuild : boolean</code> (optional)
+<div><div>
+ Select this option to change the Jenkins job status to Unstable if the policy evaluation of the application returns Did Not Pass or Conditional Pass.
+</div></div>
+
+</li>
+<li><code>debug : boolean</code> (optional)
+<div><div>
+ Select the checkbox to display additional information in the console output window.
+</div></div>
+
+</li>
+<li><code>uploadIncludesPattern : String</code> (optional)
+<div><div>
+ <p>Enter the filepaths of the files to upload for scanning, represented as a comma-separated list of ant-style include patterns relative to the job's workspace root directory.</p>
+ <p>Patterns are case-sensitive. Patterns that include commas because they denote filepaths that contain commas need to replace the commas with a wildcard character.</p>
+ <p>If no filepaths are provided, all files in the job's workspace root directory are included.</p>
+ <p>See <a href="http://ant.apache.org/manual/dirtasks.html" rel="nofollow">http://ant.apache.org/manual/dirtasks.html</a> for more info.</p>
+</div></div>
+
+</li>
+<li><code>uploadExcludesPattern : String</code> (optional)
+<div><div>
+ <p>Enter the filepaths of the files to exclude from the upload for scanning, represented as a comma-separated list of ant-style exclude patterns relative to the job's workspace root directory.</p>
+ <p>Patterns are case-sensitive. Patterns that include commas because they denote filepaths that contain commas need to have the commas replaced with a wildcard character.</p>
+ <p>If no filepaths are provided, no files (except default excludes) in the job's workspace root directory are excluded.</p>
+ <p>See <a href="http://ant.apache.org/manual/dirtasks.html" rel="nofollow">http://ant.apache.org/manual/dirtasks.html</a> for more info.</p>
+</div></div>
+
+</li>
+<li><code>scanIncludesPattern : String</code> (optional)
+<div><div>
+ <p>Enter the filenames of the uploaded files to scan as top level modules, represented as a comma-separated list of ant-style include patterns such that '*' matches 0 or more characters and '?' matches exactly 1 character.</p>
+ <p>Patterns are case-sensitive. Patterns that include commas because they denote filenames that contain commas need to replace the commas with a wildcard character.</p>
+ <p>Because the matching is performed based only on filename, it is incorrect to use patterns that include path separators ('\' or '/').</p>
+ <p>If no filenames are provided, all uploaded files are included as top level modules.</p>
+</div></div>
+
+</li>
+<li><code>scanExcludesPattern : String</code> (optional)
+<div><div>
+ <p>Enter the filenames of the uploaded files to not scan as top level modules, represented as a comma-separated list of ant-style exclude patterns such that '*' matches 0 or more characters and '?' matches exactly 1 character.</p>
+ <p>Patterns are case-sensitive. Patterns that include commas because they denote filenames that contain commas need to replace the commas with a wildcard character.</p>
+ <p>Because the matching is performed based only on filename, it is incorrect to use patterns that include path separators ('\' or '/').</p>
+ <p>If no filepaths are provided, no files (except default excludes) in the job's workspace root directory are excluded.</p>
+</div></div>
+
+</li>
+<li><code>fileNamePattern : String</code> (optional)
+<div><div>
+ <p>Enter the filename pattern that represents the names of the uploaded files that should be saved with a different name. The '*' wildcard matches 0 or more characters. The '?' wildcard matches exactly 1 character. Each wildcard corresponds to a numbered group that can be referenced in the replacement pattern.</p>
+ <p>Pattern is case-sensitive.</p>
+ <p>Because the matching is performed based only on filename, it is incorrect to use patterns that include path separators ('\' or '/').</p>
+ <p>No uploaded files are saved with a different name when either the filename pattern or the replacement pattern is omitted.</p>
+</div></div>
+
+</li>
+<li><code>replacementPattern : String</code> (optional)
+<div><div>
+ <p>Enter the replacement pattern that represents the groups captured by the filename pattern. For example, if the filename pattern is '*-*-SNAPSHOT.war' and the replacement pattern '$1-SNAPSHOT.war', an uploaded file named 'app-branch-SNAPSHOT.war' would be saved as 'app-SNAPSHOT.war'.</p>
+ <p>In order to specify a replacement pattern that includes a reference to a captured group followed by a number, place the captured group's index inside curly braces. For example, if the filename pattern is '*-*-SNAPSHOT.war' and the replacement pattern '${1}5-SNAPSHOT.war', an uploaded file named 'app-branch-SNAPSHOT.war' would be saved as 'app5-SNAPSHOT.war'.</p>
+ <p>New filenames for uploaded files must be valid. Path separators ('\' or '/') should not be included.</p>
+ <p>No uploaded files are saved with a different name when either the filename pattern or the replacement pattern is omitted.</p>
+</div></div>
+
+</li>
+<li><code>copyRemoteFiles : boolean</code> (optional)
+<div><div>
+ <p>This option is <b>only</b> applicable when the build is done by a remote machine in a remote workspace.</p>
+ <ul>
+  <li>If you do not select this checkbox (default), the output files are uploaded to Veracode from the remote workspace.</li>
+  <li>If you select this checkbox, the output files are copied from the remote machine to a local, temporary directory in Controller and then updated to Veracode.</li>
+ </ul>
+ <p></p>
+</div></div>
+
+</li>
+<li><code>useProxy : boolean</code> (optional)
+</li>
+<li><code>pHost : String</code> (optional)
+<div><div>
+ Enter the proxy host.
+</div></div>
+
+</li>
+<li><code>pPort : String</code> (optional)
+<div><div>
+ Enter the port number if the proxy host has a port.
+</div></div>
+
+</li>
+<li><code>pUser : String</code> (optional)
+<div><div>
+ If the proxy server is password protected, enter your username and password in the Username and Password fields.
+</div></div>
+
+</li>
+<li><code>pPassword : String</code> (optional)
+<div><div>
+ If the proxy server is password protected, enter your username and password in the Username and Password fields.
+</div></div>
+
+</li>
+<li><code>vid : String</code> (optional)
+<div><div>
+ Enter your Veracode API ID. For instructions on generating your API credentials, search for "Credentials" in the Veracode Documentation.
+</div></div>
+
+</li>
+<li><code>vkey : String</code> (optional)
+<div><div>
+ Enter your Veracode API key. For instructions on generating your API credentials, search for "Credentials" in the Veracode Documentation.
+</div></div>
+
+</li>
+<li><code>deleteIncompleteScan : boolean</code> (optional)
+<div><div>
+ <p>Select one of these levels for deleting an incomplete scan:</p>
+ <ul>
+  <li><b>0</b> to not delete an incomplete scan when running the uploadandscan action.</li>
+  <li><b>1</b> to delete a scan with a status of incomplete, no modules defined, failed, or canceled to proceed with the uploadandscan action. If errors occur when running uploadandscan, the Java wrapper will automatically delete the scan.</li>
+  <li><b>2</b> to delete a scan with any status except for "Results Ready" to proceed with the uploadandscan action. If errors occur when running uploadandscan, the Java wrapper will automatically delete the scan.</li>
+ </ul>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

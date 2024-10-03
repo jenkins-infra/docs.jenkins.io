@@ -1,0 +1,25 @@
+= Chef Identity Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/chef-identity">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `wrap([$class: 'ChefIdentityBuildWrapper'])`: Chef Identity Plugin
+++++
+<ul><li><code>jobIdentity : String</code>
+</li>
+</ul>
+
+
+++++

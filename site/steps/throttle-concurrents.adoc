@@ -1,0 +1,29 @@
+= Throttle Concurrent Builds Plug-in
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/throttle-concurrents">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `throttle`: Throttle execution of node blocks within this body
+++++
+<ul><li><code>categories : Array / List of String</code>
+<div><div>
+ <p>One or more throttle categories in a list.</p>
+</div></div>
+
+<ul></ul></li>
+</ul>
+
+
+++++

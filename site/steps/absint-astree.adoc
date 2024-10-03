@@ -1,0 +1,101 @@
+= AbsInt Astrée Plugin for Jenkins
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/absint-astree">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'AstreeBuilder'])`: Astrée Analysis Run
+++++
+<ul><li><code>dax_file : String</code>
+<div><div>
+ Absolute path to the DAX file containing the analysis specification and configuration. 
+ <br>
+  Note: In this setting, environment variables can be expanded. Expansion will affect all occurrences of the pattern ${name} where name is a valid environment variable name consisting solely of underscores, digits, and alphabetics from the portable character set and where the first character is not a digit. 
+ <br>
+  Paths and environment variables are evaluated on the machine running Jenkins.
+</div></div>
+
+</li>
+<li><code>analysis_id : String</code>
+<div><div>
+ ID of an existing, preconfigured analysis on the Astrée server that serves as a revisioning base for the analyses of the current Jenkins project. The analysis, as configured via the supported DAX file, of a build is imported as a new revision into the project with this ID on the server, if such a project exists. The new revision will become a child revision of the last existing revision. If no project with this ID exists on the server, the analysis will become the first revision of a new project with the specified ID. 
+ <br>
+  Note: In this setting, environment variables can be expanded. Expansion will affect all occurrences of the pattern ${name} where name is a valid environment variable name consisting solely of underscores, digits, and alphabetics from the portable character set and where the first character is not a digit.
+</div></div>
+
+</li>
+<li><code>output_dir : String</code>
+<div><div>
+ Absolute path to the folder into which the Summary Reports are to be generated. If left empty, reports will be generated into the project's Workspace directory and will be accessible from the Jenkins web interface. 
+ <br>
+  Note: In this setting, environment variables can be expanded. Expansion will affect all occurrences of the pattern ${name} where name is a valid environment variable name consisting solely of underscores, digits, and alphabetics from the portable character set and where the first character is not a digit.
+</div></div>
+
+</li>
+<li><code>skip_analysis : boolean</code>
+<div><div>
+ This switch can be used to deactivate the Astrée analysis build step. This switch provides a more convenient method to temporarily deactivate analysis runs than removing the entire build step and reconfiguring the Astrée analysis run from scratch when later adding the build step again.
+</div></div>
+
+</li>
+<li><code>genXMLOverview : boolean</code>
+</li>
+<li><code>genXMLCoverage : boolean</code>
+</li>
+<li><code>genXMLAlarmsByOccurence : boolean</code>
+</li>
+<li><code>genXMLAlarmsByCategory : boolean</code>
+</li>
+<li><code>genXMLAlarmsByFile : boolean</code>
+</li>
+<li><code>genXMLRulechecks : boolean</code>
+</li>
+<li><code>dropAnalysis : boolean</code>
+<div><div>
+ When this option is activated, the analysis is not stored on the Astrée server, instead it is automatically deleted after the analysis run of the build step. 
+ <br>
+  This option is very helpful if the analysis run is only specified by a DAX file and it is not intended to archive each analysis run on the server. 
+ <br>
+  Please be aware that using this option in an analysis run only specified by an analysis ID will result in deleting the analysis with that ID on the Astrée server. 
+ <br>
+  This option corresponds to adding a <i>--drop</i> to a command line call to Astrée.
+</div></div>
+
+</li>
+<li><code>genPreprocessOutput : boolean</code>
+</li>
+<li><code>failonswitch</code>
+<div><div>
+ This option allow Astrée to fail a build depeneding on the types of detected code defects. The following settings are available: 
+ <ul>
+  <li>Only Errors <br>
+    ... lets Astrée fail a build if an Error (Definite Type A Alarm) is reported. <br>
+    This is the preferred setting for most use cases. A build is failed if Astrée can formally show the presence of a severe code defect in a (analysis) context.</li>
+  <li>Errors and Alarms <br>
+    ... lets Astrée fail a build if an Error or Alarm (Definite Type A Alarm or Potential Alarm of Type B or Type C) is reported. <br>
+    This is the preferred setting in case the absence of runtime errors in an application is to be formally shown. A build is failed if Astrée reports potential runtime errors.</li>
+  <li>Errors, Alarms, and Data-Flow Anomalies <br>
+    ... lets Astrée fail a build if and only if any type of alarm (definite/potential Type A, B, C or D) is reported. <br>
+    This setting fails builds on any reported potential code defect or anomaly.</li>
+ </ul>
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>failon : String</code>
+</li>
+</ul></li>
+</ul>
+
+
+++++

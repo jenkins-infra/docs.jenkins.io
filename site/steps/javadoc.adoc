@@ -1,0 +1,32 @@
+= Javadoc Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/javadoc">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `javadoc`: Publish Javadoc
+++++
+<ul><li><code>javadocDir : String</code>
+</li>
+<li><code>keepAll : boolean</code>
+<div><div>
+ If you check this option, Jenkins will retain Javadoc for each successful build. This allows you to browse Javadoc for older builds, at the expense of additional disk space requirement. 
+ <p>If you leave this option unchecked, Jenkins will only keep the latest Javadoc, so older Javadoc will be overwritten as new builds succeed.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

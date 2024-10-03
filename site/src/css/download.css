@@ -1,0 +1,49 @@
+html {
+    font-size: 16px;
+}
+
+.vendorsList {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 3rem;
+}
+
+.vendors {
+    padding: 10px;
+}
+
+.vendors p {
+    margin-bottom: 1cm;
+    margin-top: 0.2cm;
+    width: 300px;
+}
+
+.downloadTable {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.listGroup {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listGroup li {
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    padding: 12px;
+}
+
+.listGroup:hover() {
+    cursor: pointer;
+    background-color: #f6f6f6;
+}
+
+.thirdPartyIcon {
+    font-size: medium;
+}

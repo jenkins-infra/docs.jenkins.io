@@ -1,0 +1,6 @@
+---
+:page-eventTitle: DFW JAM
+:page-eventStartDate: 2016-05-05T19:00:00
+:page-eventLink: https://www.meetup.com/DFW-Jenkins-Area-Meetup/events/230388178/
+---
+JAM member Cruz Petre will discuss Continuous Delivery on database changes

@@ -1,0 +1,84 @@
+= Git Forensics Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/git-forensics">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `gitDiffStat`: Git Diff Statistics
+++++
+<ul><li><code>scm : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `discoverGitReferenceBuild`: Discover Git reference build
+++++
+<ul><li><code>latestBuildIfNotFound : boolean</code> (optional)
+<div>If enabled, then the last completed build of the reference job will be selected if no other reference build can be found in the baseline, that contains the required commits or has the required build result. This is useful if you want to always compute a delta, even if the exact reference build cannot be found.</div>
+
+</li>
+<li><code>maxCommits : int</code> (optional)
+<div>Defines the maximum number of commits that will be inspected to find the intersection between the current branch and the target branch (main branch). The default value is 100 commits. If a branch has more than the specified number of commits (since the last merge with the main branch), then the reference finder will stop and return an empty result. This helps to skip computations of delta results that contain too many differences.</div>
+
+</li>
+<li><code>referenceJob : String</code> (optional)
+<div><p>The reference job is the baseline used to determine the relative differences to the current build. Several plugins that report build statistics (test results, code coverage, metrics, static analysis warnings) typically show their reports in two different ways: either as absolute report (e.g., total number of tests or warnings, overall code coverage) or as relative delta report (e.g., additional tests, increased or decreased coverage, new or fixed warnings). To compute a relative delta report, a plugin needs to select another build to compare the current results to (a so-called reference build). This reference build is obtained from the specified reference job.</p>
+<p>In Multibranch Pipelines this parameter can be left empty: in these jobs, the plugin selects the build automatically from the associated job that builds the main target branch. For all other jobs, the last completed build of the current job will be used as reference build if the reference job is not specified.</p></div>
+
+</li>
+<li><code>requiredResult : String</code> (optional)
+<div>When a reference build is searched for in the baseline (see the parameter reference job) then it sometimes makes sense to only consider builds that have a certain result. For example, you may want to skip the computation of a delta coverage when the reference build has failed tests. Or you may want to skip the computation of new warnings when the reference build has a compilation error. The following enumeration shows the possible values for this parameter and the corresponding behavior: 
+<dl>
+ <dt>
+  SUCCESS
+ </dt>
+ <dd>
+  The selected build must be successful
+ </dd>
+ <dt>
+  UNSTABLE
+ </dt>
+ <dd>
+  The selected build must be successful or unstable
+ </dd>
+ <dt>
+  FAILURE
+ </dt>
+ <dd>
+  The result of the build is not relevant (this is the default behavior if unset)
+ </dd>
+</dl></div>
+
+</li>
+<li><code>scm : String</code> (optional)
+<div><div>
+ Specify the key of your repository (substring is sufficient) if you are using multiple SCMs in your job. When your job is composed of several SCM checkouts (modules, pipeline libraries, etc.) then Jenkins stores all those repositories in an unsorted way.
+</div></div>
+
+</li>
+<li><code>skipUnknownCommits : boolean</code> (optional)
+<div>If enabled, then a build of the reference job will be skipped if one of the commits is unknown in the current branch. This is useful if you want to compute the delta only with builds that contain all the commits that are part of the current job. That means that the reference will not contain newer and unrelated commits that may affect the build results.</div>
+
+</li>
+<li><code>targetBranch : String</code> (optional)
+<div><div>
+ The target branch for this job is the branch you want to merge your changes into. If left empty, the plugin will use the branch <i>main</i> as default value. In MultiBranch Pipelines you can leave this field empty as the target branch will be computed automatically.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

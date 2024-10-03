@@ -1,0 +1,47 @@
+= Ghost Inspector Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/ghost-inspector">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `ghostInspector`: Run Ghost Inspector Test Suite
+++++
+<ul><li><code>apiKey : String</code>
+<div><div>
+ Enter your Ghost Inspector API key. This is a unique, private key provided with your account which allows you to access the API. You can find it in your <a href="https://app.ghostinspector.com/account" rel="nofollow">Account Settings</a> in the Ghost Inspector application.
+</div></div>
+
+</li>
+<li><code>suiteId : String</code>
+<div><div>
+ Enter the ID of the Ghost Inpsector suite that you would like to execute.
+</div></div>
+
+</li>
+<li><code>startUrl : String</code>
+<div><div>
+ (Optional) Enter a custom URL to run the test suite on. If you're running your tests on the local build of your application, you may wish to create an <a href="https://ghostinspector.com/docs/test-local-and-firewalled-websites/" rel="nofollow">local tunnel</a> and use that URL here.
+</div></div>
+
+</li>
+<li><code>params : String</code>
+<div><div>
+ (Optional) Additional parameters to pass to the API in the form of "viewport=1024x768&amp;customVar=foo". You may wish to <a href="https://ghostinspector.com/docs/api/suites/#execute" rel="nofollow">override the screen size or include custom variables</a>.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

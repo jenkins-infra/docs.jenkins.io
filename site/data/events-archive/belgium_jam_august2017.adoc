@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Belgium JAM
+:page-eventStartDate: 2017-08-17T19:00:00
+:page-eventLink: https://www.meetup.com/Belgium-Jenkins-Area-Meetup/events/241326730/
+---
+Let's Meet

@@ -1,0 +1,174 @@
+= $class: 'hudson.plugins.repo.RepoScm'
+:page-layout: pipelinesteps
+== $class: 'hudson.plugins.repo.RepoScm'
+
+++++
+<li><code>$class: 'hudson.plugins.repo.RepoScm'</code><div>
+<div><div>
+ <p>The <a href="https://plugins.jenkins.io/repo/" rel="nofollow">repo plugin</a> provides <a href="https://gerrit.googlesource.com/git-repo" rel="nofollow">Repo</a> as an SCM tools in Jenkins.</p>
+ <p>The repo plugin provides an SCM implementation to be used with the Pipeline SCM <a href="https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step" rel="nofollow"><code>checkout</code></a> step. The <a href="https://www.jenkins.io/redirect/pipeline-snippet-generator" rel="nofollow"><strong>Pipeline Syntax Snippet Generator</strong></a> guides the user to select repo plugin checkout options and provides online help for each of the options.</p>
+</div></div>
+<ul><li><code>manifestRepositoryUrl : String</code>
+<div><div>
+ <p>The URL of the manifest. This is passed to repo as <code>repo init -u <i>url</i></code>.</p>
+</div></div>
+
+</li>
+<li><code>cleanFirst : boolean</code> (optional)
+<div><div>
+ <p>When this is checked the first thing to do will be a</p>
+ <pre>repo forall -c "git clean -fdx"</pre>
+ <p></p>
+</div></div>
+
+</li>
+<li><code>currentBranch : boolean</code> (optional)
+<div><div>
+ <p>Fetch only the current branch from server. Increases the speed of the repo sync operation. This is passed to repo as <code>repo init <i>--current-branch</i></code> and <code>repo sync <i>-c</i></code>.</p>
+</div></div>
+
+</li>
+<li><code>depth : int</code> (optional)
+<div><div>
+ <p>Specify the depth in history to sync from the source. The default is to sync all of the history. Use 1 to just sync the most recent commit. This is passed to repo as <code>repo init --depth=<i>n</i></code>.</p>
+</div></div>
+
+</li>
+<li><code>destinationDir : String</code> (optional)
+<div><div>
+ <p>The sub-directory of the workspace where the source should be synced. The default is the root of the workspace.</p>
+</div></div>
+
+</li>
+<li><code>extraEnvVars</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>fetchSubmodules : boolean</code> (optional)
+<div><div>
+ <p>Fetch submodules for from server. This is passed to repo as <code>repo sync <i>--fetch-submodules</i></code>.</p>
+</div></div>
+
+</li>
+<li><code>forceSync : boolean</code> (optional)
+<div><div>
+ <p>Overwrite an existing git directory if it needs to point to a different object directory. WARNING: this may cause loss of data. This is passed to repo as <code>repo sync <i>--force-sync</i></code>.</p>
+</div></div>
+
+</li>
+<li><code>ignoreProjects : String</code> (optional)
+</li>
+<li><code>jobs : int</code> (optional)
+<div><div>
+ <p>Specify the number of projects to fetch simultaneously. The default is 1. This is passed to repo as <code>repo sync --jobs=<i>n</i></code>.</p>
+</div></div>
+
+</li>
+<li><code>localManifest : String</code> (optional)
+<div><div>
+ <p>The contents of <code>.repo/local_manifests/local.xml</code>. This is written prior to calling sync. The default is to not use a <code>local.xml</code> file.</p>
+ <p>The contents may be given here literally, as XML; see the example below. Such literal content <b>must</b> start with the string <code>&lt;?xml</code>. Alternatively, the content may be given as an URL, in which case the file pointed by the URL is used. If the content does not start with the <code>&lt;?xml</code> prefix, it is assumed to be an URL.</p>
+ <p><b>An example</b></p>
+ <pre>    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;manifest&gt;
+      &lt;project path="external/project" name="org/project" remote="github" revision="master" /&gt;
+    &lt;/manifest&gt;
+  </pre>
+</div></div>
+
+</li>
+<li><code>manifestBranch : String</code> (optional)
+<div><div>
+ <p>The branch of the manifest to use. This is passed to repo as <code>repo init -b <i>branchname</i></code>. Repo will default to <i>master</i> if a branch name isn't provided.</p>
+</div></div>
+
+</li>
+<li><code>manifestFile : String</code> (optional)
+<div><div>
+ <p>The initial manifest file to use while initializing the repo. This is passed to repo as <code>repo init -m <i>manifestFile</i></code>. If a manifest file is not specified, repo uses the default of "default.xml".</p>
+</div></div>
+
+</li>
+<li><code>manifestGroup : String</code> (optional)
+<div><div>
+ <p>Restricts manifest projects to ones tagged with provided group name. This is passed to repo as <code>repo init -g <i>groupName</i></code>. If a group name is not provided, the <code>-g</code> option is not passed to repo and it will default to fetching projects that are tagged with 'default'.</p>
+</div></div>
+
+</li>
+<li><code>manifestPlatform : String</code> (optional)
+<div><div>
+ <p>Restrict manifest projects to ones with a specified platform group <code>[auto|all|none|linux|darwin|...]</code> This is passed to repo as <code>repo init -P <i>platformName</i></code>. If a platform is not provided, the <code>-p</code> option is not passed to repo and it will default to <code>auto</code> and ony fetch projects which needed for current system.</p>
+</div></div>
+
+</li>
+<li><code>manifestSubmodules : boolean</code> (optional)
+<div><div>
+ <p>Sync any submodules associated with the manifest repo. This is passed to repo as <code>repo init <i>--submodules</i></code>.</p>
+</div></div>
+
+</li>
+<li><code>mirrorDir : String</code> (optional)
+<div><div>
+ <p>The location of the mirror directory to reference when initialising the repository. This is passed to repo as <code>repo sync --reference=<i>DIR</i></code>. This speeds up fetching code and isn't used by default.</p>
+</div></div>
+
+</li>
+<li><code>noCloneBundle : boolean</code> (optional)
+<div><div>
+ <p>When this is checked <code>--no-clone-bundle</code> is used when running the <code>repo init</code> and <code>repo sync</code> commands.</p>
+</div></div>
+
+</li>
+<li><code>noTags : boolean</code> (optional)
+<div><div>
+ <p>Don't fetch tags. This is passed to repo as <code>repo init <i>--no-tags</i></code> and <code>repo sync <i>--no-tags</i></code>.</p>
+</div></div>
+
+</li>
+<li><code>quiet : boolean</code> (optional)
+<div><div>
+ <p>Make repo more quiet. This is passed to repo as <code>repo sync <i>-q</i></code>.</p>
+</div></div>
+
+</li>
+<li><code>repoBranch : String</code> (optional)
+<div><div>
+ <p>Use a specific branch for pulling repo itself. By default this is empty, and repo will be using its default branch (i.e. stable)</p>
+</div></div>
+
+</li>
+<li><code>repoUrl : String</code> (optional)
+<div><div>
+ <p>Pull repo itself from this git repository. By default this is empty, and repo will be pulled from its default git url (i.e. googles)</p>
+</div></div>
+
+</li>
+<li><code>resetFirst : boolean</code> (optional)
+<div><div>
+ <p>When this is checked the first thing to do will be a</p>
+ <pre>repo forall -c "git reset --hard"</pre>
+ <p></p>
+</div></div>
+
+</li>
+<li><code>showAllChanges : boolean</code> (optional)
+<div><div>
+ <p>When this is checked <code>--first-parent</code> is no longer passed to <code>git log</code> when determining changesets.</p>
+</div></div>
+
+</li>
+<li><code>trace : boolean</code> (optional)
+<div><div>
+ <p>Trace git command execution. This is passed to repo as <code>repo <i>--trace</i> &lt;subcommand&gt;</code>.</p>
+</div></div>
+
+</li>
+<li><code>worktree : boolean</code> (optional)
+<div><div>
+ <p>Use `git worktree` for checkouts (At least, Git version 2.15 is required to avoid dangerous gc bugs). Usefull under Windows because it no longer require symlinks at all.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+
+
+++++

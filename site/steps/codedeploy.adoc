@@ -1,0 +1,148 @@
+= AWS CodeDeploy Plugin for Jenkins
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/codedeploy">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'AWSCodeDeployPublisher'])`: Deploy an application to AWS CodeDeploy
+++++
+<ul><li><code>s3bucket : String</code>
+<div><div>
+ The bucket in S3 where new AWS CodeDeploy revisions will be uploaded.
+</div></div>
+
+</li>
+<li><code>s3prefix : String</code>
+<div><div>
+ The prefix in the S3 Bucket to prepend to the AWS CodeDeploy revision. Default is the root of the bucket. You can use environment variables in this field.
+</div></div>
+
+</li>
+<li><code>applicationName : String</code>
+<div><div>
+ The name of the AWS CodeDeploy application you wish to deploy to. This plugin assumes that you've already created the application and deployment group. If you haven't already, work through the <a href="http://alpha-docs-aws.amazon.com/codedeploy/latest/userguide/how-to-create-application.html" rel="nofollow">How to create an Application with AWS CodeDeploy</a> documentation. You can use environment variables in this field.
+</div></div>
+
+</li>
+<li><code>deploymentGroupName : String</code>
+<div><div>
+ The name of the AWS CodeDeploy deployment group attached to your application that you want to deploy to. This plugin assumes that you've already created the application and deployment group. If you haven't already, work through the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-create-application.html" rel="nofollow">How to create an Application with AWS CodeDeploy</a> documentation.
+</div></div>
+
+</li>
+<li><code>deploymentConfig : String</code>
+</li>
+<li><code>region : String</code>
+</li>
+<li><code>deploymentGroupAppspec : boolean</code>
+<div><div>
+ <p>If checked, the build will use a dedicated appspec.yml file per deployment group.</p>
+ <p>The appspec file should be named "appspec.DEPLOYMENT_GROUP_NAME.yml" and must be present in the jenkins project workspace.</p>
+ <br>
+ <br>
+ <p>e.g.: appsec.staging.yml</p>
+</div></div>
+
+</li>
+<li><code>waitForCompletion : boolean</code>
+<div><div>
+ <p>If checked, this build will wait for the AWS CodeDeploy deployment to finish (with either success or failure). Polling Timeout, below, sets the maximum amount of time to wait.<br><br>
+  If unchecked, the deployment will be handed off to AWS CodeDeploy and the build will move on to the next step.</p>
+ <p>The build will be marked a failure if <em>either</em> the timeout is reached or the deployment fails. The build log will indicate which.</p>
+</div></div>
+
+</li>
+<li><code>pollingTimeoutSec : long</code>
+</li>
+<li><code>pollingFreqSec : long</code>
+</li>
+<li><code>credentials : String</code>
+</li>
+<li><code>versionFileName : String</code>
+</li>
+<li><code>deploymentMethod : String</code>
+</li>
+<li><code>awsAccessKey : String</code>
+<div><div>
+ <p>AWS Access and Secret keys to use for this deployment. At minimum the keys must be allowed to execute <code>codedeploy:*</code> and <code>s3:Put*</code>. It's a best practice to have these keys be from an IAM role with limited scope.</p>
+ <p>If your Jenkins install is running on an EC2 instance with an associate IAM role, you can leave these fields blank. You will just need to ensure that the role has the correct policies.</p>
+</div></div>
+
+</li>
+<li><code>awsSecretKey : String</code>
+<div><div>
+ <p>AWS Access and Secret keys to use for this deployment. At minimum the keys must be allowed to execute <code>codedeploy:*</code> and <code>s3:Put*</code>. It's a best practice to have these keys be from an IAM role with limited scope.</p>
+ <p>If your Jenkins install is running on an EC2 instance with an associate IAM role, you can leave these fields blank. You will just need to ensure that the role has the correct policies.</p>
+</div></div>
+
+</li>
+<li><code>iamRoleArn : String</code>
+<div><div>
+ <p>In order to keep your application(s) more secure, this plugin only uses temporary credentials via STS, scoped to each application. To set this up:</p>
+ <ol>
+  <li>Log into the AWS Management Console, and navigate to the <a href="https://console.aws.amazon.com/iam/" rel="nofollow">Identity and Access Management console</a>.</li>
+  <li>Click on <a href="https://console.aws.amazon.com/iam/#roles" rel="nofollow">Roles</a>, then click <strong>Create New Role</strong>.</li>
+  <li>Give an appropriate name for this role (for example, "JenkinsCodeDeployProject").</li>
+  <li>In the "Select Role Type" screen, click "Role for Cross-Account Access" then select <strong>Allows IAM users from a 3rd party AWS account to access this account.</strong></li>
+  <li>The account and external IDs for this Jenkins project are listed below</li>
+  <li>In the policy screen, select <strong>Custom Policy</strong> and copy-paste the following policy: 
+   <ul>
+    <li><code>{"Version": "2012-10-17", "Statement": [{"Effect": "Allow", "Action": ["codedeploy:*", "s3:*"], "Resource": "*"}]}</code></li>
+   </ul></li>
+  <li>Click <strong>Create Role</strong>, then copy-paste the <strong>Role ARN</strong> into the below field.</li>
+  <li>Click the <strong>Test Connection</strong> button to ensure that the permissions are set up properly.</li>
+ </ol>
+</div></div>
+
+</li>
+<li><code>externalId : String</code>
+<div><div>
+ The External ID you should use in the IAM cross-account access policy.
+</div></div>
+
+</li>
+<li><code>includes : String</code>
+<div><div>
+ <strong>Includes</strong> and <strong>Excludes</strong> together define the file(s) that will be contained in the application revision that is uploaded to Amazon S3.
+</div></div>
+
+</li>
+<li><code>proxyHost : String</code>
+<div><div>
+ <p>Proxy host DNS name</p>
+</div></div>
+
+</li>
+<li><code>proxyPort : int</code>
+<div><div>
+ <p>Proxy host port</p>
+</div></div>
+
+</li>
+<li><code>excludes : String</code>
+<div><div>
+ <strong>Includes</strong> and <strong>Excludes</strong> together define the file(s) that will be contained in the application revision that is uploaded to Amazon S3.
+</div></div>
+
+</li>
+<li><code>subdirectory : String</code>
+<div><div>
+ A subdirectory inside the workspace to be packed instead of the whole workspace. Remember that the <i>appspec.yml</i> must be placed at the top of the .zip archive. The <i>excludes</i> and <i>includes</i> will be applied based on this path.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

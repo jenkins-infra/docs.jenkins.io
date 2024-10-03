@@ -1,0 +1,43 @@
+= VK Notifier
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/vk-notifier">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `vkSend`: VkNotifierCustomSendStep
+++++
+<ul><li><code>message : String</code>
+</li>
+<li><code>peer : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `vkSendEnd`: VkNotifierEndSendStep
+++++
+<ul><li><code>peer : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `vkSendStart`: VkNotifierStartSendStep
+++++
+<ul><li><code>peer : String</code> (optional)
+</li>
+</ul>
+
+
+++++

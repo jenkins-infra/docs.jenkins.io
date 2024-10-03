@@ -1,0 +1,55 @@
+= TAP Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/tap">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'TapPublisher'])`: Publish TAP Results
+++++
+<ul><li><code>testResults : String</code>
+</li>
+<li><code>failIfNoResults : boolean</code>
+</li>
+<li><code>failedTestsMarkBuildAsFailure : boolean</code>
+</li>
+<li><code>outputTapToConsole : boolean</code>
+</li>
+<li><code>enableSubtests : boolean</code>
+</li>
+<li><code>discardOldReports : boolean</code>
+</li>
+<li><code>todoIsFailure : boolean</code>
+</li>
+<li><code>includeCommentDiagnostics : boolean</code>
+</li>
+<li><code>validateNumberOfTests : boolean</code>
+</li>
+<li><code>planRequired : boolean</code>
+</li>
+<li><code>verbose : boolean</code>
+</li>
+<li><code>showOnlyFailures : boolean</code>
+</li>
+<li><code>stripSingleParents : boolean</code>
+</li>
+<li><code>flattenTapResult : boolean</code>
+</li>
+<li><code>removeYamlIfCorrupted : boolean</code>
+</li>
+<li><code>skipIfBuildNotOk : boolean</code>
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,45 @@
+= Compuware Topaz Utilities
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/compuware-topaz-utilities">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `topazSubmitFreeFormJcl`: Topaz submit free-form JCL
+++++
+<ul><li><code>connectionId : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>maxConditionCode : String</code>
+</li>
+<li><code>jcl : String</code>
+</li>
+</ul>
+
+
+++++
+=== `topazSubmitJclMembers`: Topaz submit JCL members
+++++
+<ul><li><code>connectionId : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>maxConditionCode : String</code>
+</li>
+<li><code>jclMember : String</code>
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,65 @@
+= Code Dx Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/codedx">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'CodeDxPublisher'])`: Publish to Code Dx
+++++
+<ul><li><code>url : String</code>
+</li>
+<li><code>keyCredentialId : String</code>
+</li>
+<li><code>projectId : String</code>
+</li>
+<li><code>analysisName : String</code>
+</li>
+<li><code>analysisResultConfiguration</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>failureSeverity : String</code>
+</li>
+<li><code>unstableSeverity : String</code>
+</li>
+<li><code>failureOnlyNew : boolean</code>
+</li>
+<li><code>unstableOnlyNew : boolean</code>
+</li>
+<li><code>numBuildsInGraph : int</code>
+</li>
+<li><code>policyBreakBuildBehavior</code>
+<ul><li><b>Values:</b> <code>MarkFailed</code>, <code>MarkUnstable</code>, <code>NoAction</code></li></ul></li>
+</ul></li>
+<li><code>baseBranchName : String</code> (optional)
+</li>
+<li><code>errorHandlingBehavior</code> (optional)
+<ul><li><b>Values:</b> <code>MarkFailed</code>, <code>MarkUnstable</code>, <code>None</code></li></ul></li>
+<li><code>excludedSourceAndBinaryFiles : String</code> (optional)
+</li>
+<li><code>gitFetchConfiguration</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>specificBranch : String</code>
+</li>
+</ul></li>
+<li><code>selfSignedCertificateFingerprint : String</code> (optional)
+</li>
+<li><code>sourceAndBinaryFiles : String</code> (optional)
+</li>
+<li><code>targetBranchName : String</code> (optional)
+</li>
+<li><code>toolOutputFiles : String</code> (optional)
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,71 @@
+= Panoptica Vulnerability Scanner Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/portshift-scanner">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `secureCNVulnerabilityScanner`: SecureCN Vulnerability Scanner
+++++
+<ul><li><code>secureCnAccessKey : String</code> (optional)
+<div><div>
+ The access key of the service account used to communicate with the SecureCN management server.
+</div></div>
+
+</li>
+<li><code>secureCnSecretKeyId : String</code> (optional)
+<div><div>
+ The secret key of the service account used to communicate with the SecureCN management server. the secret should be store as a jenkins credential of text type.
+</div></div>
+
+</li>
+<li><code>imageName : String</code> (optional)
+<div><div>
+ The name of the image to scan.
+</div></div>
+
+</li>
+<li><code>dockerRegistryPasswordId : String</code> (optional)
+<div><div>
+ Username and password for docker registry login. use this if the target image is stored in a private registry. if not, leave blank. the secret should be store as a jenkins credential of username and password type.
+</div></div>
+
+</li>
+<li><code>highestSeverityAllowed : String</code> (optional)
+<div><div>
+ The highest CVE vulnerability severity allowed in the scan
+</div></div>
+
+</li>
+<li><code>highestSeverityAllowedDf : String</code> (optional)
+<div><div>
+ The highest severity allowed for docker file benchmarking scan
+</div></div>
+
+</li>
+<li><code>pushLocalImage : boolean</code> (optional)
+<div><div>
+ If checked, local docker image will be pushed on scan success.
+</div></div>
+
+</li>
+<li><code>url : String</code> (optional)
+<div><div>
+ The URL of the Securecn management server.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

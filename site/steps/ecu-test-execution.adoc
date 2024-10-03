@@ -1,0 +1,277 @@
+= ecu.test execution plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/ecu-test-execution">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `ttCheckPackage`: [TT] Check an ecu.test package
+++++
+<ul><li><code>testCasePath : String</code>
+</li>
+<li><code>executionConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>executePackageCheck : boolean</code> (optional)
+</li>
+<li><code>stopOnError : boolean</code> (optional)
+</li>
+<li><code>stopUndefinedTools : boolean</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `ttGenerateReports`: [TT] Generate ecu.test reports
+++++
+<ul><li><code>generatorName : String</code>
+</li>
+<li><code>additionalSettings</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>reportIds : Array / List of String</code> (optional)
+<ul></ul></li>
+</ul>
+
+
+++++
+=== `ttRunPackage`: [TT] Run an ecu.test package
+++++
+<ul><li><code>testCasePath : String</code>
+</li>
+<li><code>analysisConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>analysisName : String</code> (optional)
+</li>
+<li><code>mapping : String</code> (optional)
+</li>
+<li><code>recordings</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>path : String</code>
+</li>
+<li><code>deviceName : String</code> (optional)
+</li>
+<li><code>formatDetails : String</code> (optional)
+</li>
+<li><code>mappingNames : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>recordingGroup : String</code> (optional)
+</li>
+</ul></li>
+</ul></li>
+<li><code>executionConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>executePackageCheck : boolean</code> (optional)
+</li>
+<li><code>stopOnError : boolean</code> (optional)
+</li>
+<li><code>stopUndefinedTools : boolean</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul></li>
+<li><code>packageConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>packageParameters</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>label : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+</ul></li>
+<li><code>testConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>constants</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>label : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>forceConfigurationReload : boolean</code> (optional)
+</li>
+<li><code>tbcPath : String</code> (optional)
+</li>
+<li><code>tcfPath : String</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `ttRunProject`: [TT] Run an ecu.test project
+++++
+<ul><li><code>testCasePath : String</code>
+</li>
+<li><code>executionConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>executePackageCheck : boolean</code> (optional)
+</li>
+<li><code>stopOnError : boolean</code> (optional)
+</li>
+<li><code>stopUndefinedTools : boolean</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul></li>
+<li><code>testConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>constants</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>label : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>forceConfigurationReload : boolean</code> (optional)
+</li>
+<li><code>tbcPath : String</code> (optional)
+</li>
+<li><code>tcfPath : String</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `ttRunTestFolder`: [TT] Run an ecu.test test folder
+++++
+<ul><li><code>testCasePath : String</code>
+</li>
+<li><code>analysisConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>analysisName : String</code> (optional)
+</li>
+<li><code>mapping : String</code> (optional)
+</li>
+<li><code>recordings</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>path : String</code>
+</li>
+<li><code>deviceName : String</code> (optional)
+</li>
+<li><code>formatDetails : String</code> (optional)
+</li>
+<li><code>mappingNames : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>recordingGroup : String</code> (optional)
+</li>
+</ul></li>
+</ul></li>
+<li><code>executionConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>executePackageCheck : boolean</code> (optional)
+</li>
+<li><code>stopOnError : boolean</code> (optional)
+</li>
+<li><code>stopUndefinedTools : boolean</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul></li>
+<li><code>failFast : boolean</code> (optional)
+</li>
+<li><code>packageConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>packageParameters</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>label : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+</ul></li>
+<li><code>recursiveScan : boolean</code> (optional)
+</li>
+<li><code>scanMode</code> (optional)
+<ul><li><b>Values:</b> <code>PACKAGES_ONLY</code>, <code>PROJECTS_ONLY</code>, <code>PACKAGES_AND_PROJECTS</code></li></ul></li>
+<li><code>testConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>constants</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>label : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>forceConfigurationReload : boolean</code> (optional)
+</li>
+<li><code>tbcPath : String</code> (optional)
+</li>
+<li><code>tcfPath : String</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `ttStartTool`: [TT] Start an ecu.test or trace.check instance
+++++
+<ul><li><code>toolName : String</code>
+</li>
+<li><code>keepInstance : boolean</code> (optional)
+</li>
+<li><code>settingsDir : String</code> (optional)
+</li>
+<li><code>stopUndefinedTools : boolean</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+<li><code>workspaceDir : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ttStopTool`: [TT] Stop an ecu.test or trace.check instance
+++++
+<ul><li><code>toolName : String</code>
+</li>
+<li><code>stopUndefinedTools : boolean</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ttUploadReports`: [TT] Upload ecu.test reports to test.guide
+++++
+<ul><li><code>testGuideUrl : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>additionalSettings</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>projectId : int</code> (optional)
+</li>
+<li><code>reportIds : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>useSettingsFromServer : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

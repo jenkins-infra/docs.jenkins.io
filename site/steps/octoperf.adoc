@@ -1,0 +1,91 @@
+= OctoPerf Load Testing Plugin.
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/octoperf">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `octoPerfTest`: Runs test in OctoPerf Cloud
+++++
+<ul><li><code>credentialsId : String</code> (optional)
+<div><div>
+ Select the Octoperf credentials to use.
+</div></div>
+
+</li>
+<li><code>scenarioId : String</code> (optional)
+<div><div>
+ OctoPerf's plugin for Jenkins allows users to automate load tests from the Cloud. 
+ <br>
+  Just choose the scenario you want to run. Let Jenkins start and stop the test and document the results. 
+ <br>
+  After the run, a test report will be generated directly into Jenkins and <a href="https://api.octoperf.com" rel="nofollow">your OctoPerf account.</a>
+ <br>
+  If the test list is empty, you must insert your unique OctoPerf Username and password into the <a rel="nofollow">Jenkins settings</a>, or create a test in <a href="https://api.octoperf.com" rel="nofollow">your OctoPerf account.</a>
+</div></div>
+
+</li>
+<li><code>serverUrl : String</code> (optional)
+</li>
+<li><code>stopConditions</code> (optional)
+<ul><li><b>Type:</b> <code>? extends org.jenkinsci.plugins.octoperf.conditions.TestStopCondition</code></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `step([$class: 'OctoperfBuilder'])`: OctoPerf
+++++
+<ul><li><code>credentialsId : String</code> (optional)
+<div><div>
+ Select the Octoperf credentials to use.
+</div></div>
+
+</li>
+<li><code>workspaceId : String</code> (optional)
+<div><div>
+ Select the Octoperf Workspace.
+</div></div>
+
+</li>
+<li><code>projectId : String</code> (optional)
+<div><div>
+ Select the Octoperf Project.
+</div></div>
+
+</li>
+<li><code>scenarioId : String</code> (optional)
+<div><div>
+ OctoPerf's plugin for Jenkins allows users to automate load tests from the Cloud. 
+ <br>
+  Just choose the scenario you want to run. Let Jenkins start and stop the test and document the results. 
+ <br>
+  After the run, a test report will be generated directly into Jenkins and <a href="https://api.octoperf.com" rel="nofollow">your OctoPerf account.</a>
+ <br>
+  If the test list is empty, you must insert your unique OctoPerf Username and password into the <a rel="nofollow">Jenkins settings</a>, or create a test in <a href="https://api.octoperf.com" rel="nofollow">your OctoPerf account.</a>
+</div></div>
+
+</li>
+<li><code>testName : String</code> (optional)
+<div><div>
+ <p>Name of the test. Leave empty to take scenario's name by default.</p>
+</div></div>
+
+</li>
+<li><code>stopConditions</code> (optional)
+<ul><li><b>Type:</b> <code>? extends org.jenkinsci.plugins.octoperf.conditions.TestStopCondition</code></li>
+</ul></li>
+</ul>
+
+
+++++

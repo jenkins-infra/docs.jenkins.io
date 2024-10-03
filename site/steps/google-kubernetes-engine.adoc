@@ -1,0 +1,47 @@
+= Google Kubernetes Engine Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/google-kubernetes-engine">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `kubernetesEngineDeploy`: Deploy to Google Kubernetes Engine
+++++
+<ul><li><code>cluster : String</code> (optional)
+</li>
+<li><code>clusterName : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>location : String</code> (optional)
+</li>
+<li><code>manifestPattern : String</code> (optional)
+</li>
+<li><code>namespace : String</code> (optional)
+</li>
+<li><code>projectId : String</code> (optional)
+</li>
+<li><code>verboseLogging : boolean</code> (optional)
+</li>
+<li><code>verifyDeployments : boolean</code> (optional)
+</li>
+<li><code>verifyServices : boolean</code> (optional)
+</li>
+<li><code>verifyTimeoutInMinutes : int</code> (optional)
+</li>
+<li><code>zone : String</code> (optional)
+</li>
+</ul>
+
+
+++++

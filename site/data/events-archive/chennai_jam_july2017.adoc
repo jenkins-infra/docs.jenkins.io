@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Chennai JAM
+:page-eventStartDate: 2017-07-29T10:00:00
+:page-eventLink: https://www.meetup.com/Chennai-Jenkins-Area-Meetup/events/241807078/
+---
+Zero to Continuous Delivery Using Jenkins 2.0

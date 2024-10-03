@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: Jeff Thompson
+:page-github: jeffret-b
+:page-authoravatar: ../../images/images/avatars/jeffret-b.jpg
+
+
+
+Jeff has been using Jenkins for many years. Since 2018 he has been contributing to Jenkins core and plugins. He maintains the Remoting library and participates on the Jenkins security team.

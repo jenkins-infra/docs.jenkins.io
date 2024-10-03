@@ -1,0 +1,23 @@
+= Subversion Partial Release Manager plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/svn-partial-release-mgr">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'PartialReleaseMgrSuccessfulBuilder'])`: Svn-Partial Release Manager (After build)
+++++
+<ul></ul>
+
+
+++++
