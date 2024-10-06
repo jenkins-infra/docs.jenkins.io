@@ -1,0 +1,7 @@
+---
+:page-eventTitle: Jenkins Online Meetup
+:page-eventStartDate: 2016-08-25T18:00:00
+:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/233378586/
+---
+GSoC 2016 project presentations by Alexandru Somai and Samat Davletshin.
+Projects - External Workspace Manager for Pipeline and Jenkins WebUI Improvements.

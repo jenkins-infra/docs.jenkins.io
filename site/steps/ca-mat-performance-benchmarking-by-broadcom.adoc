@@ -1,0 +1,101 @@
+= MAT Performance Benchmarking by Broadcom
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/ca-mat-performance-benchmarking-by-broadcom">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'Autogen'])`: Autogen
+++++
+<ul><li><code>element : String</code>
+<div><div>
+ <p>Specify the name of the element in your Endevor® sandbox that you want to include in the autogeneration process, for example, <i>RUNCOB01</i>. The maximum length is 8 characters.</p>
+ <p>You can specify several specific comma-separated elements within the sandbox, for example, <i>RUNCOB01, RUNCOB02</i>.</p>
+ <p>You can use wildcards % and * to define the name patterns for the element names.<br>
+   Examples:<br>
+   Specify <i>*</i> to include all elements from the sandbox in the autonegeration process.<br>
+   Specify <i>RUNCOB*</i> to include all element names that start with "RUNCOB".<br>
+   Specify <i>%%%COB*</i> to include elements that contain the substring COB starting after position three.</p>
+</div></div>
+
+</li>
+<li><code>environment : String</code>
+<div><div>
+ <p>Provide the environment for the Endevor® sandbox that you want to include in the autogeneration process, for example, <i>DEV</i>.</p>
+</div></div>
+
+</li>
+<li><code>system : String</code>
+<div><div>
+ <p>Provide the system name for the environment in your Endevor® sandbox that you want to include in the autogeneration process, for example, <i>APCTTC0</i>.</p>
+</div></div>
+
+</li>
+<li><code>subsystem : String</code>
+<div><div>
+ <p>Provide the subsystem name for the environment in your Endevor® sandbox that you want to include in the autogeneration process, for example, <i>TESTCICD</i>.</p>
+</div></div>
+
+</li>
+<li><code>stage : String</code>
+<div><div>
+ <p>Specify the environment stage in your Endevor® that you want to include in the autogeneration process, for example, <i>1</i>.</p>
+</div></div>
+
+</li>
+<li><code>instance : String</code>
+<div><div>
+ <p>Specify the instance name of the environment that is associated with Endevor® Web services, for example, <i>WEBSMFNE</i>.</p>
+</div></div>
+
+</li>
+<li><code>signout : boolean</code>
+<div><div>
+ <p>Select this option to work with elements in Endevor® that might be currently worked on by another user.</p>
+ <p>Select the <b>Override signout</b> option only if you have the permission to override the signout of another user.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'EmailPostBuildAction'])`: Performance Benchmarking Report
+++++
+<div><div>
+ <p>Specify the list of recipients who will obtain email with performance benchmarking results after each pipeline execution. The performance benchmarking reports contain comprehensive data about the current performance of the Test Job, and provide analytical comparison with the previous and average performance metrics of this job. If the plugin detects any significant deviations from the statistically normal performance of the job, the recipients get an alert notification.</p>
+</div></div>
+<ul><li><code>recipients : String</code>
+<div><div>
+ <p>Provide a comma-separated list of email addresses of intended recipients of the performance benchmarking reports, for example, <i>user1@example.com,user2@example.com</i>.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'PerformanceAnalysisBuilder'])`: Performance Benchmarking
+++++
+<ul><li><code>testjob : String</code>
+<div><div>
+ <p>Specify the data set name that contains the mainframe job that you want to run the performance benchmarking for, for example, <i>TEST.POC.JCLLIB(TESTJOB)</i>.</p>
+ <p>The maximum length is 44 characters.</p>
+ <p>Ensure that the job is included in the monitoring scope of the MAT Performance Benchmarking plugin by Broadcom.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

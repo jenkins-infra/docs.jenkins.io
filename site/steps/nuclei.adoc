@@ -1,0 +1,67 @@
+= Nuclei Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/nuclei">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'NucleiBuilder'])`: Nuclei Vulnerability Scanner
+++++
+<ul><li><code>targetUrl : String</code>
+<div><div>
+ For more info visit: 
+ <ul>
+  <li><a href="https://nuclei.projectdiscovery.io/" rel="nofollow">https://nuclei.projectdiscovery.io/</a></li>
+  <li><a href="https://github.com/projectdiscovery/nuclei" rel="nofollow">https://github.com/projectdiscovery/nuclei</a></li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>additionalFlags : String</code> (optional)
+<div><div>
+ For more info please see 
+ <p>nuclei --help</p> or visit: 
+ <ul>
+  <li><a href="https://nuclei.projectdiscovery.io/" rel="nofollow">https://nuclei.projectdiscovery.io/</a></li>
+  <li><a href="https://github.com/projectdiscovery/nuclei" rel="nofollow">https://github.com/projectdiscovery/nuclei</a></li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>nucleiVersion : String</code> (optional)
+<div><div>
+ By default we recommended using the latest version of Nuclei.
+ <br>
+  This option is offered to handle potential compatibility issues.
+ <br>
+  In case of such issues: 
+ <ul>
+  <li>please make sure you are using the latest version of the plugin.</li>
+  <li>if the issue still persists choose an older version of Nuclei to maintain compatibility.</li>
+  <li>notify the development team by creating an issue, so we can make the necessary changes.</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>reportingConfiguration : String</code> (optional)
+<div><div>
+ Offers Reporting and Issue Tracking capabilities (e.g. Jira/GitHub etc)
+ <br>
+  For the full list of supported platforms, usage and documentation please visit <a href="https://nuclei.projectdiscovery.io/nuclei/get-started.html#nuclei-reporting" rel="nofollow">https://nuclei.projectdiscovery.io/nuclei/get-started.html#nuclei-reporting</a>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

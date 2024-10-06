@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Jenkins Pipeline Workshop
+:page-eventStartDate: 2019-06-22T13:30:00
+:page-eventLink: https://www.meetup.com/Beijing-Jenkins-Area-Meetup/events/262059501
+---
+This is a workshop for Jenkins pipeline.

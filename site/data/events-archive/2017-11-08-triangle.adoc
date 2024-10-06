@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Triangle Area JAM
+:page-eventStartDate: 2017-11-08T18:00:00
+:page-eventLink: https://www.meetup.com/Raleigh-Jenkins-Area-Meetup/events/241684345/
+---
+We are currently looking for speakers for this Triangle Jenkins Area Meetup. If you or your company would like to present at, host, or sponsor this Meetup please contact Parker Ennis (rennis@cloudbees.com) or Amanda DeLuise (adeluise@cloudbees.com).

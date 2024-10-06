@@ -1,0 +1,37 @@
+= Performance Publisher plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/perfpublisher">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `perfpublisher`: Activate PerfPublisher for this project
+++++
+<ul><li><code>name : String</code>
+</li>
+<li><code>threshold : String</code>
+</li>
+<li><code>unstableThreshold : String</code>
+</li>
+<li><code>healthy : String</code>
+</li>
+<li><code>unhealthy : String</code>
+</li>
+<li><code>metrics : String</code>
+</li>
+<li><code>parseAllMetrics : boolean</code>
+</li>
+</ul>
+
+
+++++

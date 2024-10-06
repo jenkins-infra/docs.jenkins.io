@@ -1,0 +1,79 @@
+= Otel agent host metrics monitoring
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/opentelemetry-agent-metrics">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `onMonit`: Start node_exporter + otel-contrib before the build, and shut them down after.
+++++
+<div><p>Gather agent host metrics and forward them to an OpenTelemetry agent. It uses <a href="https://github.com/prometheus/node_exporter" rel="nofollow">node_exporter</a> to gather host metrics and <a href="https://github.com/open-telemetry/opentelemetry-collector-releases" rel="nofollow">otel-contrib</a> to forward them to an OpenTelemetry agent. Node_exporter listens on a tcp port and returns the metrics when queried. Otel-contrib queries the metrics and forwards them to an <a href="https://opentelemetry.io/" rel="nofollow">OpenTelemetry agent</a>.</p>
+<p>onMonit depends on the <a href="https://plugins.jenkins.io/opentelemetry/" rel="nofollow">OpenTelemetry plugin</a> being configured and the <code>Export OpenTelemetry configuration as environment variables</code> option being checked. This determines to which OpenTelemetry endpoint the agent metrics are being sent to.</p><strong>Fields:</strong>
+<ul>
+ <li><code>Node_exporter listen on port</code> <i>(optional, default: 9100)</i>: Node exporter will try to listen on this port to expose the host metrics. If another process is already listening, then we try port after port incrementally (so first 9100, 9101, 9102, …) until binding to a port succeeds.</li>
+ <li><code>Log output</code> <i>(optional, default: false)</i>: A boolean flag. When true, any process output from node_exporter and otel-contrib is forwarded to the Job console logs. Useful for troubleshooting node_exporter + otel-contrib.</li>
+ <li><code>Node_exporter additional options</code> <i>(optional)</i>: Any additional options to pass to the node_exporter process execution. This can be used to enable/disable specific collectors. See the <code>node_exporter --help</code> for more information.</li>
+ <li><code>Otel-contrib additional options</code> <i>(optional)</i>: Any additional options to pass to the otel-contrib process execution. This can be used to enable feature-flag gates or override specific values of the configuration. See the <code>otel-contrib --help</code> for more information.</li>
+</ul>
+<p><strong>Examples:</strong><br>
+  The whole pipeline can be monitored using node_exporter + otel-contrib agents by using onMonit as a pipeline option: <code> </code></p>
+<pre><code>pipeline {
+    options {
+        onMonit()
+    }
+}
+        </code></pre><code> </code> If some stages run on other nodes these need to declare the onMonit option as well in order to be monitored: <code>
+ <pre>    stage {
+        agent { label "other-node" }
+        options {
+            onMonit()
+        }
+    }
+        </pre></code> It's also possible to just monitor a specific block of steps: <code>
+ <pre>    stage {
+        steps {
+            onMonit() {
+                echo "Monitored 🙂"
+            }
+        }
+    }
+        </pre></code>
+<p></p></div>
+<ul><li><code>debug : boolean</code> (optional)
+<div><div>
+ A boolean flag (default: false). When true, any process output from node_exporter and otel-contrib is forwarded to the Job console logs. Useful for troubleshooting node_exporter + otel-contrib.
+</div></div>
+
+</li>
+<li><code>neAdditionalOptions : String</code> (optional)
+<div><div>
+ Additional options to be added to the node_exporter process execution. This can be used to enable/disable specific collectors. See the <code>node_exporter --help</code> for more information.
+</div></div>
+
+</li>
+<li><code>ocAdditionalOptions : String</code> (optional)
+<div><div>
+ Additional options to be added to the otel-contrib process execution. This can be used to enable feature-flag gates or override specific values of the configuration. See the <code>otel-contrib --help</code> for more information.
+</div></div>
+
+</li>
+<li><code>port : int</code> (optional)
+<div><div>
+ Ordinal of the port node_exporter will be listening on, if left empty (default) port 9100 is used. If another process is already listening, then we try port after port incrementally (so first 9100, 9101, 9102, …) until binding to a port succeeds.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

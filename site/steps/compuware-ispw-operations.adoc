@@ -1,0 +1,88 @@
+= BMC AMI DevX Code Pipeline Operations Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/compuware-ispw-operations">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `gitToIspwIntegration`: Git to ISPW Integration
+++++
+<div><div>
+ <p>Push Git changes to Code Pipeline(formerly ISPW).</p>
+</div></div>
+<ul><li><code>app : String</code> (optional)
+</li>
+<li><code>branchMapping : String</code> (optional)
+</li>
+<li><code>connectionId : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>gitCredentialsId : String</code> (optional)
+</li>
+<li><code>gitRepoUrl : String</code> (optional)
+</li>
+<li><code>ispwConfigPath : String</code> (optional)
+</li>
+<li><code>runtimeConfig : String</code> (optional)
+</li>
+<li><code>stream : String</code> (optional)
+</li>
+<li><code>subAppl : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ispwOperation`: Perform a Compuware ISPW Rest API Request and return a JSON object
+++++
+<div><div>
+ <p>Performs a Code Pipeline REST API request, and returns a JSON object.</p>
+</div></div>
+<ul><li><code>connectionId : String</code> (optional)
+</li>
+<li><code>consoleLogResponseBody : boolean</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>ispwAction : String</code> (optional)
+</li>
+<li><code>ispwRequestBody : String</code> (optional)
+</li>
+<li><code>skipWaitingForSet : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ispwRegisterWebhook`: Creates and returns a ISPW webhook that can be used by an external system to notify a pipeline
+++++
+<div><div>
+ Returns a unique webhook that can be used with <code>waitForWebhook</code> to block pipeline execution until external notification. The returned webhook has <code>String getToken()</code> and <code>String getURL()</code> methods.
+</div></div>
+<ul></ul>
+
+
+++++
+=== `ispwWaitForWebhook`: Wait for ISPW webhook to be posted to by external system
+++++
+<div><div>
+ Blocks on a webhook created with <code>registerWebhook</code> until the registered webhook is posted to. In general, should not be used inside of a <code>node</code> block.
+</div></div>
+<ul><li><code>webhookToken</code>
+<ul><li><b>Type:</b> <code>class com.compuware.ispw.restapi.WebhookToken</code></li>
+</ul></li>
+</ul>
+
+
+++++

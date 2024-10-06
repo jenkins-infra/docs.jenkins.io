@@ -1,0 +1,25 @@
+= Gating Core
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/gating-core">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `requireResources`: GatingStep
+++++
+<ul><li><code>resources : Array / List of String</code>
+<ul></ul></li>
+</ul>
+
+
+++++

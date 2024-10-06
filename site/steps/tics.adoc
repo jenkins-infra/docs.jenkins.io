@@ -1,0 +1,294 @@
+= TICS Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/tics">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'TicsAnalyzer'])`: Run TICS
+++++
+<ul><li><code>ticsPath : String</code>
+<div>The fully qualified directory where TICS is located, e.g. <code>C:\Program Files\TIOBE\TICS\BuildServer</code>. This directory should contain the <code>TICSQServer</code> executable. You can leave this field empty if these executables can be found on the PATH environment variable of the Jenkins agent user or if you checked the "Install TICS command-line tools" checkbox.</div>
+
+</li>
+<li><code>ticsConfiguration : String</code>
+<div><p>Τhe TICS Configuration is a URL pointing to the 'cfg' API endpoint of the TICS Viewer. It is of the following format <code>https://192.168.1.1/tiobeweb/TICS/api/cfg?name=-</code>. This URL contains the name of the TICS Analyzer Configuration or '-' in case of the default configuration. Please ask your TICS Representative to provide you with a valid configuration name.</p>
+<p>For TICS installations using the legacy deployment architecture, TICS Configuration points to the configuration directory, e.g. <code>C:\Program Files (x86)\TIOBE\TICS\FileServer\cfg</code>. The TICS configuration directory contains the <code>SERVER.yaml</code> and <code>PROJECTS.yaml</code> configuration files, among others. This setting sets the <code>TICS</code> environment variable before executing <code>TICSQServer</code>. You can leave this field empty if this variable is already set on the Jenkins slave.</p></div>
+
+</li>
+<li><code>projectName : String</code>
+<div>The name of the project for which this run should be performed. This project should already exist in the TICS Configuration as you cannot create a new project using this plugin. You can create a new project by using the Build Configuration page of the Viewer or by using <code>TICSMaintenance</code> from the command line. Note that you can use Jenkins environment variables such as <code>$JOB_NAME</code> here.</div>
+
+</li>
+<li><code>branchName : String</code>
+<div>The name of the branch for which the run should be performed. Although most projects only have one branch (named "trunk", "main", or "master"), you still need to specify the branch name here because more branches might be added later. To find out the branches of a project you can use the Build Configuration page of the TICS Viewer.</div>
+
+</li>
+<li><code>branchDirectory : String</code>
+<div>The branch directory is the root directory of the source files for the branch. If this setting is provided, the branch directory will be updated prior to each TICSQServer run by invoking <code>TICSMaintenance -branchdir</code>. Note that you can use Jenkins variables (such as <code>$WORKSPACE</code>) here.</div>
+
+</li>
+<li><code>environmentVariables : String</code>
+<div><div>
+ A new-line separated list of environment variables that will be set before invoking TICSQServer. Some TICS modules and code checkers might need configuration using environment variables. Note that you can use environment variables such as <code>$WORKSPACE</code> here. Example: 
+ <p></p>
+ <pre>
+TICS_M2_OPTS=-s C:\Tools\apache-maven\conf\settings.xml
+TICS_COVERITY_URL=http://localhost:8080
+QACBIN=C:/QAC/common/bin
+PATH=C:\Tools\bin;$PATH
+</pre>
+ <p></p>
+</div></div>
+
+</li>
+<li><code>createTmpdir : boolean</code>
+</li>
+<li><code>tmpdir : String</code>
+<div>TICSQServer will create a directory named "ticstmpdir" in this directory. This tmpdir will contain log files useful for debugging problems encountered during the TICSQServer analysis. You can use Jenkins variables here. Example: <code>C:/temp/$JOB_NAME</code>.</div>
+
+</li>
+<li><code>extraArguments : String</code>
+<div>Extra arguments to pass to the TICSQServer invocation.</div>
+
+</li>
+<li><code>calc</code>
+<div>Check one or more metrics to have TICSQServer only calculate these metrics (for changed files). If nothing is checked, all metrics will be calculated.</div>
+
+<ul><b>Nested Object</b>
+<li><code>ABSTRACTINTERPRETATION : boolean</code>
+</li>
+<li><code>ACCUCHANGERATE : boolean</code>
+</li>
+<li><code>ACCUFIXRATE : boolean</code>
+</li>
+<li><code>ACCULINESADDED : boolean</code>
+</li>
+<li><code>ACCULINESCHANGED : boolean</code>
+</li>
+<li><code>ACCULINESDELETED : boolean</code>
+</li>
+<li><code>ALL : boolean</code>
+</li>
+<li><code>AVGCYCLOMATICCOMPLEXITY : boolean</code>
+</li>
+<li><code>BUILDRELATIONS : boolean</code>
+</li>
+<li><code>CHANGEDFILES : boolean</code>
+</li>
+<li><code>CHANGERATE : boolean</code>
+</li>
+<li><code>CODINGSTANDARD : boolean</code>
+</li>
+<li><code>COMPILERWARNING : boolean</code>
+</li>
+<li><code>DEADCODE : boolean</code>
+</li>
+<li><code>DUPLICATEDCODE : boolean</code>
+</li>
+<li><code>ELOC : boolean</code>
+</li>
+<li><code>FANOUT : boolean</code>
+</li>
+<li><code>FINALIZE : boolean</code>
+</li>
+<li><code>FIXRATE : boolean</code>
+</li>
+<li><code>GLOC : boolean</code>
+</li>
+<li><code>INCLUDERELATIONS : boolean</code>
+</li>
+<li><code>INTEGRATIONTESTCOVERAGE : boolean</code>
+</li>
+<li><code>LINESADDED : boolean</code>
+</li>
+<li><code>LINESCHANGED : boolean</code>
+</li>
+<li><code>LINESDELETED : boolean</code>
+</li>
+<li><code>LOC : boolean</code>
+</li>
+<li><code>MAXCYCLOMATICCOMPLEXITY : boolean</code>
+</li>
+<li><code>PREPARE : boolean</code>
+</li>
+<li><code>SECURITY : boolean</code>
+</li>
+<li><code>SYSTEMTESTCOVERAGE : boolean</code>
+</li>
+<li><code>TOTALTESTCOVERAGE : boolean</code>
+</li>
+<li><code>UNITTESTCOVERAGE : boolean</code>
+</li>
+</ul></li>
+<li><code>recalc</code>
+<div>Check one or more metrics to have TICSQServer recalculate these metrics, even for unchanged files. If nothing is checked, TICSQServer does not force recalculation of metrics for unchanged files.</div>
+
+<ul><b>Nested Object</b>
+<li><code>ABSTRACTINTERPRETATION : boolean</code>
+</li>
+<li><code>ACCUCHANGERATE : boolean</code>
+</li>
+<li><code>ACCUFIXRATE : boolean</code>
+</li>
+<li><code>ACCULINESADDED : boolean</code>
+</li>
+<li><code>ACCULINESCHANGED : boolean</code>
+</li>
+<li><code>ACCULINESDELETED : boolean</code>
+</li>
+<li><code>ALL : boolean</code>
+</li>
+<li><code>AVGCYCLOMATICCOMPLEXITY : boolean</code>
+</li>
+<li><code>BUILDRELATIONS : boolean</code>
+</li>
+<li><code>CHANGEDFILES : boolean</code>
+</li>
+<li><code>CHANGERATE : boolean</code>
+</li>
+<li><code>CODINGSTANDARD : boolean</code>
+</li>
+<li><code>COMPILERWARNING : boolean</code>
+</li>
+<li><code>DEADCODE : boolean</code>
+</li>
+<li><code>DUPLICATEDCODE : boolean</code>
+</li>
+<li><code>ELOC : boolean</code>
+</li>
+<li><code>FANOUT : boolean</code>
+</li>
+<li><code>FINALIZE : boolean</code>
+</li>
+<li><code>FIXRATE : boolean</code>
+</li>
+<li><code>GLOC : boolean</code>
+</li>
+<li><code>INCLUDERELATIONS : boolean</code>
+</li>
+<li><code>INTEGRATIONTESTCOVERAGE : boolean</code>
+</li>
+<li><code>LINESADDED : boolean</code>
+</li>
+<li><code>LINESCHANGED : boolean</code>
+</li>
+<li><code>LINESDELETED : boolean</code>
+</li>
+<li><code>LOC : boolean</code>
+</li>
+<li><code>MAXCYCLOMATICCOMPLEXITY : boolean</code>
+</li>
+<li><code>PREPARE : boolean</code>
+</li>
+<li><code>SECURITY : boolean</code>
+</li>
+<li><code>SYSTEMTESTCOVERAGE : boolean</code>
+</li>
+<li><code>TOTALTESTCOVERAGE : boolean</code>
+</li>
+<li><code>UNITTESTCOVERAGE : boolean</code>
+</li>
+</ul></li>
+<li><code>installTics : boolean</code>
+<div>By enabling this checkbox the TICS command-line tools will be installed. For TICS installations using the legacy deployment architecture, this checkbox should not be used and TICS should be installed manually on the machine that runs this job.</div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+</ul>
+
+
+++++
+=== `publishTicsResults`: 
+++++
+<ul><li><code>viewerUrl : String</code>
+</li>
+<li><code>branchName : String</code> (optional)
+</li>
+<li><code>checkQualityGate : boolean</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>failIfQualityGateFails : boolean</code> (optional)
+</li>
+<li><code>projectName : String</code> (optional)
+</li>
+<li><code>ticsProjectPath : String</code> (optional)
+</li>
+<li><code>userId : String</code> (optional)
+</li>
+<li><code>userName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `runTics`: 
+++++
+<ul><li><code>projectName : String</code>
+</li>
+<li><code>branchName : String</code>
+</li>
+<li><code>branchDirectory : String</code> (optional)
+</li>
+<li><code>calc : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>environmentVariables</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.LinkedHashMap&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>extraArguments : String</code> (optional)
+</li>
+<li><code>installTics : boolean</code> (optional)
+</li>
+<li><code>recalc : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>ticsBin : String</code> (optional)
+</li>
+<li><code>ticsConfiguration : String</code> (optional)
+</li>
+<li><code>tmpdir : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'TicsPublisher'])`: Publish TICS results
+++++
+<ul><li><code>viewerUrl : String</code>
+<div><div>
+ URL where the TICS Viewer can be found, including the section name. Example: <code>http://192.168.1.1:8080/tiobeweb/TICS</code>. To determine this URL, open your TICS Viewer, and copy and paste the first part of the URL from your browser's address bar here. The URL should include the name of the <i>section</i>, which in this case is <code>TICS</code>. 
+ <br>
+ <br>
+  If you have configured this URL in the global settings, you can leave it empty here.
+</div></div>
+
+</li>
+<li><code>ticsPath : String</code>
+<div>Fully qualified path to a branch. The path should be of the form <code>HIE://PROJECT/BRANCH</code>, where <code>PROJECT</code> should be substituted by the actual name of the project and <code>BRANCH</code> by the branch name for which you want to get the results. The name of the project and the name of the default branch can be found in the top part of the TIOBE Quality Indicator Label on the TQI Dashboard, when you select the project. Note that you can use the variable $JOB_NAME here.</div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>checkQualityGate : boolean</code>
+<div>Enabling Quality Gate will perform the configured quality gate checks. If no quality gate is configured, no check will be performed. The configuration can be done in the Viewer through the Administration pages.</div>
+
+</li>
+<li><code>failIfQualityGateFails : boolean</code>
+</li>
+</ul>
+
+
+++++

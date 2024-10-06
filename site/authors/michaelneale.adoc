@@ -1,0 +1,10 @@
+= About the Author
+:page-layout: author
+:page-author_name: Michael Neale
+:page-twitter: michaelneale
+:page-github: michaelneale
+:page-authoravatar: ../../images/images/avatars/michaelneale.jpg
+
+Michael is a CD enthusiast with a interest in User Experience.  He is a co-founder of CloudBees and a long time OSS developer, and can often be found lurking around the jenkins-dev mailing list or #jenkins on irc (same nick as twitter name). Before CloudBees he worked at Red Hat.
+
+

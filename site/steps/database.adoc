@@ -1,0 +1,48 @@
+= Database
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/database">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `getDatabaseConnection`: Get Database Connection
+++++
+<ul><li><code>id : String</code> (optional)
+<div>Unique identifier for this database connection, used to select this connection with the <code>sql</code> step</div>
+
+</li>
+<li><code>type</code> (optional)
+<ul><li><b>Values:</b> <code>GLOBAL</code>, <code>PERITEM</code></li></ul></li>
+</ul>
+
+
+++++
+=== `sql`: Run SQL
+++++
+<ul><li><code>sql : String</code>
+<div>SQL Statement to execute on given database connection. If the statment requires parameters pass an array like so: 
+<div>
+ <code>sql sql: "SELECT * FROM jobs WHERE id = ?", parameters: [1]</code>
+</div></div>
+
+</li>
+<li><code>connection : String</code> (optional)
+<div>ID of the connection as passed to the <code>getDatabaseConnection</code> step</div>
+
+</li>
+<li><code>parameters : Array / List of <code>Object</code></code> (optional)
+</li>
+</ul>
+
+
+++++

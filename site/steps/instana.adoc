@@ -1,0 +1,47 @@
+= Instana integration
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/instana">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `releaseMarker`: Perform an HTTP Request and return a response object
+++++
+<ul><li><code>releaseName : String</code>
+</li>
+<li><code>applications</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+</ul></li>
+<li><code>releaseEndTimestamp : String</code> (optional)
+</li>
+<li><code>releaseStartTimestamp : String</code> (optional)
+</li>
+<li><code>services</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>scopedTo</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>applications</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+++++

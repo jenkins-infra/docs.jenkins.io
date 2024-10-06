@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: Ignacio 'Nacho' Fernández
+:page-github: Napo2k
+:page-twitter: napo2k
+:page-linkedin: ignaciofernandezpuerta
+:page-authoravatar: ../../images/images/avatars/Napo2k.jpg
+
+Nacho is a Build Engineer with several years of experience in the videogame industry, and has worked in both AAA projects as well as free-to-play and mobile. Currently, Nacho works at King Stockholm, taking care of Jenkins operations for Candy Crush Saga and Candy Crush Soda Saga.

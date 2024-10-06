@@ -1,0 +1,37 @@
+= Log Parser Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/log-parser">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `logParser`: Console output (build log) parsing
+++++
+<ul><li><code>useProjectRule : boolean</code>
+</li>
+<li><code>projectRulePath : String</code>
+<div>The path to the rule file relative to the project workspace root.</div>
+
+</li>
+<li><code>parsingRulesPath : String</code>
+</li>
+<li><code>failBuildOnError : boolean</code> (optional)
+</li>
+<li><code>showGraphs : boolean</code> (optional)
+</li>
+<li><code>unstableOnWarning : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

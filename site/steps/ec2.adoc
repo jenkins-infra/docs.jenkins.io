@@ -1,0 +1,30 @@
+= Amazon EC2 plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/ec2">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `ec2`: Cloud template provisioning
+++++
+<div><div>
+ Creates an <code>AWS Instance</code> object, from an already globally defined cloud name and label without registering it as a Jenkins agent.
+</div></div>
+<ul><li><code>cloud : String</code>
+</li>
+<li><code>template : String</code>
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Swiss JAM, Lausanne
+:page-eventStartDate: 2019-06-12T17:30:00
+:page-eventLink: https://www.meetup.com/Swiss-Jenkins-Area-Meetup/events/261825389/
+---
+Jenkins X in Lausanne with Viktor Farcic: The recipe for continuous delivery

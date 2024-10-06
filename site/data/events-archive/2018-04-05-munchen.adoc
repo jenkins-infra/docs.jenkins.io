@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Munchen JAM
+:page-eventStartDate: 2018-04-05T18:00:00
+:page-eventLink: https://www.meetup.com/munchen-jenkins-area-meetup/events/247865240/
+---
+Munchen Jenkins Area Meetup (April 2018)

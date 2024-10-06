@@ -1,0 +1,1676 @@
+= .NET SDK Support
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/dotnet-sdk">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `dotnetBuild`: .NET: Build project (build)
+++++
+<div><div>
+ The <code>dotnet build</code> command builds the project and its dependencies into a set of binaries. The binaries include the project's code in Intermediate Language (IL) files with a <em>.dll</em> extension. Depending on the project type and settings, other files may be included, such as:
+</div>
+<ol>
+ <li>An executable that can be used to run the application, if the project type is an executable targeting .NET Core 3.0 or later.</li>
+ <li>Symbol files used for debugging, with a <em>.pdb</em> extension.</li>
+ <li>A <em>.deps.json</em> file, which lists the dependencies of the application or library.</li>
+ <li>A <em>.runtimeconfig.json</em> file, which specifies the shared runtime and its version for an application.</li>
+ <li>Other libraries that the project depends on (via project references or NuGet package references).</li>
+</ol>
+<div>
+ (see also: <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build" rel="nofollow">Microsoft Documentation</a>)
+</div></div>
+<ul><li><code>charset : String</code> (optional)
+<div><div>
+ The character set to use for the step's output. If not specified, the charset associated with the build will be used.
+</div></div>
+
+</li>
+<li><code>configuration : String</code> (optional)
+<div><div> Defines the build configuration. The default for most projects is <code>Debug</code>, but you can override the build configuration settings in your project.
+</div></div>
+
+</li>
+<li><code>continueOnError : boolean</code> (optional)
+<div><div>
+ If this is checked, errors encountered will cause the build status to be set to <code>FAILURE</code> (or <code>UNSTABLE</code>, if configured that way), but the build will be allowed to continue. Otherwise, any such errors will cause the build to be terminated immediately.
+</div></div>
+
+</li>
+<li><code>force : boolean</code> (optional)
+<div><div> Forces all dependencies to be resolved even if the last restore was successful. Specifying this flag is the same as deleting the <em>project.assets.json</em> file.
+</div></div>
+
+</li>
+<li><code>framework : String</code> (optional)
+<div><div> Compiles for a specific <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks" rel="nofollow">framework</a>. The framework must be defined in the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/csproj" rel="nofollow">project file</a>.
+</div></div>
+
+</li>
+<li><code>noDependencies : boolean</code> (optional)
+<div><div> Ignores project-to-project references and only restores the root project.
+</div></div>
+
+</li>
+<li><code>noIncremental : boolean</code> (optional)
+<div><div> Marks the build as unsafe for incremental build. This flag turns off incremental compilation and forces a clean rebuild of the project's dependency graph.
+</div></div>
+
+</li>
+<li><code>noRestore : boolean</code> (optional)
+<div><div> Doesn't execute an implicit restore when running the command.
+</div></div>
+
+</li>
+<li><code>nologo : boolean</code> (optional)
+<div><div> Doesn't display the startup banner or the copyright message.
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 3.0</em>
+</div></div>
+
+</li>
+<li><code>option : String</code> (optional)
+</li>
+<li><code>options : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>optionsString : String</code> (optional)
+<div><div> For more information about these options, see the <a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-command-line-reference" rel="nofollow">MSBuild Command-Line Reference</a>.
+</div>
+<div>
+ If targets and/or properties are also configured, those will be passed <em>after</em> these options.
+</div></div>
+
+</li>
+<li><code>outputDirectory : String</code> (optional)
+<div><div> Directory in which to place the built binaries. If not specified, the default path is <code>./bin/&lt;configuration&gt;/&lt;framework&gt;/</code>. For projects with multiple target frameworks (via the <code>TargetFrameworks</code> property), you also need to specify a specific framework when you specify this option.
+</div></div>
+
+</li>
+<li><code>project : String</code> (optional)
+<div><div> The MSBuild project or solution to build. If a directory is specified, MSBuild searches it for a (single) file that has a file extension that ends in <em>proj</em> or <em>sln</em>, and uses that file. If nothing is specified, the current working directory is searched in the same way.
+</div></div>
+
+</li>
+<li><code>properties</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>propertiesString : String</code> (optional)
+<div><div>
+ Additional MSBuild properties to set. These should be specified one per line, in Java <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html#load(java.io.Reader)" rel="nofollow">properties syntax</a>.
+</div></div>
+
+</li>
+<li><code>runtime : String</code> (optional)
+<div><div> Specifies the target runtime. For a list of Runtime Identifiers (RIDs), see the <a href="https://docs.microsoft.com/en-us/dotnet/core/rid-catalog" rel="nofollow">RID catalog</a>.
+</div></div>
+
+</li>
+<li><code>sdk : String</code> (optional)
+<div><div>
+ Name of a .NET SDK to use so that <code>dotnet</code> will be in the path.
+ <br>
+  If the default is specified, you either need to use the <q>With .NET</q> element (or a <code>withDotNet</code> block in a pipeline script) to specify one, or ensure this step runs on a node that has a .NET SDK installed and in the path.
+</div></div>
+
+</li>
+<li><code>showSdkInfo : boolean</code> (optional)
+<div><div>
+ If enabled, <code>dotnet --info</code> will be executed before the main command. This shows a list of available SDKs and runtimes, indicating which one is currently being used.
+</div></div>
+
+</li>
+<li><code>shutDownBuildServers : boolean</code> (optional)
+<div><div> If enabled, <code>dotnet build-server shutdown</code> will be executed after the main command, shutting down build servers that may have been started.
+</div>
+<div>
+ Note: If this is not specified, a build that causes such a build server to be started may <q>hang</q> until those server processes end. As such, it's recommended to specify this for the last .NET-related step in a job. If using multiple SDKs, each needs its own shutdown (e.g. the .NET Core 3.1 SDK will not shut down build servers from the .NET 5.0 SDK).
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 2.1</em>
+</div></div>
+
+</li>
+<li><code>specificSdkVersion : boolean</code> (optional)
+<div><div>
+ Depending on the platform, the <code>dotnet</code> executable may use the most recent SDK available on the system, even when <code>PATH</code> is set up to find an older SDK deployment first; see <a href="https://docs.microsoft.com/en-us/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" rel="nofollow">this page</a> for more information.
+ <br>
+  By enabling this option, the configured SDK home directory will be checked, and if it only includes a single SDK deployment, a <code>global.json</code> file will be created in the current directory, referencing that SDK version and disabling roll-forward.
+</div>
+<div>
+ <em> <strong>Note:</strong> This will silently overwrite any <code>global.json</code> already present in the current directory. </em>
+</div></div>
+
+</li>
+<li><code>target : String</code> (optional)
+</li>
+<li><code>targets : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>targetsString : String</code> (optional)
+<div><div>
+ Specifies the MSBuild targets to build. If none are specified, the default target specified in the project will be built.
+</div></div>
+
+</li>
+<li><code>unstableIfErrors : boolean</code> (optional)
+<div><div>
+ If this is set and the build completes with errors, the build will be marked as unstable instead of failed, and execution will continue to the next step.
+</div></div>
+
+</li>
+<li><code>unstableIfWarnings : boolean</code> (optional)
+<div><div>
+ If this is set and the build completes with warnings (but no errors), the build will be marked as unstable instead of successful.
+</div></div>
+
+</li>
+<li><code>verbosity : String</code> (optional)
+<div><div> Sets the MSBuild verbosity level.
+</div></div>
+
+</li>
+<li><code>versionSuffix : String</code> (optional)
+<div><div> Sets the value of the <code>$(VersionSuffix)</code> property to use when building the project. This only works if the <code>$(Version)</code> property isn't set. Then, <code>$(Version)</code> is set to the <code>$(VersionPrefix)</code> combined with the <code>$(VersionSuffix)</code>, separated by a dash.
+</div></div>
+
+</li>
+<li><code>workDirectory : String</code> (optional)
+<div><div>
+ The directory in which to execute the command. By default, this is the current directory (for freestyle jobs, that is the root of the job's workspace).
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `dotnetClean`: .NET: Clean project output (clean)
+++++
+<div><div> The <code>dotnet clean</code> command cleans the output of the previous build. It's implemented as an <a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-targets" rel="nofollow">MSBuild target</a>, so the project is evaluated when the command is run. Only the outputs created during the build are cleaned. Both intermediate (<em>obj</em>) and final output (<em>bin</em>) folders are cleaned.
+</div>
+<div>
+ (see also: <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-clean" rel="nofollow">Microsoft Documentation</a>)
+</div></div>
+<ul><li><code>charset : String</code> (optional)
+<div><div>
+ The character set to use for the step's output. If not specified, the charset associated with the build will be used.
+</div></div>
+
+</li>
+<li><code>configuration : String</code> (optional)
+<div><div> Defines the build configuration. The default for most projects is <code>Debug</code>, but you can override the build configuration settings in your project. This option is only required when cleaning if you specified it during build time.
+</div></div>
+
+</li>
+<li><code>continueOnError : boolean</code> (optional)
+<div><div>
+ If this is checked, errors encountered will cause the build status to be set to <code>FAILURE</code> (or <code>UNSTABLE</code>, if configured that way), but the build will be allowed to continue. Otherwise, any such errors will cause the build to be terminated immediately.
+</div></div>
+
+</li>
+<li><code>framework : String</code> (optional)
+<div><div> The <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks" rel="nofollow">framework</a> that was specified at build time. The framework must be defined in the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/csproj" rel="nofollow">project file</a>. If you specified the framework at build time, you must specify the framework when cleaning.
+</div></div>
+
+</li>
+<li><code>nologo : boolean</code> (optional)
+<div><div> Doesn't display the startup banner or the copyright message.
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 3.0</em>
+</div></div>
+
+</li>
+<li><code>option : String</code> (optional)
+</li>
+<li><code>options : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>optionsString : String</code> (optional)
+<div><div> For more information about these options, see the <a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-command-line-reference" rel="nofollow">MSBuild Command-Line Reference</a>.
+</div>
+<div>
+ If targets and/or properties are also configured, those will be passed <em>after</em> these options.
+</div></div>
+
+</li>
+<li><code>outputDirectory : String</code> (optional)
+<div><div> The directory that contains the build artifacts to clean. If you specified the framework when the project was built, that same framework should also be specified for this cleanup action.
+</div></div>
+
+</li>
+<li><code>project : String</code> (optional)
+<div><div> The MSBuild project or solution to clean. If a directory is specified, MSBuild searches it for a (single) file that has a file extension that ends in <em>proj</em> or <em>sln</em>, and uses that file. If nothing is specified, the current working directory is searched in the same way.
+</div></div>
+
+</li>
+<li><code>properties</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>propertiesString : String</code> (optional)
+<div><div>
+ Additional MSBuild properties to set. These should be specified one per line, in Java <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html#load(java.io.Reader)" rel="nofollow">properties syntax</a>.
+</div></div>
+
+</li>
+<li><code>runtime : String</code> (optional)
+<div><div> Cleans the output folder of the specified runtime. This is used when a <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/#publish-self-contained" rel="nofollow">self-contained deployment</a> was created.
+</div></div>
+
+</li>
+<li><code>sdk : String</code> (optional)
+<div><div>
+ Name of a .NET SDK to use so that <code>dotnet</code> will be in the path.
+ <br>
+  If the default is specified, you either need to use the <q>With .NET</q> element (or a <code>withDotNet</code> block in a pipeline script) to specify one, or ensure this step runs on a node that has a .NET SDK installed and in the path.
+</div></div>
+
+</li>
+<li><code>showSdkInfo : boolean</code> (optional)
+<div><div>
+ If enabled, <code>dotnet --info</code> will be executed before the main command. This shows a list of available SDKs and runtimes, indicating which one is currently being used.
+</div></div>
+
+</li>
+<li><code>shutDownBuildServers : boolean</code> (optional)
+<div><div> If enabled, <code>dotnet build-server shutdown</code> will be executed after the main command, shutting down build servers that may have been started.
+</div>
+<div>
+ Note: If this is not specified, a build that causes such a build server to be started may <q>hang</q> until those server processes end. As such, it's recommended to specify this for the last .NET-related step in a job. If using multiple SDKs, each needs its own shutdown (e.g. the .NET Core 3.1 SDK will not shut down build servers from the .NET 5.0 SDK).
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 2.1</em>
+</div></div>
+
+</li>
+<li><code>specificSdkVersion : boolean</code> (optional)
+<div><div>
+ Depending on the platform, the <code>dotnet</code> executable may use the most recent SDK available on the system, even when <code>PATH</code> is set up to find an older SDK deployment first; see <a href="https://docs.microsoft.com/en-us/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" rel="nofollow">this page</a> for more information.
+ <br>
+  By enabling this option, the configured SDK home directory will be checked, and if it only includes a single SDK deployment, a <code>global.json</code> file will be created in the current directory, referencing that SDK version and disabling roll-forward.
+</div>
+<div>
+ <em> <strong>Note:</strong> This will silently overwrite any <code>global.json</code> already present in the current directory. </em>
+</div></div>
+
+</li>
+<li><code>unstableIfErrors : boolean</code> (optional)
+<div><div>
+ If this is set and the build completes with errors, the build will be marked as unstable instead of failed, and execution will continue to the next step.
+</div></div>
+
+</li>
+<li><code>unstableIfWarnings : boolean</code> (optional)
+<div><div>
+ If this is set and the build completes with warnings (but no errors), the build will be marked as unstable instead of successful.
+</div></div>
+
+</li>
+<li><code>verbosity : String</code> (optional)
+<div><div> Sets the MSBuild verbosity level.
+</div></div>
+
+</li>
+<li><code>workDirectory : String</code> (optional)
+<div><div>
+ The directory in which to execute the command. By default, this is the current directory (for freestyle jobs, that is the root of the job's workspace).
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `dotnetNuGetDelete`: .NET: Delete/Unlist NuGet package (nuget delete)
+++++
+<div><div> The <code>dotnet nuget delete</code> command deletes or unlists a package from the server. For <a href="https://www.nuget.org/" rel="nofollow">nuget.org</a>, the action is to unlist the package.
+</div>
+<div>
+ (see also: <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-delete" rel="nofollow">Microsoft Documentation</a>)
+</div></div>
+<ul><li><code>apiKeyId : String</code> (optional)
+<div><div> The API key for the server.
+</div></div>
+
+</li>
+<li><code>charset : String</code> (optional)
+<div><div>
+ The character set to use for the step's output. If not specified, the charset associated with the build will be used.
+</div></div>
+
+</li>
+<li><code>continueOnError : boolean</code> (optional)
+<div><div>
+ If this is checked, errors encountered will cause the build status to be set to <code>FAILURE</code> (or <code>UNSTABLE</code>, if configured that way), but the build will be allowed to continue. Otherwise, any such errors will cause the build to be terminated immediately.
+</div></div>
+
+</li>
+<li><code>forceEnglishOutput : boolean</code> (optional)
+<div><div> Forces the application to run using an invariant, English-based culture.
+</div></div>
+
+</li>
+<li><code>noServiceEndpoint : boolean</code> (optional)
+<div><div> Doesn't append "<code>api/v2/package</code>" to the source URL.
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 2.1</em>
+</div></div>
+
+</li>
+<li><code>packageName : String</code> (optional)
+<div><div> Name/ID of the package to delete.
+</div></div>
+
+</li>
+<li><code>packageVersion : String</code> (optional)
+<div><div> Version of the package to delete.
+</div></div>
+
+</li>
+<li><code>sdk : String</code> (optional)
+<div><div>
+ Name of a .NET SDK to use so that <code>dotnet</code> will be in the path.
+ <br>
+  If the default is specified, you either need to use the <q>With .NET</q> element (or a <code>withDotNet</code> block in a pipeline script) to specify one, or ensure this step runs on a node that has a .NET SDK installed and in the path.
+</div></div>
+
+</li>
+<li><code>showSdkInfo : boolean</code> (optional)
+<div><div>
+ If enabled, <code>dotnet --info</code> will be executed before the main command. This shows a list of available SDKs and runtimes, indicating which one is currently being used.
+</div></div>
+
+</li>
+<li><code>source : String</code> (optional)
+<div><div> Specifies the server URL. Supported URLs for nuget.org include <code>https://www.nuget.org</code>, <code>https://www.nuget.org/api/v3</code>, and <code>https://www.nuget.org/api/v2/package</code>. For private feeds, replace the host name (for example, <code>%hostname%/api/v3</code>).
+</div></div>
+
+</li>
+<li><code>specificSdkVersion : boolean</code> (optional)
+<div><div>
+ Depending on the platform, the <code>dotnet</code> executable may use the most recent SDK available on the system, even when <code>PATH</code> is set up to find an older SDK deployment first; see <a href="https://docs.microsoft.com/en-us/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" rel="nofollow">this page</a> for more information.
+ <br>
+  By enabling this option, the configured SDK home directory will be checked, and if it only includes a single SDK deployment, a <code>global.json</code> file will be created in the current directory, referencing that SDK version and disabling roll-forward.
+</div>
+<div>
+ <em> <strong>Note:</strong> This will silently overwrite any <code>global.json</code> already present in the current directory. </em>
+</div></div>
+
+</li>
+<li><code>workDirectory : String</code> (optional)
+<div><div>
+ The directory in which to execute the command. By default, this is the current directory (for freestyle jobs, that is the root of the job's workspace).
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `dotnetListPackage`: .NET: Show dependencies (list package)
+++++
+<div><div> The <code>dotnet list package</code> command provides a convenient option to list all NuGet package references for a specific project or a solution. You first need to build the project in order to have the assets needed for this command to process.
+</div>
+<div>
+ (see also: <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-list-package" rel="nofollow">Microsoft Documentation</a>)
+</div></div>
+<ul><li><code>charset : String</code> (optional)
+<div><div>
+ The character set to use for the step's output. If not specified, the charset associated with the build will be used.
+</div></div>
+
+</li>
+<li><code>config : String</code> (optional)
+<div><div> Configuration file containing the NuGet sources to use when searching for newer packages. Requires the <code>--outdated</code>, <code>--deprecated</code> or <code>--vulnerable</code> option.
+</div></div>
+
+</li>
+<li><code>continueOnError : boolean</code> (optional)
+<div><div>
+ If this is checked, errors encountered will cause the build status to be set to <code>FAILURE</code> (or <code>UNSTABLE</code>, if configured that way), but the build will be allowed to continue. Otherwise, any such errors will cause the build to be terminated immediately.
+</div></div>
+
+</li>
+<li><code>deprecated : boolean</code> (optional)
+<div><div> Lists packages that have been deprecated. Cannot be combined with <code>--vulnerable</code> or <code>--outdated</code> options.
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 3.1.300</em>
+</div></div>
+
+</li>
+<li><code>framework : String</code> (optional)
+</li>
+<li><code>frameworks : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>frameworksString : String</code> (optional)
+<div><div> Displays only the packages applicable for the specified <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks" rel="nofollow">target frameworks</a>.
+</div></div>
+
+</li>
+<li><code>highestMinor : boolean</code> (optional)
+<div><div> Considers only the packages with a matching major version number when searching for newer packages. Requires the <code>--outdated</code> option.
+</div></div>
+
+</li>
+<li><code>highestPatch : boolean</code> (optional)
+<div><div> Considers only the packages with a matching major and minor version numbers when searching for newer packages. Requires the <code>--outdated</code> option.
+</div></div>
+
+</li>
+<li><code>includePrerelease : boolean</code> (optional)
+<div><div> Considers packages with prerelease versions when searching for newer packages. Requires the <code>--outdated</code> option.
+</div></div>
+
+</li>
+<li><code>includeTransitive : boolean</code> (optional)
+<div><div> Lists transitive packages, in addition to the top-level packages. When specifying this option, you get a list of packages that the top-level packages depend on.
+</div></div>
+
+</li>
+<li><code>outdated : boolean</code> (optional)
+<div><div> Lists packages that have newer versions. Cannot be combined with <code>--deprecated</code> or <code>--vulnerable</code> options.
+</div></div>
+
+</li>
+<li><code>project : String</code> (optional)
+<div><div> The project or solution file to operate on. If not specified, the command searches the current directory for one. If more than one solution or project is found, an error is thrown.
+</div></div>
+
+</li>
+<li><code>sdk : String</code> (optional)
+<div><div>
+ Name of a .NET SDK to use so that <code>dotnet</code> will be in the path.
+ <br>
+  If the default is specified, you either need to use the <q>With .NET</q> element (or a <code>withDotNet</code> block in a pipeline script) to specify one, or ensure this step runs on a node that has a .NET SDK installed and in the path.
+</div></div>
+
+</li>
+<li><code>showSdkInfo : boolean</code> (optional)
+<div><div>
+ If enabled, <code>dotnet --info</code> will be executed before the main command. This shows a list of available SDKs and runtimes, indicating which one is currently being used.
+</div></div>
+
+</li>
+<li><code>source : String</code> (optional)
+</li>
+<li><code>sources : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>sourcesString : String</code> (optional)
+<div><div> The NuGet sources to use when searching for packages. Requires the <code>--outdated</code>&gt;, <code>--deprecated</code>&gt; or <code>--vulnerable</code>&gt; option.
+</div></div>
+
+</li>
+<li><code>specificSdkVersion : boolean</code> (optional)
+<div><div>
+ Depending on the platform, the <code>dotnet</code> executable may use the most recent SDK available on the system, even when <code>PATH</code> is set up to find an older SDK deployment first; see <a href="https://docs.microsoft.com/en-us/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" rel="nofollow">this page</a> for more information.
+ <br>
+  By enabling this option, the configured SDK home directory will be checked, and if it only includes a single SDK deployment, a <code>global.json</code> file will be created in the current directory, referencing that SDK version and disabling roll-forward.
+</div>
+<div>
+ <em> <strong>Note:</strong> This will silently overwrite any <code>global.json</code> already present in the current directory. </em>
+</div></div>
+
+</li>
+<li><code>verbosity : String</code> (optional)
+<div><div> Sets the verbosity level of the command.
+</div>
+<br>
+<div>
+ Note that this option only has an effect since the .NET 5 SDK.
+</div></div>
+
+</li>
+<li><code>vulnerable : boolean</code> (optional)
+<div><div> Lists packages that have known vulnerabilities. Cannot be combined with <code>--deprecated</code> or <code>--outdated</code> options.
+</div>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 5.0.200</em>
+</div></div>
+
+</li>
+<li><code>workDirectory : String</code> (optional)
+<div><div>
+ The directory in which to execute the command. By default, this is the current directory (for freestyle jobs, that is the root of the job's workspace).
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `dotnetNuGetLocals`: .NET: Clear/List NuGet cache locations (nuget locals)
+++++
+<div><div> The <code>dotnet nuget locals</code> command clears or lists local NuGet resources in the http-request cache, temporary cache, or machine-wide global packages folder.
+</div>
+<div>
+ (see also: <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-locals" rel="nofollow">Microsoft Documentation</a>)
+</div></div>
+<ul><li><code>cacheLocation : String</code> (optional)
+<div><div> The cache location to list or clear. It accepts one of the following values: 
+ <ul>
+  <li><code>all</code>: Indicates that the specified operation is applied to all cache types: http-request cache, global packages cache, and the temporary cache.</li>
+  <li><code>global-packages</code>: Indicates that the specified operation is applied only to the global packages cache. The other cache locations aren't affected.</li>
+  <li><code>http-cache</code>: Indicates that the specified operation is applied only to the http-request cache. The other cache locations aren't affected.</li>
+  <li><code>temp</code>: Indicates that the specified operation is applied only to the temporary cache. The other cache locations aren't affected.</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>charset : String</code> (optional)
+<div><div>
+ The character set to use for the step's output. If not specified, the charset associated with the build will be used.
+</div></div>
+
+</li>
+<li><code>continueOnError : boolean</code> (optional)
+<div><div>
+ If this is checked, errors encountered will cause the build status to be set to <code>FAILURE</code> (or <code>UNSTABLE</code>, if configured that way), but the build will be allowed to continue. Otherwise, any such errors will cause the build to be terminated immediately.
+</div></div>
+
+</li>
+<li><code>forceEnglishOutput : boolean</code> (optional)
+<div><div> Forces the application to run using an invariant, English-based culture.
+</div></div>
+
+</li>
+<li><code>operation : String</code> (optional)
+<div><div> Two operations are supported: 
+ <ul>
+  <li><code>clear</code>: The contents of the cache directories are deleted recursively. The executing user/group must have permission to the files in the cache directories. If not, an error is displayed indicating the files/folders that weren't cleared.</li>
+  <li><code>list</code>: Displays the path to the specified cache location.</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>sdk : String</code> (optional)
+<div><div>
+ Name of a .NET SDK to use so that <code>dotnet</code> will be in the path.
+ <br>
+  If the default is specified, you either need to use the <q>With .NET</q> element (or a <code>withDotNet</code> block in a pipeline script) to specify one, or ensure this step runs on a node that has a .NET SDK installed and in the path.
+</div></div>
+
+</li>
+<li><code>showSdkInfo : boolean</code> (optional)
+<div><div>
+ If enabled, <code>dotnet --info</code> will be executed before the main command. This shows a list of available SDKs and runtimes, indicating which one is currently being used.
+</div></div>
+
+</li>
+<li><code>specificSdkVersion : boolean</code> (optional)
+<div><div>
+ Depending on the platform, the <code>dotnet</code> executable may use the most recent SDK available on the system, even when <code>PATH</code> is set up to find an older SDK deployment first; see <a href="https://docs.microsoft.com/en-us/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" rel="nofollow">this page</a> for more information.
+ <br>
+  By enabling this option, the configured SDK home directory will be checked, and if it only includes a single SDK deployment, a <code>global.json</code> file will be created in the current directory, referencing that SDK version and disabling roll-forward.
+</div>
+<div>
+ <em> <strong>Note:</strong> This will silently overwrite any <code>global.json</code> already present in the current directory. </em>
+</div></div>
+
+</li>
+<li><code>workDirectory : String</code> (optional)
+<div><div>
+ The directory in which to execute the command. By default, this is the current directory (for freestyle jobs, that is the root of the job's workspace).
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `dotnetPack`: .NET: Create NuGet package (pack)
+++++
+<div><div>
+ The <code>dotnet pack</code> command builds the project and creates NuGet packages. The result of this command is a NuGet package (that is, a <em>.nupkg</em> file).
+</div>
+<div>
+ (see also: <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-pack" rel="nofollow">Microsoft Documentation</a>)
+</div></div>
+<ul><li><code>charset : String</code> (optional)
+<div><div>
+ The character set to use for the step's output. If not specified, the charset associated with the build will be used.
+</div></div>
+
+</li>
+<li><code>configuration : String</code> (optional)
+<div><div> Defines the build configuration. The default for most projects is <code>Debug</code>, but you can override the build configuration settings in your project.
+</div></div>
+
+</li>
+<li><code>continueOnError : boolean</code> (optional)
+<div><div>
+ If this is checked, errors encountered will cause the build status to be set to <code>FAILURE</code> (or <code>UNSTABLE</code>, if configured that way), but the build will be allowed to continue. Otherwise, any such errors will cause the build to be terminated immediately.
+</div></div>
+
+</li>
+<li><code>force : boolean</code> (optional)
+<div><div> Forces all dependencies to be resolved even if the last restore was successful. Specifying this flag is the same as deleting the <em>project.assets.json</em> file.
+</div></div>
+
+</li>
+<li><code>includeSource : boolean</code> (optional)
+<div><div> Includes the debug symbols NuGet packages in addition to the regular NuGet packages in the output directory. The sources files are included in the <code>src</code> folder within the symbols package.
+</div></div>
+
+</li>
+<li><code>includeSymbols : boolean</code> (optional)
+<div><div> Includes the debug symbols NuGet packages in addition to the regular NuGet packages in the output directory.
+</div></div>
+
+</li>
+<li><code>noBuild : boolean</code> (optional)
+<div><div> Doesn't build the project before packing, and does not perform an implicit restore.
+</div></div>
+
+</li>
+<li><code>noDependencies : boolean</code> (optional)
+<div><div> Ignores project-to-project references and only restores the root project.
+</div></div>
+
+</li>
+<li><code>noRestore : boolean</code> (optional)
+<div><div> Doesn't execute an implicit restore when running the command.
+</div></div>
+
+</li>
+<li><code>nologo : boolean</code> (optional)
+<div><div> Doesn't display the startup banner or the copyright message.
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 3.0</em>
+</div></div>
+
+</li>
+<li><code>option : String</code> (optional)
+</li>
+<li><code>options : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>optionsString : String</code> (optional)
+<div><div> For more information about these options, see the <a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-command-line-reference" rel="nofollow">MSBuild Command-Line Reference</a>.
+</div>
+<div>
+ If targets and/or properties are also configured, those will be passed <em>after</em> these options.
+</div></div>
+
+</li>
+<li><code>outputDirectory : String</code> (optional)
+<div><div> Places the built packages in the directory specified.
+</div></div>
+
+</li>
+<li><code>project : String</code> (optional)
+<div><div> The project or solution to pack. It's either a path to a csproj file, vbproj file, fsproj file, a solution file, or to a directory. If not specified, the command searches the current directory for a project or solution file.
+</div></div>
+
+</li>
+<li><code>properties</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>propertiesString : String</code> (optional)
+<div><div>
+ Additional MSBuild properties to set. These should be specified one per line, in Java <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html#load(java.io.Reader)" rel="nofollow">properties syntax</a>.
+</div></div>
+
+</li>
+<li><code>runtime : String</code> (optional)
+<div><div> Specifies the target runtime to restore packages for. For a list of Runtime Identifiers (RIDs), see the <a href="https://docs.microsoft.com/en-us/dotnet/core/rid-catalog" rel="nofollow">RID catalog</a>.
+</div></div>
+
+</li>
+<li><code>sdk : String</code> (optional)
+<div><div>
+ Name of a .NET SDK to use so that <code>dotnet</code> will be in the path.
+ <br>
+  If the default is specified, you either need to use the <q>With .NET</q> element (or a <code>withDotNet</code> block in a pipeline script) to specify one, or ensure this step runs on a node that has a .NET SDK installed and in the path.
+</div></div>
+
+</li>
+<li><code>showSdkInfo : boolean</code> (optional)
+<div><div>
+ If enabled, <code>dotnet --info</code> will be executed before the main command. This shows a list of available SDKs and runtimes, indicating which one is currently being used.
+</div></div>
+
+</li>
+<li><code>shutDownBuildServers : boolean</code> (optional)
+<div><div> If enabled, <code>dotnet build-server shutdown</code> will be executed after the main command, shutting down build servers that may have been started.
+</div>
+<div>
+ Note: If this is not specified, a build that causes such a build server to be started may <q>hang</q> until those server processes end. As such, it's recommended to specify this for the last .NET-related step in a job. If using multiple SDKs, each needs its own shutdown (e.g. the .NET Core 3.1 SDK will not shut down build servers from the .NET 5.0 SDK).
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 2.1</em>
+</div></div>
+
+</li>
+<li><code>specificSdkVersion : boolean</code> (optional)
+<div><div>
+ Depending on the platform, the <code>dotnet</code> executable may use the most recent SDK available on the system, even when <code>PATH</code> is set up to find an older SDK deployment first; see <a href="https://docs.microsoft.com/en-us/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" rel="nofollow">this page</a> for more information.
+ <br>
+  By enabling this option, the configured SDK home directory will be checked, and if it only includes a single SDK deployment, a <code>global.json</code> file will be created in the current directory, referencing that SDK version and disabling roll-forward.
+</div>
+<div>
+ <em> <strong>Note:</strong> This will silently overwrite any <code>global.json</code> already present in the current directory. </em>
+</div></div>
+
+</li>
+<li><code>unstableIfErrors : boolean</code> (optional)
+<div><div>
+ If this is set and the build completes with errors, the build will be marked as unstable instead of failed, and execution will continue to the next step.
+</div></div>
+
+</li>
+<li><code>unstableIfWarnings : boolean</code> (optional)
+<div><div>
+ If this is set and the build completes with warnings (but no errors), the build will be marked as unstable instead of successful.
+</div></div>
+
+</li>
+<li><code>verbosity : String</code> (optional)
+<div><div> Sets the MSBuild verbosity level.
+</div></div>
+
+</li>
+<li><code>versionSuffix : String</code> (optional)
+<div><div> Defines the value for the <code>$(VersionSuffix)</code> MSBuild property in the project.
+</div></div>
+
+</li>
+<li><code>workDirectory : String</code> (optional)
+<div><div>
+ The directory in which to execute the command. By default, this is the current directory (for freestyle jobs, that is the root of the job's workspace).
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `dotnetPublish`: .NET: Publish project (publish)
+++++
+<div><div>
+ <code>dotnet publish</code> compiles the application, reads through its dependencies specified in the project file, and publishes the resulting set of files to a directory. The output includes the following assets: 
+ <ul>
+  <li>Intermediate Language (IL) code in an assembly with a <em>dll</em> extension.</li>
+  <li>A <em>.deps.json</em> file that includes all of the dependencies of the project.</li>
+  <li>A <em>.runtimeconfig.json</em> file that specifies the shared runtime that the application expects, as well as other configuration options for the runtime (for example, garbage collection type).</li>
+  <li>The application's dependencies, which are copied from the NuGet cache into the output folder.</li>
+ </ul> The <code>dotnet publish</code> command's output is ready for deployment to a hosting system (for example, a server, PC, Mac, laptop) for execution. It's the only officially supported way to prepare the application for deployment. Depending on the type of deployment that the project specifies, the hosting system may or may not have the .NET Core shared runtime installed on it. For more information, see <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli" rel="nofollow"> Publish .NET Core apps with the .NET Core CLI </a>.
+</div>
+<div>
+ (see also: <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish" rel="nofollow">Microsoft Documentation</a>)
+</div></div>
+<ul><li><code>charset : String</code> (optional)
+<div><div>
+ The character set to use for the step's output. If not specified, the charset associated with the build will be used.
+</div></div>
+
+</li>
+<li><code>configuration : String</code> (optional)
+<div><div> Defines the build configuration. The default for most projects is <code>Debug</code>, but you can override the build configuration settings in your project.
+</div></div>
+
+</li>
+<li><code>continueOnError : boolean</code> (optional)
+<div><div>
+ If this is checked, errors encountered will cause the build status to be set to <code>FAILURE</code> (or <code>UNSTABLE</code>, if configured that way), but the build will be allowed to continue. Otherwise, any such errors will cause the build to be terminated immediately.
+</div></div>
+
+</li>
+<li><code>force : boolean</code> (optional)
+<div><div> Forces all dependencies to be resolved even if the last restore was successful. Specifying this flag is the same as deleting the <em>project.assets.json</em> file.
+</div></div>
+
+</li>
+<li><code>framework : String</code> (optional)
+<div><div> Publishes the application for the specified <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks" rel="nofollow">target framework</a>. You must specify the target framework in the project file.
+</div></div>
+
+</li>
+<li><code>manifest : String</code> (optional)
+</li>
+<li><code>manifests : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>manifestsString : String</code> (optional)
+<div><div> Specifies one or several <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/runtime-store" rel="nofollow">target manifests</a> to use to trim the set of packages published with the app. The manifest file is part of the output of the <code><a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-store" rel="nofollow">dotnet store command</a></code>.
+</div></div>
+
+</li>
+<li><code>noBuild : boolean</code> (optional)
+<div><div> Doesn't build the project before publishing, and does not perform an implicit restore.
+</div></div>
+
+</li>
+<li><code>noDependencies : boolean</code> (optional)
+<div><div> Ignores project-to-project references and only restores the root project.
+</div></div>
+
+</li>
+<li><code>noRestore : boolean</code> (optional)
+<div><div> Doesn't execute an implicit restore when running the command.
+</div></div>
+
+</li>
+<li><code>nologo : boolean</code> (optional)
+<div><div> Doesn't display the startup banner or the copyright message.
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 3.0</em>
+</div></div>
+
+</li>
+<li><code>option : String</code> (optional)
+</li>
+<li><code>options : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>optionsString : String</code> (optional)
+<div><div> For more information about these options, see the <a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-command-line-reference" rel="nofollow">MSBuild Command-Line Reference</a>.
+</div>
+<div>
+ If targets and/or properties are also configured, those will be passed <em>after</em> these options.
+</div></div>
+
+</li>
+<li><code>outputDirectory : String</code> (optional)
+<div><div> Specifies the path for the output directory.
+ <br>
+  If not specified, it defaults to <em>[project_file_folder]./bin/[configuration]/[framework]/publish/</em> for a runtime-dependent executable and cross-platform binaries. It defaults to <em>[project_file_folder]/bin/[configuration]/[framework]/[runtime]/publish/</em> for a self-contained executable. 
+ <br>
+  In a web project, if the output folder is in the project folder, successive <code>dotnet publish</code> commands result in nested output folders. For example, if the project folder is <em>myproject</em>, and the publish output folder is <em>myproject/publish</em>, and you run <code>dotnet publish</code> twice, the second run puts content files such as <em>.config</em> and <em>.json</em> files in <em>myproject/publish/publish</em>. To avoid nesting publish folders, specify a publish folder that is not <strong>directly</strong> under the project folder, or exclude the publish folder from the project.
+</div>
+<div>
+ Some behaviour depends on the SDK version: 
+ <ul>
+  <li>.NET Core 3.x SDK and later: If a relative path is specified when publishing a project, the output directory generated is relative to the current working directory, not to the project file location.<br>
+    If a relative path is specified when publishing a solution, all output for all projects goes into the specified folder relative to the current working directory. To make publish output go to separate folders for each project, specify a relative path by using the msbuild <code>PublishDir</code> property instead of this option.</li>
+  <li>.NET Core 2.x SDK: If a relative path is specified when publishing a project, the output directory generated is relative to the project file location, not to the current working directory.<br>
+    If a relative path is specified when publishing a solution, each project's output goes into a separate folder relative to the project file location. If an absolute path is specified when publishing a solution, all publish output for all projects goes into the specified folder.</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>project : String</code> (optional)
+<div><div> The project or solution (or directory containing a project or solution) to publish. If not specified, the current directory is used.
+ <br>
+  Note that the use of a solution instead of a project was added in the .NET Core 3.0 SDK.
+</div></div>
+
+</li>
+<li><code>properties</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>propertiesString : String</code> (optional)
+<div><div>
+ Additional MSBuild properties to set. These should be specified one per line, in Java <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html#load(java.io.Reader)" rel="nofollow"> properties syntax </a>.
+</div>
+<div>
+ Properties of particular interest to <code>dotnet publish</code>: 
+ <ul>
+  <li><code>PublishProfile=Properties\PublishProfiles\profile.pubxml</code>: Use a <em>.pubxml</em> to set publish-related properties. See <a href="https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/visual-studio-publish-profiles" rel="nofollow"> Visual Studio publish profiles (.pubxml) for ASP.NET Core app deployment </a> for more information.</li>
+  <li><code>PublishReadyToRun=true</code>: Compiles application assemblies as ReadyToRun (R2R) format. R2R is a form of ahead-of-time (AOT) compilation. For more information, see <a href="https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0#readytorun-images" rel="nofollow">ReadyToRun images</a>.<br>
+    Available since .NET Core 3.0 SDK.</li>
+  <li><code>PublishSingleFile=true</code>: Packages the app into a platform-specific single-file executable. The executable is self-extracting and contains all dependencies (including native) that are required to run the app. When the app is first run, the application is extracted to a directory based on the app name and build identifier. Startup is faster when the application is run again. The application doesn't need to extract itself a second time unless a new version is used.<br>
+    For more information about single-file publishing, see the <a href="https://github.com/dotnet/designs/blob/master/accepted/2020/single-file/design.md" rel="nofollow"> single-file bundler design document </a>.<br>
+    Available since .NET Core 3.0 SDK.</li>
+  <li><code>PublishTrimmed=true</code>: Trims unused libraries to reduce the deployment size of an app when publishing a self-contained executable. For more information, see <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/trim-self-contained" rel="nofollow"> Trim self-contained deployments and executables </a>.<br>
+    Available since .NET Core 3.0 SDK.</li>
+ </ul> Note that it is recommended to specify all of these, other than <code>PublishProfile</code>, in a publish profile rather than here.
+</div></div>
+
+</li>
+<li><code>runtime : String</code> (optional)
+<div><div> Publishes the application for a given runtime. For a list of Runtime Identifiers (RIDs), see the <a href="https://docs.microsoft.com/en-us/dotnet/core/rid-catalog" rel="nofollow">RID catalog</a>. For more information, see <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/" rel="nofollow">.NET Core application publishing</a> and <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli" rel="nofollow">Publish .NET Core apps with the .NET Core CLI</a>.
+</div></div>
+
+</li>
+<li><code>sdk : String</code> (optional)
+<div><div>
+ Name of a .NET SDK to use so that <code>dotnet</code> will be in the path.
+ <br>
+  If the default is specified, you either need to use the <q>With .NET</q> element (or a <code>withDotNet</code> block in a pipeline script) to specify one, or ensure this step runs on a node that has a .NET SDK installed and in the path.
+</div></div>
+
+</li>
+<li><code>selfContained : boolean</code> (optional)
+<div><div> Publishes the .NET Core runtime with your application so the runtime doesn't need to be installed on the target machine. Enabled by default if a runtime identifier is specified and the project is an executable project (not a library project). For more information, see <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/" rel="nofollow">.NET Core application publishing</a> and <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli" rel="nofollow">Publish .NET Core apps with the .NET Core CLI</a>.
+</div></div>
+
+</li>
+<li><code>showSdkInfo : boolean</code> (optional)
+<div><div>
+ If enabled, <code>dotnet --info</code> will be executed before the main command. This shows a list of available SDKs and runtimes, indicating which one is currently being used.
+</div></div>
+
+</li>
+<li><code>shutDownBuildServers : boolean</code> (optional)
+<div><div> If enabled, <code>dotnet build-server shutdown</code> will be executed after the main command, shutting down build servers that may have been started.
+</div>
+<div>
+ Note: If this is not specified, a build that causes such a build server to be started may <q>hang</q> until those server processes end. As such, it's recommended to specify this for the last .NET-related step in a job. If using multiple SDKs, each needs its own shutdown (e.g. the .NET Core 3.1 SDK will not shut down build servers from the .NET 5.0 SDK).
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 2.1</em>
+</div></div>
+
+</li>
+<li><code>specificSdkVersion : boolean</code> (optional)
+<div><div>
+ Depending on the platform, the <code>dotnet</code> executable may use the most recent SDK available on the system, even when <code>PATH</code> is set up to find an older SDK deployment first; see <a href="https://docs.microsoft.com/en-us/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" rel="nofollow">this page</a> for more information.
+ <br>
+  By enabling this option, the configured SDK home directory will be checked, and if it only includes a single SDK deployment, a <code>global.json</code> file will be created in the current directory, referencing that SDK version and disabling roll-forward.
+</div>
+<div>
+ <em> <strong>Note:</strong> This will silently overwrite any <code>global.json</code> already present in the current directory. </em>
+</div></div>
+
+</li>
+<li><code>unstableIfErrors : boolean</code> (optional)
+<div><div>
+ If this is set and the build completes with errors, the build will be marked as unstable instead of failed, and execution will continue to the next step.
+</div></div>
+
+</li>
+<li><code>unstableIfWarnings : boolean</code> (optional)
+<div><div>
+ If this is set and the build completes with warnings (but no errors), the build will be marked as unstable instead of successful.
+</div></div>
+
+</li>
+<li><code>verbosity : String</code> (optional)
+<div><div> Sets the MSBuild verbosity level.
+</div></div>
+
+</li>
+<li><code>versionSuffix : String</code> (optional)
+<div><div> Defines the version suffix to replace the asterisk (<code>*</code>) in the version field of the project file.
+</div></div>
+
+</li>
+<li><code>workDirectory : String</code> (optional)
+<div><div>
+ The directory in which to execute the command. By default, this is the current directory (for freestyle jobs, that is the root of the job's workspace).
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `dotnetNuGetPush`: .NET: Publish NuGet package (nuget push)
+++++
+<div><div> The <code>dotnet nuget push</code> command pushes a package to the server and publishes it. The push command uses server and credential details found in the system's NuGet config file or chain of config files. For more information on config files, see <a href="https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior" rel="nofollow">Configuring NuGet Behavior</a>. NuGet's default configuration is obtained by loading <em>%AppData%\NuGet\NuGet.config</em> (Windows) or <em>$HOME/.local/share</em> (Linux/macOS), then loading any <em>nuget.config</em> or <em>.nuget\nuget.config</em> starting from the root of drive and ending in the current directory.
+</div>
+<div>
+ The command pushes an existing package. It doesn't create a package. To create a package, use <code>dotnet pack</code>.
+</div>
+<div>
+ (see also: <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push" rel="nofollow">Microsoft Documentation</a>)
+</div></div>
+<ul><li><code>apiKeyId : String</code> (optional)
+<div><div> The API key for the server.
+</div></div>
+
+</li>
+<li><code>charset : String</code> (optional)
+<div><div>
+ The character set to use for the step's output. If not specified, the charset associated with the build will be used.
+</div></div>
+
+</li>
+<li><code>continueOnError : boolean</code> (optional)
+<div><div>
+ If this is checked, errors encountered will cause the build status to be set to <code>FAILURE</code> (or <code>UNSTABLE</code>, if configured that way), but the build will be allowed to continue. Otherwise, any such errors will cause the build to be terminated immediately.
+</div></div>
+
+</li>
+<li><code>disableBuffering : boolean</code> (optional)
+<div><div> Disables buffering when pushing to an HTTP(S) server to reduce memory usage.
+</div></div>
+
+</li>
+<li><code>forceEnglishOutput : boolean</code> (optional)
+<div><div> Forces the application to run using an invariant, English-based culture.
+</div></div>
+
+</li>
+<li><code>noServiceEndpoint : boolean</code> (optional)
+<div><div> Doesn't append "<code>api/v2/package</code>" to the source URL.
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 2.1</em>
+</div></div>
+
+</li>
+<li><code>noSymbols : boolean</code> (optional)
+<div><div> Doesn't push symbols (even if present).
+</div></div>
+
+</li>
+<li><code>root : String</code> (optional)
+<div><div> Specifies the file path to the package(s) to be pushed.
+</div></div>
+
+</li>
+<li><code>sdk : String</code> (optional)
+<div><div>
+ Name of a .NET SDK to use so that <code>dotnet</code> will be in the path.
+ <br>
+  If the default is specified, you either need to use the <q>With .NET</q> element (or a <code>withDotNet</code> block in a pipeline script) to specify one, or ensure this step runs on a node that has a .NET SDK installed and in the path.
+</div></div>
+
+</li>
+<li><code>showSdkInfo : boolean</code> (optional)
+<div><div>
+ If enabled, <code>dotnet --info</code> will be executed before the main command. This shows a list of available SDKs and runtimes, indicating which one is currently being used.
+</div></div>
+
+</li>
+<li><code>skipDuplicate : boolean</code> (optional)
+<div><div> When pushing multiple packages to an HTTP(S) server, treats any 409 Conflict response as a warning so that the push can continue.
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 3.1</em>
+</div></div>
+
+</li>
+<li><code>source : String</code> (optional)
+<div><div> Specifies the server URL. Supported URLs for nuget.org include <code>https://www.nuget.org</code>, <code>https://www.nuget.org/api/v3</code>, and <code>https://www.nuget.org/api/v2/package</code>. For private feeds, replace the host name (for example, <code>%hostname%/api/v3</code>).
+ <br>
+  This option is required unless <code>DefaultPushSource</code> config value is set in the NuGet config file.
+</div></div>
+
+</li>
+<li><code>specificSdkVersion : boolean</code> (optional)
+<div><div>
+ Depending on the platform, the <code>dotnet</code> executable may use the most recent SDK available on the system, even when <code>PATH</code> is set up to find an older SDK deployment first; see <a href="https://docs.microsoft.com/en-us/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" rel="nofollow">this page</a> for more information.
+ <br>
+  By enabling this option, the configured SDK home directory will be checked, and if it only includes a single SDK deployment, a <code>global.json</code> file will be created in the current directory, referencing that SDK version and disabling roll-forward.
+</div>
+<div>
+ <em> <strong>Note:</strong> This will silently overwrite any <code>global.json</code> already present in the current directory. </em>
+</div></div>
+
+</li>
+<li><code>symbolApiKeyId : String</code> (optional)
+<div><div> The API key for the symbol server.
+</div></div>
+
+</li>
+<li><code>symbolSource : String</code> (optional)
+<div><div> Specifies the symbol server URL.
+</div></div>
+
+</li>
+<li><code>timeout : int</code> (optional)
+<div><div> Specifies the timeout for pushing to a server in seconds. Defaults to 300 seconds (5 minutes). Specifying 0 (zero seconds) applies the default value.
+</div></div>
+
+</li>
+<li><code>workDirectory : String</code> (optional)
+<div><div>
+ The directory in which to execute the command. By default, this is the current directory (for freestyle jobs, that is the root of the job's workspace).
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `dotnetTest`: .NET: Run unit tests (test)
+++++
+<div><div>
+ The <code>dotnet test</code> command is used to execute unit tests in a given solution. It builds the solution and runs a test host application for each test project in the solution. The test host executes tests in the given project using a test framework, for example: MSTest, NUnit, or xUnit, and reports the success or failure of each test. If all tests are successful, the test runner returns 0 as an exit code; otherwise if any test fails, it returns 1.
+</div>
+<div>
+ For multi-targeted projects, tests are run for each targeted framework. The test host and the unit test framework are packaged as NuGet packages and are restored as ordinary dependencies for the project.
+</div>
+<div>
+ (see also: <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test" rel="nofollow">Microsoft Documentation</a>)
+</div></div>
+<ul><li><code>blame : boolean</code> (optional)
+<div><div> Runs the tests in blame mode. This option is helpful in isolating problematic tests that cause the test host to crash. When a crash is detected, it creates an sequence file in <code>TestResults/&lt;Guid&gt;/&lt;Guid&gt;_Sequence.xml</code> that captures the order of tests that were run before the crash.
+</div></div>
+
+</li>
+<li><code>blameCrash : boolean</code> (optional)
+<div><div> Runs the tests in blame mode and collects a crash dump when the test host exits unexpectedly. This option depends on the version of .NET used, the type of error, and the operating system.
+ <br>
+  For exceptions in managed code, a dump will be automatically collected on .NET 5.0 and later versions. It will generate a dump for the test host or any child process that also ran on .NET 5.0 and crashed. Crashes in native code will not generate a dump. This option works on Windows, macOS, and Linux.
+ <br>
+  Crash dumps in native code, or when using .NET Core 3.1 or earlier versions, can only be collected on Windows, by using Procdump. A directory that contains <em>procdump.exe</em> and <em>procdump64.exe</em> must be in the PATH or PROCDUMP_PATH environment variable. <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/procdump" rel="nofollow">Download the tools.</a> Implies <code>--blame</code>.
+ <br>
+  To collect a crash dump from a native application running on .NET 5.0 or later, the usage of Procdump can be forced by setting the <code>VSTEST_DUMP_FORCEPROCDUMP</code> environment variable to <code>1</code>.
+</div>
+<div>
+ <em><strong>Available since:</strong> .NET 5.0 preview SDK</em>
+</div></div>
+
+</li>
+<li><code>blameCrashCollectAlways : boolean</code> (optional)
+<div><div> Collects a crash dump on expected as well as unexpected test host exit.
+</div>
+<div>
+ <em><strong>Available since:</strong> .NET 5.0 preview SDK</em>
+</div></div>
+
+</li>
+<li><code>blameCrashDumpType : String</code> (optional)
+<div><div> The type of crash dump to be collected. Implies <code>--blame-crash</code>.
+</div>
+<div>
+ <em><strong>Available since:</strong> .NET 5.0 preview SDK</em>
+</div></div>
+
+</li>
+<li><code>blameHang : boolean</code> (optional)
+<div><div> Run the tests in blame mode and collects a hang dump when a test exceeds the given timeout.
+</div>
+<div>
+ <em><strong>Available since:</strong> .NET 5.0 preview SDK</em>
+</div></div>
+
+</li>
+<li><code>blameHangDumpType : String</code> (optional)
+<div><div> The type of crash dump to be collected. It should be <code>full</code>, <code>mini</code>, or <code>none</code>. When <code>none</code> is specified, the test host is terminated on timeout, but no dump is collected. Implies <code>--blame-hang</code>.
+</div>
+<div>
+ <em><strong>Available since:</strong> .NET 5.0 preview SDK</em>
+</div></div>
+
+</li>
+<li><code>blameHangTimeout : int</code> (optional)
+<div><div> Per-test timeout, in milliseconds, after which a hang dump is triggered and the test host process and all of its child processes are dumped and terminated.
+ <br>
+  When used together with data driven tests, the timeout behavior depends on the test adapter used. For xUnit and NUnit the timeout is renewed after every test case. For MSTest, the timeout is used for all test cases. This option is supported on Windows with netcoreapp2.1 and later, on Linux with netcoreapp3.1 and later, and on macOS with net5.0 or later. Implies <code>--blame</code> and <code>--blame-hang</code>.
+</div>
+<div>
+ <em><strong>Available since:</strong> .NET 5.0 preview SDK</em>
+</div></div>
+
+</li>
+<li><code>charset : String</code> (optional)
+<div><div>
+ The character set to use for the step's output. If not specified, the charset associated with the build will be used.
+</div></div>
+
+</li>
+<li><code>collect : String</code> (optional)
+<div><div> Enables a data collector for the test run. For more information, see <a href="https://aka.ms/vstest-collect" rel="nofollow">Monitor and analyze test run</a>.
+</div></div>
+
+</li>
+<li><code>configuration : String</code> (optional)
+<div><div> Defines the build configuration. The default for most projects is <code>Debug</code>, but you can override the build configuration settings in your project.
+</div></div>
+
+</li>
+<li><code>continueOnError : boolean</code> (optional)
+<div><div>
+ If this is checked, errors encountered will cause the build status to be set to <code>FAILURE</code> (or <code>UNSTABLE</code>, if configured that way), but the build will be allowed to continue. Otherwise, any such errors will cause the build to be terminated immediately.
+</div></div>
+
+</li>
+<li><code>diag : String</code> (optional)
+<div><div> Enables diagnostic mode for the test platform and writes diagnostic messages to the specified file and to files next to it. The process that is logging the messages determines which files are created, such as <code>*.host_&lt;date&gt;.txt</code> for the test host log, and <code>*.datacollector_&lt;date&gt;.txt</code> for the data collector log.
+</div></div>
+
+</li>
+<li><code>filter : String</code> (optional)
+<div><div> Filters out tests in the current project using the given expression. For more information, see the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test#filter-option-details" rel="nofollow">Filter option details</a> section. For more information and examples on how to use selective unit test filtering, see <a href="https://docs.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests?pivots=mstest" rel="nofollow">Running selective unit tests</a>.
+</div></div>
+
+</li>
+<li><code>framework : String</code> (optional)
+<div><div> Forces the use of <code>dotnet</code> or a .NET Framework test host for the test binaries. This option only determines which type of host to use. The actual framework version to be used is determined by the <em>runtimeconfig.json</em> of the test project. When not specified, the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.versioning.targetframeworkattribute" rel="nofollow">TargetFramework assembly attribute</a> is used to determine the type of host. When that attribute is stripped from the <em>.dll</em>, the .NET Framework host is used.
+</div></div>
+
+</li>
+<li><code>listTests : boolean</code> (optional)
+<div><div> List all of the discovered tests in the current project.
+</div></div>
+
+</li>
+<li><code>logger : String</code> (optional)
+<div><div> Specifies a logger for test results. Unlike MSBuild, <code>dotnet test</code> doesn't accept abbreviations: instead of "<code>console;v=d</code>", use "<code>console;verbosity=detailed</code>".
+</div></div>
+
+</li>
+<li><code>noBuild : boolean</code> (optional)
+<div><div> Doesn't build the project before packing, and does not perform an implicit restore.
+</div></div>
+
+</li>
+<li><code>noRestore : boolean</code> (optional)
+<div><div> Doesn't execute an implicit restore when running the command.
+</div></div>
+
+</li>
+<li><code>nologo : boolean</code> (optional)
+<div><div> Doesn't display the startup banner or the copyright message.
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 3.0</em>
+</div></div>
+
+</li>
+<li><code>option : String</code> (optional)
+</li>
+<li><code>options : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>optionsString : String</code> (optional)
+<div><div> For more information about these options, see the <a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-command-line-reference" rel="nofollow">MSBuild Command-Line Reference</a>.
+</div>
+<div>
+ If targets and/or properties are also configured, those will be passed <em>after</em> these options.
+</div></div>
+
+</li>
+<li><code>outputDirectory : String</code> (optional)
+<div><div> Directory in which to find the binaries to run. If not specified, the default path is <code>./bin/&lt;configuration&gt;/&lt;framework&gt;/</code>. For projects with multiple target frameworks (via the <code>TargetFrameworks</code> property), you also need to specify a framework when you specify this option. <code>dotnet test</code> always runs tests from the output directory. You can use <a href="https://docs.microsoft.com/en-us/dotnet/api/system.appdomain.basedirectory" rel="nofollow">AppDomain.BaseDirectory</a> to consume test assets in the output directory.
+</div></div>
+
+</li>
+<li><code>project : String</code> (optional)
+<div><div> What to test. This can be one of: 
+ <ul>
+  <li>Path to a test project.</li>
+  <li>Path to a solution.</li>
+  <li>Path to a directory that contains a project or a solution.</li>
+  <li>Path to a test project <em>.dll</em> file.</li>
+ </ul> If not specified, it searches for a project or a solution in the current directory.
+</div></div>
+
+</li>
+<li><code>properties</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>propertiesString : String</code> (optional)
+<div><div>
+ Additional MSBuild properties to set. These should be specified one per line, in Java <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html#load(java.io.Reader)" rel="nofollow">properties syntax</a>.
+</div></div>
+
+</li>
+<li><code>resultsDirectory : String</code> (optional)
+<div><div> The directory where the test results are going to be placed. If the specified directory doesn't exist, it's created. The default is <code>TestResults</code> in the directory that contains the project file.
+</div></div>
+
+</li>
+<li><code>runSettings</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>runSettingsString : String</code> (optional)
+<div><div> Inline <code>RunSettings</code> values, specified in in Java <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html#load(java.io.Reader)" rel="nofollow">properties syntax</a>.
+</div></div>
+
+</li>
+<li><code>runtime : String</code> (optional)
+<div><div> The target runtime to test for.
+</div></div>
+
+</li>
+<li><code>sdk : String</code> (optional)
+<div><div>
+ Name of a .NET SDK to use so that <code>dotnet</code> will be in the path.
+ <br>
+  If the default is specified, you either need to use the <q>With .NET</q> element (or a <code>withDotNet</code> block in a pipeline script) to specify one, or ensure this step runs on a node that has a .NET SDK installed and in the path.
+</div></div>
+
+</li>
+<li><code>settings : String</code> (optional)
+<div><div> The <code>.runsettings</code> file to use for running the tests. Note that the <code>TargetPlatform</code> element (x86|x64) has no effect for <code>dotnet test</code>. To run tests that target x86, install the x86 version of .NET Core. The bitness of the <em>dotnet.exe</em> that is on the path is what will be used for running tests.
+</div></div>
+
+</li>
+<li><code>showSdkInfo : boolean</code> (optional)
+<div><div>
+ If enabled, <code>dotnet --info</code> will be executed before the main command. This shows a list of available SDKs and runtimes, indicating which one is currently being used.
+</div></div>
+
+</li>
+<li><code>shutDownBuildServers : boolean</code> (optional)
+<div><div> If enabled, <code>dotnet build-server shutdown</code> will be executed after the main command, shutting down build servers that may have been started.
+</div>
+<div>
+ Note: If this is not specified, a build that causes such a build server to be started may <q>hang</q> until those server processes end. As such, it's recommended to specify this for the last .NET-related step in a job. If using multiple SDKs, each needs its own shutdown (e.g. the .NET Core 3.1 SDK will not shut down build servers from the .NET 5.0 SDK).
+</div>
+<br>
+<div>
+ <em><strong>Available since:</strong> .NET Core SDK 2.1</em>
+</div></div>
+
+</li>
+<li><code>specificSdkVersion : boolean</code> (optional)
+<div><div>
+ Depending on the platform, the <code>dotnet</code> executable may use the most recent SDK available on the system, even when <code>PATH</code> is set up to find an older SDK deployment first; see <a href="https://docs.microsoft.com/en-us/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" rel="nofollow">this page</a> for more information.
+ <br>
+  By enabling this option, the configured SDK home directory will be checked, and if it only includes a single SDK deployment, a <code>global.json</code> file will be created in the current directory, referencing that SDK version and disabling roll-forward.
+</div>
+<div>
+ <em> <strong>Note:</strong> This will silently overwrite any <code>global.json</code> already present in the current directory. </em>
+</div></div>
+
+</li>
+<li><code>testAdapterPath : String</code> (optional)
+<div><div> Path to a directory to be searched for additional test adapters. Only <em>.dll</em> files with suffix <code>.TestAdapter.dll</code> are inspected. If not specified, the directory of the test <em>.dll</em> is searched.
+</div></div>
+
+</li>
+<li><code>unstableIfErrors : boolean</code> (optional)
+<div><div>
+ If this is set and the build completes with errors, the build will be marked as unstable instead of failed, and execution will continue to the next step.
+</div></div>
+
+</li>
+<li><code>unstableIfWarnings : boolean</code> (optional)
+<div><div>
+ If this is set and the build completes with warnings (but no errors), the build will be marked as unstable instead of successful.
+</div></div>
+
+</li>
+<li><code>verbosity : String</code> (optional)
+<div><div> Sets the MSBuild verbosity level.
+</div></div>
+
+</li>
+<li><code>workDirectory : String</code> (optional)
+<div><div>
+ The directory in which to execute the command. By default, this is the current directory (for freestyle jobs, that is the root of the job's workspace).
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `dotnetRestore`: .NET: Restore project dependencies (restore)
+++++
+<div><div>
+ The <code>dotnet restore</code> command uses NuGet to restore dependencies as well as project-specific tools that are specified in the project file. In most cases, you don't need to explicitly use the <code>dotnet restore</code> command, since a NuGet restore is run implicitly if necessary when you run the following commands:
+</div>
+<ul>
+ <li><a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new" rel="nofollow">dotnet new</a></li>
+ <li><a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build" rel="nofollow">dotnet build</a></li>
+ <li><a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build-server" rel="nofollow">dotnet build-server</a></li>
+ <li><a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run" rel="nofollow">dotnet run</a></li>
+ <li><a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test" rel="nofollow">dotnet test</a></li>
+ <li><a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish" rel="nofollow">dotnet publish</a></li>
+ <li><a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-pack" rel="nofollow">dotnet pack</a></li>
+</ul>
+<div>
+ Sometimes, it might be inconvenient to run the implicit NuGet restore with these commands. For example, some automated systems, such as build systems, need to call <code>dotnet restore</code> explicitly to control when the restore occurs so that they can control network usage. To prevent the implicit NuGet restore, you can use the <code>--no-restore</code> flag with any of these commands to disable implicit restore.
+</div>
+<div>
+ (see also: <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-restore" rel="nofollow">Microsoft Documentation</a>)
+</div></div>
+<ul><li><code>charset : String</code> (optional)
+<div><div>
+ The character set to use for the step's output. If not specified, the charset associated with the build will be used.
+</div></div>
+
+</li>
+<li><code>configfile : String</code> (optional)
+<div><div> The NuGet configuration file (<em>nuget.config</em>) to use for the restore operation.
+</div></div>
+
+</li>
+<li><code>continueOnError : boolean</code> (optional)
+<div><div>
+ If this is checked, errors encountered will cause the build status to be set to <code>FAILURE</code> (or <code>UNSTABLE</code>, if configured that way), but the build will be allowed to continue. Otherwise, any such errors will cause the build to be terminated immediately.
+</div></div>
+
+</li>
+<li><code>disableParallel : boolean</code> (optional)
+<div><div> Disables restoring multiple projects in parallel.
+</div></div>
+
+</li>
+<li><code>force : boolean</code> (optional)
+<div><div> Forces all dependencies to be resolved even if the last restore was successful. Specifying this flag is the same as deleting the <em>project.assets.json</em> file.
+</div></div>
+
+</li>
+<li><code>forceEvaluate : boolean</code> (optional)
+<div><div> Forces restore to reevaluate all dependencies even if a lock file already exists.
+</div></div>
+
+</li>
+<li><code>ignoreFailedSources : boolean</code> (optional)
+<div><div> Only warn about failed sources if there are packages meeting the version requirement.
+</div></div>
+
+</li>
+<li><code>lockFilePath : String</code> (optional)
+<div><div> Output location where project lock file is written. By default, this is <em>PROJECT_ROOT\packages.lock.json</em>.
+</div></div>
+
+</li>
+<li><code>lockedMode : boolean</code> (optional)
+<div><div> Don't allow updating project lock file.
+</div></div>
+
+</li>
+<li><code>noCache : boolean</code> (optional)
+<div><div> Specifies to not cache HTTP requests.
+</div></div>
+
+</li>
+<li><code>noDependencies : boolean</code> (optional)
+<div><div> When restoring a project with project-to-project (P2P) references, restores the root project and not the references.
+</div></div>
+
+</li>
+<li><code>packages : String</code> (optional)
+<div><div> Specifies the directory for restored packages.
+</div></div>
+
+</li>
+<li><code>project : String</code> (optional)
+<div><div> Optional path to the project file to restore.
+</div></div>
+
+</li>
+<li><code>runtime : String</code> (optional)
+</li>
+<li><code>runtimes : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>runtimesString : String</code> (optional)
+<div><div> Specifies runtimes for the package restore. This is used to restore packages for runtimes not explicitly listed in the <code>&lt;RuntimeIdentifiers&gt;</code> tag in the <em>.csproj</em> file. For a list of Runtime Identifiers (RIDs), see the <a href="https://docs.microsoft.com/en-us/dotnet/core/rid-catalog" rel="nofollow">RID catalog</a>.
+</div></div>
+
+</li>
+<li><code>sdk : String</code> (optional)
+<div><div>
+ Name of a .NET SDK to use so that <code>dotnet</code> will be in the path.
+ <br>
+  If the default is specified, you either need to use the <q>With .NET</q> element (or a <code>withDotNet</code> block in a pipeline script) to specify one, or ensure this step runs on a node that has a .NET SDK installed and in the path.
+</div></div>
+
+</li>
+<li><code>showSdkInfo : boolean</code> (optional)
+<div><div>
+ If enabled, <code>dotnet --info</code> will be executed before the main command. This shows a list of available SDKs and runtimes, indicating which one is currently being used.
+</div></div>
+
+</li>
+<li><code>source : String</code> (optional)
+</li>
+<li><code>sources : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>sourcesString : String</code> (optional)
+<div><div> Specifies NuGet package sources to use during the restore operation. This setting overrides all of the sources specified in the <em>nuget.config</em> files.
+</div></div>
+
+</li>
+<li><code>specificSdkVersion : boolean</code> (optional)
+<div><div>
+ Depending on the platform, the <code>dotnet</code> executable may use the most recent SDK available on the system, even when <code>PATH</code> is set up to find an older SDK deployment first; see <a href="https://docs.microsoft.com/en-us/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" rel="nofollow">this page</a> for more information.
+ <br>
+  By enabling this option, the configured SDK home directory will be checked, and if it only includes a single SDK deployment, a <code>global.json</code> file will be created in the current directory, referencing that SDK version and disabling roll-forward.
+</div>
+<div>
+ <em> <strong>Note:</strong> This will silently overwrite any <code>global.json</code> already present in the current directory. </em>
+</div></div>
+
+</li>
+<li><code>useLockFile : boolean</code> (optional)
+<div><div> Enables the project lock file to be generated and used with restore.
+</div></div>
+
+</li>
+<li><code>verbosity : String</code> (optional)
+<div><div> Sets the verbosity level of the command.
+</div></div>
+
+</li>
+<li><code>workDirectory : String</code> (optional)
+<div><div>
+ The directory in which to execute the command. By default, this is the current directory (for freestyle jobs, that is the root of the job's workspace).
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `dotnetToolRestore`: .NET: Restore local tools (tool restore)
+++++
+<div><div>
+ The <code>dotnet tool restore</code> command finds the tool manifest file that is in scope for the current directory and installs the tools that are listed in it. For information about manifest files, see <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools#install-a-local-tool" rel="nofollow">Install a local tool</a> and <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools#invoke-a-local-tool" rel="nofollow">Invoke a local tool</a>.
+</div>
+<div>
+ (see also: <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-tool-restore" rel="nofollow">Microsoft Documentation</a>)
+</div></div>
+<ul><li><code>additionalSource : String</code> (optional)
+</li>
+<li><code>additionalSources : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>additionalSourcesString : String</code> (optional)
+<div><div> Adds additional NuGet package sources to use during installation.
+</div></div>
+
+</li>
+<li><code>charset : String</code> (optional)
+<div><div>
+ The character set to use for the step's output. If not specified, the charset associated with the build will be used.
+</div></div>
+
+</li>
+<li><code>configfile : String</code> (optional)
+<div><div> The NuGet configuration (<em>nuget.config</em>) file to use.
+</div></div>
+
+</li>
+<li><code>continueOnError : boolean</code> (optional)
+<div><div>
+ If this is checked, errors encountered will cause the build status to be set to <code>FAILURE</code> (or <code>UNSTABLE</code>, if configured that way), but the build will be allowed to continue. Otherwise, any such errors will cause the build to be terminated immediately.
+</div></div>
+
+</li>
+<li><code>disableParallel : boolean</code> (optional)
+<div><div> Prevent restoring multiple projects in parallel.
+</div></div>
+
+</li>
+<li><code>ignoreFailedSources : boolean</code> (optional)
+<div><div> Treat package source failures as warnings.
+</div></div>
+
+</li>
+<li><code>noCache : boolean</code> (optional)
+<div><div> Do not cache packages and http requests.
+</div></div>
+
+</li>
+<li><code>sdk : String</code> (optional)
+<div><div>
+ Name of a .NET SDK to use so that <code>dotnet</code> will be in the path.
+ <br>
+  If the default is specified, you either need to use the <q>With .NET</q> element (or a <code>withDotNet</code> block in a pipeline script) to specify one, or ensure this step runs on a node that has a .NET SDK installed and in the path.
+</div></div>
+
+</li>
+<li><code>showSdkInfo : boolean</code> (optional)
+<div><div>
+ If enabled, <code>dotnet --info</code> will be executed before the main command. This shows a list of available SDKs and runtimes, indicating which one is currently being used.
+</div></div>
+
+</li>
+<li><code>specificSdkVersion : boolean</code> (optional)
+<div><div>
+ Depending on the platform, the <code>dotnet</code> executable may use the most recent SDK available on the system, even when <code>PATH</code> is set up to find an older SDK deployment first; see <a href="https://docs.microsoft.com/en-us/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" rel="nofollow">this page</a> for more information.
+ <br>
+  By enabling this option, the configured SDK home directory will be checked, and if it only includes a single SDK deployment, a <code>global.json</code> file will be created in the current directory, referencing that SDK version and disabling roll-forward.
+</div>
+<div>
+ <em> <strong>Note:</strong> This will silently overwrite any <code>global.json</code> already present in the current directory. </em>
+</div></div>
+
+</li>
+<li><code>toolManifest : String</code> (optional)
+<div><div> Path to the manifest file.
+</div></div>
+
+</li>
+<li><code>verbosity : String</code> (optional)
+<div><div> Sets the verbosity level of the command. Allowed values are <code>q[uiet]</code>, <code>m[inimal]</code>, <code>n[ormal]</code>, <code>d[etailed]</code>, and <code>diag[nostic]</code>.
+</div></div>
+
+</li>
+<li><code>workDirectory : String</code> (optional)
+<div><div>
+ The directory in which to execute the command. By default, this is the current directory (for freestyle jobs, that is the root of the job's workspace).
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `withDotNet`: With .NET
+++++
+<div><div>
+ Prepares an environment for Jenkins to run build steps using a .NET SDK's <code>dotnet</code> utility.
+</div></div>
+<ul><li><code>sdk : String</code> (optional)
+<div><div>
+ Name of a .NET SDK to use so that <code>dotnet</code> will be in the path.
+</div></div>
+
+</li>
+<li><code>specificSdkVersion : boolean</code> (optional)
+<div><div>
+ Depending on the platform, the <code>dotnet</code> executable may use the most recent SDK available on the system, even when <code>PATH</code> is set up to find an older SDK deployment first; see <a href="https://docs.microsoft.com/en-us/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" rel="nofollow">this page</a> for more information.
+ <br>
+  By enabling this option, the configured SDK home directory will be checked, and if it only includes a single SDK deployment, a <code>global.json</code> file will be created in the current directory, referencing that SDK version and disabling roll-forward.
+</div>
+<div>
+ <em> <strong>Note:</strong> This will silently overwrite any <code>global.json</code> already present in the current directory. </em>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

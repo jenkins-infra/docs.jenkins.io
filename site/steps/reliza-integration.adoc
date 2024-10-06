@@ -1,0 +1,95 @@
+= Reliza Integration
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/reliza-integration">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `addRelizaRelease`: RelizaBuilder
+++++
+<ul><li><code>artId : String</code> (optional)
+</li>
+<li><code>artType : String</code> (optional)
+</li>
+<li><code>envSuffix : String</code> (optional)
+</li>
+<li><code>projectId : String</code> (optional)
+</li>
+<li><code>status : String</code> (optional)
+</li>
+<li><code>uri : String</code> (optional)
+</li>
+<li><code>useCommitList : String</code> (optional)
+</li>
+<li><code>version : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `submitPrData`: RelizaPR
+++++
+<ul><li><code>baseBranch : String</code> (optional)
+</li>
+<li><code>closedDate : String</code> (optional)
+</li>
+<li><code>commit : String</code> (optional)
+</li>
+<li><code>commits : String</code> (optional)
+</li>
+<li><code>createdDate : String</code> (optional)
+</li>
+<li><code>endpoint : String</code> (optional)
+</li>
+<li><code>envSuffix : String</code> (optional)
+</li>
+<li><code>mergedDate : String</code> (optional)
+</li>
+<li><code>number : String</code> (optional)
+</li>
+<li><code>projectId : String</code> (optional)
+</li>
+<li><code>state : String</code> (optional)
+</li>
+<li><code>targetBranch : String</code> (optional)
+</li>
+<li><code>title : String</code> (optional)
+</li>
+<li><code>uri : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `withReliza`: RelizaBuildWrapper
+++++
+<ul><li><code>customVersionMeta : String</code> (optional)
+</li>
+<li><code>customVersionModifier : String</code> (optional)
+</li>
+<li><code>envSuffix : String</code> (optional)
+</li>
+<li><code>getVersion : String</code> (optional)
+</li>
+<li><code>jenkinsVersionMeta : String</code> (optional)
+</li>
+<li><code>onlyVersion : String</code> (optional)
+</li>
+<li><code>projectId : String</code> (optional)
+</li>
+<li><code>uri : String</code> (optional)
+</li>
+</ul>
+
+
+++++

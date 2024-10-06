@@ -1,0 +1,35 @@
+= Scoverage Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/scoverage">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'ScoveragePublisher'])`: Publish Scoverage Report
+++++
+<ul><li><code>reportDir : String</code>
+<div><div>
+ e.g. target/scala-2.10/scoverage-report
+</div></div>
+
+</li>
+<li><code>reportFile : String</code>
+<div><div>
+ e.g. scoverage.xml
+</div></div>
+
+</li>
+</ul>
+
+
+++++

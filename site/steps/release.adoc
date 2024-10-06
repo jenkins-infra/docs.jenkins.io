@@ -1,0 +1,412 @@
+= Release Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/release">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `release`: Trigger release for the job
+++++
+<ul><li><code>job : String</code>
+<div><div>
+ Full name of the job to be released. This job must be visible to the current user. It should contain the Release configuration defined by the plugin.
+</div></div>
+
+</li>
+<li><code>parameters</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>agentParameter</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>base64File</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>base64 : String</code> (optional)
+</li>
+<li><code>file</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+</ul></li>
+</ul></div></li>
+<li><code>booleanParam</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : boolean</code>
+</li>
+</ul></div></li>
+<li><code>buildMasterRelease</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>applicationId : String</code>
+</li>
+<li><code>releaseNumber : String</code>
+</li>
+<li><code>showApplicationId : boolean</code>
+</li>
+<li><code>description : String</code>
+</li>
+</ul></div></li>
+<li><code>checkboxParameter</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'ClearCaseUcmBaselineParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>baseline : String</code>
+</li>
+<li><code>forceRmview : boolean</code>
+</li>
+</ul></div></li>
+<li><code>credentials</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>description : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'CvsTagsParamValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>tagName : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'DateParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>description : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'DeployMetaDataParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>environmentKey : String</code>
+</li>
+<li><code>buildVersion : String</code>
+</li>
+<li><code>applicationName : String</code>
+</li>
+</ul></div></li>
+<li><code>file</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>file</code>
+<ul><b>Nested Choice of Objects</b>
+</ul></li>
+</ul></div></li>
+<li><code>fileSystemList</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'GeneratorKeyValueParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>gitParameter</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>imageTag</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>imageName : String</code>
+</li>
+<li><code>imageTag : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'InheritableStringParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'JavaParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>description : String</code>
+</li>
+<li><code>selectedJDK : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'JiraIssueParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'JiraVersionParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>version : String</code>
+</li>
+</ul></div></li>
+<li><code>jsonEditor</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'LabelParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>label : String</code>
+</li>
+<li><code>allNodesMatchingLabel : boolean</code>
+</li>
+<li><code>nodeEligibility</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'AllNodeEligibility'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'IgnoreOfflineNodeEligibility'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'IgnoreTempOfflineNodeEligibility'</code><div>
+<ul></ul></div></li>
+</ul></li>
+</ul></div></li>
+<li><code>listGitBranches</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'ListSubversionTagsParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>tagsDir : String</code>
+</li>
+<li><code>tag : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'MatrixCombinationsParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>description : String</code>
+</li>
+<li><code>combinations : Array / List of String</code>
+<ul></ul></li>
+</ul></div></li>
+<li><code>mavenMetadataVersions</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>description : String</code>
+</li>
+<li><code>groupId : String</code>
+</li>
+<li><code>artifactId : String</code>
+</li>
+<li><code>version : String</code>
+</li>
+<li><code>packaging : String</code>
+</li>
+<li><code>classifier : String</code>
+</li>
+<li><code>artifactUrl : String</code>
+</li>
+</ul></div></li>
+<li><code>multiselect</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>selectedValues</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'NodeParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>labels : Array / List of String</code>
+<ul></ul></li>
+<li><code>nodeEligibility</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'AllNodeEligibility'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'IgnoreOfflineNodeEligibility'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'IgnoreTempOfflineNodeEligibility'</code><div>
+<ul></ul></div></li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'PackageChoiceParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>separator</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>separatorStyle : String</code>
+</li>
+<li><code>sectionHeader : String</code>
+</li>
+<li><code>sectionHeaderStyle : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'PatchParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>file</code>
+<ul><b>Nested Choice of Objects</b>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'PromotedBuildParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>runId : String</code>
+</li>
+<li><code>description : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'RandomStringParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>RESTList</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'ReviewboardParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>run</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>runId : String</code>
+</li>
+<li><code>description : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'SauceParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>selectedBrowsers : String</code>
+</li>
+</ul></div></li>
+<li><code>stashedFile</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>file</code>
+<ul><b>Nested Choice of Objects</b>
+</ul></li>
+</ul></div></li>
+<li><code>string</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>text</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'VBoxParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>nodes : Array / List of String</code>
+<ul></ul></li>
+<li><code>nodeDelimiter : String</code>
+</li>
+</ul></div></li>
+<li><code>email</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>validatingString</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>validatingYamlParameter</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>failedValidationMessage : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>hidden</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'WReadonlyStringParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'WReadonlyTextParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>extendedChoice</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'com.michelin.cio.hudson.plugins.passwordparam.PasswordParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>description : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'com.moded.extendedchoiceparameter.ExtendedChoiceParameterValue'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>password</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>value</code>
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>description : String</code>
+</li>
+</ul></div></li>
+</ul></li>
+</ul>
+
+
+++++

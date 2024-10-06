@@ -1,0 +1,66 @@
+= Cisco Spark Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/cisco-spark">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'SparkNotifier'])`: Cisco Spark Notification
+++++
+<ul><li><code>disable : boolean</code>
+</li>
+<li><code>notnotifyifsuccess : boolean</code>
+<div><div>
+ when build status is success, don't publish message to spark room.
+</div></div>
+
+</li>
+<li><code>sparkRoomName : String</code>
+</li>
+<li><code>publishContentPrefix : String</code>
+</li>
+<li><code>publishContent : String</code>
+<div><div>
+ support <a href="https://ci.jenkins-ci.org/env-vars.html/?" rel="nofollow">environment vars</a> and some customized vars, such as ${BUILD_STATUS}. if the content contain ${DEFAULT_CONTENT}, it will be replaced with "${BUILD_STATUS}:${BUILD_URL}".
+</div></div>
+
+</li>
+<li><code>invitetoroom : boolean</code>
+<div><div>
+ when build status is fail, invite committers since last success build to spark room.
+</div></div>
+
+</li>
+<li><code>attachtestresult : boolean</code>
+<div><div>
+ Maven job with test result can use this function. Not all builds can support it. so if checked, the published message will contain test result such as: 
+ <pre>[test results]	 
+          total:5, failed:0, skiped:0	 
+</pre>
+</div></div>
+
+</li>
+<li><code>attachcodechange : boolean</code>
+<div><div>
+ not all builds need to checkout from SCM. so if checked, the published message will contain code changes such as: 
+ <pre>[changes]	 
+          fujian1115:[job_config.jpg]	 
+          fujian1115:[sample.jpg]	 
+</pre>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

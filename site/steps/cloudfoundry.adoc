@@ -1,0 +1,87 @@
+= Cloud Foundry Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/cloudfoundry">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `pushToCloudFoundry`: Push to Cloud Foundry
+++++
+<ul><li><code>target : String</code>
+</li>
+<li><code>organization : String</code>
+</li>
+<li><code>cloudSpace : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>manifestChoice</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>appName : String</code> (optional)
+</li>
+<li><code>appPath : String</code> (optional)
+</li>
+<li><code>buildpack : String</code> (optional)
+</li>
+<li><code>command : String</code> (optional)
+</li>
+<li><code>domain : String</code> (optional)
+</li>
+<li><code>envVars</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>hostname : String</code> (optional)
+</li>
+<li><code>instances : String</code> (optional)
+</li>
+<li><code>manifestFile : String</code> (optional)
+</li>
+<li><code>memory : String</code> (optional)
+</li>
+<li><code>noRoute : String</code> (optional)
+</li>
+<li><code>servicesNames</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+</ul></li>
+<li><code>stack : String</code> (optional)
+</li>
+<li><code>timeout : String</code> (optional)
+</li>
+<li><code>value : String</code> (optional)
+</li>
+</ul></li>
+<li><code>pluginTimeout : String</code> (optional)
+</li>
+<li><code>selfSigned : String</code> (optional)
+</li>
+<li><code>servicesToCreate</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>type : String</code>
+</li>
+<li><code>plan : String</code>
+</li>
+<li><code>resetService : boolean</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++

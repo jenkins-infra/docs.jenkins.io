@@ -1,0 +1,53 @@
+= Sonic CI Helper
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/sonic-ci-helper">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `upload-sonic`: Upload package to Sonic Testing Platform.
+++++
+<ul><li><code>apiKey : String</code>
+<div><div>
+ Sonic Auth Token.
+</div></div>
+
+</li>
+<li><code>scanDir : String</code>
+<div><div>
+ Sonic scans the directory of the installation package, the default is the current project space directory, for example, fill in <strong>build</strong>, the scan directory is: ${WORKSPACE}/build
+</div></div>
+
+</li>
+<li><code>projectId : String</code> (optional)
+<div><div>
+ Sonic Project.
+</div></div>
+
+</li>
+<li><code>suiteId : String</code> (optional)
+<div><div>
+ Run testsuite after uploading.
+</div></div>
+
+</li>
+<li><code>wildcard : String</code> (optional)
+<div><div>
+ file wildcard (default: **/*.apk,**/*.ipa).
+</div></div>
+
+</li>
+</ul>
+
+
+++++

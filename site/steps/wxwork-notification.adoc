@@ -1,0 +1,37 @@
+= WXWork Notification Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/wxwork-notification">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `wxwork`: 企业微信机器人通知
+++++
+<ul><li><code>robot : String</code>
+</li>
+<li><code>at : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>atAll : boolean</code> (optional)
+</li>
+<li><code>atMe : boolean</code> (optional)
+</li>
+<li><code>imageUrl : String</code> (optional)
+</li>
+<li><code>text : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>type : String</code> (optional)
+</li>
+</ul>
+
+
+++++

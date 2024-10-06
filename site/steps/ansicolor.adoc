@@ -1,0 +1,36 @@
+= AnsiColor
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/ansicolor">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `ansiColor`: Color ANSI Console Output
+++++
+<div><div>
+ Adds support for standard ANSI escape sequences, including color, to Console Output.
+</div></div>
+<ul><li><code>colorMapName : String</code>
+</li>
+</ul>
+
+
+++++
+=== `wrap([$class: 'AnsiColorBuildWrapper'])`: Color ANSI Console Output
+++++
+<ul><li><code>colorMapName : String</code>
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,30 @@
+= deployment-notification
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/deployment-notification">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `awaitDeployment`: Awaiting for deployment
+++++
+<div><div>
+ Pauses a Workflow job until artifacts are deployed to servers via configuration management tools like Chef/Puppet/etc. For this feature to work, you must also install a plugin that's specific to the configuration management tool you are using, such as the puppet plugin.
+</div></div>
+<ul><li><code>threshold : int</code>
+</li>
+<li><code>env : String</code>
+</li>
+</ul>
+
+
+++++

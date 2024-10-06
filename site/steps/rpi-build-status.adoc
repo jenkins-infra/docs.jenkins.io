@@ -1,0 +1,53 @@
+= Raspberry Pi Build Status Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/rpi-build-status">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'LedBorgPublisher'])`: LED Borg controller
+++++
+<ul><li><code>failureState : String</code>
+<div><div>
+ Colour selection for the LED when the latest build state is : Fail (Default RED)
+</div></div>
+
+</li>
+<li><code>successState : String</code>
+<div><div>
+ Colour selection for the LED when the latest build state is : Success (Default BLUE)
+</div></div>
+
+</li>
+<li><code>unstableState : String</code>
+<div><div>
+ Colour selection for the LED when the latest build state is : Unstable (Default Yellow)
+</div></div>
+
+</li>
+<li><code>notBuiltState : String</code>
+<div><div>
+ Colour selection for the LED when the latest build state is : Not Built (Default OFF)
+</div></div>
+
+</li>
+<li><code>abortedState : String</code>
+<div><div>
+ Colour selection for the LED when the latest build state is : Aborted (Default MAGENTA)
+</div></div>
+
+</li>
+</ul>
+
+
+++++

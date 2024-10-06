@@ -1,0 +1,50 @@
+= Office 365 Connector
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/Office-365-Connector">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `office365ConnectorSend`: Send job status notifications to Office 365 (e.g. Microsoft Teams or Outlook)
+++++
+<div><div>
+ Step for sending build notifications to Microsoft Teams or Outlook.
+</div></div>
+<ul><li><code>webhookUrl : String</code>
+</li>
+<li><code>color : String</code> (optional)
+<div><div>
+ HTML color eg. hex value (with or without # character) of the notification card used to display when the 'message' attribute is set.
+</div></div>
+
+</li>
+<li><code>factDefinitions</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>template : String</code> (optional)
+</li>
+</ul></li>
+<li><code>message : String</code> (optional)
+<div><div>
+ This is the main text in a message attachment, and can contain standard message markup. The content will automatically collapse if it contains 700+ characters or 5+ linebreaks, and will display a "Show more..." link to expand the content. Notification may include global variables, for example environment and currentBuild variables:
+ <br><code> office365ConnectorSend message:"started ${env.JOB_NAME} ${env.BUILD_NUMBER} (&lt;${env.BUILD_URL}|Open&gt;)" </code>
+</div></div>
+
+</li>
+<li><code>status : String</code> (optional)
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,79 @@
+= Cppcheck Plug-in
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/cppcheck">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `publishCppcheck`: Publish Cppcheck results
+++++
+<ul><li><code>XSize : int</code> (optional)
+</li>
+<li><code>YSize : int</code> (optional)
+</li>
+<li><code>allowNoReport : boolean</code> (optional)
+</li>
+<li><code>displayAllErrors : boolean</code> (optional)
+</li>
+<li><code>displayErrorSeverity : boolean</code> (optional)
+</li>
+<li><code>displayNoCategorySeverity : boolean</code> (optional)
+</li>
+<li><code>displayPerformanceSeverity : boolean</code> (optional)
+</li>
+<li><code>displayPortabilitySeverity : boolean</code> (optional)
+</li>
+<li><code>displayStyleSeverity : boolean</code> (optional)
+</li>
+<li><code>displayWarningSeverity : boolean</code> (optional)
+</li>
+<li><code>failureThreshold : String</code> (optional)
+</li>
+<li><code>healthy : String</code> (optional)
+</li>
+<li><code>ignoreBlankFiles : boolean</code> (optional)
+</li>
+<li><code>newFailureThreshold : String</code> (optional)
+</li>
+<li><code>newThreshold : String</code> (optional)
+</li>
+<li><code>numBuildsInGraph : int</code> (optional)
+</li>
+<li><code>pattern : String</code> (optional)
+<div><p>Cppcheck must be executed to generate XML reports for this plugin to function. <a href="http://ant.apache.org/manual/Types/fileset.html" rel="nofollow">Fileset 'includes'</a> setting specifies the generated Cppcheck XML report files, such as '**/cppcheck-result-*.xml'. Base directory of the fileset is relative to the workspace root directory.</p>
+<p>If no value is set, then the default '**/cppcheck-result.xml' will be used. Be sure to never include any non-report files into this pattern.</p>
+<p>The plugin is able to work with both XML formats produced by Cppcheck, but always prefer to use the newer version 2. Cppcheck doesn't report some issues with the legacy format.</p></div>
+
+</li>
+<li><code>severityError : boolean</code> (optional)
+</li>
+<li><code>severityInformation : boolean</code> (optional)
+</li>
+<li><code>severityNoCategory : boolean</code> (optional)
+</li>
+<li><code>severityPerformance : boolean</code> (optional)
+</li>
+<li><code>severityPortability : boolean</code> (optional)
+</li>
+<li><code>severityStyle : boolean</code> (optional)
+</li>
+<li><code>severityWarning : boolean</code> (optional)
+</li>
+<li><code>threshold : String</code> (optional)
+</li>
+<li><code>unHealthy : String</code> (optional)
+</li>
+</ul>
+
+
+++++

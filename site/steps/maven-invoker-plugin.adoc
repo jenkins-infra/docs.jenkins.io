@@ -1,0 +1,45 @@
+= Maven Invoker plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/maven-invoker-plugin">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `maven_invoker`: Archive Maven Invoker test results
+++++
+<ul><li><code>reportsFilenamePattern : String</code>
+</li>
+<li><code>invokerBuildDir : String</code>
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'MavenInvokerRecorder'])`: Maven Invoker Plugin Results
+++++
+<ul><li><code>reportsFilenamePattern : String</code>
+<div><div>
+ <p>This is a file name pattern that can be used to locate the Maven Invoker report files (for example <b>**/target/invoker-reports/BUILD*.xml</b>).</p>
+</div></div>
+
+</li>
+<li><code>invokerBuildDir : String</code>
+<div><div>
+ <p>This is the directory where Maven Invoker runs. It is used to find the builds logs (for example <b>**/target/its</b>).</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

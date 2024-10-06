@@ -1,0 +1,39 @@
+= Build Name and Description Setter
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/build-name-setter">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `buildDescription`: Changes build description
+++++
+<div><div>
+ Normally, build description is empty, but it can be changed by setting what name new build gets. This field can contain <a href="https://wiki.jenkins.io/display/JENKINS/Token+Macro+Plugin" rel="nofollow">macros</a>.
+</div></div>
+<ul><li><code>descriptionTemplate : String</code>
+</li>
+</ul>
+
+
+++++
+=== `buildName`: Changes build name
+++++
+<div><div>
+ Normally, builds are named by their sequential numbers, but you can change that here by setting what name new build gets. This field can contain <a href="https://wiki.jenkins.io/display/JENKINS/Token+Macro+Plugin" rel="nofollow">macros</a>.
+</div></div>
+<ul><li><code>nameTemplate : String</code>
+</li>
+</ul>
+
+
+++++

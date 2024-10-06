@@ -1,0 +1,245 @@
+= Zoho Sprints
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/zohosprints">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `sprintsAddItem`: [Zoho Sprints] Create New Item
+++++
+<ul><li><code>name : String</code>
+<div><div>
+ Enter the item name.
+</div></div>
+
+</li>
+<li><code>prefix : String</code>
+<div><div>
+ Add a work item to Zoho Sprints. Format: PI#S2 (P1 - Project Number, S2 - Sprint Number). Input P1#S0, if you would like to add the item to the backlog.
+</div></div>
+
+</li>
+<li><code>description : String</code>
+<div><div>
+ Brief your item here.
+</div></div>
+
+</li>
+<li><code>type : String</code>
+<div><div>
+ Item type can either be a bug or task.
+</div></div>
+
+</li>
+<li><code>assignee : String</code>
+<div><div>
+ Enter the email address of the portal user. Here, the assignee should be in an active state. When you try to add an inactive user, the following operation will not reflect in Zoho Sprints.
+</div></div>
+
+</li>
+<li><code>attachment : String</code>
+<div><div>
+ Upload the build log file as attachment.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `sprintsAddItemComment`: [Zoho Sprints] Add Comments to Item
+++++
+<ul><li><code>prefix : String</code>
+<div><div>
+ Enter the syntax. Example: P1#I10 (P3 - Project ID, I10 - Item ID). You can only add a comment up to 10 items.
+</div></div>
+
+</li>
+<li><code>note : String</code>
+<div><div>
+ Any malicious content will be automatically removed.
+</div></div>
+
+</li>
+<li><code>logfile : String</code>
+<div><div>
+ Upload the build log file as an attachment.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `sprintsAssociateItemToRelease`: [Zoho Sprints] Associate Item To Release
+++++
+<ul><li><code>releasePrefix : String</code>
+<div><div>
+ Enter the release details. Example: P2#R10
+</div></div>
+
+</li>
+<li><code>itemPrefix : String</code>
+<div><div>
+ Enter the prefix of your item here. Example: P1#I10 (P1 - Project number, I10 - Item number), P#I11, P#I12, P2#I13
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `sprintsCreateRelease`: [ZohoSprints] Create Release
+++++
+<ul><li><code>prefix : String</code>
+<div><div>
+ Enter the prefix of your project here. Example: P10 (P10 - Project number)
+</div></div>
+
+</li>
+<li><code>itemPrefix : String</code>
+<div><div>
+ Enter the prefix of your item here. Example: P1#I10 (P1 - Project number, I10 - Item number), P#I11, P#I12, P2#I13
+</div></div>
+
+</li>
+<li><code>releaseName : String</code>
+<div><div>
+ Enter the name of the release here
+</div></div>
+
+</li>
+<li><code>description : String</code>
+<div><div>
+ Add a line or two to describe the release
+</div></div>
+
+</li>
+<li><code>stage : String</code>
+<div><div>
+ Mention the stage of the release
+</div></div>
+
+</li>
+<li><code>owner : String</code>
+<div><div>
+ Mention the email id of the release’s owner
+</div></div>
+
+</li>
+<li><code>period : String</code>
+<div><div>
+ Mention the number of days required for the release (not lesser than 3)
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `sprintsUpdateItemPriority`: [Zoho Sprints] Update Item Priority
+++++
+<ul><li><code>prefix : String</code>
+<div><div>
+ Input the relevant project and item id here. Example: P1#I10 (P1 - Project number, I10 - Item number). You can update priority of up to 10 items across projects at a time. Example: P1#I10, P#I11, P#I12, P2#I13
+</div></div>
+
+</li>
+<li><code>priority : String</code>
+<div><div>
+ Enter a valid priority name as mentioned in Zoho Sprints. The following operation will not reflect if you enter an invalid priority name.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `sprintsUpdateItemStatus`: [Zoho Sprints] Update Item Status
+++++
+<ul><li><code>prefix : String</code>
+<div><div>
+ Input the relevant project and item id here. Example: P1#I10 (P1 - Project number, I10 - Item number). You can update status of up to 10 items across projects at a time. Example: P1#I10, P#I11, P#I12, P2#I13
+</div></div>
+
+</li>
+<li><code>status : String</code>
+<div><div>
+ Enter a valid status name as mentioned in Zoho Sprints. The following operation will not reflect if you enter an invalid status name. (Or) Enter $STATUS_PARAM to fetch all the status on the sprint board.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `sprintsUpdateReleaseStage`: [ZohoSprints] Update Release Stage
+++++
+<ul><li><code>releasePrefix : String</code>
+<div><div>
+ Enter the release details. Example: P2#R10
+</div></div>
+
+</li>
+<li><code>stage : String</code>
+<div><div>
+ Mention the stage to which you want to update your release.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `wrap([$class: 'BuildEnvironmentForCreateIssueOnFailure'])`: [Zoho Sprints] Create Item On Failure
+++++
+<ul><li><code>name : String</code>
+<div><div>
+ Enter the item name.
+</div></div>
+
+</li>
+<li><code>prefix : String</code>
+<div><div>
+ Add a work item to Zoho Sprints. Format: PI#S2#R1 (P1 - Project Number, S2 - Sprint Number/Backlog ID, R1 - Release Number). Release Number is Optional
+</div></div>
+
+</li>
+<li><code>description : String</code>
+<div><div>
+ Brief your item here.
+</div></div>
+
+</li>
+<li><code>type : String</code>
+<div><div>
+ Item type can either be a bug or task.
+</div></div>
+
+</li>
+<li><code>assignee : String</code>
+<div><div>
+ : Enter the email address of the portal user. Here, the assignee should be in an active state. When you try to add an inactive user, the following operation will not reflect in Zoho Sprints.
+</div></div>
+
+</li>
+<li><code>attachment : String</code>
+<div><div>
+ Upload the build log file as an attachment.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

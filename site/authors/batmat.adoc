@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: Baptiste Mathus
+:page-twitter: bmathus
+:page-github: batmat
+:page-blog: http://batmat.net
+:page-authoravatar: ../../images/images/avatars/batmat.jpg
+
+Baptiste has been using and contributing to Jenkins since it was called differently, and is a huge proponent of the Agile, Devops & Continuous Delivery movements. He loves to discuss not only the technical aspects, but also the even more essential cultural aspects of this all, working together to improve the value provided to customers in a great inclusive and blameless environment.

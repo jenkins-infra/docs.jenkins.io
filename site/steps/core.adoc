@@ -1,0 +1,134 @@
+= Jenkins Core
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+=== `archiveArtifacts`: Archive the artifacts
+++++
+<div><div>
+ Archives the build artifacts (for example, distribution zip files or jar files) so that they can be downloaded later. Archived files will be accessible from the Jenkins webpage. 
+ <br>
+  Normally, Jenkins keeps artifacts for a build as long as a build log itself is kept, but if you don't need old artifacts and would rather save disk space, you can do so.
+</div>
+<br>
+<div>
+ Note that the Maven job type automatically archives any produced Maven artifacts. Any artifacts configured here will be archived on top of that. Automatic artifact archiving can be disabled under the advanced Maven options.
+</div>
+<br>
+<div>
+ The <a href="https://www.jenkins.io/redirect/pipeline-snippet-generator" rel="nofollow"> Pipeline Snippet Generator </a> generates this example when all arguments are set to true (some arguments by default are true): 
+ <pre><code>archiveArtifacts artifacts: '**/*.txt',
+                   allowEmptyArchive: true,
+                   fingerprint: true,
+                   onlyIfSuccessful: true
+
+</code></pre>
+</div></div>
+<ul><li><code>artifacts : String</code>
+<div><div>
+ You can use wildcards like 'module/dist/**/*.zip'. See <a href="https://ant.apache.org/manual/Types/fileset.html" rel="nofollow"> the includes attribute of Ant fileset </a> for the exact format -- except that <code>","</code> ( <em>comma</em> ) is the only supported separator. The base directory is <a rel="nofollow">the workspace</a> . You can only archive files that are located in your workspace.
+</div>
+<br>
+<div>
+ <p>Here are some examples of usage for pipeline:</p>
+ <ul>
+  <li>How to archive multiple artifacts from a specific folder: 
+   <pre><code>archiveArtifacts artifacts: 'target/*.jar'</code></pre></li>
+  <br>
+  <li>How to archive multiple artifacts with different patterns: 
+   <pre><code>archiveArtifacts artifacts: 'target/*.jar, target/*.war'</code></pre></li>
+  <br>
+  <li>How to archive multiple nested artifacts: 
+   <pre><code>archiveArtifacts artifacts: '**/*.jar'</code></pre></li>
+  <br>
+ </ul>
+</div></div>
+
+</li>
+<li><code>allowEmptyArchive : boolean</code> (optional)
+<div><div>
+ Normally, a build fails if archiving returns zero artifacts. This option allows the archiving process to return nothing without failing the build. Instead, the build will simply throw a warning.
+</div></div>
+
+</li>
+<li><code>caseSensitive : boolean</code> (optional)
+<div><div>
+ Artifact archiver uses Ant <code>org.apache.tools.ant.DirectoryScanner</code> which by default is case sensitive. For instance, if the job produces *.hpi files, pattern "**/*.HPI" will fail to find them. 
+ <br>
+ <br>
+  This option can be used to disable case sensitivity. When it's unchecked, pattern "**/*.HPI" will match any *.hpi files, or pattern "**/cAsEsEnSiTiVe.jar" will match a file called caseSensitive.jar.
+</div></div>
+
+</li>
+<li><code>defaultExcludes : boolean</code> (optional)
+</li>
+<li><code>excludes : String</code> (optional)
+<div><div>
+ Optionally specify the 'excludes' pattern, such as "foo/bar/**/*". Use "," to set a list of patterns. A file that matches this mask will not be archived even if it matches the mask specified in 'files to archive' section.
+</div></div>
+
+</li>
+<li><code>fingerprint : boolean</code> (optional)
+</li>
+<li><code>followSymlinks : boolean</code> (optional)
+<div><div>
+ By disabling this option all symbolic links found in the workspace will be ignored.
+</div></div>
+
+</li>
+<li><code>onlyIfSuccessful : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `fingerprint`: Record fingerprints of files to track usage
+++++
+<div><div>
+ Jenkins can record the 'fingerprint' of files (most often jar files) to keep track of where/when those files are produced and used. When you have inter-dependent projects on Jenkins, this allows you to quickly find out answers to questions like: 
+ <ul>
+  <li>I have <code>foo.jar</code> on my HDD but which build number of FOO did it come from?</li>
+  <li>My BAR project depends on <code>foo.jar</code> from the FOO project.</li>
+  <li>
+   <ul>
+    <li>Which build of <code>foo.jar</code> is used in BAR #51?</li>
+    <li>Which build of BAR contains my bug fix to <code>foo.jar</code> #32?</li>
+   </ul></li>
+ </ul>
+ <p>To use this feature, all of the involved projects (not just the project in which a file is produced, but also the projects in which the file is used) need to use this and record fingerprints.</p>
+ <p>See <a href="https://www.jenkins.io/redirect/fingerprint" rel="nofollow">this document</a> for more details.</p>
+</div></div>
+<ul><li><code>targets : String</code>
+<div><div>
+ Can use wildcards like <code>module/dist/**/*.zip</code> (see the <a href="https://ant.apache.org/manual/Types/fileset.html" rel="nofollow"> @includes of Ant fileset </a> for the exact format). The base directory is <a rel="nofollow">the workspace</a> .
+</div></div>
+
+</li>
+<li><code>caseSensitive : boolean</code> (optional)
+<div><div>
+ Fingerprinter uses Ant <code>org.apache.tools.ant.DirectoryScanner</code> which by default is case sensitive. For instance, if the job produces *.hpi files, pattern "**/*.HPI" will fail to find them. 
+ <br>
+ <br>
+  This option can be used to disable case sensitivity. When it's unchecked, pattern "**/*.HPI" will match any *.hpi files, or pattern "**/cAsEsEnSiTiVe.jar" will match a file called caseSensitive.jar.
+</div></div>
+
+</li>
+<li><code>defaultExcludes : boolean</code> (optional)
+</li>
+<li><code>excludes : String</code> (optional)
+<div><div>
+ Optionally specify the 'excludes' pattern, such as "foo/bar/**/*". Use "," to set a list of patterns. A file that matches this mask will not be fingerprinted even if it matches the mask specified in 'files to fingerprint' section.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

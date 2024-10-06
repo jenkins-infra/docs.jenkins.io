@@ -1,0 +1,54 @@
+= Sec1 Security
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/secone-security">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `sec1Security`: Execute Sec1 Security Scan
+++++
+<ul><li><code>apiCredentialsId : String</code>
+<div><div>
+ <p>This needs to be the ID of an existing "Sec1 API Key" credential. The key will be used to access Sec1 api.</p>
+</div></div>
+
+</li>
+<li><code>actionOnThresholdBreached : String</code> (optional)
+</li>
+<li><code>applyThreshold : boolean</code> (optional)
+</li>
+<li><code>scanFileLocation : String</code> (optional)
+</li>
+<li><code>threshold</code> (optional)
+<div><div>
+ Define your vulnerability threshold levels. 
+ <br>
+  e.g. if you define critical vulnerability threshold as <b>10</b> then your build will <b>fail</b> if more than 10 critical vulnerabilities found in the scan.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>criticalThreshold : String</code> (optional)
+</li>
+<li><code>highThreshold : String</code> (optional)
+</li>
+<li><code>mediumThreshold : String</code> (optional)
+</li>
+<li><code>lowThreshold : String</code> (optional)
+</li>
+<li><code>statusAction : String</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++

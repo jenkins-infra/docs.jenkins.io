@@ -1,0 +1,60 @@
+= Forensics API Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/forensics-api">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `mineRepository`: Mine SCM repository
+++++
+<ul><li><code>scm : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `discoverReferenceBuild`: Discover reference build
+++++
+<ul><li><code>referenceJob : String</code> (optional)
+<div><p>The reference job is the baseline used to determine the relative differences to the current build. Several plugins that report build statistics (test results, code coverage, metrics, static analysis warnings) typically show their reports in two different ways: either as absolute report (e.g., total number of tests or warnings, overall code coverage) or as relative delta report (e.g., additional tests, increased or decreased coverage, new or fixed warnings). To compute a relative delta report, a plugin needs to select another build to compare the current results to (a so-called reference build). This reference build is obtained from the specified reference job.</p>
+<p>In Multibranch Pipelines this parameter can be left empty: in these jobs, the plugin selects the build automatically from the associated job that builds the main target branch. For all other jobs, the last completed build of the current job will be used as reference build if the reference job is not specified.</p></div>
+
+</li>
+<li><code>requiredResult : String</code> (optional)
+<div>When a reference build is searched for in the baseline (see the parameter reference job) then it sometimes makes sense to only consider builds that have a certain result. For example, you may want to skip the computation of a delta coverage when the reference build has failed tests. Or you may want to skip the computation of new warnings when the reference build has a compilation error. The following enumeration shows the possible values for this parameter and the corresponding behavior: 
+<dl>
+ <dt>
+  SUCCESS
+ </dt>
+ <dd>
+  The selected build must be successful
+ </dd>
+ <dt>
+  UNSTABLE
+ </dt>
+ <dd>
+  The selected build must be successful or unstable
+ </dd>
+ <dt>
+  FAILURE
+ </dt>
+ <dd>
+  The result of the build is not relevant (this is the default behavior if unset)
+ </dd>
+</dl></div>
+
+</li>
+</ul>
+
+
+++++

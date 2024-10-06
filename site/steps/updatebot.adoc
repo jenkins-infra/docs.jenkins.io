@@ -1,0 +1,27 @@
+= Updatebot Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/updatebot">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `updateBotPush`: UpdateBot Push
+++++
+<ul><li><code>file : String</code> (optional)
+</li>
+<li><code>pollPeriodMS : long</code> (optional)
+</li>
+</ul>
+
+
+++++

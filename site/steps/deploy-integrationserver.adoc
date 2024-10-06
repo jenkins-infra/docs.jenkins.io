@@ -1,0 +1,90 @@
+= Deploy to webMethods Integration Server Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/deploy-integrationserver">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `deployintegrationserver`: Deploy to webMethods Integration Server
+++++
+<ul><li><code>singleTargetAliases : String</code> (optional)
+<div><div>
+ Comma-separated alias (without white-spaces) names of the target Integration Servers. These should have already been defined using Deployer.
+</div></div>
+
+</li>
+<li><code>groupTargetAliases : String</code> (optional)
+<div><div>
+ Comma-separated alias (without white-spaces) names of the target groups of Integration Servers. These should have already been defined using Deployer.
+</div></div>
+
+</li>
+<li><code>deployerHomeDirectory : String</code> (optional)
+<div><div>
+ File path to bin directory in WmDeployer package of Integration Server.
+</div></div>
+
+</li>
+<li><code>deployerHost : String</code> (optional)
+<div><div>
+ Host machine domain name.
+</div></div>
+
+</li>
+<li><code>deployerPort : String</code> (optional)
+<div><div>
+ Port number.
+</div></div>
+
+</li>
+<li><code>deployerCredentialsId : String</code> (optional)
+<div><div>
+ Administrators credentials to connect with Deployer.
+</div></div>
+
+</li>
+<li><code>repositoryAlias : String</code> (optional)
+<div><div>
+ Repository alias. This can be any name.
+</div></div>
+
+</li>
+<li><code>repositoryDirectory : String</code> (optional)
+<div><div>
+ Repository directory path where all the composites exist after build.
+</div></div>
+
+</li>
+<li><code>deployAssets : String</code> (optional)
+<div><div>
+ Comma-separated name (without white-spaces) of the composites that needs to be deployed to the target. Examples: 
+ <ul>
+  <li><b>*</b> for all composites.</li>
+  <li><b>isconfiguration</b> for config files.</li>
+  <li><b>TestPackage</b> for specific package composite.</li>
+  <li><b>TestPackage1,TestPackage2</b> for multiple package composites.</li>
+  <li><b>Test*</b> for package composites beginning with Test.</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>projectName : String</code> (optional)
+<div><div>
+ Project name in Deployer.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

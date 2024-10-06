@@ -1,0 +1,10 @@
+
+= Hacktoberfest
+:page-eventLocation: Virtual
+:page-eventStartDate: 2020-10-01T00:00:00
+:page-eventEndDate: 2020-10-31T00:00:00
+:page-eventLink: /events/hacktoberfest/
+
+
+Month-long worldwide event to support open source software.
+Jenkins participates in it!

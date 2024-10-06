@@ -1,0 +1,101 @@
+= Helix ALM Test Management
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/helix-alm-test-management">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `halm_report`: Helix ALM Test Results Reporter
+++++
+<ul><li><code>halmConnectionID : String</code> (optional)
+</li>
+<li><code>projectID : String</code> (optional)
+</li>
+<li><code>automationSuiteID : long</code> (optional)
+</li>
+<li><code>testFilePattern : String</code> (optional)
+</li>
+<li><code>testRunSetID : long</code> (optional)
+</li>
+<li><code>automationSuite : String</code> (optional)
+</li>
+<li><code>branch : String</code> (optional)
+</li>
+<li><code>description : String</code> (optional)
+</li>
+<li><code>testFileFormat : String</code> (optional)
+</li>
+<li><code>testRunSet : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'HALMTestReporter'])`: Helix ALM Test Results Reporting
+++++
+<ul><li><code>halmConnectionID : String</code> (optional)
+<div><div>
+ Helix ALM connection that contains the project to submit test results to.
+</div></div>
+
+</li>
+<li><code>projectID : String</code> (optional)
+<div><div>
+ Helix ALM project to submit test results to.
+</div></div>
+
+</li>
+<li><code>automationSuiteID : long</code> (optional)
+</li>
+<li><code>testFilePattern : String</code> (optional)
+<div><div>
+ Base directory and comma- or space-separated list of patterns of files to include as test results. For example, myproject/target/test-reports/*.xml. JUnit and xUnit XML files are supported.
+</div></div>
+
+</li>
+<li><code>testRunSetID : long</code> (optional)
+</li>
+<li><code>automationSuite : String</code> (optional)
+<div><div>
+ Helix ALM automation suite to submit test results to.
+</div></div>
+
+</li>
+<li><code>branch : String</code> (optional)
+<div><div>
+ Source control branch the build ran against. Submitted with the test results. Optional.
+</div></div>
+
+</li>
+<li><code>description : String</code> (optional)
+<div><div>
+ Brief description to submit with the test results. Optional.
+</div></div>
+
+</li>
+<li><code>testFileFormat : String</code> (optional)
+<div><div>
+ Test result file format. JUnit and xUnit XML files are supported.
+</div></div>
+
+</li>
+<li><code>testRunSet : String</code> (optional)
+<div><div>
+ Helix ALM test run set to submit test results to. Optional.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

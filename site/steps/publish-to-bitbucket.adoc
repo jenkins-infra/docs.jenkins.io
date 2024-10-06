@@ -1,0 +1,69 @@
+= Publish to Bitbucket Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/publish-to-bitbucket">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'BitbucketPublisher'])`: Publish to Bitbucket Server
+++++
+<ul><li><code>serverUrl : String</code> (optional)
+<div><div>
+ Bitbucket Server Url.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ Credentials for bitucket server. The user must have access to create project and repository.
+</div></div>
+
+</li>
+<li><code>projectKey : String</code> (optional)
+<div><div>
+ Input the project key for the bitbucket.
+</div></div>
+
+</li>
+<li><code>createProject</code> (optional)
+<div><div>
+ Check this if you want to create the bitbucket project.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>projectName : String</code>
+</li>
+<li><code>projectUsers : String</code>
+</li>
+<li><code>projectGroups : String</code>
+</li>
+</ul></li>
+<li><code>createJenkinsJobs</code> (optional)
+<div><div>
+ Check this if you want to use the bitbucket post commit external hook to call.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>ciServer : String</code>
+</li>
+</ul></li>
+<li><code>projectName : String</code> (optional)
+<div><div>
+ Input name of the Bitbucket project.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

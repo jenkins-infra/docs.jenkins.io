@@ -1,0 +1,53 @@
+= Elasticsearch Query
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/elasticsearch-query">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'ElasticsearchQueryBuilder'])`: Elasticsearch Query
+++++
+<ul><li><code>query : String</code>
+<div><div>
+ Elastic Search query to run
+</div></div>
+
+</li>
+<li><code>aboveOrBelow : String</code>
+<div><div>
+ Whether the threshold value is too high or too low. If set to gte counts greater than or equal to threshold will fail the build. If set to lte counts less than or equal to threshold with fail the build.
+</div></div>
+
+</li>
+<li><code>threshold : long</code>
+<div><div>
+ The count of query results in a given time to trigger build failure
+</div></div>
+
+</li>
+<li><code>since : long</code>
+<div><div>
+ How long ago to look back for results relative to the time the build executes must be greater than 0.
+</div></div>
+
+</li>
+<li><code>units : String</code>
+<div><div>
+ Time units for the since value
+</div></div>
+
+</li>
+</ul>
+
+
+++++

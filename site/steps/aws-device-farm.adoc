@@ -1,0 +1,261 @@
+= aws-device-farm
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/aws-device-farm">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `devicefarm`: Run Tests on AWS Device Farm
+++++
+<ul><li><code>projectName : String</code>
+<div><div>
+ Name of AWS Device Farm project to use. This can be found in your AWS web console. 
+ <br><u>Examples:</u>
+ <br>
+  demoproject 
+ <br>
+  My FireOS Project 
+ <br>
+  My Android Project 
+ <br>
+  In case you are not able to see the Projects, refer to <a href="https://github.com/awslabs/aws-device-farm-jenkins-plugin#project-section-not-being-populated-with-latest-data" rel="nofollow">troubleshooting guide</a>
+</div></div>
+
+</li>
+<li><code>devicePoolName : String</code>
+<div><div>
+ Name of AWS Device Farm device pool to use. 
+ <br><u>Examples:</u>
+ <br>
+  Top 10 devices 
+ <br>
+  Top 25 devices 
+ <br>
+  My Custom Tablet Pool 
+ <br>
+</div></div>
+
+</li>
+<li><code>testSpecName : String</code>
+<div><div>
+ Use the default YAML spec, or select one of your saved YAML spec. 
+ <br>
+</div></div>
+
+</li>
+<li><code>environmentToRun : String</code>
+</li>
+<li><code>appArtifact : String</code>
+<div><div>
+ <b>File pattern (local to workspace) where the newly built application (.apk, .ipa) exists. <br>
+   Leave it blank when it is a web application. </b>
+ <br><u>Examples:</u>
+ <br>
+  **/build/apk/MyApp-*-debug.apk 
+ <br>
+  /bin/apk/MyApp.apk 
+ <br>
+</div></div>
+
+</li>
+<li><code>runName : String</code>
+<div><div>
+ Name pattern to name your Device Farm Run. You can also use Jenkins environment variables. 
+ <br><u>Examples:</u>
+ <br>
+  SanityTest-${BUILD_TAG} 
+ <br>
+  IntegrationTest-${BUILD_ID} 
+ <br>
+</div></div>
+
+</li>
+<li><code>testToRun : String</code>
+</li>
+<li><code>storeResults : boolean</code>
+</li>
+<li><code>isRunUnmetered : boolean</code>
+</li>
+<li><code>eventCount : String</code>
+</li>
+<li><code>eventThrottle : String</code>
+</li>
+<li><code>seed : String</code>
+</li>
+<li><code>username : String</code>
+</li>
+<li><code>password : String</code>
+</li>
+<li><code>appiumJavaJUnitTest : String</code>
+</li>
+<li><code>appiumJavaTestNGTest : String</code>
+</li>
+<li><code>appiumPythonTest : String</code>
+</li>
+<li><code>appiumRubyTest : String</code>
+</li>
+<li><code>appiumNodeTest : String</code>
+</li>
+<li><code>calabashFeatures : String</code>
+<div><div>
+ File pattern (local to workspace) where Calabash features archive. 
+ <br><u>Examples:</u>
+ <br>
+  **/bin/tests/*.zip 
+ <br>
+  /tests/Calabash/features.zip 
+ <br>
+</div></div>
+
+</li>
+<li><code>calabashTags : String</code>
+<div><div>
+ Comma separated list of tags which will be passed to Calabash.
+ <br><u>Examples:</u>
+ <br>
+  @working
+</div></div>
+
+</li>
+<li><code>calabashProfile : String</code>
+</li>
+<li><code>junitArtifact : String</code>
+<div><div>
+ File pattern (local to workspace) where the JUnit tests exist. 
+ <br><u>Examples:</u>
+ <br>
+  **/build/apk/MyApp-*-tests.apk 
+ <br>
+  /artifacts/MyAppTests.apk 
+ <br>
+</div></div>
+
+</li>
+<li><code>junitFilter : String</code>
+<div><div>
+ Comma separated list of TestCase/TestSuite names which will be run.
+ <br><u>Examples:</u>
+ <br>
+  Running a single testcase: com.android.foo.FooTest 
+ <br>
+  Running a single test: com.android.foo.FooTest#testFoo 
+ <br>
+  Running multiple tests: com.android.foo.FooTest,com.android.foo.BarTest 
+ <br>
+</div></div>
+
+</li>
+<li><code>uiautomatorArtifact : String</code>
+<div><div>
+ File pattern (local to workspace) where the UI Automator tests JAR exists. 
+ <br><u>Examples:</u>
+ <br>
+  **/build/tests/MyApp-*-tests.jar 
+ <br>
+  /artifacts/MyAppTests.jar 
+ <br>
+</div></div>
+
+</li>
+<li><code>uiautomatorFilter : String</code>
+<div><div>
+ Comma separated list of TestCase/TestSuite names which will be run.
+ <br><u>Examples:</u>
+ <br>
+  Running a single testcase: com.android.foo.FooTest 
+ <br>
+  Running a single test: com.android.foo.FooTest#testFoo 
+ <br>
+  Running multiple tests: com.android.foo.FooTest,com.android.foo.BarTest 
+ <br>
+</div></div>
+
+</li>
+<li><code>uiautomationArtifact : String</code>
+</li>
+<li><code>xctestArtifact : String</code>
+</li>
+<li><code>xctestFilter : String</code>
+<div><div>
+ A test filter string.
+ <br><u>Examples:</u>
+ <br>
+  Running a single test class: "LoginTests" 
+ <br>
+  Running a multiple test classes: "LoginTests,SmokeTests" 
+ <br>
+  Running a single test: "LoginTests/testValid" 
+ <br>
+  Running multiple tests: "LoginTests/testValid,LoginTests/testInvalid" 
+ <br>
+</div></div>
+
+</li>
+<li><code>xctestUiArtifact : String</code>
+</li>
+<li><code>xctestUiFilter : String</code>
+</li>
+<li><code>appiumVersionJunit : String</code>
+</li>
+<li><code>appiumVersionPython : String</code>
+</li>
+<li><code>appiumVersionTestng : String</code>
+</li>
+<li><code>ifWebApp : boolean</code>
+</li>
+<li><code>extraData : boolean</code>
+</li>
+<li><code>extraDataArtifact : String</code>
+<div><div>
+ File pattern (local to workspace) where the extra date file (.zip) exists. 
+ <br><u>Examples:</u>
+ <br>
+  **/build/apk/extra-data.zip 
+ <br>
+</div></div>
+
+</li>
+<li><code>deviceLocation : boolean</code>
+</li>
+<li><code>deviceLatitude : double</code>
+</li>
+<li><code>deviceLongitude : double</code>
+</li>
+<li><code>radioDetails : boolean</code>
+</li>
+<li><code>ifBluetooth : boolean</code>
+</li>
+<li><code>ifWifi : boolean</code>
+</li>
+<li><code>ifGPS : boolean</code>
+</li>
+<li><code>ifNfc : boolean</code>
+</li>
+<li><code>jobTimeoutMinutes : int</code>
+</li>
+<li><code>ifVideoRecording : boolean</code>
+</li>
+<li><code>ifAppPerformanceMonitoring : boolean</code>
+</li>
+<li><code>ignoreRunError : boolean</code>
+</li>
+<li><code>ifVpce : boolean</code>
+</li>
+<li><code>ifSkipAppResigning : boolean</code>
+</li>
+<li><code>vpceServiceName : String</code>
+</li>
+</ul>
+
+
+++++

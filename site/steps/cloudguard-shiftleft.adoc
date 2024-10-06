@@ -1,0 +1,98 @@
+= CheckPoint CloudGuard Shiftleft
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/cloudguard-shiftleft">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'BladeBuilder'])`: CheckPoint Shiftleft
+++++
+<ul><li><code>blades</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'CodeScan'</code><div>
+<ul><li><code>source : String</code>
+</li>
+<li><code>exclude : String</code>
+</li>
+<li><code>noCache : boolean</code>
+</li>
+<li><code>noProxy : boolean</code>
+</li>
+<li><code>noBlame : boolean</code>
+</li>
+<li><code>ruleset : String</code>
+</li>
+<li><code>severityLevel : String</code>
+</li>
+<li><code>severityThreshold : int</code>
+</li>
+<li><code>autoUpdate : boolean</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>debug : boolean</code> (optional)
+</li>
+<li><code>directory : String</code> (optional)
+</li>
+<li><code>environment : String</code> (optional)
+</li>
+<li><code>forceVersion : String</code> (optional)
+</li>
+<li><code>ignoreFailure : boolean</code> (optional)
+</li>
+<li><code>onFailureCmd : String</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'ImageScan'</code><div>
+<ul><li><code>image : String</code>
+</li>
+<li><code>exclude : String</code>
+</li>
+<li><code>noCache : boolean</code>
+</li>
+<li><code>noProxy : boolean</code>
+</li>
+<li><code>noBlame : boolean</code>
+</li>
+<li><code>ruleset : String</code>
+</li>
+<li><code>severityLevel : String</code>
+</li>
+<li><code>severityThreshold : int</code>
+</li>
+<li><code>autoUpdate : boolean</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>debug : boolean</code> (optional)
+</li>
+<li><code>directory : String</code> (optional)
+</li>
+<li><code>environment : String</code> (optional)
+</li>
+<li><code>forceVersion : String</code> (optional)
+</li>
+<li><code>ignoreFailure : boolean</code> (optional)
+</li>
+<li><code>onFailureCmd : String</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+</ul>
+
+
+++++

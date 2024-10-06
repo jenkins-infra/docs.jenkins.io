@@ -1,0 +1,74 @@
+= Violation Comments to Bitbucket Server Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/violation-comments-to-stash">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `ViolationsToBitbucketServer`: Report Violations to Bitbucket Server
+++++
+<div><div>
+ <p>See <a href="https://wiki.jenkins-ci.org/display/JENKINS/Violation+Comments+to+Bitbucket+Server+Plugin" rel="nofollow">Violation Comments to Bitbucket Server Plugin</a> for details on how to configure and use this plugin.</p>
+ <p>Pattern is a regular expression for matching report files. For example <b>.*/findbugs/.*\.xml$</b> matches xml-files, in a folder named findbugs, anywhere in workspace.</p>
+</div></div>
+<ul><li><code>config</code>
+<ul><b>Nested Object</b>
+<li><code>projectKey : String</code>
+</li>
+<li><code>repoSlug : String</code>
+</li>
+<li><code>pullRequestId : String</code>
+</li>
+<li><code>bitbucketServerUrl : String</code> (optional)
+</li>
+<li><code>commentOnlyChangedContent : boolean</code> (optional)
+</li>
+<li><code>commentOnlyChangedContentContext : int</code> (optional)
+</li>
+<li><code>commentOnlyChangedFiles : boolean</code> (optional)
+</li>
+<li><code>commentTemplate : String</code> (optional)
+</li>
+<li><code>createCommentWithAllSingleFileComments : boolean</code> (optional)
+</li>
+<li><code>createSingleFileComments : boolean</code> (optional)
+</li>
+<li><code>createSingleFileCommentsTasks : boolean</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>ignorePaths</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>path : String</code>
+</li>
+</ul></li>
+<li><code>keepOldComments : boolean</code> (optional)
+</li>
+<li><code>maxNumberOfViolations : int</code> (optional)
+</li>
+<li><code>minSeverity</code> (optional)
+<ul><li><b>Values:</b> <code>INFO</code>, <code>WARN</code>, <code>ERROR</code></li></ul></li>
+<li><code>violationConfigs</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>reporter : String</code>
+</li>
+<li><code>pattern : String</code>
+</li>
+<li><code>parser</code>
+<ul><li><b>Values:</b> <code>ANDROIDLINT</code>, <code>ANSIBLELATER</code>, <code>CHECKSTYLE</code>, <code>CODENARC</code>, <code>CLANG</code>, <code>COVERITY</code>, <code>CPD</code>, <code>CPPCHECK</code>, <code>CPPLINT</code>, <code>CSSLINT</code>, <code>GENERIC</code>, <code>GHS</code>, <code>FINDBUGS</code>, <code>FLAKE8</code>, <code>MACHINE</code>, <code>FXCOP</code>, <code>GENDARME</code>, <code>IAR</code>, <code>JACOCO</code>, <code>JCREPORT</code>, <code>JSLINT</code>, <code>JUNIT</code>, <code>LINT</code>, <code>KLOCWORK</code>, <code>KOTLINMAVEN</code>, <code>KOTLINGRADLE</code>, <code>MSCPP</code>, <code>MSBULDLOG</code>, <code>MYPY</code>, <code>GOLINT</code>, <code>GOOGLEERRORPRONE</code>, <code>PERLCRITIC</code>, <code>PITEST</code>, <code>PMD</code>, <code>PROTOLINT</code>, <code>PYDOCSTYLE</code>, <code>PYLINT</code>, <code>RESHARPER</code>, <code>SARIF</code>, <code>SBTSCALAC</code>, <code>SEMGREP</code>, <code>SIMIAN</code>, <code>SONAR</code>, <code>STYLECOP</code>, <code>XMLLINT</code>, <code>YAMLLINT</code>, <code>ZPTLINT</code>, <code>DOCFX</code>, <code>PCLINT</code>, <code>CODECLIMATE</code>, <code>XUNIT</code>, <code>VALGRIND</code></li></ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+++++

@@ -1,0 +1,89 @@
+= Xvfb plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/xvfb">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `wrap([$class: 'Xvfb'])`: Start Xvfb before the build, and shut it down after.
+++++
+<ul><li><code>additionalOptions : String</code> (optional)
+<div><div>
+ Additional options to be added with the options above to the Xvfb command line.
+</div></div>
+
+</li>
+<li><code>assignedLabels : String</code> (optional)
+<div><div>
+ If you want to start Xvfb only on specific nodes specify its name or label. See the <i>Restrict where this project can be run</i> option for label expressions that you can use.
+</div></div>
+
+</li>
+<li><code>autoDisplayName : boolean</code> (optional)
+<div><div>
+ Uses the -displayfd option of Xvfb by which it chooses its own display name by scanning for an available one. This option requires a recent version of xserver, check your installation for support.
+</div></div>
+
+</li>
+<li><code>debug : boolean</code> (optional)
+<div><div>
+ If Xvfb output should appear in console log of this job, useful only if debugging Xvfb interaction.
+</div></div>
+
+</li>
+<li><code>displayName : int</code> (optional)
+<div><div>
+ Ordinal of the display Xvfb will be running on, if left empty (default) chosen based on current build executor number. Use only if you know what you’re doing, could lead to clashes with other builds.
+</div></div>
+
+</li>
+<li><code>displayNameOffset : int</code> (optional)
+<div><div>
+ Offset for display names, default is 1. Display names are taken from build executor’s number, i.e. if the build is performed by executor 4, and offset is 100, display name will be 104.
+</div></div>
+
+</li>
+<li><code>installationName : String</code> (optional)
+<div><div>
+ The name of the Xvfb tool installation that Jenkins administrator set up.
+</div></div>
+
+</li>
+<li><code>parallelBuild : boolean</code> (optional)
+<div><div>
+ When running multiple Jenkins nodes on the same machine this setting influences the display number generation. The display number will be based upon node position in the list of nodes multiplied by 100 to which current executor number and any given offset will be added. Using this with offset set to 0 there is a limit of 595 nodes and 35 executors on a node, having more nodes or executors is not compatible with this option.
+</div></div>
+
+</li>
+<li><code>screen : String</code> (optional)
+<div><div>
+ Resolution and color depth of the created virtual frame buffer in the format WxHxD. For example: <code>1024x758x16</code>
+</div></div>
+
+</li>
+<li><code>shutdownWithBuild : boolean</code> (optional)
+<div><div>
+ Should the display be kept until the whole job ends (including the post build steps).
+</div></div>
+
+</li>
+<li><code>timeout : long</code> (optional)
+<div><div>
+ A timeout of given seconds to wait before returning control to the job, this allows Xvfb to start before there is a need for it. By default set to 0, not to delay the build, since it usually takes just a few seconds for Xvfb to start, and outputting to display is not the first thing a job does.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

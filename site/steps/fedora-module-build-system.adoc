@@ -1,0 +1,77 @@
+= Fedora Module Build System Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/fedora-module-build-system">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `queryModuleBuildRequest`: Query Module Build Request
+++++
+<ul><li><code>mbsUrl : String</code> (optional)
+<div><div>
+ <p>Base URL of MBS system. This should usually be https://mbs.fedoraproject.org/</p>
+</div></div>
+
+</li>
+<li><code>moduleRequestId : String</code> (optional)
+<div><div>
+ <p>ID of the module build request.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `submitModuleBuildRequest`: Submit Module Build Request
+++++
+<ul><li><code>moduleName : String</code> (optional)
+<div><div>
+ <p>Name of the module to build.</p>
+</div></div>
+
+</li>
+<li><code>revision : String</code> (optional)
+<div><div>
+ <p>Revision of the module to build.</p>
+</div></div>
+
+</li>
+<li><code>branch : String</code> (optional)
+<div><div>
+ <p>Branch of the module to build.</p>
+</div></div>
+
+</li>
+<li><code>mbsUrl : String</code> (optional)
+<div><div>
+ <p>Base URL of MBS system. This should usually be https://mbs.fedoraproject.org/</p>
+</div></div>
+
+</li>
+<li><code>password : String</code> (optional)
+<div><div>
+ <p>Password to use to connect to MBS. Note: it is recommended to use withCredentials for this.</p>
+</div></div>
+
+</li>
+<li><code>user : String</code> (optional)
+<div><div>
+ <p>User name to use to connect to MBS</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

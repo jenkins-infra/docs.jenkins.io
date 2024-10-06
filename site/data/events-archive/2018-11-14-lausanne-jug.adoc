@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Jenkins & Java 11, Lausanne JUG
+:page-eventStartDate: 2018-11-14T18:00:00
+:page-eventLink: https://www.meetup.com/JUGL-the-Java-User-Group-of-Lausanne/events/255766372/
+---
+Leap from Java 8 to Java 11 in Jenkins. The project's war story.

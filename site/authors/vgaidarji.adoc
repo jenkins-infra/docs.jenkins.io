@@ -1,0 +1,11 @@
+= About the Author
+:page-layout: author
+:page-author_name: Veaceslav Gaidarji
+:page-twitter: v_gaidarji
+:page-github: vgaidarji
+:page-blog: http://vgaidarji.me
+
+
+Veaceslav is a software developer with the main focus on Android platform. In his free time, he enjoys working on different open-source projects.
+
+
