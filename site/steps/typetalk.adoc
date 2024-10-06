@@ -1,0 +1,63 @@
+= Typetalk Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/typetalk">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `typetalkSend`: Notify Typetalk when the build fails
+++++
+<div><div>
+ Use 'catchError' step in order to notify a build error certainly. An example is the following below. 
+ <p></p>
+ <pre>catchError {
+    sh 'compile'
+    sh 'test'
+    sh 'package'
+    sh 'deploy'
+}
+typetalkSend name: 'demo', topicId: 1, talkId: 1, description: "Awesome description"
+    </pre>
+</div></div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>topicId : long</code>
+</li>
+<li><code>talkId : long</code>
+</li>
+<li><code>description : String</code>
+</li>
+</ul>
+
+
+++++
+=== `withTypetalk`: Notify Typetalk when the build starts/ends
+++++
+<ul><li><code>name : String</code>
+</li>
+<li><code>topicId : long</code>
+</li>
+<li><code>talkId : long</code>
+</li>
+<li><code>notifyEnd : boolean</code> (optional)
+</li>
+<li><code>notifyEndMessage : String</code> (optional)
+</li>
+<li><code>notifyStart : boolean</code> (optional)
+</li>
+<li><code>notifyStartMessage : String</code> (optional)
+</li>
+</ul>
+
+
+++++

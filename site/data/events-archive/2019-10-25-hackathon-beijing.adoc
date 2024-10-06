@@ -1,0 +1,7 @@
+---
+:page-eventTitle: Open Source DevOps Hackathon
+:page-eventLocation: Beijing, China
+:page-eventStartDate: 2019-10-25T19:30:00
+:page-eventLink: https://jenkins-zh.cn/event/beijing-2019-10-25/
+---
+This Hackathon event allows you to transfer your ideas to a product. Jenkins Chinese Community will host this in Beijing.

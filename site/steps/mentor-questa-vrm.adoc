@@ -1,0 +1,66 @@
+= Questa VRM
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/mentor-questa-vrm">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `questavrm`: Publish Questa VRM Regression Results
+++++
+<ul><li><code>vrmdata : String</code>
+<div><div>
+ <b>VRMDATA Directory</b>
+ <p>Specify the location of where the regression results will be stored. By default, VRM creates a directory called <em>VRMDATA</em> which will be located in the CWD where the regression is invoked. Alternatively this can be overridden by specifying a directory upon invocation as follows:</p>
+ <p>&nbsp;&nbsp;<em>vrun -vrmdata &lt;my_directory&gt; ...</em></p>
+</div></div>
+
+</li>
+<li><code>collectCoverage : boolean</code> (optional)
+</li>
+<li><code>enableVcoverExec</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>vcoverExec : String</code>
+</li>
+</ul></li>
+<li><code>extraArgs : String</code> (optional)
+<div><div>
+ <b>Extra VRM status report options </b>
+ <p>Extra options to be passed to <em>vrun -status</em>.</p>
+</div></div>
+
+</li>
+<li><code>healthScaleFactor : double</code> (optional)
+</li>
+<li><code>htmlReport : boolean</code> (optional)
+</li>
+<li><code>testDataPublishers</code> (optional)
+<ul><li><b>Type:</b> <code>? extends hudson.tasks.junit.TestDataPublisher</code></li>
+</ul></li>
+<li><code>vrmhtmldir : String</code> (optional)
+<div><div>
+ <b>VRM HTML Directory</b>
+ <p>Specify the directory where the html report will be stored.</p>
+</div></div>
+
+</li>
+<li><code>vrunExec : String</code> (optional)
+<div><div>
+ <b>Questa VRM Executables Directory</b>
+ <p>Set path to Questa VRM executable. This can be just <em>"vrun"</em> or a complete path.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

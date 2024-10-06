@@ -1,0 +1,127 @@
+= $class: 'RTCScm'
+:page-layout: pipelinesteps
+== $class: 'RTCScm'
+
+++++
+<li><code>$class: 'RTCScm'</code><div>
+<ul><li><code>overrideGlobal : boolean</code>
+<div><div>
+ <p>The build toolkit location and Jazz Repository connection can be defined globally or overridden. If not defined globally, it must be overridden.</p>
+</div></div>
+
+</li>
+<li><code>buildTool : String</code>
+<div><div>
+ <p>The RTC build toolkit to use when performing builds. The toolkits available are defined in the system configuration (with the other tools like Ant and Java). The build toolkit is also necessary on the Master for polling and validating the job configuration unless the "Avoid using build toolkit on Master" option is enabled.</p>
+</div></div>
+
+</li>
+<li><code>serverURI : String</code>
+<div><div>
+ <p>The Jazz Repository connection URI for the Rational Team Concert (RTC) server</p>
+</div></div>
+
+</li>
+<li><code>timeout : int</code>
+<div><div>
+ <p>The timeout period in seconds for Jazz repository requests made during the build.</p>
+</div></div>
+
+</li>
+<li><code>userId : String</code>
+<div><div>
+ <p>The build user id. Either credentials or a user id and password information should be supplied.</p>
+</div></div>
+
+</li>
+<li><code>password</code>
+<div><div>
+ <p>The Jazz Repository password for the build user. The use of a password is not secure, it can be easily discovered by anyone with access to this page. Credentials, a password file or a password should be supplied.</p>
+</div></div>
+
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>passwordFile : String</code>
+<div><div>
+ <p>The path to the file containing the obfuscated Jazz Repository password for the build user. Credentials, a password file or a password should be supplied.</p>
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+<div><div>
+ <p>Credentials to use for the build user. A user name and password credential for the Jazz Repository should be configured.</p>
+</div></div>
+
+</li>
+<li><code>buildType</code>
+<ul><b>Nested Object</b>
+<li><code>value : String</code>
+</li>
+<li><code>buildDefinition : String</code>
+</li>
+<li><code>buildWorkspace : String</code>
+</li>
+<li><code>buildSnapshot : String</code>
+</li>
+<li><code>buildStream : String</code>
+</li>
+<li><code>acceptBeforeLoad : boolean</code> (optional)
+</li>
+<li><code>addLinksToWorkItems : boolean</code> (optional)
+</li>
+<li><code>buildSnapshotContext</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>snapshotOwnerType : String</code>
+</li>
+<li><code>processAreaOfOwningStream : String</code>
+</li>
+<li><code>owningStream : String</code>
+</li>
+<li><code>owningWorkspace : String</code>
+</li>
+</ul></li>
+<li><code>clearLoadDirectory : boolean</code> (optional)
+</li>
+<li><code>componentLoadConfig : String</code> (optional)
+</li>
+<li><code>componentsToExclude : String</code> (optional)
+</li>
+<li><code>createFoldersForComponents : boolean</code> (optional)
+</li>
+<li><code>currentSnapshotOwnerType : String</code> (optional)
+</li>
+<li><code>customizedSnapshotName : String</code> (optional)
+</li>
+<li><code>generateChangelogWithGoodBuild : boolean</code> (optional)
+</li>
+<li><code>loadDirectory : String</code> (optional)
+</li>
+<li><code>loadPolicy : String</code> (optional)
+</li>
+<li><code>overrideDefaultSnapshotName : boolean</code> (optional)
+</li>
+<li><code>pathToLoadRuleFile : String</code> (optional)
+</li>
+<li><code>pollingOnly : boolean</code> (optional)
+</li>
+<li><code>pollingOnlyData</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>snapshotUUID : String</code>
+</li>
+</ul></li>
+<li><code>processArea : String</code> (optional)
+</li>
+<li><code>useDynamicLoadRules : boolean</code> (optional)
+</li>
+</ul></li>
+<li><code>avoidUsingToolkit : boolean</code>
+<div><div>
+ <p>Where possible avoid using the Build toolkit when performing tasks on the Master. This is still in the experimental stage. You will require an RTC 5.0 server which provides some of the services used.</p>
+ <p>The Build toolkit will not be used when polling RTC and terminating the RTC Build. The toolkit is still required though. It is used for other configuration tasks on the Master (i.e. validating the connection to RTC, the build definition or workspace). It is also used for checkout tasks typically performed on agent nodes.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+
+
+++++

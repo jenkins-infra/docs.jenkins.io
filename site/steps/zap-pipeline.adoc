@@ -1,0 +1,131 @@
+= ZAP Pipeline Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/zap-pipeline">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `archiveZap`: Create & Archive ZAP report
+++++
+<ul><li><code>failAllAlerts : int</code>
+</li>
+<li><code>failHighAlerts : int</code>
+</li>
+<li><code>failMediumAlerts : int</code>
+</li>
+<li><code>failLowAlerts : int</code>
+</li>
+<li><code>falsePositivesFilePath : String</code>
+</li>
+<li><code>keepAlive : boolean</code>
+</li>
+</ul>
+
+
+++++
+=== `configurePassiveRules`: Configures the list of passive rules to apply / avoid (https://www.zaproxy.org/docs/alerts/)
+++++
+<ul><li><code>action : String</code>
+</li>
+<li><code>ids : Array / List of int</code>
+<ul></ul></li>
+</ul>
+
+
+++++
+=== `importZapScanPolicy`: Import a ZAP scan policy from the specified path
+++++
+<ul><li><code>policyPath : String</code>
+</li>
+</ul>
+
+
+++++
+=== `importZapUrls`: Load a list of URLs for ZAP to use from the specified path
+++++
+<ul><li><code>path : String</code>
+</li>
+</ul>
+
+
+++++
+=== `runZapAttack`: Run ZAP attack by changing to attack mode and starting the attack
+++++
+<ul><li><code>scanPolicyName : String</code>
+</li>
+<li><code>userId : int</code>
+</li>
+<li><code>contextId : int</code>
+</li>
+<li><code>recurse : boolean</code>
+</li>
+<li><code>inScopeOnly : boolean</code>
+</li>
+<li><code>method : String</code>
+</li>
+<li><code>postData : String</code>
+</li>
+</ul>
+
+
+++++
+=== `runZapCrawler`: Run ZAP crawler on a specified host
+++++
+<ul><li><code>host : String</code>
+</li>
+<li><code>maxChildren : int</code>
+</li>
+<li><code>contextName : String</code>
+</li>
+<li><code>contextId : int</code>
+</li>
+<li><code>subtreeOnly : boolean</code>
+</li>
+<li><code>recurse : boolean</code>
+</li>
+<li><code>userId : int</code>
+</li>
+</ul>
+
+
+++++
+=== `startZap`: Start ZAP process
+++++
+<ul><li><code>host : String</code>
+</li>
+<li><code>port : int</code>
+</li>
+<li><code>timeout : int</code>
+</li>
+<li><code>zapHome : String</code>
+</li>
+<li><code>allowedHosts : Array / List of String</code>
+<ul></ul></li>
+<li><code>sessionPath : String</code>
+</li>
+<li><code>externalZap : boolean</code>
+</li>
+<li><code>rootCaFile : String</code>
+</li>
+<li><code>additionalConfigurations : Array / List of String</code>
+<ul></ul></li>
+</ul>
+
+
+++++
+=== `stopZap`: Stop the ZAP instance.
+++++
+<ul></ul>
+
+
+++++

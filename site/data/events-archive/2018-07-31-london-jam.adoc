@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Jenkins + DevSecOps at Accenture
+:page-eventStartDate: 2018-07-31T18:00:00
+:page-eventLink: https://www.meetup.com/London-Jenkins-Area-Meetup/events/252835135/
+---
+Jenkins + DevSecOps at Accenture

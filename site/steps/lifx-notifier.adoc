@@ -1,0 +1,56 @@
+= LIFX notifier - smart lightbulbs build indicator
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/lifx-notifier">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'LifxNotifier'])`: Lifx notifier
+++++
+<ul><li><code>notifyInProgress</code>
+<ul><b>Nested Object</b>
+<li><code>colorInProgress : String</code>
+</li>
+</ul></li>
+<li><code>groupColorSuccess : String</code>
+</li>
+<li><code>groupColorFailure : String</code>
+</li>
+<li><code>colorSuccess : String</code>
+<div><div>
+ Build success color.
+</div></div>
+
+</li>
+<li><code>colorFailure : String</code>
+<div><div>
+ Build failure color.
+</div></div>
+
+</li>
+<li><code>colorSuccessCustom : String</code>
+<div><div>
+ Build success color (custom). Format RRGGBB, e.g: 00ff00 (green).
+</div></div>
+
+</li>
+<li><code>colorFailureCustom : String</code>
+<div><div>
+ Build failure color (custom). Format RRGGBB, e.g: ff0000 (red).
+</div></div>
+
+</li>
+</ul>
+
+
+++++

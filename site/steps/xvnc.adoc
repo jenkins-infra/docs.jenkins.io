@@ -1,0 +1,34 @@
+= Xvnc plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/xvnc">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `xvnc`: Run Xvnc during build
+++++
+<div><div>
+ If checked, Xvnc will be run during this build to provide X display. The X display number will be set to DISPLAY environment variable.
+</div></div>
+<ul><li><code>takeScreenshot : boolean</code> (optional)
+<div><div>
+ Optionally, upon completion of the build, a screenshot can be taken. This requires <a href="http://www.imagemagick.org/" rel="nofollow">ImageMagick</a> be installed.
+</div></div>
+
+</li>
+<li><code>useXauthority : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

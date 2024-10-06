@@ -1,0 +1,35 @@
+= Flyway Runner
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/flyway-runner">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `flywayrunner`: Invoke Flyway
+++++
+<ul><li><code>installationName : String</code>
+</li>
+<li><code>flywayCommand : String</code>
+</li>
+<li><code>url : String</code>
+</li>
+<li><code>locations : String</code>
+</li>
+<li><code>commandLineArgs : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+</ul>
+
+
+++++

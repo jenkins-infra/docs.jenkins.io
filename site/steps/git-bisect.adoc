@@ -1,0 +1,55 @@
+= Git Bisect Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/git-bisect">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `gitbisect`: Git Bisect
+++++
+<ul><li><code>jobToRun : String</code>
+</li>
+<li><code>goodStartCommit : String</code>
+</li>
+<li><code>badEndCommit : String</code>
+</li>
+<li><code>searchIdentifier : String</code>
+</li>
+<li><code>revisionParameterName : String</code>
+</li>
+<li><code>retryCount : int</code>
+</li>
+<li><code>continuesBuild : boolean</code>
+</li>
+<li><code>minSuccessfulIterations : int</code>
+</li>
+<li><code>overrideGitCommand : boolean</code>
+</li>
+<li><code>gitCommand : String</code>
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'GitBisectOnFailure'])`: Git Bisect On Failure
+++++
+<ul><li><code>gitCommand : String</code>
+</li>
+<li><code>revisionParameterName : String</code>
+</li>
+<li><code>overrideGitCommand : boolean</code>
+</li>
+</ul>
+
+
+++++

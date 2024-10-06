@@ -1,0 +1,179 @@
+= Valgrind Plug-in
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/valgrind">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `publishValgrind`: Publish valgrind reports
+++++
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>failThresholdInvalidReadWrite : String</code>
+</li>
+<li><code>failThresholdDefinitelyLost : String</code>
+</li>
+<li><code>failThresholdTotal : String</code>
+</li>
+<li><code>unstableThresholdInvalidReadWrite : String</code>
+</li>
+<li><code>unstableThresholdDefinitelyLost : String</code>
+</li>
+<li><code>unstableThresholdTotal : String</code>
+</li>
+<li><code>sourceSubstitutionPaths : String</code>
+</li>
+<li><code>publishResultsForAbortedBuilds : boolean</code>
+</li>
+<li><code>publishResultsForFailedBuilds : boolean</code>
+</li>
+<li><code>failBuildOnMissingReports : boolean</code>
+</li>
+<li><code>failBuildOnInvalidReports : boolean</code>
+</li>
+</ul>
+
+
+++++
+=== `runValgrind`: Run valgrind
+++++
+<ul><li><code>valgrindExecutable : String</code>
+</li>
+<li><code>workingDirectory : String</code>
+</li>
+<li><code>includePattern : String</code>
+</li>
+<li><code>excludePattern : String</code>
+</li>
+<li><code>outputDirectory : String</code>
+</li>
+<li><code>outputFileEnding : String</code>
+</li>
+<li><code>programOptions : String</code>
+</li>
+<li><code>tool</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'ValgrindToolHelgrind'</code><div>
+<ul><li><code>historyLevel : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'ValgrindToolMemcheck'</code><div>
+<ul><li><code>showReachable : boolean</code>
+</li>
+<li><code>undefinedValueErrors : boolean</code>
+</li>
+<li><code>leakCheckLevel : String</code>
+</li>
+<li><code>trackOrigins : boolean</code>
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>valgrindOptions : String</code>
+</li>
+<li><code>ignoreExitCode : boolean</code>
+</li>
+<li><code>traceChildren : boolean</code>
+</li>
+<li><code>childSilentAfterFork : boolean</code>
+</li>
+<li><code>generateSuppressions : boolean</code>
+</li>
+<li><code>suppressionFiles : String</code>
+</li>
+<li><code>removeOldReports : boolean</code>
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'ValgrindBuilder'])`: Run Valgrind
+++++
+<ul><li><code>valgrindExecutable : String</code>
+</li>
+<li><code>workingDirectory : String</code>
+</li>
+<li><code>includePattern : String</code>
+</li>
+<li><code>excludePattern : String</code>
+</li>
+<li><code>outputDirectory : String</code>
+</li>
+<li><code>outputFileEnding : String</code>
+</li>
+<li><code>programOptions : String</code>
+</li>
+<li><code>tool</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'ValgrindToolHelgrind'</code><div>
+<ul><li><code>historyLevel : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'ValgrindToolMemcheck'</code><div>
+<ul><li><code>showReachable : boolean</code>
+</li>
+<li><code>undefinedValueErrors : boolean</code>
+</li>
+<li><code>leakCheckLevel : String</code>
+</li>
+<li><code>trackOrigins : boolean</code>
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>valgrindOptions : String</code>
+</li>
+<li><code>ignoreExitCode : boolean</code>
+</li>
+<li><code>traceChildren : boolean</code>
+</li>
+<li><code>childSilentAfterFork : boolean</code>
+</li>
+<li><code>generateSuppressions : boolean</code>
+</li>
+<li><code>suppressionFiles : String</code>
+</li>
+<li><code>removeOldReports : boolean</code>
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'ValgrindPublisher'])`: Publish Valgrind results
+++++
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>failThresholdInvalidReadWrite : String</code>
+</li>
+<li><code>failThresholdDefinitelyLost : String</code>
+</li>
+<li><code>failThresholdTotal : String</code>
+</li>
+<li><code>unstableThresholdInvalidReadWrite : String</code>
+</li>
+<li><code>unstableThresholdDefinitelyLost : String</code>
+</li>
+<li><code>unstableThresholdTotal : String</code>
+</li>
+<li><code>sourceSubstitutionPaths : String</code>
+</li>
+<li><code>publishResultsForAbortedBuilds : boolean</code>
+</li>
+<li><code>publishResultsForFailedBuilds : boolean</code>
+</li>
+<li><code>failBuildOnMissingReports : boolean</code>
+</li>
+<li><code>failBuildOnInvalidReports : boolean</code>
+</li>
+</ul>
+
+
+++++

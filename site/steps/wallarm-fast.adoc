@@ -1,0 +1,143 @@
+= Wallarm Fast
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/wallarm-fast">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'WallarmFastBuilder'])`: WallarmFastBuilder
+++++
+<ul><li><code>appHost : String</code>
+<div><div>
+ A URI of the target application.The IP address of the target application may change during the CI/CD process, so it's better to use the application URI.
+</div></div>
+
+</li>
+<li><code>appPort : String</code>
+<div><div>
+ The port of the target application. Combines with the appHost field.
+</div></div>
+
+</li>
+<li><code>fastPort : String</code>
+<div><div>
+ FAST open port for recieving proxy requests. Any port value may be used. This parameter is only used in recording mode.
+</div></div>
+
+</li>
+<li><code>fastName : String</code>
+<div><div>
+ A unique name for the Wallarm FAST docker. Although none is required for FAST to function, it may be easier to identify different dockers when a known handle is used.
+</div></div>
+
+</li>
+<li><code>policyId : int</code>
+<div><div>
+ The identifier of the test policy. If the parameter is missing, then the default policy takes action.
+</div></div>
+
+</li>
+<li><code>testRecordId : int</code>
+<div><div>
+ Identifier of a test record. When no test record id is supplied, the last created test record is used Default: empty value.
+</div></div>
+
+</li>
+<li><code>wallarmApiHost : String</code>
+<div><div>
+ The domain name of the Wallarm API server to use. Allowed values: us1.api.wallarm.com for use with the US cloud; api.wallarm.com for use with the EU cloud.
+</div></div>
+
+</li>
+<li><code>testRunName : String</code>
+<div><div>
+ The name of the test run. Default value is in the following format: “TestRun Sep 24 12:31 UTC”.
+</div></div>
+
+</li>
+<li><code>testRunDesc : String</code>
+<div><div>
+ The description of the test run. Default value: empty string.
+</div></div>
+
+</li>
+<li><code>record : boolean</code>
+<div><div>
+ The Wallarm FAST plugin has 2 modes of operation: recording and testing. In recording mode, the FAST application will act as a proxy. Any traffic sent through FAST will be recorded as a baseline and saved to a TestRecord for later use. In Playback mode, the FAST application will use an existing TestRecord to generate a TestRun.
+</div></div>
+
+</li>
+<li><code>stopOnFirstFail : boolean</code>
+<div><div>
+ This parameter specifies FAST’s behavior when a vulnerability is detected: true: stop the execution of the test run on the first detected vulnerability. false: process all the baseline requests regardless of whether any vulnerability is detected. Default value: false.
+</div></div>
+
+</li>
+<li><code>failBuild : boolean</code>
+<div><div>
+ If checked, will allow the plugin to fail the current build if any vulnerabilities are found, thereby preventing further exectution of the pipline. Otherwise only a warning text will be outputted, informing of any found vulnerabilities, but normal execution will continue.
+</div></div>
+
+</li>
+<li><code>withoutSudo : boolean</code>
+<div><div>
+ When checked, calls docker without sudo. By default, docker cannot be called this way.
+</div></div>
+
+</li>
+<li><code>localDockerNetwork : String</code>
+<div><div>
+ If FAST is required to operate from within an existing docker network, you may specify the network name here. This will simply append '--net your_network' to the docker launch command.
+</div></div>
+
+</li>
+<li><code>localDockerIp : String</code>
+<div><div>
+ Used when FAST is required to be directly addressable from a docker network. Simply appends '--ip your_ip' to the launch command
+</div></div>
+
+</li>
+<li><code>wallarmVersion : String</code>
+<div><div>
+ The version of FAST to use. You may specify any version found on https://hub.docker.com/r/wallarm/fast. Default: latest
+</div></div>
+
+</li>
+<li><code>fileExtensionsToExclude : String</code>
+<div><div>
+ Static files found by FAST often do not contain vulnerabilities and to not react to payloads, however it is impossible to dynamically determine if the page is invulnerable to the used payloads or just doesn't proccess payloads at all. Excluding payloads from the scanning will speed up the testing proccess significantly. Leave this field blank to scan all files found. Default: "js|jpeg|jpg|gif|png|css"
+</div></div>
+
+</li>
+<li><code>inactivityTimeout : int</code>
+<div><div>
+ If no baseline requests arrive to the FAST node within the INACTIVITY_TIMEOUT interval, then the recording process is stopped along with the FAST node. Allowed value range: from 0 to 691200 seconds (1 week) Default value: 600 seconds (10 minutes)
+</div></div>
+
+</li>
+<li><code>testRunRps : int</code>
+<div><div>
+ The parameter specifies a limit on the number of test requests (RPS, requests per second) to be sent to the target application during test run execution. Allowed value range: from 1 to 1000 (requests per second) Default value: unlimited ( =0 ).
+</div></div>
+
+</li>
+<li><code>wallarmApiToken : String</code> (optional)
+<div><div>
+ Your Wallarm node token. Can be found at "https://us1.my.wallarm.com/nodes" for North America or "https://my.wallarm.com/nodes" for Europe
+</div></div>
+
+</li>
+</ul>
+
+
+++++

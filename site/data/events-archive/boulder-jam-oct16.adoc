@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Boulder JAM
+:page-eventStartDate: 2016-10-12T18:00:00
+:page-eventLink: https://www.meetup.com/Boulder-Jenkins-Area-Meetup/events/234499918/
+---
+Pipeline & Blue Ocean

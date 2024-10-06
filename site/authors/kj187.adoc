@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: Julian Kleinhans
+:page-twitter: kj187
+:page-github: kj187
+:page-blog: http://blog.kj187.de
+
+
+Julian Kleinhans is working as a Software Architect at link:https://www.aoe.com[AOE GmbH] in Krefeld. Beside his passion as a developer, he is also passionate about whiskey. His blog deals with various topics such as web development and whisky tasting.

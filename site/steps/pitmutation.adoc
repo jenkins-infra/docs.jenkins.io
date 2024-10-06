@@ -1,0 +1,29 @@
+= PIT Mutation Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/pitmutation">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `pitmutation`: Record Pit mutation testing report
+++++
+<ul><li><code>killRatioMustImprove : boolean</code> (optional)
+</li>
+<li><code>minimumKillRatio : float</code> (optional)
+</li>
+<li><code>mutationStatsFile : String</code> (optional)
+</li>
+</ul>
+
+
+++++

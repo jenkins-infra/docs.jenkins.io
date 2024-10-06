@@ -1,0 +1,31 @@
+= Zoom Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/zoom">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `zoomSend`: zoomSend
+++++
+<ul><li><code>authToken : String</code> (optional)
+</li>
+<li><code>jenkinsProxyUsed : boolean</code> (optional)
+</li>
+<li><code>message : String</code> (optional)
+</li>
+<li><code>webhookUrl : String</code> (optional)
+</li>
+</ul>
+
+
+++++

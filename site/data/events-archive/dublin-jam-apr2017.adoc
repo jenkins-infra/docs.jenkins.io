@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Dublin, Ireland JAM
+:page-eventStartDate: 2017-04-26T18:30:00
+:page-eventLink: https://www.meetup.com/Dublin-Jenkins-Meetup/events/239058461/
+---
+Jenkins Provisioning, Architecture patterns & More

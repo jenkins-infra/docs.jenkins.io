@@ -1,0 +1,470 @@
+= Ansible plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/ansible">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `ansibleAdhoc`: Invoke an ansible adhoc command
+++++
+<ul><li><code>hosts : String</code>
+</li>
+<li><code>become : boolean</code> (optional)
+</li>
+<li><code>becomeUser : String</code> (optional)
+</li>
+<li><code>colorized : boolean</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>dynamicInventory : boolean</code> (optional)
+</li>
+<li><code>extraVars</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>hidden : boolean</code> (optional)
+</li>
+<li><code>key : String</code> (optional)
+</li>
+<li><code>secretValue</code> (optional)
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+</ul></li>
+<li><code>extras : String</code> (optional)
+</li>
+<li><code>forks : int</code> (optional)
+</li>
+<li><code>hostKeyChecking : boolean</code> (optional)
+</li>
+<li><code>installation : String</code> (optional)
+</li>
+<li><code>inventory : String</code> (optional)
+</li>
+<li><code>inventoryContent : String</code> (optional)
+</li>
+<li><code>module : String</code> (optional)
+</li>
+<li><code>moduleArguments : String</code> (optional)
+</li>
+<li><code>vaultCredentialsId : String</code> (optional)
+</li>
+<li><code>vaultTmpPath : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ansiblePlaybook`: Invoke an ansible playbook
+++++
+<div><div>
+ Execute an Ansible playbook. Only the <code>playbook</code> parameter is mandatory.
+</div></div>
+<ul><li><code>playbook : String</code>
+</li>
+<li><code>become : boolean</code> (optional)
+</li>
+<li><code>becomeUser : String</code> (optional)
+</li>
+<li><code>checkMode : boolean</code> (optional)
+</li>
+<li><code>colorized : boolean</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>disableHostKeyChecking : boolean</code> (optional)
+</li>
+<li><code>dynamicInventory : boolean</code> (optional)
+</li>
+<li><code>extraVars</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+</ul></li>
+<li><code>extras : String</code> (optional)
+</li>
+<li><code>forks : int</code> (optional)
+</li>
+<li><code>hostKeyChecking : boolean</code> (optional)
+</li>
+<li><code>installation : String</code> (optional)
+</li>
+<li><code>inventory : String</code> (optional)
+</li>
+<li><code>inventoryContent : String</code> (optional)
+</li>
+<li><code>limit : String</code> (optional)
+</li>
+<li><code>skippedTags : String</code> (optional)
+</li>
+<li><code>startAtTask : String</code> (optional)
+</li>
+<li><code>sudo : boolean</code> (optional)
+</li>
+<li><code>sudoUser : String</code> (optional)
+</li>
+<li><code>tags : String</code> (optional)
+</li>
+<li><code>vaultCredentialsId : String</code> (optional)
+</li>
+<li><code>vaultTmpPath : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ansibleVault`: Invoke ansible vault
+++++
+<div><div>
+ Execute Ansible vault. Only the <code>vaultCredentialsId</code> parameter is mandatory.
+</div></div>
+<ul><li><code>action : String</code> (optional)
+</li>
+<li><code>content : String</code> (optional)
+</li>
+<li><code>input : String</code> (optional)
+</li>
+<li><code>installation : String</code> (optional)
+</li>
+<li><code>newVaultCredentialsId : String</code> (optional)
+</li>
+<li><code>output : String</code> (optional)
+</li>
+<li><code>vaultCredentialsId : String</code> (optional)
+</li>
+<li><code>vaultTmpPath : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'AnsibleAdHocCommandBuilder'])`: Invoke Ansible Ad-Hoc Command
+++++
+<ul><li><code>hostPattern : String</code>
+<div><div>
+ The host or set of hosts on which the command will be executed. For more details see the ansible documentation for <a href="http://docs.ansible.com/intro_patterns.html#patterns" rel="nofollow">Patterns</a>.
+</div></div>
+
+</li>
+<li><code>inventory</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'InventoryContent'</code><div>
+<ul><li><code>content : String</code>
+</li>
+<li><code>dynamic : boolean</code>
+<div><div>
+ Check this box if a dynamic inventory is used. For more details see the ansible documentation for <a href="http://docs.ansible.com/intro_dynamic_inventory.html" rel="nofollow">Dynamic Inventory</a>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'InventoryDoNotSpecify'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'InventoryPath'</code><div>
+<ul><li><code>path : String</code>
+<div><div>
+ Specify the inventory host path or a comma separated host list
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>module : String</code>
+<div><div>
+ Module name to execute. The shell module is used when left empty.
+</div></div>
+
+</li>
+<li><code>command : String</code>
+<div><div>
+ Module arguments or shell command to execute
+</div></div>
+
+</li>
+<li><code>additionalParameters : String</code> (optional)
+<div><div>
+ Any additional parameters to pass to the ansible command. 
+ <h3>Warning:</h3> The content of this textbox will be passed <b>as is</b> to the command line.
+</div></div>
+
+</li>
+<li><code>ansibleName : String</code> (optional)
+</li>
+<li><code>becomeUser : String</code> (optional)
+<div><div>
+ Desired become user. "root" is used when this field is empty.
+</div></div>
+
+</li>
+<li><code>colorizedOutput : boolean</code> (optional)
+<div><div>
+ Check this box to allow ansible to render ANSI color codes in the Jenkins console. This option works well with the <a href="https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin" rel="nofollow">Jenkins AnsiColor plugin</a>.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ Select the credentials for the SSH connections. Only private key authentication is supported.
+</div></div>
+
+</li>
+<li><code>disableHostKeyChecking : boolean</code> (optional)
+<div><div>
+ Check this box if you <b>really</b> want to disable the validation of the hosts SSH server keys.
+</div></div>
+
+</li>
+<li><code>extraVars</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>hidden : boolean</code> (optional)
+</li>
+<li><code>key : String</code> (optional)
+</li>
+<li><code>secretValue</code> (optional)
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+</ul></li>
+<li><code>forks : int</code> (optional)
+<div><div>
+ Specify number of parallel processes to use. Set to 0 to use the default value.
+</div></div>
+
+</li>
+<li><code>hostKeyChecking : boolean</code> (optional)
+</li>
+<li><code>sudo : boolean</code> (optional)
+<div><div>
+ Run operations with sudo. It works only when the remote user is sudoer with <em>nopasswd</em> option. Sudo has been deprecated in favor of become and will be removed in Ansible 2.6.
+</div></div>
+
+</li>
+<li><code>sudoUser : String</code> (optional)
+<div><div>
+ Desired sudo user. "root" is used when this field is empty. Sudo has been deprecated in favor of become and will be removed in Ansible 2.6.
+</div></div>
+
+</li>
+<li><code>unbufferedOutput : boolean</code> (optional)
+<div><div>
+ Skip standard output buffering for the ansible process. The ansible output is directly rendered into the Jenkins console. This option can be usefull for long running operations.
+</div></div>
+
+</li>
+<li><code>vaultCredentialsId : String</code> (optional)
+<div><div>
+ Select the credentials for vault encrypted vars. Only secret file and secret text are supported.
+</div></div>
+
+</li>
+<li><code>vaultTmpPath : String</code> (optional)
+<div><div>
+ Insert the path where to store temporary generated vault password files, ssh keys, etc... Default is in workspace.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'AnsiblePlaybookBuilder'])`: Invoke Ansible Playbook
+++++
+<ul><li><code>playbook : String</code>
+<div><div>
+ Path to the ansible playbook file. The path can be absolute or relative to the job workspace.
+</div></div>
+
+</li>
+<li><code>inventory</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'InventoryContent'</code><div>
+<ul><li><code>content : String</code>
+</li>
+<li><code>dynamic : boolean</code>
+<div><div>
+ Check this box if a dynamic inventory is used. For more details see the ansible documentation for <a href="http://docs.ansible.com/intro_dynamic_inventory.html" rel="nofollow">Dynamic Inventory</a>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'InventoryDoNotSpecify'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'InventoryPath'</code><div>
+<ul><li><code>path : String</code>
+<div><div>
+ Specify the inventory host path or a comma separated host list
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>additionalParameters : String</code> (optional)
+<div><div>
+ Any additional parameters to pass to the ansible command. 
+ <h3>Warning:</h3> The content of this textbox will be passed <b>as is</b> to the command line.
+</div></div>
+
+</li>
+<li><code>ansibleName : String</code> (optional)
+</li>
+<li><code>becomeUser : String</code> (optional)
+<div><div>
+ Desired become user. "root" is used when this field is empty.
+</div></div>
+
+</li>
+<li><code>checkMode : boolean</code> (optional)
+<div><div>
+ Run ansible with check mode enabled. This will not make any changes on the remote system (--check)
+</div></div>
+
+</li>
+<li><code>colorizedOutput : boolean</code> (optional)
+<div><div>
+ Check this box to allow ansible to render ANSI color codes in the Jenkins console. This option works well with the <a href="https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin" rel="nofollow">Jenkins AnsiColor plugin</a>.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ Select the credentials for the SSH connections. Only private key authentication is supported.
+</div></div>
+
+</li>
+<li><code>disableHostKeyChecking : boolean</code> (optional)
+<div><div>
+ Check this box if you <b>really</b> want to disable the validation of the hosts SSH server keys.
+</div></div>
+
+</li>
+<li><code>extraVars</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>hidden : boolean</code> (optional)
+</li>
+<li><code>key : String</code> (optional)
+</li>
+<li><code>secretValue</code> (optional)
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+</ul></li>
+<li><code>forks : int</code> (optional)
+<div><div>
+ Specify number of parallel processes to use. Set to 0 to use the default value.
+</div></div>
+
+</li>
+<li><code>hostKeyChecking : boolean</code> (optional)
+</li>
+<li><code>limit : String</code> (optional)
+<div><div>
+ Further limit selected hosts to an additional pattern.
+</div></div>
+
+</li>
+<li><code>skippedTags : String</code> (optional)
+<div><div>
+ only run plays and tasks whose tags do not match these values.
+</div></div>
+
+</li>
+<li><code>startAtTask : String</code> (optional)
+<div><div>
+ Start the playbook at the task matching this name.
+</div></div>
+
+</li>
+<li><code>sudo : boolean</code> (optional)
+<div><div>
+ Run operations with sudo. It works only when the remote user is sudoer with <em>nopasswd</em> option. Sudo has been deprecated in favor of become and will be removed in Ansible 2.6.
+</div></div>
+
+</li>
+<li><code>sudoUser : String</code> (optional)
+<div><div>
+ Desired sudo user. "root" is used when this field is empty. Sudo has been deprecated in favor of become and will be removed in Ansible 2.6.
+</div></div>
+
+</li>
+<li><code>tags : String</code> (optional)
+<div><div>
+ Only run plays and tasks tagged with these values.
+</div></div>
+
+</li>
+<li><code>unbufferedOutput : boolean</code> (optional)
+<div><div>
+ Skip standard output buffering for the ansible process. The ansible output is directly rendered into the Jenkins console. This option can be usefull for long running operations.
+</div></div>
+
+</li>
+<li><code>vaultCredentialsId : String</code> (optional)
+<div><div>
+ Select the credentials for vault encrypted vars. Only secret file and secret text are supported.
+</div></div>
+
+</li>
+<li><code>vaultTmpPath : String</code> (optional)
+<div><div>
+ Insert the path where to store temporary generated vault password files, ssh keys, etc... Default is in workspace.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'AnsibleVaultBuilder'])`: Invoke Ansible Vault
+++++
+<ul><li><code>action : String</code> (optional)
+<div><div>
+ Desired vault action.
+</div></div>
+
+</li>
+<li><code>ansibleName : String</code> (optional)
+</li>
+<li><code>content : String</code> (optional)
+<div><div>
+ Desired encrypted content.
+</div></div>
+
+</li>
+<li><code>input : String</code> (optional)
+<div><div>
+ Desired input file to encrypt.
+</div></div>
+
+</li>
+<li><code>newVaultCredentialsId : String</code> (optional)
+<div><div>
+ Select the credentials for rekeying vault encrypted files. Only Jenkins secret file and secret text are supported.
+</div></div>
+
+</li>
+<li><code>output : String</code> (optional)
+<div><div>
+ Desired output file for encrypted content.
+</div></div>
+
+</li>
+<li><code>vaultCredentialsId : String</code> (optional)
+<div><div>
+ Select the credentials for vault encrypted vars. Only Jenkins secret file and secret text are supported.
+</div></div>
+
+</li>
+<li><code>vaultTmpPath : String</code> (optional)
+<div><div>
+ Insert the path where to store temporary generated vault password files, ssh keys, etc... Default is in workspace.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

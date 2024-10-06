@@ -1,0 +1,8 @@
+---
+:page-eventTitle: Devops World | Jenkins World
+:page-eventLocation: Lisbon, Portugal
+:page-eventStartDate: 2019-12-03T9:00:00
+:page-eventEndDate: 2019-12-5T9:00:00
+:page-eventLink: https://www.cloudbees.com/devops-world
+---
+DevOps World | Jenkins World 2019 Lisbon

@@ -1,0 +1,58 @@
+= CrowdStrike Security
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/crowdstrike-security">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `crowdStrikeSecurity`: CrowdStrike Security Plugin
+++++
+<ul><li><code>imageName : String</code> (optional)
+<div>Image Name
+<div>
+ <p>Image Name is the name of the Docker container image. This plugin will attempt to "docker push" that image name to the Falcon API servers to enqueue the image layers for image assessment. May only contain letters (a-z), numbers (0-9), underscore (_), hyphen (-), and period (.). Must not exceed 4096 characters in length.</p>
+</div></div>
+
+</li>
+<li><code>imageTag : String</code> (optional)
+<div>Image Tag
+<div>
+ <p>Image Tag is the name of the Docker container image tag. This determines which version of the given Docker container image to assess. If you aren't sure, you can try a value like "latest”. May only contain letters (a-z), numbers (0-9), underscore (_), hyphen (-), and period (.). Must not exceed 127 characters in length.</p>
+</div></div>
+
+</li>
+<li><code>enforce : boolean</code> (optional)
+<div>Image Doesn't Comply With Policy
+<div>
+ <p>Enforce CrowdStrike Falcon API recommendation by immediately aborting and failing the build.</p>
+</div></div>
+
+</li>
+<li><code>skipImageUpload : boolean</code> (optional)
+<div>Skip image upload
+<div>
+ <p>Select this option only if the image is already uploaded to CrowdStrike as part of a previous step in your build pipeline. When selected, the plugin retrieves an image scan report but does not upload the image to CrowdStrike for assessment.</p>
+</div></div>
+
+</li>
+<li><code>timeout : int</code> (optional)
+<div>Timeout
+<div>
+ <p>Timeout is the number of seconds to wait before giving up (ie. if there is some issue, such as network connectivity to Falcon). To err on the side of safety, when a timeout is reached, it will be treated the same as if Falcon had recommended to prevent the build. This timeout is for the entire build step. Must be an integer between 1 and 1799.The maximum timeout session would be 30 minutes.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

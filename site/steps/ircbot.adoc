@@ -1,0 +1,56 @@
+= IRC Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/ircbot">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `ircNotify`: IRC Notification
+++++
+<ul><li><code>buildToChatNotifier</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'BuildParametersBuildToChatNotifier'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'DefaultBuildToChatNotifier'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'ExtraMessageOnlyBuildToChatNotifier'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'PrintFailingTestsBuildToChatNotifier'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'SummaryOnlyBuildToChatNotifier'</code><div>
+<ul></ul></div></li>
+</ul></li>
+<li><code>customMessage : String</code> (optional)
+</li>
+<li><code>extraMessage : String</code> (optional)
+</li>
+<li><code>matrixNotifier</code> (optional)
+<ul><li><b>Values:</b> <code>ONLY_PARENT</code>, <code>ONLY_CONFIGURATIONS</code>, <code>ALL</code></li></ul></li>
+<li><code>notificationStrategy : String</code> (optional)
+</li>
+<li><code>notifyCulprits : boolean</code> (optional)
+</li>
+<li><code>notifyFixers : boolean</code> (optional)
+</li>
+<li><code>notifyOnStart : boolean</code> (optional)
+</li>
+<li><code>notifySuspects : boolean</code> (optional)
+</li>
+<li><code>notifyUpstreamCommitters : boolean</code> (optional)
+</li>
+<li><code>targets : String</code> (optional)
+</li>
+</ul>
+
+
+++++

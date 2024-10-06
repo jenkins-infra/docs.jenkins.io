@@ -1,0 +1,126 @@
+= CloudShell Sandbox Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/cloudshell-sandbox">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `startSandbox`: starts a CloudShell Sandbox
+++++
+<div><div>
+ A CloudShell Sandbox will be created. The Sandbox Id will be accessible as an environment variable, as seen in the example code.
+</div></div>
+<ul><li><code>name : String</code>
+<div><div>
+ The name of the blueprint to use for the new sandbox.
+</div></div>
+
+</li>
+<li><code>duration : int</code>
+<div><div>
+ Defines a timeout for the sandbox. The sandbox will automatically ended once the max duration time is exceeded.
+</div></div>
+
+</li>
+<li><code>timeout : int</code>
+<div><div>
+ Enter the number of minutes to wait until the Sandbox becomes available in case no resources are available to reserve it.
+</div></div>
+
+</li>
+<li><code>params : String</code> (optional)
+<div><div>
+ Blueprint Parameter in this syntax: "input1=my_name; input2=30"
+</div></div>
+
+</li>
+<li><code>sandboxDomain : String</code> (optional)
+<div><div>
+ Sandbox will be created in the following domain.
+</div></div>
+
+</li>
+<li><code>sandboxName : String</code> (optional)
+<div><div>
+ Sandboxes will be created with this name instead of the blueprint name.
+</div></div>
+
+</li>
+<li><code>setupTimeout : int</code> (optional)
+<div><div>
+ Enter the number of minutes to wait for the sandbox setup to complete
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `stopSandbox`: Stops a CloudShell Sandbox
+++++
+<div><div>
+ Stop a sandbox in cloudshell.
+</div></div>
+<ul><li><code>sandboxId : String</code>
+</li>
+<li><code>teardownTimeout : int</code> (optional)
+<div><div>
+ Enter the number of minutes to wait for the sandbox teardown to complete
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `withSandbox`: Use sandbox in a specific scope
+++++
+<div><div>
+ This step will execute the code in the closure in the context of a new sandbox. A CloudShell Sandbox will be created and set up prior to executing the code. The Sandbox Id will be accessible inside the closure as an environment variable, as seen in the example code. The Sandbox will always be ended after exiting the closure. NOTE: This step was designed for demo purposes only and not suitable for production usage.
+</div></div>
+<ul><li><code>name : String</code>
+<div><div>
+ The name of the blueprint to use for the new sandbox.
+</div></div>
+
+</li>
+<li><code>maxDuration : int</code>
+</li>
+<li><code>params : String</code>
+<div><div>
+ Blueprint Parameter in this syntax: "input1=my_name; input2=30"
+</div></div>
+
+</li>
+<li><code>sandboxName : String</code>
+<div><div>
+ Sandboxes will be created with this name instead of the blueprint name.
+</div></div>
+
+</li>
+<li><code>sandboxDomain : String</code>
+<div><div>
+ Sandbox will be created in the following domain.
+</div></div>
+
+</li>
+<li><code>timeout : int</code>
+<div><div>
+ Enter the number of minutes to wait until the Sandbox becomes available in case no resources are available to reserve it.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

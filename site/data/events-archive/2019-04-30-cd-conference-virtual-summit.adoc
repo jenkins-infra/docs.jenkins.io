@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Virtual Summit
+:page-eventStartDate: 2019-04-30T9:00:00
+:page-eventLink: https://cdconference.io
+---
+Continuous Delivery in a Cloud Native World Virtual Summit

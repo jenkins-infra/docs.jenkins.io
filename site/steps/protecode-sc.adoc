@@ -1,0 +1,128 @@
+= Protecode SC
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/protecode-sc">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `protecodesc`: Black Duck Binary Analysis
+++++
+<ul><li><code>credentialsId : String</code> (optional)
+<div><div>
+ BDBA supports both username/password and an API token.
+</div></div>
+
+</li>
+<li><code>protecodeScGroup : String</code> (optional)
+<div><div>
+ Specify the BDBA Group ID where the artifacts should be uploaded to. 
+ <p>Group ID can be found from the BDBA service by looking at the URL when browsing an individual group: <code>https://protecode-sc.mydomain.com/group/<strong>1234</strong>/</code> or with Groups API <code>https://protecode-sc.mydomain.com/api/groups/</code>.</p>
+ <br><i> Please notice that this value should be a number, not the name or the path to the group.</i>
+ <p>Value can also be an environment variable containing the group number, e.g $MY_GROUP_ID or ${MY_GROUP_ID}.</p>
+</div></div>
+
+</li>
+<li><code>convertToSummary : boolean</code> (optional)
+<div><div>
+ The summary can be shown using <a href="https://wiki.jenkins-ci.org/display/JENKINS/Summary+Display+Plugin" rel="nofollow">Summary Display Jenkins Plugin.</a>
+ <br>
+  The report file name to publish is <b><code>protecodesc.xml</code></b>. 
+ <br>
+ <br>
+  If you wish to see only the latest results in the summary, you can run a "shell command" build step before the BDBA build step: "rm -rf reports". You can find the mentioned build step in the list of possible build steps on the build configuration page. Please notice that this action is irreversible.
+</div></div>
+
+</li>
+<li><code>customHeader : String</code> (optional)
+<div><div>
+ Please specify the custom header in JSON format for fetching a file by URL
+ <br>
+ <br>
+  This is for the cases where the server from which BDBA must fetch the file requires authentication or similar header values.
+ <br>
+ <br><i> For example {"Customheader": "Foobar", "token": "oooooooo1!"} </i>
+</div></div>
+
+</li>
+<li><code>directoryToScan : String</code> (optional)
+<div><div>
+ Please specify the directory in the workspace you wish to scan. 
+ <br>
+ <br>
+  Alternatively you can specify the URL of the file you wish to scan, BDBA will fetch the file from the given URL
+ <br>
+ <br>
+  For files in the workarea, if you wish to use an absolute path put '/' at the beginning of the path, this will cause the plugin to not try to find the folder from the build workspace. <i>Please notice that it is possible to upload massive amounts of files if this option is set to absolute path and the 'Include subdirectories' is enabled.</i>
+ <br>
+ <br>
+  If there are 10 or more files to scan, the plugin will zip them before sending them. You can specify the name for the BDBA scan job in the field "Scan job name (used only for zip)". 
+ <p>Value can also be an environment variable containing the directory/URL, e.g $MY_SCAN_DIR or ${MY_SCAN_DIR}.</p>
+</div></div>
+
+</li>
+<li><code>dontZipFiles : boolean</code> (optional)
+<div><div>
+ Do not zip files in any situation. Usually the BDBA plugin zips files if there are more than 50, to avoid transfer overhead. <i> This configuration item is ignored if the BDBA instance is Synopsys hosted. </i>
+</div></div>
+
+</li>
+<li><code>endAfterSendingFiles : boolean</code> (optional)
+<div><div>
+ Whether to end the build phase when the files are sent to BDBA. You can see the links to the results in the console.
+</div></div>
+
+</li>
+<li><code>failIfVulns : boolean</code> (optional)
+<div><div>
+ Trigger build failure if BDBA finds vulnerabilities from the scanned files. The build will always fail if the connection or api calls to BDBA returned any errors.
+</div></div>
+
+</li>
+<li><code>includeSubdirectories : boolean</code> (optional)
+<div><div>
+ Also include subdirectories of the directory from which the build attempts to find files to scan. 
+ <br>
+ <br><i>Please notice that if this is selected, it is possible to accidentally upload massive amounts of files. </i>
+</div></div>
+
+</li>
+<li><code>pattern : String</code> (optional)
+<div><div>
+ Here you can provide a regular expression to include only certain files. The option is the default java Pattern format: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html 
+ <br>
+ <br><i>Leave blank to include all found files.</i>
+</div></div>
+
+</li>
+<li><code>protecodeScanName : String</code> (optional)
+<div><div>
+ BDBA jenkins plugin will zip given files if there are 10 or more. This is done to avoid file transfer overhead produced by moving many files. The plugin will still show the results per file.
+</div></div>
+
+</li>
+<li><code>scanOnlyArtifacts : boolean</code> (optional)
+<div><div>
+ Scan only Jenkins Artifacts produced by earlier steps of the build.
+</div></div>
+
+</li>
+<li><code>scanTimeout : int</code> (optional)
+<div><div>
+ Timeout for the scan. If this timeout is exceeded the plugin will not try to get further results from BDBA. If a comprehensive timeout for the build is needed, it is suggested to use the <a href="https://plugins.jenkins.io/build-timeout" rel="nofollow">Build Timeout Plugin</a>.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

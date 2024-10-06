@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Belarus Jenkins Meetup #0
+:page-eventStartDate: 2016-07-30T14:00:00
+:page-eventLink: https://www.meetup.com/Belarus-Jenkins-Meetup/events/232279096/
+---
+Intro, configuration as a code

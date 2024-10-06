@@ -1,0 +1,47 @@
+= Kafka Logs Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/kafkalogs">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `withKafkaLog`: Kafka Log Build Wrapper
+++++
+<ul><li><code>kafkaServers : String</code>
+</li>
+<li><code>kafkaTopic : String</code>
+</li>
+<li><code>metadata : String</code>
+</li>
+</ul>
+
+
+++++
+=== `withKafkaLog`: Kafka Log Build Wrapper
+++++
+<ul><li><code>kafkaServers : String</code>
+</li>
+<li><code>kafkaTopic : String</code>
+</li>
+<li><code>metadata : String</code>
+</li>
+<li><code>securityProtocol : String</code>
+</li>
+<li><code>sslTruststoreLocation : String</code>
+</li>
+<li><code>sslTruststorePassword : String</code>
+</li>
+</ul>
+
+
+++++

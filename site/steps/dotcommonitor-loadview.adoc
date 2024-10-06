@@ -1,0 +1,43 @@
+= Dotcom-Monitor LoadView
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/dotcommonitor-loadview">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `dotcomMonitor`: LoadView-Run load test scenario
+++++
+<ul><li><code>scenarioId : String</code>
+<div><div>
+ Unique ID of the load test scenario to run
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>errorThreshold : int</code>
+<div><div>
+ Mark the build as 'Passed' if the percentage of errors is less than the threshold
+</div></div>
+
+</li>
+<li><code>avgTime : int</code>
+<div><div>
+ Mark the build as 'Passed' if the average response time is less than the threshold
+</div></div>
+
+</li>
+</ul>
+
+
+++++

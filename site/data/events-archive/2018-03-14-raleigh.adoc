@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Triangle Area JAM
+:page-eventStartDate: 2018-03-14T18:00:00
+:page-eventLink: https://www.meetup.com/Raleigh-Jenkins-Area-Meetup/events/247612917/
+---
+We are currently looking for speakers for this Triangle Jenkins Area Meetup.

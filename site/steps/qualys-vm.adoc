@@ -1,0 +1,97 @@
+= Qualys Host Scanning Connector
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/qualys-vm">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `qualysVulnerabilityAnalyzer`: Scan host/instances with Qualys VM
+++++
+<ul><li><code>apiServer : String</code> (optional)
+</li>
+<li><code>credsId : String</code> (optional)
+</li>
+<li><code>hostIp : String</code> (optional)
+</li>
+<li><code>ec2ConnDetails : String</code> (optional)
+</li>
+<li><code>ec2Id : String</code> (optional)
+</li>
+<li><code>scannerName : String</code> (optional)
+</li>
+<li><code>scanName : String</code> (optional)
+</li>
+<li><code>optionProfile : String</code> (optional)
+</li>
+<li><code>network : String</code> (optional)
+</li>
+<li><code>proxyServer : String</code> (optional)
+</li>
+<li><code>proxyPort : int</code> (optional)
+</li>
+<li><code>proxyCredentialsId : String</code> (optional)
+</li>
+<li><code>useProxy : boolean</code> (optional)
+</li>
+<li><code>useHost : boolean</code> (optional)
+</li>
+<li><code>useEc2 : boolean</code> (optional)
+</li>
+<li><code>pollingInterval : String</code> (optional)
+</li>
+<li><code>vulnsTimeout : String</code> (optional)
+</li>
+<li><code>bySev : int</code> (optional)
+</li>
+<li><code>failBySev : boolean</code> (optional)
+</li>
+<li><code>failByQids : boolean</code> (optional)
+</li>
+<li><code>failByCves : boolean</code> (optional)
+</li>
+<li><code>qidList : String</code> (optional)
+</li>
+<li><code>cveList : String</code> (optional)
+</li>
+<li><code>failByCvss : boolean</code> (optional)
+</li>
+<li><code>byCvss : String</code> (optional)
+</li>
+<li><code>cvssBase : String</code> (optional)
+</li>
+<li><code>doExclude : boolean</code> (optional)
+</li>
+<li><code>excludeBy : String</code> (optional)
+</li>
+<li><code>excludeList : String</code> (optional)
+</li>
+<li><code>evaluatePotentialVulns : boolean</code> (optional)
+</li>
+<li><code>failByPci : boolean</code> (optional)
+</li>
+<li><code>webhookUrl : String</code> (optional)
+</li>
+<li><code>runConnector : boolean</code> (optional)
+</li>
+<li><code>ec2ConnAccountId : String</code> (optional)
+</li>
+<li><code>ec2ConnId : String</code> (optional)
+</li>
+<li><code>ec2ConnName : String</code> (optional)
+</li>
+<li><code>platform : String</code> (optional)
+</li>
+</ul>
+
+
+++++

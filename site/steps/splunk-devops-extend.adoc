@@ -1,0 +1,37 @@
+= Splunk Plugin Extension
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/splunk-devops-extend">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `sendSplunkConsoleLog`: Send console log Splunk
+++++
+<ul></ul>
+
+
+++++
+=== `sendSplunkFile`: Send files to Splunk
+++++
+<ul><li><code>includes : String</code>
+</li>
+<li><code>excludes : String</code> (optional)
+</li>
+<li><code>publishFromSlave : boolean</code> (optional)
+</li>
+<li><code>sizeLimit : String</code> (optional)
+</li>
+</ul>
+
+
+++++

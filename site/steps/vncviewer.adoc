@@ -1,0 +1,34 @@
+= VncViewer Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/vncviewer">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `wrap([$class: 'VncViewerBuildWrapper'])`: Enable VNC viewer
+++++
+<div><div>
+ If checked, plugin enables java script vnc viewer for configured VNC session. VNC viewer can be started via HTML link in 'Console output' 
+ <br>
+</div></div>
+<ul><li><code>vncServ : String</code>
+<div><div>
+ Used VNC server display, e.g.: 'myRemoteHost:17' or 'myRemoteHost:${MYENVVAR}'.
+ <br><i>Default: 'localhost:5900'</i>.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

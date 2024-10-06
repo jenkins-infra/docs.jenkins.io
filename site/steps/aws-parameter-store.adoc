@@ -1,0 +1,53 @@
+= AWS Parameter Store Build Wrapper
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/aws-parameter-store">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `withAWSParameterStore`: With AWS Parameter Store
+++++
+<div>Populates build environment variables with entries from the AWS Parameter Store. Advanced configuration allows the use of AWS Parameter Store hierarchies.</div>
+<ul><li><code>credentialsId : String</code> (optional)
+<div>AWS credentials used for accessing AWS Parameter Store. If set to --none--, uses the default credentials provider chain to search for credentials in the environment, file system or associated IAM role.</div>
+
+</li>
+<li><code>namePrefixes : String</code> (optional)
+<div>Filters the parameter names by prefix - only active if <b>Path</b> is empty.</div>
+
+</li>
+<li><code>naming : String</code> (optional)
+<div>How the environment variable is derived from the path: 
+<ul>
+ <li><b>basename</b> - anything after the last '/' is the variable name (e.g. with path /service, parameter /service/app/param becomes PARAM)</li>
+ <li><b>relative</b> - anything after the path is the variable name (e.g. with path /service, parameter /service/app/param becomes APP_PARAM)</li>
+ <li><b>absolute</b> - the full path with parameter name is the variable name (e.g. with path /service, parameter /service/app/param becomes SERVICE_APP_PARAM)</li>
+</ul></div>
+
+</li>
+<li><code>path : String</code> (optional)
+<div>A path hierarchy to search. If your AWS Parameter Store entries are stored as paths /path1/path2/parameter, then you can filter on a hierarchy such as /path1 or /path1/path2.</div>
+
+</li>
+<li><code>recursive : boolean</code> (optional)
+<div>If checked and <b>Path</b> is set to a hierarchy, the full hierarchy is searched. Otherwise only the parameters at the root of the hierarchy are exposed.</div>
+
+</li>
+<li><code>regionName : String</code> (optional)
+<div>The AWS region to use when querying AWS Parameter Store.</div>
+
+</li>
+</ul>
+
+
+++++

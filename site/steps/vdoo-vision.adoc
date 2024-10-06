@@ -1,0 +1,44 @@
+= Vdoo Vision Scanner
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/vdoo-vision">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `vdooScan`: Vdoo Vision Scanner
+++++
+<ul><li><code>baseApi : String</code> (optional)
+</li>
+<li><code>failThreshold : String</code> (optional)
+</li>
+<li><code>firmwareLocation : String</code> (optional)
+</li>
+<li><code>maliciousFiles : String</code> (optional)
+</li>
+<li><code>maxHighlightedCVEs : String</code> (optional)
+</li>
+<li><code>maxHighlightedExposures : String</code> (optional)
+</li>
+<li><code>maxHighlightedIssues : String</code> (optional)
+</li>
+<li><code>productId : String</code> (optional)
+</li>
+<li><code>vdooToken</code> (optional)
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>waitForResults : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

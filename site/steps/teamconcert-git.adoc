@@ -1,0 +1,75 @@
+= Team Concert Git Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/teamconcert-git">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'RTCGitBuilder'])`: Rational Team Concert(RTC) integration for Git
+++++
+<ul><li><code>serverURI : String</code>
+<div><div>
+ <p>The Jazz Repository connection URI for the Rational Team Concert (RTC) server</p>
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+<div><div>
+ <p>Credentials to use for the build user. A user name and password credential for the Jazz Repository should be configured.</p>
+</div></div>
+
+</li>
+<li><code>annotateChangeLog : boolean</code>
+<div><div>
+ <p>Optionally hyperlink bug numbers that appear in git commit descriptions as links to Rational Team Concert Work Items.</p>
+</div></div>
+
+</li>
+<li><code>buildDefinition : String</code> (optional)
+<div><div>
+ <p>The ID of the Hudson/Jenkins build definition within the Rational Team Concert (RTC) server. The build definition should not have any Source Control option.</p>
+</div></div>
+
+</li>
+<li><code>jenkinsRootURI : String</code> (optional)
+</li>
+<li><code>jenkinsRootURIOverride : boolean</code> (optional)
+<div><div>
+ <p>Optionally specify the HTTP address of the Jenkins installation, such as http://yourhost.yourdomain/jenkins/. This is necessary because the Rational Team Concert Git plugin cannot reliably detect such a URL from within itself.</p>
+</div></div>
+
+</li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ <p>The timeout period in seconds for Jazz repository requests made during the build.</p>
+</div></div>
+
+</li>
+<li><code>trackBuildWorkItem : String</code> (optional)
+<div><div>
+ <p>Specify an Id of a Work Item in Rational Team Concert. The Work Item will be updated with the execution status of the Jenkins build.</p>
+</div></div>
+
+</li>
+<li><code>useBuildDefinition : boolean</code> (optional)
+</li>
+<li><code>useTrackBuildWorkItem : boolean</code> (optional)
+</li>
+<li><code>useWorkItems : boolean</code> (optional)
+</li>
+<li><code>workItemUpdateType : String</code> (optional)
+</li>
+</ul>
+
+
+++++

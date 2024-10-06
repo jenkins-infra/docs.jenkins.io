@@ -1,0 +1,81 @@
+= Hugo Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/hugo">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `hugo`: Hugo Builder
+++++
+<ul><li><code>baseUrl : String</code> (optional)
+</li>
+<li><code>buildFuture : boolean</code> (optional)
+</li>
+<li><code>destination : String</code> (optional)
+</li>
+<li><code>environment : String</code> (optional)
+</li>
+<li><code>hugoHome : String</code> (optional)
+</li>
+<li><code>verbose : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `hugoGitPublish`: Hugo Git Publisher
+++++
+<ul><li><code>targetUrl : String</code>
+</li>
+<li><code>authorEmail : String</code> (optional)
+</li>
+<li><code>authorName : String</code> (optional)
+</li>
+<li><code>commitLog : String</code> (optional)
+</li>
+<li><code>committerEmail : String</code> (optional)
+</li>
+<li><code>committerName : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>publishBranch : String</code> (optional)
+</li>
+<li><code>publishDir : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `hugoGitSubmodulePublsh`: Hugo Git Submodule Publisher
+++++
+<ul><li><code>authorEmail : String</code> (optional)
+</li>
+<li><code>authorName : String</code> (optional)
+</li>
+<li><code>commitLog : String</code> (optional)
+</li>
+<li><code>committerEmail : String</code> (optional)
+</li>
+<li><code>committerName : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>publishBranch : String</code> (optional)
+</li>
+<li><code>publishDir : String</code> (optional)
+</li>
+</ul>
+
+
+++++

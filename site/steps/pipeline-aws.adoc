@@ -1,0 +1,1101 @@
+= Pipeline: AWS Steps
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/pipeline-aws">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `awaitDeploymentCompletion`: Wait for AWS CodeDeploy deployment completion
+++++
+<ul><li><code>deploymentId : String</code>
+</li>
+</ul>
+
+
+++++
+=== `awsIdentity`: Print and return the AWS identity
+++++
+<ul></ul>
+
+
+++++
+=== `cfInvalidate`: Invalidate given paths in CloudFront distribution
+++++
+<ul><li><code>distribution : String</code>
+</li>
+<li><code>paths : Array / List of String</code>
+<ul></ul></li>
+<li><code>waitForCompletion : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `cfnCreateChangeSet`: Create CloudFormation change set
+++++
+<ul><li><code>changeSet : String</code>
+</li>
+<li><code>stack : String</code>
+</li>
+<li><code>create : boolean</code> (optional)
+</li>
+<li><code>file : String</code> (optional)
+</li>
+<li><code>keepParams : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>notificationARNs : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>onFailure : String</code> (optional)
+</li>
+<li><code>params : <code>Object</code></code> (optional)
+</li>
+<li><code>paramsFile : String</code> (optional)
+</li>
+<li><code>pollInterval : long</code> (optional)
+</li>
+<li><code>roleArn : String</code> (optional)
+</li>
+<li><code>rollbackTimeoutInMinutes : int</code> (optional)
+</li>
+<li><code>rollbackTriggers : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>tags : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>tagsFile : String</code> (optional)
+</li>
+<li><code>template : String</code> (optional)
+</li>
+<li><code>timeoutInMinutes : long</code> (optional)
+</li>
+<li><code>timeoutInSeconds : long</code> (optional)
+</li>
+<li><code>url : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `cfnDelete`: Delete CloudFormation stack
+++++
+<div><div>
+ <p>Delete Cloudformation Templates</p>
+</div></div>
+<ul><li><code>stack : String</code>
+<div><div>
+ This is the name of the existing Cloudformation template to delete
+</div></div>
+
+</li>
+<li><code>clientRequestToken : String</code> (optional)
+</li>
+<li><code>pollInterval : long</code> (optional)
+<div><div>
+ How often to check the status of the delete operation in milliseconds. 0 will disable event printing.
+</div></div>
+
+</li>
+<li><code>retainResources : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>roleArn : String</code> (optional)
+</li>
+<li><code>timeoutInMinutes : long</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `cfnDeleteStackSet`: Delete CloudFormation Stack Set
+++++
+<ul><li><code>stackSet : String</code>
+</li>
+<li><code>pollInterval : long</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `cfnDescribe`: Describe outputs of CloudFormation stack
+++++
+<ul><li><code>stack : String</code>
+</li>
+</ul>
+
+
+++++
+=== `cfnExecuteChangeSet`: Execute CloudFormation change set
+++++
+<ul><li><code>changeSet : String</code>
+</li>
+<li><code>stack : String</code>
+</li>
+<li><code>pollInterval : long</code> (optional)
+</li>
+<li><code>timeoutInMinutes : long</code> (optional)
+</li>
+<li><code>timeoutInSeconds : long</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `cfnExports`: Describe CloudFormation global exports
+++++
+<ul></ul>
+
+
+++++
+=== `cfnUpdate`: Create or Update CloudFormation stack
+++++
+<ul><li><code>stack : String</code>
+</li>
+<li><code>create : boolean</code> (optional)
+</li>
+<li><code>enableTerminationProtection : boolean</code> (optional)
+</li>
+<li><code>file : String</code> (optional)
+</li>
+<li><code>keepParams : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>notificationARNs : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>onFailure : String</code> (optional)
+</li>
+<li><code>params : <code>Object</code></code> (optional)
+</li>
+<li><code>paramsFile : String</code> (optional)
+</li>
+<li><code>pollInterval : long</code> (optional)
+</li>
+<li><code>roleArn : String</code> (optional)
+</li>
+<li><code>rollbackTimeoutInMinutes : int</code> (optional)
+</li>
+<li><code>rollbackTriggers : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>tags : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>tagsFile : String</code> (optional)
+</li>
+<li><code>template : String</code> (optional)
+</li>
+<li><code>timeoutInMinutes : long</code> (optional)
+</li>
+<li><code>timeoutInSeconds : long</code> (optional)
+</li>
+<li><code>url : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `cfnUpdateStackSet`: Create or Update CloudFormation Stack Set
+++++
+<ul><li><code>stackSet : String</code>
+</li>
+<li><code>administratorRoleArn : String</code> (optional)
+</li>
+<li><code>batchingOptions</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>regions : boolean</code>
+</li>
+</ul></li>
+<li><code>create : boolean</code> (optional)
+</li>
+<li><code>executionRoleName : String</code> (optional)
+</li>
+<li><code>file : String</code> (optional)
+</li>
+<li><code>keepParams : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>notificationARNs : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>onFailure : String</code> (optional)
+</li>
+<li><code>operationPreferences</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>failureToleranceCount : int</code> (optional)
+</li>
+<li><code>failureTolerancePercentage : int</code> (optional)
+</li>
+<li><code>maxConcurrentCount : int</code> (optional)
+</li>
+<li><code>maxConcurrentPercentage : int</code> (optional)
+</li>
+<li><code>regionOrder : Array / List of String</code> (optional)
+<ul></ul></li>
+</ul></li>
+<li><code>params : <code>Object</code></code> (optional)
+</li>
+<li><code>paramsFile : String</code> (optional)
+</li>
+<li><code>pollInterval : long</code> (optional)
+</li>
+<li><code>rollbackTimeoutInMinutes : int</code> (optional)
+</li>
+<li><code>rollbackTriggers : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>tags : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>tagsFile : String</code> (optional)
+</li>
+<li><code>template : String</code> (optional)
+</li>
+<li><code>timeoutInMinutes : long</code> (optional)
+</li>
+<li><code>timeoutInSeconds : long</code> (optional)
+</li>
+<li><code>url : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `cfnValidate`: Validate CloudFormation template
+++++
+<ul><li><code>file : String</code> (optional)
+</li>
+<li><code>url : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `createDeployment`: Deploys an application revision through the specified deployment group (AWS CodeDeploy).
+++++
+<ul><li><code>applicationName : String</code> (optional)
+</li>
+<li><code>deploymentConfigName : String</code> (optional)
+</li>
+<li><code>deploymentGroupName : String</code> (optional)
+</li>
+<li><code>description : String</code> (optional)
+</li>
+<li><code>fileExistsBehavior : String</code> (optional)
+</li>
+<li><code>gitHubCommitId : String</code> (optional)
+</li>
+<li><code>gitHubRepository : String</code> (optional)
+</li>
+<li><code>ignoreApplicationStopFailures : boolean</code> (optional)
+</li>
+<li><code>s3Bucket : String</code> (optional)
+</li>
+<li><code>s3BundleType : String</code> (optional)
+</li>
+<li><code>s3Key : String</code> (optional)
+</li>
+<li><code>waitForCompletion : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `deployAPI`: Deploy the given API Gateway API
+++++
+<ul><li><code>api : String</code>
+</li>
+<li><code>stage : String</code>
+</li>
+<li><code>description : String</code> (optional)
+</li>
+<li><code>variables : Array / List of String</code> (optional)
+<ul></ul></li>
+</ul>
+
+
+++++
+=== `ebCreateApplication`: Creates a new Elastic Beanstalk application
+++++
+<ul><li><code>applicationName : String</code>
+</li>
+<li><code>description : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ebCreateApplicationVersion`: Creates a new version for an elastic beanstalk application
+++++
+<ul><li><code>applicationName : String</code>
+</li>
+<li><code>versionLabel : String</code>
+</li>
+<li><code>s3Bucket : String</code>
+</li>
+<li><code>s3Key : String</code>
+</li>
+<li><code>description : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ebCreateConfigurationTemplate`: Creates a new configuration template for an elastic beanstalk application
+++++
+<ul><li><code>applicationName : String</code>
+</li>
+<li><code>templateName : String</code>
+</li>
+<li><code>description : String</code> (optional)
+</li>
+<li><code>environmentId : String</code> (optional)
+</li>
+<li><code>solutionStackName : String</code> (optional)
+</li>
+<li><code>sourceConfigurationApplication : String</code> (optional)
+</li>
+<li><code>sourceConfigurationTemplate : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ebCreateEnvironment`: Creates a new Elastic Beanstalk environment
+++++
+<ul><li><code>applicationName : String</code>
+</li>
+<li><code>environmentName : String</code>
+</li>
+<li><code>description : String</code> (optional)
+</li>
+<li><code>solutionStackName : String</code> (optional)
+</li>
+<li><code>templateName : String</code> (optional)
+</li>
+<li><code>updateOnExisting : boolean</code> (optional)
+</li>
+<li><code>versionLabel : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ebSwapEnvironmentCNAMEs`: Swaps the CNAMEs of two elastic beanstalk environments.
+++++
+<ul><li><code>destinationEnvironmentCNAME : String</code> (optional)
+</li>
+<li><code>destinationEnvironmentId : String</code> (optional)
+</li>
+<li><code>destinationEnvironmentName : String</code> (optional)
+</li>
+<li><code>sourceEnvironmentCNAME : String</code> (optional)
+</li>
+<li><code>sourceEnvironmentId : String</code> (optional)
+</li>
+<li><code>sourceEnvironmentName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ebWaitOnEnvironmentHealth`: Waits until the specified environment application becomes available
+++++
+<ul><li><code>applicationName : String</code>
+</li>
+<li><code>environmentName : String</code>
+</li>
+<li><code>health : String</code> (optional)
+</li>
+<li><code>stabilityThreshold : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ebWaitOnEnvironmentStatus`: Waits until the specified environment becomes available
+++++
+<ul><li><code>applicationName : String</code>
+</li>
+<li><code>environmentName : String</code>
+</li>
+<li><code>status : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ec2ShareAmi`: Share an AMI with other accounts
+++++
+<ul><li><code>accountIds : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>amiId : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ecrDeleteImage`: Delete ecr images
+++++
+<ul><li><code>imageIds</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>imageDigest : String</code> (optional)
+</li>
+<li><code>imageTag : String</code> (optional)
+</li>
+</ul></li>
+<li><code>registryId : String</code> (optional)
+</li>
+<li><code>repositoryName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ecrListImages`: List ECR Images
+++++
+<ul><li><code>filter</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>tagStatus : String</code> (optional)
+</li>
+</ul></li>
+<li><code>registryId : String</code> (optional)
+</li>
+<li><code>repositoryName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `ecrLogin`: Create and return the ECR login string
+++++
+<ul><li><code>email : boolean</code> (optional)
+</li>
+<li><code>registryIds : Array / List of String</code> (optional)
+<ul></ul></li>
+</ul>
+
+
+++++
+=== `ecrSetRepositoryPolicy`: Set ECR Repository Policy
+++++
+<ul><li><code>policyText : String</code> (optional)
+</li>
+<li><code>registryId : String</code> (optional)
+</li>
+<li><code>repositoryName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `elbDeregisterInstance`: Deregisters the specified instances from the specified load balancer.
+++++
+<ul><li><code>targetGroupARN : String</code> (optional)
+</li>
+<li><code>instanceID : String</code> (optional)
+</li>
+<li><code>port : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `elbIsInstanceDeregistered`: Registers the specified instances from the specified load balancer.
+++++
+<ul><li><code>targetGroupARN : String</code> (optional)
+</li>
+<li><code>instanceID : String</code> (optional)
+</li>
+<li><code>port : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `elbIsInstanceRegistered`: Registers the specified instances from the specified load balancer.
+++++
+<ul><li><code>targetGroupARN : String</code> (optional)
+</li>
+<li><code>instanceID : String</code> (optional)
+</li>
+<li><code>port : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `elbRegisterInstance`: Registers the specified instances from the specified load balancer.
+++++
+<ul><li><code>targetGroupARN : String</code> (optional)
+</li>
+<li><code>instanceID : String</code> (optional)
+</li>
+<li><code>port : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `invokeLambda`: Invoke a given Lambda function
+++++
+<ul><li><code>functionName : String</code>
+</li>
+<li><code>payload : <code>Object</code></code> (optional)
+</li>
+<li><code>payloadAsString : String</code> (optional)
+</li>
+<li><code>returnValueAsString : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `lambdaVersionCleanup`: Cleanup old lambda versions
+++++
+<ul><li><code>daysAgo : int</code>
+</li>
+<li><code>functionName : String</code> (optional)
+</li>
+<li><code>stackName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `listAWSAccounts`: List all AWS accounts of the organization
+++++
+<ul><li><code>parent : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `s3Copy`: Copy file between S3 buckets
+++++
+<div><div>
+ <p>Copy file between S3 buckets.</p>
+</div></div>
+<ul><li><code>fromBucket : String</code>
+<div><div>
+ This is the bucket of the existing file.
+</div></div>
+
+</li>
+<li><code>fromPath : String</code>
+<div><div>
+ This is the file path in the source bucket. <i>Do not begin with a leading "/".</i>
+</div></div>
+
+</li>
+<li><code>toBucket : String</code>
+<div><div>
+ This is the bucket of the new file.
+</div></div>
+
+</li>
+<li><code>toPath : String</code>
+<div><div>
+ This is the file path in the destination bucket. <i>Do not begin with a leading "/".</i>
+</div></div>
+
+</li>
+<li><code>pathStyleAccessEnabled : boolean</code> (optional)
+<div><div>
+ Enabled/Disable Path-style Access for AWS S3.
+</div></div>
+
+</li>
+<li><code>payloadSigningEnabled : boolean</code> (optional)
+<div><div>
+ Enabled/Disable Payload Signing for AWS S3.
+</div></div>
+
+</li>
+<li><code>acl</code> (optional)
+<div><div>
+ <p>Canned ACL to add to the new file.</p>
+ <ul>
+  <li>Private : Specifies the owner is granted Full Control. No one else has access rights. This is the default access control policy for any new buckets or objects.</li>
+  <li>PublicRead : Specifies the owner is granted Full Control and to the All Users group grantee is granted Read access.</li>
+  <li>PublicReadWrite: Specifies the owner is granted Full Control and to the All Users group grantee is granted Read and Write access.</li>
+  <li>AuthenticatedRead: Specifies the owner is granted Full Control and to the Authenticated Users group grantee is granted Read access.</li>
+  <li>LogDeliveryWrite: Specifies the owner is granted Full Control and to the Log Delivery group grantee is granted Write access.</li>
+  <li>BucketOwnerRead: Specifies the owner of the bucket, but not necessarily the same as the owner of the object, is granted Read access.</li>
+  <li>BucketOwnerFullControl: Specifies the owner of the bucket, but not necessarily the same as the owner of the object, is granted Full Control.</li>
+  <li>AwsExecRead: Specifies the owner is granted Full Control and Amazon EC2 is granted {@link Permission#Read} access to GET an Amazon Machine Image (AMI) bundle from Amazon S3.</li>
+ </ul>
+ <p></p>
+</div></div>
+
+<ul><li><b>Values:</b> <code>Private</code>, <code>PublicRead</code>, <code>PublicReadWrite</code>, <code>AuthenticatedRead</code>, <code>LogDeliveryWrite</code>, <code>BucketOwnerRead</code>, <code>BucketOwnerFullControl</code>, <code>AwsExecRead</code></li></ul></li>
+<li><code>cacheControl : String</code> (optional)
+<div><div>
+ Cache control to add to the HTTP request. <i>Sample : "public,max-age=31536000"</i>
+</div></div>
+
+</li>
+<li><code>contentDisposition : String</code> (optional)
+</li>
+<li><code>contentType : String</code> (optional)
+</li>
+<li><code>kmsId : String</code> (optional)
+</li>
+<li><code>metadatas : Array / List of String</code> (optional)
+<div><div>
+ Metadatas to add to the new file. Multiple metadatas must be separated with a ';' and name and value separated by a ':'. <i>Sample : "Content-Type:image/svg+xml;Another:AnotherValue"</i>
+</div></div>
+
+<ul></ul></li>
+<li><code>sseAlgorithm : String</code> (optional)
+<div><div>
+ Server Side Encryption Algorithm to add to the new file. <i>Sample : "AES256"</i>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `s3Delete`: Delete file from S3
+++++
+<div><div>
+ <p>Delete a file/folder from S3. If the path ends in a "/", then the path will be interpreted to be a folder, and all of its contents will be removed.</p>
+</div></div>
+<ul><li><code>bucket : String</code>
+<div><div>
+ This is the bucket to use.
+</div></div>
+
+</li>
+<li><code>path : String</code>
+<div><div>
+ <p>This is the path inside the bucket to delete. If this ends in a "/", then the path will be interpreted to be a folder, and all of its contents will be removed.</p>
+ <p><i>Do not begin with a leading "/".</i></p>
+</div></div>
+
+</li>
+<li><code>pathStyleAccessEnabled : boolean</code> (optional)
+<div><div>
+ Enabled/Disable Path-style Access for AWS S3.
+</div></div>
+
+</li>
+<li><code>payloadSigningEnabled : boolean</code> (optional)
+<div><div>
+ Enabled/Disable Payload Signing for AWS S3.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `s3DoesObjectExist`: Check if object exists in S3
+++++
+<div><div>
+ <p>Check if object exists in S3 bucket.</p>
+</div></div>
+<ul><li><code>bucket : String</code>
+<div><div>
+ This is the bucket to use.
+</div></div>
+
+</li>
+<li><code>path : String</code>
+<div><div>
+ This is the path inside the bucket to use. <i>Do not begin with a leading "/".</i>
+</div></div>
+
+</li>
+<li><code>pathStyleAccessEnabled : boolean</code> (optional)
+<div><div>
+ Enabled/Disable Path-style Access for AWS S3.
+</div></div>
+
+</li>
+<li><code>payloadSigningEnabled : boolean</code> (optional)
+<div><div>
+ Enabled/Disable Payload Signing for AWS S3.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `s3Download`: Copy file from S3
+++++
+<div><div>
+ <p>Download a file/folder from S3 to the local workspace. Set optional parameter force to true to overwrite any existing files in workspace. If the path ends with a /, then the complete virtual directory will be downloaded.</p>
+</div></div>
+<ul><li><code>file : String</code>
+<div><div>
+ This is the local target file to download into.
+</div></div>
+
+</li>
+<li><code>bucket : String</code>
+<div><div>
+ This is the bucket to use.
+</div></div>
+
+</li>
+<li><code>pathStyleAccessEnabled : boolean</code> (optional)
+<div><div>
+ Enabled/Disable Path-style Access for AWS S3.
+</div></div>
+
+</li>
+<li><code>payloadSigningEnabled : boolean</code> (optional)
+<div><div>
+ Enabled/Disable Payload Signing for AWS S3.
+</div></div>
+
+</li>
+<li><code>force : boolean</code> (optional)
+<div><div>
+ Set this to true to overwrite local workspace files.
+</div></div>
+
+</li>
+<li><code>path : String</code> (optional)
+<div><div>
+ This is the path inside the bucket to use. <i>Do not begin with a leading "/".</i>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `s3FindFiles`: Find files in S3
+++++
+<div><div>
+ <p>Return a list of all of the files/folders in the bucket. If path is given, then it will be used as the root of the search. Results are returned <i>relative</i> to path; if path is not given, then the results will contain the full S3 path.</p>
+ <p>The following all ultimately return one item referring to "path/to/my/file.ext"; however, by limiting the scope via path, the results are different.</p>
+ <ul>
+  <li>files = s3FindFiles bucket: "my-bucket", glob: "path/to/my/file.ext"<br>// files[0].name = "file.ext"<br>// files[0].path = "path/to/my/file.ext"</li>
+  <li>files = s3FindFiles bucket: "my-bucket", path: "path/to/", glob: "my/file.ext"<br>// files[0].name = "file.ext"<br>// files[0].path = "my/file.ext"</li>
+  <li>files = s3FindFiles bucket: "my-bucket", path: "path/to/my/", glob: "file.ext"<br>// files[0].name = "file.ext"<br>// files[0].path = "file.ext"</li>
+ </ul>
+ <p></p>
+ <p>List every file in the bucket:</p>
+ <ul>
+  <li>s3FindFiles bucket: "my-bucket", glob: "**", onlyFiles: true</li>
+ </ul>
+ <p></p>
+ <p>The return format is identical to that of the findFiles step. This will return an array of FileWrapper instances with the following properties:</p>
+ <ul>
+  <li>name: the filename portion of the path (for "path/to/my/file.ext", this would be "file.ext")</li>
+  <li>path: the full path of the file, <i>relative</i> to the path specified (for path="path/to/", this property of the file "path/to/my/file.ext" would be "my/file.ext")</li>
+  <li>directory: true if this is a directory; false otherwise</li>
+  <li>length: the length of the file (this is always "0" for directories)</li>
+  <li>lastModified: the last modification timestamp, in milliseconds since the Unix epoch (this is always "0" for directories)</li>
+ </ul> When used in a string context, a FileWrapper object returns the value of its path. 
+ <p></p>
+</div></div>
+<ul><li><code>bucket : String</code>
+<div><div>
+ This is the bucket to use.
+</div></div>
+
+</li>
+<li><code>pathStyleAccessEnabled : boolean</code> (optional)
+<div><div>
+ Enabled/Disable Path-style Access for AWS S3.
+</div></div>
+
+</li>
+<li><code>payloadSigningEnabled : boolean</code> (optional)
+<div><div>
+ Enabled/Disable Payload Signing for AWS S3.
+</div></div>
+
+</li>
+<li><code>glob : String</code> (optional)
+<div><div>
+ <p>This is the glob to use to match files/folders. You may use a full file name/path (for example "path/to/file.ext"), but you may also use a glob (for example, "path/t*/file.*").</p>
+ <p>If left blank, this will perform the equivalent function of "*".</p>
+ <p>To list absolutely everything, use "**".</p>
+</div></div>
+
+</li>
+<li><code>onlyFiles : boolean</code> (optional)
+<div><div>
+ Set this to true to only return actual files. Otherwise, by default, this will return both files and folders.
+</div></div>
+
+</li>
+<li><code>path : String</code> (optional)
+<div><div>
+ This is the path inside the bucket to use as the root of the search. <i>Do not begin with a leading "/".</i>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `s3PresignURL`: Presign file in S3
+++++
+<ul><li><code>bucket : String</code>
+</li>
+<li><code>key : String</code>
+</li>
+<li><code>httpMethod : String</code>
+</li>
+<li><code>durationInSeconds : int</code>
+</li>
+<li><code>pathStyleAccessEnabled : boolean</code> (optional)
+</li>
+<li><code>payloadSigningEnabled : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `s3Upload`: Copy file to S3
+++++
+<div><div>
+ <p>Upload a file/folder from the workspace to an S3 bucket. If the file parameter denotes a directory, then the complete directory (including all subfolders) will be uploaded. If text is provided, upload the text as the provided filename in the remote S3 bucket.</p>
+</div></div>
+<ul><li><code>bucket : String</code>
+<div><div>
+ This is the bucket to use.
+</div></div>
+
+</li>
+<li><code>pathStyleAccessEnabled : boolean</code> (optional)
+<div><div>
+ Enabled/Disable Path-style Access for AWS S3.
+</div></div>
+
+</li>
+<li><code>payloadSigningEnabled : boolean</code> (optional)
+<div><div>
+ Enabled/Disable Payload Signing for AWS S3.
+</div></div>
+
+</li>
+<li><code>acl</code> (optional)
+<div><div>
+ <p>Canned ACL to add to the upload request.</p>
+ <ul>
+  <li>Private : Specifies the owner is granted Full Control. No one else has access rights. This is the default access control policy for any new buckets or objects.</li>
+  <li>PublicRead : Specifies the owner is granted Full Control and to the All Users group grantee is granted Read access.</li>
+  <li>PublicReadWrite: Specifies the owner is granted Full Control and to the All Users group grantee is granted Read and Write access.</li>
+  <li>AuthenticatedRead: Specifies the owner is granted Full Control and to the Authenticated Users group grantee is granted Read access.</li>
+  <li>LogDeliveryWrite: Specifies the owner is granted Full Control and to the Log Delivery group grantee is granted Write access.</li>
+  <li>BucketOwnerRead: Specifies the owner of the bucket, but not necessarily the same as the owner of the object, is granted Read access.</li>
+  <li>BucketOwnerFullControl: Specifies the owner of the bucket, but not necessarily the same as the owner of the object, is granted Full Control.</li>
+  <li>AwsExecRead: Specifies the owner is granted Full Control and Amazon EC2 is granted {@link Permission#Read} access to GET an Amazon Machine Image (AMI) bundle from Amazon S3.</li>
+ </ul>
+ <p></p>
+</div></div>
+
+<ul><li><b>Values:</b> <code>Private</code>, <code>PublicRead</code>, <code>PublicReadWrite</code>, <code>AuthenticatedRead</code>, <code>LogDeliveryWrite</code>, <code>BucketOwnerRead</code>, <code>BucketOwnerFullControl</code>, <code>AwsExecRead</code></li></ul></li>
+<li><code>cacheControl : String</code> (optional)
+</li>
+<li><code>contentDisposition : String</code> (optional)
+</li>
+<li><code>contentEncoding : String</code> (optional)
+</li>
+<li><code>contentType : String</code> (optional)
+</li>
+<li><code>excludePathPattern : String</code> (optional)
+<div><div>
+ This is the pattern to use to exclude files <i>Sample : "*.svg"</i>
+</div></div>
+
+</li>
+<li><code>file : String</code> (optional)
+<div><div>
+ This is the local file to upload from the workspace.
+</div></div>
+
+</li>
+<li><code>includePathPattern : String</code> (optional)
+<div><div>
+ This is the pattern to use to find files to push to S3 <i>Sample : "dist/**"</i>
+</div></div>
+
+</li>
+<li><code>kmsId : String</code> (optional)
+</li>
+<li><code>metadatas : Array / List of String</code> (optional)
+<div><div>
+ Metadatas to add to push file. Multiple metadatas must be separated with a ';' and name and value separated by a ':'. <i>Sample : "Content-Type:image/svg+xml;Another:AnotherValue"</i>
+</div></div>
+
+<ul></ul></li>
+<li><code>path : String</code> (optional)
+<div><div>
+ This is the path inside the bucket to use. <i>Do not begin with a leading "/".</i>
+</div></div>
+
+</li>
+<li><code>redirectLocation : String</code> (optional)
+</li>
+<li><code>sseAlgorithm : String</code> (optional)
+<div><div>
+ Server Side Encryption Algorithm to add to push file. <i>Sample : "AES256"</i>
+</div></div>
+
+</li>
+<li><code>tags : String</code> (optional)
+<div><div>
+ Tags to add to push file. Multiple tags must be separated with a ', ' and name and value separated by a ':'. <i>Sample : "[tag1:value1, tag2:value2]"</i>
+</div></div>
+
+</li>
+<li><code>text : String</code> (optional)
+<div><div>
+ This is the text to be copied up to S3.
+</div></div>
+
+</li>
+<li><code>verbose : boolean</code> (optional)
+</li>
+<li><code>workingDir : String</code> (optional)
+<div><div>
+ Working directories for s3Upload plugin <i>Sample : "dist"</i>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `setAccountAlias`: Set the AWS account alias
+++++
+<div><div>
+ <p>The <code>setAccountAlias</code> step set the given name as AWS account alias.</p>
+</div></div>
+<ul><li><code>name : String</code>
+<div><div>
+ Name to use as account alias.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `snsPublish`: Publish notification to SNS
+++++
+<ul><li><code>topicArn : String</code>
+</li>
+<li><code>subject : String</code>
+</li>
+<li><code>message : String</code>
+</li>
+<li><code>messageAttributes</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `updateIdP`: Update thirdparty Identity Provider
+++++
+<ul><li><code>name : String</code>
+</li>
+<li><code>metadata : String</code>
+</li>
+</ul>
+
+
+++++
+=== `updateTrustPolicy`: Update trust policy of IAM roles
+++++
+<ul><li><code>roleName : String</code>
+</li>
+<li><code>policyFile : String</code>
+</li>
+</ul>
+
+
+++++
+=== `withAWS`: set AWS settings for nested block
+++++
+<div><div>
+ <p>The <code>withAWS</code> step provides authorization for the nested steps. You can provide region and profile information or let Jenkins assume a role in another or the same AWS account. You can mix all parameters in one <code>withAWS</code> block.</p>
+</div></div>
+<ul><li><code>credentials : String</code> (optional)
+<div><div>
+ Use standard Jenkins UsernamePassword credentials. Note: the username should be your Access Key ID, and the password should be the Secret Access Key.
+</div></div>
+
+</li>
+<li><code>duration : int</code> (optional)
+</li>
+<li><code>endpointUrl : String</code> (optional)
+<div><div>
+ The AWS endpoint-url.
+</div></div>
+
+</li>
+<li><code>externalId : String</code> (optional)
+<div><div>
+ (optional) The external ID.
+</div></div>
+
+</li>
+<li><code>federatedUserId : String</code> (optional)
+<div><div>
+ (optional) The federated user ID. It generates a set of temporary credentials and allows you to push a federated user id into cloud trail for auditing.
+</div></div>
+
+</li>
+<li><code>iamMfaToken : String</code> (optional)
+</li>
+<li><code>policy : String</code> (optional)
+<div><div>
+ (optional) An additional policy that is to be combined with the policy associated with the role.
+</div></div>
+
+</li>
+<li><code>principalArn : String</code> (optional)
+<div><div>
+ Account principal ARN Note: Only use when pass a samlAssertion parameter
+</div></div>
+
+</li>
+<li><code>profile : String</code> (optional)
+<div><div>
+ Use this profile information from ~/.aws/config.
+</div></div>
+
+</li>
+<li><code>region : String</code> (optional)
+<div><div>
+ The AWS region.
+</div></div>
+
+</li>
+<li><code>role : String</code> (optional)
+<div><div>
+ Assume role information (<i>Role Account</i> is optional; it uses current account as default, <i>External ID</i> is optional).
+</div></div>
+
+</li>
+<li><code>roleAccount : String</code> (optional)
+<div><div>
+ (optional) The account to use. This uses current account by default.
+</div></div>
+
+</li>
+<li><code>roleSessionName : String</code> (optional)
+</li>
+<li><code>samlAssertion : String</code> (optional)
+<div><div>
+ SAML assertion, given by your IdP. Must be used with role, roleAccount and principalArn parameters Note: Will use this SAML assertion to make a assumeRole request to AWS for authentication. Any credentials passed will be ignored.
+</div></div>
+
+</li>
+<li><code>useNode : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

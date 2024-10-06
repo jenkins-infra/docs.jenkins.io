@@ -1,0 +1,168 @@
+= OWASP Dependency-Track Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/dependency-track">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `dependencyTrackPublisher`: Publish BOM to Dependency-Track
+++++
+<ul><li><code>artifact : String</code>
+<div><div>
+ Specifies the artifact to upload. Dependency-Track supports uploading of <a href="https://cyclonedx.org/" rel="nofollow">CycloneDX</a> bill-of-materials (BOM) formats. 
+ <p>See <a href="https://docs.dependencytrack.org/best-practices/" rel="nofollow">Best Practices</a> for additional information.</p>
+ <p>The value can contain environment variables in the form of <code>${VARIABLE_NAME}</code> which are resolved.</p>
+</div></div>
+
+</li>
+<li><code>synchronous : boolean</code>
+<div><div>
+ <p>Synchronous publishing mode uploads a BOM to Dependency-Track and waits for Dependency-Track to process and return results. The results returned are identical to the auditable findings but exclude findings that have previously been suppressed. Analysis decisions and vulnerability details are included in the response.</p>
+ <p>This feature provides per-build results that display all finding details as well as interactive charts that display trending information.</p>
+ <p>Synchronous mode is possible with Dependency-Track v3.3.1 and higher.</p>
+ <p>The API key provided requires the VIEW_VULNERABILITY permission to use this feature with Dependency-Track v4.4 and newer!</p>
+</div></div>
+
+</li>
+<li><code>autoCreateProjects : boolean</code> (optional)
+<div><div>
+ Enable auto creation of projects when authentication is enabled on Dependency-Track and the API key provided has the PROJECT_CREATION_UPLOAD permission.
+</div></div>
+
+</li>
+<li><code>dependencyTrackApiKey : String</code> (optional)
+<div><div>
+ When authentication is enabled on Dependency-Track, a valid API key will be required.
+</div></div>
+
+</li>
+<li><code>dependencyTrackFrontendUrl : String</code> (optional)
+<div><div>
+ The alternative base URL to the Frontend of Dependency-Track v3 or higher. (i.e. http://hostname:port) 
+ <p>Use this if you run backend and frontend on different servers. If omitted, "Dependency-Track Backend URL" will be used instead.</p>
+</div></div>
+
+</li>
+<li><code>dependencyTrackUrl : String</code> (optional)
+<div><div>
+ The base URL to Dependency-Track Backend (i.e. http://hostname:port)
+</div></div>
+
+</li>
+<li><code>failedNewCritical : int</code> (optional)
+</li>
+<li><code>failedNewHigh : int</code> (optional)
+</li>
+<li><code>failedNewLow : int</code> (optional)
+</li>
+<li><code>failedNewMedium : int</code> (optional)
+</li>
+<li><code>failedTotalCritical : int</code> (optional)
+</li>
+<li><code>failedTotalHigh : int</code> (optional)
+</li>
+<li><code>failedTotalLow : int</code> (optional)
+</li>
+<li><code>failedTotalMedium : int</code> (optional)
+</li>
+<li><code>overrideGlobals : boolean</code> (optional)
+<div><div>
+ Allows to override global settings for "Auto Create Projects", "Dependency-Track URL", "Dependency-Track Frontend URL" and "API key". 
+ <p>Can be ignored in pipelines, just set the properties <code>dependencyTrackUrl</code>, <code>dependencyTrackFrontendUrl</code>, <code>dependencyTrackApiKey</code> and <code>autoCreateProjects</code> as needed.</p>
+</div></div>
+
+</li>
+<li><code>projectId : String</code> (optional)
+<div><div>
+ Specifies the unique Project ID of the project to upload scan results to. The Project ID is a UUID with the following format: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
+ <p>If the list of projects are not displayed (such as an HTTP 403 response), ensure the API key specified in the global configuration has VIEW_PORTFOLIO permission in addition to BOM_UPLOAD and/or SCAN_UPLOAD. Permissions are defined in Dependency-Track.</p>
+</div></div>
+
+</li>
+<li><code>projectName : String</code> (optional)
+<div><div>
+ Specifies the name of the project for automatic creation of project during the upload process. 
+ <p>This is an alternative to specifying the unique UUID. It must be used together with a project version.</p>
+ <p>Ensure the API key specified in the global configuration has PROJECT_CREATION_UPLOAD permission and that you have enabled <q>Auto Create Projects</q>.</p>
+ <p>The value can contain environment variables in the form of <code>${VARIABLE_NAME}</code> which are resolved.</p>
+</div></div>
+
+</li>
+<li><code>projectProperties</code> (optional)
+<div><div>
+ Set additional properties for the given project. 
+ <p>The API key provided requires the PORTFOLIO_MANAGEMENT permission to use this feature!</p>
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>description : String</code> (optional)
+<div><div>
+ The description to be set for the project.
+</div></div>
+
+</li>
+<li><code>group : String</code> (optional)
+<div><div>
+ Specifies the value of "Namespace / Group / Vendor" to be set for the project.
+</div></div>
+
+</li>
+<li><code>parentId : String</code> (optional)
+<div><div>
+ The ID (UUID) of the parent project.
+</div></div>
+
+</li>
+<li><code>swidTagId : String</code> (optional)
+<div><div>
+ Specifies the SWID Tag ID to be set for the project.
+</div></div>
+
+</li>
+<li><code>tags : <code>Object</code></code> (optional)
+<div><div>
+ Specifies the list of tags to be set for the project. Separate multiple tags with spaces or put each tag on a separate line. 
+ <p>All tags are automatically lowercased!</p>
+</div></div>
+
+</li>
+</ul></li>
+<li><code>projectVersion : String</code> (optional)
+<div><div>
+ Specifies the version of the project for automatic creation of project during the upload process. 
+ <p>This is an alternative to specifying the unique UUID. It must be used together with a project name.</p>
+ <p>Ensure the API key specified in the global configuration has PROJECT_CREATION_UPLOAD permission and that you have enabled <q>Auto Create Projects</q>.</p>
+ <p>The value can contain environment variables in the form of <code>${VARIABLE_NAME}</code> which are resolved.</p>
+</div></div>
+
+</li>
+<li><code>unstableNewCritical : int</code> (optional)
+</li>
+<li><code>unstableNewHigh : int</code> (optional)
+</li>
+<li><code>unstableNewLow : int</code> (optional)
+</li>
+<li><code>unstableNewMedium : int</code> (optional)
+</li>
+<li><code>unstableTotalCritical : int</code> (optional)
+</li>
+<li><code>unstableTotalHigh : int</code> (optional)
+</li>
+<li><code>unstableTotalLow : int</code> (optional)
+</li>
+<li><code>unstableTotalMedium : int</code> (optional)
+</li>
+</ul>
+
+
+++++

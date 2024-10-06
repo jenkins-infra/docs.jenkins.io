@@ -1,0 +1,38 @@
+= Provar Automation CLI
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/provar-automation">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `withProvarAutomation`: With Provar Automation
+++++
+<div><div>
+ Prepares an environment for Jenkins to run builds using Provar Automation CLI. Optionally sets up an Ant and/or JDK installation.
+</div></div>
+<ul><li><code>ant : String</code> (optional)
+<div><p>Name of an Ant installation to use so that <code>ant</code> will be in the path.</p></div>
+
+</li>
+<li><code>installation : String</code> (optional)
+<div><p>Name of a Provar Automation CLI installation to use so that <code>Provar Automation</code> tests will be executable.</p></div>
+
+</li>
+<li><code>jdk : String</code> (optional)
+<div><p>Name of a JDK installation to use when running Ant.</p></div>
+
+</li>
+</ul>
+
+
+++++

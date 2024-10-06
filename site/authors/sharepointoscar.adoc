@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: Oscar Medina
+:page-twitter: sharepointoscar
+:page-github: sharepointoscar
+:page-linkedin: oscarmedina
+
+
+Oscar is a developer advocate at CloudBees, focusing on Jenkins X.

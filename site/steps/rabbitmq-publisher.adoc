@@ -1,0 +1,67 @@
+= Rabbit-MQ Publisher Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/rabbitmq-publisher">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `rabbitMQPublisher`: Publish to Rabbit-MQ
+++++
+<div><div>
+ This build step can be used to publish message to Rabbit-MQ.
+</div></div>
+<ul><li><code>rabbitName : String</code>
+</li>
+<li><code>exchange : String</code>
+<div><div>
+ The name of the exchange.
+</div></div>
+
+</li>
+<li><code>data : String</code>
+<div><div>
+ Data to send, in raw format, json format or list of key/value.
+ <br>
+  Can contains environment variables (preferred) and build parameters (eg: ${FOO} or $FOO) which will be resolve before sending the message. Can also use ${BUILD_USER_ID} and ${BUILD_USER_NAME} to retrieve the information's user who launch the job.
+</div></div>
+
+</li>
+<li><code>conversion : boolean</code> (optional)
+<div><div>
+ if checked, there will be Spring escaping . It is especially important with Json formatting . 
+ <ul>
+  <li>if Checked, the message is "{\"step\":\"end\"}"</li>
+  <li>if unchecked, the message is {"step":"end"}</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>routingKey : String</code> (optional)
+<div><div>
+ An explicit routing key binding the queue to this exchange.
+</div></div>
+
+</li>
+<li><code>toJson : boolean</code> (optional)
+<div><div>
+ <ul>
+  <li>If check : convert the data to a JSON object, following java nomenclature for field name.<br><strong>The data must be a list in the format <i>key=value</i> and the <i>key</i> must start with a letter character</strong></li>
+  <li>If uncheck : the raw message without transformation</li>
+ </ul>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

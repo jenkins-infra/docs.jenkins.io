@@ -1,0 +1,51 @@
+= Mock Load Builder Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/mock-load-builder">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'MockLoadBuilder'])`: Mock Load
+++++
+<div><div>
+ Generates load on the Jenkins build node and over the remoting channel. There will be a random number of build artifacts created matching the file name pattern <code>mock-artifact-*.txt</code>. There will be a JUnit test report with the file name <code>mock-junit.xml</code>. Approximately 5% of the time, the build will "fail" its tests and thus no artifacts will be generated.
+</div></div>
+<ul><li><code>averageDuration : long</code>
+<div><div>
+ The average duration that the build should take. The actual duration of each step will be randomly selected where with an expected standard deviation equal to the square root of the expected average duration.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `withMockLoad`: Mock load with separate sh command
+++++
+<div><div>
+ <p>Generates load on the Jenkins build node and over the remoting channel. There will be a random number of build artifacts created matching the file name pattern <code>mock-artifact-*.txt</code>. There will be a JUnit test report with the file name <code>mock-junit.xml</code>. Approximately 5% of the time, the build will "fail" its tests and thus no artifacts will be generated.</p>
+ <p>Unlike the <code>mockLoad</code> step, this step does not itself run the load command. Instead, it copies the program into the workspace and prepares a command for you to run yourself. Usage:</p>
+ <pre><code>withMockLoad(averageDuration: 300) {
+  sh MOCK_LOAD_COMMAND
+}</code></pre>
+</div></div>
+<ul><li><code>averageDuration : long</code> (optional)
+<div><div>
+ The average duration that the build should take. The actual duration of each step will be randomly selected where with an expected standard deviation equal to the square root of the expected average duration.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

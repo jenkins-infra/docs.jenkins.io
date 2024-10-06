@@ -1,0 +1,35 @@
+= Qy Wechat Notification Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/qy-wechat-notification">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `qyWechatNotification`: 企业微信通知
+++++
+<ul><li><code>failNotify : boolean</code> (optional)
+</li>
+<li><code>mentionedId : String</code> (optional)
+</li>
+<li><code>mentionedMobile : String</code> (optional)
+</li>
+<li><code>moreInfo : String</code> (optional)
+</li>
+<li><code>onlyFailSendQyWechatNotify : boolean</code> (optional)
+</li>
+<li><code>webhookUrl : String</code> (optional)
+</li>
+</ul>
+
+
+++++

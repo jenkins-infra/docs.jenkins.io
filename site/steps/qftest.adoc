@@ -1,0 +1,54 @@
+= QF-Test Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/qftest">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `QFTest`: Run the configured QF-Test suites.
+++++
+<ul><li><code>suitefield</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>suitename : String</code>
+<div><div>
+ Path to the suite file(s) to be run. Absolute or relative to the current workspace. Ant-style globbing is supported. A path referencing an entire directory translates to &lt;path to directory&gt;/**/*.qft. 
+ <br>
+  A <b>suitesfile</b> can also be provided. For this, preprend the file path with the -suitesfile option.
+</div></div>
+
+</li>
+<li><code>customParam : String</code>
+<div><div>
+ Additional arguments to be passed to the QF-Test call. Consult <a href="https://www.qfs.de/en/qf-test-manual/lc/manual-en-tech_execution.html" rel="nofollow"> the manual</a> for a complete list of all possible options. This is an optional parameter.
+</div></div>
+
+</li>
+</ul></li>
+<li><code>customPath : String</code> (optional)
+</li>
+<li><code>onTestError : String</code> (optional)
+</li>
+<li><code>onTestException : String</code> (optional)
+</li>
+<li><code>onTestFailure : String</code> (optional)
+</li>
+<li><code>onTestWarning : String</code> (optional)
+</li>
+<li><code>reportDirectory : String</code> (optional)
+</li>
+<li><code>reportGenArgs : String</code> (optional)
+</li>
+</ul>
+
+
+++++

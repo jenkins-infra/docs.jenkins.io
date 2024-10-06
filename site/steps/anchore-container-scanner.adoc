@@ -1,0 +1,88 @@
+= Anchore Container Image Scanner Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/anchore-container-scanner">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `anchore`: Anchore Container Image Scanner
+++++
+<ul><li><code>name : String</code>
+<div><div>
+ Name of the file that contains a list of container images for anchore to analyze, evaluate policy, and run queries against. The format for each line is "imageId /path/to/Dockerfile", where the Dockerfile is optional. This file must be made available (created by a prior step) to Anchore Container Image Scanner plugin.
+</div></div>
+
+</li>
+<li><code>annotations</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>autoSubscribeTagUpdates : boolean</code> (optional)
+<div><div>
+ If selected or set to 'true', the Anchore Container Image Scanner step will instruct Anchore Enterprise to automatically begin watching the added tag for updates from registry. Default value: 'true'
+</div></div>
+
+</li>
+<li><code>bailOnFail : boolean</code> (optional)
+<div><div>
+ If selected or set to 'true', the Anchore Container Image Scanner step will cause the build to fail if the policy evaluation result is FAIL. Default value: 'true'
+</div></div>
+
+</li>
+<li><code>bailOnPluginFail : boolean</code> (optional)
+<div><div>
+ If selected or set to 'true', the Anchore Container Image Scanner step will cause the build to fail if the plugin encounters an error. Default value: 'true'
+</div></div>
+
+</li>
+<li><code>engineCredentialsId : String</code> (optional)
+</li>
+<li><code>engineRetries : String</code> (optional)
+<div><div>
+ Number of polling attempts spaced at 5 second intervals spent waiting for the Anchore Enterprise operation to complete.
+</div></div>
+
+</li>
+<li><code>engineurl : String</code> (optional)
+<div><div>
+ Anchore Enterprise URL
+</div></div>
+
+</li>
+<li><code>engineverify : boolean</code> (optional)
+</li>
+<li><code>excludeFromBaseImage : boolean</code> (optional)
+<div><div>
+ If selected or set to 'true', any match in the Policy or Vulnerability results where Inherited From Base == true will be excluded from the final results tables. This will NOT affect the final policy evaluation status, but will remove inherited vulnerabilities from the final results. This is useful for filtering out inherited vulnerabilities from the final results, as they are not actionable for the image being scanned. However, it is important to note that inherited vulnerabilities are still important to understand the full risk profile of the image. Default value: 'false'
+</div></div>
+
+</li>
+<li><code>forceAnalyze : boolean</code> (optional)
+<div><div>
+ If selected or set to 'true', the Anchore Container Image Scanner step will instruct Anchore Enterprise to force analyze the image. Default value: 'false'
+</div></div>
+
+</li>
+<li><code>policyBundleId : String</code> (optional)
+<div><div>
+ ID of the policy bundle on Anchore Enterprise to be used for policy evaluations. If empty, the policy bundle marked active on Anchore Enterprise will be used by default.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

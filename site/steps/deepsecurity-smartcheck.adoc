@@ -1,0 +1,57 @@
+= Deep Security Smart Check Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/deepsecurity-smartcheck">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `smartcheckScan`: Deep Security Smart Check Scan
+++++
+<ul><li><code>smartcheckHost : String</code>
+</li>
+<li><code>imageName : String</code> (optional)
+</li>
+<li><code>debug : boolean</code> (optional)
+</li>
+<li><code>findingsThreshold : String</code> (optional)
+</li>
+<li><code>imagePullAuth : String</code> (optional)
+</li>
+<li><code>insecureSkipRegistryTLSVerify : boolean</code> (optional)
+</li>
+<li><code>insecureSkipTLSVerify : boolean</code> (optional)
+</li>
+<li><code>preregistryCredentialsId : String</code> (optional)
+</li>
+<li><code>preregistryHost : String</code> (optional)
+</li>
+<li><code>preregistryPassword : String</code> (optional)
+</li>
+<li><code>preregistryScan : boolean</code> (optional)
+</li>
+<li><code>preregistryUser : String</code> (optional)
+</li>
+<li><code>resultsFile : String</code> (optional)
+</li>
+<li><code>smartCheckHost : String</code> (optional)
+</li>
+<li><code>smartcheckCredentialsId : String</code> (optional)
+</li>
+<li><code>smartcheckPassword : String</code> (optional)
+</li>
+<li><code>smartcheckUser : String</code> (optional)
+</li>
+</ul>
+
+
+++++

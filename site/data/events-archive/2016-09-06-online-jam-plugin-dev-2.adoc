@@ -1,0 +1,8 @@
+---
+:page-eventTitle: Jenkins Online Meetup
+:page-eventStartDate: 2016-09-06T18:00:00
+:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/233378840/
+---
+Plugin Development - Web UI.
+Classic Jenkins UI framework and modern JavaScript-powered UIs.
+ 

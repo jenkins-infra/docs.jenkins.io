@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Belgium JAM
+:page-eventStartDate: 2017-06-01T18:30:00
+:page-eventLink: https://www.meetup.com/Belgium-Jenkins-Area-Meetup/events/239817576/
+---
+Jenkins at Scale & Blue Ocean

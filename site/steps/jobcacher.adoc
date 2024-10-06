@@ -1,0 +1,148 @@
+= Job Cacher plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/jobcacher">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `cache`: Caches files from previous build to current build
+++++
+<ul><li><code>caches</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>arbitraryFileCache</code><div>
+<div><div>
+ Caches arbitrary paths on the executor back to the item storage cache.
+</div></div>
+<ul><li><code>path : String</code>
+<div><div>
+ The path to cache. It can be absolute or relative to the workspace.
+</div></div>
+
+</li>
+<li><code>includes : String</code>
+<div><div>
+ The pattern to match files that should be included in caching
+</div></div>
+
+</li>
+<li><code>excludes : String</code>
+<div><div>
+ The pattern to match files that should be excluded from caching
+</div></div>
+
+</li>
+<li><code>cacheName : String</code> (optional)
+<div><div>
+ The name of the cache (optional). Useful if caching the same path multiple times in a pipeline.
+</div></div>
+
+</li>
+<li><code>cacheValidityDecidingFile : String</code> (optional)
+<div><div>
+ The workspace-relative path to one or multiple (by using a glob pattern) files which should be used to determine whether the cache is up-to-date or not. Only up-to-date caches will be restored and only outdated caches will be created.
+</div></div>
+
+</li>
+<li><code>compressionMethod</code> (optional)
+<div><div>
+ The compression method to use
+</div></div>
+
+<ul><li><b>Values:</b> <code>NONE</code>, <code>ZIP</code>, <code>TARGZ</code>, <code>TARGZ_BEST_SPEED</code>, <code>TAR</code>, <code>TAR_ZSTD</code></li></ul></li>
+<li><code>useDefaultExcludes : boolean</code> (optional)
+<div><div>
+ Whether to use default excludes (see <a href="https://github.com/apache/ant/blob/eeacf501dd15327cd300ecd518284e68bb5af4a4/src/main/org/apache/tools/ant/DirectoryScanner.java#L170" rel="nofollow">DirectoryScanner#DEFAULTEXCLUDES</a> for more details).
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>maxCacheSize : long</code> (optional)
+</li>
+<li><code>defaultBranch : String</code> (optional)
+</li>
+<li><code>skipRestore : boolean</code> (optional)
+</li>
+<li><code>skipSave : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jobcacher`: Job Cacher
+++++
+<div><div>
+ Enable caching of files on the executor so that subsequent builds do not need to recreate the files. This is helpful for executors that start clean each time such as docker containers.
+</div></div>
+<ul><li><code>caches</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>arbitraryFileCache</code><div>
+<div><div>
+ Caches arbitrary paths on the executor back to the item storage cache.
+</div></div>
+<ul><li><code>path : String</code>
+<div><div>
+ The path to cache. It can be absolute or relative to the workspace.
+</div></div>
+
+</li>
+<li><code>includes : String</code>
+<div><div>
+ The pattern to match files that should be included in caching
+</div></div>
+
+</li>
+<li><code>excludes : String</code>
+<div><div>
+ The pattern to match files that should be excluded from caching
+</div></div>
+
+</li>
+<li><code>cacheName : String</code> (optional)
+<div><div>
+ The name of the cache (optional). Useful if caching the same path multiple times in a pipeline.
+</div></div>
+
+</li>
+<li><code>cacheValidityDecidingFile : String</code> (optional)
+<div><div>
+ The workspace-relative path to one or multiple (by using a glob pattern) files which should be used to determine whether the cache is up-to-date or not. Only up-to-date caches will be restored and only outdated caches will be created.
+</div></div>
+
+</li>
+<li><code>compressionMethod</code> (optional)
+<div><div>
+ The compression method to use
+</div></div>
+
+<ul><li><b>Values:</b> <code>NONE</code>, <code>ZIP</code>, <code>TARGZ</code>, <code>TARGZ_BEST_SPEED</code>, <code>TAR</code>, <code>TAR_ZSTD</code></li></ul></li>
+<li><code>useDefaultExcludes : boolean</code> (optional)
+<div><div>
+ Whether to use default excludes (see <a href="https://github.com/apache/ant/blob/eeacf501dd15327cd300ecd518284e68bb5af4a4/src/main/org/apache/tools/ant/DirectoryScanner.java#L170" rel="nofollow">DirectoryScanner#DEFAULTEXCLUDES</a> for more details).
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>defaultBranch : String</code> (optional)
+</li>
+<li><code>maxCacheSize : long</code> (optional)
+</li>
+<li><code>skipRestore : boolean</code> (optional)
+</li>
+<li><code>skipSave : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

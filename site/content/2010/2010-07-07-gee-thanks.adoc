@@ -1,0 +1,12 @@
+= Gee Thanks
+:page-layout: blog
+:page-tags: general , feedback ,just for fun
+:page-author: rtyler
+
+`Squee-D` had some nice things to say in the `#hudson` link:/chat/[IRC channel] yesterday that I thought I would share:
+
+____
+Just to sing some praise again, make sure you all know how appreciated it is, we absolutely love hudson, and appreciate everyone who develops and maintains it.
+____
+
+Positive feedback (and negative really) is always appreciated; have you thanked your plugin maintainer today?

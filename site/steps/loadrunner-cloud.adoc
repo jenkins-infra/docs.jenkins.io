@@ -1,0 +1,88 @@
+= LoadRunner Cloud
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/loadrunner-cloud">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `lrcRunTest`: Run test in LoadRunner Cloud
+++++
+<ul><li><code>projectId : String</code> (optional)
+<div><div>
+ Project ID. You can find it in your LoadRunner Cloud URL.
+</div>
+<div>
+ For example: https://loadrunner-cloud.saas.microfocus.com/home/?TENANTID=354274891&amp;projectId=1. Project ID is 1.
+</div></div>
+
+</li>
+<li><code>testId : String</code> (optional)
+<div><div>
+ Test ID. Navigate to the General page of target load test in LoadRunner Cloud to see the ID.
+</div></div>
+
+</li>
+<li><code>sendEmail : boolean</code> (optional)
+<div><div>
+ Send email after test run
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `lrcGenTrendingReport`: Generate LoadRunner Cloud trending report
+++++
+<div><div>
+ <p>Thresholds can help you find abnormal builds more quickly. Enter an integer from 1 to 100 to customize your thresholds.</p>
+ <p>Improvement denotes a decrease in the Transaction Response Time (TRT). For example, if the threshold is 5, all TRTs that show a decrease of 5% or more are colored <span>green</span>.</p>
+ <p>Similarly, minor and major regressions denote an increase in the TRT. All TRTs that show a percentage increase of the configured threshold (or more) are colored <span>yellow (minor)</span> or <span>red (major)</span>.</p>
+</div></div>
+<ul><li><code>runsCount : int</code>
+<div><p>The number of last successful runs initiated by Jenkins which will be included in the trending report. Valid range is from 5 to 10.</p></div>
+
+</li>
+<li><code>benchmark : int</code>
+<div><p>Leave it blank or 0 to compare to previous run, or fill in a run id as a benchmark.</p>
+<p>Once the "Benchmark" is changed, the trending report will be reset and start from the new build.</p></div>
+
+</li>
+<li><code>trtAvgThresholdImprovement : int</code>
+<div><p>The threshold for improvement - TRT [Avg].</p></div>
+
+</li>
+<li><code>trtAvgThresholdMinorRegression : int</code>
+<div><p>The threshold for minor regression - TRT [Avg].</p></div>
+
+</li>
+<li><code>trtAvgThresholdMajorRegression : int</code>
+<div><p>The threshold for major regression - TRT [Avg].</p></div>
+
+</li>
+<li><code>trtPercentileThresholdImprovement : int</code>
+<div><p>The threshold for improvement - TRT [Percentile].</p></div>
+
+</li>
+<li><code>trtPercentileThresholdMinorRegression : int</code>
+<div><p>The threshold for minor regression - TRT [Percentile].</p></div>
+
+</li>
+<li><code>trtPercentileThresholdMajorRegression : int</code>
+<div><p>The threshold for major regression - TRT [Percentile].</p></div>
+
+</li>
+</ul>
+
+
+++++

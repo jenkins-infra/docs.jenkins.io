@@ -1,0 +1,77 @@
+= Aqua Security Scanner
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/aqua-security-scanner">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `aqua`: Aqua Security
+++++
+<ul><li><code>locationType : String</code>
+</li>
+<li><code>registry : String</code>
+<div><div>
+ Name of a Docker registry that is defined in the Aqua Management Console. E.g. <i>Docker Hub</i>.
+</div></div>
+
+</li>
+<li><code>register : boolean</code>
+</li>
+<li><code>localImage : String</code>
+<div><div>
+ Path of local Docker image, including tag. E.g. <i>my_ubuntu:latest</i>
+</div></div>
+
+</li>
+<li><code>hostedImage : String</code>
+<div><div>
+ Path of Docker image on registry, including tag. E.g. <i>google/mysql:latest</i>
+</div></div>
+
+</li>
+<li><code>onDisallowed : String</code>
+</li>
+<li><code>notCompliesCmd : String</code>
+<div><div>
+ A shell command to execute when image does not comply with Aqua security policy
+</div></div>
+
+</li>
+<li><code>hideBase : boolean</code>
+</li>
+<li><code>showNegligible : boolean</code>
+</li>
+<li><code>policies : String</code>
+<div><div>
+ Comma separated names of image assurance policies. Available for only for local images and with scanner cli &gt; v3.2.
+</div></div>
+
+</li>
+<li><code>customFlags : String</code>
+</li>
+<li><code>localToken : String</code> (optional)
+<div><div>
+ Scanner Token for Aqua API. * This token will override the Global Token/Username-Password. * Scanner token entered here is applied at job level. User can use a different token for different builds.
+</div></div>
+
+</li>
+<li><code>tarFilePath : String</code> (optional)
+</li>
+<li><code>containerRuntime : String</code> (optional)
+</li>
+<li><code>scannerPath : String</code> (optional)
+</li>
+</ul>
+
+
+++++

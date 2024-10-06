@@ -1,0 +1,7 @@
+= About the Author
+:page-layout: author
+:page-author_name: Giles Gaskell
+:page-twitter: giles_gas
+:page-github: gilesgas
+
+

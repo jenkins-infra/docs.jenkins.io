@@ -1,0 +1,7 @@
+---
+:page-eventTitle: Jenkins Online Meetup
+:page-eventStartDate: “2018-12-18T16:00:00”
+:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/257008190/
+---
+Java 11 Support preview.
+We will show how to run Jenkins with Java 11, discuss known compatibility issues, and explain how to investigate and report any issues you find.

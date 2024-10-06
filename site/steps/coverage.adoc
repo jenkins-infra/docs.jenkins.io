@@ -1,0 +1,390 @@
+= Coverage Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/coverage">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `recordCoverage`: Record code coverage results
+++++
+<ul><li><code>checksAnnotationScope</code> (optional)
+<div><div>
+ Select the scope of source code annotations in SCM checks. The following different scopes are supported: 
+ <dl>
+  <dt>
+   SKIP - Skip annotations
+  </dt>
+  <dd>
+   Do not publish any annotations, just report the coverage report summary.
+  </dd>
+  <dt>
+   MODIFIED_LINES - Publish annotations for modified lines
+  </dt>
+  <dd>
+   Publish only annotations for lines that have been changed (with respect to the reference build). Teams can use these annotations to improve the quality of pull or merge requests.
+  </dd>
+  <dt>
+   ALL_LINES - Publish annotations for all lines
+  </dt>
+  <dd>
+   Publish annotations for existing and new code. There might be a lot of annotations depending on your code coverage.
+  </dd>
+ </dl>
+</div></div>
+
+<ul><li><b>Values:</b> <code>SKIP</code>, <code>MODIFIED_LINES</code>, <code>ALL_LINES</code></li></ul></li>
+<li><code>checksName : String</code> (optional)
+<div><div>
+ If provided, and publishing checks enabled, the plugin will use this name when publishing results to corresponding SCM hosting platforms. If not, the default name will be used.
+</div></div>
+
+</li>
+<li><code>enabledForFailure : boolean</code> (optional)
+<div><div>
+ This toggle determines if recording of code coverage results should be enabled for failed builds as well. By default, code coverage results are only recorded for stable or unstable builds, but not for failed builds: code coverage results might be inaccurate if the build failed.
+</div></div>
+
+</li>
+<li><code>failOnError : boolean</code> (optional)
+<div><div>
+ This toggle determines if the coverage plugin should fail the step whenever an error occurred during processing of the coverage results. Several errors might occur: file pattern matches no files, source files could not be copied, etc. By default, these errors are logged in a separate view but the build status will not be altered. If you would rather like to fail the step on such errors, please tick this checkbox.
+</div></div>
+
+</li>
+<li><code>id : String</code> (optional)
+<div><div>
+ You can override the default ID (i.e., URL) that is used to publish the coverage results in this job. This ID is used as link to the results, so choose a short and meaningful name. Allowed elements are characters, digits, dashes and underscores (more precisely, the ID must match the regular expression <code>\p{Alnum}[\p{Alnum}-_]*</code>). The chosen ID must be unique in a job, i.e., it must not be already used by other results. If you leave the ID field empty, then the built-in default ID "coverage" will be used to show the results.
+</div></div>
+
+</li>
+<li><code>ignoreParsingErrors : boolean</code> (optional)
+<div><div>
+ This toggle determines if the coverage plugin should ignore parsing errors during processing of the coverage reports or if it should fail fast with an exception. By default, this toggle is disabled and the parsers will fail fast. This helps to identify bugs in the parser or in the coverage tool execution. If you would rather like to ignore parsing errors, please tick this checkbox. Please note that in this case the parser results might be incomplete or even wrong.
+</div></div>
+
+</li>
+<li><code>name : String</code> (optional)
+<div><div>
+ You can override the display name of the coverage results. This name is used in details views, trend captions, hyperlinks, and checks titles. If you leave the name field empty, then the built-in default name "Coverage Results" will be used.
+</div></div>
+
+</li>
+<li><code>qualityGates</code> (optional)
+<div><div>
+ Add one or more quality gates that will be checked right after the build. You can define for each quality gate which metric and baseline will be used to select the value that will be compared with the threshold.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>metric</code>
+<div><div>
+ Select the metric that should be evaluated for this quality gate. The following different metrics are supported: 
+ <dl>
+  <dt>
+   MODULE
+  </dt>
+  <dd>
+   Covered and missed modules (given as percentage)
+  </dd>
+  <dt>
+   PACKAGE
+  </dt>
+  <dd>
+   Covered and missed packages; also used for namespaces or directories (given as percentage)
+  </dd>
+  <dt>
+   FILE
+  </dt>
+  <dd>
+   Covered and missed files (given as percentage)
+  </dd>
+  <dt>
+   CLASS
+  </dt>
+  <dd>
+   Covered and missed classes (given as percentage)
+  </dd>
+  <dt>
+   METHOD
+  </dt>
+  <dd>
+   Covered and missed methods (given as percentage)
+  </dd>
+  <dt>
+   LINE
+  </dt>
+  <dd>
+   Line coverage (given as percentage)
+  </dd>
+  <dt>
+   INSTRUCTION
+  </dt>
+  <dd>
+   Instruction coverage (given as percentage)
+  </dd>
+  <dt>
+   BRANCH
+  </dt>
+  <dd>
+   Branch coverage or decision coverage (given as percentage)
+  </dd>
+  <dt>
+   MUTATION
+  </dt>
+  <dd>
+   Mutation coverage (given as percentage)
+  </dd>
+  <dt>
+   TEST_STRENGTH
+  </dt>
+  <dd>
+   Test Strength (given as percentage)
+  </dd>
+  <dt>
+   COMPLEXITY
+  </dt>
+  <dd>
+   Cyclomatic complexity (given as absolute number)
+  </dd>
+  <dt>
+   COMPLEXITY_DENSITY
+  </dt>
+  <dd>
+   Cyclomatic complexity density (given as relation between cyclomatic complexity and lines of code)
+  </dd>
+  <dt>
+   COMPLEXITY_MAXIMUM
+  </dt>
+  <dd>
+   Maximum cyclomatic complexity of all methods (given as absolute number)
+  </dd>
+  <dt>
+   LOC
+  </dt>
+  <dd>
+   Lines of code (given as absolute number)
+  </dd>
+  <dt>
+   TESTS
+  </dt>
+  <dd>
+   Number of tests (given as absolute number)
+  </dd>
+ </dl>
+</div></div>
+
+<ul><li><b>Values:</b> <code>CONTAINER</code>, <code>MODULE</code>, <code>PACKAGE</code>, <code>FILE</code>, <code>CLASS</code>, <code>METHOD</code>, <code>LINE</code>, <code>BRANCH</code>, <code>INSTRUCTION</code>, <code>MUTATION</code>, <code>TEST_STRENGTH</code>, <code>COMPLEXITY</code>, <code>COMPLEXITY_MAXIMUM</code>, <code>COMPLEXITY_DENSITY</code>, <code>LOC</code>, <code>TESTS</code></li></ul></li>
+<li><code>baseline</code> (optional)
+<div><div>
+ Select the baseline to be used for the code coverage computation of this quality gate. The following different baselines are supported: 
+ <dl>
+  <dt>
+   Overall project - PROJECT
+  </dt>
+  <dd>
+   Coverage of the whole project. This is an absolute value that might not change much from build to build.
+  </dd>
+  <dt>
+   Overall project (difference to reference job) - PROJECT_DELTA
+  </dt>
+  <dd>
+   Difference between the project coverages of the current build and the reference build. Teams can use this delta value to ensure that the overall project coverage will not decrease.
+  </dd>
+  <dt>
+   Modified files - MODIFIED_FILES
+  </dt>
+  <dd>
+   Coverage of the modified files (e.g., within the files that have been touched in a pull or merge request) will focus on new or modified files only.
+  </dd>
+  <dt>
+   Modified files (difference to reference job) - MODIFIED_FILES_DELTA
+  </dt>
+  <dd>
+   Difference between the file coverages of the current build and the reference build. Teams can use this delta value to ensure that the overall coverage of all modified files will not decrease. This also implies that the overall project coverage will not decrease, making this metric stricter than the PROJECT_DELTA metric
+  </dd>
+  <dt>
+   Modified code lines - MODIFIED_LINES
+  </dt>
+  <dd>
+   Coverage of the modified lines (e.g., within the modified lines of a pull or merge request) will focus on new or modified code only.
+  </dd>
+  <dt>
+   Modified code lines (difference to modified files) - MODIFIED_LINES_DELTA
+  </dt>
+  <dd>
+   Difference between the coverages of the modified lines and the modified files of the current build. Teams can use this delta value to ensure that the coverage of pull requests is better than the existing coverage of the modified files.
+  </dd>
+ </dl>
+</div></div>
+
+<ul><li><b>Values:</b> <code>PROJECT</code>, <code>PROJECT_DELTA</code>, <code>MODIFIED_LINES</code>, <code>MODIFIED_LINES_DELTA</code>, <code>MODIFIED_FILES</code>, <code>MODIFIED_FILES_DELTA</code>, <code>INDIRECT</code></li></ul></li>
+<li><code>criticality</code> (optional)
+<div><div>
+ When a quality gate has been missed, this property determines whether the result of the associated coverage step or the overall build will be marked as unstable or failure. The following enum values are possible for freestyle jobs: 
+ <dl>
+  <dt>
+   UNSTABLE
+  </dt>
+  <dd>
+   Set the step and build status to unstable if the quality gate has been missed.
+  </dd>
+  <dt>
+   FAILURE
+  </dt>
+  <dd>
+   Fail the step and build if the quality gate has been missed.
+  </dd>
+ </dl> For Pipelines two additional fine-grained options are available, that allow setting the status of the step without touching the overall build status: 
+ <dl>
+  <dt>
+   NOTE
+  </dt>
+  <dd>
+   Set the step to unstable if the quality gate has been missed.
+  </dd>
+  <dt>
+   ERROR
+  </dt>
+  <dd>
+   Fail the step if the quality gate has been missed.
+  </dd>
+ </dl>
+</div></div>
+
+<ul><li><b>Values:</b> <code>NOTE</code>, <code>UNSTABLE</code>, <code>ERROR</code>, <code>FAILURE</code></li></ul></li>
+<li><code>integerThreshold : int</code> (optional)
+</li>
+<li><code>threshold : double</code> (optional)
+<div><div>
+ The threshold defines the minimum or maximum value (depends on the metric) of a coverage metric that is required to pass or miss the quality gate.
+</div></div>
+
+</li>
+</ul></li>
+<li><code>scm : String</code> (optional)
+<div><div>
+ Specify the key of your repository (substring is sufficient) if you are using multiple SCMs in your job. When your job is composed of several SCM checkouts (modules, pipeline libraries, etc.) then Jenkins stores all those repositories in an unsorted way.
+</div></div>
+
+</li>
+<li><code>skipPublishingChecks : boolean</code> (optional)
+<div><div>
+ If this option is unchecked, then the plugin automatically publishes a summary of the coverage report to corresponding SCM hosting platforms. For example, if you are using this feature for a GitHub organization project, the coverage summary will be published to GitHub through the Checks API. If this operation slows down your build, or you don't want to publish the summary to SCM platforms, you can use this option to deactivate this feature.
+</div></div>
+
+</li>
+<li><code>skipSymbolicLinks : boolean</code> (optional)
+<div><div>
+ The coverage plugin will not traverse symbolic links while scanning for report or source code files when this option is enabled.
+</div></div>
+
+</li>
+<li><code>sourceCodeEncoding : String</code> (optional)
+<div><div>
+ In order to correctly show all your covered source code files in the detail views, the plugin must open these files with the correct character encoding (UTF-8, ISO-8859-1, etc.). If you leave this field empty then the default encoding of the platform will be used. This might work but is not recommended.
+</div></div>
+
+</li>
+<li><code>sourceCodeRetention</code> (optional)
+<div><div>
+ Select the strategy that should be used to store the colored source code files. Storing the affected source code files along with the coverage information (which lines have been covered, which not) consumes a lot of space on your hard disk for large projects. So if your server has not enough free space available to store the sources for all builds it might make more sense to store only the coverage results of the last build. In this case, the plugin will automatically discard old results before the new sources will be stored. If you do not need the source files at all you can deactivate the storing of source code files. The following options are supported: 
+ <dl>
+  <dt>
+   NEVER
+  </dt>
+  <dd>
+   Never store source code files.
+  </dd>
+  <dt>
+   LAST_BUILD
+  </dt>
+  <dd>
+   Store source code files of the last build, delete older artifacts.
+  </dd>
+  <dt>
+   EVERY_BUILD
+  </dt>
+  <dd>
+   Store source code files for all builds, never delete those files automatically.
+  </dd>
+  <dt>
+   MODIFIED
+  </dt>
+  <dd>
+   Store only changed source code files for all builds, never delete those files automatically.
+  </dd>
+ </dl>
+</div></div>
+
+<ul><li><b>Values:</b> <code>NEVER</code>, <code>LAST_BUILD</code>, <code>EVERY_BUILD</code>, <code>MODIFIED</code></li></ul></li>
+<li><code>sourceDirectories</code> (optional)
+<div><div>
+ <p>Select additional folders that contain the source code files of the job. Since the plugin also reads the affected source code files, it needs to copy these files from the agent to the controller. If these files are not part of the workspace (or checked out into a subfolder of the workspace), they are not automatically found. So you can add one or more source code directories where the plugin tries to find these files. You can add relative paths in the workspace root, absolute paths, or expressions using the glob or regexp syntaxes that are supported by the Java <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/FileSystem.html#getPathMatcher(java.lang.String)" rel="nofollow">FileSystem#getPathMatcher</a> implementation. Note that due to security restrictions, additional paths outside the workspace need to be registered in Jenkins system configuration before they can be used here.</p> Examples for the syntax and pattern property: 
+ <dl>
+  <dt>
+   submodule/src/main/java
+  </dt>
+  <dd>
+   Relative path <code>submodule/src/main/java</code> in the Jenkins workspace.
+  </dd>
+  <dt>
+   glob:**/src/main/java
+  </dt>
+  <dd>
+   A glob that expands to all folders in the Jenkins workspace that contain the sub-path <code>src/main/java</code>.
+  </dd>
+  <dt>
+   regex:sources.*/src/main/java
+  </dt>
+  <dd>
+   A regular expression that matches all folders in the Jenkins workspace that start with <code>sources</code> and end with the text <code>src/main/java</code>.
+  </dd>
+  <dt>
+   C:\work\sources
+  </dt>
+  <dd>
+   Absolute path on the <b>agent</b> that builds the sources. This folder must also be approved by a Jenkins administrator in Jenkins global configuration.
+  </dd>
+ </dl>
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>path : String</code>
+<div><div>
+ Select the path to your source code files. This plugin copies source code files to Jenkins' build folder so that these files can be rendered in the user interface together with the plugin results. If these files are referenced with relative paths then they cannot be found by the plugin. In these cases you need to specify one or more relative paths within the workspace where the plugin can locate them. Alternatively, you can also specify absolute paths if the source code files are stored outside the workspace (in a directory on the agent). All absolute paths must be additionally approved by an administrator in Jenkins' global configuration page.
+</div></div>
+
+</li>
+</ul></li>
+<li><code>tools</code> (optional)
+<div><div>
+ Select one of the supported coverage report formats. Most coverage tools support the output to the Cobertura format, please look into the manual of your coverage tool to see if that format is supported.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>parser</code> (optional)
+<div><div>
+ Select the ID of the parser that should read and parse your report files - currently, parsers for Cobertura (id = COBERTURA), JaCoCo (id = JACOCO), and PIT (id = PIT) are supported.
+</div></div>
+
+<ul><li><b>Values:</b> <code>COBERTURA</code>, <code>JACOCO</code>, <code>OPENCOVER</code>, <code>PIT</code>, <code>JUNIT</code>, <code>NUNIT</code>, <code>XUNIT</code></li></ul></li>
+<li><code>pattern : String</code> (optional)
+<div><div>
+ A pattern is defined by an <a href="https://ant.apache.org/manual/Types/fileset.html" rel="nofollow">Ant Fileset includes</a> setting that specifies the coverage report files to read. Multiple patterns can be separated by space or comma. Note that such a pattern is resolved in Jenkins' workspace, so the paths must be relative only. If no pattern is specified then the default pattern of the coverage tool will be used.
+</div></div>
+
+</li>
+</ul></li>
+</ul>
+
+
+++++

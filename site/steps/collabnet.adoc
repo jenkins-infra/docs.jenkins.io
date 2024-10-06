@@ -1,0 +1,53 @@
+= CollabNet Plugins
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/collabnet">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `publishTeamForge`: Notify TeamForge
+++++
+<ul><li><code>webhookUrl : String</code>
+<div><div>
+ TeamForge webhook url to post the build information. Ex. https://teamforge/inbox/{eventName}/{publisherId}
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>Credentials for Webhook authorization.</p>
+</div></div>
+
+</li>
+<li><code>excludeCommitInfo : boolean</code> (optional)
+<div><div>
+ Whether to exclude associated commit information in TeamForge notification.
+</div></div>
+
+</li>
+<li><code>markUnstable : boolean</code> (optional)
+<div><div>
+ Mark current job as <strong>unstable</strong> if this step fails to notify TeamForge.
+</div></div>
+
+</li>
+<li><code>status : String</code> (optional)
+<div><div>
+ (Optional) Specify TeamForge status explicitly. If not provided, it will be determined based on the current run result.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

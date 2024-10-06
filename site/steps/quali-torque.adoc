@@ -1,0 +1,104 @@
+= Quali Torque plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/quali-torque">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `endTorqueSandboxEnvironment`: "End Environment"
+++++
+<div><div>
+ Ends the sandbox.
+</div></div>
+<ul><li><code>spaceName : String</code>
+<div><div>
+ Space name.
+</div></div>
+
+</li>
+<li><code>sandboxId : String</code>
+<div><div>
+ Sandbox id.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `startTorqueSandboxEnvironment`: "Start Environment"
+++++
+<div><div>
+ Start sandbox
+</div></div>
+<ul><li><code>spaceName : String</code>
+<div><div>
+ Space name.
+</div></div>
+
+</li>
+<li><code>blueprint : String</code>
+<div><div>
+ The blueprint name.
+</div></div>
+
+</li>
+<li><code>sandboxName : String</code>
+</li>
+<li><code>duration : String</code>
+<div><div>
+ Set the duration (ISO 8601), after which Torque will stop the deployment.
+</div></div>
+
+</li>
+<li><code>artifacts</code>
+<div><div>
+ The artifacts map.
+</div></div>
+
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>inputs</code>
+<div><div>
+ User inputs.
+</div></div>
+
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `waitForTorqueSandboxEnvironment`: "Wait for environment"
+++++
+<div><div>
+ Wait for sandbox
+</div></div>
+<ul><li><code>timeout : int</code>
+</li>
+<li><code>spaceName : String</code> (optional)
+<div><div>
+ Space name.
+</div></div>
+
+</li>
+<li><code>sandboxId : String</code> (optional)
+<div><div>
+ Sandbox id.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

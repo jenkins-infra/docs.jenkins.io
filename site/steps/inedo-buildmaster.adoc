@@ -1,0 +1,295 @@
+= Inedo BuildMaster Plugin.
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/inedo-buildmaster">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `buildMasterCreateBuild`: Create BuildMaster Build
+++++
+<div><div>
+ <p>Creates a new build for the selected BuildMaster application and sets the BUILDMASTER_BUILD_NUMBER environment variable with the value returned from BuildMaster for the new build.</p>
+ <p>If your Jenkins job has produced artifacts to be loaded into BuildMaster, you have the following options to import the artifacts into BuildMaster:</p>
+ <ol type="a">
+  <li>Use BuildMasters Jenkins Extensions 'Jenkins::Import-Artifact' statement to import artifacts directly from Jenkins</li>
+  <li>Use BuildMasters 'Create-Artifact' statement to import files from a folder that you've placed the artifacts into from the Jenkins build (eg using <a href="https://wiki.jenkins-ci.org/display/JENKINS/ArtifactDeployer+Plugin" rel="nofollow">ArtifactDeployer Plugin</a>)</li>
+  <li>Use an external artifact repository such as Nexus, Artifactory or ProGet</li>
+ </ol>
+ <p><b>Note:</b> Jenkins declarative pipeline script has a somewhat restricted syntax, so to return the build number you need to wrap this in a script block. You only need to do this if you wish to use the build number in a later step. For more information see: <a href="https://jenkins.io/doc/book/pipeline/syntax/#script" rel="nofollow">https://jenkins.io/doc/book/pipeline/syntax/#script</a></p>
+ <div>
+  <pre>
+script {
+    BUILDMASTER_BUILD_NUMBER = buildMasterCreateBuild(applicationId: BUILDMASTER_APPLICATION_ID', releaseNumber: BUILDMASTER_RELEASE_NUMBER, buildVariables: 'hello=world', deployToFirstStage: [waitUntilCompleted: true])
+}
+</pre>
+ </div>
+</div></div>
+<ul><li><code>applicationId : String</code>
+<div><div>
+ <p>The identifier of the BuildMaster application to trigger the build for.</p>
+ <p>Options are:</p>
+ <ul>
+  <li>The BUILDMASTER_APPLICATION_ID variable populated by a previous step</li>
+  <li>An application id</li>
+  <li>An application name</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>releaseNumber : String</code>
+<div><div>
+ <p>The BuildMaster release number to trigger the build for. Options are:</p>
+ <ul>
+  <li>BUILDMASTER_RELEASE_NUMBER: variable populated by a previous step</li>
+  <li>Latest Active Release: will automatically get the latest active release number from BuildMaster for the selected application</li>
+  <li>[Release Number]: a release number from the list of active releases</li>
+ </ul>
+ <p><i>The job will fail if there is no active BuildMaster release.</i></p>
+</div></div>
+
+</li>
+<li><code>deployToFirstStage</code> (optional)
+<div><div>
+ Will trigger the deployment to the first stage, and any subsequent stages where the stage is configured to automatically deploy to the next stage.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>waitUntilCompleted : boolean</code>
+<div><div>
+ If checked waits until BuildMaster has completed the deployment, otherwise will exits immediately after triggering the deployment to the first stage.
+</div></div>
+
+</li>
+<li><code>printLogOnFailure : boolean</code> (optional)
+<div><div>
+ If checked will print the BuildMaster log for the deployment to the Jenkins console if the build fails - but only if the "Wait until deployment completed" option is also checked.
+</div></div>
+
+</li>
+</ul></li>
+<li><code>variables : String</code> (optional)
+<div><div>
+ <p>Provide a list of variables to pass to the build.</p>
+ <ul>
+  <li>A variable must be in the format "variable=value"</li>
+  <li>Additional variables must be declared on separate lines</li>
+  <li>Lines starting with # are treated as comments</li>
+  <li>When using pipeline script and you want to pass several variables use one of these formats: 
+   <ul>
+    <li>Separate variables using newline character. Generated script will resemble: <i>variables: 'var1=one\nvar2=two'</i></li>
+    <li>Separate variables using multi-line string. Generated script will resemble: <i>variables: '''var1=one<br>
+      var2=two'''</i></li>
+   </ul></li>
+ </ul>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'CreateBuildBuilder'])`: Create BuildMaster Build
+++++
+<div><div>
+ <p>Creates a new build for the selected BuildMaster application and sets the BUILDMASTER_BUILD_NUMBER environment variable with the value returned from BuildMaster for the new build.</p>
+ <p>If your Jenkins job has produced artifacts to be loaded into BuildMaster, you have the following options. The choice is largely dependent on how you import the build artifacts into BuildMaster:</p>
+ <ol type="a">
+  <li>Use BuildMasters Jenkins Extensions 'Jenkins::Import-Artifact' statement to import artifacts directly from Jenkins: <i>the post build action is required</i></li>
+  <li>Use BuildMasters 'Create-Artifact' statement to import files from a folder that you've placed the artifacts into from the Jenkins build (eg using <a href="https://wiki.jenkins-ci.org/display/JENKINS/ArtifactDeployer+Plugin" rel="nofollow">ArtifactDeployer Plugin</a>): <i>either the post build or build step actions will be fine</i></li>
+  <li>Use an external artifact repository such as Nexus, Artifactory or ProGet: <i>either the post build or build step actions will be fine</i></li>
+ </ol>
+</div></div>
+<ul><li><code>applicationId : String</code>
+<div><div>
+ <p>The identifier of the BuildMaster application to trigger the build for.</p>
+ <p>Options are:</p>
+ <ul>
+  <li>The BUILDMASTER_APPLICATION_ID variable populated by a previous step</li>
+  <li>An application</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>releaseNumber : String</code>
+<div><div>
+ <p>The BuildMaster release number to trigger the build for. Options are:</p>
+ <ul>
+  <li>BUILDMASTER_RELEASE_NUMBER: variable populated by a previous step</li>
+  <li>Latest Active Release: will automatically get the latest active release number from BuildMaster for the selected application</li>
+  <li>[Release Number]: a release number from the list of active releases</li>
+ </ul>
+ <p><i>The job will fail if there is no active BuildMaster release.</i></p>
+</div></div>
+
+</li>
+<li><code>deployToFirstStage</code> (optional)
+<div><div>
+ Will trigger the deployment to the first stage, and any subsequent stages where the stage is configured to automatically deploy to the next stage.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>waitUntilCompleted : boolean</code>
+<div><div>
+ If checked waits until BuildMaster has completed the deployment, otherwise will exits immediately after triggering the deployment to the first stage.
+</div></div>
+
+</li>
+<li><code>printLogOnFailure : boolean</code> (optional)
+<div><div>
+ If checked will print the BuildMaster log for the deployment to the Jenkins console if the build fails - but only if the "Wait until deployment completed" option is also checked.
+</div></div>
+
+</li>
+</ul></li>
+<li><code>variables : String</code> (optional)
+<div><div>
+ <p>Provide a list of variables to pass to the build.</p>
+ <ul>
+  <li>A variable must be in the format "variable=value"</li>
+  <li>Additional variables must be declared on separate lines</li>
+  <li>Lines starting with # are treated as comments</li>
+  <li>When using pipeline script and you want to pass several variables use one of these formats: 
+   <ul>
+    <li>Separate variables using newline character. Generated script will resemble: <i>variables: 'var1=one\nvar2=two'</i></li>
+    <li>Separate variables using multi-line string. Generated script will resemble: <i>variables: '''var1=one<br>
+      var2=two'''</i></li>
+   </ul></li>
+ </ul>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `buildMasterDeployBuildToStage`: Deploy BuildMaster Build To Stage
+++++
+<div><div>
+ <p>Deploys (or re-deploys) a build to a particular stage.</p>
+ <p></p>
+ <p><b>Note:</b> that when used in a pipeline step that the applicationId, releaseNumber, and buildNumber fields are required:</p>
+ <div>
+  <pre>
+buildMasterDeployBuildToStage(applicationId: BUILDMASTER_APPLICATION_ID, releaseNumber: BUILDMASTER_RELEASE_NUMBER, buildNumber: BUILDMASTER_BUILD_NUMBER)
+</pre>
+ </div>
+</div></div>
+<ul><li><code>applicationId : String</code>
+<div><div>
+ <p>The identifier of the BuildMaster application to trigger the build for.</p>
+ <p>Options are:</p>
+ <ul>
+  <li>The BUILDMASTER_APPLICATION_ID variable populated by a previous step</li>
+  <li>An application id</li>
+  <li>An application name</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>releaseNumber : String</code>
+<div><div>
+ <p>The BuildMaster release number to trigger the build for. Options are:</p>
+ <ul>
+  <li>BUILDMASTER_RELEASE_NUMBER: variable populated by a previous step</li>
+  <li>Latest Active Release: will automatically get the latest active release number from BuildMaster for the selected application</li>
+  <li>[Release Number]: a release number from the list of active releases</li>
+ </ul>
+ <p><i>The job will fail if there is no active BuildMaster release.</i></p>
+</div></div>
+
+</li>
+<li><code>buildNumber : String</code>
+<div><div>
+ <p>The BuildMaster build number to trigger the deployment for.</p>
+ <p>The must be set to an existing build number. Typically this would be obtained from the output of the createBuild step which populates the BUILDMASTER_BUILD_NUMBER environment variable.</p>
+</div></div>
+
+</li>
+<li><code>force : boolean</code> (optional)
+<div><div>
+ Force deployment into the stage, even if a previous stage has failed.
+</div></div>
+
+</li>
+<li><code>printLogOnFailure : boolean</code> (optional)
+<div><div>
+ If checked will print the BuildMaster log for the deployment to the Jenkins console if the build fails - but only if the "Wait until deployment completed" option is also checked.
+</div></div>
+
+</li>
+<li><code>stage : String</code> (optional)
+<div><div>
+ <p>Optional. If not supplied, the next stage in the pipeline will be used.</p>
+</div></div>
+
+</li>
+<li><code>variables : String</code> (optional)
+<div><div>
+ <p>Set deployment level variables.</p>
+</div></div>
+
+</li>
+<li><code>waitUntilCompleted : boolean</code> (optional)
+<div><div>
+ If checked waits until BuildMaster has completed the deployment, otherwise will exits immediately after triggering the deployment. Defaults to checked.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `buildMasterWithApplicationRelease`: Inject BuildMaster release details as environment variables
+++++
+<div><div>
+ <p>Obtains the Release and Build numbers for the selected BuildMaster application from BuildMaster and injects the following environment variables into the build job:</p>
+ <ul>
+  <li>BUILDMASTER_APPLICATION_ID</li>
+  <li>BUILDMASTER_APPLICATION_NAME</li>
+  <li>BUILDMASTER_RELEASE_NUMBER</li>
+  <li>BUILDMASTER_LATEST_BUILD_NUMBER</li>
+  <li>BUILDMASTER_NEXT_BUILD_NUMBER</li>
+ </ul>
+ <p>If you do not use these values in your build steps there is no requirement to use this task.</p>
+ <p><i>Note: If you have multiple jobs all triggering builds on the same BuildMaster application this task will queue those jobs so that you cannot get two jobs triggering a build at the same time.</i></p>
+ <p>When used within pipeline script this wraps a block and injects the above variables. Note that the applicationId parameter can contain either the id or name of a BuildMaster application.</p>
+ <pre>
+buildMasterWithApplicationRelease('TestApplication') {
+  echo """
+    Application id = $BUILDMASTER_APPLICATION_ID
+    Release Number = $BUILDMASTER_RELEASE_NUMBER
+    Build Number = $BUILDMASTER_BUILD_NUMBER
+  """
+}
+</pre>
+</div></div>
+<ul><li><code>applicationId : String</code>
+<div><div>
+ Select the BuildMaster application to populate environment variables for.
+</div></div>
+
+</li>
+<li><code>releaseNumber : String</code> (optional)
+<div><div>
+ <p>Select the BuildMaster release to populate environment variables for:</p>
+ <ul>
+  <li>Latest Active Release: will automatically get the latest active release number from BuildMaster for the selected application</li>
+  <li>[Release Number]: a release number from the list of active releases</li>
+ </ul>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
