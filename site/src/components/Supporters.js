@@ -4,7 +4,7 @@ const Supporters = () => (
     <div
     className="supporters"
     style={{
-        paddingBottom: '3rem'
+        padding: '3rem',
     }}
     >
         <center>
@@ -27,7 +27,6 @@ const Supporters = () => (
                 textAlign: 'center',
                 margin: 0,
                 gap: '1.5rem',
-                padding: 0,
             }}
         >
             <li>
