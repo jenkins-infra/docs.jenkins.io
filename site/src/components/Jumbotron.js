@@ -7,7 +7,7 @@ const Jumbotron = () => (
             <a href="https://cloudbees.com" rel="noopener noreferrer" target="_blank">
                 <img
                     alt="CloudBees, Inc."
-                    src="../../images/images/sponsors/cloudbees.png"
+                    src="../../images/images/sponsors/cloudbees.svg"
                     title="CloudBees, Inc."
                 />
             </a>
@@ -16,7 +16,7 @@ const Jumbotron = () => (
             <a href="https://osuosl.org" rel="noopener noreferrer" target="_blank">
                 <img
                     alt="Oregon State University Open Source Lab"
-                    src="../../images/images/sponsors/osuosl.png"
+                    src="../../images/images/sponsors/osuosl.svg"
                     title="Oregon State University Open Source Lab"
                 />
             </a>
@@ -25,37 +25,28 @@ const Jumbotron = () => (
             <a href="https://cd.foundation/" rel="noopener noreferrer" target="_blank">
                 <img
                     alt="Continuous Delivery Foundation"
-                    src="../../images/images/sponsors/cdf.png"
+                    src="../../images/images/sponsors/cdf.svg"
                     title="Continuous Delivery Foundation"
                 />
             </a>
         </li>
         <li>
-            <a href="https://redhat.com" rel="noopener noreferrer" target="_blank">
-                <img
-                    alt="Red Hat, Inc."
-                    src="../../images/images/sponsors/redhat.png"
-                    title="Red Hat, Inc."
-                />
-            </a>
-        </li>
-        <li>
             <a href="https://aws.amazon.com/" rel="noopener noreferrer" target="_blank">
-                <img alt="AWS" src="../../images/images/sponsors/aws.png" title="AWS" />
+                <img alt="AWS" src="../../images/images/sponsors/aws.svg" title="AWS" />
             </a>
         </li>
         <li>
             <a href="https://github.com" rel="noopener noreferrer" target="_blank">
                 <img
                     alt="GitHub, Inc."
-                    src="../../images/images/sponsors/github.png"
+                    src="../../images/images/sponsors/github.svg"
                     title="GitHub, Inc."
                 />
             </a>
         </li>
         <li>
             <a href="https://jfrog.com" rel="noopener noreferrer" target="_blank">
-                <img alt="JFrog" src="../../images/images/sponsors/jfrog.png" title="JFrog" />
+                <img alt="JFrog" src="../../images/images/sponsors/jfrog.svg" title="JFrog" />
             </a>
         </li>
     </ul>
