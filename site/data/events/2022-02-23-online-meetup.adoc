@@ -1,0 +1,7 @@
+
+= Jenkins in Google Summer of Code 2022
+:page-eventLocation: Online Meetup
+:page-eventStartDate: 2022-02-23T09:00:00
+:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/284057347/
+
+This online meetup is for potential GSoC contributors who are interested in the Jenkins project.

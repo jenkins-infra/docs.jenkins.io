@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: Continuous Delivery Foundation
+:page-twitter: cdeliveryfdn
+:page-github: cdfoundation
+:page-blog: https://cd.foundation/news/blog/
+:page-authoravatar: ../../images/images/avatars/cdfoundation.jpg
+
+The Continuous Delivery Foundation (CDF) serves as the vendor-neutral home of many of the fastest-growing projects for continuous delivery, including Jenkins, Jenkins X, Spinnaker, and Tekton. CDF supports DevOps practitioners with an open model, training, industry guidelines, and a portability focus.

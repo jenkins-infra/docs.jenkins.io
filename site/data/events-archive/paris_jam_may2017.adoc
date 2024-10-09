@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Paris JAM
+:page-eventStartDate: 2017-05-23T19:00:00
+:page-eventLink: https://www.meetup.com/Paris-Jenkins-Area-Meetup/events/239844966/
+---
+How2Pipeline

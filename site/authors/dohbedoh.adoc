@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: Allan Burdajewicz
+:page-github: dohbedoh
+:page-twitter: Dohbedoh
+:page-linkedin: allan-burdajewicz-0122452b
+
+
+Systems/Software Engineer

@@ -1,0 +1,100 @@
+= TestNG Results Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/testng-plugin">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `testNG`: Publish TestNG Results
+++++
+<ul><li><code>escapeExceptionMsg : boolean</code> (optional)
+<div><div>
+ <b>Escape exception messages?</b>
+ <p>If checked, the plug-in escapes the test method's exception messages.</p>
+ <p>If unchecked, this allows you to use HTML tags to format the exception message e.g. embed links in the text. (Enabled by default)</p>
+ <p>However, if this field is unchecked, you are vulnerable to a cross-site scripting attack through an HTML exception message.</p>
+</div></div>
+
+</li>
+<li><code>escapeTestDescp : boolean</code> (optional)
+<div><div>
+ <b>Escape Test Description string?</b>
+ <p>If checked, the plug-in escapes the description string associated with the test method while displaying test method details.</p>
+ <p>If unchecked, this allows you to use HTML tags to format the description. (Enabled by default)</p>
+ <p>However, if this field is unchecked, you are vulnerable to a cross-site scripting attack through an HTML test description.</p>
+</div></div>
+
+</li>
+<li><code>failedFails : int</code> (optional)
+<div><div>
+ <b>Fails - Failed Threshold</b>
+ <p>A build is marked FAILURE if the number/percentage of failed tests exceeds the specified threshold.</p>
+</div></div>
+
+</li>
+<li><code>failedSkips : int</code> (optional)
+<div><div>
+ <b>Skips - Failed Threshold</b>
+ <p>A build is marked FAILURE if the number/percentage of skipped tests exceeds the specified threshold.</p>
+</div></div>
+
+</li>
+<li><code>failureOnFailedTestConfig : boolean</code> (optional)
+<div><div>
+ <b>Mark as failure on Failed Test Configuration Methods</b>
+ <p>Allows for a distinction between failing tests and failing configuration methods. Failing tests can be seen as an unstable build whereas failing configuration methods are a failed build. This will trump any settings in Thresholds section.</p>
+</div></div>
+
+</li>
+<li><code>reportFilenamePattern : String</code> (optional)
+<div><div>
+ <b>TestNG XML report pattern</b>
+ <p>This is a file name pattern that can be used to locate the TestNG XML report files (for example <b>**/target/testng-results.xml</b>).</p>
+ <p>The path is an Ant-style pattern (e.g. fileset) or a list of files and folders separated by the characters <b>;:,</b></p>
+ <p>TestNG must be configured to generate XML reports using <b>org.testng.reporters.XMLReporter</b> for this plug-in to function.</p>
+</div></div>
+
+</li>
+<li><code>showFailedBuilds : boolean</code> (optional)
+<div><div>
+ <b>Show Failed builds in Trend Graph?</b>
+ <p>If checked, the plug-in includes results from failed builds in the trend graph. (Disabled by default)</p>
+ <p><b>Note</b>:</p>
+ <ul>
+  <li>If this is a maven build, it is better to configure the build step with <code>-Dmaven.test.failure.ignore=true</code> option. This results in build with test failures being marked as Unstable, thus distinguishing it from build that failed because of non test related issues</li>
+  <li>Even when this option is selected, failed builds with no results and aborted builds will not be displayed in graphs</li>
+ </ul>
+ <p></p>
+</div></div>
+
+</li>
+<li><code>thresholdMode : int</code> (optional)
+</li>
+<li><code>unstableFails : int</code> (optional)
+<div><div>
+ <b>Fails - Unstable Threshold</b>
+ <p>A build is marked UNSTABLE if the number/percentage of failed tests exceeds the specified threshold.</p>
+</div></div>
+
+</li>
+<li><code>unstableSkips : int</code> (optional)
+<div><div>
+ <b>Skips - Unstable Threshold</b>
+ <p>A build is marked UNSTABLE if the number/percentage of skipped tests exceeds the specified threshold.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

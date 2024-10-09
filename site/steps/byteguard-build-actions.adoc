@@ -1,0 +1,27 @@
+= ByteGuard Build Actions Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/byteguard-build-actions">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `byteguardGreet`: ByteGuard Build Actions
+++++
+<ul><li><code>token : String</code>
+</li>
+<li><code>task_id : String</code>
+</li>
+</ul>
+
+
+++++

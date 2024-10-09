@@ -1,0 +1,662 @@
+= Pipeline: Basic Steps
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/workflow-basic-steps">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `catchError`: Catch error and set build result to failure
+++++
+<div><div>
+ If the body throws an exception, mark the build as a failure, but nonetheless continue to execute the Pipeline from the statement following the <code>catchError</code> step. The behavior of the step when an exception is thrown can be configured to print a message, set a build result other than failure, change the stage result, or ignore certain kinds of exceptions that are used to interrupt the build. 
+ <p>This step is most useful when used in Declarative Pipeline or with the options to set the stage result or ignore build interruptions. Otherwise, consider using plain <code>try</code>-<code>catch</code>(-<code>finally</code>) blocks. It is also useful when using certain post-build actions (notifiers) originally defined for freestyle projects which pay attention to the result of the ongoing build.</p>
+ <p></p>
+ <pre>node {
+    catchError {
+        sh 'might fail'
+    }
+    step([$class: 'Mailer', recipients: 'admin@somewhere'])
+}
+</pre>
+ <p>If the shell step fails, the Pipeline build’s status will be set to failed, so that the subsequent mail step will see that this build is failed. In the case of the mail sender, this means that it will send mail. (It may also send mail if this build <em>succeeded</em> but previous ones failed, and so on.) Even in that case, this step can be replaced by the following idiom:</p>
+ <p></p>
+ <pre>node {
+    try {
+        sh 'might fail'
+    } catch (err) {
+        echo "Caught: ${err}"
+        currentBuild.result = 'FAILURE'
+    }
+    step([$class: 'Mailer', recipients: 'admin@somewhere'])
+}
+</pre>
+ <p>For other cases, plain <code>try</code>-<code>catch</code>(-<code>finally</code>) blocks may be used:</p>
+ <p></p>
+ <pre>node {
+    sh './set-up.sh'
+    try {
+        sh 'might fail'
+        echo 'Succeeded!'
+    } catch (err) {
+        echo "Failed: ${err}"
+    } finally {
+        sh './tear-down.sh'
+    }
+    echo 'Printed whether above succeeded or failed.'
+}
+// …and the pipeline as a whole succeeds
+</pre>
+ <p>See <a href="https://github.com/jenkinsci/workflow-basic-steps-plugin/blob/master/CORE-STEPS.md#interacting-with-build-status" rel="nofollow">this document</a> for background.</p>
+</div></div>
+<ul><li><code>buildResult : String</code> (optional)
+<div><div>
+ If an error is caught, the overall build result will be set to this value. Note that the build result can only get worse, so you cannot change the result to <code>SUCCESS</code> if the current result is <code>UNSTABLE</code> or worse. Use <code>SUCCESS</code> or <code>null</code> to keep the build result from being set when an error is caught.
+</div></div>
+
+</li>
+<li><code>catchInterruptions : boolean</code> (optional)
+<div><div>
+ If true, certain types of exceptions that are used to interrupt the flow of execution for Pipelines will be caught and handled by the step. If false, those types of exceptions will be caught and immediately rethrown. Examples of these types of exceptions include those thrown when a build is manually aborted through the UI and those thrown by the <code>timeout</code> step. Defaults to true.
+</div></div>
+
+</li>
+<li><code>message : String</code> (optional)
+<div><div>
+ A message that will be logged to the console if an error is caught. If the stage result is specified, the message will also be associated with that result and may be shown in visualizations.
+</div></div>
+
+</li>
+<li><code>stageResult : String</code> (optional)
+<div><div>
+ If an error is caught, the stage result will be set to this value. If a message was specified, the message will be associated with this result. Use <code>SUCCESS</code> or <code>null</code> to keep the stage result from being set when an error is caught.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `deleteDir`: Recursively delete the current directory from the workspace
+++++
+<div><div>
+ Recursively deletes the current directory and its contents. Symbolic links and junctions will not be followed but will be removed. To delete a specific directory of a workspace wrap the <code>deleteDir</code> step in a <code>dir</code> step.
+</div></div>
+<ul></ul>
+
+
+++++
+=== `echo`: Print Message
+++++
+<ul><li><code>message : String</code>
+<div><div>
+ The message to write to the console output.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `error`: Error signal
+++++
+<div><div>
+ Signals an error. Useful if you want to conditionally abort some part of your program. You can also just <code>throw new Exception()</code>, but this step will avoid printing a stack trace.
+</div></div>
+<ul><li><code>message : String</code>
+<div><div>
+ The message that will be logged to the console when an error is caught.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `fileExists`: Verify if file exists in workspace
+++++
+<div><div>
+ Checks if the given file exists on the current node. Returns <code>true | false</code>. This step must be run inside a <code>node</code> context: 
+ <p></p>
+ <pre># Declarative Syntax
+stage ('Check for existence of index.html') {
+    agent any # Could be a top-level directive or a stage level directive
+    steps {
+        script {
+            if (fileExists('src/main/resources/index.html')) {
+                echo "File src/main/resources/index.html found!"
+            }
+        }
+    }
+}
+</pre>
+ <p></p> With the Declarative Syntax, it must be run in a stage with a defined agent (e.g. different than `agent none`): 
+ <p></p>
+ <pre># Scripted Syntax
+node {
+    if (fileExists('src/main/resources/index.html')) {
+        echo "File src/main/resources/index.html found!"
+    }
+}
+</pre>
+ <p></p>
+</div></div>
+<ul><li><code>file : String</code>
+<div><div>
+ Path to a file or a directory to verify its existence. 
+ <ul>
+  <li>Both absolute and relative paths are supported. When using relative path, it is relative to the current working directory (by default: the workspace).</li>
+  <li>Both Unix and Windows path are supported using a 
+   <pre>/</pre> separator: 
+   <p></p>
+   <pre>node('Linux') {
+    if (fileExists('/usr/local/bin/jenkins.sh')) {
+        sh '/usr/local/bin/jenkins.sh'
+    }
+}
+node('Windows') {
+    if (fileExists('C:/jenkins.exe')) {
+        bat 'C:/jenkins.exe'
+    }
+}
+</pre>
+   <p></p> When using a Windows path with the backslash (
+   <pre>\</pre>) separator, do not forget to escape it: 
+   <p>node('Windows') { if (fileExists('src\\main\\resources')) { echo 'Found a directory resources.' } }</p></li>
+ </ul>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `isUnix`: Checks if running on a Unix-like node
+++++
+<div><div>
+ Returns true if enclosing <code>node</code> is running on a Unix-like system (such as Linux or Mac OS X), false if Windows.
+</div></div>
+<ul></ul>
+
+
+++++
+=== `mail`: Mail
+++++
+<div><div>
+ Simple step for sending email.
+</div></div>
+<ul><li><code>subject : String</code>
+<div><div>
+ Email subject line.
+</div></div>
+
+</li>
+<li><code>body : String</code>
+<div><div>
+ Email body.
+</div></div>
+
+</li>
+<li><code>bcc : String</code> (optional)
+<div><div>
+ BCC email address list. Comma separated list of email addresses.
+</div></div>
+
+</li>
+<li><code>cc : String</code> (optional)
+<div><div>
+ CC email address list. Comma separated list of email addresses.
+</div></div>
+
+</li>
+<li><code>charset : String</code> (optional)
+<div><div>
+ Email body character encoding. Defaults to <code>UTF-8</code>
+</div></div>
+
+</li>
+<li><code>from : String</code> (optional)
+<div><div>
+ From email address. Defaults to the admin address globally configured for the Jenkins instance.
+</div></div>
+
+</li>
+<li><code>mimeType : String</code> (optional)
+<div><div>
+ Email body MIME type. Defaults to <code>text/plain</code>.
+</div></div>
+
+</li>
+<li><code>replyTo : String</code> (optional)
+<div><div>
+ Reply-To email address. Defaults to the admin address globally configured for the Jenkins instance.
+</div></div>
+
+</li>
+<li><code>to : String</code> (optional)
+<div><div>
+ To email address list. Comma separated list of email addresses.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `pwd`: Determine current directory
+++++
+<div><div>
+ Returns the current directory path as a string.
+</div></div>
+<ul><li><code>tmp : boolean</code> (optional)
+<div><div>
+ If selected, return a temporary directory associated with the current directory path rather than the directory path itself. The return value is different for each current directory. No two directories share the same temporary directory. This is an appropriate place to put temporary files which should not clutter a source checkout; local repositories or caches; etc. Defaults to false.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `readFile`: Read file from workspace
+++++
+<div><div>
+ Reads a file from a relative path (with root in current directory, usually workspace) and returns its content as a plain string.
+</div></div>
+<ul><li><code>file : String</code>
+<div><div>
+ Relative (<code>/</code>-separated) path to file within a workspace to read.
+</div></div>
+
+</li>
+<li><code>encoding : String</code> (optional)
+<div><div>
+ The encoding to use when reading the file. If left blank, the platform default encoding will be used. Binary files can be read into a Base64-encoded string by specifying "Base64" as the encoding.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `retry`: Retry the body up to N times
+++++
+<div><div>
+ Retry the block (up to N times) if any exception happens during its body execution. If an exception happens on the final attempt then it will lead to aborting the build (unless it is caught and processed somehow). User aborts of the build are <em>not</em> caught.
+</div></div>
+<ul><li><code>count : int</code>
+</li>
+<li><code>conditions</code> (optional)
+<div><div>
+ Conditions under which the block should be retried. If none match, the block will fail. If there are no specified conditions, the block will always be retried except in case of user aborts.
+</div></div>
+
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>agent</code><div>
+<div><div>
+ Detects that a <code>node</code> block, or certain steps inside it such as <code>sh</code>, failed for reasons which are likely due to infrastructure rather than the behavior of the build. If the connection to an agent is broken or the agent is removed from the list of executors while in use (typically in response to the disappearance of underlying cloud resources), this condition will allow <code>retry</code> to allocate a fresh agent and try the whole block again.
+</div></div>
+<ul></ul></div></li>
+<li><code>kubernetesAgent</code><div>
+<div><div>
+ Similar to <code>agent()</code> (<b>Agent errors</b>) but tailored to agents provisioned from a Kubernetes cloud. Unlike the generic agent error condition, this will ignore certain pod termination reasons which are likely to be under the control of the Pipeline author (e.g., <code>OOMKilled</code>) while still allowing <code>retry</code> to recover after common cases of pod deletion.
+</div></div>
+<ul><li><code>handleNonKubernetes : boolean</code> (optional)
+<div><div>
+ Behave like the generic <code>agent()</code> (<b>Agent errors</b>) when applied to a non-Kubernetes agent. Useful in cases where it is hard to predict in a job definition whether a Kubernetes or other sort of agent will be used.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>nonresumable</code><div>
+<div><div>
+ The Jenkins controller was restarted while the build was running a step which cannot be resumed. Some steps like <code>sh</code> or <code>input</code> are written to survive a Jenkins restart and simply pick up where they left off when the build resumes. Others like <code>checkout</code> or <code>junit</code> normally complete promptly but cannot tolerate a restart. In case one of these steps happened to be in progress when Jenkins shut down, the resumed build will throw an error; using this condition with <code>retry</code> allows the step (or the whole enclosing <code>node</code> block) to be rerun.
+</div></div>
+<ul></ul></div></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `sleep`: Sleep
+++++
+<div><div>
+ Simply pauses the Pipeline build until the given amount of time has expired. Equivalent to (on Unix) <code>sh 'sleep …'</code>. May be used to pause one branch of <code>parallel</code> while another proceeds.
+</div></div>
+<ul><li><code>time : int</code>
+<div><div>
+ The length of time for which the step will sleep.
+</div></div>
+
+</li>
+<li><code>unit</code> (optional)
+<div><div>
+ The unit for the time parameter. Defaults to 'SECONDS' if not specified.
+</div></div>
+
+<ul><li><b>Values:</b> <code>NANOSECONDS</code>, <code>MICROSECONDS</code>, <code>MILLISECONDS</code>, <code>SECONDS</code>, <code>MINUTES</code>, <code>HOURS</code>, <code>DAYS</code></li></ul></li>
+</ul>
+
+
+++++
+=== `stash`: Stash some files to be used later in the build
+++++
+<div><div>
+ Saves a set of files for later use on any node/workspace in the same Pipeline run. By default, stashed files are discarded at the end of a pipeline run. Other plugins may change this behavior to preserve stashes for longer. For example, Declarative Pipeline includes a <code>preserveStashes()</code> option to allow stashes from a run to be retained and used if that run is restarted. 
+ <br>
+  Stashes from one Pipeline run are not available in other runs, other Pipelines, or other jobs. If you want to persist artifacts for use outside of a single run, consider using <a href="https://jenkins.io/doc/pipeline/steps/core/#archiveartifacts-archive-the-artifacts" rel="nofollow"> <code>archiveArtifacts</code></a> instead. <strong>Note</strong> that the <code>stash</code> and <code>unstash</code> steps are designed for use with small files. For large data transfers, use the External Workspace Manager plugin, or use an external repository manager such as Nexus or Artifactory. This is because stashed files are archived in a compressed TAR, and with large files this demands considerable resources on the controller, particularly CPU time. There's not a hard stash size limit, but between 5-100 MB you should probably consider alternatives. If you use the Artifact Manager on S3 plugin, or another plugin with a remote atifact manager, you can use this step without affecting controller performance since stashes will be sent directly to S3 from the agent (and similarly for <code>unstash</code>).
+</div></div>
+<ul><li><code>name : String</code>
+<div><div>
+ Name of a stash. Should be a simple identifier akin to a job name.
+</div></div>
+
+</li>
+<li><code>allowEmpty : boolean</code> (optional)
+<div><div>
+ Create stash even if no files are included. If <code>false</code> (default), an error is raised when the stash does not contain files.
+</div></div>
+
+</li>
+<li><code>excludes : String</code> (optional)
+<div><div>
+ Optional set of <a href="https://ant.apache.org/manual/dirtasks.html#patterns" rel="nofollow">Ant-style exclude patterns</a>.
+ <br>
+  Use a comma separated list to add more than one expression.
+ <br>
+  If blank, no files will be excluded.
+</div></div>
+
+</li>
+<li><code>includes : String</code> (optional)
+<div><div>
+ Optional set of <a href="https://ant.apache.org/manual/dirtasks.html#patterns" rel="nofollow">Ant-style include patterns</a>.
+ <br>
+  Use a comma separated list to add more than one expression.
+ <br>
+  If blank, treated like <code>**</code>: all files.
+ <br>
+  The current working directory is the base directory for the saved files, which will later be restored in the same relative locations, so if you want to use a subdirectory wrap this in <a href="https://jenkins.io/doc/pipeline/steps/workflow-basic-steps/#code-dir-code-change-current-directory" rel="nofollow"><code>dir</code></a>.
+</div></div>
+
+</li>
+<li><code>useDefaultExcludes : boolean</code> (optional)
+<div><div>
+ If selected, use the default excludes from Ant - see <a href="http://ant.apache.org/manual/dirtasks.html#defaultexcludes" rel="nofollow">here</a> for the list. Defaults to true.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step`: General Build Step
+++++
+<div>
+    <p>
+    This is a special step that allows to call builders or post-build actions (as in freestyle or similar projects), in general "build steps".
+    Just select the build step to call from the dropdown list and configure it as needed.
+    </p>
+    <p>
+    Note that only Pipeline-compatible steps will be shown in the list.
+    </p>
+</div>To use this step you need to specify a delegate class, e.g <code>step([$class: 'A3Builder'])</code>.
+
+
+++++
+=== `timeout`: Enforce time limit
+++++
+<div><div>
+ Executes the code inside the block with a determined time out limit. If the time limit is reached, an exception (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException) is thrown, which leads to aborting the build (unless it is caught and processed somehow).
+</div></div>
+<ul><li><code>time : int</code>
+<div><div>
+ The length of time for which this step will wait before cancelling the nested block.
+</div></div>
+
+</li>
+<li><code>activity : boolean</code> (optional)
+<div><div>
+ Timeout after no activity in logs for this block instead of absolute duration. Defaults to false.
+</div></div>
+
+</li>
+<li><code>unit</code> (optional)
+<div><div>
+ The unit of the time parameter. Defaults to 'MINUTES' if not specified.
+</div></div>
+
+<ul><li><b>Values:</b> <code>NANOSECONDS</code>, <code>MICROSECONDS</code>, <code>MILLISECONDS</code>, <code>SECONDS</code>, <code>MINUTES</code>, <code>HOURS</code>, <code>DAYS</code></li></ul></li>
+</ul>
+
+
+++++
+=== `tool`: Use a tool from a predefined Tool Installation
+++++
+<div><div>
+ Binds a tool installation to a variable (the tool home directory is returned). Only tools already configured in <code>Configure System</code> are available here. If the original tool installer has the auto-provision feature, then the tool will be installed as required.
+</div></div>
+<ul><li><code>name : String</code>
+<div><div>
+ The name of the tool. The tool name must be pre-configured in Jenkins under <em>Manage Jenkins</em> → <em>Global Tool Configuration</em>.
+</div></div>
+
+</li>
+<li><code>type : String</code> (optional)
+<div><div>
+ Select the type from the available <a href="https://www.jenkins.io/doc/book/managing/tools/" rel="nofollow">built-in tool providers</a>.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `unstable`: Set stage result to unstable
+++++
+<div><div>
+ Prints a message to the log and sets the overall build result and the stage result to <code>UNSTABLE</code>. The message will also be associated with the stage result and may be shown in visualizations.
+</div></div>
+<ul><li><code>message : String</code>
+<div><div>
+ A message that will be logged to the console. The message will also be associated with the stage result and may be shown in visualizations.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `unstash`: Restore files previously stashed
+++++
+<div><div>
+ Restores a set of files previously <code>stash</code>ed into the current workspace.
+</div></div>
+<ul><li><code>name : String</code>
+<div><div>
+ Name of a previously saved stash.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `waitUntil`: Wait for condition
+++++
+<div><div>
+ Runs its body repeatedly until it returns <code>true</code>. If it returns <code>false</code>, waits a while and tries again. (Subsequent failures will slow down the delay between attempts up to a maximum of 15 seconds.) There is no limit to the number of retries, but if the body throws an error that is thrown up immediately.
+</div></div>
+<ul><li><code>initialRecurrencePeriod : long</code> (optional)
+<div><div>
+ Sets the initial wait period, in milliseconds, between retries. Defaults to 250ms. 
+ <br>
+  Each failure will slow down the delay between attempts up to a maximum of 15 seconds.
+</div></div>
+
+</li>
+<li><code>quiet : boolean</code> (optional)
+<div><div>
+ If true, the step does not log a message each time the condition is checked. Defaults to false.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `warnError`: Catch error and set build and stage result to unstable
+++++
+<div><div>
+ Executes its body, and if an exception is thrown, sets the overall build result and the stage result to <code>UNSTABLE</code>, prints a specified message and the thrown exception to the build log, and associates the stage result with the message so that it can be displayed by visualizations. 
+ <p>Equivalent to <code>catchError(message: message, buildResult: 'UNSTABLE', stageResult: 'UNSTABLE')</code>.</p>
+</div></div>
+<ul><li><code>message : String</code>
+<div><div>
+ A message that will be logged to the console if an error is caught. The message will also be associated with the stage result and may be shown in visualizations.
+</div></div>
+
+</li>
+<li><code>catchInterruptions : boolean</code> (optional)
+<div><div>
+ If true, certain types of exceptions that are used to interrupt the flow of execution for Pipelines will be caught and handled by the step. If false, those types of exceptions will be caught and immediately rethrown. Examples of these types of exceptions include those thrown when a build is manually aborted through the UI and those thrown by the <code>timeout</code> step. Defaults to true.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `withEnv`: Set environment variables
+++++
+<div><div>
+ Sets one or more environment variables within a block. The names of environment variables are case-insensitive but case-preserving, that is, setting `Foo` will change the value of `FOO` if it already exists. Environment variables are available to any external processes spawned within that scope. For example: 
+ <p></p>
+ <pre>node {
+  withEnv(['MYTOOL_HOME=/usr/local/mytool']) {
+    sh '$MYTOOL_HOME/bin/start'
+  }
+}
+</pre>
+ <p>(Note that here we are using single quotes in Groovy, so the variable expansion is being done by the Bourne shell, not Jenkins.)</p>
+ <p>See the documentation for the <code>env</code> singleton for more information on environment variables.</p>
+</div></div>
+<ul><li><code>overrides : Array / List of String</code>
+<div><div>
+ A list of environment variables to set, each in the form <code>VARIABLE=value</code> or <code>VARIABLE=</code> to unset variables otherwise defined. You may also use the syntax <code>PATH+WHATEVER=/something</code> to prepend <code>/something</code> to <code>$PATH</code>.
+</div></div>
+
+<ul></ul></li>
+</ul>
+
+
+++++
+=== `wrap`: General Build Wrapper
+++++
+<div>
+    <p>
+    This is a special step that allows to call build wrappers (also called "Environment Configuration" in freestyle or similar projects).
+    Just select the wrapper to use from the dropdown list and configure it as needed. Everything inside the wrapper block is under its effect.
+    </p>
+    <p>
+    Note that only Pipeline-compatible wrappers will be shown in the list.
+    </p>
+</div>To use this step you need to specify a delegate class, e.g <code>wrap([$class: 'AnsiColorBuildWrapper'])</code>.
+
+
+++++
+=== `writeFile`: Write file to workspace
+++++
+<div><div>
+ Write the given content to a named file in the current directory.
+</div></div>
+<ul><li><code>file : String</code>
+<div><div>
+ Relative path of a file within the workspace.
+</div></div>
+
+</li>
+<li><code>text : String</code>
+<div><div>
+ The data to write in the file.
+</div></div>
+
+</li>
+<li><code>encoding : String</code> (optional)
+<div><div>
+ The target encoding for the file. If left blank, the platform default encoding will be used. If the text is a Base64-encoded string, the decoded binary data can be written to the file by specifying "Base64" as the encoding.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `archive`: Archive artifacts
+++++
+<div><div>
+ Archives build output artifacts for later use. As of Jenkins 2.x, this step is deprecated in favor of the more configurable <code>archiveArtifacts</code>.
+</div></div>
+<ul><li><code>includes : String</code>
+<div><div>
+ Include artifacts matching this <a href="https://ant.apache.org/manual/dirtasks.html#patterns" rel="nofollow">Ant style pattern</a>. Use a comma separated list to add more than one expression.
+</div></div>
+
+</li>
+<li><code>excludes : String</code> (optional)
+<div><div>
+ Exclude artifacts matching this <a href="https://ant.apache.org/manual/dirtasks.html#patterns" rel="nofollow">Ant-style pattern</a>.
+ <br>
+  Use a comma-separated list to add more than one expression.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `getContext`: Get contextual object from internal APIs
+++++
+<div><p>Obtains a contextual object as in <code>StepContext.get</code>; cf. <code>withContext</code>. Takes a single <code>type</code> argument. Example:</p>
+<pre><code>getContext hudson.FilePath</code></pre>
+<p>For use from trusted code, such as global libraries, which can manipulate internal Jenkins APIs.</p></div>
+<ul><li><code>type</code>
+<ul><li><b>Type:</b> <code>java.lang.Class&lt;?&gt;</code></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `unarchive`: Copy archived artifacts into the workspace
+++++
+<ul><li><code>mapping</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `withContext`: Use contextual object from internal APIs within a block
+++++
+<div><p>Wraps a block in a contextual object as in <code>BodyInvoker.withContext</code>; cf. <code>getContext</code>. Takes a single <code>context</code> argument plus a block. Example:</p>
+<pre><code>withContext(new MyConsoleLogFilter()) {
+    sh 'process'
+}</code></pre>
+<p>Automatically merges its argument with contextual objects in the case of <code>ConsoleLogFilter</code>, <code>LauncherDecorator</code>, and <code>EnvironmentExpander</code>.</p>
+<p>For use from trusted code, such as global libraries, which can manipulate internal Jenkins APIs.</p>
+<p><strong>Do not</strong> attempt to pass objects defined in Groovy; only Java-defined objects are supported. Really you should avoid using this and <code>getContext</code> and just define a <code>Step</code> in a plugin instead.</p></div>
+<ul><li><code>context : <code>Object</code></code>
+</li>
+</ul>
+
+
+++++

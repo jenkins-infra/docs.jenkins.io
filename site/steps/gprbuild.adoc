@@ -1,0 +1,55 @@
+= GPRbuild Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/gprbuild">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `gprbuild`: Execute GPRbuild build tool
+++++
+<div><div>
+ This build step can be used to build GNAT project files by invoking GPRbuild.
+</div></div>
+<ul><li><code>installationName : String</code> (optional)
+<div><div>
+ Name of the GNAT installation to use as configured in Jenkins.
+</div></div>
+
+</li>
+<li><code>names : String</code> (optional)
+<div><div>
+ Main source files represent the sources to be used as the main programs. If they are not specified on the command line, GPRbuild uses the source files specified with the Main attribute in the project file. If none exists, then no executable will be built. It is also possible to specify absolute file names, or file names relative to the current directory.
+</div></div>
+
+</li>
+<li><code>proj : String</code> (optional)
+<div><div>
+ GPRbuild requires a project file, which may be specified on the command line either directly or through the <code>-P</code> switch. If not specified, GPRbuild uses the project file <em>default.gpr</em> if there is one in the current working directory. Otherwise, if there is only one project file in the current working directory, GPRbuild uses this project file.
+</div></div>
+
+</li>
+<li><code>switches : String</code> (optional)
+<div><div>
+ <div>
+  GPRbuild takes into account switches that may be specified on the command line or in attributes Switches(&lt;main or language&gt;) or Default_Switches (&lt;language&gt;) in package Builder of the main project.
+ </div>
+ <div>
+  Go to AdaCore <a href="https://docs.adacore.com/gprbuild-docs/html/gprbuild_ug/building_with_gprbuild.html#switches" rel="nofollow">documentation for switches</a>.
+ </div>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,6 @@
+---
+:page-eventTitle: London JAM: Jenkins at Capital One
+:page-eventStartDate: 2018-08-22T18:00:00
+:page-eventLink: https://www.meetup.com/London-Jenkins-Area-Meetup
+---
+Jenkins at Capital One

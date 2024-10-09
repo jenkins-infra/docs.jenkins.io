@@ -1,0 +1,71 @@
+= Websocket.in Notification Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/websocketin-notification">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `websocketin`: Websocket.in Notifier
+++++
+<div><div>
+ This plugin sends a websocket message when the build 
+ <ul>
+  <li>Is about to start (phase=STARTED)</li>
+  <li>In post build (phase=COMPLETED)</li>
+ </ul> All fields support the usage of variables. 
+ <br>
+ <br>
+  Data is sent as websocket text in json format. It is a subset of the <a href="https://plugins.jenkins.io/notification" rel="nofollow">Notification plugin</a> and looks as follow:
+ <br>
+ <pre>
+{
+    "name": "asgard",
+    "url": "job/asgard/",
+    "build": {
+        "full_url": "http://localhost:8080/job/asgard/18/",
+        "number": 18,
+        "phase": "COMPLETED",
+        "status": "SUCCESS",
+        "url": "job/asgard/18/",
+    }
+}
+</pre>
+ <br><strong>Note: For phase="STARTED" the build status of the previous build is given (if available)</strong>
+</div></div>
+<ul><li><code>url : String</code>
+<div><div>
+ https://www.websocket.in let's you define an own websocket url which is in the form of: 
+ <br>
+ <br>
+  wss://connect.websocket.in/<strong>YOUR_CHANNEL_ID</strong>?room_id=<strong>YOUR_ROOM_ID</strong>
+ <br>
+ <br><strong>Note: While wss:// is supported, your jenkins instance might reject the connection.</strong> Make sure you have a valid certificate store path given and that the connection to the given host is trusted. Workaround (not recommended): use the unencrypted ws:// Url instead.
+</div></div>
+
+</li>
+<li><code>preventFailOnConnect : boolean</code>
+</li>
+<li><code>startMessage : String</code>
+</li>
+<li><code>additionalHttpHeaders : String</code>
+<div><div>
+ The additional http headers must follow a format that is recognized by the class java.util.Properties.
+ <br>
+  Check <a href="https://docs.oracle.com/cd/E23095_01/Platform.93/ATGProgGuide/html/s0204propertiesfileformat01.html" rel="nofollow">Properties file format - Oracle</a> for more information.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

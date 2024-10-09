@@ -1,0 +1,84 @@
+= TestComplete support plug-in
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/TestComplete">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `testcompletetest`: TestComplete Test
+++++
+<ul><li><code>suite : String</code> (optional)
+</li>
+<li><code>accessKeyId : String</code> (optional)
+</li>
+<li><code>actionOnErrors : String</code> (optional)
+</li>
+<li><code>actionOnWarnings : String</code> (optional)
+</li>
+<li><code>commandLineArguments : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>executorType : String</code> (optional)
+</li>
+<li><code>executorVersion : String</code> (optional)
+</li>
+<li><code>generateMHT : boolean</code> (optional)
+</li>
+<li><code>launchConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>project : String</code> (optional)
+</li>
+<li><code>routine : String</code> (optional)
+</li>
+<li><code>tags : String</code> (optional)
+</li>
+<li><code>test : String</code> (optional)
+</li>
+<li><code>unit : String</code> (optional)
+</li>
+<li><code>value : String</code> (optional)
+</li>
+</ul></li>
+<li><code>launchType : String</code> (optional)
+</li>
+<li><code>project : String</code> (optional)
+</li>
+<li><code>publishJUnitReports : boolean</code> (optional)
+</li>
+<li><code>routine : String</code> (optional)
+</li>
+<li><code>sessionScreenResolution : String</code> (optional)
+</li>
+<li><code>tags : String</code> (optional)
+</li>
+<li><code>test : String</code> (optional)
+</li>
+<li><code>timeout : String</code> (optional)
+</li>
+<li><code>unit : String</code> (optional)
+</li>
+<li><code>useActiveSession : boolean</code> (optional)
+</li>
+<li><code>useTCService : boolean</code> (optional)
+</li>
+<li><code>useTimeout : boolean</code> (optional)
+</li>
+<li><code>userName : String</code> (optional)
+</li>
+<li><code>userPassword : String</code> (optional)
+</li>
+</ul>
+
+
+++++

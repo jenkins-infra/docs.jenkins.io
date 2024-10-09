@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Philadelphia JAM
+:page-eventStartDate: 2018-08-01T18:00:00
+:page-eventLink: https://www.meetup.com/Philadelphia-Jenkins-Area-Meetup/events/251679021/
+---
+Philadelphia Jenkins Area Meetup

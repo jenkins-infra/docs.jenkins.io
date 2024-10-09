@@ -1,0 +1,8 @@
+= About the Author
+:page-layout: author
+:page-author_name: Guillaume Laforge
+:page-twitter: glaforge
+:page-github: glaforge
+:page-blog: https://glaforge.appspot.com/
+
+

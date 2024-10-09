@@ -1,0 +1,122 @@
+= Nirmata Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/nirmata">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `nirmata`: Invoke Nirmata Service
+++++
+<div><div>
+ For projects that use Nirmata as part of the build system. This causes Jenkins to invoke Nirmata Service with the given actions, following fields and options. Jenkins will mark the build as a failure if any issue is encountered.
+</div></div>
+<ul><li><code>builder</code>
+<div><div>
+ Select the required action from the drop-down
+ <br>
+ <p><b>Delete App in Environment</b><br>
+   Deletes the specified application from the specified environment.</p>
+ <p><b>Deploy App in Environment</b> <br>
+   Deploys the specified application from catalog to specified application.</p>
+ <p><b>Update App in Catalog</b> <br>
+   Updates the specified application in specified catalog.</p>
+ <p><b>Update App in Environment</b> <br>
+   Updates the specified application in specified environment.</p>
+</div></div>
+
+<ul><b>Nested Choice of Objects</b>
+<li><code>deleteAppInEnvironment</code><div>
+<ul><li><code>endpoint : String</code>
+</li>
+<li><code>apikey : String</code>
+</li>
+<li><code>environment : String</code>
+</li>
+<li><code>application : String</code>
+</li>
+<li><code>timeout : int</code>
+</li>
+</ul></div></li>
+<li><code>deployAppInEnvironment</code><div>
+<ul><li><code>endpoint : String</code>
+</li>
+<li><code>apikey : String</code>
+</li>
+<li><code>environment : String</code>
+</li>
+<li><code>application : String</code>
+</li>
+<li><code>timeout : int</code>
+</li>
+<li><code>catalog : String</code>
+</li>
+<li><code>directories : String</code>
+</li>
+<li><code>includescheck : boolean</code>
+</li>
+<li><code>includes : String</code>
+</li>
+<li><code>excludescheck : boolean</code>
+</li>
+<li><code>excludes : String</code>
+</li>
+<li><code>deployType : String</code>
+</li>
+</ul></div></li>
+<li><code>updateAppInCatalog</code><div>
+<ul><li><code>endpoint : String</code>
+</li>
+<li><code>apikey : String</code>
+</li>
+<li><code>catalog : String</code>
+</li>
+<li><code>timeout : int</code>
+</li>
+<li><code>directories : String</code>
+</li>
+<li><code>includescheck : boolean</code>
+</li>
+<li><code>includes : String</code>
+</li>
+<li><code>excludescheck : boolean</code>
+</li>
+<li><code>excludes : String</code>
+</li>
+</ul></div></li>
+<li><code>updateAppInEnvironment</code><div>
+<ul><li><code>endpoint : String</code>
+</li>
+<li><code>apikey : String</code>
+</li>
+<li><code>environment : String</code>
+</li>
+<li><code>application : String</code>
+</li>
+<li><code>timeout : int</code>
+</li>
+<li><code>directories : String</code>
+</li>
+<li><code>includescheck : boolean</code>
+</li>
+<li><code>includes : String</code>
+</li>
+<li><code>excludescheck : boolean</code>
+</li>
+<li><code>excludes : String</code>
+</li>
+</ul></div></li>
+</ul></li>
+</ul>
+
+
+++++

@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: Rishabh Budhouliya
+:page-github: rishabhBudhouliya
+:page-authoravatar: ../../images/images/avatars/rishabhBudhouliya.jpg
+
+
+
+GSoC 2020 student under the Jenkins project (Git Plugin Performance Improvements). Aspiring to be better at Software Development and participate more in the open source community.

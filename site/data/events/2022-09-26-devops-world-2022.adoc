@@ -1,0 +1,8 @@
+
+= DevOps World 2022
+:page-eventLocation: Orlando, USA
+:page-eventStartDate: 2022-09-26T08:00:00
+:page-eventLink: https://reg.devopsworld.com/flow/cloudbees/devopsworld22/Landing/page/welcome
+
+
+ The largest global gathering of DevOps thought leaders, practitioners, and contributors, and all those dedicated to shaping the future of modern software delivery.

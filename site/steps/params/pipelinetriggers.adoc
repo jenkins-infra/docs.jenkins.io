@@ -1,0 +1,3656 @@
+= pipelineTriggers
+:page-layout: pipelinesteps
+== pipelineTriggers
+
+++++
+<li><code>pipelineTriggers</code><div>
+<ul><li><code>triggers</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'AmqpBuildTrigger'</code><div>
+<div><div>
+ <p>Add one or more AMQP message source(s) that will provide messages used to trigger a build.</p>
+</div></div>
+<ul><li><code>amqpBrokerParamsList</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>username : String</code>
+</li>
+<li><code>url : String</code> (optional)
+<div><div>
+ <p>URL for the AMQP source (typically a queue or topic) which will host the queue or topic from which trigger messages will be received.</p>
+ <p>Format: amqp[s]://&lt;broker-ip-address&gt;[:&lt;port&gt;]</p>
+ <p><b>Required</b></p>
+</div></div>
+
+</li>
+<li><code>password</code> (optional)
+<div><div>
+ <p>If the server requires authentication, then this field must contain the user's password.</p>
+ <p>If no authentication is required, then leave blank.</p>
+</div></div>
+
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>sourceAddr : String</code> (optional)
+<div><div>
+ <p>The address of an AMQP message source from which trigger messages will be received. This is frequently a queue or topic on an AMQP broker. The source address must exist, or the server must be capable of creating it on-demand if it does not exist (which may require some server configuration).</p>
+ <p><b>Required</b></p>
+</div></div>
+
+</li>
+<li><code>user : String</code> (optional)
+<div><div>
+ <p>If the broker requires authentication, then this field must contain the user's ID.</p>
+ <p>If no authentication is required, then leave blank.</p>
+</div></div>
+
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'ArtifactoryMultibranchTrigger'</code><div>
+<ul><li><code>details</code>
+<ul><b>Nested Object</b>
+<li><code>artifactoryName : String</code>
+</li>
+<li><code>artifactoryUrl : String</code>
+</li>
+<li><code>deployReleaseRepository</code>
+<ul><b>Nested Object</b>
+<li><code>keyFromText : String</code>
+</li>
+<li><code>keyFromSelect : String</code>
+</li>
+<li><code>dynamicMode : boolean</code>
+</li>
+</ul></li>
+<li><code>deploySnapshotRepository</code>
+<ul><b>Nested Object</b>
+<li><code>keyFromText : String</code>
+</li>
+<li><code>keyFromSelect : String</code>
+</li>
+<li><code>dynamicMode : boolean</code>
+</li>
+</ul></li>
+<li><code>resolveReleaseRepository</code>
+<ul><b>Nested Object</b>
+<li><code>keyFromText : String</code>
+</li>
+<li><code>keyFromSelect : String</code>
+</li>
+<li><code>dynamicMode : boolean</code>
+</li>
+</ul></li>
+<li><code>resolveSnapshotRepository</code>
+<ul><b>Nested Object</b>
+<li><code>keyFromText : String</code>
+</li>
+<li><code>keyFromSelect : String</code>
+</li>
+<li><code>dynamicMode : boolean</code>
+</li>
+</ul></li>
+<li><code>userPluginKey : String</code>
+</li>
+<li><code>userPluginParams : String</code>
+</li>
+</ul></li>
+<li><code>paths : String</code>
+</li>
+<li><code>spec : String</code>
+</li>
+<li><code>branches : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'ArtifactoryTrigger'</code><div>
+<ul><li><code>paths : String</code>
+</li>
+<li><code>spec : String</code>
+</li>
+<li><code>details</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>artifactoryName : String</code>
+</li>
+<li><code>artifactoryUrl : String</code>
+</li>
+<li><code>deployReleaseRepository</code>
+<ul><b>Nested Object</b>
+<li><code>keyFromText : String</code>
+</li>
+<li><code>keyFromSelect : String</code>
+</li>
+<li><code>dynamicMode : boolean</code>
+</li>
+</ul></li>
+<li><code>deploySnapshotRepository</code>
+<ul><b>Nested Object</b>
+<li><code>keyFromText : String</code>
+</li>
+<li><code>keyFromSelect : String</code>
+</li>
+<li><code>dynamicMode : boolean</code>
+</li>
+</ul></li>
+<li><code>resolveReleaseRepository</code>
+<ul><b>Nested Object</b>
+<li><code>keyFromText : String</code>
+</li>
+<li><code>keyFromSelect : String</code>
+</li>
+<li><code>dynamicMode : boolean</code>
+</li>
+</ul></li>
+<li><code>resolveSnapshotRepository</code>
+<ul><b>Nested Object</b>
+<li><code>keyFromText : String</code>
+</li>
+<li><code>keyFromSelect : String</code>
+</li>
+<li><code>dynamicMode : boolean</code>
+</li>
+</ul></li>
+<li><code>userPluginKey : String</code>
+</li>
+<li><code>userPluginParams : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'AssemblaBuildTrigger'</code><div>
+<ul><li><code>spaceName : String</code>
+</li>
+<li><code>repoName : String</code>
+</li>
+<li><code>buildOnMergeRequestEnabled : boolean</code>
+</li>
+<li><code>mergeRequestCommentsEnabled : boolean</code>
+</li>
+<li><code>ticketCommentsEnabled : boolean</code>
+</li>
+<li><code>notifyOnStartEnabled : boolean</code>
+</li>
+<li><code>buildOnMergeRequestMergedEnabled : boolean</code>
+</li>
+<li><code>buildOnMergeRequestIgnoredEnabled : boolean</code>
+</li>
+<li><code>triggerOnPushEnabled : boolean</code>
+</li>
+<li><code>branchesToBuild : String</code>
+</li>
+<li><code>buildDescriptionTemplate : String</code>
+</li>
+<li><code>buildStartedTemplate : String</code>
+</li>
+<li><code>buildResultTemplate : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketMultibranchTrigger'</code><div>
+<ul><li><code>overrideUrl : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>bitBucketTrigger</code><div>
+<ul><li><code>triggers</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'BitBucketPPRPullRequestServerTriggerFilter'</code><div>
+<ul><li><code>actionFilter</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'BitBucketPPRPullRequestServerApprovedActionFilter'</code><div>
+<ul><li><code>triggerOnlyIfAllReviewersApproved : boolean</code>
+</li>
+<li><code>allowedBranches : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestServerCommentCreatedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+<li><code>commentFilter : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestServerCreatedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+<li><code>isToApprove : boolean</code> (optional)
+</li>
+<li><code>isToDecline : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestServerDeclinedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestServerMergedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+<li><code>isToApprove : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestServerSourceUpdatedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+<li><code>isToApprove : boolean</code> (optional)
+</li>
+<li><code>isToDecline : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestServerUpdatedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+<li><code>isToApprove : boolean</code> (optional)
+</li>
+<li><code>isToDecline : boolean</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestTriggerFilter'</code><div>
+<ul><li><code>actionFilter</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'BitBucketPPRPullRequestApprovedActionFilter'</code><div>
+<ul><li><code>triggerOnlyIfAllReviewersApproved : boolean</code>
+</li>
+<li><code>allowedBranches : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestCommentCreatedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+<li><code>commentFilter : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestCommentDeletedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestCommentUpdatedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+<li><code>commentFilter : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestCreatedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+<li><code>isToApprove : boolean</code> (optional)
+</li>
+<li><code>isToDecline : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestDeclinedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestMergedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+<li><code>isToApprove : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRPullRequestUpdatedActionFilter'</code><div>
+<ul><li><code>allowedBranches : String</code> (optional)
+</li>
+<li><code>isToApprove : boolean</code> (optional)
+</li>
+<li><code>isToDecline : boolean</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRRepositoryTriggerFilter'</code><div>
+<ul><li><code>actionFilter</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'BitBucketPPRRepositoryPushActionFilter'</code><div>
+<ul><li><code>triggerAlsoIfTagPush : boolean</code>
+</li>
+<li><code>triggerAlsoIfNothingChanged : boolean</code>
+</li>
+<li><code>allowedBranches : String</code>
+</li>
+<li><code>isToApprove : boolean</code> (optional)
+</li>
+<li><code>triggerOnlyIfTagPush : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'BitBucketPPRServerRepositoryPushActionFilter'</code><div>
+<ul><li><code>triggerAlsoIfTagPush : boolean</code>
+</li>
+<li><code>triggerAlsoIfNothingChanged : boolean</code>
+</li>
+<li><code>allowedBranches : String</code>
+</li>
+<li><code>isToApprove : boolean</code> (optional)
+</li>
+<li><code>triggerOnlyIfTagPush : boolean</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+</ul></div></li>
+</ul></li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>bitbucketPush</code><div>
+<ul><li><code>buildOnCreatedBranch : boolean</code> (optional)
+</li>
+<li><code>overrideUrl : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>bitbucketpr</code><div>
+<div><div>
+ <p>Builds pull requests from Bitbucket.org and will report the test results.</p>
+ <p>This plugin requires Git SCM plugin configured as follows:</p>
+ <ul>
+  <li>Add Repository URL, git@bitbucket.org:${repositoryOwner}/${repositoryName}.git</li>
+  <li>In Branch Specifier, type */${sourceBranch}</li>
+ </ul>
+</div></div>
+<ul><li><code>projectPath : String</code>
+</li>
+<li><code>bitbucketServer : String</code>
+<div>URL of the Bitbucket Server. Leave it blank if Bitbucket Cloud is used</div>
+
+</li>
+<li><code>cron : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>username : String</code>
+</li>
+<li><code>password : String</code>
+</li>
+<li><code>repositoryOwner : String</code>
+</li>
+<li><code>repositoryName : String</code>
+</li>
+<li><code>branchesFilter : String</code>
+<div><div>
+ Filter option in custom format. Default value is empty or any.
+ <br>
+  Available formats: 
+ <ul>
+  <li>any pull requests applied for this project: any, * or empty string</li>
+  <li>filtered by destination branch: my-branch or more complex reg-ex filter r:^master (must be started with r: and case insensitive match).</li>
+  <li>filtered by source and destination branches: s:source-branch d:dest-branch</li>
+  <li>filtered by source and destination branches with regex: s:r:^feature d:r:master$</li>
+  <li>filtered by many destination/source branches: s:one s:two s:three d:master d:r:master$</li>
+  <li>filtered by many sources branches: s:one s:two s:r:^three d:</li>
+ </ul>
+ <p></p> When you using format with source branch filter s or destination filter d, you must specify great than one source and destination filter, eg s:1 s:2 s:... d:.
+ <br>
+  Any sources and any destinations for pull request: 
+ <ul>
+  <li>filter string: *</li>
+  <li>filter string: s: d:</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>branchesFilterBySCMIncludes : boolean</code>
+<div>Uses the Git SCM option "Branches to build" option as the value for "BranchesFilter". If the "BranchesFilter" field itself has any content, it will be ignored. 
+<br>
+ If the "Branches to build" option has values "*/master */feature-master */build-with-jenkins", then "BranchesFilter" field will have value "d:master d:feature-master d:build-with-jenkins".</div>
+
+</li>
+<li><code>ciKey : String</code>
+<div>The identifier needs to be unique among your Jenkins jobs related to this repo. This identifier is used to decide whether a commit is already built by this job and to set status for a newly built commit. If the value is changed rebuilds may occur and multiple statuses might show on an existing pull request. The value is not shown for end users of Bitbucket.</div>
+
+</li>
+<li><code>ciName : String</code>
+<div>This value is the name of the current job when showing build statuses for a pull request.</div>
+
+</li>
+<li><code>ciSkipPhrases : String</code>
+<div>A comma-separated list of strings to search the pull request title for. 
+<br>
+ e.g. If set to "trivial,[skiptest]", any PRs containing either "trivial" or "[skiptest]" (case-insensitive) will not be built.</div>
+
+</li>
+<li><code>checkDestinationCommit : boolean</code>
+</li>
+<li><code>approveIfSuccess : boolean</code>
+</li>
+<li><code>cancelOutdatedJobs : boolean</code>
+<div>If you make a new commit into your PR and there is already running job on that PR, this option will cancel such a outdated job and allows to run only one job at given PR with the newest commit.</div>
+
+</li>
+<li><code>buildChronologically : boolean</code>
+<div>Build Pull Requests in reverse order - older request will be build first</div>
+
+</li>
+<li><code>commentTrigger : String</code>
+</li>
+</ul></div></li>
+<li><code>BitbucketWebhookMultibranchTrigger</code><div>
+<ul><li><code>pullRequestTrigger : boolean</code>
+<div><div>
+ <p>This triggers a branch scan after a pull request is opened, it also updates builds by disabling builds after a pull request is declined, deleted, or merged.</p>
+</div></div>
+
+</li>
+<li><code>refTrigger : boolean</code>
+<div><div>
+ <p>This triggers a branch scan after new code is pushed.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>BitbucketWebhookTriggerImpl</code><div>
+<ul><li><code>pullRequestTrigger : boolean</code>
+<div><div>
+ <p>This triggers a build after a pull request is opened, or the source branch of a pull request is updated.</p>
+</div></div>
+
+</li>
+<li><code>refTrigger : boolean</code>
+<div><div>
+ <p>This triggers a build in Bitbucket after every push to the configured repository.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'BuildResultTrigger'</code><div>
+<ul><li><code>cronTabSpec : String</code>
+</li>
+<li><code>combinedJobs : boolean</code>
+</li>
+<li><code>jobsInfo</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>jobNames : String</code>
+</li>
+<li><code>checkedResults</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>result : String</code>
+<div><div>
+ <p>Give a build result to monitor for the selected job.</p>
+</div></div>
+
+</li>
+</ul></li>
+</ul></li>
+</ul></div></li>
+<li><code>ciBuildTrigger</code><div>
+<ul><li><code>noSquash : boolean</code> (optional)
+<div><div>
+ <p>Schedule a new job for every triggering message.</p>
+ <p>Normally if a job is queued and another triggering message is received, a new job is not submitted and the job is "squashed" into the job already queued. Checking this option forces a new job to be submitted for every triggering message that is received.</p>
+</div></div>
+
+</li>
+<li><code>providerData</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>activeMQPublisher</code><div>
+<ul><li><code>failOnError : boolean</code> (optional)
+<div><div>
+ <p>Whether you want to fail the build if there is an error sending a message. By default, it is false.</p>
+</div></div>
+
+</li>
+<li><code>messageContent : String</code> (optional)
+<div><div>
+ <p>Content of CI message to be sent. Environment variable values may be used in the content to allow customization of the message. Environment variables should use the familiar bash shell format, e.g. ${VARIABLE}.</p>
+</div></div>
+
+</li>
+<li><code>messageProperties : String</code> (optional)
+<div><div>
+ <p>KEY=value pairs, one per line (Java properties file format) to be used as message properties. Backslashes are used for escaping, so use "\\" for a single backslash. Current build parameters and/or environment variables can be used in form: ${PARAM}.</p>
+</div></div>
+
+</li>
+<li><code>messageType</code> (optional)
+<div><div>
+ <p>Type of CI message to be sent.</p>
+</div></div>
+
+<ul><li><b>Values:</b> <code>CodeQualityChecksDone</code>, <code>ComponentBuildDone</code>, <code>Custom</code>, <code>EarlyPerformanceTestingDone</code>, <code>EarlySecurityTestingDone</code>, <code>ImageUploaded</code>, <code>FunctionalTestCoverageDone</code>, <code>FunctionalTestingDone</code>, <code>NonfunctionalTestingDone</code>, <code>OotbTestingDone</code>, <code>PeerReviewDone</code>, <code>ProductAcceptedForReleaseTesting</code>, <code>ProductBuildDone</code>, <code>ProductBuildInStaging</code>, <code>ProductTestCoverageDone</code>, <code>PullRequest</code>, <code>SecurityChecksDone</code>, <code>TestingStarted</code>, <code>TestingCompleted</code>, <code>Tier0TestingDone</code>, <code>Tier1TestingDone</code>, <code>Tier2IntegrationTestingDone</code>, <code>Tier2ValidationTestingDone</code>, <code>Tier3TestingDone</code>, <code>UnitTestCoverageDone</code>, <code>UpdateDefectStatus</code></li></ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>activeMQSubscriber</code><div>
+<ul><li><code>checks</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>field : String</code>
+</li>
+<li><code>expectedValue : String</code>
+</li>
+</ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>selector : String</code> (optional)
+<div><div>
+ <p>JMS selector to choose messages that will fire the trigger.</p>
+</div></div>
+
+</li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ <p>Value (in minutes) to wait for a message matching the specified JMS selector.</p>
+</div></div>
+
+</li>
+<li><code>variable : String</code> (optional)
+<div><div>
+ <p>Environment variable to hold received message content.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>fedmsgPublisher</code><div>
+<ul><li><code>failOnError : boolean</code> (optional)
+<div><div>
+ <p>Whether you want to fail the build if there is an error sending a message. By default, it is false.</p>
+</div></div>
+
+</li>
+<li><code>messageContent : String</code> (optional)
+<div><div>
+ <p>Content of CI message to be sent at job completion. Environment variable values may be used in the content to allow customization of the message. Environment variables should use the familiar bash shell format, e.g. ${VARIABLE}.</p>
+</div></div>
+
+</li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>fedmsgSubscriber</code><div>
+<ul><li><code>checks</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>field : String</code>
+</li>
+<li><code>expectedValue : String</code>
+</li>
+</ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ <p>Value (in minutes) to wait for a message matching the specified JMS selector.</p>
+</div></div>
+
+</li>
+<li><code>variable : String</code> (optional)
+<div><div>
+ <p>Environment variable to hold received message content.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>rabbitMQPublisher</code><div>
+<ul><li><code>failOnError : boolean</code> (optional)
+<div><div>
+ <p>Whether you want to fail the build if there is an error sending a message. By default, it is false.</p>
+</div></div>
+
+</li>
+<li><code>fedoraMessaging : boolean</code> (optional)
+</li>
+<li><code>messageContent : String</code> (optional)
+<div><div>
+ <p>Content of CI message to be sent. Environment variable values may be used in the content to allow customization of the message. Environment variables should use the familiar bash shell format, e.g. ${VARIABLE}.</p>
+</div></div>
+
+</li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>schema : String</code> (optional)
+<div><div>
+ <p>Path to message schema.</p>
+</div></div>
+
+</li>
+<li><code>severity : int</code> (optional)
+<div><div>
+ <p>Severity of the message.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>rabbitMQSubscriber</code><div>
+<ul><li><code>checks</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>field : String</code>
+</li>
+<li><code>expectedValue : String</code>
+</li>
+</ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ <p>Value (in minutes) to wait for a message.</p>
+</div></div>
+
+</li>
+<li><code>variable : String</code> (optional)
+<div><div>
+ <p>Environment variable to hold received message content.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>providerList</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>activeMQPublisher</code><div>
+<ul><li><code>failOnError : boolean</code> (optional)
+<div><div>
+ <p>Whether you want to fail the build if there is an error sending a message. By default, it is false.</p>
+</div></div>
+
+</li>
+<li><code>messageContent : String</code> (optional)
+<div><div>
+ <p>Content of CI message to be sent. Environment variable values may be used in the content to allow customization of the message. Environment variables should use the familiar bash shell format, e.g. ${VARIABLE}.</p>
+</div></div>
+
+</li>
+<li><code>messageProperties : String</code> (optional)
+<div><div>
+ <p>KEY=value pairs, one per line (Java properties file format) to be used as message properties. Backslashes are used for escaping, so use "\\" for a single backslash. Current build parameters and/or environment variables can be used in form: ${PARAM}.</p>
+</div></div>
+
+</li>
+<li><code>messageType</code> (optional)
+<div><div>
+ <p>Type of CI message to be sent.</p>
+</div></div>
+
+<ul><li><b>Values:</b> <code>CodeQualityChecksDone</code>, <code>ComponentBuildDone</code>, <code>Custom</code>, <code>EarlyPerformanceTestingDone</code>, <code>EarlySecurityTestingDone</code>, <code>ImageUploaded</code>, <code>FunctionalTestCoverageDone</code>, <code>FunctionalTestingDone</code>, <code>NonfunctionalTestingDone</code>, <code>OotbTestingDone</code>, <code>PeerReviewDone</code>, <code>ProductAcceptedForReleaseTesting</code>, <code>ProductBuildDone</code>, <code>ProductBuildInStaging</code>, <code>ProductTestCoverageDone</code>, <code>PullRequest</code>, <code>SecurityChecksDone</code>, <code>TestingStarted</code>, <code>TestingCompleted</code>, <code>Tier0TestingDone</code>, <code>Tier1TestingDone</code>, <code>Tier2IntegrationTestingDone</code>, <code>Tier2ValidationTestingDone</code>, <code>Tier3TestingDone</code>, <code>UnitTestCoverageDone</code>, <code>UpdateDefectStatus</code></li></ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>activeMQSubscriber</code><div>
+<ul><li><code>checks</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>field : String</code>
+</li>
+<li><code>expectedValue : String</code>
+</li>
+</ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>selector : String</code> (optional)
+<div><div>
+ <p>JMS selector to choose messages that will fire the trigger.</p>
+</div></div>
+
+</li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ <p>Value (in minutes) to wait for a message matching the specified JMS selector.</p>
+</div></div>
+
+</li>
+<li><code>variable : String</code> (optional)
+<div><div>
+ <p>Environment variable to hold received message content.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>fedmsgPublisher</code><div>
+<ul><li><code>failOnError : boolean</code> (optional)
+<div><div>
+ <p>Whether you want to fail the build if there is an error sending a message. By default, it is false.</p>
+</div></div>
+
+</li>
+<li><code>messageContent : String</code> (optional)
+<div><div>
+ <p>Content of CI message to be sent at job completion. Environment variable values may be used in the content to allow customization of the message. Environment variables should use the familiar bash shell format, e.g. ${VARIABLE}.</p>
+</div></div>
+
+</li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>fedmsgSubscriber</code><div>
+<ul><li><code>checks</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>field : String</code>
+</li>
+<li><code>expectedValue : String</code>
+</li>
+</ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ <p>Value (in minutes) to wait for a message matching the specified JMS selector.</p>
+</div></div>
+
+</li>
+<li><code>variable : String</code> (optional)
+<div><div>
+ <p>Environment variable to hold received message content.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>rabbitMQPublisher</code><div>
+<ul><li><code>failOnError : boolean</code> (optional)
+<div><div>
+ <p>Whether you want to fail the build if there is an error sending a message. By default, it is false.</p>
+</div></div>
+
+</li>
+<li><code>fedoraMessaging : boolean</code> (optional)
+</li>
+<li><code>messageContent : String</code> (optional)
+<div><div>
+ <p>Content of CI message to be sent. Environment variable values may be used in the content to allow customization of the message. Environment variables should use the familiar bash shell format, e.g. ${VARIABLE}.</p>
+</div></div>
+
+</li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>schema : String</code> (optional)
+<div><div>
+ <p>Path to message schema.</p>
+</div></div>
+
+</li>
+<li><code>severity : int</code> (optional)
+<div><div>
+ <p>Severity of the message.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>rabbitMQSubscriber</code><div>
+<ul><li><code>checks</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>field : String</code>
+</li>
+<li><code>expectedValue : String</code>
+</li>
+</ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ <p>Value (in minutes) to wait for a message.</p>
+</div></div>
+
+</li>
+<li><code>variable : String</code> (optional)
+<div><div>
+ <p>Environment variable to hold received message content.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>providers</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>providerData</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>activeMQPublisher</code><div>
+<ul><li><code>failOnError : boolean</code> (optional)
+<div><div>
+ <p>Whether you want to fail the build if there is an error sending a message. By default, it is false.</p>
+</div></div>
+
+</li>
+<li><code>messageContent : String</code> (optional)
+<div><div>
+ <p>Content of CI message to be sent. Environment variable values may be used in the content to allow customization of the message. Environment variables should use the familiar bash shell format, e.g. ${VARIABLE}.</p>
+</div></div>
+
+</li>
+<li><code>messageProperties : String</code> (optional)
+<div><div>
+ <p>KEY=value pairs, one per line (Java properties file format) to be used as message properties. Backslashes are used for escaping, so use "\\" for a single backslash. Current build parameters and/or environment variables can be used in form: ${PARAM}.</p>
+</div></div>
+
+</li>
+<li><code>messageType</code> (optional)
+<div><div>
+ <p>Type of CI message to be sent.</p>
+</div></div>
+
+<ul><li><b>Values:</b> <code>CodeQualityChecksDone</code>, <code>ComponentBuildDone</code>, <code>Custom</code>, <code>EarlyPerformanceTestingDone</code>, <code>EarlySecurityTestingDone</code>, <code>ImageUploaded</code>, <code>FunctionalTestCoverageDone</code>, <code>FunctionalTestingDone</code>, <code>NonfunctionalTestingDone</code>, <code>OotbTestingDone</code>, <code>PeerReviewDone</code>, <code>ProductAcceptedForReleaseTesting</code>, <code>ProductBuildDone</code>, <code>ProductBuildInStaging</code>, <code>ProductTestCoverageDone</code>, <code>PullRequest</code>, <code>SecurityChecksDone</code>, <code>TestingStarted</code>, <code>TestingCompleted</code>, <code>Tier0TestingDone</code>, <code>Tier1TestingDone</code>, <code>Tier2IntegrationTestingDone</code>, <code>Tier2ValidationTestingDone</code>, <code>Tier3TestingDone</code>, <code>UnitTestCoverageDone</code>, <code>UpdateDefectStatus</code></li></ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>activeMQSubscriber</code><div>
+<ul><li><code>checks</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>field : String</code>
+</li>
+<li><code>expectedValue : String</code>
+</li>
+</ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>selector : String</code> (optional)
+<div><div>
+ <p>JMS selector to choose messages that will fire the trigger.</p>
+</div></div>
+
+</li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ <p>Value (in minutes) to wait for a message matching the specified JMS selector.</p>
+</div></div>
+
+</li>
+<li><code>variable : String</code> (optional)
+<div><div>
+ <p>Environment variable to hold received message content.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>fedmsgPublisher</code><div>
+<ul><li><code>failOnError : boolean</code> (optional)
+<div><div>
+ <p>Whether you want to fail the build if there is an error sending a message. By default, it is false.</p>
+</div></div>
+
+</li>
+<li><code>messageContent : String</code> (optional)
+<div><div>
+ <p>Content of CI message to be sent at job completion. Environment variable values may be used in the content to allow customization of the message. Environment variables should use the familiar bash shell format, e.g. ${VARIABLE}.</p>
+</div></div>
+
+</li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>fedmsgSubscriber</code><div>
+<ul><li><code>checks</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>field : String</code>
+</li>
+<li><code>expectedValue : String</code>
+</li>
+</ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ <p>Value (in minutes) to wait for a message matching the specified JMS selector.</p>
+</div></div>
+
+</li>
+<li><code>variable : String</code> (optional)
+<div><div>
+ <p>Environment variable to hold received message content.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>rabbitMQPublisher</code><div>
+<ul><li><code>failOnError : boolean</code> (optional)
+<div><div>
+ <p>Whether you want to fail the build if there is an error sending a message. By default, it is false.</p>
+</div></div>
+
+</li>
+<li><code>fedoraMessaging : boolean</code> (optional)
+</li>
+<li><code>messageContent : String</code> (optional)
+<div><div>
+ <p>Content of CI message to be sent. Environment variable values may be used in the content to allow customization of the message. Environment variables should use the familiar bash shell format, e.g. ${VARIABLE}.</p>
+</div></div>
+
+</li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>schema : String</code> (optional)
+<div><div>
+ <p>Path to message schema.</p>
+</div></div>
+
+</li>
+<li><code>severity : int</code> (optional)
+<div><div>
+ <p>Severity of the message.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>rabbitMQSubscriber</code><div>
+<ul><li><code>checks</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>field : String</code>
+</li>
+<li><code>expectedValue : String</code>
+</li>
+</ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>overrides</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>topic : String</code> (optional)
+</li>
+<li><code>queue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>timeout : int</code> (optional)
+<div><div>
+ <p>Value (in minutes) to wait for a message.</p>
+</div></div>
+
+</li>
+<li><code>variable : String</code> (optional)
+<div><div>
+ <p>Environment variable to hold received message content.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'CodingPushTrigger'</code><div>
+<ul><li><code>webHookToken : String</code>
+</li>
+<li><code>apiToken : String</code>
+</li>
+<li><code>personalToken : String</code>
+</li>
+<li><code>triggerOnMergeRequest : boolean</code>
+</li>
+<li><code>mergeRequestTriggerAction : String</code>
+</li>
+<li><code>triggerOnPush : boolean</code>
+</li>
+<li><code>addResultNote : boolean</code>
+</li>
+<li><code>ciSkip : boolean</code>
+</li>
+<li><code>branchFilterType</code>
+<ul><li><b>Values:</b> <code>All</code>, <code>NameBasedFilter</code>, <code>RegexBasedFilter</code></li></ul></li>
+<li><code>includeBranchesSpec : String</code>
+</li>
+<li><code>excludeBranchesSpec : String</code>
+</li>
+<li><code>targetBranchRegex : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'ComputedFolderWebHookTrigger'</code><div>
+<div><div>
+ <p>Allows Multibranch Scan Webhook Trigger to trigger scan of this multibranch job.</p>
+</div></div>
+<ul><li><code>token : String</code>
+<div><div>
+ The token to match with webhook token. Receive any HTTP request, JENKINS_URL/multibranch-webhook-trigger/invoke?token=[Trigger token] If a token match, than a multibranch scan will bi triggered.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'CronFolderTrigger'</code><div>
+<ul><li><code>crontab : String</code>
+</li>
+<li><code>enabled : boolean</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'DeployDbTrigger'</code><div>
+<div><div>
+ If enabled, any webhooks received by Jenkins from a DeployDB instance will be evaluated against the event types configured below.
+ <br>
+  If the incoming webhook matches one or more of the configured event types, and the service name matches, then a build of this job will be triggered. 
+ <p></p> Once the execution of a DeployDB-triggered build completes, its status will be reported back to DeployDB.
+</div></div>
+<ul><li><code>silentMode : boolean</code> (optional)
+<div><div>
+ If enabled, any builds of this job triggered by DeployDB will still be executed, but the result will <strong>not</strong> be reported back to DeployDB once the build has completed.
+</div></div>
+
+</li>
+<li><code>triggerEventTypes</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'DeploymentCompletedEvent'</code><div>
+<ul><li><code>serviceNameRegex : String</code> (optional)
+<div><div>
+ Enter the name of a DeployDB service, or a regular expression, if builds of this job may be triggered by multiple different services. 
+ <p></p> If using a regular expression, it must match the <em>entire</em> service name, i.e. "^foo" is not enough to match the service name "foobar".
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'DeploymentCreatedEvent'</code><div>
+<ul><li><code>serviceNameRegex : String</code> (optional)
+<div><div>
+ Enter the name of a DeployDB service, or a regular expression, if builds of this job may be triggered by multiple different services. 
+ <p></p> If using a regular expression, it must match the <em>entire</em> service name, i.e. "^foo" is not enough to match the service name "foobar".
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'DeploymentStartedEvent'</code><div>
+<ul><li><code>serviceNameRegex : String</code> (optional)
+<div><div>
+ Enter the name of a DeployDB service, or a regular expression, if builds of this job may be triggered by multiple different services. 
+ <p></p> If using a regular expression, it must match the <em>entire</em> service name, i.e. "^foo" is not enough to match the service name "foobar".
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'PromotionCompletedEvent'</code><div>
+<ul><li><code>serviceNameRegex : String</code> (optional)
+<div><div>
+ Enter the name of a DeployDB service, or a regular expression, if builds of this job may be triggered by multiple different services. 
+ <p></p> If using a regular expression, it must match the <em>entire</em> service name, i.e. "^foo" is not enough to match the service name "foobar".
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'DockerHubTrigger'</code><div>
+<ul><li><code>options</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'TriggerForAllUsedInJob'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'TriggerOnSpecifiedImageNames'</code><div>
+<ul><li><code>repoNames : Array / List of String</code> (optional)
+<ul></ul></li>
+</ul></div></li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'DosTrigger'</code><div>
+<ul><li><code>schedule : String</code>
+</li>
+<li><code>script : String</code>
+<div><div>
+ Enter a DOS script that will be executed periodically.
+ <br>
+  A Dos script indicates that a build should be started when the script sets the CAUSE variable to something. e.g: 
+ <ul>
+  <li>set CAUSE=Build successfully triggered by dostrigger.</li>
+ </ul>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'ElOyente'</code><div>
+<div><div>
+ <p><u>El Oyente</u> (The Listener: Spanish)</p>
+ <p>Configure a Jenkins job to be triggered on XMPP events.</p>
+ <p>This plugin integrates XMPP Pub/Sub into Jenkins, which allows jobs to be triggered on XMPP events. XMPP Pub/Sub makes it possible to let distinct services communicate with each other via a pub/sub enabled XMPP chat server.</p>
+</div></div>
+<ul><li><code>s</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>filter : String</code>
+</li>
+<li><code>node : String</code>
+</li>
+<li><code>v</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>envName : String</code>
+</li>
+<li><code>envExpr : String</code>
+</li>
+</ul></li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'FanInReverseBuildTrigger'</code><div>
+<div><div>
+ <p>Set up a trigger so that when some other projects finish building, a new build is scheduled for this project. This is convenient for running an extensive test after a build is complete, for example.</p>
+ <p>This configuration complements the "Build other projects" section in the "Post-build Actions" of an upstream project, but is preferable when you want to configure the downstream project.</p>
+</div></div>
+<ul><li><code>upstreamProjects : String</code>
+</li>
+<li><code>watchUpstreamRecursively : boolean</code>
+</li>
+<li><code>threshold : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'FeatureBranchAwareTrigger'</code><div>
+<div><div>
+ Configure Jenkins to poll changes in SCM. 
+ <p>Note that this is going to be an expensive operation for CVS, as every polling requires Jenkins to scan the entire workspace and verify it with the server. Consider setting up a "push" trigger to avoid this overhead, as described in <a href="https://www.jenkins.io/redirect/scm-change-trigger" rel="nofollow"> this document </a></p>
+</div></div>
+<ul><li><code>scmpoll_spec : String</code>
+</li>
+<li><code>ignorePostCommitHooks : boolean</code> (optional)
+<div><div>
+ Ignore changes notified by SCM post-commit hooks. 
+ <p>This can be useful if you want to prevent some long-running jobs (e.g. reports) starting because of every commit, but still want to run them periodic if SCM changes have occurred.</p>
+ <p>Note that this option needs to be supported by the SCM plugin, too! The subversion-plugin supports this since version 1.44.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'FilesFoundTrigger'</code><div>
+<div>Poll one or more directories and start a build if certain files are found within those directories.</div>
+<ul><li><code>spec : String</code>
+</li>
+<li><code>configs</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>node : String</code>
+<div>The master or slave node on which the search will be performed. 
+<p>Environment variable during the build: filesfound_setting_node</p></div>
+
+</li>
+<li><code>directory : String</code>
+<div>The directory to poll. A search will be performed within this directory for the relevant files. 
+<p>Environment variable during the build: filesfound_setting_directory</p></div>
+
+</li>
+<li><code>files : String</code>
+<div><a href="http://ant.apache.org/manual/dirtasks.html" rel="nofollow">Fileset 'includes'</a> setting that specifies the files to find within the polled directory. 
+<p>Environment variable during the build: filesfound_setting_files</p></div>
+
+</li>
+<li><code>ignoredFiles : String</code>
+<div><a href="http://ant.apache.org/manual/dirtasks.html" rel="nofollow">Fileset 'excludes'</a> setting that specifies the files to ignore within the polled directory when deciding whether to trigger a build. 
+<p>Environment variable during the build: filesfound_setting_ignoredfiles</p></div>
+
+</li>
+<li><code>triggerNumber : String</code>
+<div>The build is triggered when the number of files found is greater than or equal to this number. 
+<p>Environment variable during the build: filesfound_setting_triggernumber</p></div>
+
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'FogbugzStatePoller'</code><div>
+<div><div>
+ Provides a <a href="https://en.wikipedia.org/wiki/cron" rel="nofollow">cron</a> -like feature to periodically execute this project. 
+ <p>This feature is primarily for using Jenkins as a cron replacement, and it is <b>not ideal for continuously building software projects</b> . When people first start continuous integration, they are often so used to the idea of regularly scheduled builds like nightly/weekly that they use this feature. However, the point of continuous integration is to start a build as soon as a change is made, to provide a quick feedback to the change. To do that you need to <a href="https://www.jenkins.io/redirect/scm-change-trigger" rel="nofollow"> hook up SCM change notification to Jenkins </a> .</p>
+ <p>So, before using this feature, stop and ask yourself if this is really what you want.</p>
+</div></div>
+<ul><li><code>spec : String</code>
+</li>
+<li><code>ciProject : String</code>
+<div><div>
+ This is the name of the CI-project the case should be merged into. It can be filled in in the "ci project" field in fogbugz.
+</div></div>
+
+</li>
+<li><code>ciProjectField : String</code>
+<div><div>
+ This is the name of the field in which the CI-project the case should be merged into is specified. This is the lowercase name of the field, with all non-alphabetical characters replaced by 'x'. For example, if your field is called 'CI Project', you would fill in 'cixproject'. If it is 'Project 123*', you'd fill in 'projectxxxxx'. Please ensure that there are no custom fields in jenkins whose names would be the same with this replacement (e.g. make sure you don't have 'project name 1' and project name 2', as they'd both be 'projectxnamexx').
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'FolderContentTrigger'</code><div>
+<ul><li><code>cronTabSpec : String</code>
+</li>
+<li><code>path : String</code>
+<div><div>
+ <p>Folder path to poll.<br>
+   By default, all files of the specified folder are checked. You can restrict to some files by giving more information in the 'Advanced' section.</p>
+</div></div>
+
+</li>
+<li><code>includes : String</code>
+</li>
+<li><code>excludes : String</code>
+<div><div>
+ <p>Optionally specify the 'excludes' pattern, such as "foo/bar/**/*". A file that matches this mask will not be polled even if it matches the mask specified in 'includes' section.</p>
+</div></div>
+
+</li>
+<li><code>excludeCheckLastModificationDate : boolean</code>
+</li>
+<li><code>excludeCheckContent : boolean</code>
+</li>
+<li><code>excludeCheckFewerOrMoreFiles : boolean</code>
+</li>
+</ul></div></li>
+<li><code>GenericTrigger</code><div>
+<div><div>
+ <p>Allows Generic Webhook Trigger to trigger this job.</p>
+</div></div>
+<ul><li><code>genericVariables</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>defaultValue : String</code> (optional)
+</li>
+<li><code>expressionType</code> (optional)
+<ul><li><b>Values:</b> <code>XPath</code>, <code>JSONPath</code></li></ul></li>
+<li><code>regexpFilter : String</code> (optional)
+</li>
+</ul></li>
+<li><code>genericRequestVariables</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>regexpFilter : String</code>
+</li>
+</ul></li>
+<li><code>genericHeaderVariables</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>regexpFilter : String</code>
+</li>
+</ul></li>
+<li><code>allowSeveralTriggersPerBuild : boolean</code> (optional)
+</li>
+<li><code>causeString : String</code> (optional)
+</li>
+<li><code>overrideQuietPeriod : boolean</code> (optional)
+</li>
+<li><code>printContributedVariables : boolean</code> (optional)
+</li>
+<li><code>printPostContent : boolean</code> (optional)
+</li>
+<li><code>regexpFilterExpression : String</code> (optional)
+</li>
+<li><code>regexpFilterText : String</code> (optional)
+</li>
+<li><code>shouldNotFlatten : boolean</code> (optional)
+</li>
+<li><code>shouldNotFlattern : boolean</code> (optional)
+</li>
+<li><code>silentResponse : boolean</code> (optional)
+</li>
+<li><code>token : String</code> (optional)
+</li>
+<li><code>tokenCredentialId : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>gerrit</code><div>
+<ul><li><code>gerritProjects</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>compareType</code>
+<ul><li><b>Values:</b> <code>PLAIN</code>, <code>ANT</code>, <code>REG_EXP</code></li></ul></li>
+<li><code>pattern : String</code>
+</li>
+<li><code>branches</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>compareType</code>
+<ul><li><b>Values:</b> <code>PLAIN</code>, <code>ANT</code>, <code>REG_EXP</code></li></ul></li>
+<li><code>pattern : String</code>
+</li>
+</ul></li>
+<li><code>topics</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>compareType</code>
+<ul><li><b>Values:</b> <code>PLAIN</code>, <code>ANT</code>, <code>REG_EXP</code></li></ul></li>
+<li><code>pattern : String</code>
+</li>
+</ul></li>
+<li><code>filePaths</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>compareType</code>
+<ul><li><b>Values:</b> <code>PLAIN</code>, <code>ANT</code>, <code>REG_EXP</code></li></ul></li>
+<li><code>pattern : String</code>
+</li>
+</ul></li>
+<li><code>forbiddenFilePaths</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>compareType</code>
+<ul><li><b>Values:</b> <code>PLAIN</code>, <code>ANT</code>, <code>REG_EXP</code></li></ul></li>
+<li><code>pattern : String</code>
+</li>
+</ul></li>
+<li><code>disableStrictForbiddenFileVerification : boolean</code>
+</li>
+<li><code>hashtags</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>compareType</code>
+<ul><li><b>Values:</b> <code>PLAIN</code>, <code>ANT</code>, <code>REG_EXP</code></li></ul></li>
+<li><code>pattern : String</code>
+</li>
+</ul></li>
+</ul></li>
+<li><code>buildAbortedMessage : String</code> (optional)
+</li>
+<li><code>buildCancellationPolicy</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>abortNewPatchsets : boolean</code>
+</li>
+<li><code>abortManualPatchsets : boolean</code>
+</li>
+<li><code>abortSameTopic : boolean</code>
+</li>
+<li><code>abortAbandonedPatchsets : boolean</code>
+</li>
+</ul></li>
+<li><code>buildFailureMessage : String</code> (optional)
+</li>
+<li><code>buildNotBuiltMessage : String</code> (optional)
+</li>
+<li><code>buildStartMessage : String</code> (optional)
+</li>
+<li><code>buildSuccessfulMessage : String</code> (optional)
+</li>
+<li><code>buildUnstableMessage : String</code> (optional)
+</li>
+<li><code>buildUnsuccessfulFilepath : String</code> (optional)
+</li>
+<li><code>changeSubjectParameterMode</code> (optional)
+<div><p>How the change subject parameter <em>(GERRIT_CHANGE_SUBJECT)</em> should be added to the build, if available.</p>
+<ul>
+ <li><strong>Human readable <em>(default)</em>:</strong> Plain text, as it arrives to Jenkins. With quotes escaped if configured above.</li>
+ <li><strong>Encoded (Base64):</strong> Base64 encoded string.</li>
+ <li><strong>Do not add:</strong> The parameter isn't added to the build at all.</li>
+</ul></div>
+
+<ul><li><b>Values:</b> <code>PLAIN</code>, <code>BASE64</code>, <code>NONE</code></li></ul></li>
+<li><code>commentTextParameterMode</code> (optional)
+<div><p>How the comment text parameter <em>(GERRIT_EVENT_COMMENT_TEXT)</em> should be added to the build, if available.</p>
+<ul>
+ <li><strong>Human readable:</strong> Plain text, as it arrives to Jenkins. With quotes escaped if configured above.</li>
+ <li><strong>Encoded (Base64) <em>(default)</em>:</strong> Base64 encoded string.</li>
+ <li><strong>Do not add:</strong> The parameter isn't added to the build at all.</li>
+</ul></div>
+
+<ul><li><b>Values:</b> <code>PLAIN</code>, <code>BASE64</code>, <code>NONE</code></li></ul></li>
+<li><code>commitMessageParameterMode</code> (optional)
+<div><p>How the commit message parameter <em>(GERRIT_CHANGE_COMMIT_MESSAGE)</em> should be added to the build, if available.</p>
+<ul>
+ <li><strong>Human readable:</strong> Plain text, as it arrives to Jenkins. With quotes escaped if configured above.</li>
+ <li><strong>Encoded (Base64) <em>(default)</em>:</strong> Base64 encoded string.</li>
+ <li><strong>Do not add:</strong> The parameter isn't added to the build at all.</li>
+</ul></div>
+
+<ul><li><b>Values:</b> <code>PLAIN</code>, <code>BASE64</code>, <code>NONE</code></li></ul></li>
+<li><code>customUrl : String</code> (optional)
+</li>
+<li><code>dependencyJobsNames : String</code> (optional)
+</li>
+<li><code>dynamicTriggerConfiguration : boolean</code> (optional)
+</li>
+<li><code>escapeQuotes : boolean</code> (optional)
+</li>
+<li><code>gerritBuildAbortedCodeReviewValue : int</code> (optional)
+</li>
+<li><code>gerritBuildAbortedVerifiedValue : int</code> (optional)
+</li>
+<li><code>gerritBuildFailedCodeReviewValue : int</code> (optional)
+</li>
+<li><code>gerritBuildFailedVerifiedValue : int</code> (optional)
+</li>
+<li><code>gerritBuildNotBuiltCodeReviewValue : int</code> (optional)
+</li>
+<li><code>gerritBuildNotBuiltVerifiedValue : int</code> (optional)
+</li>
+<li><code>gerritBuildStartedCodeReviewValue : int</code> (optional)
+</li>
+<li><code>gerritBuildStartedVerifiedValue : int</code> (optional)
+</li>
+<li><code>gerritBuildSuccessfulCodeReviewValue : int</code> (optional)
+</li>
+<li><code>gerritBuildSuccessfulVerifiedValue : int</code> (optional)
+</li>
+<li><code>gerritBuildUnstableCodeReviewValue : int</code> (optional)
+</li>
+<li><code>gerritBuildUnstableVerifiedValue : int</code> (optional)
+</li>
+<li><code>gerritSlaveId : String</code> (optional)
+</li>
+<li><code>nameAndEmailParameterMode</code> (optional)
+<div><p>How the "Compound name and email parameters" should be added to the build. I.e.</p>
+<ul>
+ <li>GERRIT_CHANGE_RESTORER</li>
+ <li>GERRIT_CHANGE_ABANDONER</li>
+ <li>GERRIT_CHANGE_OWNER</li>
+ <li>GERRIT_PATCHSET_UPLOADER</li>
+ <li>GERRIT_EVENT_ACCOUNT</li>
+</ul>
+<p></p>
+<ul>
+ <li><strong>Human readable <em>(default)</em>:</strong> Plain text, as it arrives to Jenkins. With quotes escaped if configured above.</li>
+ <li><strong>Encoded (Base64):</strong> Base64 encoded string.</li>
+ <li><strong>Do not add:</strong> The parameters aren't added to the build at all.</li>
+</ul></div>
+
+<ul><li><b>Values:</b> <code>PLAIN</code>, <code>BASE64</code>, <code>NONE</code></li></ul></li>
+<li><code>notificationLevel : String</code> (optional)
+</li>
+<li><code>serverName : String</code> (optional)
+</li>
+<li><code>silentMode : boolean</code> (optional)
+</li>
+<li><code>silentStartMode : boolean</code> (optional)
+</li>
+<li><code>skipVote</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>onSuccessful : boolean</code>
+</li>
+<li><code>onFailed : boolean</code>
+</li>
+<li><code>onUnstable : boolean</code>
+</li>
+<li><code>onNotBuilt : boolean</code>
+</li>
+<li><code>onAborted : boolean</code>
+</li>
+</ul></li>
+<li><code>topicAssociation</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>ignoreNewChangeStatus : boolean</code>
+</li>
+<li><code>ignoreMergedChangeStatus : boolean</code>
+</li>
+<li><code>ignoreAbandonedChangeStatus : boolean</code>
+</li>
+</ul></li>
+<li><code>triggerConfigURL : String</code> (optional)
+</li>
+<li><code>triggerOnEvents</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>changeAbandoned</code><div>
+<ul></ul></div></li>
+<li><code>changeMerged</code><div>
+<ul></ul></div></li>
+<li><code>changeRestored</code><div>
+<ul></ul></div></li>
+<li><code>commentAddedContains</code><div>
+<ul><li><code>commentAddedCommentContains : String</code>
+</li>
+</ul></div></li>
+<li><code>commentAdded</code><div>
+<ul><li><code>verdictCategory : String</code>
+</li>
+<li><code>commentAddedTriggerApprovalValue : String</code>
+</li>
+</ul></div></li>
+<li><code>draftPublished</code><div>
+<ul></ul></div></li>
+<li><code>hashtagChanged</code><div>
+<ul><li><code>hashtagChanged : String</code>
+</li>
+</ul></div></li>
+<li><code>patchsetCreated</code><div>
+<ul><li><code>commitMessageContainsRegEx : String</code> (optional)
+</li>
+<li><code>excludeDrafts : boolean</code> (optional)
+</li>
+<li><code>excludeNoCodeChange : boolean</code> (optional)
+</li>
+<li><code>excludePrivateState : boolean</code> (optional)
+</li>
+<li><code>excludeTrivialRebase : boolean</code> (optional)
+</li>
+<li><code>excludeWipState : boolean</code> (optional)
+</li>
+<li><code>uploaderNameContainsRegEx : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>privateStateChanged</code><div>
+<ul></ul></div></li>
+<li><code>refUpdated</code><div>
+<ul></ul></div></li>
+<li><code>rerunCheck</code><div>
+<ul></ul></div></li>
+<li><code>topicChanged</code><div>
+<ul></ul></div></li>
+<li><code>wipStateChanged</code><div>
+<ul></ul></div></li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'GhprbTrigger'</code><div>
+<ul><li><code>adminlist : String</code>
+</li>
+<li><code>whitelist : String</code>
+</li>
+<li><code>orgslist : String</code>
+</li>
+<li><code>cron : String</code>
+</li>
+<li><code>triggerPhrase : String</code>
+<div><div>
+ When filled, commenting this phrase in the pull request will trigger a build. Matches case insensitively and supports regular expressions (e.g. .*(re)?run tests.*).
+</div></div>
+
+</li>
+<li><code>onlyTriggerPhrase : boolean</code>
+<div><div>
+ When checked, only commenting the trigger phrase in the pull request will trigger a build. All other methods of triggering a pull request build are disabled.
+</div></div>
+
+</li>
+<li><code>useGitHubHooks : boolean</code>
+<div><div>
+ Checking this option will disable regular polling (cron) for changes in GitHub and will try to create a GitHub hook. Creating a GitHub hook requires that the user which is specified in the <em>GitHub Pull Request Builder</em> configuration has admin rights to the specified repository.
+ <br>
+  By default, GitHub hooks created this way will have SSL certificate verification enabled. To disable SSL certificate verification in these GitHub hooks, start Jenkins with system property <code>org.jenkinsci.plugins.ghprb.GhprbRepository.webhook.insecure</code> set to <code>true</code>.
+ <br>
+  If you want to create a hook manually set it for event types: <code>issue_comment</code>, <code>pull_request</code> and url <code>&lt; your jenkins server url &gt;/ghprbhook/</code>. The url should be composed of your full jenkins server url plus the ending <code>/ghprbhook/</code> path. If your jenkins server is just a domain like https://jenkins.yourcompany.com then the url would look like https://jenkins.yourcompany.com/ghprbhook/. If your jenkins server is accessed at a path off of a domain like https://yourcompany.com/jenkins then the url would look like https://yourcompany.com/jenkins/ghprbhook/
+ <br>
+ . Your Jenkins server must be accessible from internet.
+</div></div>
+
+</li>
+<li><code>permitAll : boolean</code>
+<div><div>
+ <strong>This is dangerous!!!</strong> With this option enabled everyone can run his own code on your machine!
+</div></div>
+
+</li>
+<li><code>autoCloseFailedPullRequests : boolean</code>
+</li>
+<li><code>displayBuildErrorsOnDownstreamBuilds : boolean</code>
+</li>
+<li><code>commentFilePath : String</code>
+</li>
+<li><code>skipBuildPhrase : String</code>
+<div><div>
+ When filled, adding this phrase to the pull request title or body will <b>not</b> trigger a build.
+</div></div>
+
+</li>
+<li><code>blackListCommitAuthor : String</code>
+<div><div>
+ When filled, pull request commits from this user(s) will <b>not</b> trigger a build. (Note: this can be overridden by job-specific configuration.)
+</div></div>
+
+</li>
+<li><code>whiteListTargetBranches</code>
+<div><div>
+ Adding branches to this whitelist allows you to selectively test pull requests destined for these branches only.
+ <br>
+  Supports regular expressions (e.g. 'master', 'feature-.*').
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>branch : String</code>
+</li>
+</ul></li>
+<li><code>blackListTargetBranches</code>
+<div><div>
+ Adding branches to this blacklist allows you to prevent pull requests for specific branches.
+ <br>
+  Supports regular expressions (e.g. 'master', 'feature-.*').
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>branch : String</code>
+</li>
+</ul></li>
+<li><code>allowMembersOfWhitelistedOrgsAsAdmin : boolean</code>
+<div><div>
+ Use this option to allow members of whitelisted organisations to behave like admins, i.e. whitelist users and trigger pull request testing.
+</div></div>
+
+</li>
+<li><code>msgSuccess : String</code>
+</li>
+<li><code>msgFailure : String</code>
+</li>
+<li><code>commitStatusContext : String</code>
+</li>
+<li><code>gitHubAuthId : String</code>
+</li>
+<li><code>buildDescTemplate : String</code>
+<div><div>
+ Set the build description. The default is: &lt;a title=\"$title\" href=\"$url\"&gt;PR #$pullId&lt;/a&gt;: $abbrTitle
+</div></div>
+
+</li>
+<li><code>blackListLabels : String</code>
+</li>
+<li><code>whiteListLabels : String</code>
+</li>
+<li><code>extensions</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'GhprbBuildLog'</code><div>
+<ul><li><code>logExcerptLines : int</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'GhprbBuildStatus'</code><div>
+<ul><li><code>messages</code>
+<div><div>
+ Global: Sets a default for each job, if the job setup has no entries then this is used.
+ <br>
+ <br>
+  Add a text message to the comment posted to the pull request on build completion.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>result</code>
+<div><div>
+ Choose either SUCCESS, ERROR, or FAILURE for when the message is appended to the comment that is added to the pull request.
+</div></div>
+
+<ul><li><b>Values:</b> <code>PENDING</code>, <code>SUCCESS</code>, <code>ERROR</code>, <code>FAILURE</code></li></ul></li>
+<li><code>message : String</code>
+<div><div>
+ The message that is appended to a comment when a build finishes with the desired build status. If no status updates should be made when a build finishes with the indicated build status, use "--none--" to alert the trigger.
+</div></div>
+
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'GhprbCancelBuildsOnUpdate'</code><div>
+<ul><li><code>overrideGlobal : boolean</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'GhprbCommentFile'</code><div>
+<ul><li><code>commentFilePath : String</code>
+<div><div>
+ Extends the standard build comment message on github with a custom message file.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'GhprbNoCommitStatus'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'GhprbPublishJenkinsUrl'</code><div>
+<ul><li><code>publishedURL : String</code>
+<div><div>
+ Sometimes Jenkins is set up behind a firewall and normal access is restricted. This URL will be added to a comment appended to the Pull Request.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'GhprbSimpleStatus'</code><div>
+<ul><li><code>showMatrixStatus : boolean</code>
+</li>
+<li><code>commitStatusContext : String</code>
+<div><div>
+ <a href="https://developer.github.com/v3/repos/statuses/" rel="nofollow">Context</a>: A string label to differentiate this status from the status of other systems. Default: "default"
+</div></div>
+
+</li>
+<li><code>statusUrl : String</code>
+<div><div>
+ Use a custom url instead of the Jenkins job url. If the desired url should be blank, use "--none--" to alert the trigger to use a blank url.
+</div></div>
+
+</li>
+<li><code>triggeredStatus : String</code>
+<div><div>
+ Use a custom status for when a build is triggered. If the field is left blank then the default value is used instead. If no status updates should be made when a build is triggered, use "--none--" to alert the trigger.
+</div></div>
+
+</li>
+<li><code>startedStatus : String</code>
+<div><div>
+ Use a custom status for when a build is started. If the field is left blank then the default value is used instead. If no status updates should be made when a build is started, use "--none--" to alert the trigger.
+</div></div>
+
+</li>
+<li><code>addTestResults : boolean</code>
+</li>
+<li><code>completedStatus</code>
+<div><div>
+ Use a custom status on the commit for when a build is completed. If the field is left blank then the default value is used instead.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>result</code>
+<div><div>
+ Choose either SUCCESS, ERROR, or FAILURE for when the message is appended to the comment that is added to the pull request.
+</div></div>
+
+<ul><li><b>Values:</b> <code>PENDING</code>, <code>SUCCESS</code>, <code>ERROR</code>, <code>FAILURE</code></li></ul></li>
+<li><code>message : String</code>
+<div><div>
+ The message that is appended to a comment when a build finishes with the desired build status. If no status updates should be made when a build finishes with the indicated build status, use "--none--" to alert the trigger.
+</div></div>
+
+</li>
+</ul></li>
+</ul></div></li>
+</ul></li>
+<li><code>includedRegions : String</code>
+<div><div>
+ Each inclusion uses regular expression pattern matching, and must be separated by a new line. An empty list implies that everything is included. 
+ <br>
+ <pre>        myapp/src/main/web/.*\.html
+        myapp/src/main/web/.*\.jpeg
+        myapp/src/main/web/.*\.gif
+    </pre>
+ <br>
+  The example above illustrates that a build will only occur, if html/jpeg/gif files have been committed to the GitHub repository. Exclusions take precedence over inclusions, if there is an overlap between included and excluded regions. 
+ <br>
+  More information on regular expressions can be found <a href="http://www.regular-expressions.info/" rel="nofollow">here</a>.
+</div></div>
+
+</li>
+<li><code>excludedRegions : String</code>
+<div><div>
+ Each exclusion uses regular expression pattern matching, and must be separated by a new line. 
+ <br>
+ <pre>        myapp/src/main/web/.*\.html
+        myapp/src/main/web/.*\.jpeg
+        myapp/src/main/web/.*\.gif
+    </pre>
+ <br>
+  The example above illustrates that if only html/jpeg/gif files have been committed to the GitHub repository a build will not occur. 
+ <br>
+  More information on regular expressions can be found <a href="http://www.regular-expressions.info/" rel="nofollow">here</a>.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'GitBucketPushTrigger'</code><div>
+<ul><li><code>passThroughGitCommit : boolean</code>
+<div><div>
+ This "parameter" passes the SHA1 commit ID into this job, and thereby causes the job to check out the specified commit.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>githubBranches</code><div>
+<ul><li><code>spec : String</code>
+</li>
+<li><code>triggerMode</code>
+<div><div>
+ Trigger modes. 
+ <ul>
+  <li><strong>Cron</strong>: Checks for PRs to build periodically.</li>
+  <li><strong>Hooks</strong>: Listens for GitHub webhook events.</li>
+  <li><strong>Hooks plus Cron</strong>: Not fully supported - combines webhooks and cron checks.</li>
+  <li><strong>Transient Hooks</strong>: Not fully supported - listens for GitHub webhook events, does not preserve state for pull requests across runs or Jenkins restarts, etc.</li>
+ </ul>
+</div></div>
+
+<ul><li><b>Values:</b> <code>CRON</code>, <code>HEAVY_HOOKS</code>, <code>HEAVY_HOOKS_CRON</code>, <code>LIGHT_HOOKS</code></li></ul></li>
+<li><code>events</code>
+<div><div>
+ GitHub events or statuses that should or should not trigger a build for branch. 
+ <br>
+  The specified events will be checked in order, and the first to match will be used, so be sure to put events/statuses that should prevent triggering a build first in order. 
+ <br>
+  If you want to skip PR, you must place skip events firstly.
+</div></div>
+
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>commit</code><div>
+<ul><li><code>checks</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>commitMessagePattern</code><div>
+<div><div>
+ If set, the plugin will only build revisions commited with messages that match the pattern. If 'skip' is selected, any revisions with matching messages will be ignored. 
+ <br>
+ <br>
+  This can be used to exclude commits done by the build itself from triggering another build, assuming the build server commits the change with a distinct message.
+</div></div>
+<ul><li><code>exclude : boolean</code> (optional)
+</li>
+<li><code>matchCriteria : String</code> (optional)
+<div><div>
+ Inclusion/Exclusion uses pattern matching 
+ <br>
+ <br>
+  .*\[maven-release-plugin\].* 
+ <br>
+  The example above illustrates that if only revisions with "[maven-release-plugin]" message in first comment line have been committed to the SCM a build will not occur. 
+ <br>
+ <br>
+  You can create more complex patterns using embedded flag expressions. 
+ <br>
+ <br>
+  (?s).*FOO.* 
+ <br>
+  This example will search FOO message in all comment lines.
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+</ul></div></li>
+<li><code>branchCreated</code><div>
+<ul></ul></div></li>
+<li><code>deleted</code><div>
+<ul></ul></div></li>
+<li><code>hashChanged</code><div>
+<ul></ul></div></li>
+<li><code>restriction</code><div>
+<ul><li><code>exclude : boolean</code> (optional)
+</li>
+<li><code>matchAsPattern : boolean</code> (optional)
+</li>
+<li><code>matchCriteriaStr : String</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>abortRunning : boolean</code> (optional)
+<div>If selected, when a new PR build is triggered, if there are already running/building builds/runs for that PR on the executors, they'll be aborted in favor of this most recent build.</div>
+
+</li>
+<li><code>cancelQueued : boolean</code> (optional)
+</li>
+<li><code>preStatus : boolean</code> (optional)
+</li>
+<li><code>repoProviders</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>githubPlugin</code><div>
+<ul><li><code>cacheConnection : boolean</code> (optional)
+<div>Old trigger behaviour when connection resolved first from global settings and then used locally.</div>
+
+</li>
+<li><code>manageHooks : boolean</code> (optional)
+<div>Allow disable registering hooks even if it specified in global settings.</div>
+
+</li>
+<li><code>repoPermission</code> (optional)
+<div>ADMIN, PUSH or PULL repository permission required for choosing connection from `GitHub Plugin` `GitHub Server Configs`.</div>
+
+<ul><li><b>Values:</b> <code>ADMIN</code>, <code>PUSH</code>, <code>PULL</code></li></ul></li>
+</ul></div></li>
+</ul></li>
+<li><code>skipFirstRun : boolean</code> (optional)
+<div><div>
+ If selected, older, pre-existing PRs will be skipped on the first run of the persistence-based check, and will be marked as seen. Any changes to those PRs after the first check will be treated normally, triggering builds as configured.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>githubPullRequests</code><div>
+<div><div>
+ Trigger that integrates with GitHub Pull Requests and Issues activities and launches runs in response.
+</div></div>
+<ul><li><code>spec : String</code>
+</li>
+<li><code>triggerMode</code>
+<div><div>
+ Trigger modes. 
+ <ul>
+  <li><strong>Cron</strong>: Checks for PRs to build periodically.</li>
+  <li><strong>Hooks</strong>: Listens for GitHub webhook events.</li>
+  <li><strong>Hooks plus Cron</strong>: Not fully supported - combines webhooks and cron checks.</li>
+  <li><strong>Transient Hooks</strong>: Not fully supported - listens for GitHub webhook events, does not preserve state for pull requests across runs or Jenkins restarts, etc.</li>
+ </ul>
+</div></div>
+
+<ul><li><b>Values:</b> <code>CRON</code>, <code>HEAVY_HOOKS</code>, <code>HEAVY_HOOKS_CRON</code>, <code>LIGHT_HOOKS</code></li></ul></li>
+<li><code>events</code>
+<div><div>
+ GitHub events or statuses that should or should not trigger a build of a pull request. 
+ <br>
+  The specified events will be checked in order, and the first to match will be used, so be sure to put events/statuses that should prevent triggering a build first in order. 
+ <br>
+  For performance reasons, "Pull Request Opened" should go before other events that require more detailed checking of the pull request, such as "Comment Matched to Pattern". But if you want to skip PR, you must place skip events firstly.
+</div></div>
+
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>close</code><div>
+<div><div>
+ Triggers when a pull request is closed. Works only when pull request was opened and closed between persistence-based trigger runs.
+</div></div>
+<ul></ul></div></li>
+<li><code>commentPattern</code><div>
+<div><div>
+ Triggers when a comment matching the pattern is posted in a pull request.
+ <br>
+  For example <b>Test ([A-Za-z0-9 ,!]+) tags please.</b>
+</div></div>
+<ul><li><code>comment : String</code>
+</li>
+</ul></div></li>
+<li><code>commitChanged</code><div>
+<div><div>
+ Triggers when a previously built pull request's hash has changed from the previous state (i.e., a new commit is pushed, or force-pushed).
+</div></div>
+<ul></ul></div></li>
+<li><code>description</code><div>
+<div><div>
+ If given, don't build a pull request if its description contains the given string.
+</div></div>
+<ul><li><code>skipMsg : String</code>
+</li>
+</ul></div></li>
+<li><code>labelsAdded</code><div>
+<div><div>  Triggers run when label is added to pull request. Set of labels is considered added only when at least one label of set was newly added (was not saved in local PR previously) AND every label of set exists on remote PR now.
+</div></div>
+<ul><li><code>label</code>
+<ul><b>Nested Object</b>
+<div><div>
+ Help page for GitHubPRLabel class. Not used anywhere?
+</div></div>
+<li><code>labels : String</code>
+<div><p>Every new label on new line</p></div>
+
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>labelsExist</code><div>
+<div><div>
+ Triggers when all the given labels are on a pull request, or blocks triggering if all the given labels are on a pull request. 
+ <br><strong>NOTE</strong>: This can cause infinite triggers of pull requests when the skip option isn't selected, so be careful.
+</div></div>
+<ul><li><code>label</code>
+<ul><b>Nested Object</b>
+<div><div>
+ Help page for GitHubPRLabel class. Not used anywhere?
+</div></div>
+<li><code>labels : String</code>
+<div><p>Every new label on new line</p></div>
+
+</li>
+</ul></li>
+<li><code>skip : boolean</code>
+</li>
+</ul></div></li>
+<li><code>labelsNotExist</code><div>
+<div><div>
+ Triggers or skips triggering when all the given labels are missing from a pull request. 
+ <br><strong>NOTE</strong>: This can cause infinite triggers of pull requests when the skip option isn't selected, so be careful.
+</div></div>
+<ul><li><code>label</code>
+<ul><b>Nested Object</b>
+<div><div>
+ Help page for GitHubPRLabel class. Not used anywhere?
+</div></div>
+<li><code>labels : String</code>
+<div><p>Every new label on new line</p></div>
+
+</li>
+</ul></li>
+<li><code>skip : boolean</code>
+</li>
+</ul></div></li>
+<li><code>labelsPatternExists</code><div>
+<div><div>
+ Triggers when a label on a pull request matches the given pattern, or blocks triggering when a label matches, as configured. 
+ <br><strong>NOTE</strong>: This can cause infinite triggers of pull requests when the skip option isn't selected, so be careful.
+</div></div>
+<ul><li><code>label</code>
+<ul><b>Nested Object</b>
+<div><div>
+ Help page for GitHubPRLabel class. Not used anywhere?
+</div></div>
+<li><code>labels : String</code>
+<div><p>Every new label on new line</p></div>
+
+</li>
+</ul></li>
+<li><code>skip : boolean</code>
+</li>
+</ul></div></li>
+<li><code>labelsRemoved</code><div>
+<div><div>
+ Triggers a build when the label or labels specified are removed from a pull request. Note that with multiple labels, all of the labels must be removed to cause the trigger to fire.
+</div></div>
+<ul><li><code>label</code>
+<ul><b>Nested Object</b>
+<div><div>
+ Help page for GitHubPRLabel class. Not used anywhere?
+</div></div>
+<li><code>labels : String</code>
+<div><p>Every new label on new line</p></div>
+
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>nonMergeable</code><div>
+<ul><li><code>skip : boolean</code>
+</li>
+</ul></div></li>
+<li><code>Number</code><div>
+<ul><li><code>number : int</code>
+<div>PR number to run additional checks against</div>
+
+</li>
+<li><code>match : boolean</code>
+<div>Defines whether the pull request number in the trigger event must match to the above PR number. If not, then logic is not applied and the event wouldn't influence on the trigger result.</div>
+
+</li>
+<li><code>skip : boolean</code>
+<div>Defines whether a matching or non matching pull request number in the trigger event, depending on the above "Match number" flag, skips building instead of triggering a build.</div>
+
+</li>
+</ul></div></li>
+<li><code>Open</code><div>
+<div><div>
+ Triggers a build of a pull request when the pull request is opened or reopened.
+</div></div>
+<ul></ul></div></li>
+</ul></li>
+<li><code>abortRunning : boolean</code> (optional)
+<div>If selected, when a new PR build is triggered, if there are already running/building builds/runs for that PR on the executors, they'll be aborted in favor of this most recent build.</div>
+
+</li>
+<li><code>branchRestriction</code> (optional)
+<div><div>
+ Limit job run to certain branch matches.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>targetBranch : String</code>
+</li>
+</ul></li>
+<li><code>cancelQueued : boolean</code> (optional)
+<div><div>
+ If selected, when a new PR build is triggered, if there are already pending builds for that PR in the queue, they'll be removed from the queue in favor of this most recent build.
+</div></div>
+
+</li>
+<li><code>preStatus : boolean</code> (optional)
+<div><div>
+ Updates the GitHub pull request's status to PENDING once the build for that pull request has been queued to run.
+</div></div>
+
+</li>
+<li><code>repoProviders</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>githubPlugin</code><div>
+<ul><li><code>cacheConnection : boolean</code> (optional)
+<div>Old trigger behaviour when connection resolved first from global settings and then used locally.</div>
+
+</li>
+<li><code>manageHooks : boolean</code> (optional)
+<div>Allow disable registering hooks even if it specified in global settings.</div>
+
+</li>
+<li><code>repoPermission</code> (optional)
+<div>ADMIN, PUSH or PULL repository permission required for choosing connection from `GitHub Plugin` `GitHub Server Configs`.</div>
+
+<ul><li><b>Values:</b> <code>ADMIN</code>, <code>PUSH</code>, <code>PULL</code></li></ul></li>
+</ul></div></li>
+</ul></li>
+<li><code>skipFirstRun : boolean</code> (optional)
+<div><div>
+ If selected, older, pre-existing PRs will be skipped on the first run of the persistence-based check, and will be marked as seen. Any changes to those PRs after the first check will be treated normally, triggering builds as configured.
+</div></div>
+
+</li>
+<li><code>userRestriction</code> (optional)
+<div><div>
+ Adds ability to restrict who is allowed to run and whitelist users/orgs. Users can be updated with special comment from allowed users/orgs.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>orgs : String</code>
+</li>
+<li><code>users : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>githubPush</code><div>
+<div>When Jenkins receives a GitHub push hook, GitHub Plugin checks to see whether the hook came from a GitHub repository which matches the Git repository defined in SCM/Git section of this job. If they match and this option is enabled, GitHub Plugin triggers a one-time polling on GITScm. When GITScm polls GitHub, it finds that there is a change and initiates a build. The last sentence describes the behavior of Git plugin, thus the polling and initiating the build is not a part of GitHub plugin.</div>
+<ul></ul></div></li>
+<li><code>gitlab</code><div>
+<div><div>
+ Options for triggering Jenkins jobs based on GitLab events.
+</div></div>
+<ul><li><code>acceptMergeRequestOnSuccess : boolean</code> (optional)
+</li>
+<li><code>addCiMessage : boolean</code> (optional)
+</li>
+<li><code>addNoteOnMergeRequest : boolean</code> (optional)
+</li>
+<li><code>addVoteOnMergeRequest : boolean</code> (optional)
+</li>
+<li><code>branchFilterName : String</code> (optional)
+</li>
+<li><code>branchFilterType</code> (optional)
+<ul><li><b>Values:</b> <code>All</code>, <code>NameBasedFilter</code>, <code>RegexBasedFilter</code></li></ul></li>
+<li><code>cancelPendingBuildsOnUpdate : boolean</code> (optional)
+<div><div>
+ If enabled, then pending builds will be canceled when a merge request is updated in the GitLab repository.
+</div></div>
+
+</li>
+<li><code>ciSkip : boolean</code> (optional)
+<div><div>
+ If enabled, then the build will be skipped when a GitLab comment includes the text <code>ci-skip</code>.
+</div></div>
+
+</li>
+<li><code>excludeBranchesSpec : String</code> (optional)
+</li>
+<li><code>includeBranchesSpec : String</code> (optional)
+</li>
+<li><code>labelsThatForcesBuildIfAdded : String</code> (optional)
+</li>
+<li><code>mergeRequestLabelFilterConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>exclude : String</code> (optional)
+</li>
+<li><code>include : String</code> (optional)
+</li>
+</ul></li>
+<li><code>noteRegex : String</code> (optional)
+</li>
+<li><code>pendingBuildName : String</code> (optional)
+</li>
+<li><code>secretToken : String</code> (optional)
+</li>
+<li><code>setBuildDescription : boolean</code> (optional)
+<div><div>
+ If enabled, then the build Jenkins description will be updated with the build cause.
+</div></div>
+
+</li>
+<li><code>skipWorkInProgressMergeRequest : boolean</code> (optional)
+<div><div>
+ If enabled, then the build will be skipped when a GitLab merge request is a work in progress.
+</div></div>
+
+</li>
+<li><code>sourceBranchRegex : String</code> (optional)
+</li>
+<li><code>targetBranchRegex : String</code> (optional)
+</li>
+<li><code>triggerOnAcceptedMergeRequest : boolean</code> (optional)
+<div><div>
+ If enabled, then the build will be triggered when a merge request is accepted in the GitLab repository.
+</div></div>
+
+</li>
+<li><code>triggerOnApprovedMergeRequest : boolean</code> (optional)
+<div><div>
+ If enabled, then the build will be triggered when a merge request is approved on the GitLab Enterprise Edition repository.
+</div></div>
+
+</li>
+<li><code>triggerOnClosedMergeRequest : boolean</code> (optional)
+<div><div>
+ If enabled, then the build will be triggered when merge requests are closed in the GitLab repository.
+</div></div>
+
+</li>
+<li><code>triggerOnMergeRequest : boolean</code> (optional)
+<div><div>
+ If enabled, then the build will be triggered when a merge request is created in the GitLab repository.
+</div></div>
+
+</li>
+<li><code>triggerOnNoteRequest : boolean</code> (optional)
+<div><div>
+ If enabled, then the build will be triggered when a comment is added to the GitLab repository.
+</div></div>
+
+</li>
+<li><code>triggerOnPipelineEvent : boolean</code> (optional)
+</li>
+<li><code>triggerOnPush : boolean</code> (optional)
+<div><div>
+ If enabled, then the build will be triggered when new commits are pushed to the GitLab repository.
+</div></div>
+
+</li>
+<li><code>triggerOnlyIfNewCommitsPushed : boolean</code> (optional)
+<div><div>
+ If enabled, then the build will be triggered when new commits are pushed to the GitLab repository.
+</div></div>
+
+</li>
+<li><code>triggerOpenMergeRequestOnPush</code> (optional)
+<div><div>
+ If enabled, then the build will be triggered when changes are made to open merge requests in the GitLab repository.
+</div></div>
+
+<ul><li><b>Values:</b> <code>never</code>, <code>source</code>, <code>both</code></li></ul></li>
+<li><code>triggerToBranchDeleteRequest : boolean</code> (optional)
+<div><div>
+ If enabled, then the build will be triggered when a branch is deleted from the GitLab repository.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>gitee</code><div>
+<ul><li><code>acceptPullRequestOnSuccess : boolean</code> (optional)
+</li>
+<li><code>addCiMessage : boolean</code> (optional)
+</li>
+<li><code>addNoteOnPullRequest : boolean</code> (optional)
+</li>
+<li><code>addVoteOnPullRequest : boolean</code> (optional)
+</li>
+<li><code>branchFilterName : String</code> (optional)
+</li>
+<li><code>branchFilterType</code> (optional)
+<ul><li><b>Values:</b> <code>All</code>, <code>NameBasedFilter</code>, <code>RegexBasedFilter</code></li></ul></li>
+<li><code>buildInstructionFilterType</code> (optional)
+<ul><li><b>Values:</b> <code>NONE</code>, <code>CI_SKIP</code>, <code>CI_BUILD</code></li></ul></li>
+<li><code>cancelIncompleteBuildOnSamePullRequest : boolean</code> (optional)
+</li>
+<li><code>cancelPendingBuildsOnUpdate : boolean</code> (optional)
+</li>
+<li><code>ciBuildForDeleteRef : boolean</code> (optional)
+</li>
+<li><code>ciSkip : boolean</code> (optional)
+</li>
+<li><code>ciSkipFroTestNotRequired : boolean</code> (optional)
+</li>
+<li><code>excludeBranchesSpec : String</code> (optional)
+</li>
+<li><code>ignorePullRequestConflicts : boolean</code> (optional)
+</li>
+<li><code>includeBranchesSpec : String</code> (optional)
+</li>
+<li><code>noteRegex : String</code> (optional)
+</li>
+<li><code>pendingBuildName : String</code> (optional)
+</li>
+<li><code>pullRequestLabelFilterConfig</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>exclude : String</code> (optional)
+</li>
+<li><code>include : String</code> (optional)
+</li>
+</ul></li>
+<li><code>secretToken : String</code> (optional)
+</li>
+<li><code>setBuildDescription : boolean</code> (optional)
+</li>
+<li><code>skipLastCommitHasBeenBuild : boolean</code> (optional)
+</li>
+<li><code>skipWorkInProgressPullRequest : boolean</code> (optional)
+</li>
+<li><code>targetBranchRegex : String</code> (optional)
+</li>
+<li><code>triggerOnAcceptedPullRequest : boolean</code> (optional)
+</li>
+<li><code>triggerOnApprovedPullRequest : boolean</code> (optional)
+</li>
+<li><code>triggerOnClosedPullRequest : boolean</code> (optional)
+</li>
+<li><code>triggerOnCommitComment : boolean</code> (optional)
+</li>
+<li><code>triggerOnNoteRequest : boolean</code> (optional)
+</li>
+<li><code>triggerOnOpenPullRequest : boolean</code> (optional)
+</li>
+<li><code>triggerOnPipelineEvent : boolean</code> (optional)
+</li>
+<li><code>triggerOnPush : boolean</code> (optional)
+</li>
+<li><code>triggerOnTestedPullRequest : boolean</code> (optional)
+</li>
+<li><code>triggerOnUpdatePullRequest : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'GitlabBuildTrigger'</code><div>
+<ul><li><code>cron : String</code>
+</li>
+<li><code>projectPath : String</code>
+<div><div>
+ <p>The project path on Gitlab. You can find the project path in the project SSH or HTTP path. For example, in "http://example.com/group/project.git", the project path would be "group/project".</p>
+</div></div>
+
+</li>
+<li><code>targetBranchRegex : String</code>
+<div><div>
+ <p>The target branch regex is used to allow execution of this job for certain branches. The regex will be not used when this field is left empty.</p>
+ <p>Examples:</p>
+ <pre>#  Allow execution for release and hotfix branches
+(.*release.*|.*hotfix.*)
+# Allow execution for dev branches only
+.*dev.*
+  </pre>
+</div></div>
+
+</li>
+<li><code>useHttpUrl : boolean</code>
+</li>
+<li><code>assigneeFilter : String</code>
+</li>
+<li><code>tagFilter : String</code>
+</li>
+<li><code>triggerComment : String</code>
+</li>
+<li><code>autoCloseFailed : boolean</code>
+</li>
+<li><code>autoMergePassed : boolean</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'GogsTrigger'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'HudsonStartupTrigger'</code><div>
+<ul><li><code>label : String</code>
+<div><div>
+ <p>By default, the build is triggered when Jenkins instance starts.<br>
+   You can specify a specific (or a list of) node name or a node label to trigger a build when nodes (whose names or labels corresponding to the specified value) start. <br>
+   You can also specify the 'master' value to refer explicitly to Jenkins master.</p>
+</div></div>
+
+</li>
+<li><code>quietPeriod : String</code>
+<div><div>
+ <p>Give the quiet period before scheduling the job.<br>
+   The time unit is in seconds.<br>
+   '0' is the default value, the job is scheduling without any delay at startup.</p>
+</div></div>
+
+</li>
+<li><code>nodeParameterName : String</code>
+<div><div>
+ <p>Pass node name as job parameter. <br>
+   Requires <a href="https://wiki.jenkins-ci.org/display/JENKINS/NodeLabel+Parameter+Plugin" rel="nofollow">NodeLabel Parameter Plugin</a></p>
+</div></div>
+
+</li>
+<li><code>runOnChoice : String</code>
+<div><div>
+ <p><b>Run on initial connection</b><br>
+   Toggle whether or not to run the job when agent connects to Jenkins (True by default)<br><br><b>Run when node brought online</b><br>
+   Toggle whether to run the job when node is brought online (False by default)</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>issueCommentTrigger</code><div>
+<ul><li><code>commentPattern : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'IvyTrigger'</code><div>
+<ul><li><code>cronTabSpec : String</code>
+</li>
+<li><code>ivyPath : String</code>
+<div><div>
+ The path of an ivy file.
+ <br>
+  It can be absolute or relative to the workspace of the latest build.
+</div></div>
+
+</li>
+<li><code>ivySettingsPath : String</code>
+<div><div>
+ The path of an ivySetting.xml file.
+ <br>
+  It can be absolute or relative to the workspace of the latest build or an URL to retrieve the settings from.
+</div></div>
+
+</li>
+<li><code>propertiesFilePath : String</code>
+<div><div>
+ One or more properties file path(s).
+ <br>
+  Separate file paths with a semi-colon.
+ <br>
+  Properties will be injected as variables into the ivy settings file.
+</div></div>
+
+</li>
+<li><code>propertiesContent : String</code>
+<div><div>
+ Properties content.
+ <br>
+  Properties will be injected as variables in the ivy settings file.
+</div></div>
+
+</li>
+<li><code>labelRestriction</code>
+<ul><b>Nested Object</b>
+<li><code>triggerLabel : String</code>
+</li>
+</ul></li>
+<li><code>enableConcurrentBuild : boolean</code>
+</li>
+<li><code>debug : boolean</code>
+</li>
+<li><code>downloadArtifacts : boolean</code>
+<div><div>
+ Whether or not to download the artifacts within a dependency.
+ <br>
+  If this is false, then much less disk space is used. However a change in the artifacts, or the addition or removal of artifacts, of a dependency that does not <strong>also</strong> cause a version number change in the dependency, will not be detected.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'JiraChangelogTrigger'</code><div>
+<div><div>
+ Set up a trigger that listens to JIRA issue changes. See plugin documentation setup section before using this trigger.
+</div></div>
+<ul><li><code>changelogMatchers</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'CustomFieldChangelogMatcher'</code><div>
+<div><div>
+ Matches custom field changes in the updated JIRA issue.
+</div></div>
+<ul><li><code>field : String</code>
+<div><div>
+ The custom field name that has been changed during the issue update. This refers to custom field name, so it should <strong>not</strong> be in customfield_* format. This field is case sensitive.
+</div></div>
+
+</li>
+<li><code>newValue : String</code>
+<div><div>
+ The new value of the updated field.
+</div></div>
+
+</li>
+<li><code>oldValue : String</code>
+<div><div>
+ The old value of the updated field, meaning the value before it is updated.
+</div></div>
+
+</li>
+<li><code>comparingNewValue : boolean</code> (optional)
+<div><div>
+ Tick this if you want this matcher to compare the new value of the updated field. New value changes will be ignored otherwise.
+</div></div>
+
+</li>
+<li><code>comparingOldValue : boolean</code> (optional)
+<div><div>
+ Tick this if you want this matcher to compare the old value of the updated field. Old value changes will be ignored otherwise.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'JiraFieldChangelogMatcher'</code><div>
+<div><div>
+ Matches JIRA built-in field changes in the updated JIRA issue.
+</div></div>
+<ul><li><code>field : String</code>
+<div><div>
+ The JIRA Field ID that has been changed during the issue update. Select one from the combo box below or type the ID if it's not available in the combo box.
+</div></div>
+
+</li>
+<li><code>newValue : String</code>
+<div><div>
+ The new value of the updated field.
+</div></div>
+
+</li>
+<li><code>oldValue : String</code>
+<div><div>
+ The old value of the updated field, meaning the value before it is updated.
+</div></div>
+
+</li>
+<li><code>comparingNewValue : boolean</code> (optional)
+<div><div>
+ Tick this if you want this matcher to compare the new value of the updated field. New value changes will be ignored otherwise.
+</div></div>
+
+</li>
+<li><code>comparingOldValue : boolean</code> (optional)
+<div><div>
+ Tick this if you want this matcher to compare the old value of the updated field. Old value changes will be ignored otherwise.
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>jqlFilter : String</code> (optional)
+<div><div>
+ A build will only be triggered if the updated issues matches this JQL filter. The updated issues in this particular case are the issues where the comments have been added in.
+</div></div>
+
+</li>
+<li><code>parameterMappings</code> (optional)
+<div><div>
+ Maps JIRA issue attributes as Jenkins parameters. Can be used when this job is parameterized.
+</div></div>
+
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'CustomFieldParameterMapping'</code><div>
+<ul><li><code>jenkinsParameter : String</code>
+<div><div>
+ The Jenkins parameter name that will be filled in with the JIRA attribute value resolves from the attribute path.
+</div></div>
+
+</li>
+<li><code>customFieldId : String</code>
+<div><div>
+ The custom field id to be mapped (not the name). This field must contain numbers only e.g. 10000, 10020, etc.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'IssueAttributePathParameterMapping'</code><div>
+<div><div>
+ <p>JIRA attribute path resolves an attribute value from the JIRA issue that has triggered the job. The attribute value is resolved from <a href="https://docs.atlassian.com/jira-rest-java-client-api/2.0.0-m31/jira-rest-java-client-api/apidocs/" rel="nofollow">JRJC Issue Object</a> To understand how the attribute path works, refer to the example below.</p>
+ <p><span>Example attribute path</span></p>
+ <table>
+  <thead>
+   <tr>
+    <td>Attribute Path</td>
+    <td>Attribute Value</td>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>id</td>
+    <td>11120</td>
+   </tr>
+   <tr>
+    <td>description</td>
+    <td>description body</td>
+   </tr>
+   <tr>
+    <td>summary</td>
+    <td>summary content</td>
+   </tr>
+   <tr>
+    <td>status.name</td>
+    <td>To Do</td>
+   </tr>
+   <tr>
+    <td>timeTracking.originalEstimateMinutes</td>
+    <td>5</td>
+   </tr>
+  </tbody>
+ </table>
+ <p><span>Example Issue JSON that will be parsed to become JRJC Issue Object</span></p>
+ <pre>{
+  "expand": "renderedFields,names,schema,transitions,operations,editmeta,changelog,versionedRepresentations",
+  "id": "11120",
+  "self": "http://localhost:2990/jira/rest/api/2/issue/11120",
+  "key": "TEST-136",
+  "fields": {
+    ...
+    "description": "description body",
+    "summary": "summary content",
+    ...
+    "status": {
+      "name": "To Do",
+        ...
+    },
+    "timetracking": {
+      "originalEstimate": "5m",
+      "remainingEstimate": "10m",
+      "originalEstimateSeconds": 300,
+      "remainingEstimateSeconds": 600
+    }
+  }
+}
+    </pre>
+</div></div>
+<ul><li><code>jenkinsParameter : String</code>
+<div><div>
+ The Jenkins parameter name that will be filled in with the JIRA attribute value resolves from the attribute path.
+</div></div>
+
+</li>
+<li><code>issueAttributePath : String</code>
+</li>
+</ul></div></li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'JiraCommentTrigger'</code><div>
+<div><div>
+ Set up a trigger so that when a comment is added to JIRA. See plugin documentation setup section before using this trigger.
+</div></div>
+<ul><li><code>commentPattern : String</code> (optional)
+<div><div>
+ Triggers build only when the comment added to JIRA matches this pattern.
+</div></div>
+
+</li>
+<li><code>jqlFilter : String</code> (optional)
+<div><div>
+ A build will only be triggered if the updated issues matches this JQL filter. The updated issues in this particular case are the issues where the comments have been added in.
+</div></div>
+
+</li>
+<li><code>parameterMappings</code> (optional)
+<div><div>
+ Maps JIRA issue attributes as Jenkins parameters. Can be used when this job is parameterized.
+</div></div>
+
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'CustomFieldParameterMapping'</code><div>
+<ul><li><code>jenkinsParameter : String</code>
+<div><div>
+ The Jenkins parameter name that will be filled in with the JIRA attribute value resolves from the attribute path.
+</div></div>
+
+</li>
+<li><code>customFieldId : String</code>
+<div><div>
+ The custom field id to be mapped (not the name). This field must contain numbers only e.g. 10000, 10020, etc.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'IssueAttributePathParameterMapping'</code><div>
+<div><div>
+ <p>JIRA attribute path resolves an attribute value from the JIRA issue that has triggered the job. The attribute value is resolved from <a href="https://docs.atlassian.com/jira-rest-java-client-api/2.0.0-m31/jira-rest-java-client-api/apidocs/" rel="nofollow">JRJC Issue Object</a> To understand how the attribute path works, refer to the example below.</p>
+ <p><span>Example attribute path</span></p>
+ <table>
+  <thead>
+   <tr>
+    <td>Attribute Path</td>
+    <td>Attribute Value</td>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>id</td>
+    <td>11120</td>
+   </tr>
+   <tr>
+    <td>description</td>
+    <td>description body</td>
+   </tr>
+   <tr>
+    <td>summary</td>
+    <td>summary content</td>
+   </tr>
+   <tr>
+    <td>status.name</td>
+    <td>To Do</td>
+   </tr>
+   <tr>
+    <td>timeTracking.originalEstimateMinutes</td>
+    <td>5</td>
+   </tr>
+  </tbody>
+ </table>
+ <p><span>Example Issue JSON that will be parsed to become JRJC Issue Object</span></p>
+ <pre>{
+  "expand": "renderedFields,names,schema,transitions,operations,editmeta,changelog,versionedRepresentations",
+  "id": "11120",
+  "self": "http://localhost:2990/jira/rest/api/2/issue/11120",
+  "key": "TEST-136",
+  "fields": {
+    ...
+    "description": "description body",
+    "summary": "summary content",
+    ...
+    "status": {
+      "name": "To Do",
+        ...
+    },
+    "timetracking": {
+      "originalEstimate": "5m",
+      "remainingEstimate": "10m",
+      "originalEstimateSeconds": 300,
+      "remainingEstimateSeconds": 600
+    }
+  }
+}
+    </pre>
+</div></div>
+<ul><li><code>jenkinsParameter : String</code>
+<div><div>
+ The Jenkins parameter name that will be filled in with the JIRA attribute value resolves from the attribute path.
+</div></div>
+
+</li>
+<li><code>issueAttributePath : String</code>
+</li>
+</ul></div></li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'KanboardQueryTrigger'</code><div>
+<ul><li><code>crontabSpec : String</code>
+</li>
+<li><code>projectIdentifier : String</code>
+</li>
+<li><code>query : String</code>
+<div><div>
+ <a href="https://bm.framaboard.org/?controller=DocumentationController&amp;action=show&amp;file=search" rel="nofollow">Official Kanboard advanced search syntax documentation</a>
+</div></div>
+
+</li>
+<li><code>referenceRegexp : String</code>
+<div><div>
+ <p>The trigger will only activate for tasks whose reference matches the regular expression. No filtering will be done if left blank.</p>
+ <p>The eventual regexp matching groups will be exported to the KANBOARD_TASKREF_{index of group} environment variables.</p>
+ <p>For example:</p>
+ <p>The regular expression <code>([A-Z]+)-([0-9]+)</code> will match the reference <code>ABC-12345</code> and will export the following environment variables:<br></p>
+ <ul>
+  <li><code>KANBOARD_TASKREF=ABC-12345</code></li>
+  <li><code>KANBOARD_TASKREF_0=ABC</code></li>
+  <li><code>KANBOARD_TASKREF_1=12345</code></li>
+ </ul>
+ <p></p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>labelAddedTrigger</code><div>
+<ul><li><code>labelTriggerPattern : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'LabeledFilterWebHookTrigger'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'MailCommandTrigger'</code><div>
+<div><div>
+ To pool arriving e-mail that CLI command is written.
+</div></div>
+<ul><li><code>spec : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'MavenDependencyUpdateTrigger'</code><div>
+<ul><li><code>cron_value : String</code>
+</li>
+<li><code>checkPlugins : boolean</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'NugetTrigger'</code><div>
+<ul><li><code>cronTabSpec : String</code>
+</li>
+<li><code>checkPrerelease : boolean</code>
+</li>
+<li><code>useVerboseLogs : boolean</code>
+</li>
+</ul></div></li>
+<li><code>ontrackMultiTrigger</code><div>
+<ul><li><code>spec : String</code>
+</li>
+<li><code>triggers</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>project : String</code>
+</li>
+<li><code>branch : String</code>
+</li>
+<li><code>promotion : String</code>
+</li>
+<li><code>parameterName : String</code>
+</li>
+<li><code>minimumResult : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>ontrackTrigger</code><div>
+<ul><li><code>spec : String</code>
+<div><div>
+ CRON spec defining the schedule at which a new promotion will be checked.
+</div></div>
+
+</li>
+<li><code>project : String</code>
+<div><div>
+ Name of the Ontrack project to check.
+</div></div>
+
+</li>
+<li><code>branch : String</code>
+<div><div>
+ Name of the Ontrack branch to check.
+</div></div>
+
+</li>
+<li><code>promotion : String</code>
+<div><div>
+ <p>Name of the Ontrack promotion to check.</p>
+ <p>Possible values are:</p>
+ <ul>
+  <li><i>Blank</i> - last build, with or without promotion</li>
+  <li><i>*</i> - last promoted build</li>
+  <li><i>X</i> - last build promoted to <code>X</code></li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>parameterName : String</code>
+<div><div>
+ Name of the parameter which contains the name of the build.
+</div></div>
+
+</li>
+<li><code>minimumResult : String</code>
+<div><div>
+ Define the minimum required quality of the previous run
+ <br>
+  This value is only used in case there is no new version to build, but the previous run failed:
+ <br>
+  If set to:
+ <br>
+ <ul>
+  <li>SUCCESS: the build will rerun if the previous result was worse than SUCCESS</li>
+  <li>UNSTABLE: the build will rerun if the previous result was worse than UNSTABLE</li>
+  <li>FAILURE: the build will rerun if the previous result was worse than FAILURE</li>
+ </ul>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>p4Trigger</code><div>
+<ul></ul></div></li>
+<li><code>parameterizedCron</code><div>
+<div><div>
+ Adds support for passing parameters to parameterized builds on top of the default scheduler.
+</div></div>
+<ul><li><code>parameterizedSpecification : String</code>
+<div><div>
+ <strong>follow convention of cron, schedule with name=value pairs at the end of each line.</strong>
+ <p>Everything up till the % character is just like the normal Jenkins Cron-like scheduler. Then after the % character you should format your parameters as name value pairs separated by equals and semicolons: name=value;othername=othervalue</p>
+ <p>There are of course limitations to what can be passed as parameters. As well as what types of parameters can be assigned. The internal mechanism leans on the same HTTP POST request method for triggering builds as documented in <a href="https://wiki.jenkins-ci.org/display/JENKINS/Parameterized+Build" rel="nofollow">Launching a build with parameters.</a></p>
+ <ul>
+  <li>don't use semi-colons in the values</li>
+  <li>don't use equals in the values</li>
+ </ul>
+ <p></p>
+ <p>This is a first step toward solving <a href="https://issues.jenkins-ci.org/browse/JENKINS-16352" rel="nofollow">this Jenkins issue</a>.</p>
+ <p>Examples:</p>
+ <pre># every fifteen minutes (perhaps at :07, :22, :37, :52)
+H/15 * * * * %name=value
+
+# every ten minutes in the first half of every hour (three times, perhaps at :04, :14, :24)
+H(0-29)/10 * * * * % name=value; othername=othervalue
+# every fifteen minutes with timezone
+TZ=Australia/Sydney
+H/15 * * * * %name=value
+# every fifteen minutes with percent sign in param key/value
+H/15 * * * * %name=value;key=10%;
+</pre>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'PeriodicFolderTrigger'</code><div>
+<div><div>
+ <p>Some kinds of folders are reindexed automatically and immediately upon receipt of an external event. For example, a multi-branch project will recheck its SCM repository for new or removed or modified branches when it receives an SCM change notification. (Push notification may be configured as per the SCM plugin used for each respective branch source.) Such notifications can occasionally be unreliable, however, or Jenkins might not even be running to receive them. In some cases no immediate notification is even possible, for example because Jenkins is behind a firewall and can only poll an external system.</p>
+ <p>This trigger allows for a periodic fallback, but when necessary. If no indexing has been performed in the specified interval, then an indexing will be scheduled. For example, in the case of a multi-branch project, if the source control system is not configured for push notification, set a short interval (most people will pick between 15 minutes and 1 hour). If the source control system is configured for push notification, set an interval that corresponds to the maximum acceptable delay in the event of a lost push notification as the last commit of the day. (Subsequent commits should trigger indexing anyway and result in the commit being picked up, so most people will pick between 4 hours and 1 day.)</p>
+</div></div>
+<ul><li><code>interval : String</code>
+<div><div>
+ <p>The maximum amount of time since the last indexing that is allowed to elapse before an indexing is triggered. For example: interval('5m') // or '2h', '7d', '5000ms', '60s'</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>acmPipelineStart</code><div>
+<ul><li><code>aioProject : String</code>
+</li>
+<li><code>program : String</code>
+</li>
+<li><code>pipeline : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'PollMailboxTrigger'</code><div>
+<ul><li><code>cronTabSpec : String</code>
+</li>
+<li><code>labelRestriction</code>
+<ul><b>Nested Object</b>
+<li><code>triggerLabel : String</code>
+</li>
+</ul></li>
+<li><code>enableConcurrentBuild : boolean</code>
+<div><div>
+ Enable concurrent build.
+ <br>
+  By default, polling process waits for the end of the build.
+ <br>
+  Check this option enables you trigger concurrent builds such as 10 builds at a time.
+</div></div>
+
+</li>
+<li><code>host : String</code>
+<div><div>
+ The <i>Host</i> field, allows you to enter the DNS name/hostname/IP Address of the server, hosting the email account service.
+</div></div>
+
+</li>
+<li><code>username : String</code>
+<div><div>
+ The <i>Username</i> field, allows you to enter the username required to connect to this email account.
+</div></div>
+
+</li>
+<li><code>password</code>
+<div><div>
+ The <i>Password</i> field, allows you to enter the password (<b>N.B.</b> or application password) required to connect to this email account.
+</div></div>
+
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>script : String</code>
+<div><div>
+ The <i>Advanced Email Properties</i> field, allows you to configure the plugin, using standard key=value property notation.
+ <br>
+ <br>
+  You can override the following default property values:
+ <br>
+ <br>
+ <div>
+  <pre># Connection configuration
+storeName=imaps
+
+# Search configuration
+folder=INBOX
+subjectContains=jenkins &gt;
+receivedXMinutesAgo=1440
+
+# JavaMail configuration
+mail.debug=true
+mail.debug.auth=true
+mail.imaps.host=&lt;above_host&gt;
+mail.imaps.port=993
+</pre>
+ </div>
+ <br>
+  You can also add <a href="https://javamail.java.net/nonav/docs/api/com/sun/mail/imap/package-summary.html" rel="nofollow">java imap properties</a>, to further configure the connection.
+</div></div>
+
+</li>
+<li><code>attachments : String</code>
+<div><div>
+ The <i>Attachments</i> field, allows you to determine what to do with email attachments. If attachments are downloaded, the <span>pmt_attachmentsDirectory</span> variable with be set to the download directory.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'PromotionTrigger'</code><div>
+<ul><li><code>jobName : String</code>
+</li>
+<li><code>process : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'PullRequestBuildTrigger'</code><div>
+<div><div>
+ The following will be performed for this job: 
+ <ul>
+  <li>Configure Git to check out source code for the pull request if Git is selected in Source Code Management section of this job and not yet configured.</li>
+  <li>A build of this job will be triggered every time a pull request is updated or created.</li>
+  <li>Cancel older in-progress builds of a pull request when a new build for that same pull request is scheduled.</li>
+  <li>Instances deployed by ElasticBox - Deploy Box build step for a pull request in this job or its downstream jobs will be terminated and deleted after the pull request is merged or closed.</li>
+ </ul>
+ <p>The following parameters are available to the triggered build:</p>
+ <ul>
+  <li><b>PR_NUMBER</b> - Pull request number</li>
+  <li><b>PR_URL</b> - Pull request URL (e.g. https://github.com/jenkinsci/elasticbox-plugin/pull/1)</li>
+  <li><b>PR_OWNER</b> - GitHub login of the pull request owner</li>
+  <li><b>PR_OWNER_EMAIL</b> - Pull request owner's email address</li>
+  <li><b>PR_MERGE_BRANCH</b> - Branch that the pull request wants to be merged to (e.g. master)</li>
+  <li><b>PR_BRANCH</b> - Git branch of the pull request (e.g. fix-unit-tests)</li>
+  <li><b>PR_COMMIT</b> - Git commit for the triggered build (e.g. fe982b7082035025bef4e851b5bd250a21aae18e)</li>
+  <li><b>PR_TITLE</b> - Pull request title</li>
+  <li><b>BUILD_REQUESTER</b> - GitHub login of the person requesting this build via a trigger phrase like <i>“Jenkins test this please”</i></li>
+  <li><b>BUILD_REQUESTER_EMAIL</b> - Email address of the build requester</li>
+ </ul>
+ <p></p>
+</div></div>
+<ul><li><code>triggerPhrase : String</code>
+<div><div>
+ Phrase in Java regular expression. Commenting this phrase in the pull request will trigger a build. You can't trigger build with comment if this field is blank.
+</div></div>
+
+</li>
+<li><code>whitelist : String</code>
+<div><div>
+ Comma-separate list of users and/or organizations that can trigger builds for pull requests. If this list is empty, everyone can trigger pull request builds.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>pullRequestReview</code><div>
+<ul><li><code>reviewStates : Array / List of String</code> (optional)
+<ul></ul></li>
+</ul></div></li>
+<li><code>$class: 'QuayIoTrigger'</code><div>
+<ul><li><code>repositories : Array / List of String</code> (optional)
+<div><span>List of repositories which will trigger the job (whitespace separated)<span></span></span></div>
+
+<ul></ul></li>
+</ul></div></li>
+<li><code>$class: 'RemoteBuildResultTrigger'</code><div>
+<ul><li><code>cronTabSpec : String</code>
+</li>
+<li><code>remoteJobInfos</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>id : String</code> (optional)
+</li>
+<li><code>remoteJobName : String</code> (optional)
+<div><div>
+ <p>If project is Multibranch Pipeline or in folder, Remote Job Name should be full path: <b>job/{xxx}/job/{xxx}</b></p>
+</div></div>
+
+</li>
+<li><code>remoteServer : String</code> (optional)
+<div><div>
+ The remote Jenkins as configured in the Jenkins global configuration (Manage Jenkins &gt; Configure System &gt; Remote Result Trigger Configuration &gt; Remote Jenkins Server).
+</div></div>
+
+</li>
+<li><code>resultChecks</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>expectedValue : String</code>
+</li>
+</ul></li>
+<li><code>triggerResults : Array / List of boolean</code> (optional)
+<ul></ul></li>
+<li><code>uid : String</code> (optional)
+<div><div>
+ The <b>Unique Identifier(Optional)</b> only used to replace injected envs, like env REMOTE_${uid}_BUILD_NUMBER.If didn't set, it will be replace with <b>Remote Job Name</b>
+</div></div>
+
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'RemoteBuildTrigger'</code><div>
+<ul><li><code>remoteBuildToken : String</code>
+<div><div>
+ <p><b>Remote build token.</b></p>
+ <p>You can set token string for remote build. Build will be triggered if application message has the same token in token attribute.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>upstream</code><div>
+<div><div>
+ <p>Set up a trigger so that when some other projects finish building, a new build is scheduled for this project. This is convenient for running an extensive test after a build is complete, for example.</p>
+ <p>This configuration complements the "Build other projects" section in the "Post-build Actions" of an upstream project, but is preferable when you want to configure the downstream project.</p>
+</div></div>
+<ul><li><code>upstreamProjects : String</code>
+</li>
+<li><code>threshold : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'RundeckTrigger'</code><div>
+<ul><li><code>filterJobs : boolean</code>
+<div><div>
+ Only triggers a new build if the Rundeck execution at the origin of the notification matches one of the following Rundeck job.
+</div></div>
+
+</li>
+<li><code>jobsIdentifiers : Array / List of String</code>
+<ul></ul></li>
+<li><code>executionStatuses : Array / List of String</code>
+<div><div>
+ Only triggers a build if the status of the Rundeck execution at the origin of the notification matches one of the checked statuses.
+</div></div>
+
+<ul></ul></li>
+<li><code>token</code>
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+</ul></div></li>
+<li><code>pollSCM</code><div>
+<div><div>
+ Configure Jenkins to poll changes in SCM. 
+ <p>Note that this is going to be an expensive operation for CVS, as every polling requires Jenkins to scan the entire workspace and verify it with the server. Consider setting up a "push" trigger to avoid this overhead, as described in <a href="https://www.jenkins.io/redirect/scm-change-trigger" rel="nofollow"> this document </a></p>
+</div></div>
+<ul><li><code>scmpoll_spec : String</code>
+</li>
+<li><code>ignorePostCommitHooks : boolean</code> (optional)
+<div><div>
+ Ignore changes notified by SCM post-commit hooks. 
+ <p>This can be useful if you want to prevent some long-running jobs (e.g. reports) starting because of every commit, but still want to run them periodic if SCM changes have occurred.</p>
+ <p>Note that this option needs to be supported by the SCM plugin, too! The subversion-plugin supports this since version 1.44.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'SpaceWebhookTrigger'</code><div>
+<div><div>
+ <p>Triggers the build on changes to a git repository or merge request in JetBrains Space.</p>
+ <p>This trigger relies on the webhooks that are set up on the JetBrains Space side automatically according to the trigger condition and filters you specify.</p>
+</div></div>
+<ul><li><code>id : String</code>
+</li>
+<li><code>spaceConnectionId : String</code>
+</li>
+<li><code>projectKey : String</code>
+</li>
+<li><code>repositoryName : String</code>
+</li>
+<li><code>allowSafeMergeWithBranches : boolean</code>
+<div><div>
+ <p>Allows using the build for safe merge of a merge request in JetBrains Space.</p>
+ <p>Safe merge lets you execute quality checks for a merge request on a temporary merge commit before actually integrating the merge request into the main branch. See the <a href="https://www.jetbrains.com/help/space/branch-and-merge-restrictions.html#safe-merge" rel="nofollow">JetBrains Space documentation</a> for more information about safe merge.</p>
+</div></div>
+
+</li>
+<li><code>allowSafeMergeWithMergeRequests : boolean</code>
+<div><div>
+ <p>Allows using the build for safe merge of a merge request in Space.</p>
+ <p>Safe merge lets you execute quality checks for the merge request on the merge commit in the temporary merge branch, before actually integrating the merge request into the main branch. See <a href="https://www.jetbrains.com/help/space/branch-and-merge-restrictions.html#safe-merge" rel="nofollow">Space documentation</a> for more information about safe merge.</p>
+</div></div>
+
+</li>
+<li><code>branchSpec : String</code> (optional)
+<div><div>
+ Reference branches in the format "+|-:". Use + to include and - to exclude branches. Use * as a wildcard. Use ; to separate branches.
+</div></div>
+
+</li>
+<li><code>mergeRequestApprovalsRequired : boolean</code> (optional)
+<div><div>
+ <p>Merge request must be approved by all invited reviewers to trigger the build.</p>
+ <p>The list of reviewers shouldn't be empty. The build will get triggered as soon as the last reviewer approves merge request. The build will also get triggered for each subsequent push to the merge request source branch, provided that all the reviewers have finalized their approval (the approval won't get reset on new commits).</p>
+</div></div>
+
+</li>
+<li><code>mergeRequestSourceBranchSpec : String</code> (optional)
+<div><div>
+ <p>Merge request source branch must match the specified branches.</p>
+ <p>Reference branches in the format "+|-:". Use + to include and - to exclude branches. Use * as a wildcard. Use ; to separate branches.</p>
+</div></div>
+
+</li>
+<li><code>mergeRequestTitleRegex : String</code> (optional)
+<div><div>
+ <p>Merge request title must match the specified regular expression.</p>
+ <p>A build will be triggered on any new commits in a merge request if its title is matching the regular expression. A build will also get triggered for a non-matching merge request whenever the merge request title changes so that it starts matching the expression.</p>
+ <p>Regular expression must match the entire merge request title, not just a part of it. For example, to exclude all merge requests with a title starting with "WIP" from triggering builds, specify <i>(?!WIP).+</i> as a regex.</p>
+</div></div>
+
+</li>
+<li><code>triggerType</code> (optional)
+<ul><li><b>Values:</b> <code>Branches</code>, <code>MergeRequests</code>, <code>OnlySafeMerge</code></li></ul></li>
+</ul></div></li>
+<li><code>$class: 'SpoonTrigger'</code><div>
+<ul><li><code>repositoryUrl : String</code>
+<div><div>
+ When a webhook event is received by Jenkins it will use repository URL to find out which jobs to schedule.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'SqsTrigger'</code><div>
+<div><div>
+ Config the AWS SQS queue to watch.
+</div></div>
+<ul><li><code>sqsDisableConcurrentBuilds : boolean</code> (optional)
+<div><div>
+ If checked, and there's build running, skip build(s) when message received. 
+ <br>
+  If checked, and there's no running job but multiple messages are received in one SQS call, only the (random) first message is selected to trigger the build and others are ignored. 
+ <br>
+  If un-checked, each message triggers one build. 
+ <br>
+</div></div>
+
+</li>
+<li><code>sqsTriggerCredentialsId : String</code> (optional)
+<div><div>
+ The AWS Credentials to be used. Leave it blank if retrieving credentials from environment variables, instance profile or IRSA.
+</div></div>
+
+</li>
+<li><code>sqsTriggerQueueUrl : String</code> (optional)
+<div><div>
+ The SQS queue name to watch.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'StashBuildTrigger'</code><div>
+<div><div>
+ Configure Jenkins to check a repository in Stash (Bitbucket Server) for pull requests and trigger a build when a new pull request is posted or an existing pull request is updated. The build result is posted to Stash as a comment.
+</div></div>
+<ul><li><code>cron : String</code>
+<div><div>
+ Specify how often Stash REST API should be polled for pull requests. For instance, <code>H/2 * * * *</code> would make Jenkins poll Stash every 2 minutes.
+</div></div>
+
+</li>
+<li><code>stashHost : String</code>
+<div><div>
+ The http or https URL of the Stash server REST API.
+ <br><strong>NOTE:</strong> This is <em>not</em> the git clone URL.
+ <br>
+  Example: <code>https://stash.example.com/</code>
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+<div><div>
+ Credentials for accessing the Stash REST API host. This is <strong>not</strong> an ssh key.
+</div></div>
+
+</li>
+<li><code>projectCode : String</code>
+<div><div>
+ Project key (abbreviated name) in Stash, e.g. <em>PRJ</em> or <em>~username</em>
+</div></div>
+
+</li>
+<li><code>repositoryName : String</code>
+<div><div>
+ Name of the repository to be monitored in Stash
+</div></div>
+
+</li>
+<li><code>cancelOutdatedJobsEnabled : boolean</code> (optional)
+<div><div>
+ When starting the PR build, cancel all jobs in the queue for the same PR. Also abort currently running jobs for that PR.
+</div></div>
+
+</li>
+<li><code>checkDestinationCommit : boolean</code> (optional)
+<div><div>
+ Start the build if the destination commit has changed, i.e. some changes have been made on the target branch.
+</div></div>
+
+</li>
+<li><code>checkMergeable : boolean</code> (optional)
+<div><div>
+ Build the PR only if Stash considers it mergeable. Please note that if the PR doesn't have the required number of approvals, it would be considered non-mergeable and would not be tested when this option is enabled.
+</div></div>
+
+</li>
+<li><code>checkNotConflicted : boolean</code> (optional)
+<div><div>
+ Don't build the PR if Stash reports it to be in the <em>conflict</em> state. This <strong>must</strong> be used if using the <em>merge</em> refspec. Stash 2.9+ doesn't provide the <em>merge</em> refspec for conflicted PRs, so Jenkins could end up testing an older version of the PR.
+</div></div>
+
+</li>
+<li><code>checkProbeMergeStatus : boolean</code> (optional)
+<div><div>
+ Probe the Stash REST API for merge status just so it recalculates the refspec: this just causes the plugin to send a request to the Stash REST API endpoint which triggers recalculation of Git refspecs. Unlike the "Build only if..." options, this one has no impact on proceeding with the build itself.
+ <br>
+  Use this if you encounter problems with stale commits being built, but don't want to skip builds based on the PR status (as would be the case with the "Build only if Stash reports no conflicts" or "Build only if Stash reports PR is mergeable" options). Also note that this option does not have any special effect if you have enabled one of those two options.
+ <br>
+  Normally Stash has a "lazy" recalculation, after a request to do so (which may be part of Stash Web-UI processing among other things), in order to avoid server load spikes whenever a source or target branch of a pull request changes.
+ <br>
+  For more details see <a href="https://issues.jenkins-ci.org/browse/JENKINS-35219" rel="nofollow">JENKINS-35219 issue</a> and <a href="https://answers.atlassian.com/questions/239988/change-pull-request-refs-after-commit-instead-of-after-approval-or-workaround" rel="nofollow">Atlassian discussion</a> for details).
+</div></div>
+
+</li>
+<li><code>ciBuildPhrases : String</code> (optional)
+<div><div>
+ Build the PR if the specified phrase has been posted as a PR comment in Stash, even if the PR has not changed.
+ <br>
+  The phrase should be a substring of the comment. The case is ignored. For instance, "Test this please, Jenkins!" would match the default setting.
+ <br>
+  Default: <em>test this please</em>
+</div></div>
+
+</li>
+<li><code>ciSkipPhrases : String</code> (optional)
+<div><div>
+ Do not build the PR if the specified phrase has been posted in a PR comment. Multiple comma-separated phrases are supported.
+ <br>
+  Default: <em>NO TEST</em>
+</div></div>
+
+</li>
+<li><code>deletePreviousBuildFinishComments : boolean</code> (optional)
+<div><div>
+ Delete old comments about finished PR builds when starting a new build.
+</div></div>
+
+</li>
+<li><code>ignoreSsl : boolean</code> (optional)
+<div><div>
+ Allow invalid or unverifiable (e.g. self-signed) https certificates for Stash REST API access.
+</div></div>
+
+</li>
+<li><code>mergeOnSuccess : boolean</code> (optional)
+<div><div>
+ Tell Stash to merge the PR automatically if the build job has been successful.
+</div></div>
+
+</li>
+<li><code>onlyBuildOnComment : boolean</code> (optional)
+<div><div>
+ Only trigger the build when the build phrase has been posted. Don't trigger the build for other reasons, e.g. when a new PR is found or when a PR is updated.
+</div></div>
+
+</li>
+<li><code>targetBranchesToBuild : String</code> (optional)
+<div><div>
+ Only consider pull requests targeting specific branches. If empty, all branches are considered. Use a comma separated list of regular expressions, e.g. <code>master,release/.*</code>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>TeamsTrigger</code><div>
+<div><div>
+ <p>Allows Teams Webhook Trigger to trigger this job.</p>
+</div></div>
+<ul><li><code>genericVariables</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>defaultValue : String</code> (optional)
+</li>
+<li><code>expressionType</code> (optional)
+<ul><li><b>Values:</b> <code>XPath</code>, <code>JSONPath</code>, <code>StringPart</code></li></ul></li>
+<li><code>regexpFilter : String</code> (optional)
+</li>
+</ul></li>
+<li><code>regexpFilterText : String</code>
+</li>
+<li><code>regexpFilterExpression : String</code>
+</li>
+<li><code>genericRequestVariables</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>regexpFilter : String</code>
+</li>
+</ul></li>
+<li><code>genericHeaderVariables</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>regexpFilter : String</code>
+</li>
+</ul></li>
+<li><code>causeString : String</code> (optional)
+</li>
+<li><code>overrideQuietPeriod : boolean</code> (optional)
+</li>
+<li><code>printContributedVariables : boolean</code> (optional)
+</li>
+<li><code>printPostContent : boolean</code> (optional)
+</li>
+<li><code>silentResponse : boolean</code> (optional)
+</li>
+<li><code>textSeparator : String</code> (optional)
+</li>
+<li><code>token : String</code> (optional)
+</li>
+<li><code>tokenCredentialId : String</code> (optional)
+</li>
+<li><code>valuesFromTextKey : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>cron</code><div>
+<div><div>
+ Provides a <a href="https://en.wikipedia.org/wiki/cron" rel="nofollow">cron</a> -like feature to periodically execute this project. 
+ <p>This feature is primarily for using Jenkins as a cron replacement, and it is <b>not ideal for continuously building software projects</b> . When people first start continuous integration, they are often so used to the idea of regularly scheduled builds like nightly/weekly that they use this feature. However, the point of continuous integration is to start a build as soon as a change is made, to provide a quick feedback to the change. To do that you need to <a href="https://www.jenkins.io/redirect/scm-change-trigger" rel="nofollow"> hook up SCM change notification to Jenkins </a> .</p>
+ <p>So, before using this feature, stop and ask yourself if this is really what you want.</p>
+</div></div>
+<ul><li><code>spec : String</code>
+</li>
+</ul></div></li>
+<li><code>URLTrigger</code><div>
+<ul><li><code>cronTabSpec : String</code>
+</li>
+<li><code>triggerLabel : String</code>
+</li>
+<li><code>entries</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>url : String</code>
+</li>
+<li><code>checkETag : boolean</code> (optional)
+</li>
+<li><code>checkLastModificationDate : boolean</code> (optional)
+</li>
+<li><code>checkStatus : boolean</code> (optional)
+</li>
+<li><code>contentTypes</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>JsonContent</code><div>
+<ul><li><code>jsonPaths</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>jsonPath : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>MD5Sum</code><div>
+<ul></ul></div></li>
+<li><code>TextContent</code><div>
+<ul><li><code>regExElements</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>regEx : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>XMLContent</code><div>
+<ul><li><code>xPaths</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>xPath : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+</ul></li>
+<li><code>inspectingContent : boolean</code> (optional)
+</li>
+<li><code>password : String</code> (optional)
+</li>
+<li><code>proxyActivated : boolean</code> (optional)
+</li>
+<li><code>requestHeaders</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>headerName : String</code> (optional)
+</li>
+<li><code>headerValue : String</code> (optional)
+</li>
+</ul></li>
+<li><code>statusCode : int</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+<li><code>useGlobalEnvVars : boolean</code> (optional)
+</li>
+<li><code>username : String</code> (optional)
+</li>
+</ul></li>
+<li><code>labelRestriction : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>snapshotDependencies</code><div>
+<div><div>
+ Trigger the build of this pipeline when a Maven SNAPSHOT dependency is built by this Jenkins instance. Jenkins discovers all the dependencies of the Maven builds of this pipeline invoked in a <code>withMaven(){...}</code> wrapping step and will trigger the build if one of these dependencies has been built (typically a SNAPSHOT version). This is convenient for automatically performing continuous integration. Jenkins will check the snapshot dependencies from the <code>&lt;dependency&gt;</code> element in the POM.
+</div></div>
+<ul></ul></div></li>
+<li><code>$class: 'com.ribose.jenkins.plugin.awscodecommittrigger.SQSTrigger'</code><div>
+<div><div>
+ Configure Jenkins to monitor an Amazon SQS queue for CodeCommit SNS messages. Jenkins will start a new build if (<b>AND</b> if): 
+ <ul>
+  <li>message is posted to the queue</li>
+  <li>message match against any repo links configured in section <b>Subscribe to CodeCommit Repo</b></li>
+ </ul>
+ <p>Available queues can be configured in the <a rel="nofollow">System Configuration</a> of Jenkins.</p>
+ <p>Further documentation is available in the <a href="https://github.com/jenkinsci/aws-codecommit-trigger-plugin" rel="nofollow">GitHub</a></p>
+</div></div>
+<ul><li><code>queueUuid : String</code>
+<div><div>
+ The Amazon SQS queue to monitor for messages.
+</div></div>
+
+</li>
+<li><code>subscribeInternalScm : boolean</code>
+</li>
+<li><code>sqsScmConfigs</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>type : String</code>
+</li>
+<li><code>url : String</code>
+</li>
+<li><code>subscribedBranches : String</code>
+<div><div>
+ <div>
+  Possible options, see more <a href="http://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin" rel="nofollow">Jenkins Git plugin</a>:
+ </div>
+ <ul>
+  <li><b>&lt;branchName&gt;</b>
+   <div>
+    Tracks the specified branch. Better use <code>refs/heads/&lt;branchName&gt;</code>
+    <br>
+    E.g. <code>master</code> , <code>development</code>
+   </div></li>
+  <li><b>Multiple branches</b>
+   <div>
+    Tracks multiple branches in csv format 
+    <br>
+    E.g. <code>development, master, */master, *feature, feature/**</code>
+   </div></li>
+  <li><b>Any branch</b>
+   <div>
+    E.g. <code>**</code>
+   </div></li>
+  <li>
+   <div>
+    <b>&lt;Wildcards&gt;</b>
+   </div>
+   <div>
+    <ul>
+     <li>"*" is recognized as a wildcard</li>
+     <li>"**" is recognized as wildcard that includes the separator '/'</li>
+    </ul><span>Therefore, <code>origin/branches*</code> would match <code>origin/branches-foo</code> but not <code>origin/branches/foo</code>, while <code>origin/branches**</code> would match both <code>origin/branches-foo</code> and <code>origin/branches/foo</code></span>
+   </div></li>
+ </ul>
+</div></div>
+
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>$class: 'io.relution.jenkins.scmsqs.SQSTrigger'</code><div>
+<div><div>
+ Configure Jenkins to monitor an Amazon SQS queue for messages. Jenkins will start a new build if a message is posted to the queue and the message's content matches this job's repository and branch. The repository should be set up to post messages to the queue whenever changes are made. 
+ <p></p> Available queues can be configured in the <a rel="nofollow">System Configuration</a> of Jenkins. 
+ <p></p> Further documentation is available in the <a href="https://github.com/mwaylabs/scm-sqs-plugin" rel="nofollow">SCM SQS Plugin repository</a> on GitHub.
+</div></div>
+<ul><li><code>queueUuid : String</code>
+<div><div>
+ The Amazon SQS queue to monitor for messages.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'org.jenkinsci.plugins.deploy.weblogic.trigger.DeploymentTrigger'</code><div>
+<div><div>
+ Execute this project periodically (dedicated to the weblogic deployment).
+</div></div>
+<ul><li><code>schedule : String</code>
+<div><div>
+ This field accepts the cron syntax
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'org.jenkinsci.plugins.deployment.DeploymentTrigger'</code><div>
+<div><div>
+ Triggers a build when artifacts from another project is deployed to servers via configuration management tools like Chef/Puppet/etc. For this feature to work, you must also install a plugin that's specific to the configuration management tool you are using, such as the puppet plugin. 
+ <p>For example, you can use this to run post-deployment smoke tests, or you can tickle your load balancer to shift traffic to newer servers.</p>
+ <p>This plugin injects the following variables:</p>
+ <ul>
+  <li><b>DEPLOYMENT_HOST</b> - Host to which the artifact was deployed</li>
+  <li><b>DEPLOYMENT_PATH</b> - Path to which the artifact was deployed</li>
+  <li><b>DEPLOYMENT_TIMESTAMP</b> - Timestamp of the deployment</li>
+ </ul>
+ <p>This feature critically depends on <a href="https://wiki.jenkins-ci.org/display/JENKINS/Fingerprint" rel="nofollow">fingerprints</a> to function properly.</p>
+ <p>Imagine you are deploying foo.rpm file with Puppet. Here is the sequence of events until this trigger fires:</p>
+ <ol>
+  <li>You have job U that records the fingerprint of foo.rpm. This job is most typically a job that produces foo.rpm, but it could be any job so long as it records the fingerprint. For example, it might be a job that copies foo.rpm into your RPM repository.</li>
+  <li>You have job D that has a deployment trigger, which specifies U as the upstream.</li>
+  <li>Job U build #15 (or whatever) runs, a specific fingerprint (say b1946ac9) is recorded for this version of foo.rpm</li>
+  <li>At some point outside Jenkins, Puppet runs and chooses to lay down this foo.rpm. Your Puppet manifests do this by using specific resource types that Jenkins understands.</li>
+  <li>You configure Puppet to send the report back to Jenkins. Jenkins will analyze the report, pick up the details sent from the specific resource types, and learn that a file with fingerprint b1946ac9 was deployed.</li>
+  <li>Jenkins compares existing fingerprint records and find out that this foo.rpm came from U #15.</li>
+  <li>Jenkins notices that job D wants to run if an artifact from U is deployed, and this deployment satisfies that condition</li>
+  <li>Job D gets scheduled, with U #15 as the upstream.</li>
+ </ol>
+</div></div>
+<ul><li><code>upstreamJob : String</code>
+<div><div>
+ Specify the job whose artifacts you'd like to watch for triggering this job. 
+ <p>The specified job must record fingerprints of the artifacts Chef/Puppet/etc deploys, when this trigger fires, the build to be started will see the corresponding build of the upstream job as the cause of the build, and receives all the parameters given to that upstream build.</p>
+</div></div>
+
+</li>
+<li><code>cond</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'ThresholdCondition'</code><div>
+<ul><li><code>env : String</code>
+<div><div>
+ Chef/Puppet/etc defines a notion of "environment" as a means to group servers, so that you can have a set of servers in the 'testing' group and another set under the 'production' group. If this field is non-empty, this trigger will only count deployments to servers in the specific environment.
+</div></div>
+
+</li>
+<li><code>threshold : int</code>
+<div><div>
+ Number of servers the need to deploy the artifact before this trigger fires.
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+</ul></div></li>
+</ul></li>
+</ul></div></li>
+
+
+++++

@@ -1,0 +1,263 @@
+= Progress TestStudio Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/teststudio">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'TestStudioTestBuilder'])`: Test Studio runner configuration
+++++
+<div><div>
+ Jenkins plugin for execution of Progress Test Studio tests.
+</div></div>
+<ul><li><code>artOfTestRunnerPath : String</code>
+<div><div>
+ Full path to TestStudio Runner executable.
+</div></div>
+
+</li>
+<li><code>testPath : String</code>
+<div><div>
+ The full path to the .tstest test or .aiilist (test list) to run.
+</div></div>
+
+</li>
+<li><code>settingsPath : String</code>
+<div><div>
+ The path to a XML file containing the custom params and/or settings for the run.
+</div></div>
+
+</li>
+<li><code>dateFormat : String</code>
+<div><div>
+ Date and time format used in StartTime and EndTime result fields. If empty default format "yyyy-mm-dd'T'HH:mm:ss" is used.
+</div>
+<div>
+ <table>
+  <tbody>
+   <tr>
+    <th>Letter</th>
+    <th>Date or Time Component</th>
+    <th>Presentation</th>
+    <th>Examples</th>
+   </tr>
+   <tr>
+    <td>G</td>
+    <td>Era designator</td>
+    <td>Text</td>
+    <td>AD</td>
+   </tr>
+   <tr>
+    <td>y</td>
+    <td>Year</td>
+    <td>Year</td>
+    <td>1996; 96</td>
+   </tr>
+   <tr>
+    <td>Y</td>
+    <td>Week year</td>
+    <td>Year</td>
+    <td>2009; 09</td>
+   </tr>
+   <tr>
+    <td>M/L</td>
+    <td>Month in year</td>
+    <td>Month</td>
+    <td>July; Jul; 07</td>
+   </tr>
+   <tr>
+    <td>w</td>
+    <td>Week in year</td>
+    <td>Number</td>
+    <td>27</td>
+   </tr>
+   <tr>
+    <td>W</td>
+    <td>Week in month</td>
+    <td>Number</td>
+    <td>2</td>
+   </tr>
+   <tr>
+    <td>D</td>
+    <td>Day in year</td>
+    <td>Number</td>
+    <td>189</td>
+   </tr>
+   <tr>
+    <td>d</td>
+    <td>Day in month</td>
+    <td>Number</td>
+    <td>10</td>
+   </tr>
+   <tr>
+    <td>F</td>
+    <td>Day of week in month</td>
+    <td>Number</td>
+    <td>2</td>
+   </tr>
+   <tr>
+    <td>E</td>
+    <td>Day in week</td>
+    <td>Text</td>
+    <td>Tuesday; Tue</td>
+   </tr>
+   <tr>
+    <td>u</td>
+    <td>Day number of week</td>
+    <td>Number</td>
+    <td>1</td>
+   </tr>
+   <tr>
+    <td>a</td>
+    <td>Am/pm marker</td>
+    <td>Text</td>
+    <td>PM</td>
+   </tr>
+   <tr>
+    <td>H</td>
+    <td>Hour in day (0-23)</td>
+    <td>Number</td>
+    <td>0</td>
+   </tr>
+   <tr>
+    <td>k</td>
+    <td>Hour in day (1-24)</td>
+    <td>Number</td>
+    <td>24</td>
+   </tr>
+   <tr>
+    <td>K</td>
+    <td>Hour in am/pm (0-11)</td>
+    <td>Number</td>
+    <td>0</td>
+   </tr>
+   <tr>
+    <td>h</td>
+    <td>Hour in am/pm (1-12)</td>
+    <td>Number</td>
+    <td>12</td>
+   </tr>
+   <tr>
+    <td>m</td>
+    <td>Minute in hour</td>
+    <td>Number</td>
+    <td>30</td>
+   </tr>
+   <tr>
+    <td>s</td>
+    <td>Second in minute</td>
+    <td>Number</td>
+    <td>55</td>
+   </tr>
+   <tr>
+    <td>S</td>
+    <td>Millisecond</td>
+    <td>Number</td>
+    <td>978</td>
+   </tr>
+   <tr>
+    <td>z</td>
+    <td>Time zone</td>
+    <td>General time zone</td>
+    <td>Pacific Standard Time; PST; GMT-08:00</td>
+   </tr>
+   <tr>
+    <td>Z</td>
+    <td>Time zone</td>
+    <td>RFC 822 time zone</td>
+    <td>-0800</td>
+   </tr>
+   <tr>
+    <td>X</td>
+    <td>Time zone</td>
+    <td>ISO 8601 time zone</td>
+    <td>-08; -0800; -08:00</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<br>
+<div>
+ <table>
+  <tbody>
+   <tr>
+    <th>Input string</th>
+    <th>Pattern</th>
+   </tr>
+   <tr>
+    <td>2001.07.04 AD at 12:08:56 PDT</td>
+    <td>yyyy.MM.dd G 'at' HH:mm:ss z</td>
+   </tr>
+   <tr>
+    <td>Wed, Jul 4, '01</td>
+    <td>EEE, MMM d, ''yy</td>
+   </tr>
+   <tr>
+    <td>12:08 PM</td>
+    <td>h:mm a</td>
+   </tr>
+   <tr>
+    <td>12 o'clock PM, Pacific Daylight Time</td>
+    <td>hh 'o''clock' a, zzzz</td>
+   </tr>
+   <tr>
+    <td>0:08 PM, PDT</td>
+    <td>K:mm a, z</td>
+   </tr>
+   <tr>
+    <td>02001.July.04 AD 12:08 PM</td>
+    <td>yyyyy.MMMM.dd GGG hh:mm aaa</td>
+   </tr>
+   <tr>
+    <td>Wed, 4 Jul 2001 12:08:56 -0700</td>
+    <td>EEE, d MMM yyyy HH:mm:ss Z</td>
+   </tr>
+   <tr>
+    <td>010704120856-0700</td>
+    <td>yyMMddHHmmssZ</td>
+   </tr>
+   <tr>
+    <td>2001-07-04T12:08:56.235-0700</td>
+    <td>yyyy-MM-dd'T'HH:mm:ss.SSSZ</td>
+   </tr>
+   <tr>
+    <td>2001-07-04T12:08:56.235-07:00</td>
+    <td>yyyy-MM-dd'T'HH:mm:ss.SSSXXX</td>
+   </tr>
+   <tr>
+    <td>2001-W27-3</td>
+    <td>YYYY-'W'ww-u</td>
+   </tr>
+  </tbody>
+ </table>
+</div></div>
+
+</li>
+<li><code>projectRoot : String</code> (optional)
+<div><div>
+ The path to the project root folder.
+</div></div>
+
+</li>
+<li><code>testAsUnit : boolean</code> (optional)
+<div><div>
+ If checked TestStudio test will be converted to JUnit test, else test steps will be converted.
+</div></div>
+
+</li>
+<li><code>outputPath : String</code> (optional)
+</li>
+</ul>
+
+
+++++

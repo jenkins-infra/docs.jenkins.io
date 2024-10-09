@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Goteborg Area JAM
+:page-eventStartDate: 2018-05-28T17:45:00
+:page-eventLink: https://www.meetup.com/Goteborg-Jenkins-Area-Meetup/events/250208648/
+---
+Jenkins Configuration as Code - Automating an Automation Server

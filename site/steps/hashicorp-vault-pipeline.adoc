@@ -1,0 +1,33 @@
+= Hashicorp Vault Pipeline Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/hashicorp-vault-pipeline">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `vault`: VaultReadStep
+++++
+<ul><li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>engineVersion : String</code> (optional)
+</li>
+<li><code>key : String</code> (optional)
+</li>
+<li><code>path : String</code> (optional)
+</li>
+<li><code>vaultUrl : String</code> (optional)
+</li>
+</ul>
+
+
+++++

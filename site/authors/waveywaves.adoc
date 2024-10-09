@@ -1,0 +1,8 @@
+= About the Author
+:page-layout: author
+:page-author_name: Vibhav Bobade
+:page-twitter: BobadeVibhav
+:page-github: waveywaves
+
+
+We all live in a big ol' build, deploy world.

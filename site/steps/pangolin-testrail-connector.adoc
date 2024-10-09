@@ -1,0 +1,108 @@
+= Agiletestware Pangolin Connector for TestRail
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/pangolin-testrail-connector">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `pangolinTestRail`: Pangolin: Upload test results into TestRail
+++++
+<ul><li><code>configs</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>testPath : String</code>
+</li>
+<li><code>format : String</code>
+</li>
+<li><code>resultPattern : String</code>
+</li>
+<li><code>failIfUploadFailed : boolean</code>
+</li>
+<li><code>customProperties : String</code> (optional)
+</li>
+<li><code>testRun : String</code> (optional)
+</li>
+<li><code>testPlan : String</code> (optional)
+</li>
+<li><code>milestonePath : String</code> (optional)
+</li>
+<li><code>closeRun : boolean</code> (optional)
+</li>
+<li><code>customResultFields : String</code> (optional)
+</li>
+<li><code>caseNameToIdMap : String</code> (optional)
+</li>
+<li><code>configurationNames : String</code> (optional)
+</li>
+<li><code>disableGrouping : boolean</code> (optional)
+</li>
+</ul></li>
+<li><code>testRailProject : String</code>
+<div><div>
+ Common TestRail project name for all configurations
+</div></div>
+
+</li>
+<li><code>testRailUserName : String</code> (optional)
+<div><div>
+ TestRail User name. If set, this value overrides value from Pangolin Global Configuration.
+ <br>
+ If empty, value from Pangolin Global Configuration will be used
+</div></div>
+
+</li>
+<li><code>testRailPassword : String</code> (optional)
+<div><div>
+ Password for TestRail User. If set, this value overrides value from Pangolin Global Configuration. 
+ <br>
+ If empty, value from Pangolin Global Configuration will be used
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `pangolinRunReport`: Pangolin: Run TestRail report
+++++
+<ul><li><code>reportTemplateIds : String</code> (optional)
+<div><div>
+ A list of report template names or IDs to run. Each template name or ID should start with new line.
+</div></div>
+
+</li>
+<li><code>testRailPassword : String</code> (optional)
+<div><div>
+ Password for TestRail User. If set, this value overrides value from Pangolin Global Configuration. 
+ <br>
+ If empty, value from Pangolin Global Configuration will be used
+</div></div>
+
+</li>
+<li><code>testRailProject : String</code> (optional)
+<div><div>
+ The name of a TestRail project containing report configuration
+</div></div>
+
+</li>
+<li><code>testRailUserName : String</code> (optional)
+<div><div>
+ TestRail User name. If set, this value overrides value from Pangolin Global Configuration.
+ <br>
+ If empty, value from Pangolin Global Configuration will be used
+</div></div>
+
+</li>
+</ul>
+
+
+++++

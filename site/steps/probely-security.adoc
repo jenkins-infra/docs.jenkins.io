@@ -1,0 +1,63 @@
+= Probely Security Scanner Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/probely-security">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `probelyScan`: Probely Security Scanner
+++++
+<ul><li><code>targetId : String</code>
+<div><div>
+ <p>ID of the target you want Probely to scan.</p>
+</div></div>
+
+</li>
+<li><code>authToken : String</code> (optional)
+<div><div>
+ <p>Raw Probely API authentication key.</p>
+ <p>Please use the credentialsId field instead, unless you understand the security implications of using this mechanism. Passing the API authentication token directly is not advised, unless it is properly secured using a secret storage mechanism, such as HashiCorp Vault.</p>
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>Credential identifier for the Probely API authentication key.</p>
+</div></div>
+
+</li>
+<li><code>failThreshold : String</code> (optional)
+<div><div>
+ <p>Mark the build as failed if a vulnerability with the following severity level is found.</p>
+</div></div>
+
+</li>
+<li><code>stopIfFailed : boolean</code> (optional)
+<div><div>
+ <p>If the build fails because the target is vulnerable, stop scanning for more vulnerabilities.</p>
+</div></div>
+
+</li>
+<li><code>waitForScan : boolean</code> (optional)
+<div><div>
+ <p>Wait for the scan to complete before proceeding to the next step in the pipeline.</p>
+ <p>Since a scan can take a long time, the plugin will return as soon as the scan starts. This is enabled by default to make the build faster.<br>
+   Please note that disabling this option implies that the build step always finishes successfully, even if vulnerabilities are found later on.</p>
+ <p>Enabling this option allows the plugin to mark the build as failed if it finds any vulnerabilities.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

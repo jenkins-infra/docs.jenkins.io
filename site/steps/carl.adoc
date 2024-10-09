@@ -1,0 +1,39 @@
+= Carl plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/carl">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `carl`: Carl
+++++
+<ul><li><code>installationName : String</code>
+</li>
+<li><code>sourcePath : String</code>
+</li>
+<li><code>applicationName : String</code>
+</li>
+<li><code>archivePdf : boolean</code> (optional)
+</li>
+<li><code>displayLog : boolean</code> (optional)
+</li>
+<li><code>logPath : String</code> (optional)
+</li>
+<li><code>outputPath : String</code> (optional)
+</li>
+<li><code>qualityGate : String</code> (optional)
+</li>
+</ul>
+
+
+++++

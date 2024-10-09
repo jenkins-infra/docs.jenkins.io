@@ -1,0 +1,27 @@
+= GCloud SDK Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/gcloud-sdk">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `wrap([$class: 'GCloudBuildWrapper'])`: GCloud SDK authentication
+++++
+<ul><li><code>installation : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+</ul>
+
+
+++++

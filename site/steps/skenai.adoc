@@ -1,0 +1,27 @@
+= Sken.ai CLI
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/skenai">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `skenai`: Sken.ai
+++++
+<ul><li><code>orgId : String</code>
+</li>
+<li><code>appId : String</code>
+</li>
+</ul>
+
+
+++++

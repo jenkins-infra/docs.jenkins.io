@@ -1,0 +1,112 @@
+= Zephyr Scale
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/tm4j-automation">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `downloadFeatureFiles`: Zephyr Scale: Download Feature Files
+++++
+<div><div>
+ Downloads feature files from Zephyr Scale.
+</div></div>
+<ul><li><code>serverAddress : String</code>
+<div><div>
+ One of the preconfigured Jira instances. If you do not have any, please go to General Configuration and set up a new Jira instance.
+</div></div>
+
+</li>
+<li><code>projectKey : String</code>
+<div><div>
+ Jira project key to filter test cases.
+</div></div>
+
+</li>
+<li><code>targetPath : String</code>
+<div><div>
+ The path where the downloaded feature files will be placed.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `publishTestResults`: Zephyr Scale: Publish Test Results
+++++
+<div><div>
+ Automatically publishes automated test results to Zephyr Scale.
+</div></div>
+<ul><li><code>serverAddress : String</code>
+<div><div>
+ One of the preconfigured Jira instances. If you do not have any, please go to General Configuration and set up a new Jira instance.
+</div></div>
+
+</li>
+<li><code>projectKey : String</code>
+<div><div>
+ Jira project key to publish the test results to.
+</div></div>
+
+</li>
+<li><code>filePath : String</code>
+<div><div>
+ The path where the build places generated test result files. You can also use Ant style patterns such as **/test-reports/*.json.
+</div></div>
+
+</li>
+<li><code>autoCreateTestCases : boolean</code>
+<div><div>
+ When this option is checked, test cases with no KEY annotation will be automatically created, if there are no test cases matching their names.
+</div></div>
+
+</li>
+<li><code>format : String</code>
+<div><div>
+ Choose the test framework where the test results will be generated from.
+</div></div>
+
+</li>
+<li><code>customTestCycle</code>
+<div><div>
+ <strong>If sent to Zephyr Scale Server/DC, version 8.8.0 or greater is required</strong>
+ <br>
+ <br>
+  Use this section to customize the test cycle that will be created with the test results. 
+ <br>
+ <br>
+  All fields are optional. 
+ <br>
+ <br>
+  If not used, the test cycle will be named <strong>Automated Build</strong> and will be placed at the root folder of your test cycle library. All other fields will be empty. 
+ <br>
+ <br>
+  Please note that if you use this section and have required test cycle custom fields in your project, you'll have to set the custom field values.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>description : String</code>
+</li>
+<li><code>jiraProjectVersion : String</code>
+</li>
+<li><code>folderId : String</code>
+</li>
+<li><code>customFields : String</code>
+</li>
+</ul></li>
+</ul>
+
+
+++++

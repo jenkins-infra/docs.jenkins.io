@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Sydney JAM
+:page-eventStartDate: 2017-01-13T17:30:00
+:page-eventLink: https://www.meetup.com/Sydney-Jenkins-Area-Meetup/events/236785683/
+---
+Meet & Greet

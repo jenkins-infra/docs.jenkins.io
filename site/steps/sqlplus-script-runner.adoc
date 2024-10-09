@@ -1,0 +1,101 @@
+= SQLPlus Script Runner
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/sqlplus-script-runner">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'SQLPlusRunnerBuilder'])`: SQLPlus Script Runner
+++++
+<ul><li><code>credentialsId : String</code>
+</li>
+<li><code>user : String</code>
+<div><div>
+ Inform schema user information (example: <i>SCOTT</i>) or schema user and password (example: <i>SCOTT/TIGER</i>). You can use global variable like <i>${USER}</i>.
+</div></div>
+
+</li>
+<li><code>password : String</code>
+</li>
+<li><code>isSysdba : String</code>
+</li>
+<li><code>instance : String</code>
+<div><div>
+ Inform instance information (example: <i>ORCL</i>). You can use global variable like <i>${INSTANCE}</i>.
+</div></div>
+
+</li>
+<li><code>scriptType : String</code>
+</li>
+<li><code>script : String</code>
+<div><div>
+ This is the name of SQL script, expected at <i>src/main/resources</i> folder. 
+ <br>
+  Example: 
+ <br><b>update.sql</b> or <b>sql/update.sql</b>
+ <br>
+</div></div>
+
+</li>
+<li><code>scriptContent : String</code>
+<div><div>
+ This is a custom SQL script.
+ <br>
+  Example:
+ <br>
+ <table>
+  <tbody>
+   <tr>
+    <td>&nbsp;SELECT sysdate from dual;&nbsp;<br>
+      &nbsp;show user;&nbsp;</td>
+   </tr>
+  </tbody>
+ </table>
+ <br>
+</div></div>
+
+</li>
+<li><code>customNLSLang : String</code> (optional)
+<div><div>
+ NLS_LANG is an environment variable used to define language, territory and character set properties. Example: <i>AMERICAN_AMERICA.US7ASCII</i> or <i>FRENCH_CANADA.WE8ISO8859P1</i> <a href="https://www.orafaq.com/wiki/NLS_LANG" rel="nofollow">Source: ORAFAQ</a>
+</div></div>
+
+</li>
+<li><code>customOracleHome : String</code> (optional)
+<div><div>
+ Using custom ORACLE_HOME will override global ORACLE_HOME. Leave this field blank to use global ORACLE_HOME. ORACLE_HOME refers to either a directory where the Oracle software is installed or an environment variable pointing to the directory where the Oracle software is installed. <a href="http://www.orafaq.com/wiki/ORACLE_HOME" rel="nofollow">Source: ORAFAQ</a>
+</div></div>
+
+</li>
+<li><code>customSQLPath : String</code> (optional)
+<div><div>
+ SQLPATH contains the name of your directory for your SQL script collection. Example: <i>c:\u01\app\sql_scripts</i> or <i>/oracle/app/sql</i> <a href="http://www.dba-oracle.com/t_windows_SQLPATH_environment_variable.htm" rel="nofollow">Source: DBA Oracle</a>
+</div></div>
+
+</li>
+<li><code>customSQLPlusHome : String</code> (optional)
+<div><div>
+ Using custom SQL*Plus will help find SQL*Plus executable file, this helps if you are working with Jenkins agent machines. Example: <i>C:\Oracle\App\Server\Oracle\bin\sqlplus.exe</i> or <i>/oracle/app/oracle/product/12.1.0/dbhome_1/bin/sqlplus</i> <a href="https://wiki.jenkins.io/display/JENKINS/Distributed+builds" rel="nofollow">Learn more about distributed builds</a>
+</div></div>
+
+</li>
+<li><code>customTNSAdmin : String</code> (optional)
+<div><div>
+ Using custom TNS_ADMIN refers to a directory where the Oracle SQL*Net configuration files (like sqlnet.ora and tnsnames.ora) are located. Example: <i>C:\Oracle\App\Server\Oracle\network\admin</i> or <i>/oracle/app/oracle/product/12.1.0/dbhome_1/network/admin</i> <a href="http://www.orafaq.com/wiki/TNS_ADMIN" rel="nofollow">Source: ORAFAQ</a>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

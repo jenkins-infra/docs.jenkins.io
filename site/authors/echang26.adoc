@@ -1,0 +1,7 @@
+= About the Author
+:page-layout: author
+:page-author_name: Emily Chang
+:page-github: echang26
+
+
+

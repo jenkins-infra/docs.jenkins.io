@@ -1,0 +1,45 @@
+= Apimap.io
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/apimap">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `publishAPI`: File content publishing
+++++
+<ul><li><code>metadataFile : String</code> (optional)
+</li>
+<li><code>taxonomyFile : String</code> (optional)
+</li>
+<li><code>readmeFile : String</code> (optional)
+</li>
+<li><code>changelogFile : String</code> (optional)
+</li>
+<li><code>token : String</code> (optional)
+</li>
+<li><code>repositoryURL : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `validateAPI`: File content validation
+++++
+<ul><li><code>metadataFile : String</code> (optional)
+</li>
+<li><code>taxonomyFile : String</code> (optional)
+</li>
+</ul>
+
+
+++++

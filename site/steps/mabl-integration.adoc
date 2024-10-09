@@ -1,0 +1,75 @@
+= mabl
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/mabl-integration">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `mabl`: Run mabl tests
+++++
+<ul><li><code>restApiKeyId : String</code>
+<div><div>
+ ID of the mabl API key credential for your workspace. The key is kept safely in Jenkins credentials using Secret text kind. Make sure that you set the ID of the credential as IDs are used to select the credential from the drop-down list. The scope of the credential must be Global and the credential may be kept in any domain (including the unrestricted Global credentials or any other domain). <a href="https://help.mabl.com/hc/articles/17780788992148" rel="nofollow">More info</a>.
+</div></div>
+
+</li>
+<li><code>environmentId : String</code>
+<div><div>
+ Input a valid API key to populate the environment selection drop-down.
+</div></div>
+
+</li>
+<li><code>applicationId : String</code>
+<div><div>
+ Input a valid API key to populate the application selection drop-down.
+</div></div>
+
+</li>
+<li><code>apiBaseUrl : String</code> (optional)
+</li>
+<li><code>appBaseUrl : String</code> (optional)
+</li>
+<li><code>continueOnMablError : boolean</code> (optional)
+<div><div>
+ continue build, if error occurred in mabl system (e.g. connection failure, system outage)
+</div></div>
+
+</li>
+<li><code>continueOnPlanFailure : boolean</code> (optional)
+<div><div>
+ continue build, even if triggered Plans do not complete successfully (e.g. bad assertion)
+</div></div>
+
+</li>
+<li><code>disableSslVerification : boolean</code> (optional)
+<div><div>
+ disable SSL verification (only required if Jenkins is behind a MITM proxy)
+</div></div>
+
+</li>
+<li><code>labels : String</code> (optional)
+<div><div>
+ Comma-separated list of labels.
+</div></div>
+
+</li>
+<li><code>mablBranch : String</code> (optional)
+<div><div>
+ mabl will run tests using this mabl branch name. Note that this branch is not the branch name in the source control repository. The branch in mabl must exist before triggering the tests.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

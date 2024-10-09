@@ -1,0 +1,86 @@
+= QRebel Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/qrebel">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `qrebel`: Monitor performance regressions with QRebel
+++++
+<ul><li><code>appName : String</code>
+<div><div>
+ Please specify name of your application. The name must be same as in QRebel (case sensitive).
+</div></div>
+
+</li>
+<li><code>targetBuild : String</code>
+<div><div>
+ Please specify the target build for which you want to validate performance. Please note that you must specify a user-defined build name. Unnamed builds are not supported.
+</div></div>
+
+</li>
+<li><code>targetVersion : String</code>
+<div><div>
+ Please specify the target build version for which you want to validate performance. This field is optional and only relevant when you have setup named version names.
+</div></div>
+
+</li>
+<li><code>baselineBuild : String</code>
+<div><div>
+ Please specify a baseline build for which you want to use as the performance comparison point. Please note that you must specify a user-defined build name. Unnamed builds are not supported.
+</div></div>
+
+</li>
+<li><code>baselineVersion : String</code>
+<div><div>
+ Please specify a baseline build version for which you want to use as the performance comparison. This field is optional and only relevant when you have setup named version names.
+</div></div>
+
+</li>
+<li><code>apiToken : String</code>
+<div><div>
+ Every project has a unique API token for authentification. This token is required in order to make issue queries to the QRebel API. Please navigate to your QRebel dashboard, pick the project from the left-hand side top menu as an administrator. Then go to settings and enable API functionality for the chosen project. Simple copy the generated token here.
+</div></div>
+
+</li>
+<li><code>apiUrl : String</code>
+<div><div>
+ QRebel server detects performance issues. This field specifies its API URL. Default URL is https://hub.qrebel.com/api/
+</div></div>
+
+</li>
+<li><code>comparisonStrategy : String</code>
+</li>
+<li><code>slowRequestsAllowed : long</code>
+</li>
+<li><code>excessiveIoAllowed : long</code>
+</li>
+<li><code>exceptionsAllowed : long</code>
+</li>
+<li><code>slaGlobalLimit : long</code>
+<div><div>
+ This is a SLA global limit (ms). If at least one endpoint exeeds the limit, the build will be marked as a failure 
+ <p>0 means no limit</p>
+</div></div>
+
+</li>
+<li><code>DURATION : boolean</code>
+</li>
+<li><code>IO : boolean</code>
+</li>
+<li><code>EXCEPTIONS : boolean</code>
+</li>
+</ul>
+
+
+++++

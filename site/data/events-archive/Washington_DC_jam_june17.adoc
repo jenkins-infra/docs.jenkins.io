@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Washington, DC JAM
+:page-eventStartDate: 2017-06-14T18:00:00
+:page-eventLink: https://www.meetup.com/Washington-DC-Jenkins-Area-Meetup/events/239753733/
+---
+CD with Jenkins and Docker Swarm

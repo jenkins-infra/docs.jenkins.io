@@ -1,0 +1,54 @@
+= Themis Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/themis">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `themisRefresh`: Refresh Themis Project
+++++
+<ul><li><code>instanceName : String</code>
+<div><div>
+ The instance where the project to refresh is located.
+</div></div>
+
+</li>
+<li><code>projectKey : String</code>
+<div><div>
+ The key of the project to refresh. You can find it in the project administration page of Themis.
+</div></div>
+
+</li>
+<li><code>failBuild : boolean</code> (optional)
+</li>
+<li><code>onlyOnSuccess : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `themisReport`: Send report files to Themis
+++++
+<ul><li><code>instanceName : String</code>
+</li>
+<li><code>sourceKey : String</code>
+</li>
+<li><code>failBuild : boolean</code> (optional)
+</li>
+<li><code>reports</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+</ul>
+
+
+++++

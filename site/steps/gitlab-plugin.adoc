@@ -1,0 +1,90 @@
+= GitLab Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/gitlab-plugin">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `acceptGitLabMR`: Accept GitLab Merge Request
+++++
+<ul><li><code>mergeCommitMessage : String</code> (optional)
+</li>
+<li><code>removeSourceBranch : boolean</code> (optional)
+</li>
+<li><code>useMRDescription : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `addGitLabMRComment`: Add comment on GitLab Merge Request
+++++
+<ul><li><code>comment : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `gitlabBuilds`: Notify gitlab about pending builds
+++++
+<ul><li><code>builds : Array / List of String</code> (optional)
+<ul></ul></li>
+</ul>
+
+
+++++
+=== `gitlabCommitStatus`: Update the commit status in GitLab depending on the build status
+++++
+<ul><li><code>name : String</code>
+</li>
+<li><code>builds</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>connection</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>gitLabConnection : String</code>
+</li>
+<li><code>jobCredentialId : String</code> (optional)
+</li>
+<li><code>useAlternativeCredential : boolean</code> (optional)
+</li>
+</ul></li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>projectId : String</code> (optional)
+</li>
+<li><code>revisionHash : String</code> (optional)
+</li>
+</ul></li>
+<li><code>connection</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>gitLabConnection : String</code>
+</li>
+<li><code>jobCredentialId : String</code> (optional)
+</li>
+<li><code>useAlternativeCredential : boolean</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `updateGitlabCommitStatus`: Update the commit status in GitLab
+++++
+<ul><li><code>name : String</code> (optional)
+</li>
+<li><code>state</code> (optional)
+<ul><li><b>Values:</b> <code>pending</code>, <code>running</code>, <code>canceled</code>, <code>success</code>, <code>failed</code>, <code>skipped</code></li></ul></li>
+</ul>
+
+
+++++

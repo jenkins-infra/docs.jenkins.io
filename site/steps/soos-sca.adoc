@@ -1,0 +1,49 @@
+= SOOS SCA
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/soos-sca">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'SoosSCA'])`: SOOS SCA
+++++
+<ul><li><code>SOOSApiKey</code>
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>SOOSClientId</code>
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>apiBaseURI : String</code>
+</li>
+<li><code>dirsToExclude : String</code>
+</li>
+<li><code>filesToExclude : String</code>
+</li>
+<li><code>logLevel : String</code>
+</li>
+<li><code>nodePath : String</code>
+</li>
+<li><code>onFailure : String</code>
+</li>
+<li><code>outputFormat : String</code>
+</li>
+<li><code>packageManagers : String</code>
+</li>
+<li><code>projectName : String</code>
+</li>
+<li><code>verbose : boolean</code>
+</li>
+</ul>
+
+
+++++

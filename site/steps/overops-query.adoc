@@ -1,0 +1,160 @@
+= OverOps Query Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/overops-query">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `OverOpsQuery`: OverOps Quality Report
+++++
+<ul><li><code>applicationName : String</code> (optional)
+<div><div>
+ <em>(Optional)</em> Application Name as specified in OverOps. 
+ <ul>
+  <li>If populated, the plugin will filter the data for the specific application in OverOps.</li>
+  <li>If blank, no application filter will be applied in query.</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>checkCriticalErrors</code> (optional)
+<div><div>
+ Use this Gate to detect specific critical errors in the current build.
+</div></div>
+
+<ul><li><b>Type:</b> <code>class net.sf.json.JSONObject</code></li>
+</ul></li>
+<li><code>checkNewErrors</code> (optional)
+<div><div>
+ Use this Gate if you want to check for any new errors in the current build.
+</div></div>
+
+<ul><li><b>Type:</b> <code>class net.sf.json.JSONObject</code></li>
+</ul></li>
+<li><code>checkResurfacedErrors</code> (optional)
+<div><div>
+ Use this Gate if you want to check for any errors that have resurfaced and are occurring in the current build after being marked as resolved in OverOps.
+</div></div>
+
+<ul><li><b>Type:</b> <code>class net.sf.json.JSONObject</code></li>
+</ul></li>
+<li><code>checkUniqueErrors</code> (optional)
+<div><div>
+ Use this Gate to limit the number of allowable Unique Errors in the current build.
+</div></div>
+
+<ul><li><b>Type:</b> <code>class net.sf.json.JSONObject</code></li>
+</ul></li>
+<li><code>checkVolumeErrors</code> (optional)
+<div><div>
+ Use this Gate to limit the Total number of allowable Errors in the current build.
+</div></div>
+
+<ul><li><b>Type:</b> <code>class net.sf.json.JSONObject</code></li>
+</ul></li>
+<li><code>criticalExceptionTypes : String</code> (optional)
+<div><div>
+ A comma delimited list of exception types that are deemed as severe regardless of their volume. If events of any exceptions listed have a count greater than zero, the build will be marked as unstable. 
+ <p>Example: <code>NullPointerException,IndexOutOfBoundsException</code></p>
+</div></div>
+
+</li>
+<li><code>debug : boolean</code> (optional)
+<div><div>
+ If checked, all queries with results will be displayed in the OverOps reliability report. <em>For debugging purposes only</em>.
+</div></div>
+
+</li>
+<li><code>deploymentName : String</code> (optional)
+<div><div>
+ <em>(Optional)</em> Deployment Name as specified in OverOps or use Jenkins environment variables. 
+ <p>Example: <code>${BUILD_NUMBER}</code> or <code>${JOB_NAME}-${BUILD_NUMBER}</code></p>
+ <ul>
+  <li>If populated, the plugin will filter the data for the specific deployment name in OverOps 
+   <blockquote>
+    <strong>Note:</strong> If using Jenkins environment variables, they must be added to the build’s manifest file for OverOps to use. See this <a href="https://doc.overops.com/docs/naming-your-application-server-deployment" rel="nofollow">link</a> for details.
+   </blockquote></li>
+  <li>If blank, no deployment filter will be applied in the query.</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>errorSuccess : boolean</code> (optional)
+<div><div>
+ If checked, the build will be marked <strong><em>Success</em></strong> if unable to generate a Quality Report. By default, the build will be marked <strong><em>Not Built</em></strong> if unable to generate a Quality Report.
+</div></div>
+
+</li>
+<li><code>linkReport : boolean</code> (optional)
+<div><div>
+ Set true if you want to simply generate a link to the report to view later. 
+ <br>
+  Note: Setting this to true will not fail the build as the quality report has not been generated yet.
+</div></div>
+
+</li>
+<li><code>markUnstable : boolean</code> (optional)
+<div><div>
+ If checked the build will be marked unstable if any of the five gates are met.
+</div></div>
+
+</li>
+<li><code>maxErrorVolume : int</code> (optional)
+<div><div>
+ Set the max total error volume allowed. If exceeded the build will be marked as unstable.
+</div></div>
+
+</li>
+<li><code>maxUniqueErrors : int</code> (optional)
+<div><div>
+ Set the max unique error count allowed. If the target volume is exceeded the build will be marked as unstable.
+</div></div>
+
+</li>
+<li><code>newEvents : boolean</code> (optional)
+<div><div>
+ Check if the current build has any new errors.
+</div></div>
+
+</li>
+<li><code>printTopIssues : int</code> (optional)
+<div><div>
+ Displays the top X events (as provided by this parameter) with the highest volume of errors detected in the current build. This is used in conjunction with Max Error Volume and Unique Errors to limit the result set to the top errors which caused a build to fail.
+</div></div>
+
+</li>
+<li><code>regexFilter : String</code> (optional)
+<div><div>
+ A way to filter out specific event types from affecting the outcome of the OverOps Reliability report. Event types include: <em>Uncaught Exception, Caught Exception, Swallowed Exception, Logged Error, Logged Warning, Timer</em>. This filter enables the removal of one or more of these event types from the final results. 
+ <p>Example filter expression with pipe separated list: <code>"type":"s*(Logged Error|Logged Warning|Timer)"</code></p>
+</div></div>
+
+</li>
+<li><code>resurfacedErrors : boolean</code> (optional)
+<div><div>
+ Check if the current build has any errors that have resurfaced since being marked as resolved in OverOps.
+</div></div>
+
+</li>
+<li><code>serviceId : String</code> (optional)
+<div><div>
+ The OverOps environment identifier (e.g S4567) to inspect data for this build. If no value is provided here, the value provided in the global Jenkins plugin settings will be used.
+</div></div>
+
+</li>
+<li><code>showPassedGateEvents : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

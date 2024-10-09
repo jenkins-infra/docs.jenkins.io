@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Guadalajara JAM
+:page-eventStartDate: 2017-01-18T19:00:00
+:page-eventLink: https://www.meetup.com/Guadalajara-Jenkins-Area-Meetup/events/234929834/
+---
+Jenkins Install & Setup

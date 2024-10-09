@@ -1,0 +1,31 @@
+= MSTest plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/mstest">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `mstest`: Publish MSTest test result report
+++++
+<ul><li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>keepLongStdio : boolean</code> (optional)
+</li>
+<li><code>logLevel : String</code> (optional)
+</li>
+<li><code>testResultsFile : String</code> (optional)
+</li>
+</ul>
+
+
+++++

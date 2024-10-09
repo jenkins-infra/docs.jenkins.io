@@ -1,0 +1,66 @@
+= MQTT Notification Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/mqtt-notification-plugin">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `mqttNotification`: MQTT Notification
+++++
+<ul><li><code>brokerUrl : String</code> (optional)
+<div><p>The URL for the MQTT broker. This should also include the protocol (e.g. "tcp://192.168.0.1:1883").</p></div>
+
+</li>
+<li><code>topic : String</code> (optional)
+<div><p>The topic to which to publish the notification. If no value is specified then the default value ("jenkins/$JOB_URL" e.g. "jenkins/job/my-build") is used.</p>
+<p>In addition to environment variables and build parameters, the following variables can also be used (all variables must be prefix with "$"):</p>
+<ul>
+ <li>BUILD_RESULT - The result of the build (e.g. SUCCESS, FAILURE, ABORTED, etc.)</li>
+ <li>PROJECT_URL - The job project's URL (e.g. "job/my-build")</li>
+ <li>CULPRITS - Comma-separated list of the culprits responsible for the current build result</li>
+ <li>BUILD_NUMBER - the build number</li>
+</ul>
+<p></p></div>
+
+</li>
+<li><code>message : String</code> (optional)
+<div><p>The "payload" for the MQTT message.</p>
+<p>In addition to environment variables and build parameters, the following variables can also be used (all variables must be encapsulated within "${}"):</p>
+<ul>
+ <li>BUILD_RESULT - The result of the build (e.g. SUCCESS, FAILURE, ABORTED, etc.)</li>
+ <li>PROJECT_URL - The job project's URL (e.g. "job/my-build")</li>
+ <li>CULPRITS - Comma-separated list of the culprits responsible for the current build result</li>
+ <li>BUILD_NUMBER - the build number</li>
+</ul>
+<p></p></div>
+
+</li>
+<li><code>qos : String</code> (optional)
+<div>The three Qualities of Service, as defined by the MQTT specification, are: 
+<ul>
+ <li>"At most once", where messages are delivered according to the best efforts of the underlying TCP/IP network. Message loss or duplication can occur. This level could be used, for example, with ambient sensor data where it does not matter if an individual reading is lost as the next one will be published soon after.</li>
+ <li>"At least once", where messages are assured to arrive but duplicates may occur.</li>
+ <li>"Exactly once", where message are assured to arrive exactly once. This level could be used, for example, with billing systems where duplicate or lost messages could lead to incorrect charges being applied.</li>
+</ul></div>
+
+</li>
+<li><code>retainMessage : boolean</code> (optional)
+<div><p>If the message is "retained" then the broker will keep a copy as the "last known" message and publish it to any new subscribers when they first connect.</p></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,131 @@
+= VSTest Runner plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/vstestrunner">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `vsTest`: Run unit tests with VSTest.console
+++++
+<ul><li><code>cmdLineArgs : String</code> (optional)
+</li>
+<li><code>enablecodecoverage : boolean</code> (optional)
+<div><div>
+ <p>Enables data diagnostic adapter CodeCoverage in the test run.<br>
+   Default settings are used if not specified using settings file.</p>
+</div>
+<div>
+ <p>Command Line Argument: <span>/Enablecodecoverage</span></p>
+</div></div>
+
+</li>
+<li><code>failBuild : boolean</code> (optional)
+</li>
+<li><code>framework : String</code> (optional)
+<div><div>
+ <p>Target .NET Framework version to be used for test execution.<br>
+   Valid values are Framework35, Framework40 and Framework45.</p>
+</div>
+<div>
+ <p>Command Line Argument: <span>/Framework: [ framework version ]</span></p>
+</div></div>
+
+</li>
+<li><code>inIsolation : boolean</code> (optional)
+<div><div>
+ <p>Runs the tests in an isolated process.<br>
+   This makes vstest.console.exe process less likely to be stopped on an error in the tests, but tests might run slower.</p>
+</div></div>
+
+</li>
+<li><code>logger : String</code> (optional)
+<div><div>
+ <p>Specify a logger for test results. For example, to log results into a Visual Studio Test Results File (TRX) use /Logger:trx.</p>
+</div>
+<div>
+ <p>Command Line Argument: <span> /Logger:[ uri/friendlyname ] </span></p>
+</div></div>
+
+</li>
+<li><code>platform : String</code> (optional)
+<div><div>
+ <p>Target platform architecture to be used for test execution.<br>
+   Valid values are x86, x64 and ARM.</p>
+</div></div>
+
+</li>
+<li><code>settings : String</code> (optional)
+<div><div>
+ <p>Run tests with additional settings such as data collectors.<br>
+   Example: <span>Local.RunSettings</span></p>
+</div>
+<div>
+ <p>Command Line Argument: <span>/Settings:[ file name ]</span></p>
+</div></div>
+
+</li>
+<li><code>testCaseFilter : String</code> (optional)
+<div><div>
+ <p>Run tests that match the given expression.<br>
+   &lt;Expression&gt; is of the format &lt;property&gt;=&lt;value&gt;[||&lt;Expression&gt;]. <br>
+   Example: <span>TestCategory=Nightly||Name=Namespace.ClassName.MethodName</span><br><br>
+   The TestCaseFilter command line option cannot be used with the Tests command line option.</p>
+</div>
+<div>
+ <p>Command Line Argument: <span>/TestCaseFilter:[ expression ]</span></p>
+</div></div>
+
+</li>
+<li><code>testFiles : String</code> (optional)
+<div><div>
+ <p>Specify the path to your VSTest compiled assemblies.<br>
+   You can specify multiple test assemblies by separating them with new-line or space.</p>
+</div></div>
+
+</li>
+<li><code>tests : String</code> (optional)
+<div><div>
+ <p>Run tests with names that match the provided values.<br>
+   To provide multiple values, separate them by commas.<br>
+   Example: <span>TestMethod1,testMethod2</span><br><br>
+   The /Tests command line option cannot be used with the /TestCaseFilter command line option.</p>
+</div>
+<div>
+ <p>Command Line Argument: <span>/Tests:[ test name ]</span></p>
+</div></div>
+
+</li>
+<li><code>useVs2017Plus : boolean</code> (optional)
+<div><div>
+ <p>This makes adjustments to the arguments for the sake of compatibility with Visual Studio 2017+.</p>
+</div>
+<div>
+ <p>Command Line Argument: <span>/UseVs2017Plus:true</span></p>
+</div></div>
+
+</li>
+<li><code>useVsixExtensions : boolean</code> (optional)
+<div><div>
+ <p>This makes vstest.console.exe process use or skip the VSIX extensions installed (if any) in the test run.</p>
+</div>
+<div>
+ <p>Command Line Argument: <span>/UseVsixExtensions:true</span></p>
+</div></div>
+
+</li>
+<li><code>vsTestName : String</code> (optional)
+</li>
+</ul>
+
+
+++++

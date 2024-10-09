@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Jenkins User Conference Israel
+:page-eventStartDate: 2016-07-03T08:00:00
+:page-eventLink: https://jenkins-cfp.herokuapp.com/events/jenkins-user-conference-israel
+---
+Join Kohsuke Kawaguchi in Israel for a full day of Jenkins learning and networking. CFP is CLOSED.

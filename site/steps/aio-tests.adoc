@@ -1,0 +1,108 @@
+= AIO Tests
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/aio-tests">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `aioImport`: Publish results to AIO Tests - Jira
+++++
+<ul><li><code>projectKey : String</code>
+<div><small>Jira Project key (eg. SCRUM) to which the results need to be reported to</small></div>
+
+</li>
+<li><code>resultsFilePath : String</code>
+<div><small>Path to results file which needs to be uploaded. Path needs to be relative to workspace eg. /target/surefire-reports/testng-results.xml</small></div>
+
+</li>
+<li><code>addCaseToCycle : boolean</code>
+<div><small>If checked, cases not already in cycle are added, else the cases are reported as errors</small></div>
+
+</li>
+<li><code>createCase : boolean</code>
+<div><small>If checked and no case exists with a matching case key or automation key, a new case is created</small></div>
+
+</li>
+<li><code>bddForceUpdateCase : boolean</code>
+<div><small>If checked, cases will be updated with scenario steps if they mismatch. Select if feature files from automation code repo are source of truth.</small></div>
+
+</li>
+<li><code>forceUpdateCase : boolean</code>
+<div><small>Affects only Robot cases with steps. Select to update case steps from steps in automaton results files. Keep unchecked if steps should not be updated from results.</small></div>
+
+</li>
+<li><code>isBatch : boolean</code>
+<div><small>If checked, results will be imported as a batch process. Batches run every few minutes and can be tracked from the AIO Cycles screen.</small></div>
+
+</li>
+<li><code>createNewRun : boolean</code>
+<div><small>If checked, a new run will be created for each execution of case. If unchecked, the existing latest run would be overwritten with execution data.</small></div>
+
+</li>
+<li><code>apiKey</code>
+<div><small>API Token from AIO Tests - to move to credentials or global config</small></div>
+
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>frameworkType : String</code> (optional)
+</li>
+<li><code>entry</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'ExistingCycle'</code><div>
+<ul><li><code>cycleKey : String</code>
+<div><small>AIO Tests Cycle Key that needs to be updated with results - eg. <b>SCRUM-CY-1</b></small> <small>Results will be updated to the specified cycle.</small></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'NewCycle'</code><div>
+<ul><li><code>cyclePrefix : String</code>
+<div><small>Prefix to be used while creating a new AIO Tests cycle. A new cycle would be created with prefix appended with timestamp of run eg.Regression Run Fri Dec 11 13:21:56 TZ 2020</small></div>
+
+</li>
+<li><code>cycleFolder : String</code>
+<div><small>Comma separated list of folder hierarchy. If folder exists, it would be used else a new folder would be created along with its hierarchy, and newly created cycle would be put in the folder</small></div>
+
+</li>
+<li><code>cycleTasks : String</code>
+<div><small>Comma separated lists of task/story ids. Eg. AT-223,AT-225</small></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>failBuildOnFailure : boolean</code> (optional)
+<div><small>If checked, the build result will be updated to failed, in case publishing results fails</small></div>
+
+</li>
+<li><code>hideDetails : boolean</code> (optional)
+<div><small>If checked, case details from the publish results response will be hidden in job console log.</small> <small>If unchecked, status would be shown against each case that was published.</small></div>
+
+</li>
+<li><code>jiraInstanceType : String</code> (optional)
+</li>
+<li><code>jiraPassword</code> (optional)
+<div><small>Jira Server Password</small></div>
+
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>jiraServerUrl : String</code> (optional)
+<div><small>Jira Server IP address or hostname eg. https://yourjiraserver.com</small></div>
+
+</li>
+<li><code>jiraUsername : String</code> (optional)
+<div><small>Jira Server Username</small></div>
+
+</li>
+</ul>
+
+
+++++

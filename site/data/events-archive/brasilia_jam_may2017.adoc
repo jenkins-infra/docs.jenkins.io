@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Brasilisa JAM
+:page-eventStartDate: 2017-05-04T19:00:00
+:page-eventLink: https://www.meetup.com/Brasilia-Jenkins-Area-Meetup/events/239347204/?eventId=239347204
+---
+This will be a joint meetup with Docker.

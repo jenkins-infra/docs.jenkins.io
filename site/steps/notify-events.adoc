@@ -1,0 +1,137 @@
+= Notify.Events
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/notify-events">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `notifyEvents`: Send notification
+++++
+<ul><li><code>attachBuildLog : boolean</code> (optional)
+</li>
+<li><code>attachment : String</code> (optional)
+</li>
+<li><code>level : String</code> (optional)
+</li>
+<li><code>message : String</code> (optional)
+</li>
+<li><code>priority : String</code> (optional)
+</li>
+<li><code>title : String</code> (optional)
+</li>
+<li><code>token : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'NotifyEventsBuilder'])`: Notify.Events
+++++
+<ul><li><code>token : String</code>
+</li>
+<li><code>title : String</code>
+</li>
+<li><code>message : String</code>
+</li>
+<li><code>priority : String</code>
+</li>
+<li><code>level : String</code>
+</li>
+<li><code>attachBuildLog : boolean</code>
+</li>
+<li><code>attachment : String</code>
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'NotifyEventsPublisher'])`: Notify.Events
+++++
+<ul><li><code>token : String</code>
+</li>
+<li><code>title : String</code>
+</li>
+<li><code>message : String</code>
+</li>
+<li><code>attachBuildLog : boolean</code>
+</li>
+<li><code>attachment : String</code>
+</li>
+<li><code>onSuccess : boolean</code>
+</li>
+<li><code>onSuccessCustom : boolean</code>
+</li>
+<li><code>onSuccessCustomTitle : String</code>
+</li>
+<li><code>onSuccessCustomMessage : String</code>
+</li>
+<li><code>onSuccessCustomPriority : String</code>
+</li>
+<li><code>onSuccessCustomLevel : String</code>
+</li>
+<li><code>onSuccessCustomAttachBuildLog : boolean</code>
+</li>
+<li><code>onSuccessCustomAttachment : String</code>
+</li>
+<li><code>onUnstable : boolean</code>
+</li>
+<li><code>onUnstableCustom : boolean</code>
+</li>
+<li><code>onUnstableCustomTitle : String</code>
+</li>
+<li><code>onUnstableCustomMessage : String</code>
+</li>
+<li><code>onUnstableCustomPriority : String</code>
+</li>
+<li><code>onUnstableCustomLevel : String</code>
+</li>
+<li><code>onUnstableCustomAttachBuildLog : boolean</code>
+</li>
+<li><code>onUnstableCustomAttachment : String</code>
+</li>
+<li><code>onFailure : boolean</code>
+</li>
+<li><code>onFailureCustom : boolean</code>
+</li>
+<li><code>onFailureCustomTitle : String</code>
+</li>
+<li><code>onFailureCustomMessage : String</code>
+</li>
+<li><code>onFailureCustomPriority : String</code>
+</li>
+<li><code>onFailureCustomLevel : String</code>
+</li>
+<li><code>onFailureCustomAttachBuildLog : boolean</code>
+</li>
+<li><code>onFailureCustomAttachment : String</code>
+</li>
+<li><code>onAborted : boolean</code>
+</li>
+<li><code>onAbortedCustom : boolean</code>
+</li>
+<li><code>onAbortedCustomTitle : String</code>
+</li>
+<li><code>onAbortedCustomMessage : String</code>
+</li>
+<li><code>onAbortedCustomPriority : String</code>
+</li>
+<li><code>onAbortedCustomLevel : String</code>
+</li>
+<li><code>onAbortedCustomAttachBuildLog : boolean</code>
+</li>
+<li><code>onAbortedCustomAttachment : String</code>
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,9 @@
+---
+:page-eventTitle: SPB Jenkins Meetup
+:page-eventLocation: St. Petersburg, Russia
+:page-eventStartDate: 2019-11-05T18:30:00
+:page-eventLink: https://www.meetup.com/St-Petersburg-Jenkins-Meetup/events/265895574/
+---
+
+Jenkins Pipeline in practice.
+War stories and case studies from Dell EMC and Bercut.

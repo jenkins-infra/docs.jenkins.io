@@ -1,0 +1,27 @@
+= MQ Notifier
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/mq-notifier">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `publishMQMessage`: Publish MQ Message
+++++
+<ul><li><code>json : String</code>
+</li>
+<li><code>routingKey : String</code> (optional)
+</li>
+</ul>
+
+
+++++

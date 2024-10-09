@@ -1,0 +1,1040 @@
+= Cloudify
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/cloudify">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `cfyAzureArm`: Create Azure ARM Deployment
+++++
+<ul><li><code>azureCredentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Azure. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Cloudify. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>debugOutput : boolean</code> (optional)
+<div><div>
+ If checked, then printed Cloudify events and logs will include debug-level records.
+</div></div>
+
+</li>
+<li><code>deploymentId : String</code> (optional)
+</li>
+<li><code>echoEnvData : boolean</code> (optional)
+<div><div>
+ <p>If checked, then the created environment's data will be printed to the job's log.</p>
+</div></div>
+
+</li>
+<li><code>echoInputs : boolean</code> (optional)
+<div><div>
+ If checked, then the Cloudify deployment inputs are echoed to the Jenkins log.
+</div></div>
+
+</li>
+<li><code>envDataLocation : String</code> (optional)
+<div><div>
+ <p>Path to a file that will contain the created environment's data. If not provided, the environment data won't be written.</p>
+</div></div>
+
+</li>
+<li><code>location : String</code> (optional)
+<div><div>
+ <p>The Azure location where the created resource group should reside in. If omitted, the value of the <code>azure_default_location</code> Cloudify secret will be used.</p>
+</div></div>
+
+</li>
+<li><code>parameters</code> (optional)
+<div><div>
+ <p>YAML/JSON of parameters to pass to the template.</p>
+</div></div>
+
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+<li><code>parametersAsString : String</code> (optional)
+</li>
+<li><code>parametersFile : String</code> (optional)
+<div><div>
+ <p>Path, relative to the Jenkins workspace root, of a YAML/JSON file containing parmaeters to pass to the template.</p>
+</div></div>
+
+</li>
+<li><code>resourceGroupName : String</code> (optional)
+<div><div>
+ <p>Name of resource group to create for the template.</p>
+</div></div>
+
+</li>
+<li><code>templateFile : String</code> (optional)
+<div><div>
+ <p>Workspace-relative path of the ARM template file.</p>
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `cfyAnsible`: Run Ansible Playbook
+++++
+<ul><li><code>additionalArgs : String</code> (optional)
+</li>
+<li><code>ansibleEnvVars : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Cloudify. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>debugLevel : int</code> (optional)
+</li>
+<li><code>debugOutput : boolean</code> (optional)
+</li>
+<li><code>deploymentId : String</code> (optional)
+</li>
+<li><code>echoEnvData : boolean</code> (optional)
+</li>
+<li><code>echoInputs : boolean</code> (optional)
+<div><div>
+ If checked, then the Cloudify deployment inputs are echoed to the Jenkins log.
+</div></div>
+
+</li>
+<li><code>envDataLocation : String</code> (optional)
+</li>
+<li><code>optionsConfig : String</code> (optional)
+</li>
+<li><code>playbookPath : String</code> (optional)
+</li>
+<li><code>remergeSources : boolean</code> (optional)
+</li>
+<li><code>runData : String</code> (optional)
+</li>
+<li><code>savePlaybook : boolean</code> (optional)
+</li>
+<li><code>scpExtraArgs : String</code> (optional)
+</li>
+<li><code>sensitiveKeys : String</code> (optional)
+</li>
+<li><code>sftpExtraArgs : String</code> (optional)
+</li>
+<li><code>sourcePath : String</code> (optional)
+</li>
+<li><code>sources : String</code> (optional)
+</li>
+<li><code>sshCommonArgs : String</code> (optional)
+</li>
+<li><code>sshExtraArgs : String</code> (optional)
+</li>
+<li><code>startAtTask : String</code> (optional)
+</li>
+<li><code>tenant : String</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `cfyCloudFormation`: Create CloudFormation Stack
+++++
+<ul><li><code>awsCredentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing AWS. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Cloudify. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>debugOutput : boolean</code> (optional)
+<div><div>
+ If checked, then printed Cloudify events and logs will include debug-level records.
+</div></div>
+
+</li>
+<li><code>deploymentId : String</code> (optional)
+<div><div>
+ <p>ID to assign to the created Cloudify deployment. If not provided, one will be randomly generated. You can obtain the deployment ID from the "environment data" output file.</p>
+</div></div>
+
+</li>
+<li><code>echoEnvData : boolean</code> (optional)
+<div><div>
+ <p>If checked, then the created environment's data will be printed to the job's log.</p>
+</div></div>
+
+</li>
+<li><code>echoInputs : boolean</code> (optional)
+<div><div>
+ If checked, then the Cloudify deployment inputs are echoed to the Jenkins log.
+</div></div>
+
+</li>
+<li><code>envDataLocation : String</code> (optional)
+<div><div>
+ <p>Path to a file that will contain the created environment's data. If not provided, the environment data won't be written.</p>
+</div></div>
+
+</li>
+<li><code>parameters</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+<li><code>parametersAsString : String</code> (optional)
+</li>
+<li><code>parametersFile : String</code> (optional)
+<div><div>
+ <p>Path, relative to the Jenkins workspace root, of a YAML/JSON file containing parmaeters to pass to the template.</p>
+</div></div>
+
+</li>
+<li><code>regionName : String</code> (optional)
+<div><div>
+ <p>AWS region to use. If not specified, the value of the <code>aws_region_name</code> secret is used.</p>
+</div></div>
+
+</li>
+<li><code>stackName : String</code> (optional)
+<div><div>
+ <p>Name of the new stack.</p>
+</div></div>
+
+</li>
+<li><code>templateBody : String</code> (optional)
+</li>
+<li><code>templateBucketName : String</code> (optional)
+</li>
+<li><code>templateFile : String</code> (optional)
+</li>
+<li><code>templateResourceName : String</code> (optional)
+</li>
+<li><code>templateUrl : String</code> (optional)
+<div><div>
+ <p>URL of the Terraform template. May be a ZIP, <code>tar.gz</code>, or a Git repository.</p>
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `createCloudifyEnv`: Create Cloudify Environment
+++++
+<div><div>
+ <p>Creates a topology from an environment blueprint.</p>
+ <p>The "Output File" parameter denotes where the new environment's outputs will be written to. Later build steps can inspect this file in order to grab information pertinent to them (such as IP addresses, user names and so forth).</p>
+ <p>All input fields support standard Jenkins parameters' expansion. For example, the string <code>${app_name}</code> will be expanded, in runtime, to the value of a build parameter called <code>app_name</code> .</p>
+ <p>For explanation about the format of the outputs file, refer to the help tooltip for that parameter.</p>
+</div></div>
+<ul><li><code>blueprintId : String</code> (optional)
+<div><div>
+ <p>Unique identifier for the created deployment.</p>
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Cloudify. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>debugOutput : boolean</code> (optional)
+<div><div>
+ If checked, then printed Cloudify events and logs will include debug-level records.
+</div></div>
+
+</li>
+<li><code>deploymentId : String</code> (optional)
+<div><div>
+ <p>Identifies the blueprint to create a deployment off.</p>
+</div></div>
+
+</li>
+<li><code>echoInputs : boolean</code> (optional)
+<div><div>
+ If checked, then the Cloudify deployment inputs are echoed to the Jenkins log.
+</div></div>
+
+</li>
+<li><code>echoOutputs : boolean</code> (optional)
+<div><div>
+ At the end of the build step, print the outputs and capabilities to the console.
+</div></div>
+
+</li>
+<li><code>inputs : String</code> (optional)
+<div><div>
+ <p>A YAML/JSON containing inputs for the deployment. These inputs will be merged with inputs provided through the " <code>inputs file</code> " parameter.</p>
+</div></div>
+
+</li>
+<li><code>inputsFile : String</code> (optional)
+<div><div>
+ <p>A path (relative to the workspace root) to a YAML/JSON file containing inputs for the deployment. These inputs will be merged with inputs provided through the " <code>inputs</code> " parameter.</p>
+</div></div>
+
+</li>
+<li><code>mapping : String</code> (optional)
+<div><div>
+ <p>If specified, this YAML/JSON will be used to transform a YAML/JSON coming from the "inputs file" parameter. This is useful if the "inputs file" is the result of a different Cloudify environment build.</p>
+ <p>This parameter must not be provided if "mapping file" is provided.</p>
+</div></div>
+
+</li>
+<li><code>mappingFile : String</code> (optional)
+<div><div>
+ <p>If specified, this YAML/JSON file will be used to transform a YAML/JSON coming from the "inputs file" parameter. This is useful if the "inputs file" is the result of a different Cloudify environment build.</p>
+ <p>This parameter must not be provided if "mapping" is provided.</p>
+</div></div>
+
+</li>
+<li><code>outputFile : String</code> (optional)
+<div><div>
+ <p>Name of file into which the deployment's outputs and capabilities will be written. The file will be a JSON, adhering to the following format:</p>
+ <pre>{
+    "outputs": &lt;outputs_dictionary&gt;,
+    "capabilities": &lt;capabilities_dictionary&gt;
+}
+	</pre>
+</div></div>
+
+</li>
+<li><code>skipInstall : boolean</code> (optional)
+<div><div>
+ Only create a Cloudify deployment; skip running the <code>install</code> workflow.
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+<div><div>
+ <p>Cloudify tenant to operate on. If left empty, then the default tenant (defined in the plugin's configuration page) will be used.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `deleteCloudifyBlueprint`: Delete Cloudify Blueprint
+++++
+<div><div>
+ Use this step to delete a Cloudify blueprint from Cloudify Manager.
+</div></div>
+<ul><li><code>blueprintId : String</code> (optional)
+<div><div>
+ ID of blueprint to delete.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Cloudify. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+<div><div>
+ <p>Cloudify tenant to operate on. If left empty, then the default tenant (defined in the plugin's configuration page) will be used.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `deleteCloudifyEnv`: Delete Cloudify Environment
+++++
+<div><div>
+ Deletes a Cloudify environment.
+</div></div>
+<ul><li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Cloudify. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>debugOutput : boolean</code> (optional)
+<div><div>
+ If checked, then printed Cloudify events and logs will include debug-level records.
+</div></div>
+
+</li>
+<li><code>deleteBlueprintIfLast : boolean</code> (optional)
+<div><div>
+ <p>If checked, and this is the last environment for the associated blueprint, then also delete the blueprint.</p>
+</div></div>
+
+</li>
+<li><code>deploymentId : String</code> (optional)
+</li>
+<li><code>ignoreFailure : boolean</code> (optional)
+<div><div>
+ <p>If checked, then failures during the removal of the environment will be ignored.</p>
+</div></div>
+
+</li>
+<li><code>skipUninstall : boolean</code> (optional)
+<div><div>
+ Only delete the Cloudify deployment; skip running the <code>uninstall</code> workflow.
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+<div><div>
+ <p>Cloudify tenant to operate on. If left empty, then the default tenant (defined in the plugin's configuration page) will be used.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `executeCloudifyWorkflow`: Execute Cloudify Workflow
+++++
+<div><div>
+ This step executes a workflow on Cloudify Manager.
+</div></div>
+<ul><li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Cloudify. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>debugOutput : boolean</code> (optional)
+<div><div>
+ If checked, then printed Cloudify events and logs will include debug-level records.
+</div></div>
+
+</li>
+<li><code>deploymentId : String</code> (optional)
+<div><div>
+ ID of the Cloudify environment to delete.
+</div></div>
+
+</li>
+<li><code>executionParameters : String</code> (optional)
+<div><div>
+ <p>Parameters to pass to the execution, in YAML/JSON format.</p>
+</div></div>
+
+</li>
+<li><code>printLogs : boolean</code> (optional)
+<div><div>
+ If checked, then the execution's events and logs are printed to the build log. Note that this implies "wait for completion".
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+<div><div>
+ <p>Cloudify tenant to operate on. If left empty, then the default tenant (defined in the plugin's configuration page) will be used.</p>
+</div></div>
+
+</li>
+<li><code>waitForCompletion : boolean</code> (optional)
+<div><div>
+ If checked, then the build waits for the execution to finish. If the execution ends in any way other than success, the build step will fail.
+</div></div>
+
+</li>
+<li><code>workflowId : String</code> (optional)
+<div><div>
+ <p>The ID of the workflow to execute.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `cfyKubernetes`: Create Kubernetes Resources
+++++
+<ul><li><code>allowNodeRedefinition : boolean</code> (optional)
+</li>
+<li><code>apiKeyCredentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials entry that contains the API key.</p>
+ <p>This parameter is optional; the API key may also be provided through "API options", however this method is preferred.</p>
+ <p>If provided, then this credentials entry must either be of type "text" or "file". In the latter case, the file is read as-is and the resultant string is used as the API credentials.</p>
+</div></div>
+
+</li>
+<li><code>apiKeyFile : String</code> (optional)
+<div><div>
+ <p>Path to file, relative to the Jenkins workspace, containing the API key.</p>
+ <p>This parameter is optional, as the API key may be provided by other means.</p>
+</div></div>
+
+</li>
+<li><code>caCert : String</code> (optional)
+<div><div>
+ Path, relative to the workspace's root, of a file containing the CA certificates store to use for verifying the Kubernetes host's certificate.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Cloudify. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>debugOutput : boolean</code> (optional)
+<div><div>
+ If checked, then printed Cloudify events and logs will include debug-level records.
+</div></div>
+
+</li>
+<li><code>definition</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+<li><code>definitionAsString : String</code> (optional)
+<div><div>
+ The Kubernetes application definition.
+</div></div>
+
+</li>
+<li><code>definitionFile : String</code> (optional)
+<div><div>
+ Path, relative to the Jenkins workspace root, to a file containing the Kubernetes application definition.
+</div></div>
+
+</li>
+<li><code>deploymentId : String</code> (optional)
+<div><div>
+ <p>ID to assign to the created Cloudify deployment. If not provided, one will be randomly generated. You can obtain the deployment ID from the "environment data" output file.</p>
+</div></div>
+
+</li>
+<li><code>echoEnvData : boolean</code> (optional)
+<div><div>
+ <p>If checked, then the created environment's data will be printed to the job's log.</p>
+</div></div>
+
+</li>
+<li><code>echoInputs : boolean</code> (optional)
+<div><div>
+ If checked, then the Cloudify deployment inputs are echoed to the Jenkins log.
+</div></div>
+
+</li>
+<li><code>envDataLocation : String</code> (optional)
+<div><div>
+ <p>Path to a file that will contain the created environment's data. If not provided, the environment data won't be written.</p>
+</div></div>
+
+</li>
+<li><code>gcpCredentialsFile : String</code> (optional)
+<div><div>
+ <p>A YAML/JSON file containing GCP service account details, to use for authentication against GCP.</p>
+ <p>This parameter is optional, and is only relevant for authenticating against GCP.</p>
+ <p>If provided, it should follow the same layout as described in the "GCP Credentials ID" parameter.</p>
+</div></div>
+
+</li>
+<li><code>gcpCredentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to be used for authentication against GCP.</p>
+ <p>This parameter is optional, and is only relevant for authenticating against GCP.</p>
+ <p>If provided, it should be the ID of either a string-type or file-type credentials entry, with the standard GCP service account YAML/JSON syntax:</p>
+ <pre>{
+  "type": "...",
+  "project_id": "...",
+  "private_key_id": "...",
+  "private_key": "...",
+  "client_email": "...",
+  "client_id": "...",
+  "auth_uri": "...",
+  "token_uri": "...",
+  "auth_provider_x509_cert_url": "...",
+  "client_x509_cert_url": "..."
+}
+	</pre>
+</div></div>
+
+</li>
+<li><code>k8sDebug : boolean</code> (optional)
+</li>
+<li><code>k8sMaster : String</code> (optional)
+<div><div>
+ The Kubernetes master host to use. This can also be provided through the API Options field; it is available as a separate parameter for convenience.
+</div></div>
+
+</li>
+<li><code>namespace : String</code> (optional)
+<div><div>
+ The application's namespace. <b>Note:</b> value provided here will overwrite the <code>namespace</code> value in the <code>options</code> field, if exists.
+</div></div>
+
+</li>
+<li><code>options</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+<li><code>optionsAsString : String</code> (optional)
+<div><div>
+ Kubernetes options.
+</div></div>
+
+</li>
+<li><code>optionsFile : String</code> (optional)
+<div><div>
+ Path, relative to the Jenkins workspace root, to a file containing Kubernetes options.
+</div></div>
+
+</li>
+<li><code>skipSslVerification : boolean</code> (optional)
+</li>
+<li><code>sslCertFile : String</code> (optional)
+<div><div>
+ Path, relative to the workspace's root, of a file containing the certificate presented to the Kubernetes host.
+</div></div>
+
+</li>
+<li><code>sslKeyFile : String</code> (optional)
+<div><div>
+ Path, relative to the workspace's root, of a file containing the key for the certificate presented to the Kubernetes host.
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+</li>
+<li><code>validateStatus : boolean</code> (optional)
+<div><div>
+ If checked, then the status of the Kubernetes application is validated after provisioning.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `cfyOutputsToInputs`: Convert Cloudify Environment Outputs/Capabilities to Inputs
+++++
+<div><div>
+ <p>This step maps outputs and capabilities, of an environment created by Cloudify, into inputs of another deployment.</p>
+ <p>This step takes two inputs:</p>
+ <ul>
+  <li>A JSON file in the format generated by the "Build Cloudify Environment" ("outputs file"). For more information, refer to the tooltip of the "Outputs File" parameter.</li>
+  <li>A JSON file (or string) containing the mapping.</li>
+ </ul>
+ <p>The format of the mapping JSON is as follows:</p>
+ <pre>{
+    "outputs": {
+    	"&lt;output_name&gt;": "&lt;input_name&gt;",
+    	"&lt;output_name&gt;": "&lt;input_name&gt;",
+    	...
+    },
+    "capabilities": {
+    	"&lt;capability_name&gt;": "&lt;input_name&gt;",
+    	"&lt;capability_name&gt;": "&lt;input_name&gt;",
+    	...
+    }
+}
+	</pre>
+ <p>At the end, a file will be generated, containing a JSON compatible with Cloudify's standard "Deployment Inputs" structure, namely:</p>
+ <pre>{
+	"&lt;input_name&gt;": "&lt;intput_value&gt;",
+	"&lt;input_name&gt;": "&lt;intput_value&gt;",
+	...
+	</pre>
+ <p>For example, if the "outputs file" is as follows:</p>
+ <pre>{
+	"outputs": {
+		"endpoint": "10.0.0.130",
+		"username": "centos"
+	},
+	"capabilities": {
+		"public_key": "/tmp/public_key"
+	}
+}
+	</pre>
+ <p>And the mapping is as follows:</p>
+ <pre>{
+	"outputs": {
+		"username": "app_username"
+	},
+	"capabilities": {
+		"public_key": "app_data"
+	}
+}
+	</pre>
+ <p>Then the resultant inputs file will be as follows:</p>
+ <pre>{
+	"app_username": "centos",
+	"app_data": "/tmp/public_key"
+}
+	</pre>
+</div></div>
+<ul><li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>inputsLocation : String</code> (optional)
+<div><div>
+ <p>Path to the inputs file to be created.</p>
+</div></div>
+
+</li>
+<li><code>mapping : String</code> (optional)
+<div><div>
+ <p>A JSON containing mapping between outputs/capabilities and inputs. For information about the structure, refer to the tooltip of this build step.</p>
+</div></div>
+
+</li>
+<li><code>mappingLocation : String</code> (optional)
+<div><div>
+ <p>A JSON containing mapping between outputs/capabilities and inputs. For information about the structure, refer to the tooltip of this build step.</p>
+</div></div>
+
+</li>
+<li><code>outputsLocation : String</code> (optional)
+<div><div>
+ <p>Location of the outputs JSON file, containing outputs and capabilities of another deployment. The file must be in the following format:</p>
+ <pre>{
+    "outputs": {
+    	"&lt;output_name&gt;": "&lt;output_value&gt;",
+    	"&lt;output_name&gt;": "&lt;output_value&gt;",
+    	...
+    },
+    "capabilities": {
+    	"&lt;capability_name&gt;": "&lt;capability_value&gt;",
+    	"&lt;capability_name&gt;": "&lt;capability_value&gt;",
+    	...
+    }
+}
+	</pre>
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+<div><div>
+ <p>Cloudify tenant to operate on. If left empty, then the default tenant (defined in the plugin's configuration page) will be used.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `cfyTerraform`: Apply Terraform Module
+++++
+<ul><li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Cloudify. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>debugOutput : boolean</code> (optional)
+<div><div>
+ If checked, then printed Cloudify events and logs will include debug-level records.
+</div></div>
+
+</li>
+<li><code>deploymentId : String</code> (optional)
+<div><div>
+ <p>ID to assign to the created Cloudify deployment. If not provided, one will be randomly generated. You can obtain the deployment ID from the "environment data" output file.</p>
+</div></div>
+
+</li>
+<li><code>echoEnvData : boolean</code> (optional)
+<div><div>
+ <p>If checked, then the created environment's data will be printed to the job's log.</p>
+</div></div>
+
+</li>
+<li><code>echoInputs : boolean</code> (optional)
+<div><div>
+ If checked, then the Cloudify deployment inputs are echoed to the Jenkins log.
+</div></div>
+
+</li>
+<li><code>envDataLocation : String</code> (optional)
+<div><div>
+ <p>Path to a file that will contain the created environment's data. If not provided, the environment data won't be written.</p>
+</div></div>
+
+</li>
+<li><code>environmentVariables</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>environmentVariablesAsString : String</code> (optional)
+<div><div>
+ <p>YAML/JSON containing environment variables to pass to the Terraform process. The provided string will be expanded for environment variables (<code>${VAR_NAME}</code>).</p>
+</div></div>
+
+</li>
+<li><code>environmentVariablesFile : String</code> (optional)
+<div><div>
+ <p>Path, relative to the Jenkins workspace root, of a YAML/JSON file containing environment variables to pass to the Terraform process.</p>
+</div></div>
+
+</li>
+<li><code>executable : String</code> (optional)
+<div><div>
+ <p>Path, on Cloudify Manager, of the Terraform executable. If omitted, the value of the <code>terraform_executable</code> Cloudify secret will be used.</p>
+</div></div>
+
+</li>
+<li><code>pluginsDirectory : String</code> (optional)
+<div><div>
+ <p>Path, on Cloudify Manager, of Terraform's plugins directory. If omitted, the value of the <code>terraform_plugins_dir</code> Cloudify secret will be used.</p>
+</div></div>
+
+</li>
+<li><code>storageDirectory : String</code> (optional)
+<div><div>
+ <p>Path, on Cloudify Manager, of Terraform's storage directory. If omitted, the value of the <code>terraform_storage_dir</code> Cloudify secret will be used.</p>
+</div></div>
+
+</li>
+<li><code>templateUrl : String</code> (optional)
+<div><div>
+ <p>URL of the Terraform template. May be a ZIP, <code>tar.gz</code>, or a Git repository.</p>
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+</li>
+<li><code>variables</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+<li><code>variablesAsString : String</code> (optional)
+<div><div>
+ <p>YAML/JSON containing variables to pass to the Terraform template. The provided string will be expanded for environment variables (<code>${VAR_NAME}</code>).</p>
+</div></div>
+
+</li>
+<li><code>variablesFile : String</code> (optional)
+<div><div>
+ <p>Path, relative to the Jenkins workspace root, of a YAML/JSON file containing parmaeters to pass to the template.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `uploadCloudifyBlueprint`: Upload Cloudify Blueprint
+++++
+<div><div>
+ <p>Use this step to upload a blueprint to Cloudify Manager.</p>
+ <p>Two paramters are mandatory:</p>
+ <ul>
+  <li>Blueprint ID</li>
+  <li>Main blueprint file name</li>
+ </ul>
+ <p>In addition, exactly one of the following parameters is mandatory:</p>
+ <ul>
+  <li>Blueprint archive path</li>
+  <li>Blueprint archive URL</li>
+  <li>Blueprint's root directory</li>
+  <li></li>
+ </ul>
+ <p>If you provide a blueprint's root directory, then the entire directory contents are packaged into a blueprint archive.</p>
+</div></div>
+<ul><li><code>archivePath : String</code> (optional)
+<div><div>
+ Path (relative to the workspace root) of the blueprint archive.
+</div></div>
+
+</li>
+<li><code>archiveUrl : String</code> (optional)
+<div><div>
+ URL of the blueprint archive.
+</div></div>
+
+</li>
+<li><code>blueprintId : String</code> (optional)
+<div><div>
+ ID to assign to the uploaded blueprint.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Cloudify. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>mainFileName : String</code> (optional)
+<div><div>
+ Name of the YAML file containing the main entry point to the blueprint.
+</div></div>
+
+</li>
+<li><code>rootDirectory : String</code> (optional)
+<div><div>
+ Directory where the blueprint is located.
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+<div><div>
+ <p>Cloudify tenant to operate on. If left empty, then the default tenant (defined in the plugin's configuration page) will be used.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `uploadCloudifyBlueprint`: Upload Cloudify Plugin
+++++
+<div><div>
+ Use this step to upload a plugin to Cloudify Manager.
+</div></div>
+<ul><li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Cloudify. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>outputLocation : String</code> (optional)
+<div><div>
+ Location where the plugin information, in JSON format, will be stored.
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+<div><div>
+ <p>Cloudify tenant to operate on. If left empty, then the default tenant (defined in the plugin's configuration page) will be used.</p>
+</div></div>
+
+</li>
+<li><code>wagonLocation : String</code> (optional)
+<div><div>
+ URL of the Wagon file.
+</div></div>
+
+</li>
+<li><code>yamlLocation : String</code> (optional)
+<div><div>
+ URL of the <code>plugin.yaml</code> file of the plugin.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `wrap([$class: 'CloudifyBuildWrapper'])`: Cloudify Environment
+++++
+<div><div>
+ <p>Applies a Cloudify "Wrapper" around this job:</p>
+ <p></p>
+ <ul>
+  <li>A Cloudify deployment will be created at the beginning of the job.</li>
+  <li>The deployment will be torn down at the end of the job.</li>
+ </ul>
+</div></div>
+<ul><li><code>blueprintArchiveUrl : String</code> (optional)
+<div><div>
+ <p>URL to the blueprint's archive.</p>
+</div></div>
+
+</li>
+<li><code>blueprintId : String</code> (optional)
+<div><div>
+ <p>For newly uploaded blueprints, this will be the new blueprint's ID.</p>
+ <p>For existing blueprints, this should be the existing blueprint's ID.</p>
+</div></div>
+
+</li>
+<li><code>blueprintMainFile : String</code> (optional)
+<div><div>
+ <p>The name of the YAML file that is to be considered the blueprint's main YAML.</p>
+ <p>In order to use an existing blueprint, leave this field blank.</p>
+</div></div>
+
+</li>
+<li><code>blueprintRootDirectory : String</code> (optional)
+<div><div>
+ <p>The path, relative to the build's workspace, to the new blueprint's root.</p>
+ <p>In order to use an existing blueprint, leave this field blank.</p>
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The ID of the credentials to use when accessing Cloudify. Parameters' expansion is supported when using freestyle jobs.</p>
+</div></div>
+
+</li>
+<li><code>debugOutput : boolean</code> (optional)
+<div><div>
+ If checked, then printed Cloudify events and logs will include debug-level records.
+</div></div>
+
+</li>
+<li><code>deploymentId : String</code> (optional)
+<div><div>
+ <p>ID of the deployment to create.</p>
+</div></div>
+
+</li>
+<li><code>echoInputs : boolean</code> (optional)
+<div><div>
+ If checked, then the Cloudify deployment inputs are echoed to the Jenkins log.
+</div></div>
+
+</li>
+<li><code>echoOutputs : boolean</code> (optional)
+<div><div>
+ At the end of the build step, print the outputs and capabilities to the console.
+</div></div>
+
+</li>
+<li><code>ignoreFailureOnTeardown : boolean</code> (optional)
+</li>
+<li><code>inputs : String</code> (optional)
+<div><div>
+ <p>Inputs to pass to the new deployment, in YAML/JSON format.</p>
+ <p>Inputs provided here will be merged with inputs provided through a file.</p>
+</div></div>
+
+</li>
+<li><code>inputsLocation : String</code> (optional)
+<div><div>
+ <p>A path, relative to the workspace's root, to a YAML/JSON file containing inputs for the new deployment.</p>
+ <p>Inputs provided here will be merged with inputs provided through text.</p>
+</div></div>
+
+</li>
+<li><code>outputsLocation : String</code> (optional)
+<div><div>
+ <p>A path, relative to the workspace's root, to a JSON file that will contain the outputs and capabilities of the new deployment.</p>
+ <p>If not provided, the file won't be created.</p>
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+<div><div>
+ <p>Cloudify tenant to operate on. If left empty, then the default tenant (defined in the plugin's configuration page) will be used.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

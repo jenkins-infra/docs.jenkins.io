@@ -1,0 +1,38 @@
+= ThreadFix Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/threadfix">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'ThreadFixPublisher'])`: Publish ThreadFix Scan
+++++
+<ul><li><code>appId : String</code>
+</li>
+<li><code>scanFiles</code>
+<div><p>The application scan artifacts to upload to the ThreadFix server.</p></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>path : String</code>
+<div><p>The path to the scan artifact with the appropriate extension. Jenkins environment variables are acceptable. Examples:</p>
+<ul>
+ <li>Fortify scans identified as <b><code>${BUILD_TAG}.fpr</code></b> (Linux) or <b><code>%BUILD_TAG%.fpr</code></b> (Windows)</li>
+ <li>WebInspect scans identified as <b><code>${BUILD_TAG}.scan</code></b>(Linux) <b><code>%BUILD_TAG%.scan</code></b> (Windows)</li>
+</ul></div>
+
+</li>
+</ul></li>
+</ul>
+
+
+++++

@@ -1,0 +1,255 @@
+= PingCode Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/worktile">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `pingcodeBuildRecord`: Send build result to pingcode
+++++
+<ul><li><code>defaultSummary : String</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>overviewPattern : String</code> (optional)
+</li>
+<li><code>resultURL : String</code> (optional)
+</li>
+<li><code>specifiedWorkItems : String</code> (optional)
+</li>
+<li><code>status : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `pingcodeDeployRecord`: Send deploy result to pingcode
+++++
+<ul><li><code>releaseName : String</code>
+</li>
+<li><code>environmentName : String</code>
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>isTagged : boolean</code> (optional)
+</li>
+<li><code>releaseURL : String</code> (optional)
+</li>
+<li><code>specifiedWorkItems : String</code> (optional)
+</li>
+<li><code>status : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'PCBuildNotifier'])`: PingCode: create build record
+++++
+<ul><li><code>overview : String</code> (optional)
+<div><div>
+ A regular expression is used to match the result summary in the build output for display in PingCode. 
+ <br>
+ <br>
+  For example: The following is part of the build output in Jenkins: 
+ <br>
+ <br><code> ...<br>
+   # utilities ✓ #PLM-1239 isSha, input '0-9a-fA-F' * 40, true <br>
+   ✓ #PLM-1239 isSha, input '0-9a-fA-F' * 39, false <br>
+   ✓ #PLM-1239 isSha, input '0-9a-fA-F' * 41, false <br>
+   ✓ #PLM-1239 isSha, input ' ' + '0-9a-fA-F' * 39, false <br>
+   ✓ #PLM-1239 isSha, input '0-9a-fA-F' * 39 + ' ', false <br>
+   ✓ #PLM-1239 isSha, input '0-9a-fA-F' * 1 + '0-9a-fA-F ' * + '0-9a-fA-F' * 1, true <br><br>
+   720 passing (10s) </code>
+ <p>If you want to display the line <strong>720 passing (10s)</strong> on PingCode Agile Project, you need to enter <strong>^.*passing</strong> in the input box. PingCode jenkins plugin will match this line from the build result according to your input regular expression and send it to PingCode.</p>
+</div></div>
+
+</li>
+<li><code>defaultSummary : String</code> (optional)
+<div><div>
+ If no information can be matched from the result logs, this value will be sent by default.
+</div></div>
+
+</li>
+<li><code>resultURL : String</code> (optional)
+<div><div>
+ A url of result for display in pingcode. if empty, the jenkins console result url will be used. 
+ <br>
+  You can use environment variables for dynamic variable substitution in the url. 
+ <br>
+  For example: http://jenkins-host/result-${BUILD_ID}, which means that the url is dynamically generated using the BUILD_ID. All environment variables injected by the plugin can be used. If the environment variable does not exist, the source character will be retained.
+</div></div>
+
+</li>
+<li><code>specifiedWorkItems : String</code> (optional)
+<div><div>
+ Optional. list of work item identifiers. If it is empty then the command will get the work item identifiers in the SCM.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'PCDeployNotifier'])`: PingCode: create deploy record
+++++
+<ul><li><code>tagged : boolean</code>
+</li>
+<li><code>releaseName : String</code> (optional)
+<div><div>
+ The name of the release. You can use environment variables for dynamic variable substitution in the name. 
+ <br>
+  For example: release-${BUILD_ID}, which means that the release name is dynamically generated using the BUILD_ID. All environment variables injected by the plugin can be used. If the environment variable does not exist, the source character will be retained.
+</div></div>
+
+</li>
+<li><code>environmentName : String</code> (optional)
+<div><div>
+ The name of environment that the code will be deployed to. If the environment does not exist, the plugin will automatically create.
+</div></div>
+
+</li>
+<li><code>releaseUrl : String</code> (optional)
+<div><div>
+ Optional. A URL that can view the detail deployment results. If it is empty, no related links are displayed in PingCode.
+</div></div>
+
+</li>
+<li><code>specifiedWorkItems : String</code> (optional)
+<div><div>
+ Optional. list of work item identifiers. If it is empty then the command will get the work item identifiers in the SCM.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'WTBuildNotifier'])`: Worktile: create build record
+++++
+<ul><li><code>overview : String</code> (optional)
+<div><div>
+ A regular expression is used to match the result summary in the build output for display in PingCode. 
+ <br>
+ <br>
+  For example: The following is part of the build output in Jenkins: 
+ <br>
+ <br><code> ...<br>
+   # utilities ✓ #PLM-1239 isSha, input '0-9a-fA-F' * 40, true <br>
+   ✓ #PLM-1239 isSha, input '0-9a-fA-F' * 39, false <br>
+   ✓ #PLM-1239 isSha, input '0-9a-fA-F' * 41, false <br>
+   ✓ #PLM-1239 isSha, input ' ' + '0-9a-fA-F' * 39, false <br>
+   ✓ #PLM-1239 isSha, input '0-9a-fA-F' * 39 + ' ', false <br>
+   ✓ #PLM-1239 isSha, input '0-9a-fA-F' * 1 + '0-9a-fA-F ' * + '0-9a-fA-F' * 1, true <br><br>
+   720 passing (10s) </code>
+ <p>If you want to display the line <strong>720 passing (10s)</strong> on PingCode Agile Project, you need to enter <strong>^.*passing</strong> in the input box. PingCode jenkins plugin will match this line from the build result according to your input regular expression and send it to PingCode.</p>
+</div></div>
+
+</li>
+<li><code>defaultSummary : String</code> (optional)
+<div><div>
+ If no information can be matched from the result logs, this value will be sent by default.
+</div></div>
+
+</li>
+<li><code>resultURL : String</code> (optional)
+<div><div>
+ A url of result for display in pingcode. if empty, the jenkins console result url will be used. 
+ <br>
+  You can use environment variables for dynamic variable substitution in the url. 
+ <br>
+  For example: http://jenkins-host/result-${BUILD_ID}, which means that the url is dynamically generated using the BUILD_ID. All environment variables injected by the plugin can be used. If the environment variable does not exist, the source character will be retained.
+</div></div>
+
+</li>
+<li><code>specifiedWorkItems : String</code> (optional)
+<div><div>
+ Optional. list of work item identifiers. If it is empty then the command will get the work item identifiers in the SCM.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'WTDeployNotifier'])`: Worktile: create deploy record
+++++
+<ul><li><code>tagged : boolean</code>
+</li>
+<li><code>releaseName : String</code> (optional)
+<div><div>
+ The name of the release. You can use environment variables for dynamic variable substitution in the name. 
+ <br>
+  For example: release-${BUILD_ID}, which means that the release name is dynamically generated using the BUILD_ID. All environment variables injected by the plugin can be used. If the environment variable does not exist, the source character will be retained.
+</div></div>
+
+</li>
+<li><code>environmentName : String</code> (optional)
+<div><div>
+ The name of environment that the code will be deployed to. If the environment does not exist, the plugin will automatically create.
+</div></div>
+
+</li>
+<li><code>releaseUrl : String</code> (optional)
+<div><div>
+ Optional. A URL that can view the detail deployment results. If it is empty, no related links are displayed in PingCode.
+</div></div>
+
+</li>
+<li><code>specifiedWorkItems : String</code> (optional)
+<div><div>
+ Optional. list of work item identifiers. If it is empty then the command will get the work item identifiers in the SCM.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `worktileBuildRecord`: Send build result to worktile
+++++
+<ul><li><code>defaultSummary : String</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>overviewPattern : String</code> (optional)
+</li>
+<li><code>resultURL : String</code> (optional)
+</li>
+<li><code>specifiedWorkItems : String</code> (optional)
+</li>
+<li><code>status : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `worktileDeployRecord`: Send deploy result to worktile
+++++
+<ul><li><code>releaseName : String</code>
+</li>
+<li><code>environmentName : String</code>
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>isTagged : boolean</code> (optional)
+</li>
+<li><code>releaseURL : String</code> (optional)
+</li>
+<li><code>specifiedWorkItems : String</code> (optional)
+</li>
+<li><code>status : String</code> (optional)
+</li>
+</ul>
+
+
+++++

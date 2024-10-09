@@ -1,0 +1,47 @@
+= CodeThreat
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/codethreat-scanner">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `CodeThreatScan`: CodeThreat
+++++
+<ul><li><code>ctServer : String</code>
+</li>
+<li><code>project_name : String</code>
+</li>
+<li><code>fileName : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>organization_name : String</code>
+</li>
+<li><code>condition : String</code> (optional)
+</li>
+<li><code>maxNumberOfCritical : int</code> (optional)
+</li>
+<li><code>maxNumberOfHigh : int</code> (optional)
+</li>
+<li><code>policyName : String</code> (optional)
+</li>
+<li><code>scaMaxNumberOfCritical : int</code> (optional)
+</li>
+<li><code>scaMaxNumberOfHigh : int</code> (optional)
+</li>
+<li><code>weaknessIs : String</code> (optional)
+</li>
+</ul>
+
+
+++++

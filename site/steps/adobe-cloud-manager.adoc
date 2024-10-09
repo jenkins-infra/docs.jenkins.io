@@ -1,0 +1,83 @@
+= Adobe Cloud Manager Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/adobe-cloud-manager">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `acmAdvancePipeline`: Adobe Cloud Manager Advance Pipeline
+++++
+<ul><li><code>actions</code> (optional)
+<ul><li><b>Array / List of Values:</b> <code>validate</code>, <code>build</code>, <code>codeQuality</code>, <code>buildImage</code>, <code>securityTest</code>, <code>loadTest</code>, <code>assetsTest</code>, <code>reportPerformanceTest</code>, <code>productTest</code>, <code>functionalTest</code>, <code>uiTest</code>, <code>contentAudit</code>, <code>approval</code>, <code>schedule</code>, <code>managed</code>, <code>deploy</code></li></ul></li>
+</ul>
+
+
+++++
+=== `acmPipelineEnd`: Adobe Cloud Manager Pipeline End
+++++
+<ul><li><code>empty : boolean</code> (optional)
+</li>
+<li><code>mirror : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `acmPipelineStepState`: Adobe Cloud Manager Pipeline Step State
+++++
+<ul><li><code>actions</code> (optional)
+<ul><li><b>Array / List of Values:</b> <code>validate</code>, <code>build</code>, <code>codeQuality</code>, <code>buildImage</code>, <code>securityTest</code>, <code>loadTest</code>, <code>assetsTest</code>, <code>reportPerformanceTest</code>, <code>productTest</code>, <code>functionalTest</code>, <code>uiTest</code>, <code>contentAudit</code>, <code>approval</code>, <code>schedule</code>, <code>managed</code>, <code>deploy</code></li></ul></li>
+<li><code>advance : boolean</code> (optional)
+</li>
+<li><code>autoApprove : boolean</code> (optional)
+</li>
+<li><code>waitingPause : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `acmPollPipeline`: Poll Adobe Cloud Manager Pipeline
+++++
+<ul><li><code>quiet : boolean</code> (optional)
+</li>
+<li><code>recurrencePeriod : long</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `acmRepoSync`: Adobe Cloud Manager Repository Sync
+++++
+<ul><li><code>url : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>force : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `acmStartPipeline`: Start Adobe Cloud Manager pipeline
+++++
+<ul><li><code>aioProject : String</code> (optional)
+</li>
+<li><code>pipeline : String</code> (optional)
+</li>
+<li><code>program : String</code> (optional)
+</li>
+</ul>
+
+
+++++

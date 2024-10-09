@@ -1,0 +1,160 @@
+= $class: 'CVSSCM'
+:page-layout: pipelinesteps
+== $class: 'CVSSCM'
+
+++++
+<li><code>$class: 'CVSSCM'</code><div>
+<ul><li><code>repositories</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>cvsRoot : String</code>
+<div><div>
+ The CVS connection string Jenkins uses to connect to the server. The format is the same as $CVSROOT environment variable (:protocol:user@host:path)
+</div></div>
+
+</li>
+<li><code>passwordRequired : boolean</code>
+</li>
+<li><code>password : String</code>
+</li>
+<li><code>repositoryItems</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>location</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'BranchRepositoryLocation'</code><div>
+<ul><li><code>branchName : String</code>
+</li>
+<li><code>useHeadIfNotFound : boolean</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'HeadRepositoryLocation'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'TagRepositoryLocation'</code><div>
+<ul><li><code>tagName : String</code>
+</li>
+<li><code>useHeadIfNotFound : boolean</code>
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>modules</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>remoteName : String</code>
+<div><div>
+ The name of the module in the repository at CVSROOT
+</div></div>
+
+</li>
+<li><code>localName : String</code>
+<div><div>
+ The name to be applied to this module in the local workspace. If this is left blank then the remote module name will be used. This is similar to the 'checkout-as' function available on many CVS clients.
+</div></div>
+
+</li>
+<li><code>projectsetFileName : String</code>
+<div><div>
+ The name of the file in this module to parse for projectset entries.
+</div></div>
+
+</li>
+</ul></li>
+</ul></li>
+<li><code>excludedRegions</code>
+<div><div>
+ If set, and Jenkins is set to poll for changes, Jenkins will ignore any files and/or folders in this list when determining if a build needs to be triggered. 
+ <p></p>Each exclusion uses regular expression pattern matching, and must be separated by a new line. 
+ <p></p>
+ <pre>	 src/main/web/.*\.html
+	 src/main/web/.*\.jpeg
+	 src/main/web/.*\.gif
+  </pre> The example above illustrates that if only html/jpeg/gif files have been committed to the SCM a build will not occur. 
+ <p></p>More information on regular expressions can be found <a href="http://www.regular-expressions.info/" rel="nofollow">here</a>.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>pattern : String</code>
+</li>
+</ul></li>
+<li><code>compressionLevel : int</code>
+</li>
+<li><code>repositoryBrowser</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'FishEyeCVS'</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ Specify the root URL of FishEye for this repository (such as <a href="http://deadlock.netbeans.org/fisheye/browse/netbeans/" rel="nofollow">this</a>.)
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'OpenGrok'</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ Specify the root URL of OpenGrok for this repository.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'ViewCVS'</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ Specify the root URL of ViewCVS for this repository (such as <a href="http://relaxngcc.cvs.sourceforge.net/relaxngcc/" rel="nofollow">this</a>).
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+</ul></li>
+<li><code>canUseUpdate : boolean</code>
+<div><div>
+ If checked, Jenkins will use 'cvs update' whenever possible for builds. This makes a build faster. But this also causes the artifacts from the previous build to remain in the file system when a new build starts, making it not a true clean build.
+</div></div>
+
+</li>
+<li><code>legacy : boolean</code>
+<div><div>
+ Hudson 1.20 and earlier used to create redundant directories inside the workspace. For example, if the CVS module name is "foo/bar", it first created "foo/bar" and then put everything below. With this option checked off, there will be no more such unnecessary intermediate directories. 
+ <p>If you have multiple modules to check out, this option is forced (otherwise they'll overlap.)</p>
+ <p>This affects other path specifiers, such as artifact archivers --- you now specify "build/foo.jar" instead of "foo/build/foo.jar".</p>
+</div></div>
+
+</li>
+<li><code>skipChangeLog : boolean</code>
+<div><div>
+ Prevent the changelog being generated after checkout has completed. This will stop any changes being shown on the changes screen but reduces load on your CVS server.
+</div></div>
+
+</li>
+<li><code>pruneEmptyDirectories : boolean</code>
+<div><div>
+ Remove empty directories after checkout using the CVS '-P' option.
+</div></div>
+
+</li>
+<li><code>disableCvsQuiet : boolean</code>
+<div><div>
+ Instructs CVS to show all logging output. CVS normally runs in quiet mode but this option disables that.
+</div></div>
+
+</li>
+<li><code>cleanOnFailedUpdate : boolean</code>
+<div><div>
+ If the job is configured to use CVS update and the update step fails for any reason then the workspace will be wiped-out and a clean checkout done instead.
+</div></div>
+
+</li>
+<li><code>forceCleanCopy : boolean</code>
+<div><div>
+ If checked, Jenkins will add the 'C' option to the CVS update command to force it to over-write any files with local modifications, rather than attempt a merge or leave them as they are.
+</div></div>
+
+</li>
+<li><code>checkoutCurrentTimestamp : boolean</code>
+<div><div>
+ Advanced option. Should probably be left unchecked. 
+ <p>The build quiet period is designed to assist with CVS checkouts by waiting for a specific period of time without commits. Normally you want the checkout to reflect the time when the quiet period was exited successfully. Select this option if you need to re-enable the legacy behaviour of Jenkins, i.e. using the time that the build started checking out as the timestamp for the checkout operation. Note: enabling this option can result in the quiet period being defeated especially in those cases where the build is not able to start immediately after exiting the quiet period.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+
+
+++++

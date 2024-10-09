@@ -1,0 +1,129 @@
+= Delphix Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/delphix">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `deleteVDB`: Delphix: Delete VDB
+++++
+<ul><li><code>credentialId : String</code> (optional)
+</li>
+<li><code>force : boolean</code> (optional)
+</li>
+<li><code>loadFromProperties : boolean</code> (optional)
+</li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>skipPolling : boolean</code> (optional)
+</li>
+<li><code>vdbId : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `provisionVDBFromBookmark`: Delphix: Provision VDB From Bookmark
+++++
+<ul><li><code>bookmarkId : String</code>
+</li>
+<li><code>autoSelectRepository : boolean</code> (optional)
+</li>
+<li><code>credentialId : String</code> (optional)
+</li>
+<li><code>databaseName : String</code> (optional)
+</li>
+<li><code>engineId : String</code> (optional)
+</li>
+<li><code>environmentId : String</code> (optional)
+</li>
+<li><code>environmentUserId : String</code> (optional)
+</li>
+<li><code>fileNameSuffix : String</code> (optional)
+</li>
+<li><code>jsonParam : String</code> (optional)
+</li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>repositoryId : String</code> (optional)
+</li>
+<li><code>retentionPolicyId : String</code> (optional)
+</li>
+<li><code>skipPolling : boolean</code> (optional)
+</li>
+<li><code>snapshotPolicyId : String</code> (optional)
+</li>
+<li><code>sourceDataId : String</code> (optional)
+</li>
+<li><code>tagList</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>targetGroupId : String</code> (optional)
+</li>
+<li><code>vdbRestart : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `provisionVDBFromSnapshot`: Delphix: Provision VDB From Snapshot
+++++
+<ul><li><code>autoSelectRepository : boolean</code> (optional)
+</li>
+<li><code>credentialId : String</code> (optional)
+</li>
+<li><code>databaseName : String</code> (optional)
+</li>
+<li><code>engineId : String</code> (optional)
+</li>
+<li><code>environmentId : String</code> (optional)
+</li>
+<li><code>environmentUserId : String</code> (optional)
+</li>
+<li><code>fileNameSuffix : String</code> (optional)
+</li>
+<li><code>jsonParam : String</code> (optional)
+</li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>repositoryId : String</code> (optional)
+</li>
+<li><code>retentionPolicyId : String</code> (optional)
+</li>
+<li><code>skipPolling : boolean</code> (optional)
+</li>
+<li><code>snapshotId : String</code> (optional)
+</li>
+<li><code>snapshotPolicyId : String</code> (optional)
+</li>
+<li><code>sourceDataId : String</code> (optional)
+</li>
+<li><code>tagList</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>targetGroupId : String</code> (optional)
+</li>
+<li><code>vdbRestart : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

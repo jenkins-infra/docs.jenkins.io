@@ -1,0 +1,6 @@
+= About the Author
+:page-layout: author
+:page-author_name: Sam Van Oort
+:page-github: svanoort
+
+

@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: Parichay Barpanda
+:page-twitter: baymac04
+:page-github: baymac
+:page-linkedin: parichay.barpanda
+:page-authoravatar: ../../images/images/avatars/baymac.jpg
+
+GSoC 2019 student under Jenkins project. Maintainer of GitLab Branch Source Plugin. Software Developer at Udaan, India.

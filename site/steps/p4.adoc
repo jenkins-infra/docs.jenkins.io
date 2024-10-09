@@ -1,0 +1,1181 @@
+= P4 Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/p4">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `p4`: P4 Groovy
+++++
+<ul><li><code>credential : String</code>
+</li>
+<li><code>workspace</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>manualSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>name : String</code>
+<div><div>
+ <b>Workspace name</b>
+ <p>Specify the name of the Perforce workspace to be used as the Jenkins build workspace. If the workspace does not yet exist, the configuration will be saved in Jenkins; the workspace is created only when it is to be used. If the workspace exists and you are connected to a Perforce server the auto-text fill should list suitable workspaces; updates are only applied when the workspace is used.</p>
+</div></div>
+
+</li>
+<li><code>spec</code>
+<ul><b>Nested Object</b>
+<li><code>allwrite : boolean</code>
+</li>
+<li><code>clobber : boolean</code>
+</li>
+<li><code>compress : boolean</code>
+</li>
+<li><code>locked : boolean</code>
+</li>
+<li><code>modtime : boolean</code>
+</li>
+<li><code>rmdir : boolean</code>
+</li>
+<li><code>streamName : String</code>
+</li>
+<li><code>line : String</code>
+<div><div>
+ <b>Line Endings</b>
+ <p>Set line-ending character(s) for client text files.</p>
+ <ul>
+  <li><b>UNIX</b>
+   <p>linefeed: UNIX style.</p></li>
+  <li><b>MAC</b>
+   <p>carriage return: Macintosh style. (obsolete)</p></li>
+  <li><b>WIN</b>
+   <p>carriage return-linefeed: Windows style.</p></li>
+  <li><b>SHARE</b>
+   <p>hybrid: writes UNIX style but reads UNIX, Mac or Windows style.</p></li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>view : String</code>
+<div><div>
+ <b>View</b>
+ <p>Lines to map depot files into the client workspace.</p>
+ <p>The variable ${P4_CLIENT} will expand to the client name, for example, a simple mapping:</p>
+ <p>//depot/... //${P4_CLIENT}/...</p>
+ <p>Maps files in the depot to files in your client workspace. Defines the files that you want in your client workspace and specifies where you want them to reside. The default view maps all depot files onto the client. See 'p4 help views' for view syntax. A new view takes effect on the next 'p4 sync'.</p>
+ <p>To support migration from the old Perforce plugin, a View Mapping can be inserted from a file in Perforce. Add the depot path to the "View Mappings" field Prefix "@" (this only applies to the "Manual" Workspace behaviour).</p>
+</div></div>
+
+</li>
+<li><code>changeView : String</code>
+</li>
+<li><code>type : String</code>
+<div><div>
+ <b>Type</b>
+ <p>Type of client: writeable/readonly/partitioned/graph</p>
+ <p>By default all clients are 'writeable', certain clients are short lived and perform long sync and build cycles. Over time these build clients can fragment the 'db.have' table which is used to track what files a client has synced. Setting a type of 'readonly' gives the client its own personal 'db.have' database table. A 'readonly' client cannot 'edit' or 'submit' files, however for build automation this is not usually a requirement and the performance tradeoff is worth considering if your build automation is causing issues with the 'db.have' table. This option requires that an administrator has first configured the 'client.readonly.dir' setting. If it is necessary to submit changes as part of your build, you may specify a 'partitioned' client: like a 'reaonly' client, this type also has a separate 'db.have' table under the 'client.readonly.dir' directory, but allows journalled 'edit' and 'submit' of files.</p>
+</div></div>
+
+</li>
+<li><code>serverID : String</code>
+</li>
+<li><code>backup : boolean</code>
+<div><div>
+ <b>Backup</b>
+ <p>Client's participation in backup enable/disable. If not specified backup of a writable client defaults to enabled.</p>
+</div></div>
+
+</li>
+<li><code>streamAtChange : String</code> (optional)
+<div><div>
+ <b>Stream at change</b>
+ <p>When specified, the client view is generated from the stream specification version at or before the change number.</p>
+</div></div>
+
+</li>
+</ul></li>
+<li><code>cleanup : boolean</code>
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>specFileSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>name : String</code>
+<div><div>
+ <b>An existing workspace</b>
+ <p>Specify the name of the Perforce workspace to be used as the Jenkins build workspace. If the workspace does not yet exist, the configuration will be saved in Jenkins; the workspace is created only when it is to be used. If the workspace exists and you are connected to a Perforce server the auto-text fill should list suitable workspaces; updates are only applied when the workspace is used.</p>
+</div></div>
+
+</li>
+<li><code>specPath : String</code>
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>staticSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>name : String</code>
+<div><div>
+ <b>An existing workspace</b>
+ <p>Specify the name of an existing workspace in Perforce to be used as the Jenkins build workspace. If connected to a Perforce server the auto-text fill should list suitable workspaces</p>
+</div></div>
+
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>streamSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>streamName : String</code>
+<div><div>
+ <b>Stream codeline</b>
+ <p>Specify the full Perforce depot path for the given stream. If connected to a Perforce server the auto-text fill should list possible streams.</p><i>For example: //stream-depot/main-stream</i>
+</div></div>
+
+</li>
+<li><code>format : String</code>
+<div><div>
+ <b>Workspace name formatter</b>
+ <p>Jenklin slave nodes must each use a unique Perforce workspace. The format string configures the workspace name by substituting the specified variables: (at least one variable must be used)</p>
+ <p>Variables can be taken from the Jenkins <a rel="nofollow">Environment</a> or Parameterized builds</p>
+</div></div>
+
+</li>
+<li><code>streamAtChange : String</code> (optional)
+<div><div>
+ <b>Stream at change</b>
+ <p>When specified, the client view is generated from the stream specification version at or before the change number.</p>
+</div></div>
+
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>templateSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>templateName : String</code>
+<div><div>
+ <b>Templace workspace</b>
+ <p>Specify the name of an existing workspace in Perforce used to create or update a Jenkins build workspace. If connected to a Perforce server the auto-text fill should list suitable workspaces</p>
+</div></div>
+
+</li>
+<li><code>format : String</code>
+<div><div>
+ <b>Workspace name formatter</b>
+ <p>Jenklin slave nodes must each use a unique Perforce workspace. The format string configures the workspace name by substituting the specified variables: (at least one variable must be used)</p>
+ <p>Variables can be taken from the Jenkins <a rel="nofollow">Environment</a> or Parameterized builds</p>
+</div></div>
+
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `p4approve`: P4 ApproveImpl Review
+++++
+<ul><li><code>credential : String</code>
+</li>
+<li><code>review : String</code>
+</li>
+<li><code>status : String</code>
+</li>
+<li><code>description : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `p4publish`: P4 Publish
+++++
+<ul><li><code>credential : String</code>
+</li>
+<li><code>workspace</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>manualSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>name : String</code>
+<div><div>
+ <b>Workspace name</b>
+ <p>Specify the name of the Perforce workspace to be used as the Jenkins build workspace. If the workspace does not yet exist, the configuration will be saved in Jenkins; the workspace is created only when it is to be used. If the workspace exists and you are connected to a Perforce server the auto-text fill should list suitable workspaces; updates are only applied when the workspace is used.</p>
+</div></div>
+
+</li>
+<li><code>spec</code>
+<ul><b>Nested Object</b>
+<li><code>allwrite : boolean</code>
+</li>
+<li><code>clobber : boolean</code>
+</li>
+<li><code>compress : boolean</code>
+</li>
+<li><code>locked : boolean</code>
+</li>
+<li><code>modtime : boolean</code>
+</li>
+<li><code>rmdir : boolean</code>
+</li>
+<li><code>streamName : String</code>
+</li>
+<li><code>line : String</code>
+<div><div>
+ <b>Line Endings</b>
+ <p>Set line-ending character(s) for client text files.</p>
+ <ul>
+  <li><b>UNIX</b>
+   <p>linefeed: UNIX style.</p></li>
+  <li><b>MAC</b>
+   <p>carriage return: Macintosh style. (obsolete)</p></li>
+  <li><b>WIN</b>
+   <p>carriage return-linefeed: Windows style.</p></li>
+  <li><b>SHARE</b>
+   <p>hybrid: writes UNIX style but reads UNIX, Mac or Windows style.</p></li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>view : String</code>
+<div><div>
+ <b>View</b>
+ <p>Lines to map depot files into the client workspace.</p>
+ <p>The variable ${P4_CLIENT} will expand to the client name, for example, a simple mapping:</p>
+ <p>//depot/... //${P4_CLIENT}/...</p>
+ <p>Maps files in the depot to files in your client workspace. Defines the files that you want in your client workspace and specifies where you want them to reside. The default view maps all depot files onto the client. See 'p4 help views' for view syntax. A new view takes effect on the next 'p4 sync'.</p>
+ <p>To support migration from the old Perforce plugin, a View Mapping can be inserted from a file in Perforce. Add the depot path to the "View Mappings" field Prefix "@" (this only applies to the "Manual" Workspace behaviour).</p>
+</div></div>
+
+</li>
+<li><code>changeView : String</code>
+</li>
+<li><code>type : String</code>
+<div><div>
+ <b>Type</b>
+ <p>Type of client: writeable/readonly/partitioned/graph</p>
+ <p>By default all clients are 'writeable', certain clients are short lived and perform long sync and build cycles. Over time these build clients can fragment the 'db.have' table which is used to track what files a client has synced. Setting a type of 'readonly' gives the client its own personal 'db.have' database table. A 'readonly' client cannot 'edit' or 'submit' files, however for build automation this is not usually a requirement and the performance tradeoff is worth considering if your build automation is causing issues with the 'db.have' table. This option requires that an administrator has first configured the 'client.readonly.dir' setting. If it is necessary to submit changes as part of your build, you may specify a 'partitioned' client: like a 'reaonly' client, this type also has a separate 'db.have' table under the 'client.readonly.dir' directory, but allows journalled 'edit' and 'submit' of files.</p>
+</div></div>
+
+</li>
+<li><code>serverID : String</code>
+</li>
+<li><code>backup : boolean</code>
+<div><div>
+ <b>Backup</b>
+ <p>Client's participation in backup enable/disable. If not specified backup of a writable client defaults to enabled.</p>
+</div></div>
+
+</li>
+<li><code>streamAtChange : String</code> (optional)
+<div><div>
+ <b>Stream at change</b>
+ <p>When specified, the client view is generated from the stream specification version at or before the change number.</p>
+</div></div>
+
+</li>
+</ul></li>
+<li><code>cleanup : boolean</code>
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>specFileSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>name : String</code>
+<div><div>
+ <b>An existing workspace</b>
+ <p>Specify the name of the Perforce workspace to be used as the Jenkins build workspace. If the workspace does not yet exist, the configuration will be saved in Jenkins; the workspace is created only when it is to be used. If the workspace exists and you are connected to a Perforce server the auto-text fill should list suitable workspaces; updates are only applied when the workspace is used.</p>
+</div></div>
+
+</li>
+<li><code>specPath : String</code>
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>staticSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>name : String</code>
+<div><div>
+ <b>An existing workspace</b>
+ <p>Specify the name of an existing workspace in Perforce to be used as the Jenkins build workspace. If connected to a Perforce server the auto-text fill should list suitable workspaces</p>
+</div></div>
+
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>streamSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>streamName : String</code>
+<div><div>
+ <b>Stream codeline</b>
+ <p>Specify the full Perforce depot path for the given stream. If connected to a Perforce server the auto-text fill should list possible streams.</p><i>For example: //stream-depot/main-stream</i>
+</div></div>
+
+</li>
+<li><code>format : String</code>
+<div><div>
+ <b>Workspace name formatter</b>
+ <p>Jenklin slave nodes must each use a unique Perforce workspace. The format string configures the workspace name by substituting the specified variables: (at least one variable must be used)</p>
+ <p>Variables can be taken from the Jenkins <a rel="nofollow">Environment</a> or Parameterized builds</p>
+</div></div>
+
+</li>
+<li><code>streamAtChange : String</code> (optional)
+<div><div>
+ <b>Stream at change</b>
+ <p>When specified, the client view is generated from the stream specification version at or before the change number.</p>
+</div></div>
+
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>templateSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>templateName : String</code>
+<div><div>
+ <b>Templace workspace</b>
+ <p>Specify the name of an existing workspace in Perforce used to create or update a Jenkins build workspace. If connected to a Perforce server the auto-text fill should list suitable workspaces</p>
+</div></div>
+
+</li>
+<li><code>format : String</code>
+<div><div>
+ <b>Workspace name formatter</b>
+ <p>Jenklin slave nodes must each use a unique Perforce workspace. The format string configures the workspace name by substituting the specified variables: (at least one variable must be used)</p>
+ <p>Variables can be taken from the Jenkins <a rel="nofollow">Environment</a> or Parameterized builds</p>
+</div></div>
+
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>publish</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>shelve</code><div>
+<ul><li><code>description : String</code>
+<div><div>
+ <p>The change description used to shelve or submit the assets to Perforce. ${VAR} variables are expanded base on the system environment.</p>
+</div></div>
+
+</li>
+<li><code>onlyOnSuccess : boolean</code>
+</li>
+<li><code>delete : boolean</code>
+</li>
+<li><code>modtime : boolean</code>
+</li>
+<li><code>revert : boolean</code>
+<div><div>
+ <p>Reverts open files in the pending changelist, but leaves the content in the workspace unchanged ('p4 revert -k')</p>
+</div></div>
+
+</li>
+<li><code>paths : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>submit</code><div>
+<ul><li><code>description : String</code>
+<div><div>
+ <p>The change description used to shelve or submit the assets to Perforce. ${VAR} variables are expanded base on the system environment.</p>
+</div></div>
+
+</li>
+<li><code>onlyOnSuccess : boolean</code>
+</li>
+<li><code>delete : boolean</code>
+</li>
+<li><code>modtime : boolean</code>
+</li>
+<li><code>reopen : boolean</code>
+<div><div>
+ <p>Submitted files are reopened, allowing subsequent modification.</p>
+</div></div>
+
+</li>
+<li><code>purge : String</code>
+<div><div>
+ <p>The Perforce server only stores n number of revisions, where n is a number 1-10 or 16,32,64,128,256,512. Older revisions are then purged as new revisions are added.</p>
+</div></div>
+
+</li>
+<li><code>paths : String</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `p4sync`: P4 Sync
+++++
+<ul><li><code>credential : String</code>
+</li>
+<li><code>changelog : boolean</code> (optional)
+<div><div>
+ Enable or Disable 'Include in changelog': 
+ <p>If 'Include in changelog' is enabled for an SCM source, then when a build occurs, the changes from that SCM source will be included in the changelog.</p>
+ <p>If 'Include in changelog' is disabled, then when a build occurs, the changes from this SCM source will not be included in the changelog.</p>
+</div></div>
+
+</li>
+<li><code>charset : String</code> (optional)
+</li>
+<li><code>depotPath : String</code> (optional)
+</li>
+<li><code>format : String</code> (optional)
+</li>
+<li><code>poll : boolean</code> (optional)
+<div><div>
+ Enable or Disable 'Include in polling' 
+ <p>If 'Include in polling' is enabled or 'Include in changelog' is enabled, then when polling occurs, the job will be started if changes are detected from this SCM source.</p>
+ <p>If 'Include in polling' is disabled and 'Include in changelog' is disabled, then when polling occurs, changes that are detected from this repository will be ignored.</p>
+</div></div>
+
+</li>
+<li><code>populate</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>autoClean</code><div>
+<ul><li><code>replace : boolean</code>
+<div><div>
+ <b>REPLACE missing/modified files</b>
+ <p>Perforce will check out and overwrite any depot files which are either missing from workspace, or have been modified locally.</p>
+</div></div>
+
+</li>
+<li><code>delete : boolean</code>
+<div><div>
+ <b>DELETE generated files</b>
+ <p>Perforce will delete any local files that are not in the depot.</p>
+</div></div>
+
+</li>
+<li><code>tidy : boolean</code>
+</li>
+<li><code>modtime : boolean</code>
+</li>
+<li><code>quiet : boolean</code>
+<div><div>
+ <b>Suppressing info messages</b>
+ <p>Enables the -q flag for all applicable Perforce operations. Summary details will still be displayed.</p>
+</div></div>
+
+</li>
+<li><code>pin : String</code>
+<div><div>
+ <b>Pinning a build at Perforce Label</b>
+ <p>When a build is triggered by Polling, Build Now or an external Action, the workspace will sync only to the specified label. Any other specified change or label will be ignored.</p>
+ <p>Supports variable expansion e.g. ${VAR}. If 'now' is used, or a variable that expands to 'now', then the latest change is used (within the scope of the workspace view).</p>
+</div></div>
+
+</li>
+<li><code>parallel</code>
+<ul><b>Nested Object</b>
+<li><code>enable : boolean</code>
+</li>
+<li><code>path : String</code>
+</li>
+<li><code>threads : String</code>
+</li>
+<li><code>minfiles : String</code>
+</li>
+<li><code>minbytes : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>previewOnly</code><div>
+<ul><li><code>quiet : boolean</code>
+<div><div>
+ <b>Suppressing info messages</b>
+ <p>Enables the -q flag for all applicable Perforce operations. Summary details will still be displayed.</p>
+</div></div>
+
+</li>
+<li><code>pin : String</code>
+</li>
+</ul></div></li>
+<li><code>flushOnly</code><div>
+<ul><li><code>quiet : boolean</code>
+</li>
+<li><code>pin : String</code>
+<div><div>
+ <b>Pinning a build at Perforce Label</b>
+ <p>When a build is triggered by Polling, Build Now or an external Action, the workspace will flush only to the specified label or changelist number. Any other specified change or label will be ignored.</p>
+ <p>Supports variable expansion e.g. ${VAR}. If 'now' is used, or a variable that expands to 'now', then the latest change is used (within the scope of the workspace view).</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>forceClean</code><div>
+<ul><li><code>have : boolean</code>
+</li>
+<li><code>quiet : boolean</code>
+<div><div>
+ <b>Suppressing info messages</b>
+ <p>Enables the -q flag for all applicable Perforce operations. Summary details will still be displayed.</p>
+</div></div>
+
+</li>
+<li><code>pin : String</code>
+<div><div>
+ <b>Pinning a build at Perforce Label</b>
+ <p>When a build is triggered by Polling, Build Now or an external Action, the workspace will sync only to the specified label. Any other specified change or label will be ignored.</p>
+ <p>Supports variable expansion e.g. ${VAR}. If 'now' is used, or a variable that expands to 'now', then the latest change is used (within the scope of the workspace view).</p>
+</div></div>
+
+</li>
+<li><code>parallel</code>
+<ul><b>Nested Object</b>
+<li><code>enable : boolean</code>
+</li>
+<li><code>path : String</code>
+</li>
+<li><code>threads : String</code>
+</li>
+<li><code>minfiles : String</code>
+</li>
+<li><code>minbytes : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>graphClean</code><div>
+<ul><li><code>quiet : boolean</code>
+<div><div>
+ <b>Suppressing info messages</b>
+ <p>Enables the -q flag for all applicable Perforce operations. Summary details will still be displayed.</p>
+</div></div>
+
+</li>
+<li><code>pin : String</code>
+<div><div>
+ <b>Pinning a build at Perforce Label</b>
+ <p>When a build is triggered by Polling, Build Now or an external Action, the workspace will sync only to the specified label. Any other specified change or label will be ignored.</p>
+ <p>Supports variable expansion e.g. ${VAR}. If 'now' is used, or a variable that expands to 'now', then the latest change is used (within the scope of the workspace view).</p>
+</div></div>
+
+</li>
+<li><code>parallel</code>
+<ul><b>Nested Object</b>
+<li><code>enable : boolean</code>
+</li>
+<li><code>path : String</code>
+</li>
+<li><code>threads : String</code>
+</li>
+<li><code>minfiles : String</code>
+</li>
+<li><code>minbytes : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>syncOnly</code><div>
+<ul><li><code>revert : boolean</code>
+</li>
+<li><code>have : boolean</code>
+</li>
+<li><code>force : boolean</code>
+</li>
+<li><code>modtime : boolean</code>
+</li>
+<li><code>quiet : boolean</code>
+<div><div>
+ <b>Suppressing info messages</b>
+ <p>Enables the -q flag for all applicable Perforce operations. Summary details will still be displayed.</p>
+</div></div>
+
+</li>
+<li><code>pin : String</code>
+<div><div>
+ <b>Pinning a build at Perforce Label</b>
+ <p>When a build is triggered by Polling, Build Now or an external Action, the workspace will sync only to the specified label. Any other specified change or label will be ignored.</p>
+ <p>Supports variable expansion e.g. ${VAR}. If 'now' is used, or a variable that expands to 'now', then the latest change is used (within the scope of the workspace view).</p>
+</div></div>
+
+</li>
+<li><code>parallel</code>
+<ul><b>Nested Object</b>
+<li><code>enable : boolean</code>
+</li>
+<li><code>path : String</code>
+</li>
+<li><code>threads : String</code>
+</li>
+<li><code>minfiles : String</code>
+</li>
+<li><code>minbytes : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+</ul></li>
+<li><code>source</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>depotSource</code><div>
+<ul><li><code>depot : String</code>
+<div><div>
+ <p>List of one or more depot paths (separated by new lines)</p>
+ <p>For example <code>//depot/A/...</code></p><code>//depot/B/...</code>
+ <p></p><code>//depot/C/file.txt</code>
+ <p></p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>graphSource</code><div>
+<ul><li><code>graph : String</code>
+</li>
+</ul></div></li>
+<li><code>streamSource</code><div>
+<ul><li><code>stream : String</code>
+</li>
+<li><code>streamAtChange : String</code> (optional)
+<div><div>
+ <b>Stream at change</b>
+ <p>When specified, the client view is generated from the stream specification version at or before the change number.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>templateSource</code><div>
+<ul><li><code>template : String</code>
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>stream : String</code> (optional)
+</li>
+<li><code>streamAtChange : String</code> (optional)
+</li>
+<li><code>template : String</code> (optional)
+</li>
+<li><code>workspace</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>manualSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>name : String</code>
+<div><div>
+ <b>Workspace name</b>
+ <p>Specify the name of the Perforce workspace to be used as the Jenkins build workspace. If the workspace does not yet exist, the configuration will be saved in Jenkins; the workspace is created only when it is to be used. If the workspace exists and you are connected to a Perforce server the auto-text fill should list suitable workspaces; updates are only applied when the workspace is used.</p>
+</div></div>
+
+</li>
+<li><code>spec</code>
+<ul><b>Nested Object</b>
+<li><code>allwrite : boolean</code>
+</li>
+<li><code>clobber : boolean</code>
+</li>
+<li><code>compress : boolean</code>
+</li>
+<li><code>locked : boolean</code>
+</li>
+<li><code>modtime : boolean</code>
+</li>
+<li><code>rmdir : boolean</code>
+</li>
+<li><code>streamName : String</code>
+</li>
+<li><code>line : String</code>
+<div><div>
+ <b>Line Endings</b>
+ <p>Set line-ending character(s) for client text files.</p>
+ <ul>
+  <li><b>UNIX</b>
+   <p>linefeed: UNIX style.</p></li>
+  <li><b>MAC</b>
+   <p>carriage return: Macintosh style. (obsolete)</p></li>
+  <li><b>WIN</b>
+   <p>carriage return-linefeed: Windows style.</p></li>
+  <li><b>SHARE</b>
+   <p>hybrid: writes UNIX style but reads UNIX, Mac or Windows style.</p></li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>view : String</code>
+<div><div>
+ <b>View</b>
+ <p>Lines to map depot files into the client workspace.</p>
+ <p>The variable ${P4_CLIENT} will expand to the client name, for example, a simple mapping:</p>
+ <p>//depot/... //${P4_CLIENT}/...</p>
+ <p>Maps files in the depot to files in your client workspace. Defines the files that you want in your client workspace and specifies where you want them to reside. The default view maps all depot files onto the client. See 'p4 help views' for view syntax. A new view takes effect on the next 'p4 sync'.</p>
+ <p>To support migration from the old Perforce plugin, a View Mapping can be inserted from a file in Perforce. Add the depot path to the "View Mappings" field Prefix "@" (this only applies to the "Manual" Workspace behaviour).</p>
+</div></div>
+
+</li>
+<li><code>changeView : String</code>
+</li>
+<li><code>type : String</code>
+<div><div>
+ <b>Type</b>
+ <p>Type of client: writeable/readonly/partitioned/graph</p>
+ <p>By default all clients are 'writeable', certain clients are short lived and perform long sync and build cycles. Over time these build clients can fragment the 'db.have' table which is used to track what files a client has synced. Setting a type of 'readonly' gives the client its own personal 'db.have' database table. A 'readonly' client cannot 'edit' or 'submit' files, however for build automation this is not usually a requirement and the performance tradeoff is worth considering if your build automation is causing issues with the 'db.have' table. This option requires that an administrator has first configured the 'client.readonly.dir' setting. If it is necessary to submit changes as part of your build, you may specify a 'partitioned' client: like a 'reaonly' client, this type also has a separate 'db.have' table under the 'client.readonly.dir' directory, but allows journalled 'edit' and 'submit' of files.</p>
+</div></div>
+
+</li>
+<li><code>serverID : String</code>
+</li>
+<li><code>backup : boolean</code>
+<div><div>
+ <b>Backup</b>
+ <p>Client's participation in backup enable/disable. If not specified backup of a writable client defaults to enabled.</p>
+</div></div>
+
+</li>
+<li><code>streamAtChange : String</code> (optional)
+<div><div>
+ <b>Stream at change</b>
+ <p>When specified, the client view is generated from the stream specification version at or before the change number.</p>
+</div></div>
+
+</li>
+</ul></li>
+<li><code>cleanup : boolean</code>
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>specFileSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>name : String</code>
+<div><div>
+ <b>An existing workspace</b>
+ <p>Specify the name of the Perforce workspace to be used as the Jenkins build workspace. If the workspace does not yet exist, the configuration will be saved in Jenkins; the workspace is created only when it is to be used. If the workspace exists and you are connected to a Perforce server the auto-text fill should list suitable workspaces; updates are only applied when the workspace is used.</p>
+</div></div>
+
+</li>
+<li><code>specPath : String</code>
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>staticSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>name : String</code>
+<div><div>
+ <b>An existing workspace</b>
+ <p>Specify the name of an existing workspace in Perforce to be used as the Jenkins build workspace. If connected to a Perforce server the auto-text fill should list suitable workspaces</p>
+</div></div>
+
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>streamSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>streamName : String</code>
+<div><div>
+ <b>Stream codeline</b>
+ <p>Specify the full Perforce depot path for the given stream. If connected to a Perforce server the auto-text fill should list possible streams.</p><i>For example: //stream-depot/main-stream</i>
+</div></div>
+
+</li>
+<li><code>format : String</code>
+<div><div>
+ <b>Workspace name formatter</b>
+ <p>Jenklin slave nodes must each use a unique Perforce workspace. The format string configures the workspace name by substituting the specified variables: (at least one variable must be used)</p>
+ <p>Variables can be taken from the Jenkins <a rel="nofollow">Environment</a> or Parameterized builds</p>
+</div></div>
+
+</li>
+<li><code>streamAtChange : String</code> (optional)
+<div><div>
+ <b>Stream at change</b>
+ <p>When specified, the client view is generated from the stream specification version at or before the change number.</p>
+</div></div>
+
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>templateSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>templateName : String</code>
+<div><div>
+ <b>Templace workspace</b>
+ <p>Specify the name of an existing workspace in Perforce used to create or update a Jenkins build workspace. If connected to a Perforce server the auto-text fill should list suitable workspaces</p>
+</div></div>
+
+</li>
+<li><code>format : String</code>
+<div><div>
+ <b>Workspace name formatter</b>
+ <p>Jenklin slave nodes must each use a unique Perforce workspace. The format string configures the workspace name by substituting the specified variables: (at least one variable must be used)</p>
+ <p>Variables can be taken from the Jenkins <a rel="nofollow">Environment</a> or Parameterized builds</p>
+</div></div>
+
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `p4tag`: P4 Tag
+++++
+<ul><li><code>rawLabelName : String</code>
+</li>
+<li><code>rawLabelDesc : String</code>
+</li>
+</ul>
+
+
+++++
+=== `p4unshelve`: P4 Unshelve
+++++
+<ul><li><code>credential : String</code>
+</li>
+<li><code>workspace</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>manualSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>name : String</code>
+<div><div>
+ <b>Workspace name</b>
+ <p>Specify the name of the Perforce workspace to be used as the Jenkins build workspace. If the workspace does not yet exist, the configuration will be saved in Jenkins; the workspace is created only when it is to be used. If the workspace exists and you are connected to a Perforce server the auto-text fill should list suitable workspaces; updates are only applied when the workspace is used.</p>
+</div></div>
+
+</li>
+<li><code>spec</code>
+<ul><b>Nested Object</b>
+<li><code>allwrite : boolean</code>
+</li>
+<li><code>clobber : boolean</code>
+</li>
+<li><code>compress : boolean</code>
+</li>
+<li><code>locked : boolean</code>
+</li>
+<li><code>modtime : boolean</code>
+</li>
+<li><code>rmdir : boolean</code>
+</li>
+<li><code>streamName : String</code>
+</li>
+<li><code>line : String</code>
+<div><div>
+ <b>Line Endings</b>
+ <p>Set line-ending character(s) for client text files.</p>
+ <ul>
+  <li><b>UNIX</b>
+   <p>linefeed: UNIX style.</p></li>
+  <li><b>MAC</b>
+   <p>carriage return: Macintosh style. (obsolete)</p></li>
+  <li><b>WIN</b>
+   <p>carriage return-linefeed: Windows style.</p></li>
+  <li><b>SHARE</b>
+   <p>hybrid: writes UNIX style but reads UNIX, Mac or Windows style.</p></li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>view : String</code>
+<div><div>
+ <b>View</b>
+ <p>Lines to map depot files into the client workspace.</p>
+ <p>The variable ${P4_CLIENT} will expand to the client name, for example, a simple mapping:</p>
+ <p>//depot/... //${P4_CLIENT}/...</p>
+ <p>Maps files in the depot to files in your client workspace. Defines the files that you want in your client workspace and specifies where you want them to reside. The default view maps all depot files onto the client. See 'p4 help views' for view syntax. A new view takes effect on the next 'p4 sync'.</p>
+ <p>To support migration from the old Perforce plugin, a View Mapping can be inserted from a file in Perforce. Add the depot path to the "View Mappings" field Prefix "@" (this only applies to the "Manual" Workspace behaviour).</p>
+</div></div>
+
+</li>
+<li><code>changeView : String</code>
+</li>
+<li><code>type : String</code>
+<div><div>
+ <b>Type</b>
+ <p>Type of client: writeable/readonly/partitioned/graph</p>
+ <p>By default all clients are 'writeable', certain clients are short lived and perform long sync and build cycles. Over time these build clients can fragment the 'db.have' table which is used to track what files a client has synced. Setting a type of 'readonly' gives the client its own personal 'db.have' database table. A 'readonly' client cannot 'edit' or 'submit' files, however for build automation this is not usually a requirement and the performance tradeoff is worth considering if your build automation is causing issues with the 'db.have' table. This option requires that an administrator has first configured the 'client.readonly.dir' setting. If it is necessary to submit changes as part of your build, you may specify a 'partitioned' client: like a 'reaonly' client, this type also has a separate 'db.have' table under the 'client.readonly.dir' directory, but allows journalled 'edit' and 'submit' of files.</p>
+</div></div>
+
+</li>
+<li><code>serverID : String</code>
+</li>
+<li><code>backup : boolean</code>
+<div><div>
+ <b>Backup</b>
+ <p>Client's participation in backup enable/disable. If not specified backup of a writable client defaults to enabled.</p>
+</div></div>
+
+</li>
+<li><code>streamAtChange : String</code> (optional)
+<div><div>
+ <b>Stream at change</b>
+ <p>When specified, the client view is generated from the stream specification version at or before the change number.</p>
+</div></div>
+
+</li>
+</ul></li>
+<li><code>cleanup : boolean</code>
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>specFileSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>name : String</code>
+<div><div>
+ <b>An existing workspace</b>
+ <p>Specify the name of the Perforce workspace to be used as the Jenkins build workspace. If the workspace does not yet exist, the configuration will be saved in Jenkins; the workspace is created only when it is to be used. If the workspace exists and you are connected to a Perforce server the auto-text fill should list suitable workspaces; updates are only applied when the workspace is used.</p>
+</div></div>
+
+</li>
+<li><code>specPath : String</code>
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>staticSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>name : String</code>
+<div><div>
+ <b>An existing workspace</b>
+ <p>Specify the name of an existing workspace in Perforce to be used as the Jenkins build workspace. If connected to a Perforce server the auto-text fill should list suitable workspaces</p>
+</div></div>
+
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>streamSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>streamName : String</code>
+<div><div>
+ <b>Stream codeline</b>
+ <p>Specify the full Perforce depot path for the given stream. If connected to a Perforce server the auto-text fill should list possible streams.</p><i>For example: //stream-depot/main-stream</i>
+</div></div>
+
+</li>
+<li><code>format : String</code>
+<div><div>
+ <b>Workspace name formatter</b>
+ <p>Jenklin slave nodes must each use a unique Perforce workspace. The format string configures the workspace name by substituting the specified variables: (at least one variable must be used)</p>
+ <p>Variables can be taken from the Jenkins <a rel="nofollow">Environment</a> or Parameterized builds</p>
+</div></div>
+
+</li>
+<li><code>streamAtChange : String</code> (optional)
+<div><div>
+ <b>Stream at change</b>
+ <p>When specified, the client view is generated from the stream specification version at or before the change number.</p>
+</div></div>
+
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>templateSpec</code><div>
+<ul><li><code>charset : String</code>
+<div><div>
+ <b>P4CHARSET</b>
+ <p>The character set used by Jenkins when syncing files from the Perforce server. This should be set to 'none' unless connected to a Unicode enabled Perforce server.</p>
+</div></div>
+
+</li>
+<li><code>pinHost : boolean</code>
+</li>
+<li><code>templateName : String</code>
+<div><div>
+ <b>Templace workspace</b>
+ <p>Specify the name of an existing workspace in Perforce used to create or update a Jenkins build workspace. If connected to a Perforce server the auto-text fill should list suitable workspaces</p>
+</div></div>
+
+</li>
+<li><code>format : String</code>
+<div><div>
+ <b>Workspace name formatter</b>
+ <p>Jenklin slave nodes must each use a unique Perforce workspace. The format string configures the workspace name by substituting the specified variables: (at least one variable must be used)</p>
+ <p>Variables can be taken from the Jenkins <a rel="nofollow">Environment</a> or Parameterized builds</p>
+</div></div>
+
+</li>
+<li><code>syncID : String</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>shelf : String</code>
+</li>
+<li><code>resolve : String</code>
+</li>
+<li><code>tidy : boolean</code>
+</li>
+<li><code>ignoreEmpty : boolean</code>
+</li>
+</ul>
+
+
+++++
+=== `cleanup`: Perforce: Cleanup
+++++
+<ul><li><code>deleteClient : boolean</code>
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,8 @@
+
+= FOSDEM'23
+:page-eventLocation: Brussels, Belgium
+:page-eventStartDate: 2023-02-04T09:00:00
+:page-eventLink: https://fosdem.org/2023/
+
+
+FOSDEM is a free event for software developers to meet, share ideas and collaborate. Visit us at the Jenkins stand.

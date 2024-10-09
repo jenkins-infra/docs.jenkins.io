@@ -1,0 +1,113 @@
+= New Relic Deployment Notifier Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/newrelic-deployment-notifier">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'NewRelicDeploymentNotifier'])`: New Relic Deployment Notifications
+++++
+<ul><li><code>notifications</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>apiKey : String</code>
+<div><div>
+ <p>Deployment notification requires an <a href="https://docs.newrelic.com/docs/apm/apis/requirements/api-key" rel="nofollow">API key</a>.</p>
+</div></div>
+
+</li>
+<li><code>applicationId : String</code>
+<div><div>
+ <p>Application to register deployment for.</p>
+</div></div>
+
+</li>
+<li><code>description : String</code>
+<div><div>
+ <p>Text annotation for the deployment - notes for you. 65535 characters or less.</p>
+</div></div>
+
+</li>
+<li><code>revision : String</code>
+<div><div>
+ <p>The revision number from your source control system. 127 characters or less.</p>
+</div></div>
+
+</li>
+<li><code>changelog : String</code>
+<div><div>
+ <p>A list of changes for this deployment. 65535 characters or less.</p>
+</div></div>
+
+</li>
+<li><code>commit : String</code>
+<div><div>
+ <p>A commit hash for this deployment. 65535 characters or less.</p>
+</div></div>
+
+</li>
+<li><code>deeplink : String</code>
+<div><div>
+ <p>A deeplink for this deployment. 65535 characters or less.</p>
+</div></div>
+
+</li>
+<li><code>user : String</code>
+<div><div>
+ <p>The name of the user/process that triggered this deployment. 31 characters or less.</p>
+ <p>Tip: Use build variables produced by <a href="https://wiki.jenkins-ci.org/display/JENKINS/Build+User+Vars+Plugin" rel="nofollow">Build User Vars Plugin</a>.</p>
+</div></div>
+
+</li>
+<li><code>entityGuid : String</code>
+<div><div>
+ <p>An entity GUID to identify the application for this deployment. 65535 characters or less.</p>
+</div></div>
+
+</li>
+<li><code>deploymentId : String</code>
+</li>
+<li><code>deploymentType : String</code>
+<div><div>
+ <p>A deployment type for this deployment. 65535 characters or less.</p>
+</div></div>
+
+</li>
+<li><code>groupId : String</code>
+<div><div>
+ <p>A group id for this deployment. 65535 characters or less.</p>
+</div></div>
+
+</li>
+<li><code>timestamp : String</code>
+<div><div>
+ <p>A timestamp in milliseconds since January 1st 1970 UTC for this deployment. 65535 characters or less.</p>
+</div></div>
+
+</li>
+<li><code>version : String</code>
+<div><div>
+ <p>A version for this deployment. 65535 characters or less.</p>
+</div></div>
+
+</li>
+<li><code>european : boolean</code>
+<div><div>
+ <p>A flag for whether the plugin should use the EU endpoints.</p>
+</div></div>
+
+</li>
+</ul></li>
+</ul>
+
+
+++++
