@@ -54,7 +54,7 @@
     "require-from-string": "~2.0",
     "stylelint": "~13.13.0",
     "stylelint-config-standard": "~20.0",
-    "vinyl-fs": "~3.0"
+    "vinyl-fs": "~4.0.0"
   },
   "dependencies": {
     "@jenkinsci/jenkins-io-components": "~1.30.0",
