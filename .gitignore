@@ -2,7 +2,6 @@
 .idea/
 .vscode/
 node_modules/
-blog/public/
-blog/package-lock.json
+site/public/
 .DS_Store
 ui/build/ui-bundle.zip
