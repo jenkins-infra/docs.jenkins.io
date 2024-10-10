@@ -28,7 +28,16 @@ html {
 .sponsorsJumbotron {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     list-style: none;
     padding: 0rem 5rem;
     align-items: center;
+    margin-top: 1rem;
+}
+
+.sponsorsJumbotron li a img {
+    width: 120px;
+    height: 100px;
+    flex-grow: 1;
 }
