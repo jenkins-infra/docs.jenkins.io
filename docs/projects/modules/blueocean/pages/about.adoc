@@ -16,34 +16,34 @@ include::user-docs:blueocean:partial$_blue-ocean-status.adoc[]
 ""
 Developers of any skill level can create Continuous Delivery pipelines from start to finish using the intuitive and visual pipeline editor.
 ""
-image:images:ROOT:blueocean/press/pipeline-editor.png[Editor, role=center]
-image:images:ROOT:blueocean/press/pipeline-editor-step.png[Editor with open step, role=center]
+image:images:ROOT:blueocean/press/pipeline-editor.png[Editor, role=center, width=853]
+image:images:ROOT:blueocean/press/pipeline-editor-step.png[Editor with open step, role=center, width=853]
 
 .Pipeline visualization
 ""
 Enables developers to visually represent pipelines in a way even their boss's boss can understand, improving clarity into the CD process for the whole organization
 ""
-image:images:ROOT:blueocean/press/pipeline-visualization.png[Pipeline visualization, role=center]
+image:images:ROOT:blueocean/press/pipeline-visualization.png[Pipeline visualization, role=center, width=853]
 
 .Pipeline diagnosis
 ""
 Developers locate automation problems instantly without endlessly scanning through logs or navigating through many screens.
 ""
-image:images:ROOT:blueocean/press/pipeline-diagnosis.png[Pipeline diagnosis, role=center]
+image:images:ROOT:blueocean/press/pipeline-diagnosis.png[Pipeline diagnosis, role=center, width=853]
 
 .Personalized dashboard
 
 ""
 Developers can make Jenkins their own by customizing their dashboard so that they only see the Pipelines that matter to them.
 ""
-image:images:ROOT:blueocean/press/personalization.png[Personalized dashboard, role=center]
+image:images:ROOT:blueocean/press/personalization.png[Personalized dashboard, role=center, width=853]
 
 .GitHub integration
 
 ""
 Pipelines are run for all feature branches and pull requests, with their status reported back to GitHub, so the whole team knows if your changes need work or are good to go.
 ""
-image:images:ROOT:blueocean/press/github-status.png[Github integration, role=center]
+image:images:ROOT:blueocean/press/github-status.png[Github integration, role=center, width=853]
 
 == Video
 
