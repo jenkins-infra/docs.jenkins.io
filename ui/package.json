@@ -52,7 +52,7 @@
     "prettier-eslint": "~9.0",
     "require-directory": "~2.1",
     "require-from-string": "~2.0",
-    "stylelint": "~13.13.0",
+    "stylelint": "~16.10.0",
     "stylelint-config-standard": "~20.0",
     "vinyl-fs": "~3.0"
   },
