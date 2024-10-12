@@ -18,7 +18,7 @@
     "gatsby-core-utils": "next",
     "gatsby-plugin-image": "next",
     "gatsby-plugin-manifest": "next",
-    "gatsby-plugin-offline": "^1.0.18",
+    "gatsby-plugin-offline": "^6.13.3",
     "gatsby-plugin-sharp": "next",
     "gatsby-plugin-styled-components": "next",
     "gatsby-plugin-typography": "next",
@@ -55,7 +55,7 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^9.1.0",
-    "prettier": "3.1.1",
+    "prettier": "3.3.3",
     "webpack-cli": "^5.1.4"
   },
   "overrides": {
