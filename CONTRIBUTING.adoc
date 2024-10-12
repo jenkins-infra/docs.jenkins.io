@@ -56,12 +56,12 @@ This group has various communication channels which can be used to discuss contr
 The `docs.jenkins.io` repository contains two distinct parts:
 
 1. **Antora** (Versioned)
-   - link: /docs
+   - link: link:/docs[/docs]
    - This part of the site is built using Antora, a static site generator designed for documentation. It is version-controlled, meaning that different versions of Jenkins documentation are maintained.
    - You can find more information in the link:https://github.com/jenkins-infra/docs.jenkins.io/tree/main/docs#readme[Antora README.md].
 
 2. **Gatsby** (Non-Versioned)
-   - link: /site
+   - link: link:/site[/site]
    - The non-versioned part of the site is built using Gatsby, a React-based framework.
    - For more details, you can refer to the link:https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme[Gatsby README.md].
 
@@ -94,35 +94,40 @@ When they are ready, you will push your changes to your fork and submit a PR fro
 You should regularly sync your fork with the upstream repository to keep it up to date with changes in the `main` branch.
 To sync your fork, follow these steps:
 
-1. Add the upstream repository as a remote:
+. Add the upstream repository as a remote:
++
+[source, bash]
+----
+git remote add upstream https://github.com/jenkins-infra/docs.jenkins.io.git
+----
 
-   ```bash
-   git remote add upstream https://github.com/jenkins-infra/docs.jenkins.io.git
-   ```
+. Fetch the latest changes from upstream:
++
+[source, bash]
+----
+git fetch upstream
+----
 
-2. Fetch the latest changes from upstream:
+. Check out your `main` branch:
++
+[source, bash]
+----
+git checkout main
+----
 
-   ```bash
-   git fetch upstream
-   ```
+. Merge the changes from the upstream `main` branch:
++
+[source, bash]
+----
+git merge upstream/main
+----
 
-3. Check out your `main` branch:
-
-   ```bash
-   git checkout main
-   ```
-
-4. Merge the changes from the upstream `main` branch:
-
-   ```bash
-   git merge upstream/main
-   ```
-
-5. Push the updated `main` branch to your fork:
-
-   ```bash
-   git push origin main
-   ```
+. Push the updated `main` branch to your fork:
++
+[source, bash]
+----
+git push origin main
+----
 
 == Building
 
@@ -130,40 +135,48 @@ To make changes to the documentation, it’s important to test them locally by b
 
 === Building the Antora documentation
 
-1. **Install Node.js and npm**
+. **Install Node.js and npm**
++
+--
+Install Node.js and npm preferably using a version manager like nvm:
 
-   Install Node.js and npm preferably using a version manager like nvm:
-   - https://github.com/nvm-sh/nvm
-   Alternatively, you can install Node.js directly from the official site:
-   - https://nodejs.org/
+- https://github.com/nvm-sh/
 
-   Verify your installation by running the following commands:
+Alternatively, you can install Node.js directly from the official site:
 
-   [source, bash]
-   ----
-   node --version
-   npm --version
-   ----
+- https://nodejs.org/
 
-2. **Install dependencies**
+Verify your installation by running the following commands:
 
-   Navigate to the root of the repository and run:
 
-   [source, bash]
-   ----
-   npm install
-   ----
+[source, bash]
+----
+node --version
+npm --version
+----
+--
 
-3. **Build the Antora documentation**
+. **Install dependencies**
++
+Navigate to the root of the repository and run:
++
+[source, bash]
+----
+npm install
+----
 
-   Run the following command to build and serve the Antora documentation locally:
+. **Build the Antora documentation**
++
+--
+Run the following command to build and serve the Antora documentation locally:
 
-   [source, bash]
-   ----
-   make all
-   ----
+[source, bash]
+----
+make all
+----
 
-   After the site is built, it will be available at: link:http://localhost:5252/[localhost:5252].
+After the site is built, it will be available at: link:http://localhost:5252/[localhost:5252].
+--
 
 [[make-targets]]
 === `make` Targets
