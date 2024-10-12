@@ -39,7 +39,7 @@ const Jumbotron = () => (
             <a href="https://github.com" rel="noopener noreferrer" target="_blank">
                 <img
                     alt="GitHub, Inc."
-                    src="../../images/images/sponsors/github.png"
+                    src="../../images/images/sponsors/github.svg"
                     title="GitHub, Inc."
                 />
             </a>
