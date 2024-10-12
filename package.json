@@ -32,9 +32,9 @@
   "dependencies": {
     "@types/jquery": "^3.5.16",
     "bootstrap": "^5.3.1",
-    "datatables.net-dt": "^1.13.4",
+    "datatables.net-dt": "^2.0.0",
     "fs-extra": "^11.2.0",
-    "glob": "^10.3.10",
+    "glob": "^11.0.0",
     "gulp": "^5.0.0",
     "ionicons": "^7.4.0",
     "jstz": "^2.1.1",
