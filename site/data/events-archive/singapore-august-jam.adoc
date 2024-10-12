@@ -1,0 +1,7 @@
+---
+:page-eventTitle: Singapore August JAM
+:page-eventStartDate: 2016-08-22T18:30:00
+:page-eventLink: https://www.meetup.com/Jenkins-User-Group-Singapore/events/232893915/
+---
+
+Leveraging Jenkins on Azure

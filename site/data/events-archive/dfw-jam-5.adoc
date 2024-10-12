@@ -1,0 +1,7 @@
+---
+:page-eventTitle: Dallas/Fort-Worth JAM #5
+:page-eventStartDate: 2016-08-04T19:00:00
+:page-eventLink: https://www.meetup.com/DFW-Jenkins-Area-Meetup/events/231800068/
+---
+
+Topic to be determined

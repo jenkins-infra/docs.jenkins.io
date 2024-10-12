@@ -1,0 +1,49 @@
+= AWS Beanstalk Releaser
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/aws-beanstalk-releaser">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `awsebReleaser`: AWS Elastic Beanstalk Releaser
+++++
+<ul><li><code>credentialId : String</code>
+<div><div>
+ Select the credentials to use.
+</div></div>
+
+</li>
+<li><code>awsRegion : String</code>
+<div><div>
+ AWS Region.
+</div></div>
+
+</li>
+<li><code>applicationName : String</code>
+<div><div>
+ AWS EB Application Name (e.g.: "myapp").
+</div></div>
+
+</li>
+<li><code>environmentId : String</code>
+<div><div>
+ AWS EB Environment name to deploy to.
+</div></div>
+
+</li>
+<li><code>versionLabel : String</code>
+</li>
+</ul>
+
+
+++++

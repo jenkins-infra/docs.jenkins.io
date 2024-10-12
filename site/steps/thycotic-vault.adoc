@@ -1,0 +1,52 @@
+= Thycotic DevOps Secrets Vault Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/thycotic-vault">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `wrap([$class: 'ThycoticVaultBuildWrapper'])`: Thycotic DevOps Secrets Vault Plugin
+++++
+<ul><li><code>thycoticVaultSecrets</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>path : String</code>
+<div><div>
+ The full path to the secret in the vault, i.e. resources/servers/webserver01.
+</div></div>
+
+</li>
+<li><code>secretValues</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+<div><div>
+ The property name from the secret data to set the value of the environment variable to.
+</div></div>
+
+</li>
+<li><code>envVar : String</code>
+<div><div>
+ The name of the environment variable to be set to the value from the secret during the build.
+</div></div>
+
+</li>
+</ul></li>
+</ul></li>
+<li><code>configuration</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>thycoticCredentialId : String</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++

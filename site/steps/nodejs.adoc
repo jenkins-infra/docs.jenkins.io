@@ -1,0 +1,36 @@
+= NodeJS Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/nodejs">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `nodejs`: Provide Node & npm bin/ folder to PATH
+++++
+<ul><li><code>nodeJSInstallationName : String</code>
+</li>
+<li><code>cacheLocationStrategy</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>default</code><div>
+<ul></ul></div></li>
+<li><code>executor</code><div>
+<ul></ul></div></li>
+<li><code>workspace</code><div>
+<ul></ul></div></li>
+</ul></li>
+<li><code>configId : String</code> (optional)
+</li>
+</ul>
+
+
+++++

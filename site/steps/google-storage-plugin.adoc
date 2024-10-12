@@ -1,0 +1,96 @@
+= Google Cloud Storage plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/google-storage-plugin">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `googleStorageUpload`: Google Storage Classic Upload
+++++
+<ul><li><code>credentialsId : String</code>
+</li>
+<li><code>bucket : String</code>
+</li>
+<li><code>pattern : String</code>
+</li>
+<li><code>pathPrefix : String</code> (optional)
+</li>
+<li><code>sharedPublicly : boolean</code> (optional)
+</li>
+<li><code>showInline : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `googleStorageDownload`: Google Storage Download
+++++
+<ul><li><code>credentialsId : String</code>
+</li>
+<li><code>bucketUri : String</code>
+<div><div>
+ <p>This specifies the cloud object to download from Cloud Storage. You can view these by visiting the "Cloud Storage" section of the <a href="https://cloud.google.com/console" rel="nofollow">Cloud Console</a> for your project.<br>
+   A single asterisk can be specified in the object path (not the bucket name), past the last "/". The asterisk behaves consistently with <a href="https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames" rel="nofollow">gsutil</a>. For example, <code>gs://my-bucket-name/pre/a_*.txt</code> would match the objects in cloud bucket <code>my-bucket-name</code> that are named <code>pre/a_2.txt</code> or <code>pre/a_abc23-4.txt</code>, but not <code>pre/a_2/log.txt</code>.</p>
+</div></div>
+
+</li>
+<li><code>localDirectory : String</code>
+<div><div>
+ <p>The local directory that will store the downloaded files. The path specified is considered relative to the build's workspace. Example value:</p>
+ <ul>
+  <li>path/to/dir</li>
+  <p></p>
+ </ul>
+</div></div>
+
+</li>
+<li><code>pathPrefix : String</code> (optional)
+<div><div>
+ <p>The specified prefix will be stripped from all downloaded filenames. Filenames that do not start with this prefix will not be modified. If this prefix does not have a trailing slash, it will be added automatically.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `googleStorageBucketLifecycle`: Google Storage Bucket Lifecycle
+++++
+<ul><li><code>credentialsId : String</code>
+</li>
+<li><code>bucket : String</code>
+</li>
+<li><code>ttl : int</code>
+</li>
+</ul>
+
+
+++++
+=== `googleStorageBuildLogUpload`: Google Storage Build Log Upload
+++++
+<ul><li><code>credentialsId : String</code>
+</li>
+<li><code>bucket : String</code>
+</li>
+<li><code>logName : String</code>
+</li>
+<li><code>pathPrefix : String</code> (optional)
+</li>
+<li><code>sharedPublicly : boolean</code> (optional)
+</li>
+<li><code>showInline : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

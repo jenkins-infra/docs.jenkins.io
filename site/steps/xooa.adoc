@@ -1,0 +1,31 @@
+= Xooa
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/xooa">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `xooa`: Upgrade Xooa app
+++++
+<ul><li><code>name : String</code>
+<div><div>
+ Xooa Jenkins
+</div></div>
+
+</li>
+<li><code>appId : String</code>
+</li>
+</ul>
+
+
+++++

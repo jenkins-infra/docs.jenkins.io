@@ -1,0 +1,48 @@
+= GrypeScanner Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/grypescanner">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `grypeScan`: Vulnerability scan with grype
+++++
+<div><div>
+ Allow usage of <a href="https://github.com/anchore/grype" rel="nofollow">grype</a>, a vulnerability scanner for container images and filesystems.
+</div></div>
+<ul><li><code>scanDest : String</code>
+<div><div>
+ <p>Scan targets can be explicitly provided with a following <a href="https://github.com/anchore/grype" rel="nofollow">scheme</a>:</p>
+ <ul>
+  <li>docker:yourrepo/yourimage:tag use images from the Docker daemon</li>
+  <li>docker-archive:path/to/yourimage.tar use a tarball from disk for archives created from "docker save"</li>
+  <li>oci-archive:path/to/yourimage.tar use a tarball from disk for OCI archives (from Skopeo or otherwise)</li>
+  <li>oci-dir:path/to/yourimage read directly from a path on disk for OCI layout directories (from Skopeo or otherwise)</li>
+  <li>dir:path/to/yourproject read directly from a path on disk (any directory)</li>
+  <li>registry:yourrepo/yourimage:tag pull image directly from a registry (no container runtime required)</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>repName : String</code>
+</li>
+<li><code>autoInstall : boolean</code>
+<div><div>
+ If active, download and install grype by ececution of <a href="https://raw.githubusercontent.com/anchore/grype/main/install.sh" rel="nofollow">install.sh</a> automatically in job workspace, otherwise 'grype' executable needs to be available in the PATH.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

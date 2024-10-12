@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Philadelphia JAM
+:page-eventStartDate: 2017-12-06T18:00:00
+:page-eventLink: https://www.meetup.com/Philadelphia-Jenkins-Area-Meetup/events/245469297/
+---
+Let's meetup and discuss how Jenkins is utilized in enterprise environments

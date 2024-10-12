@@ -1,0 +1,86 @@
+= Nested Data Reporting
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/nested-data-reporting">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `publishReport`: Publish report files like json, yaml, csv or xml
+++++
+<ul><li><code>displayType : String</code> (optional)
+</li>
+<li><code>name : String</code> (optional)
+</li>
+<li><code>provider</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>csv</code><div>
+<ul><li><code>id : String</code> (optional)
+<div><div>
+ Normally the ID of the report is read via the underlying file. With a CSV provider this is not possible, because in a csv file you have no possibility to specify it in a structured way. Therefore the CSV provider needs an ID to tag the read report and to find reports of past builds to create the history.
+</div></div>
+
+</li>
+<li><code>pattern : String</code> (optional)
+<div><div>
+ A pattern is defined by an <a href="https://ant.apache.org/manual/Types/fileset.html" rel="nofollow">Ant Fileset ''includes''</a> setting that specifies the report files to scan. Multiple patterns can be separated by space or comma. Note that such a pattern is resolved in Jenkins' workspace, so the paths must be relative only.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>json</code><div>
+<ul><li><code>id : String</code> (optional)
+<div><div>
+ Normally the ID of the report is read via the underlying file. With a CSV provider this is not possible, because in a csv file you have no possibility to specify it in a structured way. Therefore the CSV provider needs an ID to tag the read report and to find reports of past builds to create the history.
+</div></div>
+
+</li>
+<li><code>pattern : String</code> (optional)
+<div><div>
+ A pattern is defined by an <a href="https://ant.apache.org/manual/Types/fileset.html" rel="nofollow">Ant Fileset ''includes''</a> setting that specifies the report files to scan. Multiple patterns can be separated by space or comma. Note that such a pattern is resolved in Jenkins' workspace, so the paths must be relative only.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>xml</code><div>
+<ul><li><code>id : String</code> (optional)
+<div><div>
+ Normally the ID of the report is read via the underlying file. With a CSV provider this is not possible, because in a csv file you have no possibility to specify it in a structured way. Therefore the CSV provider needs an ID to tag the read report and to find reports of past builds to create the history.
+</div></div>
+
+</li>
+<li><code>pattern : String</code> (optional)
+<div><div>
+ A pattern is defined by an <a href="https://ant.apache.org/manual/Types/fileset.html" rel="nofollow">Ant Fileset ''includes''</a> setting that specifies the report files to scan. Multiple patterns can be separated by space or comma. Note that such a pattern is resolved in Jenkins' workspace, so the paths must be relative only.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>yaml</code><div>
+<ul><li><code>id : String</code> (optional)
+<div><div>
+ Normally the ID of the report is read via the underlying file. With a CSV provider this is not possible, because in a csv file you have no possibility to specify it in a structured way. Therefore the CSV provider needs an ID to tag the read report and to find reports of past builds to create the history.
+</div></div>
+
+</li>
+<li><code>pattern : String</code> (optional)
+<div><div>
+ A pattern is defined by an <a href="https://ant.apache.org/manual/Types/fileset.html" rel="nofollow">Ant Fileset ''includes''</a> setting that specifies the report files to scan. Multiple patterns can be separated by space or comma. Note that such a pattern is resolved in Jenkins' workspace, so the paths must be relative only.
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+</ul>
+
+
+++++

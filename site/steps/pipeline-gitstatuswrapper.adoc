@@ -1,0 +1,106 @@
+= GitHub Status Wrapper Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/pipeline-gitstatuswrapper">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `gitStatusWrapper`: gitStatusWrapper
+++++
+<div><div>
+ <p>The <code>gitStatusWrapper</code> step wraps a block of commands and handles PENDING/SUCCESS/FAILURE git statuses automatically</p>
+ <p>Check documentation <a href="https://developer.github.com/v3/repos/statuses/" rel="nofollow">here</a></p>
+</div></div>
+<ul><li><code>account : String</code> (optional)
+<div><div>
+ <p>The GitHub account that owns the repos that contains the commit to notify</p>
+ <p><em>Default:</em> If SCM used, plugin will attempt to get details from SCM execution</p>
+ <p>Check documentation <a href="https://developer.github.com/v3/repos/statuses/" rel="nofollow">here</a></p>
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>The GitHub credentials, username/password or username/accessToken</p>
+</div></div>
+
+</li>
+<li><code>description : String</code> (optional)
+<div><div>
+ <p>The notification description, it will be displayed by GitHub</p>
+ <p><em>Default:</em> ""</p>
+ <p>Check documentation <a href="https://developer.github.com/v3/repos/statuses/" rel="nofollow">here</a></p>
+</div></div>
+
+</li>
+<li><code>failureDescription : String</code> (optional)
+<div><div>
+ <p>The notification description for a failure, it will be displayed by GitHub</p>
+ <p><em>Default:</em> value set to description</p>
+ <p>This field can also be given a regular expression to evaluate on the entire build log. To have the expression evaluated, wrap it with "/". Example: <code>"/^buildVersion=(.*)$/"</code></p>
+ <p>Check documentation <a href="https://developer.github.com/v3/repos/statuses/" rel="nofollow">here</a></p>
+</div></div>
+
+</li>
+<li><code>gitApiUrl : String</code> (optional)
+<div><div>
+ <p>If you are a user of GitHub Enterprise use this field to set your custom API endpoint</p>
+ <p><em>Default:</em> https://api.github.com</p>
+</div></div>
+
+</li>
+<li><code>gitHubContext : String</code> (optional)
+<div><div>
+ <p>The git status context key. Keys are used by GitHub to differentiate between notifications</p>
+ <p><em>Default:</em> gitStatusWrapper</p>
+ <p>Check documentation <a href="https://developer.github.com/v3/repos/statuses/" rel="nofollow">here</a></p>
+</div></div>
+
+</li>
+<li><code>repo : String</code> (optional)
+<div><div>
+ <p>The GitHub repository that contains the commit to validate, must be owned by the user specified in the account field</p>
+ <p><em>Default:</em> If SCM used, plugin will attempt to get details from SCM execution</p>
+ <p>Check documentation <a href="https://developer.github.com/v3/repos/statuses/" rel="nofollow">here</a></p>
+</div></div>
+
+</li>
+<li><code>sha : String</code> (optional)
+<div><div>
+ <p>The SHA that identifies the commit to notify</p>
+ <p><em>Default:</em> If SCM used, plugin will attempt to get details from SCM execution</p>
+ <p>Check documentation <a href="https://developer.github.com/v3/repos/statuses/" rel="nofollow">here</a></p>
+</div></div>
+
+</li>
+<li><code>successDescription : String</code> (optional)
+<div><div>
+ <p>The notification description for a success, it will be displayed by GitHub</p>
+ <p><em>Default:</em> value set to description</p>
+ <p>This field can also be given a regular expression to evaluate on the entire build log. To have the expression evaluated, wrap it with "/". Example: <code>"/^buildVersion=(.*)$/"</code></p>
+ <p>Check documentation <a href="https://developer.github.com/v3/repos/statuses/" rel="nofollow">here</a></p>
+</div></div>
+
+</li>
+<li><code>targetUrl : String</code> (optional)
+<div><div>
+ <p>Use this field to specify a custom target URL for the notification</p>
+ <p><em>Default:</em> Jenkins build URL</p>
+ <p>Check documentation <a href="https://developer.github.com/v3/repos/statuses/" rel="nofollow">here</a></p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

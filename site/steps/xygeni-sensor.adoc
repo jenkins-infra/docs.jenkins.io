@@ -1,0 +1,263 @@
+= Xygeni Sensor
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/xygeni-sensor">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `xygeniSaltAtAdd`: Xygeni Salt Attestation 'Add' command
+++++
+<ul><li><code>items</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>type : String</code>
+</li>
+<li><code>predicateType : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>file : String</code>
+</li>
+<li><code>image : String</code>
+</li>
+<li><code>digest : String</code>
+</li>
+</ul></li>
+<li><code>paths</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>saltCommandPath : String</code> (optional)
+</li>
+<li><code>basedir : String</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `xygeniSaltAtCommit`: Xygeni Salt Attestation 'Commit' command
+++++
+<ul><li><code>certs</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>key : String</code> (optional)
+</li>
+<li><code>keyPassword : String</code> (optional)
+</li>
+<li><code>publicKey : String</code> (optional)
+</li>
+<li><code>pkiFormat : String</code> (optional)
+</li>
+<li><code>certificate : String</code> (optional)
+</li>
+<li><code>keyless : boolean</code> (optional)
+</li>
+</ul></li>
+<li><code>attestationOptions</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>noUpload : boolean</code> (optional)
+</li>
+<li><code>project : String</code> (optional)
+</li>
+<li><code>noResultUpload : boolean</code> (optional)
+</li>
+</ul></li>
+<li><code>outputOptions</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>output : String</code> (optional)
+</li>
+<li><code>prettyPrint : boolean</code> (optional)
+</li>
+<li><code>outputUnsigned : String</code> (optional)
+</li>
+</ul></li>
+<li><code>paths</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>saltCommandPath : String</code> (optional)
+</li>
+<li><code>basedir : String</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `xygeniSaltAtInit`: Xygeni Salt Attestation 'Init' command
+++++
+<ul><li><code>attestorEnv : boolean</code> (optional)
+</li>
+<li><code>exclude : String</code> (optional)
+</li>
+<li><code>gitAttestor : boolean</code> (optional)
+</li>
+<li><code>materials</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>material : String</code>
+</li>
+</ul></li>
+<li><code>paths</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>saltCommandPath : String</code> (optional)
+</li>
+<li><code>basedir : String</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `xygeniSaltAtRun`: Xygeni Salt Attestation 'Run' command
+++++
+<ul><li><code>outputOptions</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>output : String</code> (optional)
+</li>
+<li><code>prettyPrint : boolean</code> (optional)
+</li>
+<li><code>outputUnsigned : String</code> (optional)
+</li>
+</ul></li>
+<li><code>command : String</code> (optional)
+</li>
+<li><code>items</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>type : String</code>
+</li>
+<li><code>predicateType : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>file : String</code>
+</li>
+<li><code>image : String</code>
+</li>
+<li><code>digest : String</code>
+</li>
+</ul></li>
+<li><code>maxerr : int</code> (optional)
+</li>
+<li><code>maxout : int</code> (optional)
+</li>
+<li><code>paths</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>saltCommandPath : String</code> (optional)
+</li>
+<li><code>basedir : String</code> (optional)
+</li>
+</ul></li>
+<li><code>step : String</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `xygeniSaltAtSlsa`: Xygeni Salt Attestation 'Slsa Provenance' command
+++++
+<ul><li><code>artifactFilter : String</code>
+</li>
+<li><code>subjects</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>file : String</code>
+</li>
+<li><code>image : String</code>
+</li>
+<li><code>digest : String</code>
+</li>
+</ul></li>
+<li><code>attestationOptions</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>noUpload : boolean</code> (optional)
+</li>
+<li><code>project : String</code> (optional)
+</li>
+<li><code>noResultUpload : boolean</code> (optional)
+</li>
+</ul></li>
+<li><code>certs</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>key : String</code> (optional)
+</li>
+<li><code>keyPassword : String</code> (optional)
+</li>
+<li><code>publicKey : String</code> (optional)
+</li>
+<li><code>pkiFormat : String</code> (optional)
+</li>
+<li><code>certificate : String</code> (optional)
+</li>
+<li><code>keyless : boolean</code> (optional)
+</li>
+</ul></li>
+<li><code>outputOptions</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>output : String</code> (optional)
+</li>
+<li><code>prettyPrint : boolean</code> (optional)
+</li>
+<li><code>outputUnsigned : String</code> (optional)
+</li>
+</ul></li>
+<li><code>paths</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>saltCommandPath : String</code> (optional)
+</li>
+<li><code>basedir : String</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `xygeniSaltVerify`: Xygeni Salt 'Verify' command
+++++
+<ul><li><code>output : String</code> (optional)
+</li>
+<li><code>publicKey : String</code> (optional)
+</li>
+<li><code>certificate : String</code> (optional)
+</li>
+<li><code>id : String</code> (optional)
+</li>
+<li><code>attestation : String</code> (optional)
+</li>
+<li><code>paths</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>saltCommandPath : String</code> (optional)
+</li>
+<li><code>basedir : String</code> (optional)
+</li>
+</ul></li>
+<li><code>subjects</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>file : String</code>
+</li>
+<li><code>image : String</code>
+</li>
+<li><code>digest : String</code>
+</li>
+</ul></li>
+</ul>
+
+
+++++

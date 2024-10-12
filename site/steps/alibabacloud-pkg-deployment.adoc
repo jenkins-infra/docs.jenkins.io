@@ -1,0 +1,215 @@
+= Alibabacloud Package Deployment
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/alibabacloud-pkg-deployment">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `oosExecuteNotify`: notify oos Execute
+++++
+<ul><li><code>region : String</code>
+<div><div>
+ Specifies the geographic region in which your OOS template pause task. <a href="https://www.alibabacloud.com/help/en/operation-orchestration-service/latest/limits" rel="nofollow">OOS support region</a> for more about what regions are. 
+ <br>
+  Example: China (Hangzhou)
+</div></div>
+
+</li>
+<li><code>executeId : String</code>
+<div><div>
+ OOS template pause task id. <a href="https://oos.console.aliyun.com/cn-hangzhou/execution" rel="nofollow">Details</a> Please login OOS console. 
+ <br>
+  Example: exec-XXXXX
+</div></div>
+
+</li>
+<li><code>notifyType : String</code>
+<div><div>
+ The OOS template pause task next step. Valid values: 
+ <ul>
+  <li>Approve: pause task run next batch.</li>
+  <li>Cancelled: pause task cancel .</li>
+ </ul>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `oosStatusQuery`: query oos execute status
+++++
+<ul><li><code>region : String</code>
+<div><div>
+ Specifies the geographic region in which your OOS template task. <a href="https://www.alibabacloud.com/help/en/operation-orchestration-service/latest/limits" rel="nofollow">OOS support region</a> for more about what regions are. 
+ <br>
+  Example: China (Hangzhou)
+</div></div>
+
+</li>
+<li><code>executeId : String</code>
+<div><div>
+ OOS template task id. <a href="https://oos.console.aliyun.com/cn-hangzhou/execution" rel="nofollow">Details</a> Please login OOS console 
+ <br>
+  Example: exec-XXXXX
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `ossUploadAndOosExec`: OSS upload built project and OOS execute
+++++
+<ul><li><code>region : String</code>
+<div><div>
+ 阿里云 ECS 、ESS、OSS、OOS资源所在的地域。 样例: cn-hangzhou。
+</div></div>
+
+</li>
+<li><code>resourceType : String</code>
+<div><div>
+ Currently,only two resources are supported. Example: ESS and ECS.
+</div></div>
+
+</li>
+<li><code>resourceId : String</code>
+<div><div>
+ ID of resource. Example: ESS:asg-sdsfbhdxxxxxxxxxx ECS：i-dbhcbxxxxxxxxxxx or i-dbhcbxxxxxxxxxxx,i-dbhcbxxxxxxx (ECS supports comma separated concatenation of multiple instance IDs)
+</div></div>
+
+</li>
+<li><code>bucket : String</code>
+<div><div>
+ Aliyun OSS BucketName
+ <br><a href="https://oss.console.aliyun.com" rel="nofollow">config</a> You can upload the built project to OSS bucket
+</div></div>
+
+</li>
+<li><code>objectName : String</code>
+<div><div>
+ The file name uploaded to the OSS bucket.
+</div></div>
+
+</li>
+<li><code>localPath : String</code>
+<div><div>
+ The directory path of the built project for jenkins.
+</div></div>
+
+</li>
+<li><code>mode : String</code>
+<div><div>
+ The OOS template execution mode. Valid values: 
+ <ul>
+  <li>Automatic: automatically starts the execution of the template. This is the default value.</li>
+  <li>FailurePause: suspends the execution of the template upon a failure.</li>
+  <li>Debug: manually starts the execution of the template.</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>pausePolicy : String</code>
+<div><div>
+ The OOS template loop mode. Valid values: 
+ <ul>
+  <li>Automatic: does not suspend the execution of the template. This is the default value.</li>
+  <li>FirstBatchPause: suspends the execution of the template after the first batch is complete.</li>
+  <li>EveryBatchPause: suspends the execution of the template after each batch is complete.</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>batchNumber : int</code>
+<div><div>
+ The OOS template execution batch Number.
+</div></div>
+
+</li>
+<li><code>destinationDir : String</code>
+<div><div>
+ The Location of ECS used to download OSS file and deloy project.
+</div></div>
+
+</li>
+<li><code>invokeScript : String</code>
+<div><div>
+ The deploy script run after ECS download OOS File.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `Alibabacloud Automatic Package Deployment`: Alibabacloud Automatic Package Deployment
+++++
+<ul><li><code>region : String</code>
+<div><div>
+ Specifies the geographic region in which your ESS or ECS or OSS or OOS will run. Example: cn-hangzhou.
+</div></div>
+
+</li>
+<li><code>resourceType : String</code>
+<div><div>
+ Currently,only two resources are supported. Example: ESS and ECS.
+</div></div>
+
+</li>
+<li><code>resourceId : String</code>
+<div><div>
+ ID of resource. Example: ESS:asg-sdsfbhdxxxxxxxxxx ECS：i-dbhcbxxxxxxxxxxx or i-dbhcbxxxxxxxxxxx,i-dbhcbxxxxxxx (ECS supports comma separated concatenation of multiple instance IDs)
+</div></div>
+
+</li>
+<li><code>bucket : String</code>
+<div><div>
+ Aliyun OSS BucketName
+ <br><a href="https://oss.console.aliyun.com" rel="nofollow">config</a> You can upload the built project to OSS bucket.
+</div></div>
+
+</li>
+<li><code>objectName : String</code>
+<div><div>
+ The file name uploaded to the OSS bucket.
+</div></div>
+
+</li>
+<li><code>localPath : String</code>
+<div><div>
+ The directory path of the built project for jenkins.
+</div></div>
+
+</li>
+<li><code>destinationDir : String</code>
+<div><div>
+ The Location of ECS used to download OSS file and deloy project.
+</div></div>
+
+</li>
+<li><code>batchNumber : int</code>
+<div><div>
+ The OOS template task execution batch Number.
+</div></div>
+
+</li>
+<li><code>invokeScript : String</code>
+<div><div>
+ The deploy script run after ECS download OOS File.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

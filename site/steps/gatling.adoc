@@ -1,0 +1,31 @@
+= Gatling Jenkins Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/gatling">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `gatlingArchive`: Archive Gatling reports
+++++
+<ul></ul>
+
+
+++++
+=== `step([$class: 'GatlingPublisher'])`: Track a Gatling load simulation
+++++
+<ul><li><code>enabled : boolean</code>
+</li>
+</ul>
+
+
+++++

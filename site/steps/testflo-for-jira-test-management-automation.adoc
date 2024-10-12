@@ -1,0 +1,44 @@
+= TestFLO - Test Management for Jira
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/testflo-for-jira-test-management-automation">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'TestResultSenderBuildStep'])`: TestFLO Automation test results publisher
+++++
+<ul><li><code>jiraURL : String</code>
+</li>
+<li><code>jiraUserName : String</code>
+</li>
+<li><code>jiraPassword</code>
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>testResultsDirectory : String</code>
+</li>
+<li><code>missingTestPlanKeyStrategy</code>
+<ul><li><b>Values:</b> <code>FAIL_TASK</code>, <code>SKIP_TASK</code></li></ul></li>
+<li><code>testResultsType</code>
+<div><div>
+ Only <a href="https://cucumber.io/docs/cucumber/reporting/#built-in-reporter-plugins" rel="nofollow">JSON files</a> are supported for Cucumber-compatible output.
+</div></div>
+
+<ul><li><b>Values:</b> <code>JUNIT</code>, <code>TESTNG</code>, <code>CUCUMBER</code>, <code>NUNIT</code></li></ul></li>
+<li><code>retryOnActiveProgress : boolean</code>
+</li>
+<li><code>loggingEnabled : boolean</code>
+</li>
+</ul>
+
+
+++++

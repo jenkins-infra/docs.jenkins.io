@@ -1,0 +1,6 @@
+---
+:page-eventTitle: First Toronto Jenkins Area Meetup [JAM]
+:page-eventStartDate: 2018-10-17T17:15:00
+:page-eventLink: https://www.meetup.com/Toronto-Jenkins-Area-Meetup/events/253459028/
+---
+First Toronto Jenkins Area Meetup [JAM]

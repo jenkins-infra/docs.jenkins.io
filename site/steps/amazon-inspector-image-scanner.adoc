@@ -1,0 +1,69 @@
+= Amazon Inspector Scanner
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/amazon-inspector-image-scanner">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `Amazon Inspector`: Amazon Inspector Scan
+++++
+<ul><li><code>archivePath : String</code>
+</li>
+<li><code>sbomgenPath : String</code>
+</li>
+<li><code>osArch : boolean</code>
+</li>
+<li><code>iamRole : String</code>
+</li>
+<li><code>awsRegion : String</code>
+</li>
+<li><code>credentialId : String</code>
+<div><div>
+ <p>Used inside the plugin to pull the password from Jenkins' credential store. Only required if the image being scanned is located in a private repository requiring credentials to access.</p>
+</div></div>
+
+</li>
+<li><code>awsProfileName : String</code>
+</li>
+<li><code>awsCredentialId : String</code>
+<div><div>
+ <p>Optional. Allows you to specify AWS credentials explicitly instead of having them be pulled from your system. If this option is omitted, AWS credentials will be obtained via the default provider chain.</p>
+ <p>Credentials must be added to the credential store as the "AWS Credentials" type.</p>
+ <p>For more info: <a href="https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default" rel="nofollow"> https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default </a></p>
+</div></div>
+
+</li>
+<li><code>sbomgenMethod : String</code>
+</li>
+<li><code>sbomgenSource : String</code>
+</li>
+<li><code>isThresholdEnabled : boolean</code>
+<div><div>
+ <p>Specifies whether scanned vulnerabilities exceeding a value will cause a build failure.</p>
+</div></div>
+
+</li>
+<li><code>countCritical : int</code>
+</li>
+<li><code>countHigh : int</code>
+</li>
+<li><code>countMedium : int</code>
+</li>
+<li><code>countLow : int</code>
+</li>
+<li><code>oidcCredentialId : String</code>
+</li>
+</ul>
+
+
+++++

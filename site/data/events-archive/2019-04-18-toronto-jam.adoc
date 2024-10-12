@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Toronto JAM
+:page-eventStartDate: 2019-04-18T17:30:00
+:page-eventLink: https://www.meetup.com/Toronto-Jenkins-Area-Meetup
+---
+Co-sponsored Jenkins X Meetup

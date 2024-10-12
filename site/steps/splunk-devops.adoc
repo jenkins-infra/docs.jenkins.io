@@ -1,0 +1,54 @@
+= Splunk Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/splunk-devops">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'SplunkArtifactNotifier'])`: Send files to Splunk
+++++
+<ul><li><code>includeFiles : String</code>
+</li>
+<li><code>excludeFiles : String</code>
+</li>
+<li><code>publishFromSlave : boolean</code>
+<div><div>
+ Publish log files directly from the agent, instead of proxy for the process to the master. When publish from agent is selected, Jenkins master will transfer the plugin and its dependence to agent and initiate the publishing process from the agent. Take below into consideration: 
+ <ul>
+  <li>agent and master load</li>
+  <li>log file size</li>
+  <li>agent type, long lived agent or one time use agent</li>
+ </ul> Rule of thumb for selecting publish type: 
+ <ul>
+  <li>a. if log files size is less than 5MB, publish from master is preferred.</li>
+  <li>b. if Splunk instance is in an isolated network which is not reachable from agent, you need publish from master.</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>skipGlobalSplunkArchive : boolean</code>
+<div><div>
+ To skip the global post job archiving DSL e.g. <code> archive("**/*.log") </code> when the DSL does not fit for specific set of job.
+</div></div>
+
+</li>
+<li><code>sizeLimit : String</code>
+<div><div>
+ Limit the single file size to prevent publishing the whole huge log file generated accidentally by some program and uses up your Splunk daily volume license. The plugin will log a "file truncated to size:xx" event in Splunk when size limit is reached and will stop publishing the remaining content.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,250 @@
+= AWS CodeBuild Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/aws-codebuild">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `awsCodeBuild`: Invoke an AWS CodeBuild build
+++++
+<ul><li><code>projectName : String</code>
+</li>
+<li><code>artifactEncryptionDisabledOverride : String</code> (optional)
+</li>
+<li><code>artifactLocationOverride : String</code> (optional)
+</li>
+<li><code>artifactNameOverride : String</code> (optional)
+</li>
+<li><code>artifactNamespaceOverride : String</code> (optional)
+</li>
+<li><code>artifactPackagingOverride : String</code> (optional)
+</li>
+<li><code>artifactPathOverride : String</code> (optional)
+</li>
+<li><code>artifactTypeOverride : String</code> (optional)
+</li>
+<li><code>awsAccessKey : String</code> (optional)
+</li>
+<li><code>awsSecretKey : String</code> (optional)
+</li>
+<li><code>awsSessionToken : String</code> (optional)
+</li>
+<li><code>buildSpecFile : String</code> (optional)
+</li>
+<li><code>buildTimeoutOverride : String</code> (optional)
+</li>
+<li><code>cacheLocationOverride : String</code> (optional)
+</li>
+<li><code>cacheModesOverride : String</code> (optional)
+</li>
+<li><code>cacheTypeOverride : String</code> (optional)
+</li>
+<li><code>certificateOverride : String</code> (optional)
+</li>
+<li><code>cloudWatchLogsGroupNameOverride : String</code> (optional)
+</li>
+<li><code>cloudWatchLogsStatusOverride : String</code> (optional)
+</li>
+<li><code>cloudWatchLogsStreamNameOverride : String</code> (optional)
+</li>
+<li><code>computeTypeOverride : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>credentialsType : String</code> (optional)
+</li>
+<li><code>cwlStreamingDisabled : String</code> (optional)
+</li>
+<li><code>downloadArtifacts : String</code> (optional)
+</li>
+<li><code>downloadArtifactsRelativePath : String</code> (optional)
+</li>
+<li><code>envParameters : String</code> (optional)
+</li>
+<li><code>envVariables : String</code> (optional)
+</li>
+<li><code>environmentTypeOverride : String</code> (optional)
+</li>
+<li><code>exceptionFailureMode : String</code> (optional)
+</li>
+<li><code>gitCloneDepthOverride : String</code> (optional)
+</li>
+<li><code>imageOverride : String</code> (optional)
+</li>
+<li><code>insecureSslOverride : String</code> (optional)
+</li>
+<li><code>localSourcePath : String</code> (optional)
+</li>
+<li><code>overrideArtifactName : String</code> (optional)
+</li>
+<li><code>privilegedModeOverride : String</code> (optional)
+</li>
+<li><code>proxyHost : String</code> (optional)
+</li>
+<li><code>proxyPort : String</code> (optional)
+</li>
+<li><code>region : String</code> (optional)
+</li>
+<li><code>reportBuildStatusOverride : String</code> (optional)
+</li>
+<li><code>s3LogsEncryptionDisabledOverride : String</code> (optional)
+</li>
+<li><code>s3LogsLocationOverride : String</code> (optional)
+</li>
+<li><code>s3LogsStatusOverride : String</code> (optional)
+</li>
+<li><code>secondaryArtifactsOverride : String</code> (optional)
+</li>
+<li><code>secondarySourcesOverride : String</code> (optional)
+</li>
+<li><code>secondarySourcesVersionOverride : String</code> (optional)
+</li>
+<li><code>serviceRoleOverride : String</code> (optional)
+</li>
+<li><code>sourceControlType : String</code> (optional)
+</li>
+<li><code>sourceLocationOverride : String</code> (optional)
+</li>
+<li><code>sourceTypeOverride : String</code> (optional)
+</li>
+<li><code>sourceVersion : String</code> (optional)
+</li>
+<li><code>sseAlgorithm : String</code> (optional)
+</li>
+<li><code>workspaceExcludes : String</code> (optional)
+</li>
+<li><code>workspaceIncludes : String</code> (optional)
+</li>
+<li><code>workspaceSubdir : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'CodeBuilder'])`: AWS CodeBuild
+++++
+<ul><li><code>credentialsType : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>proxyHost : String</code>
+</li>
+<li><code>proxyPort : String</code>
+</li>
+<li><code>awsAccessKey : String</code>
+</li>
+<li><code>awsSecretKey</code>
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>awsSessionToken : String</code>
+</li>
+<li><code>region : String</code>
+</li>
+<li><code>projectName : String</code>
+</li>
+<li><code>sourceVersion : String</code>
+</li>
+<li><code>sseAlgorithm : String</code>
+</li>
+<li><code>sourceControlType : String</code>
+</li>
+<li><code>localSourcePath : String</code>
+</li>
+<li><code>workspaceSubdir : String</code>
+</li>
+<li><code>gitCloneDepthOverride : String</code>
+</li>
+<li><code>reportBuildStatusOverride : String</code>
+</li>
+<li><code>secondarySourcesOverride : String</code>
+</li>
+<li><code>secondarySourcesVersionOverride : String</code>
+</li>
+<li><code>artifactTypeOverride : String</code>
+</li>
+<li><code>artifactLocationOverride : String</code>
+</li>
+<li><code>artifactNameOverride : String</code>
+</li>
+<li><code>artifactNamespaceOverride : String</code>
+</li>
+<li><code>artifactPackagingOverride : String</code>
+</li>
+<li><code>artifactPathOverride : String</code>
+</li>
+<li><code>artifactEncryptionDisabledOverride : String</code>
+</li>
+<li><code>overrideArtifactName : String</code>
+</li>
+<li><code>secondaryArtifactsOverride : String</code>
+</li>
+<li><code>envVariables : String</code>
+</li>
+<li><code>envParameters : String</code>
+</li>
+<li><code>buildSpecFile : String</code>
+</li>
+<li><code>buildTimeoutOverride : String</code>
+</li>
+<li><code>sourceTypeOverride : String</code>
+</li>
+<li><code>sourceLocationOverride : String</code>
+</li>
+<li><code>environmentTypeOverride : String</code>
+</li>
+<li><code>imageOverride : String</code>
+</li>
+<li><code>computeTypeOverride : String</code>
+</li>
+<li><code>cacheTypeOverride : String</code>
+</li>
+<li><code>cacheLocationOverride : String</code>
+</li>
+<li><code>cacheModesOverride : String</code>
+</li>
+<li><code>cloudWatchLogsStatusOverride : String</code>
+</li>
+<li><code>cloudWatchLogsGroupNameOverride : String</code>
+</li>
+<li><code>cloudWatchLogsStreamNameOverride : String</code>
+</li>
+<li><code>s3LogsStatusOverride : String</code>
+</li>
+<li><code>s3LogsEncryptionDisabledOverride : String</code>
+</li>
+<li><code>s3LogsLocationOverride : String</code>
+</li>
+<li><code>certificateOverride : String</code>
+</li>
+<li><code>serviceRoleOverride : String</code>
+</li>
+<li><code>insecureSslOverride : String</code>
+</li>
+<li><code>privilegedModeOverride : String</code>
+</li>
+<li><code>cwlStreamingDisabled : String</code>
+</li>
+<li><code>exceptionFailureMode : String</code>
+</li>
+<li><code>downloadArtifacts : String</code>
+</li>
+<li><code>downloadArtifactsRelativePath : String</code>
+</li>
+<li><code>workspaceExcludes : String</code> (optional)
+</li>
+<li><code>workspaceIncludes : String</code> (optional)
+</li>
+</ul>
+
+
+++++

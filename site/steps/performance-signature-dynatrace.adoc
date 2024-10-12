@@ -1,0 +1,150 @@
+= Performance Signature: Dynatrace AppMon
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/performance-signature-dynatrace">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `createDeploymentEvent`: create Dynatrace Deployment event
+++++
+<ul><li><code>dynatraceProfile : String</code>
+</li>
+</ul>
+
+
+++++
+=== `activateDTConfiguration`: activate Dynatrace profile configuration
+++++
+<ul><li><code>dynatraceProfile : String</code>
+</li>
+<li><code>configuration : String</code>
+</li>
+</ul>
+
+
+++++
+=== `createMemoryDump`: create memory dump
+++++
+<ul><li><code>dynatraceProfile : String</code>
+</li>
+<li><code>agent : String</code>
+</li>
+<li><code>host : String</code>
+</li>
+<li><code>autoPostProcess : boolean</code> (optional)
+</li>
+<li><code>capturePrimitives : boolean</code> (optional)
+</li>
+<li><code>captureStrings : boolean</code> (optional)
+</li>
+<li><code>dogc : boolean</code> (optional)
+</li>
+<li><code>lockSession : boolean</code> (optional)
+</li>
+<li><code>type : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `perfSigReports`: Publish Performance Signature reports
+++++
+<ul><li><code>dynatraceProfile : String</code>
+</li>
+<li><code>configurationTestCases</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>$class: 'GenericTestCase'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>singleDashboards</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>dashboard : String</code>
+</li>
+</ul></li>
+<li><code>comparisonDashboards</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>dashboard : String</code>
+</li>
+</ul></li>
+<li><code>xmlDashboard : String</code>
+</li>
+<li><code>clientDashboard : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'UnitTestCase'</code><div>
+<ul><li><code>name : String</code>
+</li>
+<li><code>singleDashboards</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>dashboard : String</code>
+</li>
+</ul></li>
+<li><code>comparisonDashboards</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>dashboard : String</code>
+</li>
+</ul></li>
+<li><code>xmlDashboard : String</code>
+</li>
+<li><code>clientDashboard : String</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>deleteSessions : boolean</code> (optional)
+</li>
+<li><code>exportSessions : boolean</code> (optional)
+</li>
+<li><code>nonFunctionalFailure : int</code> (optional)
+</li>
+<li><code>removeConfidentialStrings : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `startSession`: Start Dynatrace session recording
+++++
+<ul><li><code>dynatraceProfile : String</code>
+</li>
+<li><code>testCase : String</code>
+</li>
+<li><code>lockSession : boolean</code> (optional)
+</li>
+<li><code>recordingOption : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `stopSession`: Stop Dynatrace session recording
+++++
+<ul><li><code>dynatraceProfile : String</code>
+</li>
+</ul>
+
+
+++++
+=== `createThreadDump`: create thread dump
+++++
+<ul><li><code>dynatraceProfile : String</code>
+</li>
+<li><code>agent : String</code>
+</li>
+<li><code>host : String</code>
+</li>
+<li><code>lockSession : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

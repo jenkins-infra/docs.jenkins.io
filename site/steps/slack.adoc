@@ -1,0 +1,202 @@
+= Slack Notification Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/slack">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `slackSend`: Send Slack Message
+++++
+<div><div>
+ Simple step for sending a Slack message to specified channel.
+ <br>
+  Use the advanced settings to override the Slack Plugin global configuration to include: <code>token</code> and <code>channel</code>.
+ <br>
+  Please see the Slack Plugin global configuration for more details on the fields. Usage Example:
+ <br><code> slackSend "Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (&lt;${env.BUILD_URL}|Open&gt;)" </code>
+</div></div>
+<ul><li><code>attachments : <code>Object</code></code> (optional)
+</li>
+<li><code>baseUrl : String</code> (optional)
+<div><div>
+ Allows overriding the Slack compatible app URL specified in the global configuration.
+</div></div>
+
+</li>
+<li><code>blocks : <code>Object</code></code> (optional)
+</li>
+<li><code>botUser : boolean</code> (optional)
+<div><div>
+ <p>Bot user option indicates the token belongs to a custom Slack app bot user in Slack.</p>
+ <p>If the notification will be sent to a user via direct message, the default integration sends it via @slackbot, use this option if you want to send messages via a bot user.</p>
+</div></div>
+
+</li>
+<li><code>channel : String</code> (optional)
+<div><div>
+ Allows overriding the Slack Plugin channel specified in the global configuration. Multiple channels may be provided as a comma, semicolon, or space delimited string. 
+ <br><code>slackSend channel: "#channel-name", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"</code>
+</div></div>
+
+</li>
+<li><code>color : String</code> (optional)
+<div><div>
+ An <b>optional</b> value that can either be one of <b>good</b>, <b>warning</b>, <b>danger</b>, or any <b>hex color code</b> (eg. #439FE0). This value is used to color the border along the left side of the message attachment.
+ <br><code>slackSend color: "#439FE0", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"</code>
+</div></div>
+
+</li>
+<li><code>failOnError : boolean</code> (optional)
+<div><div>
+ If set to true, then the step will abort the Workflow run if there is an error sending message.
+ <br><code>slackSend failOnError: true, message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"</code>
+</div></div>
+
+</li>
+<li><code>iconEmoji : String</code> (optional)
+<div><div>
+ <p>Choose a custom emoji to use as the bot's icon in Slack, requires using a bot user</p>
+</div></div>
+
+</li>
+<li><code>message : String</code> (optional)
+<div><div>
+ This is the main text in a message attachment, and can contain standard message markup. The content will automatically collapse if it contains 700+ characters or 5+ linebreaks, and will display a "Show more..." link to expand the content. Message may include global variables, for example environment and currentBuild variables:
+ <br><code> slackSend "started ${env.JOB_NAME} ${env.BUILD_NUMBER} (&lt;${env.BUILD_URL}|Open&gt;)" </code>
+</div></div>
+
+</li>
+<li><code>notifyCommitters : boolean</code> (optional)
+<div><div>
+ <p>Notify committers via direct message in addition to specified channels, requires using a bot user</p>
+</div></div>
+
+</li>
+<li><code>replyBroadcast : boolean</code> (optional)
+</li>
+<li><code>sendAsText : boolean</code> (optional)
+</li>
+<li><code>teamDomain : String</code> (optional)
+<div><div>
+ Allows overriding the Slack Plugin Integration Team Domain specified in the global configuration.
+</div></div>
+
+</li>
+<li><code>timestamp : String</code> (optional)
+<div><div>
+ Allows updating an existing message instead of posting a new one.
+</div></div>
+
+</li>
+<li><code>token : String</code> (optional)
+<div><div>
+ Allows overriding the Slack Plugin Integration Token specified in the global configuration.
+</div></div>
+
+</li>
+<li><code>tokenCredentialId : String</code> (optional)
+<div><div>
+ <p>The ID for the integration token from the Credentials plugin to be used to send notifications to Slack. The "Kind" of the credential must be "Secret text." If both "Integration Token" and "Integration Token Credential ID" are set, the "Integration Token Credential ID" will take precedence for security reasons.</p>
+ <p>This overrides the global setting.</p>
+</div></div>
+
+</li>
+<li><code>username : String</code> (optional)
+<div><div>
+ <p>Choose a custom username to use as the bot's name, requires using a bot user</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `slackUploadFile`: Upload file to slack
+++++
+<ul><li><code>filePath : String</code>
+<div><div>
+ File path to search in to upload the file. Globs are accepted but only the first file found will be uploaded. 
+ <br><code>slackUploadFile "file.txt"</code>
+</div></div>
+
+</li>
+<li><code>channel : String</code> (optional)
+<div><div>
+ Allows overriding the Slack Plugin channel specified in the global configuration. Multiple channels may be provided as a comma separated string. 
+ <br><code>slackUploadFile channel: "#channel-name", filePath: "file.txt"</code>
+</div></div>
+
+</li>
+<li><code>credentialId : String</code> (optional)
+<div><div>
+ <p>The ID for the bot user token from the Credentials plugin to be used to send notifications to Slack. The "Kind" of the credential must be "Secret text."</p>
+ <p>This overrides the global setting.</p><strong>The user token must be the bot user oauth token</strong>
+</div></div>
+
+</li>
+<li><code>initialComment : String</code> (optional)
+<div><div>
+ A comment that will be added by the bot when the file is uploaded <code> <code>slackUploadFile initialComment: "Test result failures", filePath: "file.txt"</code> </code>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `slackUserIdFromEmail`: Resolve Slack UserId from Email Address
+++++
+<ul><li><code>email : String</code>
+<div><div>
+ <p>A Slack User ID will be resolved from the email address using the <a href="https://slack.com/api/users.lookupByEmail" rel="nofollow">users.lookupByEmail</a> API method. Requires using a bot user.</p>
+</div></div>
+
+</li>
+<li><code>botUser : boolean</code> (optional)
+<div><div>
+ <p>Bot user option indicates the token belongs to a custom Slack app bot user in Slack.</p>
+ <p>If the notification will be sent to a user via direct message, the default integration sends it via @slackbot, use this option if you want to send messages via a bot user.</p>
+</div></div>
+
+</li>
+<li><code>tokenCredentialId : String</code> (optional)
+<div><div>
+ <p>The ID for the integration token from the Credentials plugin to be used to send notifications to Slack. The "Kind" of the credential must be "Secret text."</p>
+ <p>This overrides the global setting.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `slackUserIdsFromCommitters`: Resolve Slack UserIds from Changeset Authors
+++++
+<ul><li><code>botUser : boolean</code> (optional)
+<div><div>
+ <p>Bot user option indicates the token belongs to a custom Slack app bot user in Slack.</p>
+ <p>If the notification will be sent to a user via direct message, the default integration sends it via @slackbot, use this option if you want to send messages via a bot user.</p>
+</div></div>
+
+</li>
+<li><code>tokenCredentialId : String</code> (optional)
+<div><div>
+ <p>The ID for the integration token from the Credentials plugin to be used to send notifications to Slack. The "Kind" of the credential must be "Secret text."</p>
+ <p>This overrides the global setting.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,39 @@
+= Carbonetes Serverless Container Scanning and Policy Compliance
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/carbonetes-serverless-container-scanning-and-policy-compliance">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `carbonetes`: Carbonetes Serverless Container Scanning and Policy Compliance
+++++
+<ul><li><code>name : String</code>
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>engineTimeout : int</code> (optional)
+</li>
+<li><code>failBuildOnPluginError : boolean</code> (optional)
+</li>
+<li><code>failBuildOnPolicyEvaluationFailResult : boolean</code> (optional)
+</li>
+<li><code>image : String</code> (optional)
+</li>
+<li><code>policyBundleID : String</code> (optional)
+</li>
+<li><code>registryURI : String</code> (optional)
+</li>
+</ul>
+
+
+++++

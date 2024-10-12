@@ -1,0 +1,143 @@
+= Android Emulator Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/android-emulator">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `adb`: ADB Executable
+++++
+<ul><li><code>emulatorTool : String</code>
+</li>
+<li><code>homeLocationStrategy</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>home</code><div>
+<ul></ul></div></li>
+<li><code>executor</code><div>
+<ul></ul></div></li>
+<li><code>workspace</code><div>
+<ul></ul></div></li>
+</ul></li>
+<li><code>arguments : String</code>
+</li>
+<li><code>quiet : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `avdmanager`: AVDManager Script
+++++
+<ul><li><code>emulatorTool : String</code>
+</li>
+<li><code>homeLocationStrategy</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>home</code><div>
+<ul></ul></div></li>
+<li><code>executor</code><div>
+<ul></ul></div></li>
+<li><code>workspace</code><div>
+<ul></ul></div></li>
+</ul></li>
+<li><code>arguments : String</code>
+</li>
+<li><code>quiet : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `emulator`: QEMU Executable
+++++
+<ul><li><code>emulatorTool : String</code>
+</li>
+<li><code>homeLocationStrategy</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>home</code><div>
+<ul></ul></div></li>
+<li><code>executor</code><div>
+<ul></ul></div></li>
+<li><code>workspace</code><div>
+<ul></ul></div></li>
+</ul></li>
+<li><code>arguments : String</code>
+</li>
+<li><code>quiet : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `sdkmanager`: AVDManager Script
+++++
+<ul><li><code>emulatorTool : String</code>
+</li>
+<li><code>homeLocationStrategy</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>home</code><div>
+<ul></ul></div></li>
+<li><code>executor</code><div>
+<ul></ul></div></li>
+<li><code>workspace</code><div>
+<ul></ul></div></li>
+</ul></li>
+<li><code>arguments : String</code>
+</li>
+<li><code>quiet : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `androidEmulator`: Run an Android emulator during build
+++++
+<ul><li><code>emulatorTool : String</code>
+</li>
+<li><code>osVersion : String</code>
+</li>
+<li><code>screenDensity : String</code>
+</li>
+<li><code>screenResolution : String</code>
+</li>
+<li><code>adbTimeout : int</code> (optional)
+</li>
+<li><code>avdName : String</code> (optional)
+</li>
+<li><code>deviceDefinition : String</code> (optional)
+</li>
+<li><code>deviceLocale : String</code> (optional)
+</li>
+<li><code>hardwareProperties</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>homeLocationStrategy</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>home</code><div>
+<ul></ul></div></li>
+<li><code>executor</code><div>
+<ul></ul></div></li>
+<li><code>workspace</code><div>
+<ul></ul></div></li>
+</ul></li>
+<li><code>sdCardSize : String</code> (optional)
+</li>
+<li><code>targetABI : String</code> (optional)
+</li>
+</ul>
+
+
+++++

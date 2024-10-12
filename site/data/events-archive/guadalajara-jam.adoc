@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Guadalajara JAM
+:page-eventStartDate: 2016-05-19T18:45:00
+:page-eventLink: https://www.meetup.com/Guadalajara-Jenkins-Area-Meetup/events/230208035/
+---
+Join our 1st meetup!

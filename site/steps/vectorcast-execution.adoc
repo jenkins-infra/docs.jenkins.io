@@ -1,0 +1,85 @@
+= VectorCAST Execution
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/vectorcast-execution">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'VectorCASTCommand'])`: VectorCAST Command
+++++
+<ul><li><code>winCommand : String</code>
+</li>
+<li><code>unixCommand : String</code>
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'VectorCASTSetup'])`: VectorCAST Setup
+++++
+<ul><li><code>environmentSetupWin : String</code>
+</li>
+<li><code>environmentSetupUnix : String</code>
+</li>
+<li><code>executePreambleWin : String</code>
+</li>
+<li><code>executePreambleUnix : String</code>
+</li>
+<li><code>environmentTeardownWin : String</code>
+</li>
+<li><code>environmentTeardownUnix : String</code>
+</li>
+<li><code>optionUseReporting : boolean</code>
+</li>
+<li><code>optionErrorLevel : String</code>
+</li>
+<li><code>optionHtmlBuildDesc : String</code>
+</li>
+<li><code>optionExecutionReport : boolean</code>
+</li>
+<li><code>optionClean : boolean</code>
+</li>
+<li><code>useCILicenses : boolean</code>
+</li>
+<li><code>waitLoops : long</code>
+</li>
+<li><code>waitTime : long</code>
+</li>
+<li><code>manageProjectName : String</code>
+</li>
+<li><code>jobName : String</code>
+</li>
+<li><code>nodeLabel : String</code>
+</li>
+<li><code>pclpCommand : String</code>
+</li>
+<li><code>pclpResultsPattern : String</code>
+</li>
+<li><code>squoreCommand : String</code>
+</li>
+<li><code>TESTinsights_URL : String</code>
+</li>
+<li><code>TESTinsights_project : String</code>
+</li>
+<li><code>TESTinsights_credentials_id : String</code>
+</li>
+<li><code>TESTinsights_proxy : String</code>
+</li>
+<li><code>TESTinsights_SCM_URL : String</code>
+</li>
+<li><code>TESTinsights_SCM_Tech : String</code>
+</li>
+</ul>
+
+
+++++

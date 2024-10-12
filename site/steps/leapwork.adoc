@@ -1,0 +1,97 @@
+= Leapwork
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/leapwork">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'LeapworkJenkinsBridgeBuilder'])`: Leapwork
+++++
+<ul><li><code>leapworkHostname : String</code>
+<div><div>
+ Enter Leapwork Controller hostname or IP
+</div></div>
+
+</li>
+<li><code>leapworkPort : String</code>
+<div><div>
+ Enter Leapwork controller API port, by default it is 9001.
+</div></div>
+
+</li>
+<li><code>leapworkAccessKey : String</code>
+<div><div>
+ Enter Leapwork API Access key. If it is invalid or empty, 401 error will be returned.
+</div></div>
+
+</li>
+<li><code>leapworkSchNames : String</code>
+<div><div>
+ Press button "Select schedules" and you will get all available schedules of your controller which address you've entered before. Use checkboxes to select the schedules you want. Also you can paste list of schedule names, be noticed that they should be separated by new line or comma. WARNING: by clicking a checkbox all schedule names, that DO NOT EXIST OR DISABLED on controller will be removed from the list of schedules in build configuration.
+</div></div>
+
+</li>
+<li><code>leapworkSchIds : String</code>
+</li>
+<li><code>leapworkDelay : String</code> (optional)
+<div><div>
+ During this time, plugin is going to wait before it tries to get schedule state. If schedule is still running, plugin will wait again.
+ <br>
+  By default this value is 5 seconds. It is strongly recommended not to use less value, because if plugin tries to get schedule state and the controller has not created it yet, controller will return 500 error code and your schedule will become Invalid for the plugin.
+</div></div>
+
+</li>
+<li><code>leapworkTimeout : String</code> (optional)
+<div><div>
+ The 'timeout' property represents the duration within which an operation or request expects to receive a response before considering it unsuccessful or timing out.
+ <br>
+  It's measured in seconds, and the default value for this property is set to 300 seconds.
+</div></div>
+
+</li>
+<li><code>leapworkDoneStatusAs : String</code> (optional)
+<div><div>
+ Choose how plugin should interprete "Done" status: as "Failed" or as "Success".
+</div></div>
+
+</li>
+<li><code>leapworkReport : String</code> (optional)
+<div><div>
+ Report file name:
+ <br>
+  The result of the scheduled tests is saved to an xml file. Per default this file is named "report.xml", but if you are using other build or post build plugins, this file name can already be in use. If so, change the name to something unique. The result file is saved in the following location: "{User path to Jenkins}/Jenkins/workspace/{JOB_NAME}/" To read the generated report files into the build project, add the "Publish Junit test result report" plugin as a "post-build action". In this plugin, use the report file name specified in the Leaptest plugin in 'Test Report XMLs" field (most likely "report.xml"), and please ignore any warnings that the file can't be found - it will be created later.
+</div>&gt;</div>
+
+</li>
+<li><code>leapworkWritePassedFlowKeyFrames : boolean</code> (optional)
+<div><div>
+ If selected, keyframes of passed flows will be written to the report file. WARNING: JUnit parser will set all passed flows to "Failed" status, because keyframes are written to "failure" block
+</div></div>
+
+</li>
+<li><code>leapworkEnableHttps : boolean</code> (optional)
+<div><div>
+ This will enable HTTPs protocol for APIs. Please ensure that HTTPs protocol is enabled in Leapwork as well. Default port is 9002.
+</div></div>
+
+</li>
+<li><code>leapworkScheduleVariables : String</code> (optional)
+<div><div>
+ Write here schedule variables in "key : value" format. All the variables will be available for all schedules in schedule list to run. Variable key - value pairs must be new line or comma separated. Key and value must be separated with ":" only. WARNING: all key duplicated variables will be ignored.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

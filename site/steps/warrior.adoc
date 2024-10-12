@@ -1,0 +1,156 @@
+= Warrior Framework Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/warrior">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'WarriorPluginBuilder'])`: Warrior Framework Plugin
+++++
+<ul><li><code>configType : String</code>
+</li>
+<li><code>gitConfigUrl : String</code>
+<div><div>
+ Provide GIT URL of the repository which has warhorn configuration file.
+</div></div>
+
+</li>
+<li><code>gitConfigCredentials : boolean</code>
+<div><div>
+ Choose to provide credentials to clone GIT repository.
+</div></div>
+
+</li>
+<li><code>gitConfigTagValue : String</code>
+<div><div>
+ Provide branch/commit ID/tag name of GIT repository(leave blank to use master).
+</div></div>
+
+</li>
+<li><code>gitConfigCloneType : String</code>
+</li>
+<li><code>gitConfigUname : String</code>
+<div><div>
+ Provide user name to access GIT repository.
+</div></div>
+
+</li>
+<li><code>gitConfigPwd : String</code>
+<div><div>
+ Provide password to access GIT repository.
+</div></div>
+
+</li>
+<li><code>gitConfigFile : String</code>
+<div><div>
+ Provide path of configuration file.
+ <br>
+  Example with sample directory structure:
+ <br>
+   - root_dir
+ <br>
+    - dir1
+ <br>
+     - file1.xml
+ <br>
+     - sub_dir1
+ <br>
+      - file2.xml
+ <br>
+  To add file2.xml as configuration file, use "dir1/sub_dir1/file2.xml"(exclude root directory from file path).
+</div></div>
+
+</li>
+<li><code>sftpConfigIp : String</code>
+<div><div>
+ Provide Name/IP of SFTP server.
+</div></div>
+
+</li>
+<li><code>sftpConfigUname : String</code>
+<div><div>
+ Provide username for SFTP server.
+</div></div>
+
+</li>
+<li><code>sftpConfigPwd : String</code>
+<div><div>
+ Provide password for SFTP server.
+</div></div>
+
+</li>
+<li><code>sftpConfigFile : String</code>
+<div><div>
+ Provide absolute or relative-to-home path of configuration file.
+ <br>
+   1. Absolute path - /home/username/dir1/warhorn_config.xml
+ <br>
+   2. Relative-to-home path - dir1/warhorn_config.xml
+</div></div>
+
+</li>
+<li><code>pythonPath : String</code>
+<div><div>
+ (optional)Provide absolute path of Python executable.
+ <br>
+  Leave blank to use default Python for execution.
+</div></div>
+
+</li>
+<li><code>uploadExecLog : boolean</code>
+<div><div>
+ Choose to upload Warrior execution folder as zip file to any server via FTP/SFTP/SCP.
+ <br>
+  Format - Execution_jenkins-&lt;job_name&gt;-&lt;build_number&gt;.zip
+ <br>
+  Example - Execution_jenkins-Test_Job_Warrior_Plugin-48.zip
+</div></div>
+
+</li>
+<li><code>uploadServerIp : String</code>
+<div><div>
+ Provide Name/IP of remote server.
+</div></div>
+
+</li>
+<li><code>uploadServerUname : String</code>
+<div><div>
+ Provide username for remote server.
+</div></div>
+
+</li>
+<li><code>uploadServerPwd : String</code>
+<div><div>
+ Provide password for remote server.
+</div></div>
+
+</li>
+<li><code>uploadServerType : String</code>
+</li>
+<li><code>uploadServerDir : String</code>
+<div><div>
+ (optional)Provide absolute or relative-to-home path of destination directory in remote server.
+ <br>
+  Leave empty to copy warrior execution folder(as a zip file) in user's home directory.
+</div></div>
+
+</li>
+<li><code>runFiles</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>runFile : String</code>
+</li>
+</ul></li>
+</ul>
+
+
+++++

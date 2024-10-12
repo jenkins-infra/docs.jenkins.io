@@ -1,0 +1,222 @@
+= Venafi CodeSign Protect
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/venafi-codesigning">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `venafiCodeSignWithJarSigner`: Venafi CodeSign Protect: sign with jarsigner
+++++
+<ul><li><code>tppName : String</code>
+<div>The Venafi Trust Protection Platform (TPP) to use for signing. You can define TPPs under "Manage Jenkins" -&gt; "Configure System" -&gt; "Venafi Code Signing".</div>
+
+</li>
+<li><code>certLabel : String</code>
+<div>The label of the certificate (inside the TPP) to use for code signing. You can obtain a list of labels with 'pkcs11config listcertificates'.</div>
+
+</li>
+<li><code>credential</code>
+<ul><b>Nested Object</b>
+<li><code>credentialsId : String</code>
+</li>
+</ul></li>
+<li><code>extraArgs</code> (optional)
+<div><p>This plugin invokes Jarsigner under the hood. Here you can specify extra custom CLI arguments to pass to Jarsigner.</p>
+<p>These arguments will be <em>appended</em> to the Jarsigner CLI invocation, and take precedence over any arguments implicitly passed by this plugin.</p></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>argument : String</code>
+</li>
+</ul></li>
+<li><code>file : String</code> (optional)
+<div><p>The path to the file to be signed.</p>
+<p>Either a path or a glob must be given.</p></div>
+
+</li>
+<li><code>glob : String</code> (optional)
+<div><p>A glob that specifies the files to be signed.</p>
+<p>Either a path or a glob must be given.</p></div>
+
+</li>
+<li><code>timestampingServers</code> (optional)
+<div><p>Specifies one or more timestamping authority servers to use during signing. Specifying this is strongly recommended, because it allows signed files to be usable even after the original signing certificate has expired.</p>
+<p>If you specify more than one server, then a random one will be used.</p>
+<p><strong>Tip:</strong> here are some public timestamping authorities that you can use:</p>
+<ul>
+ <li>http://timestamp.digicert.com</li>
+ <li>http://timestamp.globalsign.com</li>
+ <li>http://timestamp.comodoca.com/authenticode</li>
+ <li>http://tsa.starfieldtech.com</li>
+</ul></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>address : String</code>
+</li>
+</ul></li>
+<li><code>venafiClientToolsDir : String</code> (optional)
+<div><p>Specify the path to the directory in which Venafi CodeSign Protect client tools are installed. If not specified, it's autodetected as follows:</p>
+<ul>
+ <li>Linux: /opt/venafi/codesign</li>
+ <li>macOS: /Library/Venafi/CodeSigning</li>
+ <li>Windows: autodetected from the registry, or (if that fails): C:\Program Files\Venafi CodeSign Protect</li>
+</ul></div>
+
+</li>
+</ul>
+
+
+++++
+=== `venafiVerifyWithJarSigner`: Venafi CodeSign Protect: verify with jarsigner
+++++
+<ul><li><code>tppName : String</code>
+<div>The Venafi Trust Protection Platform (TPP) that contains the certificate that the signed file(s) were signed by. You can define TPPs under "Manage Jenkins" -&gt; "Configure System" -&gt; "Venafi Code Signing".</div>
+
+</li>
+<li><code>certLabel : String</code>
+<div>The label of the certificate (inside the TPP) that was used for signing the file(s). You can obtain a list of labels with 'pkcs11config listcertificates'.</div>
+
+</li>
+<li><code>credential</code>
+<ul><b>Nested Object</b>
+<li><code>credentialsId : String</code>
+</li>
+</ul></li>
+<li><code>file : String</code> (optional)
+<div><p>The path to the file to be verified.</p>
+<p>Either a path or a glob must be given.</p></div>
+
+</li>
+<li><code>glob : String</code> (optional)
+<div><p>A glob that specifies the files to be verified.</p>
+<p>Either a path or a glob must be given.</p></div>
+
+</li>
+<li><code>venafiClientToolsDir : String</code> (optional)
+<div><p>Specify the path to the directory in which Venafi CodeSign Protect client tools are installed. If not specified, it's autodetected as follows:</p>
+<ul>
+ <li>Linux: /opt/venafi/codesign</li>
+ <li>macOS: /Library/Venafi/CodeSigning</li>
+ <li>Windows: autodetected from the registry, or (if that fails): C:\Program Files\Venafi CodeSign Protect</li>
+</ul></div>
+
+</li>
+</ul>
+
+
+++++
+=== `venafiCodeSignWithSignTool`: Venafi CodeSign Protect: sign with signtool
+++++
+<ul><li><code>tppName : String</code>
+<div>The Venafi Trust Protection Platform (TPP) to use for signing. You can define TPPs under "Manage Jenkins" -&gt; "Configure System" -&gt; "Venafi Code Signing".</div>
+
+</li>
+<li><code>fileOrGlob : String</code>
+<div><p>A path or a glob that specifies the file(s) to be signed.</p></div>
+
+</li>
+<li><code>credential</code>
+<ul><b>Nested Object</b>
+<li><code>credentialsId : String</code>
+</li>
+</ul></li>
+<li><code>appendSignatures : boolean</code> (optional)
+<div>If the target file(s) already have signatures, then append a new signature instead of overwriting the existing signatures.</div>
+
+</li>
+<li><code>extraArgs</code> (optional)
+<div><p>This plugin invokes Signtool under the hood. Here you can specify extra custom CLI arguments to pass to Signtool.</p>
+<p>These arguments will be <em>appended</em> to the Signtool CLI invocation. If they overlap with any arguments implicitly passed by this plugin, then Signtool will raise an error.</p></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>argument : String</code>
+</li>
+</ul></li>
+<li><code>sha1 : String</code> (optional)
+<div><p>The SHA-1 hash of the certificate (inside the TPP) to use for code signing.</p>
+<p>Normally you should use 'Signing certificate subject name' instead, but if that name is ambiguous, then use the SHA-1 hash to select a specific signing certificate.</p>
+<p>Either a subject name or SHA-1 hash of the signing certificate must be given.</p></div>
+
+</li>
+<li><code>signToolPath : String</code> (optional)
+<div>The full path to signtool.exe. If not specified, we assume that it's in PATH.</div>
+
+</li>
+<li><code>signatureDigestAlgos</code> (optional)
+<div><p>The digest algorithm(s) to use to creating signatures.</p>
+<p>If none specified, 'sha256' is used as the default algorithm. This is very secure, but may not be compatible with older Windows versions. If you need compatibility with older Windows versions, you should specify 'sha1' and 'sha256' (in that order).</p>
+<p>When multiple digest algorithms are specified, they are applied in the order specified.</p></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>algorithm : String</code>
+</li>
+</ul></li>
+<li><code>subjectName : String</code> (optional)
+<div><p>The Common Name ("Issued to" or "CN") of the certificate (inside the TPP) to use for code signing.</p>
+<p>You can obtain a list of Common Names with 'cspconfig listcertificates' and checking what comes after 'CN='.</p>
+<p>Either a subject name or SHA-1 hash of the signing certificate must be given.</p></div>
+
+</li>
+<li><code>timestampingServers</code> (optional)
+<div><p>Specifies one or more timestamping authority servers to use during signing. Specifying this is strongly recommended, because it allows signed files to be usable even after the original signing certificate has expired.</p>
+<p>If you specify more than one server, then a random one will be used.</p>
+<p><strong>Tip:</strong> here are some public timestamping authorities that you can use:</p>
+<ul>
+ <li>http://timestamp.digicert.com</li>
+ <li>http://timestamp.globalsign.com</li>
+ <li>http://timestamp.comodoca.com/authenticode</li>
+ <li>http://tsa.starfieldtech.com</li>
+</ul></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>address : String</code>
+</li>
+</ul></li>
+<li><code>useMachineConfiguration : boolean</code> (optional)
+</li>
+<li><code>venafiClientToolsDir : String</code> (optional)
+<div>Specify the path to the directory in which Venafi CodeSign Protect client tools are installed. If not specified, it's autodetected from the registry. If that fails, we fallback to <code>C:\Program Files\Venafi CodeSign Protect</code>.</div>
+
+</li>
+</ul>
+
+
+++++
+=== `venafiVerifyWithSignTool`: Venafi CodeSign Protect: verify with signtool
+++++
+<ul><li><code>tppName : String</code>
+<div>The Venafi Trust Protection Platform (TPP) that contains the certificate that the signed file(s) were signed by. You can define TPPs under "Manage Jenkins" -&gt; "Configure System" -&gt; "Venafi Code Signing".</div>
+
+</li>
+<li><code>fileOrGlob : String</code>
+<div><p>A path or a glob that specifies the file(s) to be verified.</p></div>
+
+</li>
+<li><code>credential</code>
+<ul><b>Nested Object</b>
+<li><code>credentialsId : String</code>
+</li>
+</ul></li>
+<li><code>signToolPath : String</code> (optional)
+<div>The full path to signtool.exe. If not specified, we assume that it's in PATH.</div>
+
+</li>
+<li><code>useMachineConfiguration : boolean</code> (optional)
+</li>
+<li><code>venafiClientToolsDir : String</code> (optional)
+<div>Specify the path to the directory in which Venafi CodeSign Protect client tools are installed. If not specified, it's autodetected from the registry. If that fails, we fallback to <code>C:\Program Files\Venafi CodeSign Protect</code>.</div>
+
+</li>
+</ul>
+
+
+++++

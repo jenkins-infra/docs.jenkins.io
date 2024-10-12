@@ -1,0 +1,41 @@
+= Comments Remover plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/comments-remover">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'CommentsRemoverBuilder'])`: Invoke Comments Remover
+++++
+<ul><li><code>filename : String</code>
+<div><div>
+ Name of the input file to have comments removed from
+</div></div>
+
+</li>
+<li><code>language : String</code>
+<div><div>
+ Language of the input file - helps locate comments
+</div></div>
+
+</li>
+<li><code>outputDir : String</code>
+<div><div>
+ After execution the result will be in this directory in the workspace
+</div></div>
+
+</li>
+</ul>
+
+
+++++

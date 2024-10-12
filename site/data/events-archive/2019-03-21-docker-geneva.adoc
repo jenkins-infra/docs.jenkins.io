@@ -1,0 +1,7 @@
+---
+:page-eventTitle: Docker Geneva Meetup
+:page-eventStartDate: 2019-03-21T18:00:00
+:page-eventLink: https://www.meetup.com/Docker-Geneva/events/259185105/
+---
+
+Docker and Jenkins [as Code] : your dockerized CI/CD

@@ -1,0 +1,31 @@
+= Updraft Android/iOS Publisher
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/updraft-publisher">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `updraftPublish`: Updraft Android/iOS Publisher
+++++
+<ul><li><code>url : String</code>
+<div><div>
+ Insert the Url, which can be found as part of the "CURL" statement in the Application Overview of the desired application on Updraft.
+</div></div>
+
+</li>
+<li><code>path : String</code>
+</li>
+</ul>
+
+
+++++

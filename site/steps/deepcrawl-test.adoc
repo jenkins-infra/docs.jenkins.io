@@ -1,0 +1,32 @@
+= Deepcrawl Automation Hub
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/deepcrawl-test">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `runAutomationHubBuild`: Run Deepcrawl Automation Hub Build
+++++
+<ul><li><code>testSuiteId : String</code>
+</li>
+<li><code>startOnly : boolean</code> (optional)
+</li>
+<li><code>userKeyId : String</code> (optional)
+</li>
+<li><code>userKeySecret</code> (optional)
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+</ul>
+
+
+++++

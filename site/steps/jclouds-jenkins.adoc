@@ -1,0 +1,106 @@
+= JClouds plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/jclouds-jenkins">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `jcloudsTakeOffline`: Take current JClouds agent offline conditionally
+++++
+<div><div>
+ This step takes the agent that is running the current job offline, if the job's result is worse than or equal to the specified condition.
+</div></div>
+<ul><li><code>message : String</code>
+<div><div>
+ The message to show in the offline cause.
+</div></div>
+
+</li>
+<li><code>condition : String</code>
+<div><div>
+ Select the worst result that should lead to taking the current agent offline.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `withJclouds`: Create supplemental nodes
+++++
+<div><div>
+ <p>Supplemental nodes are JClouds instances that are temporarily provisioned for the lifetime of this job. Apart from being provisioned and torn down by the JClouds plugin, these instances are <b>not</b> under any control of jenkins. In particular, they do not contribute build agents. They <i>are</i> however subject to the instance cap limitation of the specified JClouds profile. How these instances are used is at the discretion of the build job.</p>
+ <p></p>
+ <h4>Blocking behavior</h4> If a template with active phone home-flag is specified, the the build will be blocked until the instance(s) have invoked the phone-home webhook (or the phone-home timeout has been reached). Otherwise, the build will commence immediately after launching the instances.
+</div></div>
+<ul><li><code>instancesToRun</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>cloudName : String</code>
+<div><div>
+ The cloud from which to run your instances.
+</div></div>
+
+</li>
+<li><code>templateName : String</code>
+<div><div>
+ The template, from the list of templates configured for the chosen cloud, to use for the instances.
+</div></div>
+
+</li>
+<li><code>manualTemplateName : String</code>
+</li>
+<li><code>count : int</code>
+<div><div>
+ The number of instances of the chosen template to launch.
+</div></div>
+
+</li>
+<li><code>shouldSuspend : boolean</code>
+</li>
+</ul></li>
+<li><code>envVarName : String</code> (optional)
+<div><div>
+ The IP addresses of the instances will be recorded in a comma-separated list, in the environment variable specified here.
+ <p></p> If this is empty or undefined, then the default "JCLOUDS_IPS" will be used.
+ <p></p> This might override a variable, if it is already existing.
+</div></div>
+
+</li>
+<li><code>indexName : String</code> (optional)
+<div><div>
+ Specify the name of an index variable that will be published in the metadata of the supplemental nodes. The value of this variable is a zero-based counter of supplemental nodes and helps distinguishing the nodes if multiple instances are requested.
+ <p></p> If this is empty or undefined, then the default "JCLOUDS_SUPPLEMENTAL_INDEX" will be used.
+ <p></p> This feature is currently implemented for OpenStack und GCE clouds only.
+</div></div>
+
+</li>
+<li><code>publishMeta : String</code> (optional)
+<div><div>
+ Specify existing environment variables (separated by whitespace) that will be published as metadata of the supplemental nodes.
+ <p></p> This feature is currently implemented for OpenStack und GCE clouds only.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `jcloudsOneOffAgent`: JClouds Single-use agent
+++++
+<div><div>
+ If enabled <b>and</b> the build agent has beed provisioned by jclouds, then take this agent offline after the build has finished and subsequently delete it when it becomes idle.
+</div></div>
+<ul></ul>
+
+
+++++

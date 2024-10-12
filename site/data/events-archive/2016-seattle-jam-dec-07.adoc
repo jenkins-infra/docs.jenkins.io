@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Seattle JAM December
+:page-eventStartDate: 2016-12-07T19:00:00
+:page-eventLink: https://www.meetup.com/Seattle-Jenkins-Area-Meetup/events/235189240/
+---
+Jenkins at Microsoft

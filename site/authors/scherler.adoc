@@ -1,0 +1,8 @@
+= About the Author
+:page-layout: author
+:page-author_name: Thorsten Scherler
+:page-twitter: thorScherler
+:page-github: scherler
+
+
+Thorsten Scherler has a broad background in open source consulting, training and solutions since 2002. He's an engineer at CloudBees, working full time on the link:/projects/blueocean/[Blue Ocean] front end. He left Germany in 2003 after finishing his university degrees and has been living in sunny Seville ever since.

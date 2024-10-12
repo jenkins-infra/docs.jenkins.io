@@ -1,0 +1,32 @@
+= Labeled Test Groups Publisher
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/labeled-test-groups-publisher">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'LabeledTestResultGroupPublisher'])`: Publish Test Results in Labeled Groups
+++++
+<ul><li><code>configs</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>parserClassName : String</code>
+</li>
+<li><code>testResultFileMask : String</code>
+</li>
+<li><code>label : String</code>
+</li>
+</ul></li>
+</ul>
+
+
+++++

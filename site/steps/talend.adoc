@@ -1,0 +1,79 @@
+= Talend
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/talend">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `createTask`: Talend Create Task
+++++
+<ul><li><code>artifact : String</code> (optional)
+</li>
+<li><code>artifactType : String</code> (optional)
+</li>
+<li><code>autoUpgradable : boolean</code> (optional)
+</li>
+<li><code>environment : String</code> (optional)
+</li>
+<li><code>isjob : boolean</code> (optional)
+</li>
+<li><code>overrideWithDefaultParameters : boolean</code> (optional)
+</li>
+<li><code>parameters : String</code> (optional)
+</li>
+<li><code>runtime : String</code> (optional)
+</li>
+<li><code>runtimeType : String</code> (optional)
+</li>
+<li><code>workspace : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `runPromotion`: Talend Promotion
+++++
+<ul><li><code>artifact : String</code> (optional)
+</li>
+<li><code>artifactType : String</code> (optional)
+</li>
+<li><code>keepTargetResources : boolean</code> (optional)
+</li>
+<li><code>keepTargetRunProfiles : boolean</code> (optional)
+</li>
+<li><code>plan : String</code> (optional)
+</li>
+<li><code>promotion : String</code> (optional)
+</li>
+<li><code>task : String</code> (optional)
+</li>
+<li><code>workspace : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `runTask`: Talend Run Task
+++++
+<ul><li><code>environment : String</code> (optional)
+</li>
+<li><code>parameters : String</code> (optional)
+</li>
+<li><code>task : String</code> (optional)
+</li>
+<li><code>workspace : String</code> (optional)
+</li>
+</ul>
+
+
+++++

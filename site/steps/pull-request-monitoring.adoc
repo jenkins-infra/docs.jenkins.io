@@ -1,0 +1,25 @@
+= Pull Request Monitoring
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/pull-request-monitoring">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `monitoring`: Configure Monitoring Dashboard
+++++
+<ul><li><code>portlets : String</code>
+</li>
+</ul>
+
+
+++++

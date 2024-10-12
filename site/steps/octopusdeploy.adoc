@@ -1,0 +1,469 @@
+= Octopus Deploy
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/octopusdeploy">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `octopusDeployRelease`: Octopus Deploy: Deploy Release
+++++
+<ul><li><code>serverId : String</code>
+<div><div>
+ The identifier of the Octopus Server instance which you want to use for deploying this release. 
+ <br>
+  Server Id is set in the global OctopusDeploy Plugin configuration.
+</div></div>
+
+</li>
+<li><code>toolId : String</code>
+<div><div>
+ The Octopus Deploy Command Line executable which you want to use for creating this release. 
+ <br>
+  Octopus Deploy Command Line executable is set in the Octopus CLI configuration on the Global Tool Configuration page.
+</div></div>
+
+</li>
+<li><code>spaceId : String</code>
+<div><div>
+ If left empty the Default space for the Octopus Server instance will be used. 
+ <br>
+  Otherwise, specify a space by name. The space specified must exist in the Octopus Server instance.
+</div></div>
+
+</li>
+<li><code>project : String</code>
+<div><div>
+ The project name in OctopusDeploy. 
+ <br><em>This field is case-sensitive.</em>
+</div></div>
+
+</li>
+<li><code>releaseVersion : String</code>
+<div><div>
+ The version of the release to move. 
+ <br><em>This field is case-sensitive.</em>
+</div></div>
+
+</li>
+<li><code>environment : String</code> (optional)
+<div><div>
+ The environment to deploy to. 
+ <br><em>This field is case-sensitive.</em>
+</div></div>
+
+</li>
+<li><code>additionalArgs : String</code> (optional)
+<div><div>
+ Additional arguments to be passed to the Octo executable.
+</div></div>
+
+</li>
+<li><code>cancelOnTimeout : boolean</code> (optional)
+<div><div>
+ If checked then the deployment will be explicitly canceled if the time to wait has expired and the task has not completed.
+</div></div>
+
+</li>
+<li><code>deploymentTimeout : String</code> (optional)
+<div><div>
+ The amount of time, specified in timespan format, to wait for the deployment to complete. Default is 00:10:00 if left blank. The deployment task itself does not timeout, this timeout is purely how long the client will keep polling to see if it has completed.
+</div></div>
+
+</li>
+<li><code>tenant : String</code> (optional)
+<div><div>
+ The tenant to deploy to. 
+ <br><em>This field is case-sensitive.</em>
+</div></div>
+
+</li>
+<li><code>tenantTag : String</code> (optional)
+</li>
+<li><code>variables : String</code> (optional)
+<div><div>
+ List of variable to pass to the Deployment process 
+ <br><em>Use Java properties notation</em>, e.g. propertyName=propertyValue each on a new line For pipeline syntax separate each entry with a new-line character <code>\n</code>
+</div></div>
+
+</li>
+<li><code>verboseLogging : boolean</code> (optional)
+</li>
+<li><code>waitForDeployment : boolean</code> (optional)
+<div><div>
+ If selected, this build will wait until the deployment is complete. 
+ <br><em>When this is selected, the deployment state will fail the build if the state ends as "Failed"</em>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `octopusPack`: Octopus Deploy: Package application
+++++
+<ul><li><code>toolId : String</code>
+<div><div>
+ The Octopus Deploy Command Line executable
+</div></div>
+
+</li>
+<li><code>packageId : String</code>
+<div><div>
+ The ID of the package; e.g. MyCompany.MyApp
+</div></div>
+
+</li>
+<li><code>packageFormat : String</code>
+<div><div>
+ ZIP is the recommended format.
+</div></div>
+
+</li>
+<li><code>sourcePath : String</code>
+<div><div>
+ The root folder containing files and folders to pack. Defaults to the working directory.
+</div></div>
+
+</li>
+<li><code>additionalArgs : String</code> (optional)
+<div><div>
+ Additional arguments to be passed to the Octo executable.
+</div></div>
+
+</li>
+<li><code>includePaths : String</code> (optional)
+<div><div>
+ Newline-separated files to include in the package. Defaults to **
+</div></div>
+
+</li>
+<li><code>outputPath : String</code> (optional)
+<div><div>
+ The folder into which the generated package file will be written. Defaults to the working directory.
+</div></div>
+
+</li>
+<li><code>overwriteExisting : boolean</code> (optional)
+<div><div>
+ Overwrite any existing package
+</div></div>
+
+</li>
+<li><code>packageVersion : String</code> (optional)
+<div><div>
+ The version number of the package. Defaults to a timestamp-based version.
+</div></div>
+
+</li>
+<li><code>verboseLogging : boolean</code> (optional)
+<div><div>
+ Enable debug logging
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `octopusPushBuildInformation`: Octopus Deploy: Push build information
+++++
+<ul><li><code>serverId : String</code>
+<div><div>
+ The identifier of the Octopus Server instance which you want to use for deploying this release. 
+ <br>
+  Server Id is set in the global OctopusDeploy Plugin configuration.
+</div></div>
+
+</li>
+<li><code>spaceId : String</code>
+<div><div>
+ If left empty the Default space for the Octopus Server instance will be used. 
+ <br>
+  Otherwise, specify a space by name. The space specified must exist in the Octopus Server instance.
+</div></div>
+
+</li>
+<li><code>toolId : String</code>
+<div><div>
+ The Octopus Deploy Command Line executable
+</div></div>
+
+</li>
+<li><code>packageId : String</code>
+<div><div>
+ Newline-separated package IDs; e.g.
+ <br>
+ MyCompany.MyApp
+ <br>
+ MyCompany.MyApp2
+</div></div>
+
+</li>
+<li><code>packageVersion : String</code>
+<div><div>
+ The version number of the package. Defaults to a timestamp-based version.
+</div></div>
+
+</li>
+<li><code>commentParser : String</code>
+<div><div>
+ Octopus can associate the work items or issues addressed by the changes in the package to the package. Select the issue tracking system that you use, or leave this option blank if you do not use a supported issue tracker.
+</div></div>
+
+</li>
+<li><code>overwriteMode</code>
+<div><div>
+ Normally, if the same build information already exists on the server, the server will reject the build information push. This practice ensures build information isn't accidentally overwritten or ignored. Enable this setting to override allow build information to be overwritten.
+</div></div>
+
+<ul><li><b>Values:</b> <code>FailIfExists</code>, <code>OverwriteExisting</code>, <code>IgnoreIfExists</code></li></ul></li>
+<li><code>additionalArgs : String</code> (optional)
+<div><div>
+ Additional arguments to be passed to the Octo executable.
+</div></div>
+
+</li>
+<li><code>gitBranch : String</code> (optional)
+</li>
+<li><code>gitCommit : String</code> (optional)
+</li>
+<li><code>gitUrl : String</code> (optional)
+</li>
+<li><code>verboseLogging : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `octopusPushPackage`: Octopus Deploy: Push packages
+++++
+<ul><li><code>serverId : String</code>
+<div><div>
+ The identifier of the Octopus Server instance which you want to use for deploying this release. 
+ <br>
+  Server Id is set in the global OctopusDeploy Plugin configuration.
+</div></div>
+
+</li>
+<li><code>toolId : String</code>
+<div><div>
+ The Octopus Deploy Command Line executable
+</div></div>
+
+</li>
+<li><code>packagePaths : String</code>
+<div><div>
+ Newline-separated paths of package files that will be pushed. Ant-style wildcards like dir/**/*.zip are supported.
+</div></div>
+
+</li>
+<li><code>overwriteMode</code>
+<div><div>
+ Normally, if the same package already exists on the server, the server will reject the package push. This practice ensures a package isn't accidentally overwritten or ignored. Use this setting to override this behavior.
+</div></div>
+
+<ul><li><b>Values:</b> <code>FailIfExists</code>, <code>OverwriteExisting</code>, <code>IgnoreIfExists</code></li></ul></li>
+<li><code>additionalArgs : String</code> (optional)
+<div><div>
+ Additional arguments to be passed to the Octo executable.
+</div></div>
+
+</li>
+<li><code>spaceId : String</code> (optional)
+<div><div>
+ If left empty the Default space for the Octopus Server instance will be used. 
+ <br>
+  Otherwise, specify a space by name. The space specified must exist in the Octopus Server instance.
+</div></div>
+
+</li>
+<li><code>verboseLogging : boolean</code> (optional)
+<div><div>
+ Enable debug logging
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `octopusCreateRelease`: Octopus Deploy: Create Release
+++++
+<ul><li><code>serverId : String</code>
+<div><div>
+ The identifier of the Octopus Server instance which you want to use for creating this release. 
+ <br>
+  Server Id is set in the global OctopusDeploy Plugin configuration.
+</div></div>
+
+</li>
+<li><code>toolId : String</code>
+<div><div>
+ The Octopus Deploy Command Line executable which you want to use for creating this release. 
+ <br>
+  Octopus Deploy Command Line executable is set in the Octopus CLI configuration on the Global Tool Configuration page.
+</div></div>
+
+</li>
+<li><code>project : String</code>
+<div><div>
+ The name of the project as defined in OctopusDeploy. 
+ <br><em>This field is case sensitive.</em>
+</div></div>
+
+</li>
+<li><code>releaseVersion : String</code>
+<div><div>
+ The version of the release to create.
+</div></div>
+
+</li>
+<li><code>spaceId : String</code> (optional)
+<div><div>
+ If left empty the Default space for the Octopus Server instance will be used. 
+ <br>
+  Otherwise, specify a space by name. The space specified must exist in the Octopus Server instance.
+</div></div>
+
+</li>
+<li><code>additionalArgs : String</code> (optional)
+<div><div>
+ Additional arguments to be passed to the Octo executable.
+</div></div>
+
+</li>
+<li><code>cancelOnTimeout : boolean</code> (optional)
+<div><div>
+ If checked then the deployment will be explicitly canceled if the time to wait has expired and the task has not completed.
+</div></div>
+
+</li>
+<li><code>channel : String</code> (optional)
+<div><div>
+ If left empty the Default channel for the project will be used. 
+ <br>
+  Otherwise, specify a channel by name. The channel specified must exist for the current project.
+</div></div>
+
+</li>
+<li><code>defaultPackageVersion : String</code> (optional)
+<div><div>
+ The default version to use for all required packages that are not specified in Package Configurations. No default packages are used if a default version is not specified
+</div></div>
+
+</li>
+<li><code>deployThisRelease : boolean</code> (optional)
+<div><div>
+ Select this when this release should be deployed immediately after it is created.
+</div></div>
+
+</li>
+<li><code>deploymentTimeout : String</code> (optional)
+<div><div>
+ The amount of time, specified in timespan format, to wait for the deployment to complete. Default is 00:10:00 if left blank. The deployment task itself does not timeout, this timeout is purely how long the client will keep polling to see if it has completed.
+</div></div>
+
+</li>
+<li><code>environment : String</code> (optional)
+<div><div>
+ The environment to deploy this release into.
+</div></div>
+
+</li>
+<li><code>gitCommit : String</code> (optional)
+<div><div>
+ Git commit to use when creating the release for a version controlled Octopus Project. 
+ <br>
+  Use in conjunction with the GitRef parameter to select any previous commit.
+</div></div>
+
+</li>
+<li><code>gitRef : String</code> (optional)
+<div><div>
+ Git reference to use when creating the release for a version controlled Octopus Project.
+</div></div>
+
+</li>
+<li><code>jenkinsUrlLinkback : boolean</code> (optional)
+<div><div>
+ Adds a linkback to the Jenkins build that created the release in the Octopus Deploy release notes
+</div></div>
+
+</li>
+<li><code>packageConfigs</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>packageName : String</code>
+<div><div>
+ The step-name that requires a version for a nuget package. 
+ <br><em>This field is case-sensitive.</em>
+</div></div>
+
+</li>
+<li><code>packageReferenceName : String</code>
+<div><div>
+ The package reference name within the step. This value is required only if you are using the <a href="https://g.octopushq.com/ScriptStepPackageReferences" rel="nofollow">package referencing feature</a>. 
+ <br><em>This field is case-sensitive.</em>
+</div></div>
+
+</li>
+<li><code>packageVersion : String</code>
+<div><div>
+ The package's version for this release. 
+ <br><em>This field is case-sensitive.</em>
+</div></div>
+
+</li>
+</ul></li>
+<li><code>releaseNotes : boolean</code> (optional)
+<div><div>
+ Select this option when you want to include release notes in this release.
+</div></div>
+
+</li>
+<li><code>releaseNotesFile : String</code> (optional)
+<div><div>
+ Path to file, relative from workspace root, to read for release notes.
+</div></div>
+
+</li>
+<li><code>releaseNotesSource : String</code> (optional)
+</li>
+<li><code>tenant : String</code> (optional)
+<div><div>
+ The tenant to deploy to. 
+ <br><em>This field is case-sensitive.</em>
+</div></div>
+
+</li>
+<li><code>tenantTag : String</code> (optional)
+</li>
+<li><code>variables : String</code> (optional)
+<div><div>
+ List of variable to pass to the Deployment process 
+ <br><em>Use Java properties notation</em>, e.g. propertyName=propertyValue each on a new line. For pipeline syntax separate each entry with a new-line character <code>\n</code>
+</div></div>
+
+</li>
+<li><code>verboseLogging : boolean</code> (optional)
+</li>
+<li><code>waitForDeployment : boolean</code> (optional)
+<div><div>
+ If selected, this build will wait until the deployment is complete. 
+ <br><em>When this is selected, the deployment state will fail the build if the state ends as "Failed"</em>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

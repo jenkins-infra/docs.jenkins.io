@@ -1,0 +1,25 @@
+= OpenEdge (Progress ABL)
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/openedge">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `wrap([$class: 'OpenEdgeBuildWrapper'])`: OpenEdge
+++++
+<ul><li><code>openEdgeInstall : String</code>
+</li>
+</ul>
+
+
+++++

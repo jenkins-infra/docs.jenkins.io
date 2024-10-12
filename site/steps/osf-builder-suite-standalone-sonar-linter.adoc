@@ -1,0 +1,35 @@
+= OSF Builder Suite :: Standalone Sonar Linter
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/osf-builder-suite-standalone-sonar-linter">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `osfBuilderSuiteStandaloneSonarLinter`: OSF Builder Suite :: Standalone Sonar Linter
+++++
+<ul><li><code>sourcePatterns</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>sourcePattern : String</code>
+</li>
+<li><code>excludePatterns</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>excludePattern : String</code>
+</li>
+</ul></li>
+</ul></li>
+<li><code>reportPath : String</code> (optional)
+</li>
+</ul>
+
+
+++++

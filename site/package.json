@@ -1,0 +1,64 @@
+{
+  "name": "jenkins-gatsby-blog",
+  "private": true,
+  "description": "Jenkins blog based on Gatsby using the Asciidoc transformer plugin",
+  "version": "1.0.0",
+  "author": "",
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@jenkinsci/jenkins-io-components": "^1.24.0",
+    "@mui/icons-material": "^5.14.9",
+    "@mui/material": "^5.14.10",
+    "asciidoctor.js": "^1.5.9",
+    "babel-plugin-styled-components": "^2.1.4",
+    "gatsby": "^5.11.0",
+    "gatsby-cli": "^5.13.3",
+    "gatsby-core-utils": "next",
+    "gatsby-plugin-image": "next",
+    "gatsby-plugin-manifest": "next",
+    "gatsby-plugin-offline": "^6.13.3",
+    "gatsby-plugin-sharp": "next",
+    "gatsby-plugin-styled-components": "next",
+    "gatsby-plugin-typography": "next",
+    "gatsby-source-filesystem": "next",
+    "gatsby-transformer-asciidoc": "next",
+    "gatsby-transformer-sharp": "next",
+    "gatsby-transformer-yaml": "next",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
+    "react-typography": "^0.16.19",
+    "slash": "^1.0.0",
+    "stream-browserify": "^3.0.0",
+    "styled-components": "^6.0.7",
+    "swiper": "^10.2.0",
+    "typography": "^0.16.19",
+    "typography-breakpoint-constants": "^0.16.19"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "start": "npm run develop",
+    "clean": "gatsby clean",
+    "lint": "npx eslint .",
+    "format": "npx prettier . --write"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "3.1.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "overrides": {
+    "axios": "^1.6.2"
+  }
+}

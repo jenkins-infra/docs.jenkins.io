@@ -1,0 +1,91 @@
+= Custom Build Properties Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/custom-build-properties">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `getCustomBuildProperty`: Get custom build property
+++++
+<div><div>
+ Get a custom build property from the nearest previous build.
+</div></div>
+<ul><li><code>key : String</code>
+</li>
+</ul>
+
+
+++++
+=== `setCustomBuildProperty`: Set custom build property
+++++
+<div><div>
+ Set a custom build property: 
+ <ul>
+  <li><code>setCustomBuildProperty(key: 'keyString', value: 'string')</code></li>
+  <li><code>setCustomBuildProperty(key: 'keyString', value: 42)</code></li>
+  <li><code>setCustomBuildProperty(key: 'keyString', value: LocalDateTime.now())</code></li>
+  <li>... or any other Object as value</li>
+ </ul>
+</div></div>
+<ul><li><code>key : String</code>
+</li>
+<li><code>value : <code>Object</code></code>
+</li>
+<li><code>onlySetIfAbsent : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `setJUnitCounts`: Set junit test result counts as custom build properties
+++++
+<div><div>
+ Set junit test result counts as custom build properties. The results are filtered by test classname using include and exclude regular expressions (<a href="http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html" rel="nofollow">see JavaDoc</a>). 
+ <p>The following custom build properties will be set (prefixed with key prefix):</p>
+ <ul>
+  <li>PassedCount</li>
+  <li>FailedCount</li>
+  <li>FailedAge</li>
+ </ul>
+ <p></p>
+</div></div>
+<ul><li><code>keyPrefix : String</code>
+</li>
+<li><code>include : String</code>
+</li>
+<li><code>exclude : String</code>
+</li>
+<li><code>onlySetIfAbsent : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `waitForCustomBuildProperties`: Wait until specified custom build properties are set
+++++
+<div><div>
+ Wait until specified custom build properties are set: 
+ <ul>
+  <li><code>waitForCustomBuildProperties(keys: ['key1', 'key2'])</code></li>
+ </ul>
+</div></div>
+<ul><li><code>keys : Array / List of String</code>
+<ul></ul></li>
+<li><code>timeoutTime : int</code>
+</li>
+<li><code>timeoutUnit</code> (optional)
+<ul><li><b>Values:</b> <code>NANOSECONDS</code>, <code>MICROSECONDS</code>, <code>MILLISECONDS</code>, <code>SECONDS</code>, <code>MINUTES</code>, <code>HOURS</code>, <code>DAYS</code></li></ul></li>
+</ul>
+
+
+++++

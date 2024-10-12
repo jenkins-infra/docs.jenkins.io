@@ -1,0 +1,30 @@
+= Downstream Build Cache Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/downstream-build-cache">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `downstreamBuilds`: Provide list of downstream builds
+++++
+<div><div>
+ <p>Provides a list of all downstream builds for the provided build. If no build is provided, then current build is used.</p>
+ <p><b>Note:</b> If the downstream cache recently has been cleaned, or Jenkins recently has been restarted, then this method might give incomplete results! This behaviour might change in the future, without prior notice.</p>
+</div></div>
+<ul><li><code>run</code> (optional)
+<ul><li><b>Type:</b> <code>class org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper</code></li>
+</ul></li>
+</ul>
+
+
+++++

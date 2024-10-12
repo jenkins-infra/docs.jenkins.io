@@ -1,0 +1,34 @@
+html {
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.box {
+    margin: 0 4rem;
+}
+
+.featureInfo {
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+}
+
+.featureInfo h4 {
+    margin: 0;
+}
+
+.sponsorsJumbotron {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0rem 5rem;
+    align-items: center;
+}

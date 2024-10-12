@@ -1,0 +1,9 @@
+---
+:page-eventTitle: Hacktoberfest workshop
+:page-eventLocation: St. Petersburg, Russia
+:page-eventStartDate: 2019-10-28T10:30:00
+:page-eventLink: https://www.meetup.com/St-Petersburg-Jenkins-Meetup/events/265318173//
+---
+
+Let's work on Jenkins together: Pipeline, Configuration as Code, etc.
+We will meet to share experiences and hack something.

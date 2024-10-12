@@ -1,0 +1,81 @@
+= Worksoft Continuous Test Manager Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/ws-ctm">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `execMan`: Run Continuous Testing Manager Suite
+++++
+<ul><li><code>requestType : String</code> (optional)
+</li>
+<li><code>altCTMConfig</code> (optional)
+<div><div>
+ Optional alternative Continuous Testing Manager configuration. If provided, these parameters override those specified in Jenkins global configuration.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>url : String</code>
+</li>
+<li><code>credentials : String</code>
+</li>
+</ul></li>
+<li><code>execParams</code> (optional)
+<div><div>
+ Optional execution request parameters. Both a key and value must be specified. The value can refer to Jenkins environment variables using this syntax - <b>${</b><em>JENKINS_ENV_VAR</em><b>}</b>. For example - <b>${BUILD_ID}</b>.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>list</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+</ul></li>
+<li><code>postExecute</code> (optional)
+<div><div>
+ Optional post execution action. To perform any post action, provide action name along with the need parameters.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>action : String</code>
+</li>
+<li><code>params : String</code>
+</li>
+</ul></li>
+<li><code>request</code> (optional)
+<div><div>
+ Select this to run a pre-defined Suite configured on the Continuous Testing Manager.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>name : String</code>
+</li>
+</ul></li>
+<li><code>waitConfig</code> (optional)
+<div><div>
+ Optional execution request wait configuration. Both the polling interval and maximum run time must be specified in seconds.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>pollInterval : String</code>
+</li>
+<li><code>maxRunTime : String</code>
+</li>
+</ul></li>
+</ul>
+
+
+++++

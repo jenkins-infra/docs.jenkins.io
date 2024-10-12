@@ -1,0 +1,103 @@
+= Dynatrace Application Monitoring Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/dynatrace-dashboard">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `appMonPublishTestResults`: Dynatrace AppMon - Finish Registered Tests Runs and Publish Results
+++++
+<div><div>
+ This plugin fetches analysis data from the <a href="https://www.dynatrace.com/support/doc/appmon/" rel="nofollow">AppMon Server</a> (Test Center Edition) REST interface. It displays a chart with a trend on passed/degraded/failing/... etc. tests, and also provides a detailed view for each test case showing the metrics recorded by Dynatrace Application Monitoring.
+</div></div>
+<ul><li><code>printXmlReportForDebug : boolean</code> (optional)
+</li>
+<li><code>statusNameIfDegraded : String</code> (optional)
+</li>
+<li><code>statusNameIfVolatile : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `appMonRegisterTestRun`: Dynatrace AppMon - Register Test Run
+++++
+<div><div>
+ <p>This step registers new Test Run with given category and returns test run id</p>
+</div></div>
+<ul><li><code>category : String</code>
+</li>
+<li><code>platform : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'TAReportingRecorder'])`: Dynatrace AppMon - Finish Registered Tests Runs and Publish Results
+++++
+<div><div>
+ This plugin fetches analysis data from the <a href="http://www.dynatrace.com" rel="nofollow">Dynatrace Server</a> (Test Center Edition) REST interface. It displays a chart with a trend on passed/degraded/failing/... etc. tests, and also provides a detailed view for each test case showing the metrics recorded by Dynatrace Application Monitoring.
+</div></div>
+<ul><li><code>modifyStatusIfDegraded : boolean</code>
+</li>
+<li><code>modifyStatusIfVolatile : boolean</code>
+</li>
+<li><code>statusNameIfDegraded : String</code>
+</li>
+<li><code>statusNameIfVolatile : String</code>
+</li>
+<li><code>printXmlReportForDebug : boolean</code>
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'TATestRunRegistrationBuildStep'])`: Dynatrace AppMon - Register Test Run
+++++
+<div><div>
+ <p>This step registers new test run with given category and sets the <i>'dtTestrunID'</i> build variable.</p>
+</div></div>
+<ul><li><code>category : String</code>
+</li>
+<li><code>platform : String</code>
+</li>
+</ul>
+
+
+++++
+=== `appMonBuildEnvironment`: Use Dynatrace AppMon to monitor tests
+++++
+<div><div>
+ <p>The below properties will be available as build variables in all the build steps during build. You can use them to register test run on your own (in your scripts).</p>
+ <p>Also the properties set in global plugin configuration ("Dynatrace Application Monitoring" config section) will be available as build variables: <i>'dtServerUrl'</i>, <i>'dtUsername'</i> and <i>'dtPassword'</i>.</p>
+ <p>NOTE:<br>
+   If you decide not to use the below properties in your scripts and to register test runs on your own, please fill at least the <i>"System profile"</i> field to have the post-build action working properly.</p>
+</div></div>
+<ul><li><code>systemProfile : String</code>
+</li>
+<li><code>marker : String</code> (optional)
+</li>
+<li><code>recordSession : boolean</code> (optional)
+</li>
+<li><code>versionMajor : String</code> (optional)
+</li>
+<li><code>versionMilestone : String</code> (optional)
+</li>
+<li><code>versionMinor : String</code> (optional)
+</li>
+<li><code>versionRevision : String</code> (optional)
+</li>
+</ul>
+
+
+++++

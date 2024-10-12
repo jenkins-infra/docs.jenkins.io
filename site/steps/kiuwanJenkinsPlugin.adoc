@@ -1,0 +1,99 @@
+= Kiuwan plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/kiuwanJenkinsPlugin">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `kiuwan`: Analyze your source code with Kiuwan!
+++++
+<ul><li><code>abortedResultCodes_em : String</code> (optional)
+</li>
+<li><code>analysisScope_dm : String</code> (optional)
+</li>
+<li><code>applicationName : String</code> (optional)
+</li>
+<li><code>applicationName_dm : String</code> (optional)
+</li>
+<li><code>branch_dm : String</code> (optional)
+</li>
+<li><code>changeRequestStatus_dm : String</code> (optional)
+</li>
+<li><code>changeRequest_dm : String</code> (optional)
+</li>
+<li><code>commandArgs_em : String</code> (optional)
+</li>
+<li><code>connectionProfileUuid : String</code> (optional)
+</li>
+<li><code>encoding : String</code> (optional)
+</li>
+<li><code>encoding_dm : String</code> (optional)
+</li>
+<li><code>excludes : String</code> (optional)
+</li>
+<li><code>excludes_dm : String</code> (optional)
+</li>
+<li><code>extraParameters_em : String</code> (optional)
+</li>
+<li><code>failureResultCodes_em : String</code> (optional)
+</li>
+<li><code>failureThreshold : double</code> (optional)
+</li>
+<li><code>includes : String</code> (optional)
+</li>
+<li><code>includes_dm : String</code> (optional)
+</li>
+<li><code>indicateLanguages : boolean</code> (optional)
+</li>
+<li><code>indicateLanguages_dm : boolean</code> (optional)
+</li>
+<li><code>label : String</code> (optional)
+</li>
+<li><code>label_dm : String</code> (optional)
+</li>
+<li><code>languages : String</code> (optional)
+</li>
+<li><code>languages_dm : String</code> (optional)
+</li>
+<li><code>markAsInOtherCases_em : String</code> (optional)
+</li>
+<li><code>markBuildWhenNoPass_dm : String</code> (optional)
+</li>
+<li><code>measure : String</code> (optional)
+</li>
+<li><code>notBuiltResultCodes_em : String</code> (optional)
+</li>
+<li><code>outputFilename : String</code> (optional)
+</li>
+<li><code>selectedMode : String</code> (optional)
+</li>
+<li><code>sourcePath : String</code> (optional)
+</li>
+<li><code>successResultCodes_em : String</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+<li><code>timeout_dm : int</code> (optional)
+</li>
+<li><code>timeout_em : int</code> (optional)
+</li>
+<li><code>unstableResultCodes_em : String</code> (optional)
+</li>
+<li><code>unstableThreshold : double</code> (optional)
+</li>
+<li><code>waitForAuditResults_dm : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++
