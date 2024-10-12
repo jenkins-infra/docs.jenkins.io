@@ -1,0 +1,7 @@
+---
+:page-eventTitle: Jenkins Oslo
+:page-eventStartDate: 2018-03-19T18:30:00
+:page-eventLink: https://www.meetup.com/Jenkins-Oslo/events/247148897/
+---
+
+Day of Cloud Native warm-up!

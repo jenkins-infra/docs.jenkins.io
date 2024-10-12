@@ -1,0 +1,76 @@
+= JetBrains Space Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/jetbrains-space">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `callSpaceApi`: Make a call to JetBrains Space HTTP API
+++++
+<ul><li><code>httpMethod : String</code>
+</li>
+<li><code>requestUrl : String</code>
+<div><div>
+ HTTP API method path to perform request to. Typically starts with <code>/api/http</code>.
+</div></div>
+
+</li>
+<li><code>requestBody : String</code>
+<div><div>
+ JSON to send as request payload or empty to send request without body.
+</div></div>
+
+</li>
+<li><code>spaceConnection : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `postBuildStatusToSpace`: Post build status to JetBrains Space
+++++
+<ul><li><code>buildStatus : String</code> (optional)
+</li>
+<li><code>branch : String</code> (optional)
+</li>
+<li><code>projectKey : String</code> (optional)
+</li>
+<li><code>repository : String</code> (optional)
+</li>
+<li><code>revision : String</code> (optional)
+</li>
+<li><code>spaceConnection : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `postReviewTimelineMessageToSpace`: Post message to the review timeline in JetBrains Space
+++++
+<ul><li><code>messageText : String</code>
+<div><div>
+ <p>Text to be posted to the merge request timeline.</p>
+ <p>You can use the <a href="https://www.jetbrains.com/help/space/markdown-syntax.html" rel="nofollow">Markdown syntax</a> to add formatting to the message.</p>
+</div></div>
+
+</li>
+<li><code>mergeRequestNumber : int</code> (optional)
+</li>
+<li><code>projectKey : String</code> (optional)
+</li>
+<li><code>spaceConnection : String</code> (optional)
+</li>
+</ul>
+
+
+++++

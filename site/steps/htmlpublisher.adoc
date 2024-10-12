@@ -1,0 +1,82 @@
+= HTML Publisher plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/htmlpublisher">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `publishHTML`: Publish HTML reports
+++++
+<ul><li><code>target</code>
+<ul><b>Nested Object</b>
+<li><code>reportName : String</code>
+<div><div>
+ The name of the report to display for the build/project, such as "Code Coverage"
+</div></div>
+
+</li>
+<li><code>reportDir : String</code>
+<div><div>
+ The path to the HTML report directory relative to the workspace.
+</div></div>
+
+</li>
+<li><code>reportFiles : String</code>
+<div><div>
+ The file(s) to provide links inside the report directory
+</div></div>
+
+</li>
+<li><code>keepAll : boolean</code>
+<div><div>
+ If checked, archive reports for all successful builds, otherwise only the most recent
+</div></div>
+
+</li>
+<li><code>alwaysLinkToLastBuild : boolean</code>
+<div><div>
+ If this control and "Keep past HTML reports" are checked, publish the link on project level even if build failed.
+</div></div>
+
+</li>
+<li><code>allowMissing : boolean</code>
+<div><div>
+ If checked, will allow report to be missing and build will not fail on missing report
+</div></div>
+
+</li>
+<li><code>escapeUnderscores : boolean</code> (optional)
+<div><div>
+ If checked, underscores in the report title will be escaped to '_5f' when stored on disk. If unchecked, they will not be escaped.
+</div></div>
+
+</li>
+<li><code>includes : String</code> (optional)
+</li>
+<li><code>reportTitles : String</code> (optional)
+<div><div>
+ The optional title(s) for the report files, which will be used as the tab names. If this is not provided, file names will be used instead.
+</div></div>
+
+</li>
+<li><code>useWrapperFileDirectly : boolean</code> (optional)
+<div><div>
+ By default, each archived reports access generates a new wrapper file. If checked, the legacy wrapper file will be used instead of generate it each time. Must only be used if wrapper file was been transformed and saved with checksum
+</div></div>
+
+</li>
+</ul></li>
+</ul>
+
+
+++++

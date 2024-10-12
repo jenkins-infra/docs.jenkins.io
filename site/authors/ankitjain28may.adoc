@@ -1,0 +1,6 @@
+= About the Author
+:page-layout: author
+:page-author_name: Ankit Jain
+:page-github: ankitjain28may
+
+

@@ -1,0 +1,93 @@
+= Atlassian Jira Software Cloud
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/atlassian-jira-software-cloud">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `checkGatingStatus`: Atlassian Jira Service Desk Software Cloud Jenkins Integration (Deployment Gating)
+++++
+<div></div>
+<ul><li><code>environmentId : String</code>
+</li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraSendBuildInfo`: Atlassian Jira Software Cloud Jenkins Integration (Build)
+++++
+<div><div>
+ Once you install the Jenkins plugin and set up the configuration page, you need to add a ‘build step’ in your pipeline. This is what tells the Jenkins pipeline, when running, to send data to Jira or not. You can use the optional 'branch' parameter to override the branch name we use to determine the issue keys associated with the current build. 
+ <br>
+  You generate a Pipeline script, then use this in your Jenkinsfile. 
+ <br>
+  Please select the Jira Software Cloud site name you would like to create the pipeline script for. You can only select 1 site at this time. If you want to send information to multiple sites, please create multiple Pipeline Scripts.
+</div></div>
+<ul><li><code>branch : String</code> (optional)
+</li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraSendDeploymentInfo`: Atlassian Jira Software Cloud Jenkins Integration (Deployment)
+++++
+<div><div>
+ Once you install the Jenkins plugin and set up the configuration page, you need to add a ‘deployment step’ in your pipeline. This is what tells the Jenkins pipeline, when running, to send data to Jira or not. 
+ <br>
+  You generate a Pipeline script, then use this in your Jenkinsfile. 
+ <br>
+  Please select the Jira Software Cloud site name you would like to create the pipeline script for. You can only select 1 site at this time. If you want to send information to multiple sites, please create multiple Pipeline Scripts. You also need to specify the environment ID, name and type. Valid environment types are 'unmapped', 'development', 'testing', 'staging' and 'production'. 
+ <br>
+  State, Service Ids and IssueKeys are optional parameters. Use state to explicitly describe your deployment state or it will determine from the Jenkins job for you. Valid state values: 'unknown', 'pending', 'in_progress', 'cancelled', 'failed', 'rolled_back', 'successful'  Service Ids uses to automatically create a change management request for your deployment Please see https://developer.atlassian.com/cloud/jira/software/rest/#api-group-Deployments for more information.
+</div></div>
+<ul><li><code>environmentId : String</code> (optional)
+</li>
+<li><code>environmentName : String</code> (optional)
+</li>
+<li><code>environmentType : String</code> (optional)
+</li>
+<li><code>enableGating : boolean</code> (optional)
+</li>
+<li><code>issueKeys : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>serviceIds : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>site : String</code> (optional)
+</li>
+<li><code>state : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'FreeStylePostBuildStep'])`: Send build information to Jira
+++++
+<div><div>
+ Once you install the Jenkins plugin and set up the configuration page, you need to add a ‘build step’ in your pipeline. This is what tells the Jenkins pipeline, when running, to send data to Jira or not. You can use the optional 'branch' parameter to override the branch name we use to determine the issue keys associated with the current build. 
+ <br>
+  You generate a Pipeline script, then use this in your Jenkinsfile. 
+ <br>
+  Please select the Jira Software Cloud site name you would like to create the pipeline script for. You can only select 1 site at this time. If you want to send information to multiple sites, please create multiple Pipeline Scripts.
+</div></div>
+<ul><li><code>branch : String</code> (optional)
+</li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++

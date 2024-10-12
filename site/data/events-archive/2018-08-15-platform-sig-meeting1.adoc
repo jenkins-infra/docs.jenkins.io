@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Platform SIG: Status Meeting
+:page-eventStartDate: 2018-08-15T14:00:00
+:page-eventLink: https://www.youtube.com/watch?v=bbWO89HPMUM
+---
+Status updates and discussions: Java 10+ support in Jenkins, Quality Outreach, 64-bit Windows installers.

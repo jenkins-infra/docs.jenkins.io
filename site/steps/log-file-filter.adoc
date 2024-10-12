@@ -1,0 +1,23 @@
+= Log File Filter Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/log-file-filter">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `logFileFilter`: LogFileFilterStep
+++++
+<ul></ul>
+
+
+++++

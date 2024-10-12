@@ -1,0 +1,102 @@
+= AWS SAM
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/aws-sam">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `samDeploy`: AWS SAM deploy application
+++++
+<ul><li><code>settings</code>
+<ul><b>Nested Object</b>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>region : String</code>
+</li>
+<li><code>s3Bucket : String</code>
+<div><div>
+ The name of the S3 bucket where this command uploads the artifacts that are referenced in your template.
+ <br>
+  S3 bucket will be created automatically if it does not exist.
+</div></div>
+
+</li>
+<li><code>stackName : String</code>
+<div><div>
+ The name of the AWS SAM stack you're deploying to. If you specify an existing stack, the command updates the stack. If you specify a new stack, the command creates it.
+</div></div>
+
+</li>
+<li><code>templateFile : String</code>
+<div><div>
+ The path, relative to the workspace directory, where your AWS SAM template is located.
+ <br>
+ <br>
+  Examples:
+ <br><code>template.yaml</code>
+ <br><code>app/template.json</code>
+</div></div>
+
+</li>
+<li><code>kmsKeyId : String</code> (optional)
+<div><div>
+ The ID of an AWS KMS key that the command uses to encrypt artifacts that are at rest in the S3 bucket. If not specified, SSE-AES256 is used.
+</div></div>
+
+</li>
+<li><code>outputTemplateFile : String</code> (optional)
+<div><div>
+ The path to the file (relative to the workspace directory) where the build step writes the output AWS SAM template.
+ <br><code>template-<em>#jobId</em>.yaml</code> by default.
+</div></div>
+
+</li>
+<li><code>parameters</code> (optional)
+<div><div>
+ A list of key-value pairs that specify input parameters for the change set.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+<li><code>roleArn : String</code> (optional)
+<div><div>
+ The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS SAM assumes when executing the change set.
+</div></div>
+
+</li>
+<li><code>s3Prefix : String</code> (optional)
+<div><div>
+ A prefix name that the command adds to the artifacts' name when it uploads them to the S3 bucket. The prefix name is a path name (folder name) for the S3 bucket.
+</div></div>
+
+</li>
+<li><code>tags</code> (optional)
+<div><div>
+ A list of tags to associate with the stack that is created or updated. AWS SAM also propagates these tags to resources in the stack.
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+++++

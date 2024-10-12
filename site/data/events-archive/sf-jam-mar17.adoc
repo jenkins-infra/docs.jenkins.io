@@ -1,0 +1,6 @@
+---
+:page-eventTitle: SF JAM
+:page-eventStartDate: 2017-03-21T18:00:00
+:page-eventLink: https://www.meetup.com/San-Francisco-Jenkins-Area-Meetup/events/238302331/
+---
+Journey to Implementing Jenkins at Adobe

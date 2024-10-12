@@ -1,0 +1,226 @@
+= Deploy to container Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/deploy">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `deploy`: Deploy war/ear to a container
+++++
+<ul><li><code>adapters</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>glassfish2</code><div>
+<ul><li><code>home : String</code>
+<div><div>
+ GlassFish installation directory. This directory should contain files like "bin/asadmin[.bat]"
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>adminPort : String</code>
+<div><div>
+ Admin port of GlassFish. This is the same port as the admin GUI, and by default it's 4848.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>glassfish3</code><div>
+<ul><li><code>home : String</code>
+<div><div>
+ GlassFish installation directory. This directory should contain files like "bin/asadmin[.bat]"
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>adminPort : String</code>
+<div><div>
+ Admin port of GlassFish. This is the same port as the admin GUI, and by default it's 4848.
+</div></div>
+
+</li>
+<li><code>hostname : String</code>
+<div><div>
+ The hostname/ip of an remote GlassFish runtime (your.host.name, 127.0.0.1 etc.). If set "home" property is ignored.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>glassfish4</code><div>
+<ul><li><code>home : String</code>
+<div><div>
+ GlassFish installation directory. This directory should contain files like "bin/asadmin[.bat]"
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>adminPort : String</code>
+<div><div>
+ Admin port of GlassFish. This is the same port as the admin GUI, and by default it's 4848.
+</div></div>
+
+</li>
+<li><code>hostname : String</code>
+<div><div>
+ The hostname/ip of an remote GlassFish runtime (your.host.name, 127.0.0.1 etc.). If set "home" property is ignored.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>jboss3</code><div>
+<ul><li><code>url : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+</ul></div></li>
+<li><code>jboss4</code><div>
+<ul><li><code>url : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+</ul></div></li>
+<li><code>jboss5</code><div>
+<ul><li><code>url : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+</ul></div></li>
+<li><code>jboss6</code><div>
+<ul><li><code>url : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+</ul></div></li>
+<li><code>jboss7</code><div>
+<ul><li><code>url : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+</ul></div></li>
+<li><code>tomcat4</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ The Tomcat base URL to use for deployment (e.g. https://tomcat.my-company.com:8443).
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>path : String</code>
+<div><div>
+ The alternative manager context path. Overwrites the default value '/manager' for Tomcat 4-6 or '/manager/text' for Tomcat 7+.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>tomcat5</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ The Tomcat base URL to use for deployment (e.g. https://tomcat.my-company.com:8443).
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>path : String</code>
+<div><div>
+ The alternative manager context path. Overwrites the default value '/manager' for Tomcat 4-6 or '/manager/text' for Tomcat 7+.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>tomcat6</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ The Tomcat base URL to use for deployment (e.g. https://tomcat.my-company.com:8443).
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>path : String</code>
+<div><div>
+ The alternative manager context path. Overwrites the default value '/manager' for Tomcat 4-6 or '/manager/text' for Tomcat 7+.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>tomcat7</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ The Tomcat base URL to use for deployment (e.g. https://tomcat.my-company.com:8443).
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>path : String</code>
+<div><div>
+ The alternative manager context path. Overwrites the default value '/manager' for Tomcat 4-6 or '/manager/text' for Tomcat 7+.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>tomcat8</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ The Tomcat base URL to use for deployment (e.g. https://tomcat.my-company.com:8443).
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>path : String</code>
+<div><div>
+ The alternative manager context path. Overwrites the default value '/manager' for Tomcat 4-6 or '/manager/text' for Tomcat 7+.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>tomcat9</code><div>
+<ul><li><code>url : String</code>
+<div><div>
+ The Tomcat base URL to use for deployment (e.g. https://tomcat.my-company.com:8443).
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>path : String</code>
+<div><div>
+ The alternative manager context path. Overwrites the default value '/manager' for Tomcat 4-6 or '/manager/text' for Tomcat 7+.
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>war : String</code>
+<div><div>
+ War/ear files to deploy. Relative to the workspace root. You can also specify Ant-style GLOBs, like "**/*.war"
+</div></div>
+
+</li>
+<li><code>contextPath : String</code> (optional)
+<div><div>
+ The context path that the container should use to publish the WAR/EAR. Note that this may get overridden if the WAR/EAR to deploy has container-specific configuration embedded inside.
+</div></div>
+
+</li>
+<li><code>onFailure : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

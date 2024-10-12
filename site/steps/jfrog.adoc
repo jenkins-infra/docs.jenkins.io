@@ -1,0 +1,25 @@
+= JFrog Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/jfrog">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `jf`: jf command
+++++
+<ul><li><code>args : <code>Object</code></code>
+</li>
+</ul>
+
+
+++++

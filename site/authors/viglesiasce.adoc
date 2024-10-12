@@ -1,0 +1,6 @@
+= About the Author
+:page-layout: author
+:page-author_name: Vic Iglesias
+:page-github: viglesiasce
+
+

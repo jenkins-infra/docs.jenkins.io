@@ -1,0 +1,144 @@
+= Consul KV Builder
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/consul-kv-builder">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'ConsulKVBuilder'])`: Consul K/V Builder
+++++
+<ul><li><code>hostUrl : String</code>
+<div><div>
+ Host URL should contain protocol (HTTP/HTTPS)://&lt;HOST_NAME&gt;.
+</div></div>
+
+</li>
+<li><code>key : String</code>
+<div><div>
+ Key is used in GET/PUT requests to lookup the value from, or right the key/value pair to the Consul key/value store.
+</div></div>
+
+</li>
+<li><code>aclToken : String</code> (optional)
+<div><div>
+ Token is used to supply UUID token for Consul ACL token calls. Token can be supplied by build parameters.
+</div></div>
+
+</li>
+<li><code>apiUri : String</code> (optional)
+<div><div>
+ URL Override is used to override the K,V API URL.
+</div></div>
+
+</li>
+<li><code>debugMode</code> (optional)
+<div><div>
+ Enable Debug messages for more verbose logging.
+</div></div>
+
+<ul><li><b>Values:</b> <code>ENABLED</code>, <code>DISABLED</code></li></ul></li>
+<li><code>envVarKey : String</code> (optional)
+<div><div>
+ ENV Varaible Key is used to store the retrieved value in the build ENV variables to be used downstream.
+</div></div>
+
+</li>
+<li><code>ignoreGlobalSettings : boolean</code> (optional)
+</li>
+<li><code>keyValue : String</code> (optional)
+<div><div>
+ Value is used in PUT calls to insert/update a key/value pair.
+</div></div>
+
+</li>
+<li><code>requestMode</code> (optional)
+<div><div>
+ Request Mode set to READ will execute a GET to lookup the value, WRITE will execute a PUT to insert/update the value.
+</div></div>
+
+<ul><li><b>Values:</b> <code>READ</code>, <code>WRITE</code>, <code>DELETE</code></li></ul></li>
+<li><code>timeoutConnection : int</code> (optional)
+<div><div>
+ Connection timeout in milliseconds, default is 10000.
+</div></div>
+
+</li>
+<li><code>timeoutResponse : int</code> (optional)
+<div><div>
+ Response timeout in milliseconds, default is 30000.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `wrap([$class: 'ConsulKVReadWrapper'])`: Add Consul K/V Read Config(s)
+++++
+<ul><li><code>reads</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>aclToken : String</code>
+<div><div>
+ Token is used to supply UUID token for Consul ACL token calls. Token can be supplied by build parameters.
+</div></div>
+
+</li>
+<li><code>hostUrl : String</code>
+<div><div>
+ Host URL should contain protocol (HTTP/HTTPS)://&lt;HOST_NAME&gt;.
+</div></div>
+
+</li>
+<li><code>key : String</code>
+<div><div>
+ Key is used in GET/PUT requests to lookup the value from, or right the key/value pair to the Consul key/value store.
+</div></div>
+
+</li>
+<li><code>envKey : String</code>
+<div><div>
+ ENV Varaible Key is used to store the retrieved value in the build ENV variables to be used downstream.
+</div></div>
+
+</li>
+<li><code>apiUri : String</code> (optional)
+<div><div>
+ URL Override is used to override the K,V API URL.
+</div></div>
+
+</li>
+<li><code>debugMode</code> (optional)
+<div><div>
+ Enable Debug messages for more verbose logging.
+</div></div>
+
+<ul><li><b>Values:</b> <code>ENABLED</code>, <code>DISABLED</code></li></ul></li>
+<li><code>ignoreGlobalSettings : boolean</code> (optional)
+</li>
+<li><code>timeoutConnect : int</code> (optional)
+<div><div>
+ Connection timeout in milliseconds, default is 10000.
+</div></div>
+
+</li>
+<li><code>timeoutResponse : int</code> (optional)
+<div><div>
+ Response timeout in milliseconds, default is 30000.
+</div></div>
+
+</li>
+</ul></li>
+</ul>
+
+
+++++

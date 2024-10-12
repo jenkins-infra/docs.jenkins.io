@@ -1,0 +1,59 @@
+= ECX Copy Data Management Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/catalogic-ecx">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'ECXCDMBuilder'])`: Catalogic ECX CDM Integration
+++++
+<ul><li><code>name : String</code>
+<div><div>
+ Enter the ECX user name.
+</div></div>
+
+</li>
+<li><code>password : String</code>
+<div><div>
+ Enter the ECX password.
+</div></div>
+
+</li>
+<li><code>url : String</code>
+<div><div>
+ Enter the ECX URL and then press the Test Connection button to ensure this job can contact the ECX server.
+</div></div>
+
+</li>
+<li><code>job : String</code>
+<div><div>
+ Enter a job id that can be found in the list above and in square brackets.
+</div></div>
+
+</li>
+<li><code>production : boolean</code>
+<div><div>
+ Select this checkbox if using ECX in production with a valid certificate.
+</div></div>
+
+</li>
+<li><code>maxWaitTime : int</code>
+<div><div>
+ Enter the amount of time in seconds to wait for an ECX job to complete.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

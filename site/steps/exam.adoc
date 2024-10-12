@@ -1,0 +1,203 @@
+= MicroNova EXAM Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/exam">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `examCleanTarget`: EXAM Clear target
+++++
+<ul></ul>
+
+
+++++
+=== `examTest_ExecutionFile`: EXAM Start test run (execution file)
+++++
+<div><div>
+ For projects that use EXAM as the test system. This causes Jenkins to invoke EXAM with the given options.
+</div></div>
+<ul><li><code>examName : String</code>
+</li>
+<li><code>pythonName : String</code>
+</li>
+<li><code>examReport : String</code>
+</li>
+<li><code>systemConfiguration : String</code> (optional)
+</li>
+<li><code>clearWorkspace : boolean</code> (optional)
+</li>
+<li><code>javaOpts : String</code> (optional)
+</li>
+<li><code>logging : boolean</code> (optional)
+</li>
+<li><code>loglevelLibCtrl : String</code> (optional)
+</li>
+<li><code>loglevelTestCtrl : String</code> (optional)
+</li>
+<li><code>loglevelTestLogic : String</code> (optional)
+</li>
+<li><code>pathExecutionFile : String</code> (optional)
+</li>
+<li><code>pathPCode : String</code> (optional)
+</li>
+<li><code>pdfMeasureImages : boolean</code> (optional)
+</li>
+<li><code>pdfReport : boolean</code> (optional)
+</li>
+<li><code>pdfReportTemplate : String</code> (optional)
+</li>
+<li><code>pdfSelectFilter : String</code> (optional)
+</li>
+<li><code>reportPrefix : String</code> (optional)
+</li>
+<li><code>testrunFilter</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>adminCases : boolean</code>
+</li>
+<li><code>activateTestcases : boolean</code>
+</li>
+</ul></li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `examTest_Model`: EXAM Start test run (model)
+++++
+<div><div>
+ For projects that use EXAM as the test system. This causes Jenkins to invoke EXAM with the given options.
+</div></div>
+<ul><li><code>examName : String</code>
+</li>
+<li><code>pythonName : String</code>
+</li>
+<li><code>examReport : String</code>
+</li>
+<li><code>executionFile : String</code> (optional)
+</li>
+<li><code>systemConfiguration : String</code> (optional)
+</li>
+<li><code>clearWorkspace : boolean</code> (optional)
+</li>
+<li><code>examModel : String</code> (optional)
+</li>
+<li><code>javaOpts : String</code> (optional)
+</li>
+<li><code>logging : boolean</code> (optional)
+</li>
+<li><code>loglevelLibCtrl : String</code> (optional)
+</li>
+<li><code>loglevelTestCtrl : String</code> (optional)
+</li>
+<li><code>loglevelTestLogic : String</code> (optional)
+</li>
+<li><code>modelConfiguration : String</code> (optional)
+</li>
+<li><code>pdfMeasureImages : boolean</code> (optional)
+</li>
+<li><code>pdfReport : boolean</code> (optional)
+</li>
+<li><code>pdfReportTemplate : String</code> (optional)
+</li>
+<li><code>pdfSelectFilter : String</code> (optional)
+</li>
+<li><code>reportPrefix : String</code> (optional)
+</li>
+<li><code>testrunFilter</code> (optional)
+<ul><b>Array / List of Nested Object</b>
+<li><code>name : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+<li><code>adminCases : boolean</code>
+</li>
+<li><code>activateTestcases : boolean</code>
+</li>
+</ul></li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `examTCG`: EXAM Test Case Generator
+++++
+<div><div>
+ For projects that use EXAM as the test system. This causes Jenkins to invoke EXAM with the given options.
+</div></div>
+<ul><li><code>examName : String</code>
+</li>
+<li><code>examModel : String</code> (optional)
+</li>
+<li><code>modelConfiguration : String</code> (optional)
+</li>
+<li><code>element : String</code> (optional)
+</li>
+<li><code>descriptionSource : String</code> (optional)
+</li>
+<li><code>documentInReport : boolean</code> (optional)
+</li>
+<li><code>errorHandling : String</code> (optional)
+</li>
+<li><code>frameSteps : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>mappingList : String</code> (optional)
+</li>
+<li><code>testCaseStates : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>variant : String</code> (optional)
+</li>
+<li><code>javaOpts : String</code> (optional)
+</li>
+<li><code>overwriteDescriptionSource : boolean</code> (optional)
+</li>
+<li><code>overwriteFrameSteps : boolean</code> (optional)
+</li>
+<li><code>overwriteMappingList : boolean</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `examRun_Groovy`: EXAM Start Groovy script
+++++
+<div><div>
+ For projects that use EXAM as the test system. This causes Jenkins to invoke EXAM with the given options.
+</div></div>
+<ul><li><code>examName : String</code>
+</li>
+<li><code>script : String</code> (optional)
+</li>
+<li><code>startElement : String</code> (optional)
+</li>
+<li><code>examModel : String</code> (optional)
+</li>
+<li><code>modelConfiguration : String</code> (optional)
+</li>
+<li><code>javaOpts : String</code> (optional)
+</li>
+<li><code>timeout : int</code> (optional)
+</li>
+<li><code>useStartElement : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

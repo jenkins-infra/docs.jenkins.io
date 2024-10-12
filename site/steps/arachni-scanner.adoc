@@ -1,0 +1,61 @@
+= Arachni Scanner Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/arachni-scanner">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `arachniScanner`: Arachni Scanner
+++++
+<ul><li><code>url : String</code>
+<div><div>
+ URL of the system under scan.
+</div></div>
+
+</li>
+<li><code>checks : String</code>
+<div><div>
+ Here you can specify a comma separated list with the checks to load. Or leave it blank to load all checks.
+</div></div>
+
+</li>
+<li><code>scope</code>
+<ul><b>Nested Object</b>
+<li><code>pageLimit : int</code>
+<div><div>
+ Set the scope property page_limit. See Arachni Security Scanner Wiki for more information.
+</div></div>
+
+</li>
+<li><code>excludePathPattern : String</code>
+<div><div>
+ Set the scope property exclude_path_patterns. See Arachni Security Scanner Wiki for more information.
+</div></div>
+
+</li>
+</ul></li>
+<li><code>userConfig</code>
+<ul><b>Nested Object</b>
+<li><code>filename : String</code>
+<div><div>
+ Name of the file with your own configuration in json format. Specify an absolute path or a relative to workspace.
+</div></div>
+
+</li>
+</ul></li>
+<li><code>format : String</code>
+</li>
+</ul>
+
+
+++++

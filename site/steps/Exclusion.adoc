@@ -1,0 +1,35 @@
+= Exclusion Plug-in
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/Exclusion">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'CriticalBlockEnd'])`: Critical block end
+++++
+<div><div>
+ <p>Release all resources that Critical block start had allocated for this job.</p>
+</div></div>
+<ul></ul>
+
+
+++++
+=== `step([$class: 'CriticalBlockStart'])`: Critical block start
+++++
+<div><div>
+ <p>Delimit the beginning of the exclusion zone. All build steps that follow will be managed by exclusion plugin.</p>
+</div></div>
+<ul></ul>
+
+
+++++

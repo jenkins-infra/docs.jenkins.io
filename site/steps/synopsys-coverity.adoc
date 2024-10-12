@@ -1,0 +1,192 @@
+= Synopsys Coverity plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/synopsys-coverity">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `coverityIssueCheck`: Check for Issues in Coverity View
+++++
+<ul><li><code>coverityInstanceUrl : String</code> (optional)
+<div><div>
+ <p>Specify which Synopsys Coverity connect instance to check for issues.</p>
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>Specify the credentials to use with the Synopsys Coverity connect instance.</p>
+</div></div>
+
+</li>
+<li><code>markUnstable : boolean</code> (optional)
+<div><div>
+ <p>If checked, will mark the stage Unstable but otherwise allow the pipeline to proceed instead of throwing an exception.<br>
+   As a byproduct, this also allows the step to return the issue count. Use returnIssueCount if you want to make this behavior more explicit.</p>
+</div></div>
+
+</li>
+<li><code>projectName : String</code> (optional)
+<div><div>
+ <p>Specify the name of the Coverity project the view is associated with.</p>
+</div></div>
+
+</li>
+<li><code>returnIssueCount : boolean</code> (optional)
+<div><div>
+ <p>If checked, will return the number of issues discovered in the specified Coverity view instead of throwing an exception.</p>
+</div></div>
+
+</li>
+<li><code>viewName : String</code> (optional)
+<div><div>
+ <p>Specify the name of the Coverity view that you would like to check for issues.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `withCoverityEnvironment`: Inject Coverity environment into the build process
+++++
+<ul><li><code>coverityInstanceUrl : String</code>
+<div><div>
+ <p>Specify which Synopsys Coverity connect instance to run this job against.</p>
+</div></div>
+
+</li>
+<li><code>configureChangeSetPatterns</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>changeSetExclusionPatterns : String</code>
+<div><div>
+ <p>Specify a comma separated list of filename patterns that you would like to explicitly excluded from the Jenkins change set.<br>
+   The pattern is applied to the $CHANGE_SET environment variable, and will affect which files are analyzed in an incremental analysis (cov-run-desktop).<br>
+   Examples:</p>
+ <table>
+  <thead>
+   <tr>
+    <th>File Name</th>
+    <th>Pattern</th>
+    <th>Will be excluded</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>test.java</td>
+    <td>*.java</td>
+    <td>Yes</td>
+   </tr>
+   <tr>
+    <td>test.java</td>
+    <td>*.jpg</td>
+    <td>No</td>
+   </tr>
+   <tr>
+    <td>test.java</td>
+    <td>test.*</td>
+    <td>Yes</td>
+   </tr>
+   <tr>
+    <td>test.java</td>
+    <td>test.????</td>
+    <td>Yes</td>
+   </tr>
+   <tr>
+    <td>test.java</td>
+    <td>test.?????</td>
+    <td>No</td>
+   </tr>
+  </tbody>
+ </table>
+</div></div>
+
+</li>
+<li><code>changeSetInclusionPatterns : String</code>
+<div><div>
+ <p>Specify a comma separated list of filename patterns that you would like to explicitly included from the Jenkins change set.<br>
+   The pattern is applied to the $CHANGE_SET environment variable, and will affect which files are analyzed in an incremental analysis (cov-run-desktop).<br>
+   Examples:</p>
+ <table>
+  <thead>
+   <tr>
+    <th>File Name</th>
+    <th>Pattern</th>
+    <th>Will be included</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>test.java</td>
+    <td>*.java</td>
+    <td>Yes</td>
+   </tr>
+   <tr>
+    <td>test.java</td>
+    <td>*.jpg</td>
+    <td>No</td>
+   </tr>
+   <tr>
+    <td>test.java</td>
+    <td>test.*</td>
+    <td>Yes</td>
+   </tr>
+   <tr>
+    <td>test.java</td>
+    <td>test.????</td>
+    <td>Yes</td>
+   </tr>
+   <tr>
+    <td>test.java</td>
+    <td>test.?????</td>
+    <td>No</td>
+   </tr>
+  </tbody>
+ </table>
+</div></div>
+
+</li>
+</ul></li>
+<li><code>createMissingProjectsAndStreams : boolean</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ <p>Specify the credentials to use with the Synopsys Coverity connect instance.</p>
+</div></div>
+
+</li>
+<li><code>projectName : String</code> (optional)
+<div><div>
+ <p>Specify the name of the Coverity project.<br>
+   The resulting project name is stored in the $COV_PROJECT environment variable, and will affect both the full and incremental analysis.</p>
+</div></div>
+
+</li>
+<li><code>streamName : String</code> (optional)
+<div><div>
+ <p>Specify the name of the Coverity stream that you would like to use for the commands.<br>
+   The resulting stream name is stored in the $COV_STREAM environment variable, and will affect both the full and incremental analysis.</p>
+</div></div>
+
+</li>
+<li><code>viewName : String</code> (optional)
+<div><div>
+ <p>Specify the name of the Coverity view that you would like to check for issues.<br>
+   The resulting view name is stored in the $COV_VIEW environment variable, and affects checking for issues in both the full and incremental analysis, if configured.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,311 @@
+= Docker plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/docker-plugin">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `dockerNode`: Docker Node (⚠️ Experimental)
+++++
+<div><div>
+ <p>Allocates a new Jenkins agent using a specified Docker image and runs tasks on it. Example:</p>
+ <pre>dockerNode('jenkins/jnlp-agent-maven') {
+    git 'https://github.com/jglick/simple-maven-project-with-tests'
+    sh 'mvn -B -Dmaven.test.failure.ignore install'
+    junit '**/target/surefire-reports/TEST-*.xml'
+}</pre>
+</div></div>
+<ul><li><code>image : String</code>
+</li>
+<li><code>connector</code> (optional)
+<ul><b>Nested Choice of Objects</b>
+<li><code>attach</code><div>
+<ul><li><code>entryPointCmdString : String</code> (optional)
+</li>
+<li><code>javaExe : String</code> (optional)
+</li>
+<li><code>jvmArgsString : String</code> (optional)
+</li>
+<li><code>user : String</code> (optional)
+<div><div>
+ User that the Jenkins agent code will run as. 
+ <br>
+  The container's default user (typically "<code>root</code>") will be used if this is left blank.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>jnlp</code><div>
+<ul><li><code>entryPointArgumentsString : String</code> (optional)
+</li>
+<li><code>jenkinsUrl : String</code> (optional)
+<div><div>
+ If needed, the Jenkins URL can be overwritten with this property (e.g. to support other HTTP(S) endpoints due to reverse proxies or firewalling). By default the URL from the global Jenkins configuration is used.
+</div></div>
+
+</li>
+<li><code>user : String</code> (optional)
+<div><div>
+ User that the jenkins agent process will be run as. If not specified, the image's default user (typically "root").
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>ssh</code><div>
+<ul><li><code>sshKeyStrategy</code>
+<div>Define how a SSH key pair is configured for ssh authentication in container.</div>
+
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'InjectSSHKey'</code><div>
+<ul><li><code>user : String</code>
+<div><div>
+ Injected SSH key will let agent start as root in container. If you want to use another user configure it's name here. Please note such a user must pre-exist in container image.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'ManuallyConfiguredSSHKey'</code><div>
+<ul><li><code>credentialsId : String</code>
+</li>
+<li><code>sshHostKeyVerificationStrategy</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'KnownHostsFileKeyVerificationStrategy'</code><div>
+<div><p>Checks the known_hosts file (~/.ssh/known_hosts) for the user Jenkins is executing under, to see if an entry exists that matches the current connection.</p>
+<p>This method does not make any updates to the Known Hosts file, instead using the file as a read-only source and expecting someone with suitable access to the appropriate user account on the Jenkins controller to update the file as required, potentially using the <code>ssh <i>hostname</i></code> command to initiate a connection and update the file appropriately.</p></div>
+<ul></ul></div></li>
+<li><code>$class: 'ManuallyProvidedKeyVerificationStrategy'</code><div>
+<div><div>
+ <p>Checks the key provided by the remote host matches the key set by the user who configured this connection.</p>
+</div></div>
+<ul><li><code>key : String</code>
+<div><p>The SSH key expected for this connection. This key should be in the form `algorithm value` where algorithm is one of ssh-rsa or ssh-dss, and value is the Base 64 encoded content of the key.</p></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'ManuallyTrustedKeyVerificationStrategy'</code><div>
+<div><p>Checks the remote key matches the key currently marked as trusted for this host.</p>
+<p>Depending on configuration, the key will be automatically trusted for the first connection, or an authorised user will be asked to approve the key. An authorised user will be required to approve any new key that gets presented by the remote host.</p></div>
+<ul><li><code>requireInitialManualTrust : boolean</code>
+<div><p>Require a user with Computer.CONFIGURE permission to authorise the key presented during the first connection to this host before the connection will be allowed to be established.</p>
+<p>If this option is not enabled then the key presented on first connection for this host will be automatically trusted and allowed for all subsequent connections without any manual intervention.</p></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'NonVerifyingKeyVerificationStrategy'</code><div>
+<div><p>Does not perform any verification of the SSH key presented by the remote host, allowing all connections regardless of the key they present.</p></div>
+<ul></ul></div></li>
+</ul></li>
+</ul></div></li>
+</ul></li>
+<li><code>javaPath : String</code> (optional)
+</li>
+<li><code>jvmOptions : String</code> (optional)
+</li>
+<li><code>launchTimeoutSeconds : int</code> (optional)
+</li>
+<li><code>maxNumRetries : int</code> (optional)
+<div>The number of times that attempts to connect to the newly-spun Docker container will be retried before the operation is abandoned. 
+<p>Note: That this field applies first to checks that the SSH port is open for new TCP connections, and secondly to checks that the SSH service that owns the TCP port is accepting SSH connections. <br>
+  e.g. a value of 3 would mean that (up to) 4 attempts (1 initial attempt plus 3 retries) would be made to check the availability of the TCP port, followed by (up to) 4 attempts (1 initial attempt plus 3 retries) to check the availability of the SSH service itself.</p></div>
+
+</li>
+<li><code>port : int</code> (optional)
+</li>
+<li><code>prefixStartSlaveCmd : String</code> (optional)
+</li>
+<li><code>retryWaitTime : int</code> (optional)
+<div>Number of seconds to wait between attempts to connect to the newly-started Docker container.</div>
+
+</li>
+<li><code>suffixStartSlaveCmd : String</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>dockerHost : String</code> (optional)
+</li>
+<li><code>remoteFs : String</code> (optional)
+<div><div>
+ Use a specific root directory for the Jenkins agent. This includes a <code>workspace</code> subdirectory as well as various control files. If not specified, uses the <code>WORKDIR</code> from the image.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'DockerBuilderControl'])`: Start/Stop Docker Containers
+++++
+<ul><li><code>option</code>
+<ul><b>Nested Choice of Objects</b>
+<li><code>$class: 'DockerBuilderControlOptionProvisionAndStart'</code><div>
+<ul><li><code>cloudName : String</code>
+</li>
+<li><code>templateId : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'DockerBuilderControlOptionRun'</code><div>
+<ul><li><code>cloudName : String</code>
+</li>
+<li><code>image : String</code>
+</li>
+<li><code>pullCredentialsId : String</code>
+</li>
+<li><code>dnsString : String</code>
+</li>
+<li><code>network : String</code>
+</li>
+<li><code>dockerCommand : String</code>
+</li>
+<li><code>mountsString : String</code>
+</li>
+<li><code>volumesFrom : String</code>
+</li>
+<li><code>environmentsString : String</code>
+</li>
+<li><code>hostname : String</code>
+</li>
+<li><code>user : String</code>
+</li>
+<li><code>extraGroupsString : String</code>
+</li>
+<li><code>memoryLimit : int</code>
+</li>
+<li><code>memorySwap : int</code>
+</li>
+<li><code>cpus : String</code>
+</li>
+<li><code>cpuPeriod : long</code>
+</li>
+<li><code>cpuQuota : long</code>
+</li>
+<li><code>cpuShares : int</code>
+</li>
+<li><code>shmSize : int</code>
+</li>
+<li><code>bindPorts : String</code>
+</li>
+<li><code>bindAllPorts : boolean</code>
+</li>
+<li><code>privileged : boolean</code>
+</li>
+<li><code>tty : boolean</code>
+</li>
+<li><code>macAddress : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'DockerBuilderControlOptionStart'</code><div>
+<ul><li><code>cloudName : String</code>
+</li>
+<li><code>containerId : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'DockerBuilderControlOptionStop'</code><div>
+<ul><li><code>cloudName : String</code>
+</li>
+<li><code>containerId : String</code>
+</li>
+<li><code>remove : boolean</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'DockerBuilderControlOptionStopAll'</code><div>
+<ul><li><code>remove : boolean</code>
+</li>
+</ul></div></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `step([$class: 'DockerBuilderPublisher'])`: Build / Publish Docker Image
+++++
+<div><div>
+ Build step that sends a Dockerfile for building to docker host that used for this build run.
+</div></div>
+<ul><li><code>dockerFileDirectory : String</code>
+</li>
+<li><code>fromRegistry</code>
+<ul><b>Nested Object</b>
+<li><code>url : String</code>
+<div><div>
+ URL to the Docker registry you are using. May be left blank to use the public DockerHub registry (currently <code>https://index.docker.io/v1/</code>).
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+</li>
+</ul></li>
+<li><code>cloud : String</code>
+<div><div>
+ Cloud to do the build on - or, if empty, use the cloud that the build was performed on.
+</div></div>
+
+</li>
+<li><code>tagsString : String</code>
+<div><div>
+ Repository name (and optionally a tag) to be applied to the resulting image in case of success. 
+ <br>
+  Multiple entries are permitted if separated by newlines. 
+ <br>
+  Environment variable substitution is performed on the strings so you can use e.g. ${BUILD_NUMBER} as part of each entry. 
+ <br>
+  Each entry must be of the form IMAGE[:TAG] as per the <a href="https://docs.docker.com/engine/reference/commandline/tag/" rel="nofollow">docker tag</a> command.
+</div></div>
+
+</li>
+<li><code>pushOnSuccess : boolean</code>
+<div><div>
+ If enabled (and the docker image builds successfully), the resulting docker image will be pushed to the registry (or registries) specified within the "Image" field.
+</div></div>
+
+</li>
+<li><code>pushCredentialsId : String</code>
+<div><div>
+ Credentials to push to a private registry.
+</div></div>
+
+</li>
+<li><code>cleanImages : boolean</code>
+</li>
+<li><code>cleanupWithJenkinsJobDelete : boolean</code>
+</li>
+<li><code>buildArgs</code> (optional)
+<div><div>
+ <p>A map of <em>build-time variables</em>.</p>
+</div></div>
+
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>buildArgsString : String</code> (optional)
+<div><div>
+ <p>A list of new line separated <em>build-time variables</em>, specified in the form <code>"name=value"</code>.</p>
+</div></div>
+
+</li>
+<li><code>noCache : boolean</code> (optional)
+<div><div>
+ If set, builds the image with <code>--no-cache</code> which disables caching of layers. See the docker <a href="https://docs.docker.com/engine/reference/commandline/build/" rel="nofollow">build command</a> for more information.
+</div></div>
+
+</li>
+<li><code>pull : boolean</code> (optional)
+<div><div>
+ If set, builds the image with <code>--pull</code> to pull the latest version of the base image, instead of using the local one. See the docker <a href="https://docs.docker.com/engine/reference/commandline/build/" rel="nofollow">build command</a> for more information.
+</div></div>
+
+</li>
+</ul>
+
+
+++++

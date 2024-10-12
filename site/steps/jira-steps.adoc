@@ -1,0 +1,851 @@
+= JIRA Pipeline Steps
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/jira-steps">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `jiraAddComment`: JIRA Steps: Add Comment
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>comment : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>input : <code>Object</code></code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraAddWatcher`: JIRA Steps: Add Watcher
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>userName : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraAssignIssue`: JIRA Steps: Assign Issue
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>userName : String</code>
+</li>
+<li><code>accountId : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraAssignableUserSearch`: JIRA Steps: Searches assignable JIRA Users by username, name or email address for the given project/issueKey
+++++
+<ul><li><code>project : String</code>
+</li>
+<li><code>issueKey : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>maxResults : int</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>queryStr : String</code> (optional)
+</li>
+<li><code>site : String</code> (optional)
+</li>
+<li><code>startAt : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraDeleteAttachment`: JIRA Steps: Delete Attachment
+++++
+<ul><li><code>id : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraDeleteIssueLink`: JIRA Steps: Delete IssueLink
+++++
+<ul><li><code>id : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraDeleteIssueRemoteLink`: JIRA Steps: Delete Issue's Remote Link by linkId.
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>linkId : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraDeleteIssueRemoteLinks`: JIRA Steps: Delete Issue's Remote Links by globalId.
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>globalId : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraDownloadAttachment`: JIRA Steps: Download a file to workspace (directory is optional)
+++++
+<ul><li><code>id : String</code>
+</li>
+<li><code>file : String</code>
+</li>
+<li><code>override : boolean</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraEditComment`: JIRA Steps: Edit Issue Comment
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>commentId : String</code>
+</li>
+<li><code>comment : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>input : <code>Object</code></code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraEditComponent`: JIRA Steps: Edit Component
+++++
+<ul><li><code>id : String</code>
+</li>
+<li><code>component : <code>Object</code></code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraEditIssue`: JIRA Steps: Edit Issue
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>issue : <code>Object</code></code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraEditVersion`: JIRA Steps: Edit Version
+++++
+<ul><li><code>id : String</code>
+</li>
+<li><code>version : <code>Object</code></code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetAttachmentInfo`: JIRA Steps: Get Attachment Info
+++++
+<ul><li><code>id : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetComment`: JIRA Steps: Get Issue Comment
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>commentId : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetComments`: JIRA Steps: Get Issue Comments
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetComponent`: JIRA Steps: Get Component
+++++
+<ul><li><code>id : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetComponentIssueCount`: JIRA Steps: Get Component Issue Count
+++++
+<ul><li><code>id : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetFields`: JIRA Steps: Get Fields
+++++
+<ul><li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetIssue`: JIRA Steps: Get Issue
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetIssueLink`: JIRA Steps: Get IssueLink
+++++
+<ul><li><code>id : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetIssueLinkTypes`: JIRA Steps: Get Issue Link Types
+++++
+<ul><li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetIssueRemoteLink`: JIRA Steps: Get Issue's Remote Link by linkId.
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>linkId : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetIssueRemoteLinks`: JIRA Steps: Get Issue's Remote Links by globalId.
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>globalId : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetIssueTransitions`: JIRA Steps: Get Issue Transitions
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetIssueWatches`: JIRA Steps: Get Issue Watches
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetProject`: JIRA Steps: Get Project
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetProjectComponents`: JIRA Steps: Get Project Components
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetProjectStatuses`: JIRA Steps: Get Project Statuses
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetProjectVersions`: JIRA Steps: Get Project Versions
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetProjects`: JIRA Steps: Get Projects
+++++
+<ul><li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetServerInfo`: JIRA Steps: Get Server Info
+++++
+<ul><li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraGetVersion`: JIRA Steps: Get Version
+++++
+<ul><li><code>id : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraJqlSearch`: JIRA Steps: JQL Search
+++++
+<ul><li><code>jql : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>fields : <code>Object</code></code> (optional)
+</li>
+<li><code>maxResults : int</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+<li><code>startAt : int</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraLinkIssues`: JIRA Steps: Link Issues
+++++
+<ul><li><code>type : String</code>
+</li>
+<li><code>inwardKey : String</code>
+</li>
+<li><code>outwardKey : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>comment : String</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraNewComponent`: JIRA Steps: Create New Component
+++++
+<ul><li><code>component : <code>Object</code></code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraNewIssue`: JIRA Steps: Create New Issue
+++++
+<ul><li><code>issue</code>
+<ul><b>Nested Object</b>
+<li><code>update</code>
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+<li><code>fields</code>
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+</ul></li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraNewIssueRemoteLink`: JIRA Steps: Create new remote link for given issue.
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>remoteLink : <code>Object</code></code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraNewIssues`: JIRA Steps: Create New Issues
+++++
+<ul><li><code>issues</code>
+<ul><b>Nested Object</b>
+<li><code>issueUpdates</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>update</code>
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+<li><code>fields</code>
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+</ul></li>
+<li><code>issues</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>update</code>
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+<li><code>fields</code>
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.Object&gt;</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraNewVersion`: JIRA Steps: Create New Version
+++++
+<ul><li><code>version : <code>Object</code></code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraNotifyIssue`: JIRA Steps: Notify Issue
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>notify : <code>Object</code></code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraTransitionIssue`: JIRA Steps: Transition Issue
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>input : <code>Object</code></code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraUploadAttachment`: JIRA Steps: Attach a file from workspace to an issue
+++++
+<ul><li><code>idOrKey : String</code>
+</li>
+<li><code>file : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `jiraUserSearch`: JIRA Steps: Search Active JIRA Users by username, name or email address.
+++++
+<ul><li><code>queryStr : String</code>
+</li>
+<li><code>auditLog : boolean</code> (optional)
+</li>
+<li><code>failOnError : boolean</code> (optional)
+</li>
+<li><code>maxResults : int</code> (optional)
+</li>
+<li><code>queryParams</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>site : String</code> (optional)
+</li>
+<li><code>startAt : int</code> (optional)
+</li>
+</ul>
+
+
+++++

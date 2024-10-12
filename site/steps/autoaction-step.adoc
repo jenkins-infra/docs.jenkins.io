@@ -1,0 +1,33 @@
+= AutoAction Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/autoaction-step">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `chlAtuoAction`: Run AutoAction
+++++
+<ul><li><code>content : String</code>
+</li>
+<li><code>browserString : String</code>
+</li>
+<li><code>runScriptOnly : boolean</code>
+</li>
+<li><code>rootPath : String</code>
+</li>
+<li><code>libPath : String</code>
+</li>
+</ul>
+
+
+++++

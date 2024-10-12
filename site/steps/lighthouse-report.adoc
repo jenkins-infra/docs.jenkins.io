@@ -1,0 +1,35 @@
+= Lighthouse Report Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/lighthouse-report">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `lighthouseReport`: Lighthouse Report
+++++
+<ul><li><code>file : String</code>
+<div><div>
+ JSON report file to load
+</div></div>
+
+</li>
+<li><code>name : String</code> (optional)
+<div><div>
+ Report name (Optional)
+</div></div>
+
+</li>
+</ul>
+
+
+++++

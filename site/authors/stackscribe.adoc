@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: Meg McRoberts
+:page-github: stackscribe
+:page-authoravatar: ../../images/images/avatars/stackscribe.jpg
+
+
+
+Meg is an experienced technical writer and training author with career experience at Bell Labs, SCO, Trend Micro, and CloudBees.

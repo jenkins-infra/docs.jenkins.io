@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Online JAM: GSoC project presentations
+:page-eventStartDate: 2018-08-13T15:00:00
+:page-eventLink: https://www.youtube.com/watch?v=GGEtN4nbtng
+---
+Code Coverage API Plugin, Remoting over Kafka, and Simple Pull-Request Job Plugin (aka Pipeline as YAML).

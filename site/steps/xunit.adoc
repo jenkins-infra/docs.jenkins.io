@@ -1,0 +1,1195 @@
+= xUnit plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/xunit">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'XUnitPublisher'])`: Publish xUnit test result report
+++++
+<ul><li><code>tools</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>AUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>BoostTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>CTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>CUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>Check</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>CppTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>CppUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>Custom</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>customXSL : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>embUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>FPCUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>gtester</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'GallioPluginType'</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>faildedIfNotNew : boolean</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code>
+</li>
+<li><code>stopProcessingIfError : boolean</code>
+</li>
+</ul></div></li>
+<li><code>GoogleTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'JSUnitPluginType'</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>faildedIfNotNew : boolean</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code>
+</li>
+<li><code>stopProcessingIfError : boolean</code>
+</li>
+</ul></div></li>
+<li><code>JUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>MSTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>MbUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>NUnit3</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>NUnit2</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>PHPUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'ParasoftSOAtest9xType'</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>skipNoTestFiles : boolean</code>
+</li>
+<li><code>failIfNotNew : boolean</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code>
+</li>
+<li><code>stopProcessingIfError : boolean</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'ParasoftType'</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>skipNoTestFiles : boolean</code>
+</li>
+<li><code>failIfNotNew : boolean</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code>
+</li>
+<li><code>stopProcessingIfError : boolean</code>
+</li>
+</ul></div></li>
+<li><code>QtTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>UnitTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>Valgrind</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>xUnitDotNet</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'hudson.plugins.testcomplete.TestCompleteTestType'</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>failedIfNotNew : boolean</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code>
+</li>
+<li><code>stopProcessingIfError : boolean</code>
+</li>
+<li><code>testFilterPattern : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'jenkins.plugins.xunit.tc11.TestCompleteTestType'</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>failedIfNotNew : boolean</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code>
+</li>
+<li><code>stopProcessingIfError : boolean</code>
+</li>
+<li><code>testFilterPattern : String</code>
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>thresholds</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>failed</code><div>
+<ul><li><code>failureNewThreshold : String</code> (optional)
+</li>
+<li><code>failureThreshold : String</code> (optional)
+</li>
+<li><code>unstableNewThreshold : String</code> (optional)
+</li>
+<li><code>unstableThreshold : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>passed</code><div>
+<ul><li><code>failureNewThreshold : String</code> (optional)
+</li>
+<li><code>failureThreshold : String</code> (optional)
+</li>
+<li><code>unstableNewThreshold : String</code> (optional)
+</li>
+<li><code>unstableThreshold : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>skipped</code><div>
+<ul><li><code>failureNewThreshold : String</code> (optional)
+</li>
+<li><code>failureThreshold : String</code> (optional)
+</li>
+<li><code>unstableNewThreshold : String</code> (optional)
+</li>
+<li><code>unstableThreshold : String</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>thresholdMode : int</code>
+</li>
+<li><code>testTimeMargin : String</code>
+</li>
+<li><code>checksName : String</code> (optional)
+<div><div>
+ If provided, and publishing checks enabled, the plugin will use this name when publishing results to corresponding SCM hosting platforms. If not, a default of "Tests" will be used.
+</div></div>
+
+</li>
+<li><code>followSymlink : boolean</code> (optional)
+</li>
+<li><code>reduceLog : boolean</code> (optional)
+<div><div>
+ Cuts the standard output and error of reports to a reasonable size. 
+ <p>This reduce usage of memory when Jenkins parse the aggregate report when hundred test failure with a huge logs.</p>
+</div></div>
+
+</li>
+<li><code>skipPublishingChecks : boolean</code> (optional)
+<div><div>
+ If this option is unchecked, then the plugin automatically publishes the test results to corresponding SCM hosting platforms. For example, if you are using this feature for a GitHub organization project, the warnings will be published to GitHub through the Checks API. If this operation slows down your build, or you don't want to publish the warnings to SCM platforms, you can use this option to deactivate this feature.
+</div></div>
+
+</li>
+<li><code>sleepTime : long</code> (optional)
+<div><div>
+ The time in ms for which the conversion process will be suspended before starting to process the next block of reports. 
+ <p>Conversion is a CPU intensive work. May happens the ping thread on slave nodes to be killed. Increases this value to allow CPU be available to other thread.</p>
+</div></div>
+
+</li>
+<li><code>testDataPublishers</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>attachments</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'AutomateTestDataPublisher'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'ClaimTestDataPublisher'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'JUnitFlakyTestDataPublisher'</code><div>
+<ul></ul></div></li>
+<li><code>jiraTestResultReporter</code><div>
+<ul><li><code>configs</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>jiraSelectableArrayField</code><div>
+<ul><li><code>fieldKey : String</code>
+</li>
+<li><code>values</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>value : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>jiraSelectableField</code><div>
+<ul><li><code>fieldKey : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>jiraStringArrayField</code><div>
+<ul><li><code>fieldKey : String</code>
+</li>
+<li><code>values</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>value : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>jiraStringField</code><div>
+<ul><li><code>fieldKey : String</code>
+</li>
+<li><code>value : String</code>
+<div><div>
+ <p>Insert a string value.</p>
+ <p>You can include Jenkins Environment variables (see <a href="https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project" rel="nofollow">link</a>), or the following variables defined by this plugin:</p>
+ <p></p>Variable usage: <b>${VAR_NAME}</b>
+ <p></p>
+ <p>CRFL - new line</p>
+ <p>DEFAULT_SUMMARY - configured in the global configuration page</p>
+ <p>DEFAULT_DESCRIPTION - configured in the global configuration page</p>
+ <p>TEST_RESULT</p>
+ <p>TEST_NAME</p>
+ <p>TEST_FULL_NAME</p>
+ <p>TEST_STACK_TRACE</p>
+ <p>TEST_ERROR_DETAILS</p>
+ <p>TEST_DURATION</p>
+ <p>TEST_PACKAGE_NAME</p>
+ <p>TEST_PACKAGE_CLASS_METHOD_NAME</p>
+ <p>TEST_STDERR</p>
+ <p>TEST_STDOUT</p>
+ <p>TEST_OVERVIEW</p>
+ <p>TEST_AGE</p>
+ <p>TEST_PASS_COUNT</p>
+ <p>TEST_SKIPPED_COUNT</p>
+ <p>TEST_FAIL_SINCE</p>
+ <p>TEST_IS_REGRESSION - expands to true/false</p>
+ <p>BUILD_RESULT</p>
+ <h3>WARNING: Your input will not be validated against the server's metadata. Check Jira to make sure you insert a valid value for this field and use the Validate Fields button bellow, otherwise the plugin will fail to create your issue.</h3>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>jiraUserField</code><div>
+<ul><li><code>fieldKey : String</code>
+</li>
+<li><code>value : String</code>
+<div><div>
+ <p>Insert the <b>username</b>.</p>
+ <p>For example if you have a user with: <br><br>
+  Display Name: <b>John Doe</b>, Username: <b>johndoe</b>, Email: <b>johndoe@email.com</b>,<br><br>
+   you need to write <b>johndoe</b> in this field. Any other value (like display name, or email) will not work.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>projectKey : String</code>
+</li>
+<li><code>issueType : String</code>
+</li>
+<li><code>autoRaiseIssue : boolean</code>
+<div><div>
+ Create issues automatically for failing tests that don't yet have one linked.
+</div></div>
+
+</li>
+<li><code>autoResolveIssue : boolean</code>
+<div><div>
+ Automatically apply transition to resolve issues linked to tests, if the test passes.
+ <br><b>Experimental feature:</b> For now it only looks for the first transition that contains in its name "resolve". If it is found, it will be applied, if not, the status of the issue will not change. In future releases this will be parametrized.
+</div></div>
+
+</li>
+<li><code>autoUnlinkIssue : boolean</code>
+</li>
+<li><code>overrideResolvedIssues : boolean</code>
+<div><div>
+ Create issues automatically for failing tests that are linked to resolved issues in JiraIssueKeyToTestMap.json.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'JunitResultPublisher'</code><div>
+<div><div>
+ If checked, each JUnit test result XML file will be examined to see if it represents a SOASTA CloudTest composition. For applicable tests, a hyperlink to the SOASTA CloudTest dashboard will be inserted into the test report.
+</div></div>
+<ul><li><code>urlOverride : String</code>
+<div><div>
+ Specify the CloudTest URL to use when creating hyperlinks to CloudTest dashboards. Normally, this can be left blank, and the URL will be extracted from the test result file.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'PerfSigTestDataPublisher'</code><div>
+<ul><li><code>dynatraceProfile : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'SahaginTestDataPublishser'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'SauceOnDemandReportPublisher'</code><div>
+<div><div>
+ Show embedded Sauce OnDemand reports, including video and logs. Your test should use <a href="http://selenium-client-factory.infradna.com/" rel="nofollow">Selenium client factory</a> (at least <a href="http://maven.jenkins-ci.org/content/repositories/releases/com/saucelabs/selenium/selenium-client-factory/1.3/" rel="nofollow">version 1.3</a> to match test cases to individual Sauce OnDemand jobs).
+</div></div>
+<ul><li><code>jobVisibility : String</code> (optional)
+<div>Set your test results visibility permissions. The <a href="https://wiki.saucelabs.com/display/DOCS/Sharing+the+Results+of+Sauce+Labs+Tests" rel="nofollow">Sauce Documentation</a> has all the various levels described in detail.</div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'StabilityTestDataPublisher'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'TestCafePublisher'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'TestReporter'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'YoutrackTestDataPublisher'</code><div>
+<ul></ul></div></li>
+</ul></li>
+</ul>
+
+
+++++
+=== `xunit`: Publish xUnit test result report
+++++
+<ul><li><code>tools</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>AUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>BoostTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>CTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>CUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>Check</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>CppTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>CppUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>Custom</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>customXSL : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>embUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>FPCUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>gtester</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'GallioPluginType'</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>faildedIfNotNew : boolean</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code>
+</li>
+<li><code>stopProcessingIfError : boolean</code>
+</li>
+</ul></div></li>
+<li><code>GoogleTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'JSUnitPluginType'</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>faildedIfNotNew : boolean</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code>
+</li>
+<li><code>stopProcessingIfError : boolean</code>
+</li>
+</ul></div></li>
+<li><code>JUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>MSTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>MbUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>NUnit3</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>NUnit2</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>PHPUnit</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'ParasoftSOAtest9xType'</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>skipNoTestFiles : boolean</code>
+</li>
+<li><code>failIfNotNew : boolean</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code>
+</li>
+<li><code>stopProcessingIfError : boolean</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'ParasoftType'</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>skipNoTestFiles : boolean</code>
+</li>
+<li><code>failIfNotNew : boolean</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code>
+</li>
+<li><code>stopProcessingIfError : boolean</code>
+</li>
+</ul></div></li>
+<li><code>QtTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>UnitTest</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>Valgrind</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>xUnitDotNet</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code> (optional)
+</li>
+<li><code>excludesPattern : String</code> (optional)
+</li>
+<li><code>failIfNotNew : boolean</code> (optional)
+</li>
+<li><code>skipNoTestFiles : boolean</code> (optional)
+</li>
+<li><code>stopProcessingIfError : boolean</code> (optional)
+</li>
+</ul></div></li>
+<li><code>$class: 'hudson.plugins.testcomplete.TestCompleteTestType'</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>failedIfNotNew : boolean</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code>
+</li>
+<li><code>stopProcessingIfError : boolean</code>
+</li>
+<li><code>testFilterPattern : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'jenkins.plugins.xunit.tc11.TestCompleteTestType'</code><div>
+<ul><li><code>pattern : String</code>
+</li>
+<li><code>failedIfNotNew : boolean</code>
+</li>
+<li><code>deleteOutputFiles : boolean</code>
+</li>
+<li><code>stopProcessingIfError : boolean</code>
+</li>
+<li><code>testFilterPattern : String</code>
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>checksName : String</code> (optional)
+</li>
+<li><code>followSymlink : boolean</code> (optional)
+</li>
+<li><code>reduceLog : boolean</code> (optional)
+</li>
+<li><code>skipPublishingChecks : boolean</code> (optional)
+</li>
+<li><code>sleepTime : long</code> (optional)
+</li>
+<li><code>testDataPublishers</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>attachments</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'AutomateTestDataPublisher'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'ClaimTestDataPublisher'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'JUnitFlakyTestDataPublisher'</code><div>
+<ul></ul></div></li>
+<li><code>jiraTestResultReporter</code><div>
+<ul><li><code>configs</code>
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>jiraSelectableArrayField</code><div>
+<ul><li><code>fieldKey : String</code>
+</li>
+<li><code>values</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>value : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>jiraSelectableField</code><div>
+<ul><li><code>fieldKey : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></div></li>
+<li><code>jiraStringArrayField</code><div>
+<ul><li><code>fieldKey : String</code>
+</li>
+<li><code>values</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>value : String</code>
+</li>
+</ul></li>
+</ul></div></li>
+<li><code>jiraStringField</code><div>
+<ul><li><code>fieldKey : String</code>
+</li>
+<li><code>value : String</code>
+<div><div>
+ <p>Insert a string value.</p>
+ <p>You can include Jenkins Environment variables (see <a href="https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project" rel="nofollow">link</a>), or the following variables defined by this plugin:</p>
+ <p></p>Variable usage: <b>${VAR_NAME}</b>
+ <p></p>
+ <p>CRFL - new line</p>
+ <p>DEFAULT_SUMMARY - configured in the global configuration page</p>
+ <p>DEFAULT_DESCRIPTION - configured in the global configuration page</p>
+ <p>TEST_RESULT</p>
+ <p>TEST_NAME</p>
+ <p>TEST_FULL_NAME</p>
+ <p>TEST_STACK_TRACE</p>
+ <p>TEST_ERROR_DETAILS</p>
+ <p>TEST_DURATION</p>
+ <p>TEST_PACKAGE_NAME</p>
+ <p>TEST_PACKAGE_CLASS_METHOD_NAME</p>
+ <p>TEST_STDERR</p>
+ <p>TEST_STDOUT</p>
+ <p>TEST_OVERVIEW</p>
+ <p>TEST_AGE</p>
+ <p>TEST_PASS_COUNT</p>
+ <p>TEST_SKIPPED_COUNT</p>
+ <p>TEST_FAIL_SINCE</p>
+ <p>TEST_IS_REGRESSION - expands to true/false</p>
+ <p>BUILD_RESULT</p>
+ <h3>WARNING: Your input will not be validated against the server's metadata. Check Jira to make sure you insert a valid value for this field and use the Validate Fields button bellow, otherwise the plugin will fail to create your issue.</h3>
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>jiraUserField</code><div>
+<ul><li><code>fieldKey : String</code>
+</li>
+<li><code>value : String</code>
+<div><div>
+ <p>Insert the <b>username</b>.</p>
+ <p>For example if you have a user with: <br><br>
+  Display Name: <b>John Doe</b>, Username: <b>johndoe</b>, Email: <b>johndoe@email.com</b>,<br><br>
+   you need to write <b>johndoe</b> in this field. Any other value (like display name, or email) will not work.</p>
+</div></div>
+
+</li>
+</ul></div></li>
+</ul></li>
+<li><code>projectKey : String</code>
+</li>
+<li><code>issueType : String</code>
+</li>
+<li><code>autoRaiseIssue : boolean</code>
+<div><div>
+ Create issues automatically for failing tests that don't yet have one linked.
+</div></div>
+
+</li>
+<li><code>autoResolveIssue : boolean</code>
+<div><div>
+ Automatically apply transition to resolve issues linked to tests, if the test passes.
+ <br><b>Experimental feature:</b> For now it only looks for the first transition that contains in its name "resolve". If it is found, it will be applied, if not, the status of the issue will not change. In future releases this will be parametrized.
+</div></div>
+
+</li>
+<li><code>autoUnlinkIssue : boolean</code>
+</li>
+<li><code>overrideResolvedIssues : boolean</code>
+<div><div>
+ Create issues automatically for failing tests that are linked to resolved issues in JiraIssueKeyToTestMap.json.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'JunitResultPublisher'</code><div>
+<div><div>
+ If checked, each JUnit test result XML file will be examined to see if it represents a SOASTA CloudTest composition. For applicable tests, a hyperlink to the SOASTA CloudTest dashboard will be inserted into the test report.
+</div></div>
+<ul><li><code>urlOverride : String</code>
+<div><div>
+ Specify the CloudTest URL to use when creating hyperlinks to CloudTest dashboards. Normally, this can be left blank, and the URL will be extracted from the test result file.
+</div></div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'PerfSigTestDataPublisher'</code><div>
+<ul><li><code>dynatraceProfile : String</code>
+</li>
+</ul></div></li>
+<li><code>$class: 'SahaginTestDataPublishser'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'SauceOnDemandReportPublisher'</code><div>
+<div><div>
+ Show embedded Sauce OnDemand reports, including video and logs. Your test should use <a href="http://selenium-client-factory.infradna.com/" rel="nofollow">Selenium client factory</a> (at least <a href="http://maven.jenkins-ci.org/content/repositories/releases/com/saucelabs/selenium/selenium-client-factory/1.3/" rel="nofollow">version 1.3</a> to match test cases to individual Sauce OnDemand jobs).
+</div></div>
+<ul><li><code>jobVisibility : String</code> (optional)
+<div>Set your test results visibility permissions. The <a href="https://wiki.saucelabs.com/display/DOCS/Sharing+the+Results+of+Sauce+Labs+Tests" rel="nofollow">Sauce Documentation</a> has all the various levels described in detail.</div>
+
+</li>
+</ul></div></li>
+<li><code>$class: 'StabilityTestDataPublisher'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'TestCafePublisher'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'TestReporter'</code><div>
+<ul></ul></div></li>
+<li><code>$class: 'YoutrackTestDataPublisher'</code><div>
+<ul></ul></div></li>
+</ul></li>
+<li><code>testTimeMargin : String</code> (optional)
+</li>
+<li><code>thresholdMode : int</code> (optional)
+</li>
+<li><code>thresholds</code> (optional)
+<ul><b>Array / List of Nested Choice of Objects</b>
+<li><code>failed</code><div>
+<ul><li><code>failureNewThreshold : String</code> (optional)
+</li>
+<li><code>failureThreshold : String</code> (optional)
+</li>
+<li><code>unstableNewThreshold : String</code> (optional)
+</li>
+<li><code>unstableThreshold : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>passed</code><div>
+<ul><li><code>failureNewThreshold : String</code> (optional)
+</li>
+<li><code>failureThreshold : String</code> (optional)
+</li>
+<li><code>unstableNewThreshold : String</code> (optional)
+</li>
+<li><code>unstableThreshold : String</code> (optional)
+</li>
+</ul></div></li>
+<li><code>skipped</code><div>
+<ul><li><code>failureNewThreshold : String</code> (optional)
+</li>
+<li><code>failureThreshold : String</code> (optional)
+</li>
+<li><code>unstableNewThreshold : String</code> (optional)
+</li>
+<li><code>unstableThreshold : String</code> (optional)
+</li>
+</ul></div></li>
+</ul></li>
+</ul>
+
+
+++++

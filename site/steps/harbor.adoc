@@ -1,0 +1,33 @@
+= Harbor Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/harbor">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `waitForHarborWebHook`: WaitForHarborWebhookStep
+++++
+<ul><li><code>server : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>fullImageName : String</code> (optional)
+</li>
+<li><code>severity</code> (optional)
+<ul><li><b>Values:</b> <code>None</code>, <code>Unknown</code>, <code>Negligible</code>, <code>Low</code>, <code>Medium</code>, <code>High</code>, <code>Critical</code></li></ul></li>
+<li><code>abortPipeline : boolean</code> (optional)
+</li>
+</ul>
+
+
+++++

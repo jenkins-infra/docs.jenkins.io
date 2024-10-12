@@ -1,0 +1,39 @@
+= Datadog Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/datadog">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `datadog`: DatadogOptions
+++++
+<ul><li><code>collectLogs : boolean</code> (optional)
+</li>
+<li><code>tags : Array / List of String</code> (optional)
+<ul></ul></li>
+<li><code>testVisibility</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>additionalVariables</code> (optional)
+<ul><li><b>Type:</b> <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
+</ul></li>
+<li><code>enabled : boolean</code> (optional)
+</li>
+<li><code>languages</code> (optional)
+<ul><li><b>Array / List of Values:</b> <code>JAVA</code>, <code>JAVASCRIPT</code>, <code>PYTHON</code></li></ul></li>
+<li><code>serviceName : String</code> (optional)
+</li>
+</ul></li>
+</ul>
+
+
+++++

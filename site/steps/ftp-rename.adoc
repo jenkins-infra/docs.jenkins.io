@@ -1,0 +1,91 @@
+= FTP Rename Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/ftp-rename">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'FtpRenameBuilder'])`: FTP Rename
+++++
+<ul><li><code>ftpServer : String</code>
+</li>
+<li><code>ftpPort : int</code>
+<div><div>
+ <p>if you don't specify the port, the default port is 21. <br></p>
+</div></div>
+
+</li>
+<li><code>ftpUser : String</code>
+</li>
+<li><code>ftpPassword</code>
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>ftpPath : String</code>
+<div><div>
+ <p>Specify the path to your artifact. <br></p>
+</div></div>
+
+</li>
+<li><code>artifactName : String</code> (optional)
+</li>
+<li><code>newArtifactName : String</code> (optional)
+</li>
+<li><code>remoteDirectory : String</code> (optional)
+<div><div>
+ <p>Optional destination folder.<br>
+   This folder will be below the one in the global configuration, if present.<br>
+   The folder won't be created if does not exist.<br></p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'FtpRenamePublisher'])`: FTP Rename
+++++
+<ul><li><code>ftpServer : String</code>
+</li>
+<li><code>ftpPort : int</code>
+<div><div>
+ <p>if you don't specify the port, the default port is 21. <br></p>
+</div></div>
+
+</li>
+<li><code>ftpUser : String</code>
+</li>
+<li><code>ftpPassword</code>
+<ul><li><b>Type:</b> <code>class hudson.util.Secret</code></li>
+</ul></li>
+<li><code>ftpPath : String</code>
+<div><div>
+ <p>Specify the path to your artifact. <br></p>
+</div></div>
+
+</li>
+<li><code>artifactName : String</code> (optional)
+</li>
+<li><code>newArtifactName : String</code> (optional)
+</li>
+<li><code>remoteDirectory : String</code> (optional)
+<div><div>
+ <p>Optional destination folder.<br>
+   This folder will be below the one in the global configuration, if present.<br>
+   The folder won't be created if does not exist.<br></p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

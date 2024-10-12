@@ -1,0 +1,38 @@
+= Zscaler IaC Scanner
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/zscaler-iac-scan">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `wrap([$class: 'ZscalerScan'])`: Zscaler IaC scan
+++++
+<div><div>
+ When selected Zscaler will run a scan on the workspace for any IaC policy violations. The violations can be monitored from Zscaler cwp portal. For more information visit <a rel="nofollow"> Zscaler cwp portal</a>
+</div></div>
+<ul><li><code>failBuild : boolean</code> (optional)
+<div><div>
+ If it is enabled, Zscaler IAC scan will scan the fails for violations and also fails the build as per the configuration in the CWP portal If it is disabled, Zscaler IAC scan will not fail the build but only scans for the policy violations
+</div></div>
+
+</li>
+<li><code>dirPath : String</code> (optional)
+</li>
+<li><code>filePath : String</code> (optional)
+</li>
+<li><code>logLevel : String</code> (optional)
+</li>
+</ul>
+
+
+++++

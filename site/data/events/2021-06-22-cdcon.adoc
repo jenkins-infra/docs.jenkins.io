@@ -1,0 +1,12 @@
+
+
+= cdCon
+:page-eventLocation: Online
+:page-eventStartDate: 2021-06-22T09:00:00
+:page-eventEndDate: 2021-06-24T18:00:00
+:page-eventLink: https://events.linuxfoundation.org/cdcon/
+
+
+
+Jenkins will be represented at cdCon organized by the Continuous Delivery Foundation.
+We will have multiple talks and a Birds of Feather session there.

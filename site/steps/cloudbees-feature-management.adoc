@@ -1,0 +1,39 @@
+= CloudBees Feature Management
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/cloudbees-feature-management">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `featureManagementConfig`: CloudBees Feature Management configuration
+++++
+<ul><li><code>credentialsId : String</code>
+<div><div>
+ The User token is used to create the secret text credential by interacting with the CloudBees REST API to download the configuration. 
+ <p></p> To retrieve your API token, from the <a href="https://app.rollout.io/" rel="nofollow">CloudBees Feature Management</a> <b>Home</b> page, from the left pane select <b>App settings</b>. In the <b>Integrations</b> tab under <b>API</b>, select <b>Show</b> to display the <b>User token</b>, then select <b>Copy</b>.
+</div></div>
+
+</li>
+<li><code>applicationIdAndName : String</code>
+<div><div>
+ The CloudBees Feature Management application. 
+ <p></p> The Flag and Target group configurations are downloaded and displayed for this application when the environment is selected.
+</div></div>
+
+</li>
+<li><code>environmentIdAndName : String</code>
+</li>
+</ul>
+
+
+++++

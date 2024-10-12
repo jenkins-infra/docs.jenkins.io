@@ -1,0 +1,12 @@
+
+= Jenkins Contributor Summit Part 1
+:page-eventLocation: Online
+:page-eventStartDate: 2021-10-02T07:00:00
+:page-eventEndDate: 2021-10-02T11:00:00
+:page-eventLink: /events/contributor-summit/
+
+
+
+The Jenkins Contributor Summit brings together current and future contributors to the Jenkins project.
+The summit invites community members to learn, meet, and help shape the future of Jenkins.
+It will focus on Hacktoberfest and welcoming new contributors.

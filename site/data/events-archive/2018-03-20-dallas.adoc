@@ -1,0 +1,6 @@
+---
+:page-eventTitle: DFW JAM
+:page-eventStartDate: 2018-03-20T19:30:00
+:page-eventLink: https://www.meetup.com/DFW-Jenkins-Area-Meetup/events/248036262/
+---
+This month, Andrew Bayer will present: Declarative Pipelines: Tips, Tricks, and Gotchas

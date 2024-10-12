@@ -1,0 +1,46 @@
+= Pipeline Dependency Walker Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/pipeline-dependency-walker">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `walk`: Execute a pipeline task for the job and all its downstream jobs.
+++++
+<div><div>
+ Triggers a new task for a given job and all maven-dependent jobs.
+</div></div>
+<ul><li><code>job : String</code>
+<div><div>
+ Name of a downstream job to build. May be another Pipeline job, but more commonly a freestyle or other project. Use a simple name if the job is in the same folder as this upstream Pipeline job; otherwise can use relative paths like <code>../sister-folder/downstream</code> or absolute paths like <code>/top-level-folder/nested-folder/downstream</code>.
+</div></div>
+
+</li>
+<li><code>failOnUnstable : boolean</code> (optional)
+<div><div>
+ If failOnUnstable is true than the action would be performed only if all the related jobs have latest build successful.
+</div></div>
+
+</li>
+<li><code>jobAction : String</code> (optional)
+<div><div>
+ Action to be performed on jobs. Use <code>JOB_NAME</code> keyword to refer to a job. 
+ <br>
+  If the field is empty then jobs would be build, e.i. empty value will be replaced by <code>build 'JOB_NAME'</code>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

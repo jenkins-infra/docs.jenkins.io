@@ -1,0 +1,294 @@
+= Pipeline: Nodes and Processes
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/workflow-durable-task-step">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `bat`: Windows Batch Script
+++++
+<ul><li><code>script : String</code>
+<div><div>
+ Executes a Batch script. Multiple lines allowed. When using the <code>returnStdout</code> flag, you probably wish to prefix this with <code>@</code>, lest the command itself be included in the output.
+</div></div>
+
+</li>
+<li><code>encoding : String</code> (optional)
+<div><div>
+ Encoding of process output. In the case of <code>returnStdout</code>, applies to the return value of this step; otherwise, or always for standard error, controls how text is copied to the build log. If unspecified, uses the system default encoding of the node on which the step is run. If there is any expectation that process output might include non-ASCII characters, it is best to specify the encoding explicitly. For example, if you have specific knowledge that a given process is going to be producing UTF-8 yet will be running on a node with a different system encoding (typically Windows, since every Linux distribution has defaulted to UTF-8 for a long time), you can ensure correct output by specifying: <code>encoding: 'UTF-8'</code>
+</div></div>
+
+</li>
+<li><code>label : String</code> (optional)
+<div><div>
+ Label to be displayed in the pipeline step view and blue ocean details for the step instead of the step type. So the view is more meaningful and domain specific instead of technical.
+</div></div>
+
+</li>
+<li><code>returnStatus : boolean</code> (optional)
+<div><div>
+ Normally, a script which exits with a nonzero status code will cause the step to fail with an exception. If this option is checked, the return value of the step will instead be the status code. You may then compare it to zero, for example.
+</div></div>
+
+</li>
+<li><code>returnStdout : boolean</code> (optional)
+<div><div>
+ If checked, standard output from the task is returned as the step value as a <code>String</code>, rather than being printed to the build log. (Standard error, if any, will still be printed to the log.) You will often want to call <code>.trim()</code> on the result to strip off a trailing newline.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `dir`: Change current directory
+++++
+<div><div>
+ Change current directory. Any step inside the <code>dir</code> block will use this directory as current and any relative path will use it as base path.
+</div></div>
+<ul><li><code>path : String</code>
+<div><div>
+ The relative path of the directory in the workspace to use as a new working directory.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `node`: Allocate node
+++++
+<div><div>
+ Allocates an executor on a node (typically a build agent) and runs further code in the context of a workspace on that agent.
+</div></div>
+<ul><li><code>label : String</code>
+<div><div>
+ Computer name, label name, or any other label expression like <code>linux &amp;&amp; 64bit</code> to restrict where this step builds. May be left blank, in which case any available executor is taken. 
+ <h3>Supported operators</h3> The following operators are supported, in descending order of precedence: 
+ <dl>
+  <dt>
+   (expression)
+  </dt>
+  <dd>
+   parentheses — used to explicitly define the associativity of an expression
+  </dd>
+  <dt>
+   !expression
+  </dt>
+  <dd>
+   NOT — negation; the result of expression must <b>not</b> be true
+  </dd>
+  <dt>
+   a &amp;&amp; b
+  </dt>
+  <dd>
+   AND — <b>both</b> of the expressions a and b must be true
+  </dd>
+  <dt>
+   a || b
+  </dt>
+  <dd>
+   OR — <b>either</b> of the expressions a or b may be true
+  </dd>
+  <dt>
+   a -&gt; b
+  </dt>
+  <dd>
+   "implies" operator — equivalent to !a || b.
+   <br>
+    For example, windows -&gt; x64 could be thought of as "if a Windows agent is used, then that agent <i>must</i> be 64-bit", while still allowing this block to be executed on any agents that <i>do not</i> have the windows label, regardless of whether they have also have an x64 label
+  </dd>
+  <dt>
+   a &lt;-&gt; b
+  </dt>
+  <dd>
+   "if and only if" operator — equivalent to a &amp;&amp; b || !a &amp;&amp; !b
+   <br>
+    For example, windows &lt;-&gt; dc2 could be thought of as "if a Windows agent is used, then that agent <i>must</i> be in datacenter 2, but if a non-Windows agent is used, then it <i>must not</i> be in datacenter 2"
+  </dd>
+ </dl>
+ <h3>Notes</h3>
+ <ul>
+  <li>All operators are left-associative, i.e. a -&gt; b -&gt; c is equivalent to (a -&gt; b) -&gt; c.</li>
+  <li>Labels or agent names can be surrounded with quotation marks if they contain characters that would conflict with the operator syntax.<br>
+    For example, "osx (10.11)" || "Windows Server".</li>
+  <li>Expressions can be written without whitespace, but including it is recommended for readability; Jenkins will ignore whitespace when evaluating expressions.</li>
+  <li>Matching labels or agent names with wildcards or regular expressions is not supported.</li>
+  <li>An empty expression will always evaluate to <i>true</i>, matching all agents.</li>
+ </ul>
+ <h3>Examples</h3>
+ <dl>
+  <dt>
+   master
+  </dt>
+  <dd>
+   This block may be executed only on the Jenkins built-in node
+  </dd>
+  <dd>
+  </dd>
+  <dt>
+   linux-machine-42
+  </dt>
+  <dd>
+   This block may be executed only on the agent with the name linux-machine-42 (or on any machine that happens to have a label called linux-machine-42)
+  </dd>
+  <dt>
+   windows &amp;&amp; jdk9
+  </dt>
+  <dd>
+   This block may be executed only on any Windows agent that has version 9 of the Java Development Kit installed (assuming that agents with JDK 9 installed have been given a jdk9 label)
+  </dd>
+  <dt>
+   postgres &amp;&amp; !vm &amp;&amp; (linux || freebsd)
+  </dt>
+  <dd>
+   This block may be executed only any on Linux or FreeBSD agent, so long as they are <i>not</i> a virtual machine, and they have PostgreSQL installed (assuming that each agent has the appropriate labels — in particular, each agent running in a virtual machine must have the vm label in order for this example to work as expected)
+  </dd>
+ </dl>
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `powershell`: Windows PowerShell Script
+++++
+<ul><li><code>script : String</code>
+<div><div>
+ Executes a Windows PowerShell script (version 3 or later). Multiple lines allowed. 
+ <br>
+  Note: be aware of <a href="https://docs.microsoft.com/en-us/powershell/scripting/whats-new/differences-from-windows-powershell?view=powershell-7.2" rel="nofollow">the differences between Windows PowerShell and PowerShell Core</a>, check which one is available on your agents.
+</div></div>
+
+</li>
+<li><code>encoding : String</code> (optional)
+<div><div>
+ Encoding of process output. In the case of <code>returnStdout</code>, applies to the return value of this step; otherwise, or always for standard error, controls how text is copied to the build log. If unspecified, uses the system default encoding of the node on which the step is run. If there is any expectation that process output might include non-ASCII characters, it is best to specify the encoding explicitly. For example, if you have specific knowledge that a given process is going to be producing UTF-8 yet will be running on a node with a different system encoding (typically Windows, since every Linux distribution has defaulted to UTF-8 for a long time), you can ensure correct output by specifying: <code>encoding: 'UTF-8'</code>
+</div></div>
+
+</li>
+<li><code>label : String</code> (optional)
+<div><div>
+ Label to be displayed in the pipeline step view and blue ocean details for the step instead of the step type. So the view is more meaningful and domain specific instead of technical.
+</div></div>
+
+</li>
+<li><code>returnStatus : boolean</code> (optional)
+<div><div>
+ Normally, a script which exits with a nonzero status code will cause the step to fail with an exception. If this option is checked, the return value of the step will instead be the status code. You may then compare it to zero, for example.
+</div></div>
+
+</li>
+<li><code>returnStdout : boolean</code> (optional)
+<div><div>
+ If checked, standard output from the task is returned as the step value as a <code>String</code>, rather than being printed to the build log. (Standard error, if any, will still be printed to the log.) You will often want to call <code>.trim()</code> on the result to strip off a trailing newline.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `pwsh`: PowerShell Core Script
+++++
+<ul><li><code>script : String</code>
+<div><div>
+ Executes a PowerShell script. Multiple lines allowed. This plugin supports PowerShell Core 6+. 
+ <br>
+  Note: be aware of <a href="https://docs.microsoft.com/en-us/powershell/scripting/whats-new/differences-from-windows-powershell?view=powershell-7.2" rel="nofollow">the differences between Windows PowerShell and PowerShell Core</a>, check which one is available on your agents.
+</div></div>
+
+</li>
+<li><code>encoding : String</code> (optional)
+<div><div>
+ Encoding of process output. In the case of <code>returnStdout</code>, applies to the return value of this step; otherwise, or always for standard error, controls how text is copied to the build log. If unspecified, uses the system default encoding of the node on which the step is run. If there is any expectation that process output might include non-ASCII characters, it is best to specify the encoding explicitly. For example, if you have specific knowledge that a given process is going to be producing UTF-8 yet will be running on a node with a different system encoding (typically Windows, since every Linux distribution has defaulted to UTF-8 for a long time), you can ensure correct output by specifying: <code>encoding: 'UTF-8'</code>
+</div></div>
+
+</li>
+<li><code>label : String</code> (optional)
+<div><div>
+ Label to be displayed in the pipeline step view and blue ocean details for the step instead of the step type. So the view is more meaningful and domain specific instead of technical.
+</div></div>
+
+</li>
+<li><code>returnStatus : boolean</code> (optional)
+<div><div>
+ Normally, a script which exits with a nonzero status code will cause the step to fail with an exception. If this option is checked, the return value of the step will instead be the status code. You may then compare it to zero, for example.
+</div></div>
+
+</li>
+<li><code>returnStdout : boolean</code> (optional)
+<div><div>
+ If checked, standard output from the task is returned as the step value as a <code>String</code>, rather than being printed to the build log. (Standard error, if any, will still be printed to the log.) You will often want to call <code>.trim()</code> on the result to strip off a trailing newline.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `sh`: Shell Script
+++++
+<ul><li><code>script : String</code>
+<div><div>
+ <p>Runs a Bourne shell script, typically on a Unix node. Multiple lines are accepted.</p>
+ <p>An interpreter selector may be used, for example: <code>#!/usr/bin/perl</code></p>
+ <p>Otherwise the system default shell will be run, using the <code>-xe</code> flags (you can specify <code>set +e</code> and/or <code>set +x</code> to disable those).</p>
+</div></div>
+
+</li>
+<li><code>encoding : String</code> (optional)
+<div><div>
+ Encoding of process output. In the case of <code>returnStdout</code>, applies to the return value of this step; otherwise, or always for standard error, controls how text is copied to the build log. If unspecified, uses the system default encoding of the node on which the step is run. If there is any expectation that process output might include non-ASCII characters, it is best to specify the encoding explicitly. For example, if you have specific knowledge that a given process is going to be producing UTF-8 yet will be running on a node with a different system encoding (typically Windows, since every Linux distribution has defaulted to UTF-8 for a long time), you can ensure correct output by specifying: <code>encoding: 'UTF-8'</code>
+</div></div>
+
+</li>
+<li><code>label : String</code> (optional)
+<div><div>
+ Label to be displayed in the pipeline step view and blue ocean details for the step instead of the step type. So the view is more meaningful and domain specific instead of technical.
+</div></div>
+
+</li>
+<li><code>returnStatus : boolean</code> (optional)
+<div><div>
+ Normally, a script which exits with a nonzero status code will cause the step to fail with an exception. If this option is checked, the return value of the step will instead be the status code. You may then compare it to zero, for example.
+</div></div>
+
+</li>
+<li><code>returnStdout : boolean</code> (optional)
+<div><div>
+ If checked, standard output from the task is returned as the step value as a <code>String</code>, rather than being printed to the build log. (Standard error, if any, will still be printed to the log.) You will often want to call <code>.trim()</code> on the result to strip off a trailing newline.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `ws`: Allocate workspace
+++++
+<div><div>
+ Allocates a workspace. Note that a workspace is automatically allocated for you with the <code>node</code> step.
+</div></div>
+<ul><li><code>dir : String</code>
+<div><p>A workspace is automatically allocated for you with the <code>node</code> step, or you can get an alternate workspace with this <code>ws</code> step, but by default the location is chosen automatically. (Something like <code>AGENT_ROOT/workspace/JOB_NAME@2</code>.)</p>
+<p>You can instead specify a path here and that workspace will be locked instead. (The path may be relative to the build agent root, or absolute.)</p>
+<p>If concurrent builds ask for the same workspace, a directory with a suffix such as <code>@2</code> may be locked instead. Currently there is no option to wait to lock the exact directory requested; if you need to enforce that behavior, you can either fail (<code>error</code>) when <code>pwd</code> indicates that you got a different directory, or you may enforce serial execution of this part of the build by some other means such as the <code>lock</code> step.</p>
+<p>If you do not care about locking, just use the <code>dir</code> step to change current directory.</p></div>
+
+</li>
+</ul>
+
+
+++++

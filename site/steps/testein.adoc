@@ -1,0 +1,63 @@
+= Testein
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/testein">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'TesteinRunBuilder'])`: Run Testein test/suite/application
+++++
+<ul><li><code>targetType : String</code>
+</li>
+<li><code>targetId : String</code>
+<div><div>
+ Id of the target, that you want to run. Could be found on the target's detail page
+</div></div>
+
+</li>
+<li><code>downloadReport : boolean</code>
+<div><div>
+ If checked, execution report will be downloaded in format Testein-Report-{runId}.html
+</div></div>
+
+</li>
+<li><code>downloadLogs : boolean</code>
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'TesteinUploadStepBuilder'])`: Upload Testein custom test steps
+++++
+<ul><li><code>enableJs</code>
+<ul><b>Nested Object</b>
+<li><code>jsFilePath : String</code>
+</li>
+<li><code>jsonFilePath : String</code>
+</li>
+</ul></li>
+<li><code>enableJar</code>
+<ul><b>Nested Object</b>
+<li><code>jarFilePath : String</code>
+</li>
+</ul></li>
+<li><code>overwrite : boolean</code>
+<div><div>
+ If checked, upload will overwrite existing test step. If not checked and test step already exists - an error will be generated
+</div></div>
+
+</li>
+</ul>
+
+
+++++

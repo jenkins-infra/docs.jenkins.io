@@ -1,0 +1,38 @@
+= Describe With Params Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/describe-with-params">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'DescribeWithParamsBuilder'])`: Describe with params
+++++
+<ul><li><code>starter : boolean</code>
+<div>Do you want to show the name of the starter?</div>
+
+</li>
+<li><code>separator : String</code>
+<div>Line end separator for your "Markup Formatter" setting.
+<br>
+<br>
+ For example, "" for "Plain text", and "&lt;br&gt;" for "Safe HTML".</div>
+
+</li>
+<li><code>excludes : String</code>
+<div>The parameters that you want to hide, separated by ";".</div>
+
+</li>
+</ul>
+
+
+++++

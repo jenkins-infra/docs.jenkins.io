@@ -1,0 +1,32 @@
+= Jira Integration
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/jira-integration">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `step([$class: 'DeploymentBuildMarker'])`: Deployment Build Marker
+++++
+<div><div>
+ Mark a build as a deployment to the environment specified by the configuration.
+</div></div>
+<ul><li><code>environmentId : String</code>
+</li>
+<li><code>environmentName : String</code>
+</li>
+<li><code>environmentType : String</code>
+</li>
+</ul>
+
+
+++++

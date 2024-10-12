@@ -1,0 +1,93 @@
+= Google Chat Notification
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/google-chat-notification">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `googlechatnotification`: Google Chat Notification
+++++
+<ul><li><code>url : String</code>
+<div><div>
+ Single/multiple comma separated HTTPS URLs or/and single/multiple comma separated Credential IDs to send build notifications to Google Chat rooms.
+ <br>
+  To use Credential ID as URL identifier configure entire URL as secret in credential. Use id:credential_id as value in URL.
+ <br>
+  Different Ways to define:
+ <br>
+  1) https://chat.googleapis.com/v1/spaces/room_id/messages?key=key_id&amp;token=token_id
+ <br>
+  2) https://chat.googleapis.com/v1/spaces/room_id/messages?key=key_id&amp;token=token_id, https://chat.googleapis.com/v1/spaces/room_id2/messages?key=key_id2&amp;token=token_id2
+ <br>
+  3) id:credential_id_for_room1
+ <br>
+  4) id:credential_id_for_room1, id:credential_id_for_room2
+ <br>
+  5) https://chat.googleapis.com/v1/spaces/room_id/messages?key=key_id&amp;token=token_id, id:credential_id_for_room2
+ <br>
+</div></div>
+
+</li>
+<li><code>message : String</code>
+<div><div>
+ <p>Message which is part of chat notification. You can use token macro pre defined variables with custom message.</p>
+ <p>NOTE: If format <em>Card</em> is selected, you must provide a JSON string with valid configuration. More info here: <a href="https://developers.google.com/chat/reference/message-formats/cards" rel="nofollow">Card Formatting Messages</a>.</p>
+</div></div>
+
+</li>
+<li><code>messageFormat : <code>Object</code></code> (optional)
+<div><div>
+ <p>Format of the message sent to Google Chat.</p>
+ <p>See: <a href="https://developers.google.com/chat/reference/message-formats" rel="nofollow">Google Chat message formats</a>.</p>
+</div></div>
+
+</li>
+<li><code>notifyAborted : boolean</code> (optional)
+</li>
+<li><code>notifyBackToNormal : boolean</code> (optional)
+</li>
+<li><code>notifyFailure : boolean</code> (optional)
+</li>
+<li><code>notifyNotBuilt : boolean</code> (optional)
+</li>
+<li><code>notifyRegression : boolean</code> (optional)
+</li>
+<li><code>notifyRepeatedFailure : boolean</code> (optional)
+</li>
+<li><code>notifySingleFailure : boolean</code> (optional)
+</li>
+<li><code>notifySuccess : boolean</code> (optional)
+</li>
+<li><code>notifyUnstable : boolean</code> (optional)
+</li>
+<li><code>sameThreadNotification : boolean</code> (optional)
+<div><div>
+ <p>Defines that all the notifications will be delivered at the same thread for a particular job. If not checked, the default behavior is to create a new thread for each message.</p>
+ <p>NOTE: If <em>Message Format</em> is set to <em>card</em> and the provided JSON contains a <em>thread</em> key, this parameter will be ignored.</p>
+</div></div>
+
+</li>
+<li><code>suppressInfoLoggers : boolean</code> (optional)
+</li>
+<li><code>threadKey : String</code> (optional)
+<div><div>
+ <p>Thread used to send all the generated notification messages. If it's left blank, the default behavior is to use the <em>JOB_NAME</em> as thread key.</p>
+ <p>Supports all token macro variables for pipeline as well as build jobs.</p>
+ <p>NOTE: This parameter only applies if the <em>Append Notification In Same Thread</em> option is checked. If <em>Message Format</em> is set to <em>card</em> and the provided JSON contains a <em>thread</em> key, this parameter will be ignored.</p>
+</div></div>
+
+</li>
+</ul>
+
+
+++++

@@ -1,0 +1,63 @@
+= Oracle Cloud Infrastructure DevOps Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/oracle-cloud-infrastructure-devops">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `OCIUploadArtifact`: OCI Artifact Upload
+++++
+<ul><li><code>credentialsId : String</code>
+</li>
+<li><code>uploadArtifactDetailsList</code>
+<ul><b>Array / List of Nested Object</b>
+<li><code>sourcePath : String</code>
+</li>
+<li><code>repositoryType</code>
+<ul><li><b>Values:</b> <code>GENERIC</code></li></ul></li>
+<li><code>repositoryId : String</code>
+</li>
+<li><code>version : String</code>
+</li>
+<li><code>artifactPath : String</code>
+</li>
+</ul></li>
+</ul>
+
+
+++++
+=== `OCIDeployment`: OCI Deployment
+++++
+<ul><li><code>pollingConfig</code>
+<ul><b>Nested Object</b>
+<li><code>timeoutSeconds : long</code>
+</li>
+<li><code>pollingIntervalSeconds : long</code>
+</li>
+</ul></li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>pipelineId : String</code> (optional)
+</li>
+<li><code>displayName : String</code> (optional)
+</li>
+<li><code>endpoint : String</code> (optional)
+</li>
+<li><code>argumentVal : String</code> (optional)
+</li>
+<li><code>executionMode</code> (optional)
+<ul><li><b>Values:</b> <code>SYNC</code>, <code>ASYNC</code></li></ul></li>
+</ul>
+
+
+++++

@@ -1,0 +1,6 @@
+---
+:page-eventTitle: Chennai, India JAM
+:page-eventStartDate: 2017-06-24T10:00:00
+:page-eventLink: https://www.meetup.com/Chennai-Jenkins-Area-Meetup/events/240486613/
+---
+DevOps and Jenkins - From Where it All Began

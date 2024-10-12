@@ -1,0 +1,84 @@
+= Bitbar Run-in-Cloud Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/testdroid-run-in-cloud">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `runInCloud`: Start a run in Bitbar Cloud
+++++
+<ul><li><code>projectId : String</code>
+</li>
+<li><code>deviceGroupId : String</code>
+</li>
+<li><code>appPath : String</code> (optional)
+</li>
+<li><code>biometricInstrumentation : boolean</code> (optional)
+</li>
+<li><code>cloudUrl : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>dataPath : String</code> (optional)
+</li>
+<li><code>failBuildIfThisStepFailed : boolean</code> (optional)
+</li>
+<li><code>frameworkId : long</code> (optional)
+</li>
+<li><code>keyValuePairs : String</code> (optional)
+</li>
+<li><code>language : String</code> (optional)
+</li>
+<li><code>osType</code> (optional)
+<ul><li><b>Values:</b> <code>IOS</code>, <code>ANDROID</code>, <code>DESKTOP</code>, <code>UNDEFINED</code></li></ul></li>
+<li><code>scheduler : String</code> (optional)
+</li>
+<li><code>screenshotsDirectory : String</code> (optional)
+</li>
+<li><code>testCasesSelect : String</code> (optional)
+</li>
+<li><code>testCasesValue : String</code> (optional)
+</li>
+<li><code>testPath : String</code> (optional)
+</li>
+<li><code>testRunName : String</code> (optional)
+</li>
+<li><code>testRunner : String</code> (optional)
+</li>
+<li><code>testTimeout : String</code> (optional)
+</li>
+<li><code>virusScanTimeout : String</code> (optional)
+</li>
+<li><code>waitForResultsBlock</code> (optional)
+<ul><b>Nested Object</b>
+<li><code>testRunStateCheckMethod</code> (optional)
+<ul><li><b>Values:</b> <code>HOOK_URL</code>, <code>API_CALL</code></li></ul></li>
+<li><code>downloadScreenshots : boolean</code> (optional)
+</li>
+<li><code>forceFinishAfterBreak : boolean</code> (optional)
+</li>
+<li><code>hookURL : String</code> (optional)
+</li>
+<li><code>resultsPath : String</code> (optional)
+</li>
+<li><code>waitForResultsTimeout : int</code> (optional)
+</li>
+</ul></li>
+<li><code>withAnnotation : String</code> (optional)
+</li>
+<li><code>withoutAnnotation : String</code> (optional)
+</li>
+</ul>
+
+
+++++

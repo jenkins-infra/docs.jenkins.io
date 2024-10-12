@@ -1,0 +1,66 @@
+= Applatix
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/applatix">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `applatix`: Applatix System Integration
+++++
+<ul><li><code>axUrl : String</code>
+<div><div>
+ The URL of Applatix system. For example: https://applatix.yourcompany.com
+</div></div>
+
+</li>
+<li><code>axUsername : String</code>
+<div><div>
+ Applatix credential: username
+</div></div>
+
+</li>
+<li><code>axPassword : String</code>
+<div><div>
+ Applatix credential: password
+</div></div>
+
+</li>
+<li><code>axServiceTemplateName : String</code>
+</li>
+<li><code>axServiceTemplateRepository : String</code>
+<div><div>
+ The repository where your Service Template is.
+</div></div>
+
+</li>
+<li><code>axServiceTemplateBranch : String</code>
+<div><div>
+ The branch where your Service Template is.
+</div></div>
+
+</li>
+<li><code>axServiceTemplateParameters</code>
+<div><div>
+ The parameters of your Service Template at Applatix system. It is optional. It is in JSON format, for example: {"service": "service_name", "iterations": 3 }
+</div></div>
+
+<ul><b>Array / List of Nested Object</b>
+<li><code>key : String</code>
+</li>
+<li><code>value : String</code>
+</li>
+</ul></li>
+</ul>
+
+
+++++

@@ -1,0 +1,37 @@
+= Pragprog Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/pragprog">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `pragprog`: Activate tips from The Pragmatic Programmer
+++++
+<ul><li><code>displayLanguageCode : String</code>
+</li>
+<li><code>indicateBuildResult : boolean</code>
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'PragprogBuildStep'])`: Activate tips from The Pragmatic Programmer
+++++
+<ul><li><code>displayLanguageCode : String</code>
+</li>
+<li><code>indicateBuildResult : boolean</code>
+</li>
+</ul>
+
+
+++++

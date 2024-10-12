@@ -1,0 +1,57 @@
+= Codebeamer xUnit Importer Plugin
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/codebeamer-xunit-importer">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `xUnitImporter`: Codebeamer xUnit Importer
+++++
+<ul><li><code>uri : String</code>
+</li>
+<li><code>credentialsId : String</code>
+</li>
+<li><code>testSetTrackerId : int</code>
+</li>
+<li><code>testCaseTrackerId : int</code>
+</li>
+<li><code>testRunTrackerId : int</code>
+</li>
+<li><code>testConfigurationId : int</code>
+</li>
+<li><code>bugTrackerId : int</code> (optional)
+</li>
+<li><code>build : String</code> (optional)
+</li>
+<li><code>excludedPackages : String</code> (optional)
+</li>
+<li><code>includedPackages : String</code> (optional)
+</li>
+<li><code>numberOfBugsToReport : int</code> (optional)
+</li>
+<li><code>releaseId : int</code> (optional)
+</li>
+<li><code>requirementDepth : int</code> (optional)
+</li>
+<li><code>requirementParentId : int</code> (optional)
+</li>
+<li><code>requirementTrackerId : int</code> (optional)
+</li>
+<li><code>testCaseParentId : int</code> (optional)
+</li>
+<li><code>truncatePackageTree : String</code> (optional)
+</li>
+</ul>
+
+
+++++

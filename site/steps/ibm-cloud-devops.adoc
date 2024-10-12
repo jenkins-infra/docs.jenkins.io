@@ -1,0 +1,443 @@
+= IBM Cloud DevOps
+:page-layout: pipelinesteps
+
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:compat-mode!:
+
+
+++++
+<a href="https://plugins.jenkins.io/ibm-cloud-devops">Visit the Jenkins Plugins site</a>
+++++
+
+
+=== `evaluateGate`: IBM Cloud DevOps Gate
+++++
+<ul><li><code>policy : String</code>
+</li>
+<li><code>applicationName : String</code> (optional)
+</li>
+<li><code>buildNumber : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>environment : String</code> (optional)
+</li>
+<li><code>forceDecision : String</code> (optional)
+</li>
+<li><code>orgName : String</code> (optional)
+</li>
+<li><code>toolchainId : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `notifyOTC`: Send notification to OTC
+++++
+<ul><li><code>stageName : String</code>
+</li>
+<li><code>status : String</code>
+</li>
+<li><code>webhookUrl : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `publishBuildRecord`: Publish build record to IBM Cloud DevOps
+++++
+<ul><li><code>result : String</code>
+</li>
+<li><code>gitRepo : String</code>
+</li>
+<li><code>gitBranch : String</code>
+</li>
+<li><code>gitCommit : String</code>
+</li>
+<li><code>applicationName : String</code> (optional)
+</li>
+<li><code>buildNumber : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>orgName : String</code> (optional)
+</li>
+<li><code>toolchainId : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `publishDeployRecord`: Publish deploy record to IBM Cloud DevOps
+++++
+<ul><li><code>result : String</code>
+</li>
+<li><code>environment : String</code>
+</li>
+<li><code>appUrl : String</code> (optional)
+</li>
+<li><code>applicationName : String</code> (optional)
+</li>
+<li><code>buildNumber : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>orgName : String</code> (optional)
+</li>
+<li><code>toolchainId : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `publishSQResults`: Publish SonarQube test results to IBM Cloud DevOps
+++++
+<ul><li><code>SQHostURL : String</code> (optional)
+</li>
+<li><code>SQAuthToken : String</code> (optional)
+</li>
+<li><code>SQProjectKey : String</code> (optional)
+</li>
+<li><code>applicationName : String</code> (optional)
+</li>
+<li><code>buildNumber : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>environment : String</code> (optional)
+</li>
+<li><code>orgName : String</code> (optional)
+</li>
+<li><code>toolchainId : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `publishTestResult`: Publish test result to IBM Cloud DevOps
+++++
+<ul><li><code>type : String</code>
+</li>
+<li><code>fileLocation : String</code>
+</li>
+<li><code>applicationName : String</code> (optional)
+</li>
+<li><code>buildNumber : String</code> (optional)
+</li>
+<li><code>credentialsId : String</code> (optional)
+</li>
+<li><code>environment : String</code> (optional)
+</li>
+<li><code>orgName : String</code> (optional)
+</li>
+<li><code>toolchainId : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `sendDeployableMessage`: Send deployable mapping message to OTC
+++++
+<ul><li><code>status : String</code>
+</li>
+<li><code>webhookUrl : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'EvaluateGate'])`: IBM Cloud DevOps Gate
+++++
+<ul><li><code>policyName : String</code>
+<div><div>
+ Select the policy that you want this gate to enforce. You can create more policies in DevOps Insights.
+</div></div>
+
+</li>
+<li><code>toolchainName : String</code>
+<div><div>
+ Select a toolchain. If you have not created a toolchain yet, create one <a href="https://cloud.ibm.com/devops/create" rel="nofollow">here</a>.
+</div></div>
+
+</li>
+<li><code>buildJobName : String</code>
+<div><div>
+ Enter the name of the build job that triggers this test job. You can use an environment variable, such as $BUILD_JOB.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+<div><div>
+ Select an API Key from the menu. If no API Key are in the menu, click Add to add one. Click Test Connection to verify the selected credentials. The use of Username/Password will be deprecated soon
+</div></div>
+
+</li>
+<li><code>willDisrupt : boolean</code>
+<div><div>
+ Select this check box to cancel associated Jenkins builds when this gate fails.
+</div></div>
+
+</li>
+<li><code>scope</code>
+<ul><b>Nested Object</b>
+<li><code>value : String</code>
+</li>
+<li><code>branchName : String</code>
+</li>
+<li><code>envName : String</code>
+</li>
+</ul></li>
+<li><code>additionalBuildInfo</code>
+<div><div>
+ Select this check box if the deployed app is not built in Jenkins.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>buildNumber : String</code>
+</li>
+<li><code>buildUrl : String</code>
+</li>
+</ul></li>
+<li><code>applicationName : String</code> (optional)
+<div><div>
+ Type a name for the application that information is being uploaded for. Use this application name when you configure <b>DevOps Insights gates</b>. You can use an environment variable, such as $APP_NAME.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'PublishBuild'])`: Publish build information to IBM Cloud DevOps
+++++
+<ul><li><code>additionalBuildInfo</code>
+<div><div>
+ Select this check box if you want to set your own build number.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>buildNumber : String</code>
+</li>
+<li><code>buildUrl : String</code>
+</li>
+</ul></li>
+<li><code>applicationName : String</code> (optional)
+<div><div>
+ Type a name for the application that information is being uploaded for. Use this application name when you configure <b>DevOps Insights gates</b>. You can use an environment variable, such as $APP_NAME.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code> (optional)
+<div><div>
+ Select an API Key from the menu. If no API Key are in the menu, click Add to add one. Click Test Connection to verify the selected credentials. The use of Username/Password will be deprecated soon
+</div></div>
+
+</li>
+<li><code>toolchainName : String</code> (optional)
+<div><div>
+ Type the ID of your toolchain. If you have not created a toolchain yet, create one <a href="https://cloud.ibm.com/devops/create" rel="nofollow">here</a>.
+</div></div>
+
+</li>
+<li><code>orgName : String</code> (optional)
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'PublishDeploy'])`: Publish deployment information to IBM Cloud DevOps
+++++
+<ul><li><code>toolchainName : String</code>
+<div><div>
+ Type the ID of your toolchain. If you have not created a toolchain yet, create one <a href="https://cloud.ibm.com/devops/create" rel="nofollow">here</a>.
+</div></div>
+
+</li>
+<li><code>buildJobName : String</code>
+<div><div>
+ Enter the name of the build job that triggers this test job. You can use an environment variable, such as $BUILD_JOB.
+</div></div>
+
+</li>
+<li><code>environmentName : String</code>
+<div><div>
+ Type the name of the environment that this job deploys to. If this environment is your staging environment, type "STAGING." If this environment is your production requirement, type "PRODUCTION." If you do not specify staging and production environments, DevOps Insights cannot completely analyze your project.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+<div><div>
+ Select an API Key from the menu. If no API Key are in the menu, click Add to add one. Click Test Connection to verify the selected credentials. The use of Username/Password will be deprecated soon
+</div></div>
+
+</li>
+<li><code>applicationUrl : String</code>
+<div><div>
+ Optional: If this is a web application, enter its URL. You can use an environment variable, such as $APP_URL.
+</div></div>
+
+</li>
+<li><code>additionalBuildInfo</code>
+<div><div>
+ Select this check box if you want to set your own build number
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>buildNumber : String</code>
+</li>
+</ul></li>
+<li><code>applicationName : String</code> (optional)
+<div><div>
+ Type a name for the application that information is being uploaded for. Use this application name when you configure <b>DevOps Insights gates</b>. You can use an environment variable, such as $APP_NAME.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'PublishSQ'])`: Publish SonarQube test result to IBM Cloud DevOps
+++++
+<ul><li><code>credentialsId : String</code>
+<div><div>
+ Select an API Key from the menu. If no API Key are in the menu, click Add to add one. Click Test Connection to verify the selected credentials. The use of Username/Password will be deprecated soon
+</div></div>
+
+</li>
+<li><code>toolchainName : String</code>
+<div><div>
+ Select a toolchain. If you have not created a toolchain yet, create one <a href="https://cloud.ibm.com/devops/create" rel="nofollow">here</a>.
+</div></div>
+
+</li>
+<li><code>buildJobName : String</code>
+<div><div>
+ Enter the name of the build job that triggers this test job. You can use an environment variable, such as $BUILD_JOB.
+</div></div>
+
+</li>
+<li><code>SQHostName : String</code>
+<div><div>
+ Type the hostname of the server that your SonarQube instance runs on. Do not enter a trailing slash.
+</div></div>
+
+</li>
+<li><code>SQAuthToken : String</code>
+<div><div>
+ Enter your API token that SonarQube generated for you.
+</div></div>
+
+</li>
+<li><code>SQProjectKey : String</code>
+<div><div>
+ Type the key of the SonarQube project that you wish to scan.
+</div></div>
+
+</li>
+<li><code>additionalBuildInfo</code>
+<div><div>
+ Select this check box if you want to set your own build number
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>buildNumber : String</code>
+</li>
+</ul></li>
+<li><code>applicationName : String</code> (optional)
+<div><div>
+ Type a name for the application that information is being uploaded for. Use this application name when you configure <b>DevOps Insights gates</b>. You can use an environment variable, such as $APP_NAME.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
+=== `step([$class: 'PublishTest'])`: Publish test result to IBM Cloud DevOps
+++++
+<ul><li><code>lifecycleStage : String</code>
+<div><div>
+ Select the type of test. Your tests must correspond to rules in policies. 
+ <ul>
+  Supported formats: 
+  <li>Code coverage: Istanbul, BlanketJS</li>
+  <li>Unit and functional verification tests: Mocha, xUnit, and Karma Mocha</li>
+ </ul>
+</div></div>
+
+</li>
+<li><code>contents : String</code>
+<div><div>
+ Enter the test result file location relative to the root directory. The result file must contain results in the format that you selected for the metric type. This field supports wildcards and environment variables. If you leave this field empty, DevOps Insights generates a simple test report that is based on job status. Mocha, KarmaMocha, Istanbul, and BlanketJS test results must be in the JSON format. xUnit test results must be in the XML format.
+</div></div>
+
+</li>
+<li><code>toolchainName : String</code>
+<div><div>
+ Select a toolchain. If you have not created a toolchain yet, create one <a href="https://cloud.ibm.com/devops/create" rel="nofollow">here</a>.
+</div></div>
+
+</li>
+<li><code>buildJobName : String</code>
+<div><div>
+ Enter the name of the build job that triggers this test job. You can use an environment variable, such as $BUILD_JOB.
+</div></div>
+
+</li>
+<li><code>credentialsId : String</code>
+<div><div>
+ Select an API Key from the menu. If no API Key are in the menu, click Add to add one. Click Test Connection to verify the selected credentials. The use of Username/Password will be deprecated soon
+</div></div>
+
+</li>
+<li><code>additionalUpload</code>
+<div><div>
+ Optional: You can upload another test result file and select another metric type in this job.
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>additionalLifecycleStage : String</code>
+</li>
+<li><code>additionalContents : String</code>
+</li>
+</ul></li>
+<li><code>additionalBuildInfo</code>
+<div><div>
+ Select this check box if you want to set your own build number
+</div></div>
+
+<ul><b>Nested Object</b>
+<li><code>buildNumber : String</code>
+</li>
+</ul></li>
+<li><code>additionalGate</code>
+<ul><b>Nested Object</b>
+<li><code>policyName : String</code>
+</li>
+<li><code>willDisrupt : boolean</code> (optional)
+</li>
+</ul></li>
+<li><code>testEnv</code>
+<ul><b>Nested Object</b>
+<li><code>value : String</code>
+</li>
+<li><code>branchName : String</code>
+</li>
+<li><code>envName : String</code>
+</li>
+</ul></li>
+<li><code>applicationName : String</code> (optional)
+<div><div>
+ Type a name for the application that information is being uploaded for. Use this application name when you configure <b>DevOps Insights gates</b>. You can use an environment variable, such as $APP_NAME.
+</div></div>
+
+</li>
+</ul>
+
+
+++++
