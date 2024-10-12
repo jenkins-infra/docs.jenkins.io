@@ -1,20 +1,32 @@
 import React from "react";
 
 const Supporters = () => (
-    <div className="supporters">
+    <div
+    className="supporters"
+    style={{
+        padding: '3rem',
+    }}
+    >
         <center>
-            <strong>
+            <p
+                style={{
+                    fontWeight: 500,
+                    marginBottom: '1rem'
+                }}
+            >
                 We thank the following organizations for their support of the Jenkins project
                 through free and/or open source licensing programs.
-            </strong>
+            </p>
         </center>
         <ul
             style={{
-                fontWeight: "bold",
-                display: "flex",
-                justifyContent: "space-evenly",
-                listStyle: "none",
-                padding: "0rem 10rem",
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+                listStyleType: 'none',
+                textAlign: 'center',
+                margin: 0,
+                gap: '1.5rem',
             }}
         >
             <li>
@@ -49,6 +61,24 @@ const Supporters = () => (
             </li>
             <li>
                 <a href="https://xmission.com/">XMission</a>
+            </li>
+            <li>
+                <a href="https://belnet.be/">Belnet</a>
+            </li>
+            <li>
+                <a href="https://www.rwth-aachen.de/">RWTH Aachen University</a>
+            </li>
+            <li>
+                <a href="https://hostico.ro/">Hostico</a>
+            </li>
+            <li>
+                <a href="http://freedif.org/">FreeDif</a>
+            </li>
+            <li>
+                <a href="https://servanamanaged.com/">Servana</a>
+            </li>
+            <li>
+                <a href="https://www.yamagata-u.ac.jp/en/">Yamagata University</a>
             </li>
         </ul>
     </div>
