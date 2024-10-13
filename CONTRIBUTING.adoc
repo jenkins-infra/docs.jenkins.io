@@ -14,11 +14,6 @@ To contribute to this repository, follow these steps:
 Forking only needs to be done once. After that, you can keep your fork up to date with the upstream repository thanks to *Sync fork*.
 You can make further changes to your forked repository using the GitHub website file editor or by working on a local clone, as described below.
 
-You can also open this project as a https://www.gitpod.io/[Gitpod workspace], which comes pre-configured with all the tools you will need.
-
-[link="https://gitpod.io/#https://github.com/jenkins-infra/docs.jenkins.io"]
-image::https://gitpod.io/button/open-in-gitpod.svg[Open in Gitpod]
-
 [[newcomers]]
 === Information for newcomers
 
