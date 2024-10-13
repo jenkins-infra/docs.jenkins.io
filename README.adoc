@@ -73,6 +73,6 @@ Once the site is up and running, it should be available locally at:
 * **Antora Documentation**: This version-controlled documentation covers different guides (e.g., Developer Guide, User Guide).
 * **Gatsby Documentation**: Non-versioned content managed via Gatsby. This forms the basis of the current link:https://jenkins.io/[https://jenkins.io/] site, which will be replaced in the future. For more details on how to work with the Gatsby site, refer to its dedicated README documentation at:
 ** link:https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme/[https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme/][https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme/]
-If you have any contributions or updates for the documentation, feel free to submit a pull request.
-== Contributing
+
+== Contributing 
 If you have any queries or contributions or updates for the documentation, feel free to create an issue and/or submit a pull request.
