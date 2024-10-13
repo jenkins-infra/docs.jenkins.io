@@ -1,12 +1,6 @@
-:toc:
-:toc-placement: preamble
-:toclevels: 3
-
 = Contributing to docs.jenkins.io
 
 image:https://badges.gitter.im/jenkinsci/docs.svg[link="https://app.gitter.im/#/room/#jenkins/docs:matrix.org"]
-
-toc::[]
 
 == Getting Started
 
@@ -203,7 +197,7 @@ To work on the Gatsby part of the site, navigate to the `site/` directory and fo
 
 Most content on this site is written up in the AsciiDoc markup language.
 
-[#why-asciidoc]
+[[why-asciidoc]]
 ==== Why AsciiDoc?
 
 Generally speaking, all documentation should be written in link:https://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc].
