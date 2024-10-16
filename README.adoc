@@ -19,7 +19,7 @@ The documentation site for Jenkins is split into two parts:
 
 This guide focuses on building the version-controlled documentation using Antora.
 
-=== Prerequisites
+=== Installing the Prerequisites
 
 [start=1]  
 . **Install Node.js and npm**
@@ -30,9 +30,9 @@ It is recommended to install Node.js and npm using the Node Version Manager (nvm
 Alternatively, you can download and install Node.js from the official Node.js website:
 * Node.js official website: [https://nodejs.org](https://nodejs.org)
 +
-After installation, verify that both `node` and `npm` are correctly installed:
+After the installation, verify that both `node` and `npm` are correctly installed:
 +
-[source,bash]  
+[source,bash]
 ----
 node --version
 npm --version
@@ -53,10 +53,10 @@ Once Node.js, npm, and Antora are installed, install the dependencies by running
 
 [source,bash]  
 ----
-npm install
+npm i
 ----
 
-=== Building the Docs
+=== Building the Versioned Docs
 
 To build and serve the site locally, use the provided Makefile. Run this command at the root of the repository:
 
@@ -68,6 +68,7 @@ make all
 Once the site is up and running, it should be available locally at:
 
 * link:http://127.0.0.1:8080/[http://127.0.0.1:8080]
+
 == Documentation Structure
 
 * **Antora Documentation**: This version-controlled documentation covers different guides (e.g., Developer Guide, User Guide).
