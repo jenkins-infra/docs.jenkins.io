@@ -235,7 +235,6 @@ To add or modify content, follow these guidelines based on the specific section 
 
 The Jenkins website hosts various content: user and developer documentation, blog, governance materials, pages for special interest groups and sub-projects, etc.
 This information is maintained by multiple teams.
-Ownership domains are also defined in the link:./.github/CODEOWNERS[CODEOWNERS] file.
 Note that this file might be out of date or missing some entries, so common sense there applies.
 
 Notable special areas:
@@ -298,7 +297,6 @@ PRs to common areas can be merged by any _Copy Editor_ once all of the following
 === Merging changes in special areas
 
 Special areas are managed by their owners.
-_Copy Editors_ should not merge substantial changes in these areas unless they get explicit sign-off from owners identified in the link:./.github/CODEOWNERS[CODEOWNERS].
 Minor changes like typo fixes might be integrated by _Copy Editors_.
 
 == Communication
