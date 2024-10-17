@@ -45,12 +45,12 @@ This group has various communication channels which can be used to discuss contr
 The `docs.jenkins.io` repository contains two distinct parts:
 
 1. **Antora** (Versioned)
-   - link: link:/docs[/docs]
+   - link: link:./docs[docs]
    - This part of the site is built using Antora, a static site generator designed for documentation. It is version-controlled, meaning that different versions of Jenkins documentation are maintained.
    - You can find more information in the link:https://github.com/jenkins-infra/docs.jenkins.io/tree/main/docs#readme[Antora README.md].
 
 2. **Gatsby** (Non-Versioned)
-   - link: link:/site[/site]
+   - link: link:./site[site]
    - The non-versioned part of the site is built using Gatsby, a React-based framework.
    - For more details, you can refer to the link:https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme[Gatsby README.md].
 
