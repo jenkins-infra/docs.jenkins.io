@@ -1,3 +1,10 @@
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --color-white: #000;
+    --body-background: var(--color-white);
+  }
+}
+
 :root {
   /* colors */
   --color-white: #fff;
