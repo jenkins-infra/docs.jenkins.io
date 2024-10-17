@@ -80,19 +80,15 @@ body {
 }
 
 .navbar-burger {
-  background: none;
+  background: url(../img/3-line-menu.svg) no-repeat 50% 47.5%;
+  background-size: 49%;
   border: none;
   outline: none;
-  line-height: 1;
-  position: relative;
-  width: 3rem;
+  line-height: inherit;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  min-width: 0;
+  height: var(--toolbar-height);
+  width: var(--toolbar-height);
+  margin-right: -0.25rem;
 }
 
 .navbar-burger span {
