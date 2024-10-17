@@ -47,12 +47,12 @@ The `docs.jenkins.io` repository contains two distinct parts:
 1. **Antora** (Versioned)
    - link: link:./docs[docs]
    - This part of the site is built using Antora, a static site generator designed for documentation. It is version-controlled, meaning that different versions of Jenkins documentation are maintained.
-   - You can find more information in the link:https://github.com/jenkins-infra/docs.jenkins.io/tree/main/docs#readme[Antora README.md].
+   - You can find more information in the link:./docs/README.adoc[Antora README.adoc].
 
 2. **Gatsby** (Non-Versioned)
    - link: link:./site[site]
    - The non-versioned part of the site is built using Gatsby, a React-based framework.
-   - For more details, you can refer to the link:https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme[Gatsby README.md].
+   - For more details, you can refer to the link:./site/README.md[Gatsby README.md].
 
 When contributing to this repository, ensure that you are working on the correct section (Antora or Gatsby) based on the type of documentation you are adding or modifying.
 
@@ -186,7 +186,7 @@ The exception being `all`, which downloads and regenerates external resources (b
 
 === Building the Gatsby site
 
-To work on the Gatsby part of the site, navigate to the `site/` directory and follow the instructions in the link:https://github.com/jenkins-infra/docs.jenkins.io/blob/main/site/README.md#installation[Gatsby README.md > Installation].
+To work on the Gatsby part of the site, navigate to the `site` directory and follow the instructions in the link:./site/README.md#installation[Gatsby README.md > Installation].
 
 == Editing content
 
