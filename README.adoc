@@ -39,7 +39,7 @@ npm --version
 ----
 
 . **Install Antora CLI**
-
++
 Antora is used for generating versioned documentation. Install it globally via npm:
 +
 [source,bash]  
