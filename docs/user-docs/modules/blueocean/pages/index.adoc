@@ -44,6 +44,7 @@ If you would like to start using Blue Ocean, please refer to xref:getting-starte
 ++++
 <center>
 <iframe width="853" height="480"
+style="max-width: 100%"
 src="https://www.youtube-nocookie.com/embed/k_fVlU1FwP4?rel=0" frameborder="0"
 allowfullscreen></iframe>
 </center>
@@ -89,6 +90,7 @@ If you are interested in contributing to a plugin which serves a similar purpose
 ++++
 <center>
 <iframe width="853" height="480"
+style="max-width: 100%"
 src="https://www.youtube-nocookie.com/embed/mn61VFdScuk?rel=0" frameborder="0"
 allowfullscreen></iframe>
 </center>
