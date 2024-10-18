@@ -69,6 +69,20 @@ npm run clean && npm run develop
 
 This will start a local server at `http://localhost:8000`, where you can preview changes as you make updates to the project files.
 
+## Generated Folders
+
+When you run the above command, the following folders are generated:
+
+* **`.cache/`**: Contains cached files that help speed up the development process.
+* **`public/`**: Contains the built assets and files that will be served by the local server.
+
+These folders should be included in your `.gitignore` file to prevent them from being tracked by Git. You can ensure they are ignored by adding the following lines to your `.gitignore` file:
+
+```plaintext
+.cache/
+public/
+```
+
 ## Contributing
 
 We welcome contributions from the Jenkins community! If you’d like to contribute, please follow these steps:
