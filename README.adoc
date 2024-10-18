@@ -1,6 +1,6 @@
 = Jenkins Documentation
 
-This repository hosts parts of the docs of link:https://www.jenkins.io/[jenkins.io].
+This repository hosts parts of the documentation of link:https://www.jenkins.io/[jenkins.io].
 
 - Developer Guide
 - User Guide
@@ -8,17 +8,28 @@ This repository hosts parts of the docs of link:https://www.jenkins.io/[jenkins.
 - Solutions Pages
 - Books
 
-== How to build the Antora versioned docs locally
+== How to Build the Versioned Documentation Locally with Antora
 
-=== Installing Antora and its Prerequisites
+The documentation site for Jenkins is split into two parts:
 
-[start=1]
+[start=1]  
+. **Version-controlled documentation** (managed using Antora) 
+. **Non-versioned documentation** (using Gatsby for rendering the current website)
+
+This guide focuses on building the version-controlled documentation using Antora.
+
+=== Installing the Prerequisites
+
+[start=1]  
 . **Install Node.js and npm**
 +
-Install Node.js and npm preferably using nvm as the Node Version Manager: link:https://github.com/nvm-sh/nvm/[https://github.com/nvm-sh/nvm]
+It is recommended to install Node.js and npm using the Node Version Manager (nvm):
+* NVM repository: [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
 +
-** Alternatively, download and install Node.js from the official Node.js website: link:https://nodejs.org/[https://nodejs.org]
-** After installing via either way, verify the installation by running the following commands in your terminal or command prompt:
+Alternatively, you can download and install Node.js from the official Node.js website:
+* Node.js official website: [https://nodejs.org](https://nodejs.org)
++
+After the installation, verify that both `node` and `npm` are correctly installed:
 +
 [source,bash]
 ----
@@ -26,22 +37,43 @@ node --version
 npm --version
 ----
 
-. **Intall dependencies**
+. **Install Antora CLI**
 +
-Run the following at the root fo the repository:
+Antora is used for generating versioned documentation. Install it globally via npm:
 +
-[source,bash]
+[source,bash]  
+----
+npm install -g @antora/cli @antora/site-generator-default
+----
+
+=== Installing Project Dependencies
+
+Once Node.js, npm, and Antora are installed, install the dependencies by running the following command at the root of the repository:
+
+[source,bash]  
 ----
 npm i
 ----
 
-. **Run the Makefile**
-+
-Run the following at the root of the repository:
-+
-[source,bash]
+=== Building the Versioned Docs
+
+To build and serve the site locally, use the provided Makefile. Run this command at the root of the repository:
+
+[source,bash]  
 ----
 make all
 ----
-+
-Once the Antora site is up and running it should be available locally at link:http://127.0.0.1:8080/[http://127.0.0.1:8080]. 
+
+Once the site is up and running, it should be available locally at:
+
+* link:http://127.0.0.1:8080/[http://127.0.0.1:8080]
+
+== Documentation Structure
+
+* **Antora Documentation**: This version-controlled documentation covers different guides (e.g., Developer Guide, User Guide).
+* **Gatsby Documentation**: Non-versioned content managed via Gatsby. This forms the basis of the current link:https://jenkins.io/[https://jenkins.io/] site, which will be replaced in the future. For more details on how to work with the Gatsby site, refer to its dedicated README documentation at:
+** link:https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme/[https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme/][https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme/]
+
+== Contributing 
+
+If you have any queries or contributions or updates for the documentation, feel free to create an issue and/or submit a pull request.
