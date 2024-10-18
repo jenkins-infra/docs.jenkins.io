@@ -18,6 +18,18 @@ The documentation site for Jenkins is split into two parts:
 
 This guide focuses on building the version-controlled documentation using Antora.
 
+== Overview of Gatsby
+
+Gatsby is a React-based framework that allows developers to create fast and optimized websites. It leverages GraphQL for data handling and provides a plugin ecosystem for extended functionality. This project utilizes Gatsby for rendering the non-versioned documentation of Jenkins, enhancing performance and user experience.
+
+== Project Structure
+
+The Gatsby site is structured as follows:
+
+* **src/**: Contains the source files for the site, including components, templates, and styles.
+* **static/**: Static files that are directly served, such as images or fonts.
+* **gatsby-config.js**: Configuration file for Gatsby where you can customize settings and plugins.
+
 === Installing the Prerequisites
 
 [start=1]  
@@ -73,6 +85,10 @@ Once the site is up and running, it should be available locally at:
 * **Antora Documentation**: This version-controlled documentation covers different guides (e.g., Developer Guide, User Guide).
 * **Gatsby Documentation**: Non-versioned content managed via Gatsby. This forms the basis of the current link:https://jenkins.io/[https://jenkins.io/] site, which will be replaced in the future. For more details on how to work with the Gatsby site, refer to its dedicated README documentation at:
 ** link:https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme/[https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme/][https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme/]
+
+For more details on running the project, refer to the detailed documentation in the `README.md` file:
+
+link:site/README.md[Running the Project Documentation]
 
 == Contributing 
 
