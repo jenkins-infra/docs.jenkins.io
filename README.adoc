@@ -14,7 +14,6 @@ The documentation site for Jenkins is split into two parts:
 
 [start=1]  
 . **Version-controlled documentation** (managed using Antora) 
-
 . **Non-versioned documentation** (using Gatsby for rendering the current website)
 
 This guide focuses on building the version-controlled documentation using Antora.
@@ -43,7 +42,7 @@ npm --version
 Antora is used for generating versioned documentation. Install it globally via npm:
 +
 [source,bash]  
----- 
+----
 npm install -g @antora/cli @antora/site-generator-default
 ----
 
@@ -72,8 +71,10 @@ Once the site is up and running, it should be available locally at:
 == Documentation Structure
 
 * **Antora Documentation**: This version-controlled documentation covers different guides (e.g., Developer Guide, User Guide).
++
 * **Gatsby Documentation**: Non-versioned content managed via Gatsby. This forms the basis of the current link:https://jenkins.io/[https://jenkins.io/] site, which will be replaced in the future. For more details on how to work with the Gatsby site, refer to its dedicated README documentation at:
 ** link:https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme/[https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme/][https://github.com/jenkins-infra/docs.jenkins.io/tree/main/site#readme/]
 
 == Contributing 
+
 If you have any queries or contributions or updates for the documentation, feel free to create an issue and/or submit a pull request.
