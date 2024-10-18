@@ -95,7 +95,7 @@ We welcome contributions from the Jenkins community! If you’d like to contribu
 
 Before submitting a pull request, ensure that your changes are aligned with the project's goals and code quality standards. We recommend running the following commands to check for any issues:
 
-- **Build**: `gatsby build` to ensure the build process runs successfully.
+- **Build**: `npm run build` to ensure the build process runs successfully.
 - **Lint**: Use linting tools to ensure your code adheres to project style guidelines.
 
 ## Available Content
