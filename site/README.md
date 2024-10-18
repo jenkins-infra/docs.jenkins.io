@@ -64,7 +64,7 @@ npm install
 To start a local development server, use the following command:
 
 ```bash
-gatsby develop
+npm run clean && npm run develop
 ```
 
 This will start a local server at `http://localhost:8000`, where you can preview changes as you make updates to the project files.
