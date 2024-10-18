@@ -64,10 +64,24 @@ npm install
 To start a local development server, use the following command:
 
 ```bash
-gatsby develop
+npm run clean && npm run develop
 ```
 
 This will start a local server at `http://localhost:8000`, where you can preview changes as you make updates to the project files.
+
+## Generated Folders
+
+When you run the above command, the following folders are generated:
+
+* **`.cache/`**: Contains cached files that help speed up the development process.
+* **`public/`**: Contains the built assets and files that will be served by the local server.
+
+These folders should be included in your `.gitignore` file to prevent them from being tracked by Git. You can ensure they are ignored by adding the following lines to your `.gitignore` file:
+
+```plaintext
+.cache/
+public/
+```
 
 ## Contributing
 
@@ -81,7 +95,7 @@ We welcome contributions from the Jenkins community! If you’d like to contribu
 
 Before submitting a pull request, ensure that your changes are aligned with the project's goals and code quality standards. We recommend running the following commands to check for any issues:
 
-- **Build**: `gatsby build` to ensure the build process runs successfully.
+- **Build**: `npm run build` to ensure the build process runs successfully.
 - **Lint**: Use linting tools to ensure your code adheres to project style guidelines.
 
 ## Available Content
