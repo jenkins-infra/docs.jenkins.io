@@ -1,14 +1,18 @@
-= Jenkins Security Advisory 2017-12-06
-:kind: plugin
+---
+layout: simplepage
+title: Jenkins Security Advisory 2017-12-06
+section: security
+kind: plugin
+---
 
 This advisory announces a vulnerability in this Jenkins plugin:
 
-* {plugin}ec2[EC2]
+* plugin:ec2[EC2]
 
 == Description
 
-=== Arbitrary shell command execution on controller by users with Agent-related permissions in EC2 Plugin
 
+=== Arbitrary shell command execution on controller by users with Agent-related permissions in EC2 Plugin
 *SECURITY-643 / CVE-2017-1000502*
 
 Users with permission to create or configure agents in Jenkins could configure an EC2 agent to run arbitrary shell commands on the Jenkins controller whenever the agent was supposed to be launched.
@@ -22,11 +26,9 @@ Configuration of these agents now requires the _Run Scripts_ permission typicall
 
 
 == Affected versions
-
 * EC2 Plugin up to and including 1.37
 
 == Fix
-
 * EC2 Plugin should be updated to version 1.38
 
 These versions include fixes to the vulnerabilities described above.
@@ -34,6 +36,6 @@ All prior versions are considered to be affected by these vulnerabilities unless
 
 == Credit
 
-The Jenkins project would like to thank the reporter for discovering and xref:index.adoc#reporting-vulnerabilities[reporting] this vulnerability:
+The Jenkins project would like to thank the reporter for discovering and link:/security/#reporting-vulnerabilities[reporting] this vulnerability:
 
 * *Jesse Glick, CloudBees Inc.* for SECURITY-643

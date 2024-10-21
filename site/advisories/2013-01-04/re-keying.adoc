@@ -1,5 +1,9 @@
-= Re-keying
-:kind: core
+---
+layout: simplepage
+title: Re-keying
+section: security
+kind: core
+---
 
 Due to the link:/security/advisory/2013-01-04/[security vulnerability], it is possible that the cryptographic key used to store secrets (such as various password, API tokens, anything else that the UI uses the password input field) in your Jenkins was compromised by someone who has HTTP access to your Jenkins.
 

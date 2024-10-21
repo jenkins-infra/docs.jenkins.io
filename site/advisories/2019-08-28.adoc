@@ -46,7 +46,7 @@ issues:
     For further information, see the link:/doc/upgrade-guide/2.176/#SECURITY-626[LTS upgrade guide].
 
     As a workaround, administrators can remove any permissions granted to the anonymous user so that no privileged actions can be taken.
-    Alternatively, the {plugin}strict-crumb-issuer[Strict Crumb Issuer] Plugin can be used instead of the built-in default crumb issuer to prevent this issue, because the vulnerability is not present in the plugin.
+    Alternatively, the plugin:strict-crumb-issuer[Strict Crumb Issuer] Plugin can be used instead of the built-in default crumb issuer to prevent this issue, because the vulnerability is not present in the plugin.
 
 - id: SECURITY-1294
   # reporter: (Uncredited)

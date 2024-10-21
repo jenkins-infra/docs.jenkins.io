@@ -1,12 +1,15 @@
-= Jenkins Security Advisory 2017-08-08
-:kind: plugin
+---
+layout: simplepage
+title: Jenkins Security Advisory 2017-08-08
+section: security
+kind: plugin
+---
 
-This advisory announces a vulnerability in the {plugin}saml[SAML Plugin].
+This advisory announces a vulnerability in the plugin:saml[SAML Plugin].
 
 == Description
 
 === SAML Plugin stored keystore and private key passwords in plain text
-
 *JENKINS-46007*
 
 The SAML Plugin stored passwords unencrypted as part of its configuration.

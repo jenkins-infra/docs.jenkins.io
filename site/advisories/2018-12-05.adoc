@@ -59,9 +59,9 @@ issues:
     The implementation of that SPI in Jenkins now restricts which getter methods, `do*` action methods, and fields can be invoked reflectively by Stapler.
     Further details are available in the developer documentation:
 
-    * xref:dev-docs:handling-requests:stapler-accessible-type.adoc[Making Object Accessible via Stapler]
-    * xref:dev-docs:handling-requests:actions.adoc[Web Methods]
-    * xref:dev-docs:security:read-access.adoc[Restricting HTTP Access to AccessControlled Objects]
+    * link:/doc/developer/handling-requests/stapler-accessible-type/[Making Object Accessible via Stapler]
+    * link:/doc/developer/handling-requests/actions/[Web Methods]
+    * link:/doc/developer/security/read-access/[Restricting HTTP Access to AccessControlled Objects]
 
     NOTE: This change is expected to impact existing functionality in some plugins.
     The most likely effect is that some URLs now return `404 Not Found`.
@@ -76,7 +76,7 @@ issues:
     severity: medium
     vector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L
   description: |
-    The fix for xref:2017-11-08.adoc[SECURITY-499] introduced a mechanism that renamed user directories on disk as a user with an unsafe user name (user ID) is loaded.
+    The fix for link:../2017-11-08[SECURITY-499] introduced a mechanism that renamed user directories on disk as a user with an unsafe user name (user ID) is loaded.
     Insufficient input validation allowed attackers to rename such user directories even for users with a safe user name by submitting a crafted user name when attempting to log in, even with an invalid password.
     Doing so prevented users from logging in successfully afterwards.
 
@@ -103,11 +103,11 @@ issues:
 
     In rare cases, it may be desirable to disable this fix.
     To do so, set the Java system property `hudson.model.DirectoryBrowserSupport.allowSymlinkEscape` to `true`.
-    xref:user-docs:managing:system-properties.adoc[Learn more about system properties in Jenkins].
+    link:/doc/book/managing/system-properties/[Learn more about system properties in Jenkins].
 
     NOTE: While the same component allows browsing archived artifacts, this fix does not apply to archived artifacts.
     Valid symbolic links are archived as the files and directories they point to on the agent, while invalid symlinks cannot escape the root directory for archived artifacts on the Jenkins controller.
-    This was previously fixed as SECURITY-162 in the xref:2015-02-27.adoc[2015-02-27 security advisory].
+    This was previously fixed as SECURITY-162 in the link:../2015-02-27/[2015-02-27 security advisory].
 
 - id: SECURITY-1193
   title: Potential denial of service through cron expression form validation

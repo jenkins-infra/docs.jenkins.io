@@ -1,40 +1,40 @@
-= Jenkins Security Advisory 2016-02-24
-:kind: core
+---
+layout: simplepage
+title: Jenkins Security Advisory 2016-02-24
+section: security
+kind: core
+---
 
 This advisory announces multiple vulnerabilities in Jenkins.
 
 == Description
 
-=== Remote code execution vulnerability in remoting module
 
+=== Remote code execution vulnerability in remoting module
 *SECURITY-232 / CVE-2016-0788*
 
 A vulnerability in the Jenkins remoting module allowed unauthenticated remote attackers to open a JRMP listener on the server hosting the Jenkins controller process, which allowed arbitrary code execution.
 
 
 === HTTP response splitting vulnerability
-
 *SECURITY-238 / CVE-2016-0789*
 
 An HTTP response splitting vulnerability in the CLI command documentation allowed attackers to craft Jenkins URLs that serve malicious content.
 
 
 === Non-constant time comparison of API token
-
 *SECURITY-241 / CVE-2016-0790*
 
 The verification of user-provided API tokens with the expected value did not use a constant-time comparison algorithm, potentially allowing attackers to use statistical methods to determine valid API tokens using brute-force methods.
 
 
 === Non-constant time comparison of CSRF crumbs
-
 *SECURITY-245 / CVE-2016-0791*
 
 The verification of user-provided CSRF crumbs with the expected value did not use a constant-time comparison algorithm, potentially allowing attackers to use statistical methods to determine valid CSRF crumbs using brute-force methods.
 
 
 === Remote code execution through remote API
-
 *SECURITY-247 / CVE-2016-0792*
 
 Jenkins has several API endpoints that allow low-privilege users to POST XML files that then get deserialized by Jenkins. Maliciously crafted XML files sent to these API endpoints could result in arbitrary code execution.
@@ -63,7 +63,7 @@ These versions include fixes to all the vulnerabilities described above. All pri
 
 == Credit
 
-The Jenkins project would like to thank the following people for discovering and xref:index.adoc#reporting-vulnerabilities[reporting] these vulnerabilities:
+The Jenkins project would like to thank the following people for discovering and link:/security/#reporting-vulnerabilities[reporting] these vulnerabilities:
 
 * *Moritz Bechler* for SECURITY-232
 * *Seung-Hyun Cho* for SECURITY-238

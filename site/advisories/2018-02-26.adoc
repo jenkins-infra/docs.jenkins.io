@@ -54,7 +54,7 @@ issues:
     This allowed users with Jenkins controller local file system access and Jenkins administrators to retrieve the stored password.
     The latter could result in exposure of the passwords through browser extensions, cross-site scripting vulnerabilities, and similar situations.
 
-    The Coverity Plugin now integrates with {plugin}credentials[Credentials Plugin] to store passwords, and automatically migrates existing passwords.
+    The Coverity Plugin now integrates with plugin:credentials[Credentials Plugin] to store passwords, and automatically migrates existing passwords.
 
 
 - id: SECURITY-402
@@ -128,7 +128,7 @@ issues:
   description: |
     The Azure Slave Plugin bundles a version of the httpclient library that is vulnerable to link:https://nvd.nist.gov/vuln/detail/CVE-2015-5262[CVE-2015-5262].
 
-    As the plugin has been deprecated in favor of {plugin}azure-vm-agents[Azure VM Agents Plugin] in 2016, there are no plans to release a fix.
+    As the plugin has been deprecated in favor of plugin:azure-vm-agents[Azure VM Agents Plugin] in 2016, there are no plans to release a fix.
     It has been removed from distribution per request by the former maintainers.
 
 

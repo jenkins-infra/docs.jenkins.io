@@ -1,17 +1,21 @@
-= Jenkins Security Advisory 2017-12-05
-:kind: core and plugins
+---
+layout: simplepage
+title: Jenkins Security Advisory 2017-12-05
+section: security
+kind: core and plugins
+---
 
 This advisory announces a vulnerability in Jenkins (weekly and LTS) and various plugins.
 
-NOTE: This advisory has been superseded by the entry for {plugin}ant[Ant Plugin] in the xref:../2018-01-22.adoc#xss-vulnerability-in-job-configuration-forms-in-ant-plugin[2018-01-22 security advisory].
+NOTE: This advisory has been superseded by the entry for plugin:ant[Ant Plugin] in the link:../2018-01-22/#xss-vulnerability-in-job-configuration-forms-in-ant-plugin[2018-01-22 security advisory].
 
 == Description
 
-=== Stored XSS vulnerability in tool names exploitable by administrators
 
+=== Stored XSS vulnerability in tool names exploitable by administrators
 *SECURITY-624*
 
-The Jenkins administrators can configure tools, such as JDK, Maven, or Ant, that will be available in job configurations for use by build scripts.
+Jenkins administrators can configure tools, such as JDK, Maven, or Ant, that will be available in job configurations for use by build scripts.
 
 Some tool names are not properly escaped on job configuration forms, resulting in a stored cross-site scripting vulnerability.
 
@@ -26,7 +30,7 @@ Others may also be affected by this.
 ====
 This vulnerability can only be exploited by Jenkins administrators, as they're the only ones able to define tools.
 In regular Jenkins configurations, administrators are able to run any code and install any plugin.
-Therefore, this vulnerability only really affects installations that don't grant administrators the Run Scripts, Configure Update Sites, and/or Install Plugins permissions.
+Therefore this vulnerability only really affects installations that don't grant administrators the Run Scripts, Configure Update Sites, and/or Install Plugins permissions.
 ====
 
 As of publication of this advisory, there is no fix.
@@ -54,6 +58,6 @@ As of publication of this advisory, there is no fix available other than the wor
 
 == Credit
 
-The Jenkins project would like to thank the reporters for discovering and xref:index.adoc#reporting-vulnerabilities[reporting] these vulnerabilities:
+The Jenkins project would like to thank the reporters for discovering and link:/security/#reporting-vulnerabilities[reporting] these vulnerabilities:
 
 * *Dhiraj Datar, Lakhshya Cyber Security Labs* for SECURITY-624

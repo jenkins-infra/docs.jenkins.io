@@ -1,12 +1,15 @@
-= Jenkins Security Advisory 2017-12-14
-:kind: core
+---
+layout: simplepage
+title: Jenkins Security Advisory 2017-12-14
+section: security
+kind: core
+---
 
 This advisory announces two vulnerabilities in Jenkins.
 
 == Description
 
 === Random failures to initialize the setup wizard on startup
-
 *SECURITY-667 / CVE-2017-1000503*
 
 A race condition during Jenkins startup could result in the wrong order of execution of commands during initialization.
@@ -25,7 +28,6 @@ Affected instances need to be configured to restrict access.
 
 
 === CSRF protection delayed after startup
-
 *SECURITY-667 / CVE-2017-1000504*
 
 A race condition during Jenkins startup could result in the wrong order of execution of commands during initialization.
@@ -61,10 +63,10 @@ All prior versions are affected by these vulnerabilities unless otherwise indica
 
 == Credit
 
-The Jenkins project would like to thank the reporters for discovering and xref:index.adoc#reporting-vulnerabilities[reporting] these vulnerabilities:
+The Jenkins project would like to thank the reporters for discovering and link:/security/#reporting-vulnerabilities[reporting] these vulnerabilities:
 
 * *Daniel Beck, CloudBees, Inc.* for SECURITY-667
 
 == Other Resources
 
-* link:https://www.jenkins.io/blog/2017/12/14/security-update/[Announcement blog post]
+* link:/blog/2017/12/14/security-update/[Announcement blog post]

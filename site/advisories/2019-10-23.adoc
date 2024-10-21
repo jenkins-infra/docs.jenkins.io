@@ -5,7 +5,7 @@ section: security
 kind: plugins
 issues:
 
-== Plugins with fixed issues
+# Plugins with fixed issues
 
 - id: SECURITY-1628
   reporter: Wasin Saengow
@@ -66,7 +66,7 @@ issues:
     fixed: 1.1.1
 
 
-== Plugins with both fixed and unfixed issues
+# Plugins with both fixed and unfixed issues
 
 - id: SECURITY-1477
   reporter: Viktor Gazdag NCC Group
@@ -120,7 +120,7 @@ issues:
   - name: dynatrace-dashboard
     previous: 2.1.4
 
-== Plugins with unfixed issues
+# Plugins with unfixed issues
 
 - id: SECURITY-820
   reporter: Thomas de Grenier de Latour

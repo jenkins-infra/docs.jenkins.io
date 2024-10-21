@@ -20,7 +20,7 @@ issues:
       fixed: "1.53"
       previous: "1.52"
   description: |
-    The previously implemented script security sandbox protections prohibiting the use of unsafe AST transforming annotations such as `@Grab` (xref:2019-01-08.adoc#SECURITY-1266[2019-01-08 fix for SECURITY-1266]) could be circumvented through use of various Groovy language features:
+    The previously implemented script security sandbox protections prohibiting the use of unsafe AST transforming annotations such as `@Grab` (link:../2019-01-08/#SECURITY-1266[2019-01-08 fix for SECURITY-1266]) could be circumvented through use of various Groovy language features:
 
     * Use of `AnnotationCollector`
     * Import aliasing
@@ -154,7 +154,7 @@ issues:
     Acunetix Plugin stored the API Key in its configuration unencrypted in its global configuration file on the Jenkins controller.
     This key could be viewed by users with access to the Jenkins controller file system.
 
-    The plugin now integrates with {plugin}credentials[Credentials Plugin].
+    The plugin now integrates with plugin:credentials[Credentials Plugin].
 
 - id: SECURITY-980
   title: SSRF vulnerability due to missing permission check in Acunetix Plugin
@@ -191,4 +191,4 @@ issues:
 
     While masked from view using a password form field, the password was transferred in plain text to users when accessing the job configuration form.
 
-    The plugin now integrates with {plugin}credentials[Credentials Plugin].
+    The plugin now integrates with plugin:credentials[Credentials Plugin].

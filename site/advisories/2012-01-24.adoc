@@ -1,7 +1,11 @@
-= Jenkins Security Advisory 2012-01-24
-:kind: plugin
+---
+layout: simplepage
+title: Jenkins Security Advisory 2012-01-24
+section: security
+kind: plugin
+---
 
-Vulnerability in {plugin}active-directory[Jenkins Active Directory plugin]
+Vulnerability in plugin:active-directory[Jenkins Active Directory plugin]
 
 This vulnerability allows attackers to gain access as administrative users, when Active Directory is configured to support anonymous LDAP bind operations.
 This affects the system that satisfies all of the following conditions:

@@ -94,7 +94,7 @@ issues:
     PLUGIN_NAME no longer does that.
     Instead, the existing opt-in option to ignore SSL/TLS errors is used during deployment for the specific connection.
 
-    This issue was caused by an incomplete fix for xref:2019-02-19.adoc#SECURITY-937[SECURITY-937].
+    This issue was caused by an incomplete fix for link:../2019-02-19/#SECURITY-937[SECURITY-937].
   plugins:
   - name: electricflow
     previous: 1.1.6 # actually 1.1.5, working around rendering bug

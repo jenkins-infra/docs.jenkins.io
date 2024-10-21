@@ -1,34 +1,38 @@
-= Jenkins Security Advisory 2017-07-10
-:kind: plugins
+---
+layout: simplepage
+title: Jenkins Security Advisory 2017-07-10
+section: security
+kind: plugins
+---
 
 NOTE: This advisory originally recommended upgrading Poll SCM plugin to version 1.4. This was incorrect. Version 1.3.1 contains the fix.
 
 This advisory announces vulnerabilities in these Jenkins plugins:
 
-* {plugin}docker-commons[Docker Commons Plugin]
-* {plugin}git[Git Plugin]
-* {plugin}github-branch-source[GitHub Branch Source Plugin]
-* {plugin}parameterized-trigger[Parameterized Trigger Plugin]
-* {plugin}periodicbackup[Periodic Backup Plugin]
-* {plugin}pipeline-build-step[Pipeline: Build Step Plugin]
-* {plugin}workflow-cps[Pipeline: Groovy Plugin]
-* {plugin}pollscm[Poll SCM Plugin]
-* {plugin}role-strategy[Role-based Authorization Strategy Plugin]
-* {plugin}script-security[Script Security Plugin]
-* {plugin}sidebar-link[Sidebar Link Plugin]
-* {plugin}ssh[SSH Plugin]
-* {plugin}subversion[Subversion Plugin]
+* plugin:docker-commons[Docker Commons Plugin]
+* plugin:git[Git Plugin]
+* plugin:github-branch-source[GitHub Branch Source Plugin]
+* plugin:parameterized-trigger[Parameterized Trigger Plugin]
+* plugin:periodicbackup[Periodic Backup Plugin]
+* plugin:pipeline-build-step[Pipeline: Build Step Plugin]
+* plugin:workflow-cps[Pipeline: Groovy Plugin]
+* plugin:pollscm[Poll SCM Plugin]
+* plugin:role-strategy[Role-based Authorization Strategy Plugin]
+* plugin:script-security[Script Security Plugin]
+* plugin:sidebar-link[Sidebar Link Plugin]
+* plugin:ssh[SSH Plugin]
+* plugin:subversion[Subversion Plugin]
 
 == Description
 
-=== Parameterized Trigger Plugin fails to check Item/Build permission
 
+=== Parameterized Trigger Plugin fails to check Item/Build permission
 *SECURITY-201 / CVE-2017-1000084*
 
 Builds in Jenkins are associated with an authentication that controls the permissions that the build has to interact with other elements in Jenkins.
 By default, builds run as SYSTEM and are unconstrained unless plugins implement specific additional permission checks.
 
-Plugins like {plugin}authorize-project[Authorize Project Plugin] allow changing the authentication associated with a build.
+Plugins like plugin:authorize-project[Authorize Project Plugin] allow changing the authentication associated with a build.
 
 The Parameterized Trigger Plugin did not check the build authentication it was running as and allowed triggering any other project in Jenkins.
 
@@ -36,7 +40,6 @@ The plugin has been adapted to now check for Item/Build permission before trigge
 
 
 == CSRF vulnerability and insufficient permission checks allow capturing credentials in Subversion Plugin
-
 *SECURITY-303 / CVE-2017-1000085*
 
 Subversion Plugin connects to a user-specified Subversion repository as part of form validation (e.g. to retrieve a list of tags).
@@ -48,7 +51,6 @@ Additionally, this functionality did not require POST requests be used, thereby 
 This functionality now properly checks permissions and is only available via POST.
 
 == Missing permission checks in Periodic Backup Plugin allow every user to change settings
-
 *SECURITY-335 / CVE-2017-1000086*
 
 The Periodic Backup Plugin did not perform any permission checks, allowing any user with Overall/Read access to change its settings, trigger backups, restore backups, and also delete all previous backups via log rotation.
@@ -58,7 +60,6 @@ Additionally, the plugin was not requiring requests to its API be sent via POST,
 The plugin configuration now properly checks permissions and is only available via POST.
 
 == Unprivileged users with Overall/Read access are able to enumerate credential IDs in GitHub Branch Source Plugin
-
 *SECURITY-342 / CVE-2017-1000087*
 
 GitHub Branch Source provides a list of applicable credential IDs to allow users configuring a job to select the one they'd like to use.
@@ -70,7 +71,6 @@ An enumeration of credentials IDs in this plugin now requires the permission to 
 If no job context exists, Overall/Administer permission is required.
 
 == Persisted XSS Vulnerability in Sidebar Link Plugin
-
 *SECURITY-352 / CVE-2017-1000088*
 
 The Sidebar Link plugin allows users able to configure jobs, views, and agents to add entries to the sidebar of these objects.
@@ -84,13 +84,12 @@ To add or remove from this list of schemes, provide the Java system property `hu
 
 
 == Pipeline: Build Step Plugin fails to check Item/Build permission
-
 *SECURITY-433 / CVE-2017-1000089*
 
 Builds in Jenkins are associated with an authentication that controls the permissions that the build has to interact with other elements in Jenkins.
 By default, builds run as SYSTEM and are unconstrained unless plugins implement specific additional permission checks.
 
-Plugins like {plugin}authorize-project[Authorize Project Plugin] allow changing the authentication associated with a build.
+Plugins like plugin:authorize-project[Authorize Project Plugin] allow changing the authentication associated with a build.
 
 The Pipeline: Build Step Plugin did not check the build authentication it was running as and allowed triggering any other project in Jenkins.
 
@@ -98,7 +97,6 @@ The plugin has been adapted to now check for Item/Build permission before trigge
 
 
 == CSRF vulnerability in Role-based Authorization Strategy Plugin configuration
-
 *SECURITY-516 / CVE-2017-1000090*
 
 Role-based Authorization Strategy Plugin was not requiring requests to its API be sent via POST, thereby opening itself to Cross-Site Request Forgery attacks. This allowed attackers to add administrator role to any user, or to remove the authorization configuration, preventing legitimate access to Jenkins.
@@ -106,7 +104,6 @@ Role-based Authorization Strategy Plugin was not requiring requests to its API b
 This functionality is now only available via POST.
 
 == CSRF vulnerability and insufficient permission checks allow capturing credentials in GitHub Branch Source Plugin
-
 *SECURITY-527 / CVE-2017-1000091*
 
 GitHub Branch Source Plugin connects to a user-specified GitHub API URL (e.g. GitHub Enterprise) as part of form validation and completion (e.g. to verify Scan Credentials are correct).
@@ -119,7 +116,6 @@ This functionality now properly checks permissions and is only available via POS
 
 
 == CSRF vulnerability in Git plugin allows capturing credentials
-
 *SECURITY-528 / CVE-2017-1000092*
 
 Git Plugin connects to a user-specified Git repository as part of form validation.
@@ -130,7 +126,6 @@ This functionality now is only available via POST.
 
 
 == CSRF vulnerability in Poll SCM Plugin allowed unauthorized polling
-
 *SECURITY-529 / CVE-2017-1000093*
 
 Poll SCM Plugin was not requiring requests to its API be sent via POST, thereby opening itself to Cross-Site Request Forgery attacks. This allowed attackers to initiate polling of projects with a known name.
@@ -141,7 +136,6 @@ This functionality now is only available via POST.
 
 
 == Unprivileged users with Overall/Read access are able to enumerate credential IDs in Docker Commons Plugin
-
 *SECURITY-533 / CVE-2017-1000094*
 
 Docker Commons Plugin provides a list of applicable credential IDs to allow users configuring a job to select the one they'd like to use to authenticate with a Docker Registry.
@@ -154,7 +148,6 @@ If no job context exists, Overall/Administer permission is required.
 
 
 == Unsafe methods in the default list of approved signatures in Script Security Plugin
-
 *SECURITY-538 / CVE-2017-1000095*
 
 The default list of approved signatures included the entries:
@@ -176,7 +169,6 @@ Use of these methods will appear on the In-Process Script Approval page, and it 
 
 
 == Arbitrary code execution due to incomplete sandbox protection in Pipeline: Groovy Plugin
-
 *SECURITY-551 / CVE-2017-1000096*
 
 Pipelines are subject to _script security_: Either the entire Pipeline needs to be approved, or it runs in a sandbox, with only approved methods etc. allowed to be called.
@@ -192,13 +184,12 @@ This change may cause existing scripts relying on the incomplete sandbox protect
 NOTE: The fix for this introduced a regression that results in constructors and instance initializers of classes defined in pipeline scripts no longer being able to set `final` fields. Static initializers are no longer able to set `static final` fields. The workaround is to make fields non-final.
 
 == SSH Plugin stored credentials in plain text configuration files
-
 *JENKINS-21436 / CVE-2017-1000245*
 
 The SSH Plugin stores credentials which allow jobs to access remote servers via the SSH protocol.
 User passwords and passphrases for encrypted SSH keys are stored in plaintext in a configuration file.
 
-SSH Plugin now integrates with the {plugin}credentials[Credentials Plugin] and existing credentials are migrated.
+SSH Plugin now integrates with the plugin:credentials[Credentials Plugin] and existing credentials are migrated.
 
 
 == Severity
@@ -220,7 +211,6 @@ SSH Plugin now integrates with the {plugin}credentials[Credentials Plugin] and e
 
 
 == Affected versions
-
 * Docker Commons Plugin up to and including version 1.7
 * Git Plugin up to and including version 3.3.1 and 2.4.0-beta-1
 * GitHub Branch Source Plugin up to and including version 2.0.7 and 2.2.0-beta-1
@@ -237,7 +227,6 @@ SSH Plugin now integrates with the {plugin}credentials[Credentials Plugin] and e
 
 
 == Fix
-
 * Docker Commons Plugin should be updated to version 1.8
 * Git Plugin should be updated to version 3.3.2 or 3.4.0-beta-2
 * GitHub Branch Source Plugin should be updated to version 2.0.8 or 2.2.0-beta-2
@@ -257,7 +246,7 @@ All prior versions are affected by these vulnerabilities unless otherwise indica
 
 == Credit
 
-The Jenkins project would like to thank the reporters for discovering and xref:index.adoc#reporting-vulnerabilities[reporting] these vulnerabilities:
+The Jenkins project would like to thank the reporters for discovering and link:/security/#reporting-vulnerabilities[reporting] these vulnerabilities:
 
 * *Daniel Beck, CloudBees, Inc.* for SECURITY-529
 * *Jesse Glick, CloudBees, Inc.* for SECURITY-303, SECURITY-342, SECURITY-527, SECURITY-528

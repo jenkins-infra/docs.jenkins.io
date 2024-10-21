@@ -1,12 +1,15 @@
-= Jenkins Security Advisory 2017-04-27
-:kind: plugin
+---
+layout: simplepage
+title: Jenkins Security Advisory 2017-04-27
+section: security
+kind: plugin
+---
 
-This advisory announces a vulnerability in the {plugin}git-client[Git Client Plugin].
+This advisory announces a vulnerability in the plugin:git-client[Git Client Plugin].
 
 == Description
 
 === Git Client Plugin stored sensitive information in world-readable temporary files
-
 *SECURITY-445 / CVE-2017-1000242*
 
 Temporary files were previously written to the Java temporary directory with default permissions.
@@ -32,6 +35,6 @@ As a workaround, setting the system property `java.io.tmpdir` on the Jenkins con
 
 == Credit
 
-The Jenkins project would like to thank the reporter for discovering and xref:index.adoc#reporting-vulnerabilities[reporting] this vulnerability:
+The Jenkins project would like to thank the reporter for discovering and link:/security/#reporting-vulnerabilities[reporting] this vulnerability:
 
 * *Steven Christou, CloudBees, Inc.* for SECURITY-445

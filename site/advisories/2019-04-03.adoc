@@ -4,7 +4,8 @@ title: Jenkins Security Advisory 2019-04-03
 section: security
 kind: plugins
 resources:
-* /blog/2019/04/03/security-advisory/[Announcement blog post]
+- url: /blog/2019/04/03/security-advisory/
+  title: Announcement blog post
 issues:
 
 # 1000+

@@ -54,7 +54,7 @@ issues:
 
     Jenkins 2.275, LTS 2.263.2 requires that preview URLs are accessed using POST and sets Content-Security-Policy headers that prevent execution of unsafe elements when the URL is accessed directly.
 
-    NOTE: In case of problems with this change, these protections can be disabled by setting the xref:user-docs:managing:system-properties.adoc[Java system properties] `hudson.markup.MarkupFormatter.previewsAllowGET` to `true` and/or `hudson.markup.MarkupFormatter.previewsSetCSP` to `false`.
+    NOTE: In case of problems with this change, these protections can be disabled by setting the link:/doc/book/managing/system-properties/[Java system properties] `hudson.markup.MarkupFormatter.previewsAllowGET` to `true` and/or `hudson.markup.MarkupFormatter.previewsSetCSP` to `false`.
     Doing either is discouraged.
 - id: SECURITY-2171
   reporter: Jesse Glick, CloudBees, Inc. and Wadeck Follonier, CloudBees, Inc.
@@ -87,7 +87,7 @@ issues:
 
     Jenkins 2.275, LTS 2.263.2 does not record submissions from users in Old Data Monitor anymore.
 
-    In case of problems, the xref:user-docs:managing:system-properties.adoc[Java system properties] `hudson.util.RobustReflectionConverter.recordFailuresForAdmins` and `hudson.util.RobustReflectionConverter.recordFailuresForAllAuthentications` can be set to `true` to record configuration data submissions from administrators or all users, partially or completely disabling this fix.
+    In case of problems, the link:/doc/book/managing/system-properties/[Java system properties] `hudson.util.RobustReflectionConverter.recordFailuresForAdmins` and `hudson.util.RobustReflectionConverter.recordFailuresForAllAuthentications` can be set to `true` to record configuration data submissions from administrators or all users, partially or completely disabling this fix.
 - id: SECURITY-1452
   reporter: Travis Emmert from Apple Information Security
   title: Arbitrary file read vulnerability in workspace browsers
@@ -120,7 +120,7 @@ issues:
 
     Jenkins 2.275, LTS 2.263.2 ensures that agent names are considered valid names for items to prevent this problem.
 
-    In case of problems, this change can be reverted by setting the xref:user-docs:managing:system-properties.adoc[Java system property] `jenkins.model.Nodes.enforceNameRestrictions` to `false`.
+    In case of problems, this change can be reverted by setting the link:/doc/book/managing/system-properties/[Java system property] `jenkins.model.Nodes.enforceNameRestrictions` to `false`.
 - id: SECURITY-2023
   reporter: Wadeck Follonier, CloudBees, Inc.
   title: Arbitrary file existence check in file fingerprints
@@ -153,7 +153,7 @@ issues:
     Jenkins 2.275, LTS 2.263.2 limits the maximum size of graphs to an area of 10 million pixels.
     If a larger size is requested, the default size for the graph will be rendered instead.
 
-    This threshold can be configured by setting the xref:user-docs:managing:system-properties.adoc[Java system property] `hudson.util.Graph.maxArea` to a different number on startup.
+    This threshold can be configured by setting the link:/doc/book/managing/system-properties/[Java system property] `hudson.util.Graph.maxArea` to a different number on startup.
 - id: SECURITY-2047
   reporter: Daniel Beck, CloudBees, Inc.
   title: Missing permission check for paths with specific prefix
@@ -186,7 +186,7 @@ issues:
     The comparison of requested URLs with the list of always accessible URLs has been fixed to only allow access to the specific listed URLs in Jenkins 2.275, LTS 2.263.2.
 
     In case this change causes problems, additional paths can be made accessible without Overall/Read permissions:
-    The xref:user-docs:managing:system-properties.adoc[Java system property] `jenkins.model.Jenkins.additionalReadablePaths` is a comma-separated list of additional path prefixes to allow access to.
+    The link:/doc/book/managing/system-properties/[Java system property] `jenkins.model.Jenkins.additionalReadablePaths` is a comma-separated list of additional path prefixes to allow access to.
 - id: SECURITY-2057
   reporter: Long Nguyen, Viettel Cyber Security
   title: Credentials stored in plain text by PLUGIN_NAME

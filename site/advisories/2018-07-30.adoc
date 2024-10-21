@@ -118,7 +118,7 @@ issues:
     Tinfoil Security Plugin stored the API Secret Key in its configuration unencrypted in its global configuration file on the Jenkins controller.
     This key could be viewed by users with access to the Jenkins controller file system.
 
-    The plugin now integrates with {plugin}credentials[Credentials Plugin].
+    The plugin now integrates with plugin:credentials[Credentials Plugin].
     Existing configurations are not migrated and will need to be reconfigured.
 
 

@@ -1,5 +1,9 @@
-= Jenkins Security Advisory 2011-11-08
-:kind: core
+---
+layout: simplepage
+title: Jenkins Security Advisory 2011-11-08
+section: security
+kind: core
+---
 
 Vulnerability in Jenkins Core
 

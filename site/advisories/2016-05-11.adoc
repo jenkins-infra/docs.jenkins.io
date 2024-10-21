@@ -1,14 +1,20 @@
-= Jenkins Security Advisory 2016-05-11
-:kind: core
+---
+layout: simplepage
+title: Jenkins Security Advisory 2016-05-11
+section: security
+kind: core
+---
 
 *Revised 2016-05-12*: Added note on plugins impacted by SECURITY-170, mentioned system property disabling part of the SECURITY-243 fix.
+
+---
 
 This advisory announces multiple vulnerabilities in Jenkins.
 
 == Description
 
-=== Arbitrary build parameters are passed to build scripts as environment variables
 
+=== Arbitrary build parameters are passed to build scripts as environment variables
 *SECURITY-170 / CVE-2016-3721*
 
 Build parameters in Jenkins typically are passed to build scripts as environment variables. Some plugins allow passing arbitrary (undeclared) parameters. Depending on access permissions and installed plugins, malicious users were able to trigger builds, passing arbitrary environment variables (e.g. PATH) to modify the behavior of those builds. Rather than expect all plugin authors to be aware of this potential problem, Jenkins now filters the build parameters based on what is defined on the job.
@@ -25,7 +31,6 @@ NOTE: For an overview of impacted plugins and the current status of their fixes,
 
 
 === Malicious users with multiple user accounts can prevent other users from logging in
-
 *SECURITY-243 / CVE-2016-3722*
 
 By changing the freely editable "full name", malicious users with multiple user accounts could prevent other users from logging in, as "full name" was resolved before actual user name to determine which account is currently trying to log in.
@@ -34,14 +39,12 @@ Part of this fix can be disabled by setting the system property `hudson.model.Us
 
 
 === Information on installed plugins exposed via API
-
 *SECURITY-250 / CVE-2016-3723*
 
 The XML/JSON API endpoints providing information about installed plugins were missing permissions checks, allowing any user with read access to Jenkins to determine which plugins and versions were installed.
 
 
 === Encrypted secrets (e.g. passwords) were leaked to users with permission to read configuration
-
 *SECURITY-266 / CVE-2016-3724*
 
 Users with extended read access could access encrypted secrets stored directly in the configuration of those items.
@@ -50,21 +53,18 @@ As a side-effect of this change, copying a job that contains secrets in its conf
 
 
 === Regular users can trigger download of update site metadata
-
 *SECURITY-273 / CVE-2016-3725*
 
 A missing permissions check allowed any user with access to Jenkins to trigger an update of update site metadata. This could be combined with DNS cache poisoning to disrupt Jenkins service.
 
 
 === Open redirect to scheme-relative URLs
-
 *SECURITY-276 / CVE-2016-3726*
 
 Some Jenkins URLs did not properly validate the redirect URLs, which allowed malicious users to create URLs that redirect users to arbitrary scheme-relative URLs.
 
 
 === Granting the permission to read node configurations allows access to overall system configuration
-
 *SECURITY-281 / CVE-2016-3727*
 
 The API URL `/computer/(master)/api/xml` allowed users with the 'extended read' permission for the built-in node to see some global Jenkins configuration, including the configuration of the security realm.
@@ -98,7 +98,7 @@ These versions include fixes to all the vulnerabilities described above. All pri
 
 == Credit
 
-The Jenkins project would like to thank the following people for discovering and xref:index.adoc#reporting-vulnerabilities[reporting] these vulnerabilities:
+The Jenkins project would like to thank the following people for discovering and link:/security/#reporting-vulnerabilities[reporting] these vulnerabilities:
 
 * *Adam Cazzolla and Ben Bleiberg, Sonatype Inc.* for SECURITY-276
 * *Charles Nelson* for SECURITY-250

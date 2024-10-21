@@ -1,19 +1,92 @@
-= Jenkins Security Advisory 2018-01-22
-:kind: plugins
-
-This advisory announces vulnerabilities in the following Jenkins deliverables:
-
- * link:https://plugins.jenkins.io/ant/[Ant Plugin]
- * checkstyle Plugin
- * dry Plugin
- * findbugs Plugin
- * link:https://plugins.jenkins.io/workflow-durable-task-step/[Pipeline: Nodes and Processes Plugin]
- * pmd Plugin
- * link:https://plugins.jenkins.io/release/[Release Plugin]
- * link:https://plugins.jenkins.io/translation/[Translation Assistance Plugin]
- * warnings Plugin
+---
+layout: advisory
+title: Jenkins Security Advisory 2018-01-22
+section: security
+kind: plugins
+issues:
+- id: SECURITY-507
+  reporter: Oleg Nenashev, CloudBees, Inc.
+  cvss:
+    severity: low
+    vector: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N
+  plugins:
+    - name: translation
+      fixed: 1.16
+      previous: 1.15
+- id: SECURITY-607
+  reporter: Jesse Glick, CloudBees, Inc.
+  cvss:
+    severity: medium
+    vector: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+  plugins:
+    - name: release
+      fixed: 2.10
+      previous: 2.9
+- id: SECURITY-655
+  reporter: Adith Sudhakar
+  cvss:
+    severity: high
+    vector: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L
+  plugins:
+    - name: pmd
+      fixed: 1.8
+      previous: 1.7
+- id: SECURITY-656
+  reporter: Adith Sudhakar
+  cvss:
+    severity: high
+    vector: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L
+  plugins:
+    - name: checkstyle
+      fixed: 3.50
+      previous: 3.49
+- id: SECURITY-657
+  reporter: Adith Sudhakar
+  cvss:
+    severity: high
+    vector: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L
+  plugins:
+    - name: dry
+      fixed: 2.50
+      previous: 2.49
+- id: SECURITY-658
+  reporter: Adith Sudhakar
+  cvss:
+    severity: high
+    vector: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L
+  plugins:
+    - name: findbugs
+      fixed: 4.72
+      previous: 4.71
+- id: SECURITY-695
+  cvss:
+    severity: medium
+    vector: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L
+  plugins:
+    - name: warnings
+      fixed: 4.65
+      previous: 4.64
+- id: SECURITY-694
+  cvss:
+    severity: medium
+    vector: CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+  plugins:
+    - name: ant
+      fixed: 1.8
+      previous: 1.7
+- id: SECURITY-675
+  cvss:
+    severity: high
+    vector: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L
+  reporter: Jesse Glick, CloudBees, Inc.
+  plugins:
+    - name: workflow-durable-task-step
+      fixed: 2.18
+      previous: 2.17
+---
 
 == Description
+
 
 === XXE vulnerabilities in multiple static analysis plugins
 
@@ -23,13 +96,12 @@ This advisory announces vulnerabilities in the following Jenkins deliverables:
 * *SECURITY-658 / CVE-2018-1000011* (FindBugs)
 * *SECURITY-695 / CVE-2018-1000012* (Warnings)
 
-Multiple plugins based on {plugin}analysis-core[Static Analysis Utilities] plugin are affected by an XML External Entity (XXE) processing vulnerability.
+Multiple plugins based on plugin:analysis-core[Static Analysis Utilities] plugin are affected by an XML External Entity (XXE) processing vulnerability.
 This allows attacker to configure build processes such that one of these plugins parses a maliciously crafted file that uses external entities for extraction of secrets from the Jenkins controller, server-side request forgery, or denial-of-service attacks.
 
 External entity resolution has been disabled for these plugins.
 
 === CSRF vulnerability in Release plugin
-
 *SECURITY-607 / CVE-2018-1000013*
 
 Release plugin did not require form submissions to be submitted via POST, resulting in a CSRF vulnerability allowing attackers to trigger release builds.
@@ -37,7 +109,6 @@ Release plugin did not require form submissions to be submitted via POST, result
 Access to the form action URL now requires POST.
 
 === CSRF vulnerability in Translation Assistance plugin
-
 *SECURITY-507 / CVE-2018-1000014*
 
 Translation Assistance plugin did not require form submissions to be submitted via POST, resulting in a CSRF vulnerability allowing attackers to override localized strings displayed to all users on the current Jenkins instance if the victim is a Jenkins administrator.
@@ -45,16 +116,14 @@ Translation Assistance plugin did not require form submissions to be submitted v
 Access to the form action URL now requires POST.
 
 === Incorrect permission checks in Pipeline: Nodes and Processes plugin allows executing builds on agents while lacking Computer/Build permission
-
 *SECURITY-675 / CVE-2018-1000015*
 
-On instances with {plugin}authorize-project[Authorize Project plugin], the authentication associated with a build may lack the Computer/Build permission on some agents.
+On instances with plugin:authorize-project[Authorize Project plugin], the authentication associated with a build may lack the Computer/Build permission on some agents.
 This did not prevent the execution of `node` blocks on those agents due to incorrect permissions checks in Pipeline: Nodes and Processes plugin.
 
 Build permissions on agents are now properly enforced for `node` steps.
 
 === XSS vulnerability in job configuration forms in Ant plugin
-
 *SECURITY-624 and SECURITY-694*
 
 Ant plugin failed to escape tool names it shows on job configuration screens, resulting in a cross-site scripting (XSS) vulnerability that is exploitable only by Jenkins administrators.
@@ -63,53 +132,3 @@ This is the same vulnerability that was announced without a fix on link:/securit
 Contrary to what we wrote in that security advisory, Ant Plugin shows both the JDK and Ant tools on the configuration screen, and the vulnerability in Ant plugin was responsible for both problems we confirmed in the previous advisory.
 
 Ant plugin now correctly escapes tool names shown on the job configuration screen.
-
-
-== Severity
-
-* SECURITY-507: link:https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N/[low]
-* SECURITY-607: link:https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N/[medium]
-* SECURITY-655: link:https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L/[high]
-* SECURITY-656: link:https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L/[high]
-* SECURITY-657: link:https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L/[high]
-* SECURITY-658: link:https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L/[high]
-* SECURITY-675: link:https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L/[high]
-* SECURITY-694: link:https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N/[medium]
-* SECURITY-695: link:https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N/[medium]
-
-
-== Affected Versions
-* *Ant Plugin* up to and including 1.7
-* *checkstyle Plugin* up to and including 3.49
-* *dry Plugin* up to and including 2.49
-* *findbugs Plugin* up to and including 4.71
-* *Pipeline: Nodes and Processes Plugin* up to and including 2.17
-* *pmd Plugin* up to and including 1.7
-* *Release Plugin* up to and including 2.9
-* *Translation Assistance Plugin* up to and including 1.15
-* *warnings Plugin* up to and including 4.64
-
-
-== Fix
-
-* *Ant Plugin* should be updated to version 1.8
-* *checkstyle Plugin* should be updated to version 3.5
-* *dry Plugin* should be updated to version 2.5
-* *findbugs Plugin* should be updated to version 4.72
-* *Pipeline: Nodes and Processes Plugin* should be updated to version 2.18
-* *pmd Plugin* should be updated to version 1.8
-* *Release Plugin* should be updated to version 2.1
-* *Translation Assistance Plugin* should be updated to version 1.16
-* *warnings Plugin* should be updated to version 4.65
-
-These versions include fixes to the vulnerabilities described above. All prior versions are considered to be affected by these vulnerabilities unless otherwise indicated.
-
-
-== Credit
-
-The Jenkins project would like to thank the reporters for discovering and link:https://www.jenkins.io/security/#reporting-vulnerabilities/[reporting] these vulnerabilities:
-
-* *Adith Sudhakar* for SECURITY-655, SECURITY-656, SECURITY-657, SECURITY-658
-* *Jesse Glick, CloudBees, Inc.* for SECURITY-607, SECURITY-675
-* *Oleg Nenashev, CloudBees, Inc.* for SECURITY-507
-

@@ -312,7 +312,7 @@ issues:
 
     These API keys can be viewed by users with Item/Extended Read permission or access to the Jenkins controller file system.
 
-    PLUGIN_NAME 1.0.33 no longer stores the API keys directly, instead accessing them through its {plugin}credentials[Credentials Plugin] integration, once affected job configurations are saved again.
+    PLUGIN_NAME 1.0.33 no longer stores the API keys directly, instead accessing them through its plugin:credentials[Credentials Plugin] integration, once affected job configurations are saved again.
   plugins:
   - name: katalon
     title: Katalon
@@ -429,7 +429,7 @@ issues:
     Additionally, several plugins have previously been updated to list parameters in a way that prevents exploitation by default, see link:/security/advisory/2022-04-12/#SECURITY-2617[SECURITY-2617 in the 2022-04-12 security advisory for a list].
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: custom-checkbox-parameter
     previous: '1.4'
@@ -446,7 +446,7 @@ issues:
     While this secret is stored encrypted on disk, in PLUGIN_NAME 1.0.8 and earlier the global configuration form does not mask the AWS_SECRET_ACCESS_KEY form field, increasing the potential for attackers to observe and capture it.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: s3explorer
     previous: 1.0.8
@@ -463,7 +463,7 @@ issues:
     Those can be used as part of an attack to capture the credentials using another vulnerability.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: compuware-topaz-for-total-test
     previous: 2.4.8
@@ -483,7 +483,7 @@ issues:
     See the link:/doc/upgrade-guide/2.303/#upgrading-to-jenkins-lts-2-303-3[LTS upgrade guide].
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: compuware-topaz-for-total-test
     previous: 2.4.8
@@ -500,7 +500,7 @@ issues:
     This allows attackers able to control the input files for the 'Topaz for Total Test - Execute Total Test scenarios' build step to have Jenkins parse a crafted XML document that uses external entities for extraction of secrets from the Jenkins controller or server-side request forgery.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: compuware-topaz-for-total-test
     previous: 2.4.8
@@ -517,7 +517,7 @@ issues:
     Those can be used as part of an attack to capture the credentials using another vulnerability.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: compuware-strobe-measurement
     previous: 1.0.1
@@ -534,10 +534,10 @@ issues:
     PLUGIN_NAME 1.0.22 and earlier globally disables the `Content-Security-Policy` header for static files served by Jenkins as soon as it is loaded.
     This allows cross-site scripting (XSS) attacks by users with the ability to control files in workspaces, archived artifacts, etc.
 
-    NOTE: Jenkins instances with xref:user-docs:security:user-content.adoc#resource-root-url[Resource Root URL] configured are unaffected.
+    NOTE: Jenkins instances with link:/doc/book/security/user-content/#resource-root-url[Resource Root URL] configured are unaffected.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: xframium
     title: XFramium Builder
@@ -552,14 +552,14 @@ issues:
   description: |-
     Jenkins sets the `Content-Security-Policy` header to static files served by Jenkins (specifically `DirectoryBrowserSupport`), such as workspaces, `/userContent`, or archived artifacts, unless a Resource Root URL is specified.
 
-    PLUGIN_NAME 0.7 and earlier programmatically updates xref:user-docs:managing:system-properties.adoc#hudson-model-directorybrowsersupport-csp[the Java system property] allowing administrators to customize the `Content-Security-Policy` header for static files served by Jenkins to include `media-src: 'self'`.
+    PLUGIN_NAME 0.7 and earlier programmatically updates link:/doc/book/managing/system-properties/#hudson-model-directorybrowsersupport-csp[the Java system property] allowing administrators to customize the `Content-Security-Policy` header for static files served by Jenkins to include `media-src: 'self'`.
     On a Jenkins instance with default configuration, this effectively disables all other directives in the default rule set, including `script-src`.
     This allows cross-site scripting (XSS) attacks by users with the ability to control files in workspaces, archived artifacts, etc.
 
-    NOTE: Jenkins instances with xref:user-docs:security:user-content.adoc#resource-root-url[Resource Root URL] configured are unaffected.
+    NOTE: Jenkins instances with link:/doc/book/security/user-content/#resource-root-url[Resource Root URL] configured are unaffected.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: screenrecorder
     title: ScreenRecorder
@@ -577,10 +577,10 @@ issues:
     PLUGIN_NAME 1.20 and earlier globally disables the `Content-Security-Policy` header for static files served by Jenkins whenever the 'NeuVector Vulnerability Scanner' build step is executed.
     This allows cross-site scripting (XSS) attacks by users with the ability to control files in workspaces, archived artifacts, etc.
 
-    NOTE: Jenkins instances with xref:user-docs:security:user-content.adoc#resource-root-url[Resource Root URL] configured are unaffected.
+    NOTE: Jenkins instances with link:/doc/book/security/user-content/#resource-root-url[Resource Root URL] configured are unaffected.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: neuvector-vulnerability-scanner
     title: NeuVector Vulnerability Scanner
@@ -598,10 +598,10 @@ issues:
     PLUGIN_NAME 1.7.2 and earlier globally disables the `Content-Security-Policy` header for static files served by Jenkins whenever the 'Execute FireLine' build step is executed, if the option 'Open access to HTML with JS or CSS' is checked.
     This allows cross-site scripting (XSS) attacks by users with the ability to control files in workspaces, archived artifacts, etc.
 
-    NOTE: Jenkins instances with xref:user-docs:security:user-content.adoc#resource-root-url[Resource Root URL] configured are unaffected.
+    NOTE: Jenkins instances with link:/doc/book/security/user-content/#resource-root-url[Resource Root URL] configured are unaffected.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: fireline
     title: 360 FireLine

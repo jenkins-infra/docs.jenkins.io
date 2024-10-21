@@ -49,17 +49,19 @@ issues:
       fixed: 2.18
       previous: 2.17
 resources:
-* /blog/2018/02/05/security-updates/[Announcement blog post]
+- url: /blog/2018/02/05/security-updates/
+  title: Announcement blog post
 ---
 
 == Description
+
 
 === XXE vulnerabilities in multiple static analysis plugins
 
 * *SECURITY-659 / CVE-2018-1000054* (CCM)
 * *SECURITY-660 / CVE-2018-1000055* (Android Lint)
 
-Multiple plugins based on {plugin}analysis-core[Static Analysis Utilities] plugin are affected by an XML External Entity (XXE) processing vulnerability.
+Multiple plugins based on plugin:analysis-core[Static Analysis Utilities] plugin are affected by an XML External Entity (XXE) processing vulnerability.
 This allows an attacker to configure build processes such that one of these plugins parses a maliciously crafted file that uses external entities for extraction of secrets from the Jenkins controller, server-side request forgery, or denial-of-service attacks.
 
 External entity resolution has been disabled for these plugins.
@@ -76,7 +78,6 @@ External entity resolution has been adjusted to avoid XXE and still satisfy the 
 
 [#credentials-binding]
 === Credentials Binding plugin did not mask the secret actually provided to the build in rare circumstances
-
 // That title took a lot of work, but in the end it doesn't matter that the actual password is masked if that's not what's used in the build
 
 *SECURITY-698 / CVE-2018-1000057*

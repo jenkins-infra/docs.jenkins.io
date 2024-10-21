@@ -54,8 +54,8 @@ issues:
     * SECURITY-2542 / CVE-2021-21695: `FilePath#listFiles` checks `stat` permission on files it returns, preventing listing files outside allowed directories.
 
     IMPORTANT: As some common operations are now newly subject to access control, it is expected that plugins sending commands from agents to the controller may start failing.
-    Additionally, the newly introduced path canonicalization means that instances using a custom builds directory (xref:user-docs:managing:system-properties.adoc#jenkins-model-jenkins-buildsdir[Java system property `jenkins.model.Jenkins.buildsDir`]) or partitioning `JENKINS_HOME` using symbolic links may fail access control checks.
-    See xref:dev-docs:security:controller-isolation/agent-to-controller.adoc#file-access-rules[the documentation] for how to customize the configuration in case of problems.
+    Additionally, the newly introduced path canonicalization means that instances using a custom builds directory (link:/doc/book/managing/system-properties/#jenkins-model-jenkins-buildsdir[Java system property `jenkins.model.Jenkins.buildsDir`]) or partitioning `JENKINS_HOME` using symbolic links may fail access control checks.
+    See link:/doc/book/security/controller-isolation/agent-to-controller/#file-access-rules[the documentation] for how to customize the configuration in case of problems.
 
     NOTE: If you are unable to immediately upgrade to Jenkins 2.319, LTS 2.303.3, you can install the link:/redirect/remoting-security-workaround/[Remoting Security Workaround Plugin].
     It will prevent all agent-to-controller file access using `FilePath` APIs.
@@ -82,7 +82,7 @@ issues:
     Because it is more restrictive than Jenkins 2.319, LTS 2.303.3, more plugins are incompatible with it.
     Make sure to read the plugin documentation before installing it.
 
-    IMPORTANT: It is not easily possible to xref:dev-docs:security:controller-isolation/agent-to-controller.adoc#file-access-rules[customize the file access rules] to prohibit access to the `libs/` directory specifically, as built-in rules (granting access to `<BUILDDIR>` contents) would take precedence over a custom rule prohibiting access.
+    IMPORTANT: It is not easily possible to link:/doc/book/security/controller-isolation/agent-to-controller/#file-access-rules[customize the file access rules] to prohibit access to the `libs/` directory specifically, as built-in rules (granting access to `<BUILDDIR>` contents) would take precedence over a custom rule prohibiting access.
 - id: SECURITY-2428
   reporter: Daniel Beck, CloudBees, Inc.
   title: Agent-to-controller access control allows reading/writing most content of

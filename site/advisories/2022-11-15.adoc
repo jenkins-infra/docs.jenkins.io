@@ -75,7 +75,7 @@ issues:
 
     PLUGIN_NAME 2.13.2 restricts the set of prefix interpolators enabled by default to `base64Decoder:`, `base64Encoder:`, `date:`, `urlDecoder:`, and `urlEncoder:`.
 
-    Administrators can set the xref:user-docs:managing:system-properties.adoc[Java system property] `org.jenkinsci.plugins.pipeline.utility.steps.conf.ReadPropertiesStepExecution.CUSTOM_PREFIX_INTERPOLATOR_LOOKUPS` to customize which prefix interpolators are enabled.
+    Administrators can set the link:/doc/book/managing/system-properties/[Java system property] `org.jenkinsci.plugins.pipeline.utility.steps.conf.ReadPropertiesStepExecution.CUSTOM_PREFIX_INTERPOLATOR_LOOKUPS` to customize which prefix interpolators are enabled.
   plugins:
   - name: pipeline-utility-steps
     previous: 2.13.1
@@ -151,7 +151,7 @@ issues:
     PLUGIN_NAME 2.6.2.1 requires a token as a part of webhook URLs, which will act as authentication for the webhook endpoint.
     As a result, all webhook URLs in the plugin will be different after updating the plugin.
 
-    Administrators can set the xref:user-docs:managing:system-properties.adoc[Java system] property `org.jenkinsci.plugins.registry.notification.webhook.JSONWebHook.DO_NOT_REQUIRE_API_TOKEN` to `true` to disable this fix.
+    Administrators can set the link:/doc/book/managing/system-properties/[Java system] property `org.jenkinsci.plugins.registry.notification.webhook.JSONWebHook.DO_NOT_REQUIRE_API_TOKEN` to `true` to disable this fix.
   plugins:
   - name: dockerhub-notification
     previous: 2.6.2
@@ -199,7 +199,7 @@ issues:
     PLUGIN_NAME 4.8.0.146 and earlier unconditionally disables SSL/TLS certificate and hostname validation for several features.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: cavisson-ns-nd-integration
     previous: 4.8.0.146
@@ -218,7 +218,7 @@ issues:
     NOTE: Because Jenkins agent processes usually execute build tools whose input (source code, build scripts, etc.) is controlled externally, this vulnerability only has a real impact in very narrow circumstances: when attackers can control XML files, but are unable to change build steps, Jenkinsfiles, test code that gets executed on the agents, or similar.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: violations
     previous: 0.7.11
@@ -235,7 +235,7 @@ issues:
     This results in a stored cross-site scripting (XSS) vulnerability exploitable by attackers with Item/Configure permission.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: bart
     title: BART
@@ -253,7 +253,7 @@ issues:
     This allows unauthenticated attackers to read arbitrary files with `.xml` extension on the Jenkins controller file system.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: config-rotator
     title: Config Rotator
@@ -273,7 +273,7 @@ issues:
     This allows unauthenticated attackers to trigger builds of jobs corresponding to an attacker-specified repository.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: xpdev
     previous: '1.0'
@@ -291,7 +291,7 @@ issues:
     Those can be used as part of an attack to capture the credentials using another vulnerability.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: loaderio-jenkins-plugin
     previous: 1.0.1
@@ -310,7 +310,7 @@ issues:
     Additionally, this HTTP endpoint does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: delete-log-plugin
     previous: '1.0'
@@ -329,7 +329,7 @@ issues:
     NOTE: Because Jenkins agent processes usually execute build tools whose input (source code, build scripts, etc.) is controlled externally, this vulnerability only has a real impact in very narrow circumstances: when attackers can control XML files, but are unable to change build steps, Jenkinsfiles, test code that gets executed on the agents, or similar.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: cccc
     previous: '0.6'
@@ -348,7 +348,7 @@ issues:
     NOTE: Because Jenkins agent processes usually execute build tools whose input (source code, build scripts, etc.) is controlled externally, this vulnerability only has a real impact in very narrow circumstances: when attackers can control XML files, but are unable to change build steps, Jenkinsfiles, test code that gets executed on the agents, or similar.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: sourcemonitor
     previous: '0.2'
@@ -367,7 +367,7 @@ issues:
     NOTE: Because Jenkins agent processes usually execute build tools whose input (source code, build scripts, etc.) is controlled externally, this vulnerability only has a real impact in very narrow circumstances: when attackers can control XML files, but are unable to change build steps, Jenkinsfiles, test code that gets executed on the agents, or similar.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: osf-builder-suite-xml-linter
     title: 'OSF Builder Suite : : XML Linter'
@@ -387,7 +387,7 @@ issues:
     Additionally, this HTTP endpoint does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: cluster-stats
     previous: 0.4.6
@@ -404,7 +404,7 @@ issues:
     This allows attackers able to control XML input files for the 'Record Japex test report' post-build step to have Jenkins parse a crafted file that uses external entities for extraction of secrets from the Jenkins controller or server-side request forgery.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: japex
     previous: '1.7'
@@ -421,7 +421,7 @@ issues:
     This results in a stored cross-site scripting (XSS) vulnerability exploitable by attackers with Item/Configure permission.
 
     As of publication of this advisory, there is no fix.
-    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
+    link:/security/plugins/#unresolved[Learn why we announce this.]
   plugins:
   - name: associated-files
     previous: 0.2.1
