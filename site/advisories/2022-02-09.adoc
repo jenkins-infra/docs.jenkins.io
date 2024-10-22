@@ -30,5 +30,5 @@ issues:
 
     NOTE: Denial of service is detected via unexpectedly long-running collection-related operations.
     In case of very complex configurations, it is possible that there are false positive detections.
-    Set the link:/doc/book/managing/system-properties/#hudson-util-xstream2-collectionupdatelimit[Java system property `hudson.util.XStream2.collectionUpdateLimit`] to a number of seconds that a given XML file can take to load collections.
+    Set the xref:user-docs:managing:system-properties.adoc#hudson-util-xstream2-collectionupdatelimit[Java system property `hudson.util.XStream2.collectionUpdateLimit`] to a number of seconds that a given XML file can take to load collections.
     Use `-1` to disable this protection entirely.

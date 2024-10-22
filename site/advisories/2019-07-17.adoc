@@ -43,7 +43,7 @@ issues:
     NOTE: This fix may impact scripts that obtain a crumb from the crumb issuer API. They may need to be updated to retain the session ID for subsequent requests.
     For further information, see the link:/doc/upgrade-guide/2.176/#SECURITY-626[LTS upgrade guide].
 
-    We also publish the plugin:strict-crumb-issuer[Strict Crumb Issuer Plugin] which contains additional protection mechanisms that give administrators more fine-grained control over the validity of CSRF tokens.
+    We also publish the {plugin}strict-crumb-issuer[Strict Crumb Issuer Plugin] which contains additional protection mechanisms that give administrators more fine-grained control over the validity of CSRF tokens.
     We plan to improve the built-in default crumb issuer based on user feedback of this implementation.
 
 - id: SECURITY-534
@@ -61,11 +61,11 @@ issues:
 
     The Stapler web framework has been extended with a Service Provider Interface (SPI) that allows preventing views from being rendered.
     The implementation of that SPI in Jenkins now prevents view fragments from being rendered.
-    Further details are available in the link:/doc/developer/views/SECURITY-534[developer documentation].
+    Further details are available in the xref:dev-docs:views:SECURITY-534.adoc[developer documentation].
 
     Most views in Jenkins and Jenkins plugins should be compatible with this change.
     We track known affected plugins and their status in link:https://wiki.jenkins.io/display/JENKINS/Plugins+affected+by+the+SECURITY-534+fix[the Jenkins wiki].
 
     In rare cases, it may be desirable to disable this fix.
     To do so, set the Java system property `jenkins.security.stapler.StaplerDispatchValidator.disabled` to `true`.
-    link:/doc/book/managing/system-properties/[Learn more about system properties in Jenkins].
+    xref:user-docs:managing:system-properties.adoc[Learn more about system properties in Jenkins].

@@ -21,6 +21,7 @@ issues:
     PLUGIN_NAME 1229.v4880b_b_e905a_6 intercepts property assignments when invoking map constructors.
 
     NOTE: As part of this fix, map constructors may only be invoked in the sandbox using the `new` keyword. Attempting to invoke a map constructor using a Groovy cast will fail unconditionally. For example, code such as `[key: value] as MyClass` or `MyClass mc = [key: value]` must be converted to use `new MyClass(key: value)` instead.
+
   plugins:
   - name: script-security
     previous: 1228.vd93135a_2fb_25
@@ -221,7 +222,7 @@ issues:
     Those can be used as part of an attack to capture the credentials using another vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: ghprb
     previous: 1.42.2
@@ -240,7 +241,7 @@ issues:
     Additionally, these form validation methods do not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: ghprb
     previous: 1.42.2
@@ -259,7 +260,7 @@ issues:
     Additionally, these form validation methods do not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: jira-steps
     previous: 2.0.165.v8846cf59f3db
@@ -278,7 +279,7 @@ issues:
     Additionally, the global configuration form does not mask the API key, increasing the potential for attackers to observe and capture it.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: jira-steps
     previous: 2.0.165.v8846cf59f3db
@@ -298,7 +299,7 @@ issues:
     NOTE: Because Jenkins agent processes usually execute build tools whose input (source code, build scripts, etc.) is controlled externally, this vulnerability only has a real impact in very narrow circumstances: when attackers can control XML files, but are unable to change build steps, Jenkinsfiles, test code that gets executed on the agents, or similar.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: mstest
     previous: 1.0.0
@@ -315,7 +316,7 @@ issues:
     These credentials can be viewed by users with access to the Jenkins controller file system.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: github-pr-coverage-status
     previous: 2.2.0
@@ -332,7 +333,7 @@ issues:
     This allows attackers to use social engineering techniques to gain administrator access to Jenkins.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: keycloak
     title: Keycloak Authentication
@@ -350,7 +351,7 @@ issues:
     This vulnerability allows attackers to trick users into logging in to the attacker's account.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: keycloak
     title: Keycloak Authentication
@@ -368,7 +369,7 @@ issues:
     This allows attackers able to control the zip archive input file for the 'TestComplete Test' build step to have Jenkins parse a crafted file that uses external entities for extraction of secrets from the Jenkins controller or server-side request forgery.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: TestComplete
     previous: 2.8.1
@@ -385,7 +386,7 @@ issues:
     This allows attackers to use social engineering techniques to gain administrator access to Jenkins.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: openid
     previous: '2.4'
@@ -402,7 +403,7 @@ issues:
     This allows attackers to perform phishing attacks by having users go to a Jenkins URL that will forward them to a different site after successful authentication.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: openid
     previous: '2.4'
@@ -419,7 +420,7 @@ issues:
     This vulnerability allows attackers to trick users into logging in to the attacker's account.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: openid
     previous: '2.4'
@@ -438,7 +439,7 @@ issues:
     Additionally, this form validation method does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: rabbitmq-consumer
     previous: '2.8'
@@ -455,7 +456,7 @@ issues:
     This allows attackers with Overall/Read permission to check for the existence of an attacker-specified file path on the Jenkins controller file system.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: pwauth
     previous: '0.4'
@@ -472,7 +473,7 @@ issues:
     These passwords can be viewed by users with Item/Extended Read permission or access to the Jenkins controller file system.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: view-cloner
     previous: '1.1'
@@ -490,7 +491,7 @@ issues:
     Those can be used as part of an attack to capture the credentials using another vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: cisco-spark-notifier
     previous: 1.1.1
@@ -509,7 +510,7 @@ issues:
     Additionally, this form validation method does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: bearychat
     title: BearyChat
@@ -529,7 +530,7 @@ issues:
     Additionally, this form validation method does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: testquality-updater
     previous: '1.3'
@@ -546,7 +547,7 @@ issues:
     This password can be viewed by users with access to the Jenkins controller file system.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: testquality-updater
     previous: '1.3'
@@ -563,7 +564,7 @@ issues:
     This allows attackers with Item/Configure permission to check for the existence of an attacker-specified file path on the Jenkins controller file system.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: visualexpert
     previous: '1.3'

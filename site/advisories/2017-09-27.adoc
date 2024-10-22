@@ -1,9 +1,5 @@
----
-layout: simplepage
-title: Jenkins Security Advisory 2017-09-27
-section: security
-kind: core
----
+= Jenkins Security Advisory 2017-09-27
+:kind: core
 
 This advisory announces a vulnerability in Jenkins.
 
@@ -14,6 +10,7 @@ Clarified that it affects only instances that originally installed 2.80.
 == Description
 
 === Unprotected startup
+
 *JENKINS-47139*
 
 Jenkins 2.80 did not correctly initialize the setup wizard on the first startup.

@@ -173,7 +173,7 @@ issues:
     PLUGIN_NAME 1.9.1 and earlier stores its Zephyr password in plain text in the global configuration file `com.thed.zephyr.jenkins.reporter.ZeeReporter.xml`.
     This password can be viewed by users with access to the Jenkins controller file system.
 
-    PLUGIN_NAME 1.10 integrates with plugin:credentials[Credentials Plugin].
+    PLUGIN_NAME 1.10 integrates with {plugin}credentials[Credentials Plugin].
   plugins:
   - name: zephyr-enterprise-test-management
     previous: 1.9.1

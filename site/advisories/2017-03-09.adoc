@@ -1,15 +1,12 @@
----
-layout: simplepage
-title: Jenkins Security Advisory 2017-03-09
-section: security
-kind: plugin
----
+= Jenkins Security Advisory 2017-03-09
+:kind: plugin
 
-This advisory announces a vulnerability in the plugin:pipeline-maven[Maven Pipeline Plugin] 0.6.
+This advisory announces a vulnerability in the {plugin}pipeline-maven[Maven Pipeline Plugin] 0.6.
 
 == Description
 
 === Maven Pipeline Plugin allows reading arbitrary files from the Jenkins controller
+
 *SECURITY-441*
 
 Due to an improperly performed plugin release, version 0.6 of the Maven Pipeline Plugin is still affected by the vulnerability originally announced in the link:/security/advisory/2017-03-07/[2017-03-07] security advisory:

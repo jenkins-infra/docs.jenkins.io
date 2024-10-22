@@ -1,35 +1,34 @@
----
-layout: simplepage
-title: Jenkins Security Advisory 2015-12-09
-section: security
-kind: core
----
+= Jenkins Security Advisory 2015-12-09
+:kind: core
 
 This advisory announces multiple vulnerabilities in Jenkins.
 
 == Description
 
-
 === Stored XSS vulnerability through workspace files and archived artifacts
+
 *SECURITY-95 / CVE-2015-7536*
 
 In certain configurations, low privilege users were able to create e.g. HTML files in workspaces and archived artifacts that could result in XSS when accessed by other users. Jenkins now sends `Content-Security-Policy` headers that enables sandboxing and prohibits script execution by default.
 
-NOTE: If you rely on the previous behavior, or in case of compatibility problems with certain plugins, you can modify the header sent by Jenkins. Learn more: link:/doc/book/security/configuring-content-security-policy[Configuring Content Security Policy].
+NOTE: If you rely on the previous behavior, or in case of compatibility problems with certain plugins, you can modify the header sent by Jenkins. Learn more: xref:user-docs:security:configuring-content-security-policy.adoc[Configuring Content Security Policy].
 
 === CSRF vulnerability in some administrative actions
+
 *SECURITY-225 / CVE-2015-7537*
 
 Several administration/configuration related URLs could be accessed using `GET`, which allowed attackers to circumvent CSRF protection.
 
 
 === CSRF protection ineffective
+
 *SECURITY-233 / CVE-2015-7538*
 
 Malicious users were able to circumvent CSRF protection on any URL by sending specially crafted `POST` requests.
 
 
 === Jenkins plugin manager vulnerable to MITM attacks
+
 *SECURITY-234 / CVE-2015-7539*
 
 While the Jenkins update site data is digitally signed, and the signature verified by Jenkins, Jenkins did not verify the provided SHA-1 checksums for the plugin files referenced in the update site data. This enabled MITM attacks on the plugin manager, resulting in installation of attacker-provided plugins.
@@ -56,7 +55,7 @@ These versions include fixes to all the vulnerabilities described above. All pri
 
 == Credit
 
-The Jenkins project would like to thank the following people for discovering and link:/security/#reporting-vulnerabilities[reporting] these vulnerabilities:
+The Jenkins project would like to thank the following people for discovering and xref:index.adoc#reporting-vulnerabilities[reporting] these vulnerabilities:
 
 * *Alex Soto Bueno, CloudBees, Inc.* for SECURITY-234
 * *Antoine Musso and Timo Tijhof* for SECURITY-95

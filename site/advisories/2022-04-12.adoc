@@ -37,20 +37,20 @@ issues:
     Jenkins (core) has prevented exploitation of vulnerabilities of this kind on the "Build With Parameters" and "Parameters" pages since 2.44 and LTS 2.32.2 as part of the link:/security/advisory/2017-02-01/#persisted-cross-site-scripting-vulnerability-in-parameter-names-and-descriptions[SECURITY-353 / CVE-2017-2601] fix.
     Additionally, the following plugins have been updated to list parameters in a way that prevents exploitation by default.
 
-    * plugin:m2release[Maven Release Plugin] 0.16.3 (SECURITY-2669)
-    * plugin:pipeline-build-step[Pipeline: Build Step Plugin] 2.17 and 2.15.2 (SECURITY-2611)
-    * plugin:pipeline-input-step[Pipeline: Input Step Plugin] 447.v95e5a_6e3502a_ and 2.12.1 (SECURITY-2674)
-    * plugin:promoted-builds[promoted builds Plugin] 876.v99d29788b_36b_ and 3.10.1 (SECURITY-2670)
-    * plugin:rebuild[Rebuilder Plugin] 1.33.1 (SECURITY-2671)
-    * plugin:release[Release Plugin] 2.14 (SECURITY-2672)
+    * {plugin}m2release[Maven Release Plugin] 0.16.3 (SECURITY-2669)
+    * {plugin}pipeline-build-step[Pipeline: Build Step Plugin] 2.17 and 2.15.2 (SECURITY-2611)
+    * {plugin}pipeline-input-step[Pipeline: Input Step Plugin] 447.v95e5a_6e3502a_ and 2.12.1 (SECURITY-2674)
+    * {plugin}promoted-builds[promoted builds Plugin] 876.v99d29788b_36b_ and 3.10.1 (SECURITY-2670)
+    * {plugin}rebuild[Rebuilder Plugin] 1.33.1 (SECURITY-2671)
+    * {plugin}release[Release Plugin] 2.14 (SECURITY-2672)
 
     Older releases of these plugins allow exploitation of the vulnerabilities listed above.
 
     As of publication of this advisory, the following plugins have not yet been updated to list parameters in a way that prevents exploitation of these vulnerabilities:
 
-    * plugin:coordinator[Coordinator Plugin] (SECURITY-2668)
-    * plugin:show-build-parameters[Show Build Parameters Plugin] (SECURITY-2325)
-    * plugin:unleash[Unleash Maven Plugin] (SECURITY-2673)
+    * {plugin}coordinator[Coordinator Plugin] (SECURITY-2668)
+    * {plugin}show-build-parameters[Show Build Parameters Plugin] (SECURITY-2325)
+    * {plugin}unleash[Unleash Maven Plugin] (SECURITY-2673)
 
     These are not vulnerabilities in these plugins.
     Only plugins defining parameter types can be considered to be vulnerable to this issue.
@@ -74,7 +74,7 @@ issues:
     * Extended Choice Parameter Plugin (SECURITY-2704 / CVE-2022-29038)
     * Job Generator (SECURITY-2263 / CVE-2022-29042)
 
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: credentials
     previous: 1111.v35a_307992395
@@ -153,7 +153,7 @@ issues:
     severity: High
     vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H
   description: |-
-    PLUGIN_NAME provides dedicated support for defining promotions using plugin:job-dsl[Job DSL Plugin].
+    PLUGIN_NAME provides dedicated support for defining promotions using {plugin}job-dsl[Job DSL Plugin].
 
     PLUGIN_NAME 873.v6149db_d64130 and earlier does not validate the names of promotions defined in Job DSL.
     This allows attackers with Job/Configure permission to create a promotion with an unsafe name.

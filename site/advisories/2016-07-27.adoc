@@ -1,9 +1,5 @@
----
-layout: simplepage
-title: Jenkins Security Advisory 2016-07-27
-section: security
-kind: plugin
----
+= Jenkins Security Advisory 2016-07-27
+:kind: plugin
 
 This advisory announces a vulnerability in the link:https://plugins.jenkins.io/cucumber-reports[Cucumber Reports Plugin].
 
@@ -11,13 +7,14 @@ This advisory announces a vulnerability in the link:https://plugins.jenkins.io/c
 == Description
 
 === Cucumber Reports Plugin disables Content-Security-Policy for archived and workspace files
+
 *SECURITY-309*
 
 Jenkins 1.641 and 1.625.3 introduced `Content-Security-Policy` HTTP headers as protection against Cross-Site Scripting attacks using workspace files and archived artifacts served using `DirectoryBrowserSupport` (link:/security/advisory/2015-12-09/[SECURITY-95]).
 
 The Cucumber Reports Plugin disabled this XSS protection until Jenkins was restarted whenever a Cucumber Report was viewed by any user to work around the `Content-Security-Policy` limitations.
 
-While disabling this protection mechanism temporarily may be necessary to make plugins work that haven't been adapted to work with the Content-Security-Policy restriction, this should only be done by administrators, as doing so may result in a security issue (see link:/doc/book/security/configuring-content-security-policy[Configuring Content Security Policy]).
+While disabling this protection mechanism temporarily may be necessary to make plugins work that haven't been adapted to work with the Content-Security-Policy restriction, this should only be done by administrators, as doing so may result in a security issue (see xref:user-docs:security:configuring-content-security-policy.adoc[Configuring Content Security Policy]).
 
 
 == Severity

@@ -1,15 +1,12 @@
----
-layout: simplepage
-title: Jenkins Security Advisory 2017-03-07
-section: security
-kind: plugin
----
+= Jenkins Security Advisory 2017-03-07
+:kind: plugin
 
-This advisory announces a vulnerability in the plugin:pipeline-maven[Maven Pipeline Plugin].
+This advisory announces a vulnerability in the {plugin}pipeline-maven[Maven Pipeline Plugin].
 
 == Description
 
 === Maven Pipeline Plugin allows reading arbitrary files from the Jenkins controller
+
 *SECURITY-441*
 
 The Maven Pipeline Plugin allowed users to copy and read arbitrary files accessible from the Jenkins controller process in a Pipeline script by specifying that file's path on the Jenkins controller as `mavenSettingsFilePath` or `globalMavenSettingsFilePath`.
@@ -28,6 +25,6 @@ The Maven Pipeline Plugin allowed users to copy and read arbitrary files accessi
 
 == Credit
 
-The Jenkins project would like to thank the reporter for discovering and link:/security/#reporting-vulnerabilities[reporting] this vulnerability:
+The Jenkins project would like to thank the reporter for discovering and xref:index.adoc#reporting-vulnerabilities[reporting] this vulnerability:
 
 * *Jesse Glick, CloudBees, Inc.* for SECURITY-441

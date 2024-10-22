@@ -1,13 +1,9 @@
----
-layout: simplepage
-title: Jenkins Security Advisory 2015-10-01
-section: security
-kind: other
----
+= Jenkins Security Advisory 2015-10-01
+:kind: other
 
 *Updated 2015-10-13*: The `/script` URL appears to be how machines get infected. Clarified that enabling security isn't enough, anonymous users must not be able to run scripts.
 
-===  Description
+== Description
 
 The Jenkins project has received multiple credible reports indicating that unsecured, publicly accessible instances of Jenkins are being targeted and infected with malware. This advisory publishes the information we have about this situation and may be updated once we learn more.
 
@@ -16,7 +12,7 @@ By default, Jenkins listens to all interfaces and does not require user authenti
 
 While this is not a bug in Jenkins, we are planning to change the Jenkins setup in a future release to be secure by default to prevent something like this from occurring in the future.
 
-===  Infections
+== Infections
 
 Reports indicate that affected machines have one or more of these files in their Jenkins home directory (e.g. `/var/lib/jenkins`):
 
@@ -28,7 +24,7 @@ According to some reports, the malware uses the `/script` URL to install the mal
 
 We currently neither know the exact nature of this malware, nor how to remove it.
 
-===  Fix
+== Fix
 
 If you're running a Jenkins instance on a public network, link:https://wiki.jenkins.io/display/JENKINS/Standard+Security+Setup[follow the instructions in the Jenkins wiki] to set up security on your Jenkins instance.
 // TODO Update link once we have better docs for this on the site

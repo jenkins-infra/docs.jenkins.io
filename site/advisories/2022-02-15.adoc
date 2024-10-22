@@ -14,17 +14,17 @@ issues:
   description: |-
     Multiple Pipeline-related plugins that perform on-controller SCM checkouts reuse the same workspace directory for checkouts of distinct SCMs in some contexts.
 
-    - plugin:workflow-cps[Pipeline: Groovy Plugin] 2648.va9433432b33c and earlier uses the same checkout directories for distinct SCMs when reading the script file (typically `Jenkinsfile`) for Pipelines.
-    - plugin:workflow-cps-global-lib[Pipeline: Shared Groovy Libraries] 552.vd9cc05b8a2e1 and earlier uses the same checkout directories for distinct SCMs for Pipeline libraries.
-    - plugin:workflow-multibranch[Pipeline: Multibranch] 706.vd43c65dec013 and earlier uses the same checkout directories for distinct SCMs for the `readTrusted` step.
+    - {plugin}workflow-cps[Pipeline: Groovy Plugin] 2648.va9433432b33c and earlier uses the same checkout directories for distinct SCMs when reading the script file (typically `Jenkinsfile`) for Pipelines.
+    - {plugin}workflow-cps-global-lib[Pipeline: Shared Groovy Libraries] 552.vd9cc05b8a2e1 and earlier uses the same checkout directories for distinct SCMs for Pipeline libraries.
+    - {plugin}workflow-multibranch[Pipeline: Multibranch] 706.vd43c65dec013 and earlier uses the same checkout directories for distinct SCMs for the `readTrusted` step.
 
     This allows attackers with Item/Configure permission to invoke arbitrary OS commands on the controller through crafted SCM contents.
 
     Affected plugins have been updated to address these issues:
 
-    - plugin:workflow-cps[Pipeline: Groovy Plugin] 2656.vf7a_e7b_75a_457 uses distinct checkout directories per SCM when reading the script file (typically `Jenkinsfile`) for Pipelines.
-    - plugin:workflow-cps-global-lib[Pipeline: Shared Groovy Libraries] 561.va_ce0de3c2d69 uses distinct checkout directories per SCM for Pipeline libraries.
-    - plugin:workflow-multibranch[Pipeline: Multibranch] 707.v71c3f0a_6ccdb_ uses distinct checkout directories per SCM for the `readTrusted` step.
+    - {plugin}workflow-cps[Pipeline: Groovy Plugin] 2656.vf7a_e7b_75a_457 uses distinct checkout directories per SCM when reading the script file (typically `Jenkinsfile`) for Pipelines.
+    - {plugin}workflow-cps-global-lib[Pipeline: Shared Groovy Libraries] 561.va_ce0de3c2d69 uses distinct checkout directories per SCM for Pipeline libraries.
+    - {plugin}workflow-multibranch[Pipeline: Multibranch] 707.v71c3f0a_6ccdb_ uses distinct checkout directories per SCM for the `readTrusted` step.
   plugins:
   - name: workflow-cps
     previous: 2648.va9433432b33c
@@ -48,18 +48,18 @@ issues:
   description: |-
     Multiple Pipeline-related plugins follow symbolic links or do not limit path names, resulting in arbitrary file read vulnerabilities:
 
-    - plugin:workflow-cps[Pipeline: Groovy Plugin] 2648.va9433432b33c and earlier follows symbolic links to locations outside of the checkout directory for the configured SCM when reading the script file (typically `Jenkinsfile`) for Pipelines (originally reported as SECURITY-2595).
-    - plugin:workflow-cps-global-lib[Pipeline: Shared Groovy Libraries] 552.vd9cc05b8a2e1 and earlier follows symbolic links to locations outside of the expected Pipeline library when reading files using the `libraryResource` step (originally reported as SECURITY-2479).
-    - plugin:workflow-cps-global-lib[Pipeline: Shared Groovy Libraries] 552.vd9cc05b8a2e1 and earlier does not restrict the names of resources passed to the `libraryResource` step (originally reported as SECURITY-2476).
-    - plugin:workflow-multibranch[Pipeline: Multibranch] 706.vd43c65dec013 and earlier follows symbolic links to locations outside of the checkout directory for the configured SCM when reading files using the `readTrusted` step (originally reported as SECURITY-2491).
+    - {plugin}workflow-cps[Pipeline: Groovy Plugin] 2648.va9433432b33c and earlier follows symbolic links to locations outside of the checkout directory for the configured SCM when reading the script file (typically `Jenkinsfile`) for Pipelines (originally reported as SECURITY-2595).
+    - {plugin}workflow-cps-global-lib[Pipeline: Shared Groovy Libraries] 552.vd9cc05b8a2e1 and earlier follows symbolic links to locations outside of the expected Pipeline library when reading files using the `libraryResource` step (originally reported as SECURITY-2479).
+    - {plugin}workflow-cps-global-lib[Pipeline: Shared Groovy Libraries] 552.vd9cc05b8a2e1 and earlier does not restrict the names of resources passed to the `libraryResource` step (originally reported as SECURITY-2476).
+    - {plugin}workflow-multibranch[Pipeline: Multibranch] 706.vd43c65dec013 and earlier follows symbolic links to locations outside of the checkout directory for the configured SCM when reading files using the `readTrusted` step (originally reported as SECURITY-2491).
 
     This allows attackers able to configure Pipelines to read arbitrary files on the Jenkins controller file system.
 
     Affected plugins have been updated to address these issues:
 
-    - plugin:workflow-cps[Pipeline: Groovy Plugin] 2656.vf7a_e7b_75a_457 checks that the script file for Pipelines is inside of the checkout directory for the configured SCM.
-    - plugin:workflow-cps-global-lib[Pipeline: Shared Groovy Libraries] 561.va_ce0de3c2d69 checks that any resources retrieved by the `libraryResource` step are contained within the expected Pipeline library.
-    - plugin:workflow-multibranch[Pipeline: Multibranch] 707.v71c3f0a_6ccdb_ checks that the file retrieved by `readTrusted` is inside of the checkout directory for the configured SCM.
+    - {plugin}workflow-cps[Pipeline: Groovy Plugin] 2656.vf7a_e7b_75a_457 checks that the script file for Pipelines is inside of the checkout directory for the configured SCM.
+    - {plugin}workflow-cps-global-lib[Pipeline: Shared Groovy Libraries] 561.va_ce0de3c2d69 checks that any resources retrieved by the `libraryResource` step are contained within the expected Pipeline library.
+    - {plugin}workflow-multibranch[Pipeline: Multibranch] 707.v71c3f0a_6ccdb_ checks that the file retrieved by `readTrusted` is inside of the checkout directory for the configured SCM.
   plugins:
   - name: workflow-cps
     previous: 2648.va9433432b33c
@@ -332,7 +332,7 @@ issues:
 
     NOTE: This issue is caused by an incomplete fix of link:/security/advisory/2019-08-07/#SECURITY-796[SECURITY-796].
 
-    As of publication of this advisory, there is no fix. link:/security/plugins/#unresolved[Learn why we announce this.]
+    As of publication of this advisory, there is no fix. xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: gitlab-oauth
     previous: '1.13'
@@ -351,7 +351,7 @@ issues:
     NOTE: This vulnerability is only exploitable in Jenkins 2.318 and earlier, LTS 2.303.2 and earlier.
     See the link:/doc/upgrade-guide/2.303/#upgrading-to-jenkins-lts-2-303-3[LTS upgrade guide].
 
-    As of publication of this advisory, there is no fix. link:/security/plugins/#unresolved[Learn why we announce this.]
+    As of publication of this advisory, there is no fix. xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: hashicorp-vault-plugin
     previous: 336.v182c0fbaaeb7
@@ -369,7 +369,7 @@ issues:
 
     Additionally, this form validation method does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
-    As of publication of this advisory, there is no fix. link:/security/plugins/#unresolved[Learn why we announce this.]
+    As of publication of this advisory, there is no fix. xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: scp
     previous: '1.8'
@@ -388,7 +388,7 @@ issues:
 
     Additionally, these HTTP endpoints do not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
-    As of publication of this advisory, there is no fix. link:/security/plugins/#unresolved[Learn why we announce this.]
+    As of publication of this advisory, there is no fix. xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: checkmarx
     previous: 2022.1.2
@@ -404,7 +404,7 @@ issues:
 
     This results in a stored cross-site scripting (XSS) vulnerability exploitable by attackers with Overall/Administer permission.
 
-    As of publication of this advisory, there is no fix. link:/security/plugins/#unresolved[Learn why we announce this.]
+    As of publication of this advisory, there is no fix. xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: promoted-builds-simple
     previous: '1.9'
@@ -420,7 +420,7 @@ issues:
 
     This results in a stored cross-site scripting (XSS) vulnerability exploitable by attackers with Overall/Read permission.
 
-    As of publication of this advisory, there is no fix. link:/security/plugins/#unresolved[Learn why we announce this.]
+    As of publication of this advisory, there is no fix. xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: team-views
     title: Team Views
@@ -437,7 +437,7 @@ issues:
 
     Additionally, error messages allow attackers able to control agent processes to determine whether a file with a given name exists.
 
-    As of publication of this advisory, there is no fix. link:/security/plugins/#unresolved[Learn why we announce this.]
+    As of publication of this advisory, there is no fix. xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: doktor
     previous: 0.4.1
@@ -457,7 +457,7 @@ issues:
 
     Additionally, this form validation method does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
-    As of publication of this advisory, there is no fix. link:/security/plugins/#unresolved[Learn why we announce this.]
+    As of publication of this advisory, there is no fix. xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: dbCharts
     previous: 0.5.2
@@ -478,7 +478,7 @@ issues:
 
     Additionally, this form validation method does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
-    As of publication of this advisory, there is no fix. link:/security/plugins/#unresolved[Learn why we announce this.]
+    As of publication of this advisory, there is no fix. xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: sinatra-chef-builder
     title: Chef Sinatra
@@ -495,7 +495,7 @@ issues:
 
     This allows attackers with Item/Configure permission to capture passwords of the jobs that will be configured.
 
-    As of publication of this advisory, there is no fix. link:/security/plugins/#unresolved[Learn why we announce this.]
+    As of publication of this advisory, there is no fix. xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: convertigo-mobile-platform
     previous: '1.1'
@@ -514,7 +514,7 @@ issues:
 
     Additionally, this form validation method does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
-    As of publication of this advisory, there is no fix. link:/security/plugins/#unresolved[Learn why we announce this.]
+    As of publication of this advisory, there is no fix. xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: swamp
     title: SWAMP

@@ -10,9 +10,10 @@ core:
   weekly:
     previous: '2.196'
     fixed: '2.197'
+---
 issues:
 
-# Core issues
+== Core issues
 
 - id: SECURITY-1498
   reporter: Matt Sicker, CloudBees Inc. and Wadeck Follonier, CloudBees Inc.
@@ -113,13 +114,13 @@ issues:
     [NOTE]
     ======
     In case this results in problems, e.g. a valid URL unexpectedly being rejected, set the system property `jenkins.model.JenkinsLocationConfiguration.disableUrlValidation` to `true` to disable this restriction.
-    link:/doc/book/managing/system-properties/[Learn more about system properties in Jenkins].
+    xref:user-docs:managing:system-properties.adoc[Learn more about system properties in Jenkins].
     ======
 
 
 
 
-# Plugin issues (previously fixed)
+== Plugin issues (previously fixed)
 
 - id: SECURITY-351
   # reporter: TBD
@@ -359,7 +360,7 @@ issues:
 
 
 
-# Plugin issues (remaining unresolved)
+== Plugin issues (remaining unresolved)
 
 - id: SECURITY-920 (1)
   reporter: Jesse Glick, CloudBees, Inc.

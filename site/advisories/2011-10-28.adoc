@@ -1,11 +1,7 @@
----
-layout: simplepage
-title: Jenkins Security Advisory 2011-10-28
-section: security
-kind: plugin
----
+= Jenkins Security Advisory 2011-10-28
+:kind: plugin
 
-Vulnerability in plugin:openid[Jenkins OpenID plugin]
+Vulnerability in {plugin}openid[Jenkins OpenID plugin]
 
 This vulnerability allowed malicious users to assume the identity of arbitrary users without going through the proper OpenID authentication process, when configured with the SSO mode.
 This affects all the OpenID plugins up to and including 1.3.

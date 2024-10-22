@@ -1,15 +1,12 @@
----
-layout: simplepage
-title: Jenkins Security Advisory 2017-06-06
-section: security
-kind: plugin
----
+= Jenkins Security Advisory 2017-06-06
+:kind: plugin
 
-This advisory announces multiple vulnerabilities in the plugin:favorite[Favorite Plugin].
+This advisory announces multiple vulnerabilities in the {plugin}favorite[Favorite Plugin].
 
 == Description
 
 === Missing permission check in Favorite Plugin allows anyone to change favorites for any other user
+
 *JENKINS-44643 / CVE-2017-1000243*
 
 A missing permission check allowed any user to add or remove favorites for any other user.
@@ -17,6 +14,7 @@ A missing permission check allowed any user to add or remove favorites for any o
 The API was changed so users cannot change another user's favorites, only their own.
 
 === CSRF vulnerability in Favorite Plugin allows changing another user's favorites
+
 *SECURITY-532 / CVE-2017-1000244*
 
 An API used to add and remove a favorite was vulnerable to CSRF, allowing attackers to change the victim's favorites.
@@ -39,6 +37,6 @@ The API now requires requests to be sent via POST, which is subject to the CSRF 
 
 == Credit
 
-The Jenkins project would like to thank the reporter for discovering and link:/security/#reporting-vulnerabilities[reporting] this vulnerability:
+The Jenkins project would like to thank the reporter for discovering and xref:index.adoc#reporting-vulnerabilities[reporting] this vulnerability:
 
 * *Andres Rodriguez, CloudBees, Inc.* for SECURITY-532

@@ -286,7 +286,7 @@ issues:
     OSF Builder Suite For Salesforce Commerce Cloud : : Deploy Plugin stored the HTTP proxy username and password in its configuration unencrypted in its global configuration file on the Jenkins controller.
     This password could be viewed by users with access to the Jenkins controller file system.
 
-    The plugin now integrates with plugin:credentials[Credentials Plugin] to store the HTTP proxy credentials.
+    The plugin now integrates with {plugin}credentials[Credentials Plugin] to store the HTTP proxy credentials.
 
 - id: SECURITY-1088
   title: SSRF and data modification vulnerability due to missing permission check in Bitbar Run-in-Cloud

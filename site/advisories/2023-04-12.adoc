@@ -58,7 +58,7 @@ issues:
     Job configurations using Image Tag Parameters that were created before 2.0 will have SSL/TLS certificate validation disabled by default.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: image-tag-parameter
     previous: '2.0'
@@ -73,7 +73,7 @@ issues:
     PLUGIN_NAME 1.22 and earlier unconditionally disables SSL/TLS certificate and hostname validation when connecting to a configured NeuVector Vulnerability Scanner server.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: neuvector-vulnerability-scanner
     previous: '1.22'
@@ -91,7 +91,7 @@ issues:
     Those can be used as part of an attack to capture the credentials using another vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: thycotic-secret-server
     previous: 1.0.2
@@ -110,7 +110,7 @@ issues:
     This allows unauthenticated attackers to trigger builds of jobs corresponding to the attacker-specified repository.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: quayio-trigger
     previous: '0.1'
@@ -127,7 +127,7 @@ issues:
     This results in a stored cross-site scripting (XSS) vulnerability exploitable by attackers able to submit crafted Quay.io trigger webhook payloads.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: quayio-trigger
     previous: '0.1'
@@ -146,7 +146,7 @@ issues:
     This allows unauthenticated attackers to trigger builds of jobs corresponding to the attacker-specified repository.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: assembla-merge-request-builder
     previous: 1.1.13
@@ -163,7 +163,7 @@ issues:
     In PLUGIN_NAME 2.2.17 and earlier, this endpoint can be accessed by attackers with Item/Read permission, allowing them to trigger builds of jobs specified in a `jobname` request parameter.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: fogbugz
     previous: 2.2.17
@@ -182,7 +182,7 @@ issues:
     Additionally, the configuration form does not mask these tokens, increasing the potential for attackers to observe and capture them.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: reportportal
     previous: '0.5'
@@ -201,7 +201,7 @@ issues:
     Additionally, this form validation method does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: reportportal
     previous: '0.5'
@@ -220,7 +220,7 @@ issues:
     Additionally, the global configuration form does not mask the WSO2 Oauth client secret, increasing the potential for attackers to observe and capture it.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: wso2id-oauth
     previous: '1.0'
@@ -237,7 +237,7 @@ issues:
     This vulnerability allows attackers to reindex the database.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: lucene-search
     previous: 387.v938a_ecb_f7fe9
@@ -256,7 +256,7 @@ issues:
     Additionally, the global configuration form does not mask the token, increasing the potential for attackers to observe and capture it.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: consul-kv-builder
     previous: 2.0.13
@@ -273,7 +273,7 @@ issues:
     In PLUGIN_NAME 1.3 and earlier, this endpoint can be accessed by attackers with Item/Read permission to trigger builds of jobs corresponding to the attacker-specified repository.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: spoonscript
     previous: '1.3'

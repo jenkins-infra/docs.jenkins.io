@@ -1,23 +1,19 @@
----
-layout: simplepage
-title: Jenkins Security Advisory 2017-10-23
-section: security
-kind: plugins
----
+= Jenkins Security Advisory 2017-10-23
+:kind: plugins
 
 This advisory announces vulnerabilities in these Jenkins plugins:
 
-* plugin:uno-choice[Active Choices] (uno-choice)
-* plugin:build-publisher[Build-Publisher]
-* plugin:depgraph-view[Dependency Graph Viewer]
-* plugin:global-build-stats[global-build-stats]
-* plugin:jenkins-multijob-plugin[Multijob]
-* plugin:scp[SCP publisher]
+* {plugin}uno-choice[Active Choices] (uno-choice)
+* {plugin}build-publisher[Build-Publisher]
+* {plugin}depgraph-view[Dependency Graph Viewer]
+* {plugin}global-build-stats[global-build-stats]
+* {plugin}jenkins-multijob-plugin[Multijob]
+* {plugin}scp[SCP publisher]
 
 == Description
 
-
 === Persisted Cross-Site Scripting vulnerability in Active Choices plugin
+
 *SECURITY-470 / CVE-2017-1000386*
 
 Active Choices plugin allowed users with Job/Configure permission to provide arbitrary HTML to be shown on the _Build With Parameters_ page through the _Active Choices Reactive Reference Parameter_ type.
@@ -34,6 +30,7 @@ To resolve this issue, Groovy scripts emitting HTML will need to be configured t
 ====
 
 === Cross-Site Request Forgery (CSRF) and Reflected Cross-Site Scripting vulnerability in global-build-stats plugin
+
 *SECURITY-50 / CVE-2017-1000389*
 
 Some URLs provided by global-build-stats plugin returned a JSON response that contained request parameters.
@@ -45,6 +42,7 @@ Affected URLs now specify the correct `Content-Type` for JSON responses, and req
 
 
 === Missing permission checks in Dependency Graph Viewer plugin
+
 *SECURITY-57 / CVE-2017-1000388*
 
 Dependency Graph Viewer plugin did not perform permission checks for the API endpoint that modifies the dependency graph, allowing anyone with Overall/Read permission to modify this data.
@@ -53,6 +51,7 @@ Dependency graph modification now requires that users have the permission to con
 
 
 === Build-Publisher plugin stores Jenkins credentials unencrypted on disk, round-trips in unencrypted form
+
 *SECURITY-378 / CVE-2017-1000387*
 
 Build-Publisher plugin stores credentials to other Jenkins instances in the file `hudson.plugins.build_publisher.BuildPublisher.xml` in the Jenkins controller home directory.
@@ -65,6 +64,7 @@ Build-Publisher Plugin now encrypts the credentials on disk, and only transmits 
 
 
 === Missing permission check in Multijob plugin Resume Build action
+
 *JENKINS-36333 / CVE-2017-1000390*
 
 Multijob plugin did not check permissions in the Resume Build action, allowing anyone with Job/Read permission to resume the build.
@@ -73,6 +73,7 @@ Multijob plugin 1.26 introduced a permission check requiring Overall/Administer.
 
 
 === SCP publisher plugin stores credentials unencrypted on disk, round-trips in unencrypted form
+
 *SECURITY-374*
 
 SCP publisher plugin stores SSH credentials in the file `be.certipost.hudson.plugin.SCPRepositoryPublisher.xml` in the Jenkins controller home directory.
@@ -95,6 +96,7 @@ As of publication of this advisory, there is no fix.
 
 
 == Affected versions
+
 * Active Choices Plugin up to and including 1.5.3
 * Build-Publisher Plugin up to and including 1.21
 * Dependency Graph Viewer Plugin up to and including 0.12
@@ -103,6 +105,7 @@ As of publication of this advisory, there is no fix.
 * All versions of SCP publisher plugin
 
 == Fix
+
 * Active Choices Plugin should be updated to version 2.0
 * Build-Publisher Plugin should be updated to version 1.22
 * Dependency Graph Viewer Plugin should be updated to version 0.13
@@ -116,7 +119,7 @@ As of publication of this advisory, there is no fix available for SCP publisher 
 
 == Credit
 
-The Jenkins project would like to thank the reporters for discovering and link:/security/#reporting-vulnerabilities[reporting] these vulnerabilities:
+The Jenkins project would like to thank the reporters for discovering and xref:index.adoc#reporting-vulnerabilities[reporting] these vulnerabilities:
 
 * *Daniel Beck, CloudBees Inc.* for SECURITY-470
 * *Eddie Allan* for SECURITY-50

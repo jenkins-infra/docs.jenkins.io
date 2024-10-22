@@ -146,7 +146,7 @@ issues:
     Combined with SECURITY-2966, this can result in the execution of unsandboxed Pipeline scripts.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: convert-to-pipeline
     previous: '1.0'
@@ -164,7 +164,7 @@ issues:
     If an administrator converts the Freestyle project to a Pipeline, the script will be pre-approved.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: convert-to-pipeline
     previous: '1.0'
@@ -181,7 +181,7 @@ issues:
     This results in a stored cross-site scripting (XSS) vulnerability exploitable by attackers able to control report file contents.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: cppcheck
     previous: '1.26'
@@ -198,7 +198,7 @@ issues:
     This results in a stored cross-site scripting (XSS) vulnerability exploitable by authenticated attackers with Overall/Read permission.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: mashup-portlets-plugin
     title: Mashup Portlets
@@ -216,7 +216,7 @@ issues:
     This allows attackers able to control Crap Report file contents to have Jenkins parse a crafted XML document that uses external entities for extraction of secrets from the Jenkins controller or server-side request forgery.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: crap4j
     previous: '0.9'
@@ -233,7 +233,7 @@ issues:
     This allows attackers able to control VS Code Metrics File contents to have Jenkins parse a crafted XML document that uses external entities for extraction of secrets from the Jenkins controller or server-side request forgery.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: vs-code-metrics
     previous: '1.7'
@@ -250,7 +250,7 @@ issues:
     This allows attackers able to control PerfPublisher report files to have Jenkins parse a crafted XML document that uses external entities for extraction of secrets from the Jenkins controller or server-side request forgery.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: perfpublisher
     previous: '8.09'
@@ -267,7 +267,7 @@ issues:
     This allows attackers able to control coverage report file contents for the 'Post to Phabricator' post-build action to have Jenkins parse a crafted XML document that uses external entities for extraction of secrets from the Jenkins controller or server-side request forgery.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: phabricator-plugin
     previous: 2.1.5
@@ -284,7 +284,7 @@ issues:
     This allows authenticated attackers with Overall/Read permission to have Jenkins parse a crafted XML document that uses external entities for extraction of secrets from the Jenkins controller or server-side request forgery.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: remote-jobs-view-plugin
     previous: 0.0.3
@@ -301,7 +301,7 @@ issues:
     This allows attackers able to control 'Project File (APX)' contents to have Jenkins parse a crafted XML document that uses external entities for extraction of secrets from the Jenkins controller or server-side request forgery.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: absint-a3
     previous: 1.1.0

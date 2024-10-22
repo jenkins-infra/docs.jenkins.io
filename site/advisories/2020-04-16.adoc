@@ -28,7 +28,7 @@ issues:
     severity: High
     vector: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N
   description: |-
-    PLUGIN_NAME implements a static analysis parser for various Parasoft products and integrates with plugin:warnings[Warnings Plugin] (10.4.1 and earlier) and plugin:warnings-ng[Warnings NG Plugin] (10.4.2 and newer).
+    PLUGIN_NAME implements a static analysis parser for various Parasoft products and integrates with {plugin}warnings[Warnings Plugin] (10.4.1 and earlier) and plugin:warnings-ng[Warnings NG Plugin] (10.4.2 and newer).
 
     PLUGIN_NAME 10.4.3 and earlier does not configure its XML parser to prevent XML external entity (XXE) attacks.
     This allows a user able to control the input files for the Parasoft Findings parser to have Jenkins parse a crafted file that uses external entities for extraction of secrets from the Jenkins controller or server-side request forgery.

@@ -1,11 +1,7 @@
----
-layout: simplepage
-title: Jenkins Security Advisory 2015-10-12
-section: security
-kind: plugin
----
+= Jenkins Security Advisory 2015-10-12
+:kind: plugin
 
-This advisory announces a vulnerability in the plugin:google-login[Google Login Plugin].
+This advisory announces a vulnerability in the {plugin}google-login[Google Login Plugin].
 
 Jenkins issue: *SECURITY-208*
 

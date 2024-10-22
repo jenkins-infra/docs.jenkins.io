@@ -26,9 +26,9 @@ issues:
 
     For compatibility with this change, the following plugins should be upgraded to the versions specified:
 
-    * plugin:email-ext[Email Extension Plugin] should be updated to version 2.77 or newer.
-    * plugin:warnings-ng[Warnings Next Generation Plugin] should be updated to version 8.4.3 or newer.
-    * plugin:warnings[Warnings Plugin] should be updated to version 5.0.2 or newer.
+    * {plugin}email-ext[Email Extension Plugin] should be updated to version 2.77 or newer.
+    * {plugin}warnings-ng[Warnings Next Generation Plugin] should be updated to version 8.4.3 or newer.
+    * {plugin}warnings[Warnings Plugin] should be updated to version 5.0.2 or newer.
   plugins:
   - name: script-security
     previous: '1.74'

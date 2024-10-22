@@ -90,7 +90,7 @@ issues:
     This results in a stored cross-site scripting (XSS) vulnerability exploitable by attackers with Item/Configure permission.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: cavisson-ns-nd-integration
     previous: 4.8.0.134
@@ -107,7 +107,7 @@ issues:
     This allows attackers with Overall/Read permission to obtain names and URLs of Jenkins servers that the plugin is configured to publish builds to, as well as builds pending for publication to those Jenkins servers.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: build-publisher
     previous: '1.22'
@@ -124,7 +124,7 @@ issues:
     Additionally, this endpoint does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability that allows attackers to replace any config.xml file on the Jenkins controller file system with an empty file.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: build-publisher
     previous: '1.22'
@@ -141,7 +141,7 @@ issues:
     This allows attackers with Item/Read permission to obtain information about build artifacts of a given job, if the optional Run/Artifacts permission is enabled.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: rundeck
     previous: 3.6.11
@@ -158,7 +158,7 @@ issues:
     This allows attackers with Item/Read permission to trigger jobs that are configured to be triggerable via Rundeck.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: rundeck
     previous: 3.6.11
@@ -178,7 +178,7 @@ issues:
     See the link:/doc/upgrade-guide/2.303/#upgrading-to-jenkins-lts-2-303-3[LTS upgrade guide].
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: wildfly-deployer
     previous: 1.0.2
@@ -199,7 +199,7 @@ issues:
     Other report types are still affected.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: security-inspector
     previous: 117.v6eecc36919c2
@@ -215,7 +215,7 @@ issues:
     This results in a remote code execution (RCE) vulnerability exploitable by attackers able to modify `.ci.yml` files in SCM.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: DotCi
     title: DotCi
@@ -235,7 +235,7 @@ issues:
     This allows unauthenticated attackers to trigger builds of jobs corresponding to the attacker-specified repository for attacker-specified commits.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: DotCi
     title: DotCi
@@ -256,7 +256,7 @@ issues:
     See the link:/doc/upgrade-guide/2.303/#SECURITY-2452[LTS upgrade guide].
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: DotCi
     title: DotCi
@@ -274,7 +274,7 @@ issues:
     This results in a stored cross-site scripting (XSS) vulnerability exploitable by attackers able to provide malicious API responses from Walti.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: walti
     title: Walti
@@ -292,7 +292,7 @@ issues:
     This allows attackers able to provide crafted API responses from Rational Quality Manager to have Jenkins parse a crafted XML document that uses external entities for extraction of secrets from the Jenkins controller or server-side request forgery.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: rqm-plugin
     previous: '2.8'
@@ -309,7 +309,7 @@ issues:
     This allows attackers with Overall/Read permission to discover information about job names attached to lamps, discover MAC and IP addresses of existing lamps, and rename lamps.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: extreme-feedback
     previous: '1.7'
@@ -326,7 +326,7 @@ issues:
     This lack of validation could be abused using a man-in-the-middle attack to intercept these connections.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: smalltest
     previous: 1.0.4
@@ -343,7 +343,7 @@ issues:
     This lack of validation could be abused using a man-in-the-middle attack to intercept these connections.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: view26
     previous: 1.0.7
@@ -363,7 +363,7 @@ issues:
     Additionally, this form validation method does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: ws-execution-manager
     previous: 10.0.3.503
@@ -382,7 +382,7 @@ issues:
     Additionally, the global configuration form does not mask the API key, increasing the potential for attackers to observe and capture it.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: bigpanda-jenkins
     previous: 1.4.0
@@ -402,7 +402,7 @@ issues:
     Additionally, this form validation method does not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: scm-httpclient
     previous: '1.5'
@@ -420,7 +420,7 @@ issues:
     Those can be used as part of an attack to capture the credentials using another vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: apprenda
     previous: 2.2.0
@@ -438,7 +438,7 @@ issues:
     Those can be used as part of an attack to capture the credentials using another vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: cons3rt
     title: CONS3RT
@@ -459,7 +459,7 @@ issues:
     Additionally, these form validation methods do not require POST requests, resulting in a cross-site request forgery (CSRF) vulnerability.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: cons3rt
     title: CONS3RT
@@ -477,7 +477,7 @@ issues:
     This API token can be viewed by users with access to the Jenkins controller file system.
 
     As of publication of this advisory, there is no fix.
-    link:/security/plugins/#unresolved[Learn why we announce this.]
+    xref:dev-docs:security:plugin.adoc#unresolved[Learn why we announce this.]
   plugins:
   - name: cons3rt
     title: CONS3RT

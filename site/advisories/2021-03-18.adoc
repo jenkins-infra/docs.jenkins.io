@@ -21,7 +21,7 @@ issues:
 
     As a workaround in older releases, do not grant permissions on individual items to users who do not have access to parent items.
 
-    In case of problems, the link:/doc/book/managing/system-properties/[Java system property] `hudson.security.AuthorizationMatrixProperty.checkParentPermissions` can be set to `false`, completely disabling this fix.
+    In case of problems, the xref:user-docs:managing:system-properties.adoc[Java system property] `hudson.security.AuthorizationMatrixProperty.checkParentPermissions` can be set to `false`, completely disabling this fix.
   plugins:
   - name: matrix-auth
     previous: 2.6.5
@@ -45,7 +45,7 @@ issues:
 
     As a workaround in older releases, do not grant permissions on individual items to users who do not have access to parent items.
 
-    In case of problems, the link:/doc/book/managing/system-properties/[Java system property] `com.michelin.cio.hudson.plugins.rolestrategy.RoleMap.checkParentPermissions` can be set to `false`, completely disabling this fix.
+    In case of problems, the xref:user-docs:managing:system-properties.adoc[Java system property] `com.michelin.cio.hudson.plugins.rolestrategy.RoleMap.checkParentPermissions` can be set to `false`, completely disabling this fix.
   plugins:
   - name: role-strategy
     previous: '3.1'
@@ -62,9 +62,9 @@ issues:
 
     This allows attackers with Overall/Read permission to enumerate credentials IDs of AWS credentials stored in Jenkins if any of the following plugins are installed:
 
-    * plugin:amazon-ecs[Amazon Elastic Container Service (ECS) / Fargate]
-    * plugin:aws-parameter-store[AWS Parameter Store Build Wrapper]
-    * plugin:aws-sam[AWS SAM]
+    * {plugin}amazon-ecs[Amazon Elastic Container Service (ECS) / Fargate]
+    * {plugin}aws-parameter-store[AWS Parameter Store Build Wrapper]
+    * {plugin}aws-sam[AWS SAM]
 
     Further plugins may use this helper method as well without performing a permission check themselves.
 

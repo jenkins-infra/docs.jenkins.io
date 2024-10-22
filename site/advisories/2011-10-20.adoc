@@ -1,11 +1,7 @@
----
-layout: simplepage
-title: Jenkins Security Advisory 2011-10-20
-section: security
-kind: plugin
----
+= Jenkins Security Advisory 2011-10-20
+:kind: plugin
 
-Vulnerability in plugin:active-directory[Jenkins Active Directory plugin]
+Vulnerability in {plugin}active-directory[Jenkins Active Directory plugin]
 
 This vulnerability allowed malicious users to assume the identity of arbitrary users.
 This affects the Active directory plugin from 1.17 to 1.19, when you explicitly configure the bind DN parameter in the “advanced” option.

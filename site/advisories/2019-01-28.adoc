@@ -23,7 +23,7 @@ issues:
   description: |
     Script Security sandbox protection could be circumvented during the script compilation phase by applying AST transforming annotations such as `@Grab` to source code elements.
 
-    This affected an HTTP endpoint used to validate a user-submitted Groovy script that was not covered in the link:../2019-01-08/#SECURITY-1266[2019-01-08 fix for SECURITY-1266] and allowed users with Overall/Read permission to bypass the sandbox protection and execute arbitrary code on the Jenkins controller.
+    This affected an HTTP endpoint used to validate a user-submitted Groovy script that was not covered in the xref:2019-01-08.adoc#SECURITY-1266[2019-01-08 fix for SECURITY-1266] and allowed users with Overall/Read permission to bypass the sandbox protection and execute arbitrary code on the Jenkins controller.
 
     The affected HTTP endpoint now applies a safe Groovy compiler configuration prohibiting unsafe AST transforming annotations.
 

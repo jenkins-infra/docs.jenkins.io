@@ -45,7 +45,7 @@ issues:
     SSH Credentials Plugin no longer supports SSH credentials from files on the Jenkins controller file system, neither user-specified file paths nor `~/.ssh`.
     Existing SSH credentials of these kinds are migrated to "directly entered" SSH credentials.
 
-    NOTE: If plugin:blueocean[Blue Ocean] is installed, it needs to be updated to 1.5.1 or 1.6.1, or the creation of pipelines for plain Git will not work anymore after installing the fix for this issue.
+    NOTE: If {plugin}blueocean[Blue Ocean] is installed, it needs to be updated to 1.5.1 or 1.6.1, or the creation of pipelines for plain Git will not work anymore after installing the fix for this issue.
 
 
 - id: SECURITY-916
@@ -257,7 +257,7 @@ issues:
 
     While masked from view using a password form field, the AWS Secret Key was transferred in plain text to administrators when accessing the global configuration form.
 
-    IBM z/OS Connector Plugin 2.0.0 and newer integrates with plugin:credentials[Credentials Plugin], no longer storing credentials itself.
+    IBM z/OS Connector Plugin 2.0.0 and newer integrates with {plugin}credentials[Credentials Plugin], no longer storing credentials itself.
 
 
 

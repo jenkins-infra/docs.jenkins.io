@@ -1,16 +1,12 @@
----
-layout: simplepage
-title: Jenkins Security Advisory 2016-11-16
-section: security
-kind: core
----
+= Jenkins Security Advisory 2016-11-16
+:kind: core
 
 This advisory announces the fix for a previously disclosed zero-day vulnerability in Jenkins.
 
 == Description
 
-
 === Remote code execution vulnerability in remoting module
+
 *SECURITY-360 / CVE-2016-9299*
 
 An unauthenticated remote code execution vulnerability allowed attackers to transfer a serialized Java object to the Jenkins CLI, making Jenkins connect to an attacker-controlled LDAP server, which in turn can send a serialized payload leading to code execution, bypassing existing protection mechanisms.
