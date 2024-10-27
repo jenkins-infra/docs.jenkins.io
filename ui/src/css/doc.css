@@ -260,7 +260,7 @@
 
 .doc table.grid-all > thead th,
 .doc table.grid-rows > thead th {
-  border-bottom-width: 2.5px;
+  border-bottom-width: 3px;
   background-color: rgb(216, 237, 255);
 }
 
@@ -288,7 +288,7 @@
 
 .doc table.frame-none > * > tr > :first-child,
 .doc table.frame-ends > * > tr > :first-child {
-  border-left-width: 1.5px;
+  border-left-width: 2px;
 }
 
 .doc table.frame-none > * > tr > :last-child,
@@ -927,7 +927,7 @@
   top: 0.25rem;
   right: 0.5rem;
   color: var(--pre-annotation-font-color);
-  font-family: var(--body-font-family);
+  font-family: var(--body-font-family), serif;
   font-size: calc(13 / var(--rem-base) * 1rem);
   line-height: 1;
   white-space: nowrap;
@@ -1068,7 +1068,7 @@
   border: 1px solid currentColor;
   border-radius: 100%;
   display: inline-block;
-  font-family: var(--body-font-family);
+  font-family: var(--body-font-family), serif;
   font-size: calc(13.5 / var(--rem-base) * 1rem);
   font-style: normal;
   line-height: 1.2;

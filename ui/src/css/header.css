@@ -93,7 +93,7 @@ body {
 
 .navbar-burger span {
   background-color: var(--navbar-font-color);
-  height: 1.5px;
+  height: 2px;
   width: 1rem;
 }
 
@@ -187,7 +187,7 @@ body {
   white-space: nowrap;
 }
 
-@media screen and (max-width: 768.5px) {
+@media screen and (max-width: 769px) {
   .navbar-brand .navbar-item.search {
     padding-left: 0;
     padding-right: 0;
@@ -200,7 +200,7 @@ body {
   }
 }
 
-@media screen and (max-width: 1023.5px) {
+@media screen and (max-width: 1024px) {
   .navbar-brand {
     height: inherit;
   }
