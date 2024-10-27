@@ -4,5 +4,6 @@
 node_modules/
 blog/public/
 blog/package-lock.json
-.DS_Store
 ui/build/ui-bundle.zip
+site/public/
+.DS_Store
