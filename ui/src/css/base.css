@@ -20,7 +20,7 @@ html {
 body {
   background: var(--body-background);
   color: var(--body-font-color);
-  font-family: var(--body-font-family);
+  font-family: var(--body-font-family), serif;
   line-height: var(--body-line-height);
   margin: 0;
   tab-size: 4;
@@ -36,13 +36,13 @@ a:hover {
 }
 
 a:active {
-  background-color: none;
+  background-color: transparent;
 }
 
 code,
 kbd,
 pre {
-  font-family: var(--monospace-font-family);
+  font-family: var(--monospace-font-family), serif;
 }
 
 b,
@@ -141,7 +141,7 @@ object[type="image/svg+xml"]:not([width]) {
   }
 
   body ::-webkit-scrollbar-thumb {
-    border-width: 1.75px;
+    border-width: 2px;
     border-radius: 6px;
   }
 
