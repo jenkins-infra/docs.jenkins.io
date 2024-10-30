@@ -100,3 +100,30 @@
 .toc .toc-menu .is-hidden-toc {
   display: none !important;
 }
+
+@media screen and (prefers-color-scheme: dark) {
+  .toc-menu {
+    color: #9c9c9c;
+  }
+
+  .toc .toc-menu h3 {
+    color: #c1c1c1;
+  }
+
+  .toc .toc-menu a {
+    border-left: 2px solid #191919;
+  }
+
+  .toc .toc-menu a:hover {
+    color: color(display-p3 0.205 0.538 1);
+  }
+
+  .toc .toc-menu a.is-active {
+    border-left-color: color(display-p3 0.205 0.538 1);
+    color: hsl(240, 15%, 95%);
+  }
+
+  .sidebar.toc .toc-menu a:focus {
+    background: hsl(240, 15%, 95%);
+  }
+}
