@@ -13,3 +13,14 @@ footer.footer {
 .footer a {
   color: var(--footer-link-font-color);
 }
+
+@media screen and (prefers-color-scheme: dark) {
+  footer.footer {
+    background-color: hsl(240, 15%, 10%);
+    color: hsl(240, 15%, 95%);
+  }
+
+  .footer a {
+    color: hsl(240, 15%, 95%);
+  }
+}

@@ -268,3 +268,14 @@ html.is-clipped--nav {
   width: 100vw;
   z-index: 100;
 }
+
+@media screen and (prefers-color-scheme: dark) {
+  .nav a {
+    color: color(display-p3 0.205 0.538 1);
+  }
+
+  .nav-container.is-active {
+    visibility: visible;
+    background: hsl(240, 15%, 10%);
+  }
+}

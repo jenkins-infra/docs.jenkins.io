@@ -149,3 +149,9 @@ object[type="image/svg+xml"]:not([width]) {
     background-color: var(--scrollbar_hover-thumb-color);
   }
 }
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background: hsl(240, 15%, 10%);
+  }
+}
