@@ -514,7 +514,7 @@
   background-color: #e7f3ff;
   box-shadow:
     0 1px 3px 0 rgba(0, 0, 0, 0.02),
-    0 0 0 1px rgba(27, 31, 35, 0.15);
+    0 0 0 1px rgba(201, 228, 255, 0.15);
 }
 
 .doc .quoteblock .attribution {
@@ -875,7 +875,7 @@
   display: flex;
   background: var(--sidebar-background);
   border: 1px solid #c1c1c1;
-  border-right: 25px solid #889b73;
+  border-right: 25px solid #e4ffc6;
   padding: 1rem;
 }
 
@@ -912,7 +912,7 @@
     Source Code Pro,
     monospace;
   box-shadow:
-    rgba(0, 0, 0, 0.02) 0 1px 3px 0,
+    rgba(255, 255, 255, 0.02) 0 1px 3px 0,
     rgba(27, 31, 35, 0.15) 0 0 0 1px;
 }
 
@@ -1193,4 +1193,246 @@
   margin-left: -2em;
   text-align: right;
   width: 1.5em;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .doc {
+    color: hsl(240, 15%, 95%);
+  }
+
+  .doc h1,
+  .doc h2,
+  .doc h3,
+  .doc h4,
+  .doc h5,
+  .doc h6 {
+    color: hsl(240, 15%, 95%);
+  }
+
+  .doc a {
+    color: color(display-p3 0.205 0.538 1);
+  }
+
+  .doc a:hover {
+    color: color-mix(in sRGB, color(display-p3 0.205 0.538 1) 75%, var(--color-white));
+  }
+
+  .doc p code,
+  .doc thead code,
+  .doc .colist > table code {
+    color: color(display-p3 0.95 0.312 0.228);
+  }
+
+  .doc table.grid-all > thead th,
+  .doc table.grid-rows > thead th {
+    background-color: hsl(240, 15%, 10%);
+  }
+
+  .doc table.stripes-all > tbody > tr,
+  .doc table.stripes-odd > tbody > tr:nth-of-type(odd),
+  .doc table.stripes-even > tbody > tr:nth-of-type(even),
+  .doc table.stripes-hover > tbody > tr:hover {
+    background: hsl(240, 15%, 10%);
+  }
+
+  .doc table.tableblock > tfoot {
+    background: hsl(240, 15%, 10%);
+  }
+
+  .doc .admonitionblock td.content {
+    background: hsl(240, 15%, 10%);
+  }
+
+  .doc .admonitionblock.caution .icon {
+    background-color: color(display-p3 0.678 0.282 0.94);
+    color: hsl(240, 15%, 10%);
+  }
+
+  .doc .admonitionblock.important .icon {
+    background-color: color(display-p3 0.95 0.312 0.228);
+    color: hsl(240, 15%, 10%);
+  }
+
+  .doc .admonitionblock.note .icon {
+    background-color: color(display-p3 0.205 0.538 1);
+    color: hsl(240, 15%, 10%);
+  }
+
+  .doc .admonitionblock.tip .icon {
+    background-color: color(display-p3 0.422 0.88 0.422);
+    color: hsl(240, 15%, 10%);
+  }
+
+  .doc .admonitionblock.warning .icon {
+    background-color: color(display-p3 1 0.633 0.215);
+    color: hsl(240, 15%, 10%);
+  }
+
+  .doc .admonitionblock.caution {
+    color: hsl(240, 15%, 95%);
+    border-left: 4px solid color(display-p3 0.678 0.282 0.94);
+  }
+
+  .doc .admonitionblock.tip {
+    color: hsl(240, 15%, 95%);
+    border-left: 4px solid color(display-p3 0.422 0.88 0.422);
+  }
+
+  .doc .admonitionblock.note {
+    color: hsl(240, 15%, 95%);
+    border-left: 4px solid color(display-p3 0.205 0.538 1);
+  }
+
+  #preamble .abstract blockquote {
+    background: #191919;
+    color: #f0f0f0;
+  }
+
+  .doc .quoteblock,
+  .doc .verseblock {
+    background: hsl(240, 15%, 95%);
+    color: #f0f0f0;
+  }
+
+  .doc .quoteblock {
+    background-color: hsl(240, 15%, 10%);
+    box-shadow:
+      0 1px 3px 0 hsl(240, 15%, 95%),
+      0 0 0 1px rgba(213, 230, 248, 0.15);
+  }
+
+  .doc .quoteblock .attribution {
+    color: hsl(240, 15%, 10%);
+  }
+
+  .doc .verseblock {
+    background-color: hsl(240, 15%, 10%);
+    box-shadow:
+      0 1px 3px 0 hsl(240, 15%, 95%),
+      0 0 0 1px rgba(213, 230, 248, 0.15);
+  }
+
+  .doc .admonitionblock .title,
+  .doc .exampleblock .title,
+  .doc .imageblock .title,
+  .doc .literalblock .title,
+  .doc .listingblock .title,
+  .doc .openblock .title,
+  .doc .videoblock .title,
+  .doc .tableblock caption {
+    color: hsl(240, 15%, 95%);
+  }
+
+  .doc details.result > summary {
+    color: hsl(240, 15%, 95%);
+  }
+
+  .doc .exampleblock > .content,
+  .doc details.result > .content {
+    background: hsl(240, 15%, 10%);
+  }
+
+  .doc .sidebarblock {
+    background: hsl(240, 15%, 10%);
+  }
+
+  .doc .button {
+    border: 1px solid color(display-p3 0.205 0.538 1);
+  }
+
+  .doc .participate-connect {
+    background: hsl(240, 15%, 10%);
+    border: 1px solid #0a2463;
+    border-right: 25px solid color(display-p3 0.475 0.793 1);
+  }
+
+  .doc .participate-meet {
+    background: hsl(240, 15%, 10%);
+    border: 1px solid #0a2463;
+    border-right: 25px solid color(display-p3 0.95 0.312 0.228);
+  }
+
+  .doc .participate-code {
+    background: hsl(240, 15%, 10%);
+    border: hsl(240, 15%, 10%);
+    border-right: 25px solid #78a6eb;
+  }
+
+  .doc .participate-help {
+    background: hsl(240, 15%, 10%);
+    border: hsl(240, 15%, 10%);
+    border-right: 25px solid #74e6a0;
+  }
+
+  .doc .participate-translate {
+    background: hsl(240, 15%, 10%);
+    border: hsl(240, 15%, 10%);
+    border-right: 25px solid #ecb953;
+  }
+
+  .doc .participate-test {
+    background: hsl(240, 15%, 10%);
+    border: hsl(240, 15%, 10%);
+    border-right: 25px solid #ecb953;
+  }
+
+  .doc .participate-document {
+    background: hsl(240, 15%, 10%);
+    border: hsl(240, 15%, 10%);
+    border-right: 25px solid #0091ff;
+  }
+
+  .doc .participate-design {
+    background: hsl(240, 15%, 10%);
+    border: hsl(240, 15%, 10%);
+    border-right: 25px solid #07dee5;
+  }
+
+  .doc .participate-review {
+    background: hsl(240, 15%, 10%);
+    border: hsl(240, 15%, 10%);
+    border-right: 25px solid #ff6715;
+  }
+
+  .doc .participate-donate {
+    background: hsl(240, 15%, 10%);
+    border: hsl(240, 15%, 10%);
+    border-right: 25px solid #e4ffc6;
+  }
+
+  .doc .sidebarblock > .content > .title {
+    border-bottom: solid hsl(240, 15%, 10%) 2px;
+  }
+
+  .doc pre.highlight code,
+  .doc .listingblock pre:not(.highlight),
+  .doc .literalblock pre {
+    background: hsl(240, 15%, 95%);
+    background-color: hsl(240, 15%, 10%);
+    box-shadow:
+      rgb(255, 255, 255) 0 1px 3px 0,
+      rgb(255, 255, 255) 0 0 0 1px;
+  }
+
+  .doc .source-toolbox {
+    color: #fff;
+  }
+
+  .doc .source-toolbox .copy-toast {
+    background-color: hsl(240, 15%, 95%);
+    color: hsl(240, 15%, 10%);
+  }
+
+  .doc .source-toolbox .copy-toast::after {
+    border-left-color: hsl(240, 15%, 10%);
+  }
+
+  .doc kbd {
+    background: hsl(240, 15%, 95%);
+    border: 1px solid hsl(240, 15%, 10%);
+    border-radius: 0.25em;
+    box-shadow:
+      0 1px 0 hsl(240, 15%, 10%),
+      0 0 0 0.1em hsl(240, 15%, 10%) inset;
+  }
 }
