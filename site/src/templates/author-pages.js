@@ -44,7 +44,7 @@ const AuthorPage = ({ data, pageContext, path }) => {
                                     src={
                                         node.node.pageAttributes.authoravatar
                                             ? node.node.pageAttributes.authoravatar
-                                            : "../../images/images/avatars/no_image.svg"
+                                            : "../../static/images/avatars/no_image.svg"
                                     }
                                     alt={node.node.pageAttributes.author_name}
                                 />
@@ -109,11 +109,9 @@ const AuthorPage = ({ data, pageContext, path }) => {
                     const formattedDate = formatDate(childrenAsciidoc[0].fields.slug);
                     const opengraphImageSource =
                         childrenAsciidoc[0].pageAttributes.opengraph ||
-                        "../../images/gsoc/opengraph.png";
+                        "../../static/images/gsoc/opengraph.png";
 
                     const htmlContent = childrenAsciidoc[0].html;
-                    const parser = new DOMParser();
-                    const parsedHtml = parser.parseFromString(htmlContent, "text/html");
                     function extractTextNodes(element, textNodes) {
                         if (element.nodeType === Node.TEXT_NODE) {
                             textNodes.push(element.textContent.trim());
@@ -123,10 +121,16 @@ const AuthorPage = ({ data, pageContext, path }) => {
                             }
                         }
                     }
-                    const textNodes = [];
-                    extractTextNodes(parsedHtml.body, textNodes);
-                    const blogTeaser = textNodes.join(" ");
 
+                    let blogTeaser = [];
+                    if (typeof window !== "undefined") {
+                        const parser = new DOMParser();
+                        const parsedHtml = parser.parseFromString(htmlContent, "text/html");
+
+                        const textNodes = [];
+                        extractTextNodes(parsedHtml.body, textNodes);
+                        blogTeaser = textNodes.join(" ");
+                    }
                     return (
                         <li
                             key={`${childrenAsciidoc[0].fields.slug}-${childrenAsciidoc[0].document.title}`}
@@ -141,7 +145,7 @@ const AuthorPage = ({ data, pageContext, path }) => {
                                     flexDirection: "column",
                                 }}
                             >
-                                <div className={{ authorimagecontainer }}>
+                                <div className={authorimagecontainer}>
                                     <img
                                         src={opengraphImageSource}
                                         alt={childrenAsciidoc[0].document.title}
@@ -155,47 +159,52 @@ const AuthorPage = ({ data, pageContext, path }) => {
                                 </div>
                                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                                     <div className={blogauthorinfo}>
-                                        {authorList.map((auth) => {
-                                            return authors.map((node) => {
-                                                return node.node.pageAttributes.github === auth ? (
-                                                    <Link
-                                                        className={blogauthorinfo}
-                                                        to={`/author/${node.node.pageAttributes.github}`}
-                                                    >
-                                                        {node.node.pageAttributes.authoravatar ? (
-                                                            <img
-                                                                loading="lazy"
-                                                                src={
-                                                                    node.node.pageAttributes
-                                                                        .authoravatar
-                                                                }
-                                                                className={blogauthorimage}
-                                                                alt={
-                                                                    node.node.pageAttributes.author
-                                                                }
-                                                            />
-                                                        ) : (
-                                                            <img
-                                                                loading="lazy"
-                                                                src="../../images/images/avatars/no_image.svg"
-                                                                className={blogauthorimage}
-                                                                alt={
-                                                                    node.node.pageAttributes.author
-                                                                }
-                                                            />
-                                                        )}
-                                                        {authorList.length < 3 ? (
-                                                            <p>
-                                                                {
-                                                                    node.node.pageAttributes
-                                                                        .author_name
-                                                                }
-                                                            </p>
-                                                        ) : null}
-                                                    </Link>
-                                                ) : null;
-                                            });
-                                        })}
+                                        {Array.isArray(authorList) &&
+                                            authorList.map((auth) => {
+                                                return authors.map((node) => {
+                                                    return node.node.pageAttributes.github ===
+                                                        auth ? (
+                                                        <Link
+                                                            className={blogauthorinfo}
+                                                            to={`/author/${node.node.pageAttributes.github}`}
+                                                        >
+                                                            {node.node.pageAttributes
+                                                                .authoravatar ? (
+                                                                <img
+                                                                    loading="lazy"
+                                                                    src={
+                                                                        node.node.pageAttributes
+                                                                            .authoravatar
+                                                                    }
+                                                                    className={blogauthorimage}
+                                                                    alt={
+                                                                        node.node.pageAttributes
+                                                                            .author
+                                                                    }
+                                                                />
+                                                            ) : (
+                                                                <img
+                                                                    loading="lazy"
+                                                                    src="../../static/images/images/avatars/no_image.svg"
+                                                                    className={blogauthorimage}
+                                                                    alt={
+                                                                        node.node.pageAttributes
+                                                                            .author
+                                                                    }
+                                                                />
+                                                            )}
+                                                            {authorList.length < 3 ? (
+                                                                <p>
+                                                                    {
+                                                                        node.node.pageAttributes
+                                                                            .author_name
+                                                                    }
+                                                                </p>
+                                                            ) : null}
+                                                        </Link>
+                                                    ) : null;
+                                                });
+                                            })}
                                     </div>
                                     <span>{formattedDate}</span>
                                 </div>
