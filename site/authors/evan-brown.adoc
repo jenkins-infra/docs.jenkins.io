@@ -1,0 +1,5 @@
+= About the Author
+:page-layout: author
+:page-author_name: Evan Brown
+:page-github: evandbrown
+

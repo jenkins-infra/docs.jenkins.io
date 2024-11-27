@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: 赵晓杰(Rick)
+:page-twitter: LinuxSuRen
+:page-github: LinuxSuRen
+:page-authoravatar: /site/avatars/linuxsuren.jpg
+:page-linkedin: linuxsuren
+
+Rick is a big fan of Jenkins, also as a contributor leading the Jenkins China community.
