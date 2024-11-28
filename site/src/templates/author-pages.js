@@ -44,7 +44,7 @@ const AuthorPage = ({ data, pageContext, path }) => {
                                     src={
                                         node.node.pageAttributes.authoravatar
                                             ? node.node.pageAttributes.authoravatar
-                                            : "../../images/avatars/no_image.svg"
+                                            : "../../images/images/avatars/no_image.svg"
                                     }
                                     alt={node.node.pageAttributes.author_name}
                                 />
