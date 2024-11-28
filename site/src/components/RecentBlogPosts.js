@@ -66,7 +66,7 @@ const RecentBlogPosts = () => {
                     const formattedDate = formatDate(childrenAsciidoc[0].fields.slug);
                     const opengraphImageSource =
                         childrenAsciidoc[0].pageAttributes.opengraph ||
-                        "../../static/images/gsoc/opengraph.png";
+                        "../../images/gsoc/opengraph.png";
 
                     const htmlContent = childrenAsciidoc[0].html;
                     function extractTextNodes(element, textNodes) {
@@ -128,7 +128,7 @@ const RecentBlogPosts = () => {
                                                 />
                                             ) : (
                                                 <img
-                                                    src="../../static/images/images/avatars/no_image.svg"
+                                                    src="../../images/images/avatars/no_image.svg"
                                                     className={blogauthorimage}
                                                     loading="lazy"
                                                     alt={""}

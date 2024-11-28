@@ -44,7 +44,7 @@ const AuthorPage = ({ data, pageContext, path }) => {
                                     src={
                                         node.node.pageAttributes.authoravatar
                                             ? node.node.pageAttributes.authoravatar
-                                            : "../../static/images/avatars/no_image.svg"
+                                            : "../../images/avatars/no_image.svg"
                                     }
                                     alt={node.node.pageAttributes.author_name}
                                 />
@@ -109,7 +109,7 @@ const AuthorPage = ({ data, pageContext, path }) => {
                     const formattedDate = formatDate(childrenAsciidoc[0].fields.slug);
                     const opengraphImageSource =
                         childrenAsciidoc[0].pageAttributes.opengraph ||
-                        "../../static/images/gsoc/opengraph.png";
+                        "../../images/gsoc/opengraph.png";
 
                     const htmlContent = childrenAsciidoc[0].html;
                     function extractTextNodes(element, textNodes) {
@@ -185,7 +185,7 @@ const AuthorPage = ({ data, pageContext, path }) => {
                                                             ) : (
                                                                 <img
                                                                     loading="lazy"
-                                                                    src="../../static/images/images/avatars/no_image.svg"
+                                                                    src="../../images/images/avatars/no_image.svg"
                                                                     className={blogauthorimage}
                                                                     alt={
                                                                         node.node.pageAttributes
