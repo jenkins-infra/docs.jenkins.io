@@ -33,8 +33,6 @@ const BlogIndex = ({ pageContext, data }) => {
                         "../../images/gsoc/opengraph.png";
 
                     const htmlContent = childrenAsciidoc[0].html;
-                    const parser = new DOMParser();
-                    const parsedHtml = parser.parseFromString(htmlContent, "text/html");
                     function extractTextNodes(element, textNodes) {
                         if (element.nodeType === Node.TEXT_NODE) {
                             textNodes.push(element.textContent.trim());
@@ -44,10 +42,15 @@ const BlogIndex = ({ pageContext, data }) => {
                             }
                         }
                     }
-                    const textNodes = [];
-                    extractTextNodes(parsedHtml.body, textNodes);
-                    const blogTeaser = textNodes.join(" ");
+                    let blogTeaser = [];
+                    if (typeof window !== "undefined") {
+                        const parser = new DOMParser();
+                        const parsedHtml = parser.parseFromString(htmlContent, "text/html");
 
+                        const textNodes = [];
+                        extractTextNodes(parsedHtml.body, textNodes);
+                        blogTeaser = textNodes.join(" ");
+                    }
                     return (
                         <li
                             key={`${childrenAsciidoc[0].fields.slug}-${childrenAsciidoc[0].document.title}`}
