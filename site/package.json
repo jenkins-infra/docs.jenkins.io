@@ -47,7 +47,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "start": "npm run develop",
+    "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "npx eslint .",
     "format": "npx prettier . --write"
@@ -55,7 +55,7 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^9.1.0",
-    "prettier": "3.3.3",
+    "prettier": "3.4.1",
     "webpack-cli": "^5.1.4"
   },
   "overrides": {
