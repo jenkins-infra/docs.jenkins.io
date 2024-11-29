@@ -1,0 +1,11 @@
+= About the Author
+:page-layout: author
+:page-author_name: Hrushikesh Rao
+:page-twitter: Hrushi2020
+:page-github: hrushi20
+:page-authoravatar: /site/avatars/HrushikeshRao.jpeg
+:page-linkedin: hrushikesh-rao-7741311b0
+
+
+GSoC 2022 student under the Jenkins project(link:/projects/gsoc/2022/projects/automatic-git-cache-maintenance/[Automatic Git Cache Maintenance]). He is an explorer passionate about
+Blockchain, Distributed Systems, System Design. Aspiring to contribute on more open source projects.

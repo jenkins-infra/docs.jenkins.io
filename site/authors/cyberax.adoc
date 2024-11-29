@@ -1,0 +1,5 @@
+= About the Author
+:page-layout: author
+:page-author_name: Aleksei Besogonov
+:page-github: Cyberax
+
