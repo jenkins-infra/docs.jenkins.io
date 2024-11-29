@@ -1,0 +1,8 @@
+= About the Author
+:page-layout: author
+:page-author_name: Jie Shen
+:page-github: gavinfish
+:page-authoravatar: /site/avatars/jshen.jpg
+
+
+Software engineer at Microsoft. Focusing on DevOps and cloud native.

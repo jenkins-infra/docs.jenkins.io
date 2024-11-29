@@ -1,0 +1,7 @@
+= About the Author
+:page-layout: author
+:page-author_name: Yaniv Nizry
+:page-twitter: YNizry
+:page-github: Yaniv-git
+:page-authoravatar: /site/avatars/Yaniv-git.jpg
+
