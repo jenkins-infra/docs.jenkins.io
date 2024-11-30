@@ -1,5 +1,6 @@
 html {
     font-size: 16px;
+    color-scheme: light dark;
 }
 
 * {
@@ -106,7 +107,7 @@ li {
 
 .blogteaser {
     position: relative;
-    color: hsl(212, 30%, 40%);;
+    color: hsl(212, 30%, 40%);
     margin: 0;
     text-decoration: none !important;
     line-height: 1.66;
@@ -133,4 +134,23 @@ li {
     position: relative;
     top: 0.3rem;
     margin-inline: 0.2rem;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    #contributor-grid * { 
+        color: hsl(240, 15%, 95%);
+    }
+
+    body {
+        background-color: hsl(240, 15%, 10%);
+        color: hsl(240, 15%, 95%);
+    }
+    
+    .blogtitle {
+        color: hsl(240, 15%, 95%);
+    }
+    
+    .blogteaser {
+        color: hsl(240, 15%, 95%);
+    }
 }
