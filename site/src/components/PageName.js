@@ -8,7 +8,6 @@ const PageName = ({ title }) => (
     <Link style={{ textDecoration: `none` }} to="/">
         <h3
             style={{
-                color: `black`,
                 marginBottom: rhythm(1.5),
                 fontFamily: "Georgia,serif",
                 fontSize: "2rem",
@@ -17,6 +16,7 @@ const PageName = ({ title }) => (
                 flexWrap: "nowrap",
                 justifyContent: "center",
                 gap: "15px",
+                color: "hsl(240, 15%, 10%)"? "white" : "black",
             }}
         >
             <img
