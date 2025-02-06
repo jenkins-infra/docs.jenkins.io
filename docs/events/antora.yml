@@ -3,9 +3,9 @@ title: Jenkins Events
 version: ~
 display_version: 'latest'
 nav:
-  - modules/ROOT/nav.adoc
-  - modules/online-meetup/nav.adoc
-  - modules/online-hackfest/nav.adoc
-  - modules/contributor-summit/nav.adoc
-  - modules/devops-world/nav.adoc
-  - modules/hacktoberfest/nav.adoc
+    - modules/ROOT/nav.adoc
+    - modules/online-meetup/nav.adoc
+    - modules/online-hackfest/nav.adoc
+    - modules/contributor-summit/nav.adoc
+    - modules/devops-world/nav.adoc
+    - modules/hacktoberfest/nav.adoc

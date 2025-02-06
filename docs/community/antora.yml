@@ -3,6 +3,6 @@ title: Community
 version: ~
 display_version: 'latest'
 nav:
-  - modules/ROOT/nav.adoc
-  - modules/chat/nav.adoc
-  - modules/mailing-lists/nav.adoc
+    - modules/ROOT/nav.adoc
+    - modules/chat/nav.adoc
+    - modules/mailing-lists/nav.adoc

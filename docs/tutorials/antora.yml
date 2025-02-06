@@ -1,5 +1,5 @@
 name: tutorials
 title: Tutorials
-version: "2.452.x"
+version: '2.452.x'
 nav:
-  - modules/ROOT/nav.adoc
+    - modules/ROOT/nav.adoc

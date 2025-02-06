@@ -2,16 +2,16 @@ import React from "react";
 
 const Supporters = () => (
     <div
-    className="supporters"
-    style={{
-        padding: '3rem',
-    }}
+        className="supporters"
+        style={{
+            padding: "3rem",
+        }}
     >
         <center>
             <p
                 style={{
                     fontWeight: 500,
-                    marginBottom: '1rem'
+                    marginBottom: "1rem",
                 }}
             >
                 We thank the following organizations for their support of the Jenkins project
@@ -20,13 +20,13 @@ const Supporters = () => (
         </center>
         <ul
             style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'center',
-                listStyleType: 'none',
-                textAlign: 'center',
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                listStyleType: "none",
+                textAlign: "center",
                 margin: 0,
-                gap: '1.5rem',
+                gap: "1.5rem",
             }}
         >
             <li>

@@ -3,7 +3,7 @@ title: Security Advisories
 version: ~
 display_version: 'latest'
 nav:
-  - modules/ROOT/nav-adminstrator.adoc
-  - modules/ROOT/nav-reporter.adoc
-  - modules/ROOT/nav-maintainer.adoc
-  - modules/ROOT/nav-security-team.adoc
+    - modules/ROOT/nav-adminstrator.adoc
+    - modules/ROOT/nav-reporter.adoc
+    - modules/ROOT/nav-maintainer.adoc
+    - modules/ROOT/nav-security-team.adoc

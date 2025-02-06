@@ -73,8 +73,8 @@ This will start a local server at `http://localhost:8000`, where you can preview
 
 When you run the above command, the following folders are generated:
 
-* **`.cache/`**: Contains cached files that help speed up the development process.
-* **`public/`**: Contains the built assets and files that will be served by the local server.
+- **`.cache/`**: Contains cached files that help speed up the development process.
+- **`public/`**: Contains the built assets and files that will be served by the local server.
 
 These folders should be included in your `.gitignore` file to prevent them from being tracked by Git. You can ensure they are ignored by adding the following lines to your `.gitignore` file:
 
@@ -104,12 +104,11 @@ This project powers various sections of the Jenkins.io website, including but no
 
 1. **Security Advisories**: Stay informed about security vulnerabilities, patches, and updates for Jenkins.
 2. **Authors**: Highlight contributors from the Jenkins community.
-2. **Roadmap**: It contains the Roadmap for Jenkins Project. 
-3. **Events**: Stay up-to-date with Jenkins conferences, meetups, and other community events.
-4. **Pipeline Steps**: Detailed documentation on Jenkins pipeline steps, including syntax and examples.
-5. **Upgrade Guides**: Comprehensive guides for upgrading Jenkins installations to newer versions.
-6. **Blog Posts**: News and announcements from the Jenkins project and community.
-
+3. **Roadmap**: It contains the Roadmap for Jenkins Project.
+4. **Events**: Stay up-to-date with Jenkins conferences, meetups, and other community events.
+5. **Pipeline Steps**: Detailed documentation on Jenkins pipeline steps, including syntax and examples.
+6. **Upgrade Guides**: Comprehensive guides for upgrading Jenkins installations to newer versions.
+7. **Blog Posts**: News and announcements from the Jenkins project and community.
 
 For any issues or inquiries, feel free to open an issue in the repository or contact the Jenkins team at [Jenkins.io](https://www.jenkins.io/participate/).
 

@@ -1,48 +1,48 @@
 ---
 site:
-  title: Jenkins Docs
-  url: https://docs.jenkins.com
-  start_page: user-docs::index.adoc
+    title: Jenkins Docs
+    url: https://docs.jenkins.com
+    start_page: user-docs::index.adoc
 
 content:
-  sources:
-    - url: https://github.com/jenkins-infra/docs.jenkins.io.git
-      branches: [HEAD]
-      start_paths: [docs/solutions, docs/tutorials, docs/user-docs]
-      # developer docs are un-versioned that's why they're fetched individually
-    - url: https://github.com/jenkins-infra/docs.jenkins.io.git
-      branches: [HEAD]
-      start_paths:
-        [
-          docs/about,
-          docs/books,
-          docs/community,
-          docs/dev-docs,
-          docs/download,
-          docs/events,
-          docs/images,
-          docs/project,
-          docs/projects,
-          docs/security,
-          docs/sigs,
-        ]
+    sources:
+        - url: https://github.com/jenkins-infra/docs.jenkins.io.git
+          branches: [HEAD]
+          start_paths: [docs/solutions, docs/tutorials, docs/user-docs]
+          # developer docs are un-versioned that's why they're fetched individually
+        - url: https://github.com/jenkins-infra/docs.jenkins.io.git
+          branches: [HEAD]
+          start_paths:
+              [
+                  docs/about,
+                  docs/books,
+                  docs/community,
+                  docs/dev-docs,
+                  docs/download,
+                  docs/events,
+                  docs/images,
+                  docs/project,
+                  docs/projects,
+                  docs/security,
+                  docs/sigs,
+              ]
 
 runtime:
-  cache_dir: ./.cache/antora
-  fetch: true
-  log:
-    level: error
+    cache_dir: ./.cache/antora
+    fetch: true
+    log:
+        level: error
 
 asciidoc:
-  attributes:
-    page-pagination: ''
-    plugin: https://plugins.jenkins.io/
-    jira: https://issues.jenkins.io/browse/
-    jep: https://github.com/jenkinsci/jep/tree/master/jep/
-    matrix: https://matrix.to/#/#
-    email: jenkinsci-users@googlegroups.com
+    attributes:
+        page-pagination: ''
+        plugin: https://plugins.jenkins.io/
+        jira: https://issues.jenkins.io/browse/
+        jep: https://github.com/jenkinsci/jep/tree/master/jep/
+        matrix: https://matrix.to/#/#
+        email: jenkinsci-users@googlegroups.com
 
 ui:
-  bundle:
-    url: https://github.com/jenkins-infra/docs.jenkins.io/blob/main/ui/build/ui-bundle.zip
-    snapshot: true
+    bundle:
+        url: https://github.com/jenkins-infra/docs.jenkins.io/blob/main/ui/build/ui-bundle.zip
+        snapshot: true

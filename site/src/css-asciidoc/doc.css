@@ -133,7 +133,7 @@ code {
     color: palevioletred;
 }
 
-.highlight>code {
+.highlight > code {
     display: block;
     overflow-x: auto;
     padding: 0.875em;
@@ -150,7 +150,7 @@ code {
     padding: 1rem;
 }
 
-p>code {
+p > code {
     font-family: monospace, monospace;
     /* 1 */
     font-size: 1em;
@@ -227,8 +227,8 @@ sup {
     box-sizing: inherit;
 }
 
-.admonitionblock td.content> :not(.title):first-child,
-.admonitionblock td.content>.title+* {
+.admonitionblock td.content > :not(.title):first-child,
+.admonitionblock td.content > .title + * {
     margin-top: 0;
 }
 
@@ -240,7 +240,7 @@ sup {
     color: white;
 }
 
-.admonitionblock>table {
+.admonitionblock > table {
     table-layout: fixed;
     position: relative;
     width: 100%;

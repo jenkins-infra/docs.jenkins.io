@@ -3,4 +3,4 @@ title: About Jenkins
 version: ~
 display_version: 'latest'
 nav:
-  - modules/ROOT/nav.adoc
+    - modules/ROOT/nav.adoc

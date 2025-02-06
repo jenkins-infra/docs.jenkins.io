@@ -16,7 +16,7 @@ const PageName = ({ title }) => (
                 flexWrap: "nowrap",
                 justifyContent: "center",
                 gap: "15px",
-                color: "hsl(240, 15%, 10%)"? "white" : "black",
+                color: "hsl(240, 15%, 10%)" ? "white" : "black",
             }}
         >
             <img

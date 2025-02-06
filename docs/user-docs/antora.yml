@@ -1,17 +1,17 @@
 name: user-docs
 title: User Documentation
-version: "2.452.x"
+version: '2.452.x'
 start_page: index.adoc
 nav:
-  - modules/ROOT/nav.adoc
-  - modules/installing-jenkins/nav.adoc
-  - modules/platform-information/nav.adoc
-  - modules/using-jenkins/nav.adoc
-  - modules/pipeline/nav.adoc
-  - modules/blueocean/nav.adoc
-  - modules/managing/nav.adoc
-  - modules/security/nav.adoc
-  - modules/system-administration/nav.adoc
-  - modules/scaling/nav.adoc
-  - modules/troubleshooting/nav.adoc
-  - modules/glossary/nav.adoc
+    - modules/ROOT/nav.adoc
+    - modules/installing-jenkins/nav.adoc
+    - modules/platform-information/nav.adoc
+    - modules/using-jenkins/nav.adoc
+    - modules/pipeline/nav.adoc
+    - modules/blueocean/nav.adoc
+    - modules/managing/nav.adoc
+    - modules/security/nav.adoc
+    - modules/system-administration/nav.adoc
+    - modules/scaling/nav.adoc
+    - modules/troubleshooting/nav.adoc
+    - modules/glossary/nav.adoc
