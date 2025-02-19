@@ -54,9 +54,9 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-prettier": "^9.1.0",
-    "prettier": "3.4.1",
-    "webpack-cli": "^5.1.4"
+    "eslint-config-prettier": "^10.0.0",
+    "prettier": "3.5.1",
+    "webpack-cli": "^6.0.0"
   },
   "overrides": {
     "axios": "^1.6.2"

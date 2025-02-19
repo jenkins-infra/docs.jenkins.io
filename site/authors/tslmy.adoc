@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Mingyang Li
-:page-github: tslmy
-:page-authoravatar: /site/avatars/tslmy.png
-
-
-Guest author. Uses Jenkins at work. Blog: link:https://lmy.medium.com/[lmy.medium.com].
