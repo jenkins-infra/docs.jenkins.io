@@ -1,7 +1,9 @@
 ---
 site:
   title: Jenkins Docs
+  url: http://127.0.0.1:8080
   start_page: user-docs::index.adoc
+  robots: disallow
 
 content:
   sources:

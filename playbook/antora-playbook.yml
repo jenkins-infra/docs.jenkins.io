@@ -3,6 +3,7 @@ site:
   title: Jenkins Docs
   url: https://docs.jenkins.com
   start_page: user-docs::index.adoc
+  robots: disallow
 
 content:
   sources:
