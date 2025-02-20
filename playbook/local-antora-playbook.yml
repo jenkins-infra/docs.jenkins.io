@@ -2,6 +2,7 @@
 site:
   title: Jenkins Docs
   start_page: user-docs::index.adoc
+  robots: disallow
 
 content:
   sources:
