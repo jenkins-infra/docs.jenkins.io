@@ -24,8 +24,7 @@
     * https://stackoverflow.com/a/10076097/151365
     */
     var hash = window.location.hash.substring(1);
-
-    if (hash) {
+    if (hash && anchorMap[hash] !== undefined) {
         /*
         * Best practice for javascript redirects:
         * https://stackoverflow.com/a/506004/151365
@@ -61,7 +60,7 @@ image:images:ROOT:avatars/zaycodes.jpg[,width=30,height=30] Zainab Daodu
 
 The SIG offers a venue for all kinds of documentation creation, improvement, and delivery.
 
-The group focuses on documentation for Jenkins, including:
+The group focuses on documentation for Jenkins including:
 
 * xref:user-docs:ROOT:index.adoc[User documentation] - Using Jenkins
 ** xref:tutorials:ROOT:index.adoc[Tutorials]
@@ -75,7 +74,7 @@ The group focuses on documentation for Jenkins, including:
 * xref:solutions:ROOT:index.adoc[Solution documentation] - using Jenkins with specific technologies (e.g. Java, PHP, or Docker).
   Also, implementation solutions like xref:solutions:ROOT:pipeline.adoc[Pipeline]
 
-Documentation SIG may cooperate with other groups.
+The Documentation SIG also collaborates with other groups.
 For example, we cooperate with the xref:platform:index.adoc[Platform SIG] on platform topics.
 s
 == Topics
@@ -104,20 +103,17 @@ See the link:https://docs.google.com/document/d/1ygRZnVtoIvuEKpwNeF_oVRVCV5NKcZD
 
 Google Season of Docs brings together open source communities and technical writers for the benefit of both.
 The program raises awareness of open source, of documentation, and of technical writing.
-
-See our xref:docs:gsod/index.adoc[Google Season of Docs status page] for documentation project ideas, contact information, and more.
+There are no current plans to participate in Google Season of Docs, but if you are curious, refer to our link:/sigs/docs/gsod[Google Season of Docs page] for past documentation project ideas and other information.
 
 [#plugin-documentation-on-github]
 === Plugin documentation on GitHub
 
-Currently, the SIG is xref:dev-docs:publishing:wiki-page.adoc#migrating-from-wiki-to-github[migrating plugin documentation from Jenkins Wiki to GitHub].
-Documentation in the plugin GitHub repository provides a good user experience for Jenkins users seeking documentation. 
-At the same time, plugin maintainers now can follow the documentation-as-code approach and make documentation changes a part of the pull requests. 
-It also gives an opportunity to review the documentation changes and to add documentation contributor recognition, 
-especially if the story is combined with link:https://github.com/jenkinsci/.github/blob/master/.github/release-drafter.adoc[changelog automation]. 
+Previously, the SIG was xref:dev-docs:publishing:wiki-page.adoc#migrating-from-wiki-to-github[migrating plugin documentation from Jenkins Wiki to GitHub].
+Documentation in the plugin GitHub repository provides a good user experience for Jenkins users seeking documentation.
+By performing this migration, plugin maintainers can now follow the documentation-as-code approach and make documentation changes a part of the pull requests.
+It also creates an opportunity to review the documentation changes and add documentation contributor recognition, especially if the story is combined with link:https://github.com/jenkinsci/.github/blob/master/.github/release-drafter.adoc[changelog automation].
 
-As of November 2022 we have more than 900 plugins which already use GitHub as a documentation source,
-but there are still hundreds of plugins to migrate.
+As of March 2024, we have more than 1,000 plugins which already use GitHub as a documentation source, but there are still link:https://reports.jenkins.io/jenkins-plugin-migration.html[hundreds of plugins to migrate].
 We invite contributors to participate in the project and to help us with migrating the docs.
 It is also a great opportunity to update and copy-edit the documentation.
 
@@ -130,10 +126,10 @@ Useful links:
 
 === Plugin site integration with GitHub
 
-link:https://plugins.jenkins.io/[Jenkins Plugin Site] currently uses GitHub to get plugin documentation (see above) and tags (using GitHub topics).
+The link:https://plugins.jenkins.io/[Jenkins Plugin site] currently uses GitHub to get plugin documentation (see above) and tags (using GitHub topics).
 Release information is also pulled from GitHub releases.
 There are still some areas for improvement, such as parsing of CHANGELOG.md files to get release information for plugins that don't use GitHub releases.
-This project is tracked in the {jira}WEBSITE-637[] EPIC.
+This project was tracked in the {jira}WEBSITE-637[] EPIC.
 
 Useful links:
 
@@ -156,10 +152,10 @@ Links:
 [#administrator-guide]
 === Administrator Guide
 
-Jenkins administration topics are included in the current xref:user-docs:ROOT:index.adoc[Jenkins Handbook].
-Navigation can be improved for administrators by separating the administration topics into a separate volume.
-This project will create a separate Jenkins Administrator Guide with content specific for administrators.
-This project is tracked in the {jira}WEBSITE-738[] EPIC.
+Jenkins administration topics are included in the current link:/doc/book[Jenkins Handbook].
+Since these topics are already included, we are not separating the administration topics into a separate volume.
+Upon reviewing other project documentation, very few, if any, have separate administrator guides.
+Due to this, we are keeping the User Handbook as it is now, where administration topics are part of the overall documentation.
 
 [#solution-pages]
 === Solution Pages
@@ -171,30 +167,29 @@ and execution environment solutions (xref:solutions:ROOT:python.adoc[Pipeline], 
 An excellent xref:solutions:ROOT:index.adoc[opening page] has been provided by link:https://github.com/zbynek[Zbynek Konecny].
 Additional use cases and user stories are being collected by link:https://github.com/alyssat[Alyssa Tong].
 
-The appearance and navigation of those solution pages needs improvement.
-The existing pages should be revisited and improved so that users of specific solutions can find what they need on jenkins.io.
-This project is tracked in the {jira}WEBSITE-742[] EPIC.
+The appearance and navigation of those solution pages has been improved since originally starting this project.
+The existing pages have been revisited and improved so that users of specific solutions can find what they need on jenkins.io.
+This project was tracked in the {jira}:WEBSITE-742[] EPIC.
 
 === Documentation Reviews
 
 * Reviewing Jenkins documentation link:https://issues.jenkins.io/secure/Dashboard.jspa?selectPageId=18640[bug reports]
 * Identifying link:https://issues.jenkins.io/issues/?jql=project%20%3D%20%22Jenkins%20Website%22%20and%20status%20!%3D%20done%20and%20labels%20%3D%20newbie-friendly%20ORDER%20BY%20%20%20type%20asc%2C%20status%2C%20updatedDate[newbie-friendly documentation bug reports]
 * Reviewing Jenkins documentation link:https://github.com/jenkins-infra/jenkins.io/pulls[pull requests]
-* Reviewing Jenkins X documentation link:https://github.com/jenkins-x/jx-docs/pulls[pull requests]
 * link:https://plugins.jenkins.io/[Plugins site] improvements
 
 == Office Hours
 
-Documentation office hours are held each Thursday at *18:00 UTC* (Europe and US East) and each Friday at *02:00 UTC* (Asia and US West).
+Documentation office hours are held once every two weeks on Thursday at *17:00 UTC*.
 Office hours are conducted and recorded using Zoom and archived to the link:https://www.youtube.com/user/jenkinsci[Jenkins YouTube channel] in the link:https://www.youtube.com/playlist?list=PLN7ajX_VdyaNp0lk5BmyAgqPS52u_4tC8[Jenkins Docs SIG YouTube playlist].
-Participant links are posted in the link:https://app.gitter.im/#/room/#jenkins/docs:matrix.org[SIG Gitter Chat] 10 minutes before the meeting starts.
+Participant links are posted in the link:https://app.gitter.im/#/room/#jenkins/docs:matrix.org[SIG Gitter Chat] before the meeting starts.
 
 [#meetings]
 == Meetings
 
 The Documentation SIG meetings are part of the documentation office hours.
 Meetings are conducted and recorded using Zoom and archived to the link:https://www.youtube.com/user/jenkinsci[Jenkins YouTube channel] in the link:https://www.youtube.com/playlist?list=PLN7ajX_VdyaNp0lk5BmyAgqPS52u_4tC8[Jenkins Docs SIG YouTube playlist].
-Participant links are posted in the link:https://app.gitter.im/#/room/#jenkins/docs:matrix.org[SIG Gitter Chat] 10 minutes before the meeting starts.
+Participant links are posted in the link:https://app.gitter.im/#/room/#jenkins/docs:matrix.org[SIG Gitter Chat] before the meeting starts.
 
 === Meeting Agendas
 
