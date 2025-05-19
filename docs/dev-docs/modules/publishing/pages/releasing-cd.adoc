@@ -6,7 +6,7 @@ Any feedback from early adopters will be appreciated.
 == Introduction
 
 Maintainers of Jenkins plugin repositories on GitHub can opt into continuous delivery (CD).
-In this mode, every successful build of the default branch (`master` or `main`) by ci.jenkins.io results in a new plugin release.
+In this mode, any successful build of the default branch (`master` or `main`) by ci.jenkins.io can result in a new plugin release.
 GitHub Actions are used to rebuild the code and deploy it to Artifactory,
 without the need for maintainers to use personal credentials or local builds.
 Release notes are generated automatically according to pull request (PR) titles and some predefined labels.
@@ -36,23 +36,6 @@ Here are some PR examples for various plugins to enable CD:
 - link:https://github.com/jenkinsci/kubernetes-plugin/pull/1139/files[kubernetes-plugin]
 - link:https://github.com/jenkinsci/plain-credentials-plugin/pull/31/files[plain-credentials-plugin]
 
-=== Enable CD Permissions
-
-Enable the continuous delivery flag in link:https://github.com/jenkins-infra/repository-permissions-updater/[repository permission updater] (RPU) for your plugin by filing a pull request adding to `permissions/plugin-xxx.yml`:
-
-[source,yaml]
-----
-cd:
-  enabled: true
-----
-
-By default, this enables link:https://github.com/jenkins-infra/repository-permissions-updater?tab=readme-ov-file#exclusively-using-jep-229-cd[exclusive JEP-229 CD], which does not grant the listed account upload permissions.
-
-In your PR towards the repository permission updater, include a link to the PR in your plugin, which contains all the necessary changes, like described above.
-
-Once that has been merged, start checking `https://github.com/jenkinsci/your-plugin/settings/secrets/actions`
-until you see `MAVEN_TOKEN` and `MAVEN_USERNAME` appear under *Repository secrets*.
-
 === Configure CD Workflow
 
 Create the CD workflow as a copy of the template:
@@ -62,6 +45,24 @@ Create the CD workflow as a copy of the template:
 mkdir -p .github/workflows
 curl --silent --show-error --location --output .github/workflows/cd.yaml https://raw.githubusercontent.com/jenkinsci/.github/master/workflow-templates/cd.yaml
 git add .github/workflows/cd.yaml
+----
+
+If you want to prevent automatic releases after PRs are merged, edit the `.github/workflows/cd.yaml` and remove the `check_run` workflow trigger, leaving only `workflow_dispatch`:
+
+[source,diff]
+----
+--- a/workflow-templates/cd.yaml
++++ b/workflow-templates/cd.yaml
+@@ -3,9 +3,6 @@
+ name: cd
+ on:
+   workflow_dispatch:
+-  check_run:
+-    types:
+-      - completed
+
+ permissions:
+   checks: read
 ----
 
 === Configure Release Drafter
@@ -81,6 +82,8 @@ Also link:https://github.com/apps/release-drafter/installations/775283[remove th
 IMPORTANT: These files may have been set up this way by the https://github.com/jenkinsci/archetypes/[plugin archetype] that you used to initialize the plugin.
 
 === Configure Dependabot
+
+NOTE: If you have link:https://docs.renovatebot.com/[Renovate] configured (normally in `renovate.json` or `.github/renovate.json`) do not configure Dependabot.
 
 If you have a `.github/dependabot.yml`, add:
 
@@ -236,20 +239,42 @@ Use the `revision` property for the `<dependency>` declaration to ensure they al
 </dependency>
 ----
 
+=== Enable CD Permissions
+
+Enable the continuous delivery flag in link:https://github.com/jenkins-infra/repository-permissions-updater/[repository permission updater] (RPU) for your plugin by filing a pull request adding to `permissions/plugin-xxx.yml`:
+
+[source,yaml]
+----
+cd:
+  enabled: true
+----
+
+By default, this enables https://github.com/jenkins-infra/repository-permissions-updater?tab=readme-ov-file#exclusively-using-jep-229-cd[exclusive JEP-229 CD], which does not grant the listed account upload permissions.
+
+In your PR towards the repository permission updater, include a link to the PR in your plugin, which contains all the necessary changes, like described above.
+
+Once that has been merged, start checking `https://github.com/jenkinsci/your-plugin/settings/secrets/actions`
+until you see `MAVEN_TOKEN` and `MAVEN_USERNAME` appear under *Repository secrets*.
+
 == Releasing
 
-Now whenever Jenkins reports a successful build of your default branch,
+If you use `cd.yaml` unchanged::
+Whenever Jenkins reports a successful build of your default branch,
 and at least one pull request had a label indicating it was of interest to users
 (e.g., `enhancement` rather than `chore`), your component will be released to Artifactory and 
 release notes published in GitHub.
 You do not need any special credentials or local checkout; just merge pull requests with suitable titles and labels.
-
++
 You will see a lot of workflow runs in the *Actions* tab in GitHub, only a small proportion of which are actual releases.
 Due to technical limitations in GitHub Actions it is not possible to suppress the extraneous runs.
 Actual releases will display a green check next to the *release* stage.
++
+You can also trigger a deployment explicitly, if the current commit has a passing check from Jenkins.
+Visit https://github.com/jenkinsci/your-plugin/actions?query=workflow%3Acd and click Run workflow.
 
-You can also trigger a deployment explicitly, if the current commit has a passing check from Jenkins. Visit https://github.com/jenkinsci/your-plugin/actions?query=workflow%3Acd and click Run workflow.
-If you prefer to only deploy explicitly, not on every push, just comment out the `check_run` section in the workflow.
+If you changed `cd.yaml` to only run on `workflow_dispatch`::
+You can trigger a release explicitly, if the current commit has a passing check from Jenkins.
+Visit https://github.com/jenkinsci/your-plugin/actions?query=workflow%3Acd and click Run workflow.
 
 == Noting incompatible changes
 
@@ -299,6 +324,18 @@ mvn -Dset.changelist \
 == Troubleshooting
 
 Check that `MAVEN_TOKEN` and `MAVEN_USERNAME` appear under Repository secrets.
+
+=== No release has been triggered after merging a pull request
+
+Ensure that the pull request has a label indicating it was of interest to users (e.g., `enhancement` rather than `chore`).
+
+See the complete list of label categories at https://github.com/jenkinsci/.github/blob/master/.github/release-drafter.yml and the list of "interesting" categories at https://github.com/jenkins-infra/interesting-category-action/blob/main/action.yaml#L13.
+
+You can use the `developer` label to release a pull request even if its not interesting to end users, e.g. it is a dependency of a downstream pull request or it fixes tests for Plugin Compatibility Testing.
+
+If you add an "interesting" label on a pull request already merged then merge another pull request (even with an uninteresting label), you will get a release since the workflow will see that there has been at least one interesting pull request since the last release.
+
+Finally, if you manually trigger the CD action and the build is passing on the primary branch, it will publish a new release regardless of any labels.
 
 === The upload to the Maven repository fails with "401 Unauthorized"
 

@@ -41,7 +41,7 @@ This means:
 
 == Enable CI Builds
 
-The Jenkins project hosts a Jenkins instance to perform continuous integration builds for plugins.
+The Jenkins project hosts a Jenkins controller to perform continuous integration builds for plugins.
 We recommend you set up CI builds for your plugin in the `jenkinsci` GitHub organization by creating a `Jenkinsfile` in your plugin's GitHub repository.
 See xref:continuous-integration.adoc[the documentation for CI builds] for details how to do this.
 
@@ -68,14 +68,11 @@ The xref:dev-docs:publishing:documentation.adoc[plugin documentation guide] incl
 
 If your chosen issue tracker is Jira, you can setup autolink references, to link from commits directly to the Jenkins Jira issue.
 All you need to do is heading to the `Settings` tab of your GitHub repository and add the following configuration to the `Autolink references` section:
-
-[source,txt]
-----
+```txt
 Numeric
 Reference prefix: JENKINS-
 Target URL: https://issues.jenkins.io/browse/JENKINS-<num>
-----
-
+```
 Commits prefixed with `JENKINS-<num>` will now be linked to the corresponding Jira issue:
 image:dev-docs:plugin-development:hosting/jira-auto-reference.png[]
 
