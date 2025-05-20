@@ -3,8 +3,7 @@
 :page-layout: wip
 
 == Overview
-
-Writing automated tests for Jenkins and its plugins is important to ensure that everything works as expected — in various scenarios, with multiple Java versions, and on different operating systems — while helping to prevent regressions from being introduced in later releases.
+Writing automated tests for Jenkins and its plugins is important to ensure that everything works as expected - in various scenarios, with multiple Java versions, and on different operating systems - while helping to prevent regressions from being introduced in later releases.
 
 Whether you're writing a new Jenkins plugin, or just looking to xref:community:ROOT:index.adoc[participate in the Jenkins project], this guide aims to cover everything you should need to get started writing various types of automated tests.
 Basic experience of writing Java-based tests with the link:https://junit.org/[JUnit test framework] is assumed.
@@ -17,6 +16,7 @@ This provides the following features:
 3. Declarative annotations to specify the environment a test method will use; for example, setting the `JENKINS_HOME` contents.
 4. Direct access to the Jenkins object model. This allows tests to assert directly against the internal state of Jenkins.
 5. link:https://htmlunit.sourceforge.io/[HtmlUnit] support, making it simple to test interaction with the web UI and other HTTP calls.
+
 
 == Setting Up
 
@@ -143,6 +143,36 @@ Most Java IDEs should be able to run JUnit tests and report on the results.
 //==== From the Command Line
 
 //==== From an IDE
+
+=== Performance considerations
+
+The test runner (Surefire) supports running tests in parallel to speed them up.
+A possibility to configure this machine-wide is to adjust the `forkCount` within Maven.
+The default setting is `forkCount=1`, which means no parallel testing.
+An often-used setting is `1C`, which spawns as many testing processes in parallel as CPU cores are present.
+If you have a machine with many cores, it might be faster to set it to a smaller number, like `0.45C`.
+For example, with 16 cores the runner will be spawning up to 7 processes.
+More details can be found in the link:https://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html[Maven Surefire documentation].
+
+You can also adjust this globally within a Maven profile setting, independently of the Plugin configuration.
+The Maven profile can be typically found at: `~/.m2/settings.xml` (Linux) or `%userprofile%/.m2` (Windows).
+A profile setting with the name "faster", which is enabled by default can look like this:
+
+[source,xml]
+----
+<profile>
+  <id>faster</id>
+  <activation>
+    <activeByDefault>true</activeByDefault>
+  </activation>
+  <properties>
+    <forkCount>0.45C</forkCount>
+  </properties>
+</profile>
+----
+
+In the IDE this setting will be able to enable or disable depending on the test suite you are working on.
+In case of problems it can also be deactivated on the command-line with `-P=-faster`.
 
 == What to Test
 
@@ -345,6 +375,13 @@ FilePath report = workspace.child("target").child("lint-results.xml");
 report.copyFrom(getClass().getResourceAsStream("lint-results_r20.xml"));
 ----
 
+If you want to create files or folder remotely on an agent node, the below example shows how to use it:
+[source,java]
+----
+FilePath remotePath = new FilePath(agentChannel, "/remote/path/file.txt");
+remotePath.write("Remote Content", "UTF-8");
+----
+
 ==== Customizing the `JENKINS_HOME` Directory
 TODO: Write this section.
 
@@ -479,7 +516,7 @@ computer.disconnect(new OfflineCause.IdleOfflineCause());
 ----
 
 === Enabling security
-If you need a security realm for testing you can use a `MockAuthorizationStrategy()` where you can grant rights as needed for your test. In the following example everyone gets `READ` on the Jenkins instance and users *alice* and *bob* get individual rights. Using `LocalData` presets can be used if you need to setup a lot for your test.
+If you need a security realm for testing you can use a `MockAuthorizationStrategy()` where you can grant rights as needed for your test. In the following example everyone gets `READ` on the Jenkins controller and users *alice* and *bob* get individual rights. Using `LocalData` presets can be used if you need to setup a lot for your test.
 
 [source,java]
 ----

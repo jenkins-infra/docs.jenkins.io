@@ -23,10 +23,10 @@ xref:user-docs:system-administration:index.adoc[Jenkins System Administration].
 
 == System Configuration group
 
-Screens for configuring resources for your Jenkins instance.
+Screens for configuring resources for your Jenkins controller.
 
 xref:managing:system-configuration.adoc[System]::
-Configure global settings and paths for the Jenkins instance
+Configure global settings and paths for the Jenkins controller
 
 xref:managing:tools.adoc[Tools]::
 Configure tools, their locations, and automatic installers
@@ -39,18 +39,18 @@ xref:managing:nodes.adoc[Nodes and Clouds]::
 Add, remove, control, and monitor the nodes used for the agents on which build jobs run.
 
 xref:managing:casc.adoc[Configuration as Code]::
-Configure your Jenkins instance using a human-readable YAML file rather than the UI.
+Configure your Jenkins controller using a human-readable YAML file rather than the UI.
 This is an optional feature that appears in this group
 only when the plugin is installed on your controller.
 
 == Security group
 
-Screens for configuring security features for your Jenkins instance.
+Screens for configuring security features for your Jenkins controller.
 See xref:dev-docs:security:index.adoc[Securing Jenkins] for general information
 about managing Jenkins security.
 
 xref:managing:system-configuration.adoc[Security]::
-Set configuration parameters that secure your Jenkins instance.
+Set configuration parameters that secure your Jenkins controller.
 
 xref:user-docs:using-jenkins:using-credentials.adoc#adding-new-global-credentials[Manage Credentials]::
 Configure the credentials that provide secure access
@@ -72,15 +72,15 @@ xref:system-administration:viewing-logs.adoc[System Log]::
 Jenkins log that contains all `java.util.logging` output related to Jenkins.
 
 *Load Statistics*::
-Displays information about resource utilization on you Jenkins instance.
+Displays information about resource utilization on you Jenkins controller.
 
 xref:managing:about-jenkins.adoc[About Jenkins]::
-Provides version and license information for your Jenkins instance.
+Provides version and license information for your Jenkins controller.
 
 == Troubleshooting group
 
 *Manage Old Data*::
-Remove configuration information related to plugins that have been removed from the instance.
+Remove configuration information related to plugins that have been removed from the controller.
 
 == Tools and Actions group
 

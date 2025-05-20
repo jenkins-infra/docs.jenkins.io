@@ -17,7 +17,7 @@ URL where `+"..."+` portion is the data that it acts on.
 For example, if your Jenkins installation sits at https://ci.jenkins.io,
 visiting https://ci.jenkins.io/api/ will show just the top-level API
 features available – primarily a listing of the configured jobs for this
-Jenkins instance. +
+Jenkins controller. +
 Or if you want to access information about a particular build, e.g.
 https://ci.jenkins.io/job/Websites/job/jenkins.io/job/master/lastSuccessfulBuild/ , then go to
 https://ci.jenkins.io/job/Websites/job/jenkins.io/job/master/lastSuccessfulBuild/api/ and you'll
