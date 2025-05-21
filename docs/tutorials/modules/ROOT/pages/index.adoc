@@ -64,6 +64,3 @@ You may find more tutorials in link:https://www.jenkins.io/node/tags/tutorial[Tu
 NOTE: Blue Ocean is no longer being actively maintained.
 The tutorials will continue to work until Blue Ocean is completely deprecated, at which point the tutorials will be removed from the documentation.
 '''
-++++
-include::_partials/_feedback-footer.html[]
-++++
