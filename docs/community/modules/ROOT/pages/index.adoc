@@ -104,11 +104,3 @@ If you have no time but want to help, we accept money to facilitate project goal
 [.button]
 xref:meet.adoc[Read More]
 ****
-
-== Help and feedback
-
-Please contact us in the https://app.gitter.im/#/room/#jenkinsci_newcomer-contributors:gitter.im[Newcomer] or https://app.gitter.im/#/room/#jenkinsci_advocacy-and-outreach-sig:gitter.im[Advocacy and Outreach SIG] Gitter channels if you have any questions about contributing to Jenkins.
-
-See the https://www.youtube.com/playlist?list=PLN7ajX_VdyaMsvHNW5JGlGdgJzqJ7Q5Mr[Contributing to Jenkins YouTube playlist] for deep dives into specific areas.
-
-Any feedback about the guidelines will be appreciated.
