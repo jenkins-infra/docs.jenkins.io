@@ -72,7 +72,8 @@ All you need to do is heading to the `Settings` tab of your GitHub repository an
 Numeric
 Reference prefix: JENKINS-
 Target URL: https://issues.jenkins.io/browse/JENKINS-<num>
-```
+----
+
 Commits prefixed with `JENKINS-<num>` will now be linked to the corresponding Jira issue:
 image:dev-docs:plugin-development:hosting/jira-auto-reference.png[]
 
