@@ -68,7 +68,8 @@ The xref:dev-docs:publishing:documentation.adoc[plugin documentation guide] incl
 
 If your chosen issue tracker is Jira, you can setup autolink references, to link from commits directly to the Jenkins Jira issue.
 All you need to do is heading to the `Settings` tab of your GitHub repository and add the following configuration to the `Autolink references` section:
-```txt
+[source,txt]
+----
 Numeric
 Reference prefix: JENKINS-
 Target URL: https://issues.jenkins.io/browse/JENKINS-<num>
