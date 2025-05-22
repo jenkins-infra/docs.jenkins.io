@@ -11,7 +11,7 @@ In case of a plugin vulnerability, we try to contact the plugin maintainer(s) to
 If they decline (or otherwise fail) to fix the vulnerability, or don't respond in a timely manner, and the security team doesn't have the capacity to fix it, we follow the process outlined below in the interest of our users:
 
 . Publish a security advisory about the plugin, describing the nature of the vulnerability, but noting that there is no fix (other than no longer using the plugin).
-  If there are workarounds, explain them.
+If there are workarounds, explain them.
 . In some cases of particularly severe vulnerabilities, link:#suspensions[stop publishing the vulnerable plugin on the Jenkins update sites].
 . Add metadata to update sites to inform administrators on the Jenkins UI about vulnerable plugins they have installed.
 . Display security warnings on https://plugins.jenkins.io/[the plugins site].

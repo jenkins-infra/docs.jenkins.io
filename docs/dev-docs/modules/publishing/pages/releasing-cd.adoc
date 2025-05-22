@@ -241,7 +241,7 @@ Use the `revision` property for the `<dependency>` declaration to ensure they al
 
 === Enable CD Permissions
 
-Enable the continuous delivery flag in link:https://github.com/jenkins-infra/repository-permissions-updater/[repository permission updater] (RPU) for your plugin by filing a pull request adding to `permissions/plugin-xxx.yml`:
+Enable the continuous delivery flag in link:https://github.com/jenkins-infra/repository-permissions-updater/[repository permission updater](RPU) for your plugin by filing a pull request adding to `permissions/plugin-xxx.yml`:
 
 [source,yaml]
 ----
