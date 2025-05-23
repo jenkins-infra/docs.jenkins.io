@@ -122,7 +122,7 @@ Once Jenkins is running, consult the log
 (`/var/svc/log/network-http:jenkins.log`) to retrieve the generated
 administrator password for the initial set up of Jenkins, usually it will be
 found at `/var/lib/jenkins/home/secrets/initialAdminPassword`. Then navigate to
-link:http://localhost:8080[localhost:8080] to xref:#setup-wizard[complete configuration of the Jenkins instance].
+link:http://localhost:8080[localhost:8080] to xref:#setup-wizard[complete configuration of the Jenkins controller].
 
 
 To change attributes of the service, such as environment variables like `JENKINS_HOME`
