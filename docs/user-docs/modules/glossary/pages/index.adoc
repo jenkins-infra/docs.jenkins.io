@@ -19,7 +19,7 @@ each of the terms below. Which means that if we want to cross-reference terms
 directly from other documents we need to include an inline anchor.
 
 Additionally, because these inline anchors don't attach to section headings,
-cross-referencing must include the appropriate display text, for example:
+cross referencing must include the appropriate display text, for example:
 
   MyTerm [#myterm] this is the definition of MyTerm
 

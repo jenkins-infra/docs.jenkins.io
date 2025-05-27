@@ -63,20 +63,18 @@ _Snippet Generator_, you can create a Pipeline script as you might through the
 dropdowns in other Jenkins jobs.
 
 
-== Folder Computation
+== Multibranch Pipeline and Organization Folder
 
-_Multibranch Pipeline_ projects and _Organization Folders_ extend the existing
-folder functionality by introducing 'computed' folders.  Computed folders
-automatically run a process to manage the folder contents.  This computation, in
-the case of _Multibranch Pipeline_ projects, creates child items for each
-eligible branch within the child.  For _Organization Folders_, computation
-populates child items for repositories as individual _Multibranch Pipelines_.
+_Multibranch Pipeline_ projects and _GitHub Organization Folders_ extend the existing folder functionality by introducing computed folders. Computed folders automatically manage their contents by dynamically creating and updating child items.
 
-Folder computation may happen automatically via webhook callbacks, as branches
-and repositories are created or removed.  Computation may also be triggered by
-the _Build Trigger_ defined in the configuration, which will automatically run a
-computation task after a period of inactivity (this defaults to run after one
-day).
+These features require the plugin:github-branch-source[GitHub Branch Source] plugin, which provides the functionality for managing branches and repositories.
+
+* For _Multibranch Pipeline_ projects, the computed folder functionality includes the `Scan Multibranch Pipeline Log` and `Scan Multibranch Pipeline Now` actions. These options scan repositories, generate child items for eligible branches, and update the pipeline list based on changes.
+
+* For _GitHub Organization Folders_, the computed folder functionality includes the `Scan Organization Log` and `Scan Organization Now` actions. These options populate repositories as individual _Multibranch Pipelines_ and provide insights into scans.
+
+Folder computation can happen automatically through webhook callbacks when branches or repositories are created or removed. Computation can also be triggered periodically via the _Build Triggers_ configuration, which defaults to running after one day of inactivity.
+
 
 [role="image-border"]
 image::folder-computation-build-trigger-schedule.png[scaledwidth="75%"]
@@ -174,7 +172,8 @@ image::orphaned-item-strategy.png[scaledwidth="75%"]
 
 === Icon and View Strategy
 
-You may also configure an icon to use for the folder display.
+You can configure a custom icon for folder display by installing the plugin:custom-folder-icon[Custom Folder Icon] plugin.
+
 For example, it might be useful to display an aggregate health of the child builds.
 Alternately, you might reference the same icon you use in your GitHub organization account.
 
@@ -188,17 +187,17 @@ To demonstrate using an Organization Folder to manage repositories, we'll use
 the fictitious organization: CloudBeers, Inc..
 
 Go to *New Item*.
-Enter 'cloudbeers' for the item name.
-Select *GitHub Organization* and click *OK*.
+Enter 'CloudBeersInc' for the item name.
+Select *Organization Folder* and click *OK*.
 
 [role="image-border"]
 image::screenshot1.png[scaledwidth="75%"]
 
 Optionally, enter a better descriptive name for the _Description_, such as 'CloudBeers GitHub'.
 In the _Repository Sources_ section, complete the section for "GitHub Organization".
-Make sure the *owner* matches the GitHub Organization name exactly, in our case it must be: _cloudbeers_.
+Make sure the *owner* matches the GitHub Organization name exactly, in our case it must be: _CloudBeersInc_.
 This defaults to the same value that was entered for the item name in the first step.
-Next, select or add new "Scan credentials" - we'll enter our GitHub username and access token as the password.
+Next, select or add new *Credentials* - we'll enter our GitHub username and access token as the password.
 
 [role="image-border"]
 image::screenshot2.png[scaledwidth="75%"]
@@ -294,7 +293,7 @@ time.
 There is just one job to capture the entire software delivery pipeline in an
 organization. Of course, you can still connect two Pipeline job types together
 if you want. A Pipeline job type uses a Groovy-based DSL for job definitions.
-    The DSL affords the advantage of defining jobs programmatically:
+The DSL affords the advantage of defining jobs programmatically:
 
 
 [source, groovy]
