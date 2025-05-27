@@ -67,7 +67,7 @@ dropdowns in other Jenkins jobs.
 
 _Multibranch Pipeline_ projects and _GitHub Organization Folders_ extend the existing folder functionality by introducing computed folders. Computed folders automatically manage their contents by dynamically creating and updating child items.
 
-These features require the plugin:github-branch-source[GitHub Branch Source] plugin, which provides the functionality for managing branches and repositories.
+These features require the {plugin}github-branch-source[GitHub Branch Source] plugin, which provides the functionality for managing branches and repositories.
 
 * For _Multibranch Pipeline_ projects, the computed folder functionality includes the `Scan Multibranch Pipeline Log` and `Scan Multibranch Pipeline Now` actions. These options scan repositories, generate child items for eligible branches, and update the pipeline list based on changes.
 
@@ -172,7 +172,7 @@ image::orphaned-item-strategy.png[scaledwidth="75%"]
 
 === Icon and View Strategy
 
-You can configure a custom icon for folder display by installing the plugin:custom-folder-icon[Custom Folder Icon] plugin.
+You can configure a custom icon for folder display by installing the {plugin}custom-folder-icon[Custom Folder Icon] plugin.
 
 For example, it might be useful to display an aggregate health of the child builds.
 Alternately, you might reference the same icon you use in your GitHub organization account.
