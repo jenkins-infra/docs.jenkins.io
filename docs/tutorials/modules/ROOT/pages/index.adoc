@@ -66,7 +66,7 @@ You may find more tutorials in link:https://www.jenkins.io/node/tags/tutorial[Tu
 NOTE: Blue Ocean is no longer being actively maintained.
 These tutorials will continue to work until Blue Ocean is completely deprecated, at which point the tutorials will be removed from the documentation.
 
-* xref:/blog/2017/04/05/welcome-to-blue-ocean.adoc[Getting Started with Blue Ocean]
-* Getting Started with Blue Ocean's Visual Pipeline Editor (xref:create-a-pipeline-in-blue-ocean.adoc[guide], xref:/blog/2017/04/06/welcome-to-blue-ocean-editor.adoc[video guide])
-* xref:/blog/2017/04/11/welcome-to-blue-ocean-pipeline-activity.adoc[Getting Started with Blue Ocean's Activity View]
-* xref:/blog/2017/04/12/welcome-to-blue-ocean-dashboard.adoc[Getting Started with the Blue Ocean Dashboard]
+* link:https://www.jenkins.io/blog/2017/04/05/welcome-to-blue-ocean/[Getting Started with Blue Ocean]
+* Getting Started with Blue Ocean's Visual Pipeline Editor (xref:create-a-pipeline-in-blue-ocean.adoc[guide], link:https://www.jenkins.io/blog/2017/04/06/welcome-to-blue-ocean-editor/[video guide])
+* link:https://www.jenkins.io/blog/2017/04/11/welcome-to-blue-ocean-pipeline-activity/[Getting Started with Blue Ocean's Activity View]
+* link:https://www.jenkins.io/blog/2017/04/12/welcome-to-blue-ocean-dashboard/[Getting Started with the Blue Ocean Dashboard]
