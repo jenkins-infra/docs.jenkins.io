@@ -237,19 +237,20 @@ and finally +
 `git push` to push your changes to your forked repository on GitHub, so it can be picked up by Jenkins.
 
 . In Jenkins, go back to *Dashboard* if necessary, then *simple-node-js-react-npm-app* and launch another build thanks to *Build Now*.
-. After a while, a new column *Test* appear in the *Stage View*.
+. After a while, a new column *Test* appears in the *Stage View*.
 
 [.boxshadow]
 image::tutorials/node/test-stage.png[Test stage,width=100%]
 
-+
 . You can select *#2* or on the number representing your last build on the left, under *Build History*.
++
 You will then see the details of the build.
 +
 If Docker has not restarted since you last ran the Pipeline <<create-your-initial-pipeline-as-a-jenkinsfile,above>>, then no `npm` artifacts are downloaded during the "Build" stage.
 Therefore, running your Pipeline this subsequent time should be much faster.
 
 You can now select *Pipeline Overview* to see the stages of the Pipeline.
+
 [.boxshadow]
 image::tutorials/node/pipeline-overview-test.png[Pipeline overview,width=100%]
 
