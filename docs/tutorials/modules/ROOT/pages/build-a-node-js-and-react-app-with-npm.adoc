@@ -242,6 +242,7 @@ and finally +
 [.boxshadow]
 image::tutorials/node/test-stage.png[Test stage,width=100%]
 
++
 . You can select *#2* or on the number representing your last build on the left, under *Build History*.
 You will then see the details of the build.
 +
