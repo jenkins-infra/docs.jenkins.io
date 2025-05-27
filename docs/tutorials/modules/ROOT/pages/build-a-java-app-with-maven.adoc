@@ -127,7 +127,6 @@ During this time, Maven downloads many artifacts necessary to build your Java ap
 
 image:tutorials:ROOT:maven/maven-downloading-artefacts.png[alt="Downloading Maven artifacts",width=100%]
 
-+
 You can now click on *#1* to see the details of the build.
 You will then see how much time the build took waiting in the queue, and how much time it took to run.
 
@@ -286,9 +285,7 @@ You can now click on *Pipeline Overview* to see the stages of the Pipeline.
 Once you click on the *Deliver* green checkmark, and then on the first green section, the output should be something like below, showing you the execution results of your Java application at the end.
 [.boxshadow]
 image:tutorials:ROOT:maven/deliver-stage-output.png[alt="Deliver stage output only",width=100%]
-
 . You can now click on *Maven tutorial* on the top left, and then on *Stages* at the left. It will list your previous Pipeline runs in reverse chronological order.
-
 [.boxshadow]
 image:tutorials:ROOT:maven/pipeline-runs.png[alt="Pipeline overview interface with all previous runs displayed",width=100%]
 
@@ -328,11 +325,6 @@ This helps in cleaning up any services that might have been started independentl
 ====
 
 [[appendix]]
-
-'''
-++++
-include::_partials/_feedback-footer.html[]
-++++
 
 ////
 Hide this warning due to temporary addition to 'mvn jar:jar install:install'

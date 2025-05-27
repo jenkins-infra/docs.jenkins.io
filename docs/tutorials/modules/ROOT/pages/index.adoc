@@ -39,11 +39,13 @@ concepts based on specific technology stacks.
 Choose the tutorial that's relevant to your technology stack or one that you're
 most familiar with:
 
+* xref:build-a-python-app-with-pyinstaller[Build a Python app with PyInstaller]
+* xref:build-a-cpp-app-with-jenkins[Build a C++ app with Jenkins]
 * xref:build-a-java-app-with-maven.adoc[Build a Java app with Maven]
 * xref:build-a-node-js-and-react-app-with-npm.adoc[Build a Node.js and React app with npm]
-* xref:build-a-python-app-with-pyinstaller.adoc[Build a Python app with PyInstaller]
 * xref:build-a-labview-app.adoc[Build a LabVIEW app]
 * xref:using-jenkinsfile-runner-github-action-to-build-jenkins-pipeline.adoc[Build a Jenkins pipeline by using Jenkinsfile Runner GitHub Actions]
+* xref:build-a-dotnet-web-app-with-jenkins[Build a .NET Web App with Jenkins]
 
 == More tutorials
 
@@ -62,5 +64,9 @@ You may find more tutorials in link:https://www.jenkins.io/node/tags/tutorial[Tu
 == Blue Ocean
 
 NOTE: Blue Ocean is no longer being actively maintained.
-The tutorials will continue to work until Blue Ocean is completely deprecated, at which point the tutorials will be removed from the documentation.
-'''
+These tutorials will continue to work until Blue Ocean is completely deprecated, at which point the tutorials will be removed from the documentation.
+
+* xref:/blog/2017/04/05/welcome-to-blue-ocean.adoc[Getting Started with Blue Ocean]
+* Getting Started with Blue Ocean's Visual Pipeline Editor (xref:create-a-pipeline-in-blue-ocean.adoc[guide], xref:/blog/2017/04/06/welcome-to-blue-ocean-editor.adoc[video guide])
+* xref:/blog/2017/04/11/welcome-to-blue-ocean-pipeline-activity.adoc[Getting Started with Blue Ocean's Activity View]
+* xref:/blog/2017/04/12/welcome-to-blue-ocean-dashboard.adoc[Getting Started with the Blue Ocean Dashboard]
