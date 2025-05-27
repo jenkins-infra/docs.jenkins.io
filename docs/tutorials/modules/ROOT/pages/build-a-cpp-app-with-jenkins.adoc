@@ -4,11 +4,12 @@ This tutorial shows you how to use Jenkins to build a simple C++ application, sp
 
 If you are a C++ developer who is new to CI/CD concepts, or you might be familiar with these concepts but don't know how to implement building your application using Jenkins, then this tutorial is for you.
 
-*Duration:* This tutorial takes 20-40 minutes to complete (assuming you've already met the <<prerequisites>> below). The exact duration will depend on the speed of your machine and whether you've already installed `docker` and `docker compose`.
+*Duration:* This tutorial takes 20-40 minutes to complete (assuming you've already met the xref:#prerequisites[Prerequisites] below). The exact duration will depend on the speed of your machine and whether you've already installed `docker` and `docker compose`.
 
 You can stop this tutorial at any point in time and continue from where you left off.
 
-include::tutorials/_new_prerequisites.adoc[]
+[#prerequisites]
+include::partial$_new_prerequisites.adoc[]
 ** https://git-scm.com/downloads[Git], and optionally https://desktop.github.com/[GitHub Desktop].
 
 [[fork-sample-repository]]
@@ -71,7 +72,7 @@ Now, log in using the `admin` username and `admin` password.
 
 You're now ready to create your Pipeline that will automate building your C++ application in Jenkins. Your Pipeline is created as a `Jenkinsfile`, which is committed to your locally cloned Git repository (`casino-number-guessing-game`).
 
-This is the foundation of "Pipeline-as-Code", which treats the continuous delivery pipeline as a part of the application to be versioned and reviewed like any other code. Read more about Pipeline and what a Jenkinsfile is in the xref:pipeline:index.adoc[Pipeline] and xref:pipeline:jenkinsfile.adoc[Using a Jenkinsfile] sections of the User Handbook.
+This is the foundation of "Pipeline-as-Code", which treats the continuous delivery pipeline as a part of the application to be versioned and reviewed like any other code. Read more about Pipeline and what a Jenkinsfile is in the xref:user-docs:pipeline:index.adoc[Pipeline] and xref:user-docs:pipeline:jenkinsfile.adoc[Using a Jenkinsfile] sections of the User Handbook.
 
 First, create an initial Pipeline to build your C++ application. Add a "Build" stage to the Pipeline that begins orchestrating this whole process.
 

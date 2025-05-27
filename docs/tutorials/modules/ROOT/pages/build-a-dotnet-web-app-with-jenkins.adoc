@@ -7,12 +7,13 @@ If you are unfamiliar with publishing a .NET web app or you are not sure how to 
 This tutorial provides a ready-to-use web app, simple .NET API, and an integration test to ensure functionality.
 The test results are generated in a Cobertura XML report.
 
-*Duration:* This tutorial takes 30 - 40 minutes to complete, assuming you meet the below <<prerequisites>>.
+*Duration:* This tutorial takes 30 - 40 minutes to complete, assuming you meet the below xref:#prerequisites[Prerequisites].
 The exact duration will depend on the speed of your machine and whether you've already installed `docker` and `docker compose`.
 
 You can stop this tutorial at any time and continue from where you left off.
 
-include::tutorials/_new_prerequisites.adoc[]
+[#prerequisites]
+include::partial$_new_prerequisites.adoc[]
 ** https://git-scm.com/downloads[Git], and optionally https://desktop.github.com/[GitHub Desktop].
 
 [[fork-sample-repository]]
@@ -83,8 +84,7 @@ You are now ready to create a Pipeline to automate the building of your .NET web
 
 Your Pipeline is created as a `Jenkinsfile`, which is committed to your locally cloned Git repository (`simple-dotnet-web-app`).
 
-This is the foundation of "Pipeline-as-Code", which treats the continuous delivery pipeline as a part of the application, to be versioned and reviewed like any other code.
-Read more about Pipeline and what a Jenkinsfile is in the xref:pipeline:index.adoc[Pipeline] and xref:pipeline:jenkinsfile.adoc[Using a Jenkinsfile] sections of the User Handbook.
+This is the foundation of "Pipeline-as-Code", which treats the continuous delivery pipeline as a part of the application to be versioned and reviewed like any other code. Read more about Pipeline and what a Jenkinsfile is in the xref:user-docs:pipeline:index.adoc[Pipeline] and xref:user-docs:pipeline:jenkinsfile.adoc[Using a Jenkinsfile] sections of the User Handbook.
 
 First, create an initial Pipeline to build your .NET web app.
 The pipeline utilizes a customized agent that is shipped with .NET SDK.
