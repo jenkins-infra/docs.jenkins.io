@@ -419,6 +419,8 @@ created so you do not continue to accrue charges.
 . Right-click on the instance you created earlier, and select *Terminate*.
 +
 image::tutorials:ROOT:AWS/terminate_instance.png[Terminating your AWS EC2 instance.]
+
+
 === Optional: Using PuTTY (for older Windows versions or users who prefer PuTTY)
 
 If you are using an older version of Windows or prefer to use PuTTY, follow these steps:
