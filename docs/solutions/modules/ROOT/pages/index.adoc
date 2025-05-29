@@ -132,106 +132,116 @@
 </style>
 
 <div class="flex-container">
-<div class="card android">
-<a href="https://docs.jenkins.io/solutions/2.504.x/android.html">
-    <div class="data">
-        <p>
-            Android 
-        </p>
+    <div class="card android">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/android.html">
+            <div class="data">
+                <p>
+                    Android 
+                </p>
+            </div>
+            <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/android.svg">
+        </a>
     </div>
-    <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/android.svg">
-</div>
-<div class="card php">
-<a href="https://docs.jenkins.io/solutions/2.504.x/php.html">
-    <div class="data ">
-        <p>
-            PHP 
-        </p>
-        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/php.svg">
+    <div class="card bit-bucket">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/bitbucketserver.html">
+            <div class="data ">
+                <p>
+                    Bit Bucket 
+                </p>
+                <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/bitbucketserver.svg">
+            </div>
+        </a>
     </div>
-</div>
-<div class="card docker">
-<a href="https://docs.jenkins.io/solutions/2.504.x/docker.html">
-    <div class="data ">
-        <p>
-            Docker 
-        </p>
-        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/docker.svg">
+    <div class="card c">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/c.html">
+            <div class="data ">
+                <p>
+                    C/C++ 
+                </p>
+                <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/c.svg">
+            </div>
+        </a>
     </div>
-</div>
-<div class="card python">
-<a href="https://docs.jenkins.io/solutions/2.504.x/python.html">
-    <div class="data ">
-        <p>
-            Python 
-        </p>
-        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/python.svg">
+    <div class="card docker">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/docker.html">
+            <div class="data ">
+                <p>
+                    Docker 
+                </p>
+                <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/docker.svg">
+            </div>
+        </a>
     </div>
-</div>
-<div class="card ruby">
-<a href="https://docs.jenkins.io/solutions/2.504.x/ruby.html">
-    <div class="data ">
-        <p>
-            Ruby 
-        </p>
-        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/ruby.svg">
+    <div class="card embedded">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/embedded.html">
+            <div class="data ">
+                <p>
+                    Embedded 
+                </p>
+                <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/embedded.svg">
+            </div>
+        </a>
     </div>
-</div>
-<div class="card pipeline">
-<a href="https://docs.jenkins.io/solutions/2.504.x/pipeline.html">
-    <div class="data ">
-        <p>
-            Pipeline 
-        </p>
-        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/pipeline.svg">
+    <div class="card github">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/github.html">
+            <div class="data">
+                <p>
+                    Github 
+                </p>
+                <img class="github-image" src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/github.svg">
+            </div>
+        </a>
     </div>
-</div>
-<div class="card github">
-<a href="https://docs.jenkins.io/solutions/2.504.x/github.html">
-    <div class="data">
-        <p>
-            Github 
-        </p>
-        <img class="github-image" src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/github.svg">
+    <div class="card java">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/java.html">
+            <div class="data ">
+                <p>
+                    Java
+                </p>
+                <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/java.svg">
+            </div>
+        </a>
     </div>
-</div>
-<div class="card embedded">
-<a href="https://docs.jenkins.io/solutions/2.504.x/embedded.html">
-    <div class="data ">
-        <p>
-            Embedded 
-        </p>
-        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/embedded.svg">
+    <div class="card php">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/php.html">
+            <div class="data ">
+                <p>
+                    PHP 
+                </p>
+                <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/php.svg">
+            </div>
+        </a>
     </div>
-</div>
-<div class="card bit-bucket">
-<a href="https://docs.jenkins.io/solutions/2.504.x/bitbucketserver.html">
-    <div class="data ">
-        <p>
-            Bit Bucket 
-        </p>
-        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/bitbucketserver.svg">
+    <div class="card pipeline">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/pipeline.html">
+            <div class="data ">
+                <p>
+                    Pipeline 
+                </p>
+                <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/pipeline.svg">
+            </div>
+        </a>
     </div>
-</div>
-<div class="card c">
-<a href="https://docs.jenkins.io/solutions/2.504.x/c.html">
-    <div class="data ">
-        <p>
-            C/C++ 
-        </p>
-        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/c.svg">
+    <div class="card python">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/python.html">
+            <div class="data ">
+                <p>
+                    Python 
+                </p>
+                <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/python.svg">
+            </div>
+        </a>
     </div>
-</div>
-<div class="card java">
-<a href="https://docs.jenkins.io/solutions/2.504.x/java.html">
-    <div class="data ">
-        <p>
-            Java
-        </p>
-        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/java.svg">
+    <div class="card ruby">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/ruby.html">
+            <div class="data ">
+                <p>
+                    Ruby 
+                </p>
+                <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/ruby.svg">
+            </div>
+        </a>
     </div>
-</div>
-</a>
 </div>
 
 ++++
