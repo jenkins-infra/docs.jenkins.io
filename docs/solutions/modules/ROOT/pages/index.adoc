@@ -133,102 +133,102 @@
 
 <div class="flex-container">
 <div class="card android">
-<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/android.html">
+<a href="https://docs.jenkins.io/solutions/2.504.x/android.html">
     <div class="data">
         <p>
             Android 
         </p>
     </div>
-    <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/android.svg">
+    <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/android.svg">
 </div>
 <div class="card php">
-<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/php.html">
+<a href="https://docs.jenkins.io/solutions/2.504.x/php.html">
     <div class="data ">
         <p>
             PHP 
         </p>
-        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/php.svg">
+        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/php.svg">
     </div>
 </div>
 <div class="card docker">
-<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/docker.html">
+<a href="https://docs.jenkins.io/solutions/2.504.x/docker.html">
     <div class="data ">
         <p>
             Docker 
         </p>
-        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/docker.svg">
+        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/docker.svg">
     </div>
 </div>
 <div class="card python">
-<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/python.html">
+<a href="https://docs.jenkins.io/solutions/2.504.x/python.html">
     <div class="data ">
         <p>
             Python 
         </p>
-        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/python.svg">
+        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/python.svg">
     </div>
 </div>
 <div class="card ruby">
-<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/ruby.html">
+<a href="https://docs.jenkins.io/solutions/2.504.x/ruby.html">
     <div class="data ">
         <p>
             Ruby 
         </p>
-        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/ruby.svg">
+        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/ruby.svg">
     </div>
 </div>
 <div class="card pipeline">
-<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/pipeline.html">
+<a href="https://docs.jenkins.io/solutions/2.504.x/pipeline.html">
     <div class="data ">
         <p>
             Pipeline 
         </p>
-        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/pipeline.svg">
+        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/pipeline.svg">
     </div>
 </div>
 <div class="card github">
-<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/github.html">
+<a href="https://docs.jenkins.io/solutions/2.504.x/github.html">
     <div class="data">
         <p>
             Github 
         </p>
-        <img class="github-image" src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/github.svg">
+        <img class="github-image" src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/github.svg">
     </div>
 </div>
 <div class="card embedded">
-<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/embedded.html">
+<a href="https://docs.jenkins.io/solutions/2.504.x/embedded.html">
     <div class="data ">
         <p>
             Embedded 
         </p>
-        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/embedded.svg">
+        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/embedded.svg">
     </div>
 </div>
 <div class="card bit-bucket">
-<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/bitbucketserver.html">
+<a href="https://docs.jenkins.io/solutions/2.504.x/bitbucketserver.html">
     <div class="data ">
         <p>
             Bit Bucket 
         </p>
-        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/bitbucketserver.svg">
+        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/bitbucketserver.svg">
     </div>
 </div>
 <div class="card c">
-<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/c.html">
+<a href="https://docs.jenkins.io/solutions/2.504.x/c.html">
     <div class="data ">
         <p>
             C/C++ 
         </p>
-        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/c.svg">
+        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/c.svg">
     </div>
 </div>
 <div class="card java">
-<a href="https://vandit1604.github.io/jenkins-ui-project/solutions/2.2/Java.html">
+<a href="https://docs.jenkins.io/solutions/2.504.x/java.html">
     <div class="data ">
         <p>
             Java
         </p>
-        <img src="https://raw.githubusercontent.com/Vandit1604/jenkins-docs/e3b52448ced92b6faf01920674e875f730306895/docs/solutions/modules/ROOT/assets/images/java.svg">
+        <img src="https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/docs/solutions/modules/ROOT/assets/images/java.svg">
     </div>
 </div>
 </a>
