@@ -107,13 +107,11 @@ All secrets (credentials, etc.) stored on that instance should be rotated or rev
 
 Agent/Build::
 This permission allows users to run jobs as them on agents.
-In default setup where all builds run under SYSTEM user this permission is not relevant,
-but if xref:security:build-authorization.adoc[build authorization] is active this permission defines which users may run jobs on agents.
+In default setup where all builds run under SYSTEM user this permission is not relevant, but if xref:security:build-authorization.adoc[build authorization] is active this permission defines which users may run jobs on agents.
 
 Agent/Configure::
 This permission allows users to configure agents.
-Users with this permission can make all jobs run on a computer where they have root access,
-gaining access to all information used by the build (content of files, environment variables including credentials).
+Users with this permission can make all jobs run on a computer where they have root access, gaining access to all information used by the build (content of files, environment variables including credentials).
 
 Agent/Connect::
 This permission allows users to connect agents or mark agents as online.
@@ -131,8 +129,7 @@ This permission allows users to disconnect agents or mark agents as temporarily 
 
 === Job Permissions
 
-Though these permissions use the word "Job" in their name,
-they refer to any items you can create using the _New Item_ menu option (freestyle jobs, folders, pipelines, ...)
+Though these permissions use the word "Job" in their name, they refer to any items you can create using the _New Item_ menu option (freestyle jobs, folders, pipelines, ...)
 
 Job/Build::
 This permission grants the ability to start a new build.
