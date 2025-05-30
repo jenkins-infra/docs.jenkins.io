@@ -6,3 +6,4 @@
 * xref:support-policy-java.adoc[]
 * xref:support-policy-servlet-containers.adoc[]
 * xref:upgrade-java-to-17.adoc[]
+* xref:upgrade-java-to-21.adoc[]

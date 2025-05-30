@@ -98,15 +98,6 @@ are also required for a valid Declarative Pipeline as they instruct Jenkins
 what to execute and in which stage it should be executed.
 
 [role=scripted-pipeline]
-====
-For more advanced usage with Scripted Pipeline, the example above `node` is
-a crucial first step as it allocates an executor and workspace for the Pipeline.
-In essence, without `node`, a Pipeline cannot do any work! From within `node`,
-the first order of business will be to checkout the source code for this
-project.  Since the `Jenkinsfile` is being pulled directly from source control,
-Pipeline provides a quick and easy way to access the right revision of the
-source code
-
 [pipeline]
 ----
 // Script //
@@ -250,7 +241,6 @@ pipeline {
             when {
               expression {
                 currentBuild.result == null || currentBuild.result == 'SUCCESS' // <1>
-
               }
             }
             steps {
@@ -264,7 +254,6 @@ node {
     /* .. snip .. */
     stage('Deploy') {
         if (currentBuild.result == null || currentBuild.result == 'SUCCESS') { // <1>
-
             sh 'make publish'
         }
     }
@@ -302,16 +291,16 @@ which is available from anywhere within a `Jenkinsfile`. The full list of
 environment variables accessible from within Jenkins Pipeline is documented at
 $\{YOUR_JENKINS_URL}/pipeline-syntax/globals#env and includes:
 
-BUILD_ID:: The current build ID, identical to BUILD_NUMBER for builds created in Jenkins versions 1.597+
-BUILD_NUMBER:: The current build number, such as "153"
-BUILD_TAG:: String of jenkins-$\{JOB_NAME}-$\{BUILD_NUMBER}. Convenient to put into a resource file, a jar file, etc for easier identification
-BUILD_URL:: The URL where the results of this build can be found (for example \http://buildserver/jenkins/job/MyJobName/17/ )
-EXECUTOR_NUMBER:: The unique number that identifies the current executor (among executors of the same machine) performing this build. This is the number you see in the "build executor status", except that the number starts from 0, not 1
-JAVA_HOME:: If your job is configured to use a specific JDK, this variable is set to the JAVA_HOME of the specified JDK. When this variable is set, PATH is also updated to include the bin subdirectory of JAVA_HOME
-JENKINS_URL:: Full URL of Jenkins, such as \https://example.com:port/jenkins/ (NOTE: only available if Jenkins URL set in "System Configuration")
+BUILD_ID:: The current build ID, identical to BUILD_NUMBER for builds created in Jenkins versions 1.597+.
+BUILD_NUMBER:: The current build number, such as "153".
+BUILD_TAG:: String of jenkins-$\{JOB_NAME}-$\{BUILD_NUMBER}. Convenient to put into a resource file, a jar file, etc for easier identification.
+BUILD_URL:: The URL where the results of this build can be found (for example, \http://buildserver/jenkins/job/MyJobName/17/).
+EXECUTOR_NUMBER:: The unique number that identifies the current executor (among executors of the same machine) performing this build. This is the number you see in the "build executor status", except that the number starts from 0, not 1.
+JAVA_HOME:: If your job is configured to use a specific JDK, this variable is set to the JAVA_HOME of the specified JDK. When this variable is set, PATH is also updated to include the bin subdirectory of JAVA_HOME.
+JENKINS_URL:: Full URL of Jenkins, such as \https://example.com:port/jenkins/ (NOTE: only available if Jenkins URL set in "System Configuration").
 JOB_NAME:: Name of the project of this build, such as "foo" or "foo/bar".
 NODE_NAME:: The name of the node the current build is running on. Set to 'master' for the Jenkins controller.
-WORKSPACE:: The absolute path of the workspace
+WORKSPACE:: The absolute path of the workspace.
 
 Referencing or using these environment variables can be accomplished like
 accessing any key in a Groovy
@@ -397,13 +386,11 @@ pipeline {
     environment {
         // Using returnStdout
         CC = """${sh(
-
                 returnStdout: true,
                 script: 'echo "clang"'
             )}""" // <2>
         // Using returnStatus
         EXIT_STATUS = """${sh(
-
                 returnStatus: true,
                 script: 'exit 1'
             )}"""
@@ -412,7 +399,6 @@ pipeline {
         stage('Example') {
             environment {
                 DEBUG_FLAGS = '-g'
-
             }
             steps {
                 sh 'printenv'
@@ -466,9 +452,7 @@ pipeline {
     }
     environment {
         AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
-
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
-
     }
     stages {
         stage('Example stage 1') {
@@ -869,9 +853,7 @@ either single quotes, or double quotes, for example:
 [source,groovy]
 ----
 def singlyQuoted = 'Hello'
-
 def doublyQuoted = "World"
-
 ----
 
 Only the latter string will support the dollar-sign (`$`) based string
@@ -880,7 +862,6 @@ interpolation, for example:
 [source,groovy]
 ----
 def username = 'Jenkins'
-
 echo 'Hello Mr. ${username}'
 echo "I said, Hello Mr. ${username}"
 ----
@@ -915,7 +896,6 @@ pipeline {
     agent any
     environment {
         EXAMPLE_CREDS = credentials('example-credentials-id')
-
     }
     stages {
         stage('Example') {
@@ -938,7 +918,6 @@ pipeline {
     agent any
     environment {
         EXAMPLE_CREDS = credentials('example-credentials-id')
-
     }
     stages {
         stage('Example') {
@@ -1045,7 +1024,6 @@ pipeline {
   agent any
   environment {
     EXAMPLE_KEY = credentials('example-credentials-id') // Secret value is 'sec%ret'
-
   }
   stages {
     stage('Example') {
@@ -1292,7 +1270,6 @@ can be used in Scripted Pipeline without modification.
 
 
 ==== Parallel execution
-
 ////
 NOTE: This is only under "Advanced Scripted Pipeline" temporarily until some
 cleaner parallel syntax is supported for Declarative Pipeline. Right now

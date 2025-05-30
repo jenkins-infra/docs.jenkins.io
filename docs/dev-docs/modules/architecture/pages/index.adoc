@@ -20,7 +20,7 @@ Please note that:
 
 image::jenkins-dataflow.png[]
 
-The source of this diagram is https://github.com/Vandit1604/jenkins-docs/tree/main/docs/dev-docs/modules/architecture/assets/attachments/jenkins-dataflow.diagrams.net[on github], to be opened with https://app.diagrams.net.
+The source of this diagram is https://github.com/jenkins-infra/docs.jenkins.io/blob/main/docs/dev-docs/modules/architecture/assets/attachments/jenkins-dataflow.diagrams.net[on github], to be opened with https://app.diagrams.net.
 
 .References
 ****
