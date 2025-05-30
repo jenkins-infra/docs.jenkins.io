@@ -524,7 +524,6 @@ and then
 Your browser is likely to continue running your application's content served by the link:https://www.npmjs.com/package/serve[npm `serve` module], which means that your browser will still show the content you viewed at `\http://localhost:5000` long after Jenkins has killed off the `serve` process.
 To clear the application and its content from your browser:
 
-
 ==== On Chrome
 
 . Enter the following into your browser's URL field: +
@@ -532,8 +531,7 @@ To clear the application and its content from your browser:
 . Locate the "ServiceWorker" entry for `\http://localhost:5000`
 . Click its *Unregister* button.
 
-
-=== On Firefox
+==== On Firefox
 
 . Enter the following into your browser's URL field: +
 `about:serviceworkers`
@@ -574,7 +572,3 @@ The `--remove-orphans` option instructs Docker Compose to remove any containers 
 This helps in cleaning up any services that might have been started independently but are considered part of the project.
 ====
 
-'''
-++++
-include::_partials/_feedback-footer.html[]
-++++
