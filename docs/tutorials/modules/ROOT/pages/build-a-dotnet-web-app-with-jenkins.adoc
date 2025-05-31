@@ -125,19 +125,19 @@ After making a clone of your local `simple-dotnet-web-app` Git repository itself
 
 When it's a success, the green check will be shown and now you are ready to explore your initial pipeline.
 [.boxshadow]
-image::tutorials/dotnet/initial-pipeline.png[Initial Pipeline Success,width=100%]
+image::tutorials:ROOT:dotnet/initial-pipeline.png[Initial Pipeline Success,width=100%]
 
 You can now select *#1* in the *Stage View* or *Builds* widget to see the details of the build.
 The status page displays how much time the build took waiting in the queue and how much time it took to run.
 
 [.boxshadow]
-image::tutorials/dotnet/first-build-details.png[Initial Pipeline first run details,width=100%]
+image::tutorials:ROOT:dotnet/first-build-details.png[Initial Pipeline first run details,width=100%]
 In the left navigation pane, you can select *Pipeline Overview* to see the stages of the Pipeline.
 [.boxshadow]
-image::tutorials/dotnet/pipeline-overview.png[Initial Pipeline runs successfully,width=100%]
+image::tutorials:ROOT:dotnet/pipeline-overview.png[Initial Pipeline runs successfully,width=100%]
 If you select the *Build* stage, you will see more information about the stage, including the output of the `dotnet build` command if you select the green `dotnet build` section.
 [.boxshadow]
-image::tutorials/dotnet/build-stage-overview.png[Build stage overview,width=100%]
+image::tutorials:ROOT:dotnet/build-stage-overview.png[Build stage overview,width=100%]
 You can now select *dotnet-tutorial* (if that's the name you chose for your pipeline) from the breadcrumb navigation in the top-left to return to your pipeline main page.
 
 == Add a test stage to your Pipeline
@@ -200,26 +200,26 @@ Within the `simple-dotnet-web-app` directory, run the commands:
 . After a while, a new column titled *Test* appears in the *Stage View*.
 
 [.boxshadow]
-image::tutorials/dotnet/test-stage-added.png[Test stage runs successfully,width=100%]
+image::tutorials:ROOT:dotnet/test-stage-added.png[Test stage runs successfully,width=100%]
 
 You can select *#2* (or the number representing your last build) in the *Stage View* or *Builds* widget to see the details of the build.
 
 [.boxshadow]
-image::tutorials/dotnet/build-widget.png[Last Build in Builds widget,width=100%]
+image::tutorials:ROOT:dotnet/build-widget.png[Last Build in Builds widget,width=100%]
 
 You can now select *Pipeline Overview* to see the stages of the Pipeline.
 [.boxshadow]
-image::tutorials/dotnet/test-stage-visible-pipeline-overview.png[Test stage runs successfully,width=100%]
+image::tutorials:ROOT:dotnet/test-stage-visible-pipeline-overview.png[Test stage runs successfully,width=100%]
 
 The newly added "Test" stage is visible here.
 Selecting the "Test" stage checkmark displays the stage output.
 [.boxshadow]
-image::tutorials/dotnet/test-stage-output.png[Test stage runs successfully (with output),width=100%]
+image::tutorials:ROOT:dotnet/test-stage-output.png[Test stage runs successfully (with output),width=100%]
 
 Additionally, you can check the coverage result by navigating back to the job status page and selecting *Coverage Report*.
 
 [.boxshadow]
-image::tutorials/dotnet/test-coverage-result.png[Test coverage result,width=100%]
+image::tutorials:ROOT:dotnet/test-coverage-result.png[Test coverage result,width=100%]
 
 == Add a final deliver stage to your Pipeline
 
@@ -292,7 +292,7 @@ pipeline {
 . Select *Build Now* on the left. After a while, a new column titled *Deliver* will appear in the Stage View.
 +
 [.boxshadow]
-image::tutorials/dotnet/deliver-stage-added.png[Deliver stage runs successfully,width=100%]
+image::tutorials:ROOT:dotnet/deliver-stage-added.png[Deliver stage runs successfully,width=100%]
 
 You can select *#3* (or the number representing your last build) in the *Stage View* or *Builds* widget to see the details of the build.
 
@@ -301,17 +301,17 @@ You can now select *Pipeline Overview* to see the stages of the Pipeline.
 Once you are on the *Pipeline Overview* page, you can select the green checkmark under *Deliver* green checkmark to see the stage output.
 Selecting the `dotnet publish` section expands to display the execution results of your .NET web app at the end of the build.
 [.boxshadow]
-image::tutorials/dotnet/deliver-stage-output.png[Deliver stage output only,width=100%]
+image::tutorials:ROOT:dotnet/deliver-stage-output.png[Deliver stage output only,width=100%]
 . You can now select *dotnet-tutorial* (if that's the name you chose for your pipeline) from the breadcrumb navigation in the top-left to return to your pipeline main page.
 Once you are on the *Status* page, you can select *Stages* from the left navigation pane to list your previous Pipeline runs in reverse chronological order.
 [.boxshadow]
-image::tutorials/dotnet/pipeline-runs.png[Pipeline overview interface with all previous runs displayed,width=100%]
+image::tutorials:ROOT:dotnet/pipeline-runs.png[Pipeline overview interface with all previous runs displayed,width=100%]
 
 
 After your job finishes, you can review the delivered artifacts by navigating to the *Status* page.
 After selecting *dotnet-tutorial* from the breadcrumb navigation, the status page displays artifacts under *Last Successful Artifacts*.
 [.boxshadow]
-image::tutorials/dotnet/deliver-artifacts.png[Delivered artifacts,width=100%]
+image::tutorials:ROOT:dotnet/deliver-artifacts.png[Delivered artifacts,width=100%]
 
 
 == Wrapping up

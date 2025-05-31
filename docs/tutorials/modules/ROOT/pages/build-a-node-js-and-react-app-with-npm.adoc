@@ -240,7 +240,7 @@ and finally +
 . After a while, a new column *Test* appears in the *Stage View*.
 
 [.boxshadow]
-image::tutorials/node/test-stage.png[Test stage,width=100%]
+image::tutorials:ROOT:node/test-stage.png[Test stage,width=100%]
 
 . You can select *#2* or on the number representing your last build on the left, under *Build History*.
 +
@@ -252,7 +252,7 @@ Therefore, running your Pipeline this subsequent time should be much faster.
 You can now select *Pipeline Overview* to see the stages of the Pipeline.
 
 [.boxshadow]
-image::tutorials/node/pipeline-overview-test.png[Pipeline overview,width=100%]
+image::tutorials:ROOT:node/pipeline-overview-test.png[Pipeline overview,width=100%]
 
 Notice the additional "Test" stage.
 You can select the "Test" stage checkmark to access the output from that stage.
@@ -334,7 +334,7 @@ Alternatively, you can go directly to *`simple-node-js-react-npm-app`* depending
 You should see after a while a new column *Deliver* appear in the *Stage View*.
 +
 [.boxshadow]
-image:tutorials/node/deliver-stage.png[alt="Deliver stage",width=100%]
+image:tutorials:ROOT:node/deliver-stage.png[alt="Deliver stage",width=100%]
 
 Select *#3* or on the number representing your last build on the left, under *Build History*.
 Select *Pipeline Overview* to see the stages of the Pipeline.

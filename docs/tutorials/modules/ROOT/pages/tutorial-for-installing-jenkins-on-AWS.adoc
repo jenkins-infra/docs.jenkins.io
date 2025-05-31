@@ -449,7 +449,7 @@ For example, if your public DNS is `ec2-198-51-100-1.compute-1.amazonaws.com`, e
 +
 .. Ensure that *Port* is 22.
 +
-image::tutorials/AWS/ec2_putty.png[Amazon EC2 PuTTY selection]
+image::tutorials:ROOT:AWS/ec2_putty.png[Amazon EC2 PuTTY selection]
 
 . In the *Category* pane, expand *Connection*, expand *SSH*, and then select *Auth*. Complete the following:
 .. Select *Browse*.
@@ -457,7 +457,7 @@ image::tutorials/AWS/ec2_putty.png[Amazon EC2 PuTTY selection]
 .. Select *Open* to load the key.
 . Select *Open* to start the PuTTY session.
 +
-image::tutorials/AWS/putty_select_key_pair.png[Selecting and opening a new PuTTY session]
+image::tutorials:ROOT:AWS/putty_select_key_pair.png[Selecting and opening a new PuTTY session]
 
 ==== Differences Between PEM and PPK Keys
 

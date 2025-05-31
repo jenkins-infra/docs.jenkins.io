@@ -113,17 +113,17 @@ During this time, CMake configures the necessary build files for your C++ applic
 You can now select *#1* to see the details of the build. On the job status page, you can see how much time the build spent waiting in the queue and how much time it took to run.
 
 [.boxshadow]
-image::tutorials/cpp/build-stage-status.png[Build details,width=100%]
+image::tutorials:ROOT:cpp/build-stage-status.png[Build details,width=100%]
 
 In the left navigation pane, you can select *Pipeline Overview* to see the stages of the Pipeline.
 
 [.boxshadow]
-image::tutorials/cpp/pipeline-overview-build-stage.png[Pipeline overview,width=100%]
+image::tutorials:ROOT:cpp/pipeline-overview-build-stage.png[Pipeline overview,width=100%]
 
 Selecting the *Build* stage will provide more information about the stage, including the output of the `cmake` command if you select the green `cmake` section.
 
 [.boxshadow]
-image::tutorials/cpp/pipeline-console-build-stage.png[Build stage,width=100%]
+image::tutorials:ROOT:cpp/pipeline-console-build-stage.png[Build stage,width=100%]
 
 You can now select *casino-number-guessing-game* (if that's the name you chose for your pipeline) on the top left to return to your pipeline main page.
 
@@ -178,22 +178,22 @@ pipeline {
 . After a while, a new column titled *Test* will appear in the *Stage View*.
 
 [.boxshadow]
-image::tutorials/cpp/test-stage-overview.png[Test stage,width=100%]
+image::tutorials:ROOT:cpp/test-stage-overview.png[Test stage,width=100%]
 
 You can select *#2*, or on the number representing your last build on the left, under *Build History* to see the details of the build.
 
 [.boxshadow]
-image::tutorials/cpp/test-stage-status.png[Test stage,width=100%]
+image::tutorials:ROOT:cpp/test-stage-status.png[Test stage,width=100%]
 
 You can now select *Pipeline Overview* to see the stages of the Pipeline.
 
 [.boxshadow]
-image::tutorials/cpp/pipeline-overview-test-stage.png[Pipeline overview with Test stage,width=100%]
+image::tutorials:ROOT:cpp/pipeline-overview-test-stage.png[Pipeline overview with Test stage,width=100%]
 
 The newly added "Test" stage is visible here. Selecting the "Test" stage checkmark displays the stage output.
 
 [.boxshadow]
-image::tutorials/cpp/pipeline-output-test-stage.png[Test stage output,width=100%]
+image::tutorials:ROOT:cpp/pipeline-output-test-stage.png[Test stage output,width=100%]
 
 === Viewing the results
 
@@ -249,7 +249,7 @@ This output confirms that the unit tests for the game logic have passed successf
 For reference, this is an example of how the output renders: 
 
 [.boxshadow]
-image::tutorials/cpp/pipeline-output-test-stage.png[Test stage output,width=100%]
+image::tutorials:ROOT:cpp/pipeline-output-test-stage.png[Test stage output,width=100%]
 
 == Add a final delivery stage to your Pipeline
 
@@ -309,27 +309,27 @@ pipeline {
 . Select *Build Now* on the left. After a while, a new column titled *Deliver* will appear in the *Stage View*.
 +
 [.boxshadow]
-image::tutorials/cpp/deliver-overview.png[Deliver stage,width=100%]
+image::tutorials:ROOT:cpp/deliver-overview.png[Deliver stage,width=100%]
 
 . Select *#3*, or on the number representing your last build on the left, under *Build History*. 
 +
 [.boxshadow]
-image::tutorials/cpp/deliver-overview-status.png[Deliver stage,width=100%]
+image::tutorials:ROOT:cpp/deliver-overview-status.png[Deliver stage,width=100%]
 
 . Select *Pipeline Overview* to see the stages of the Pipeline.
 +
 [.boxshadow]
-image::tutorials/cpp/pipeline-overview-deliver-stage.png[Pipeline overview with Deliver stage,width=100%]
+image::tutorials:ROOT:cpp/pipeline-overview-deliver-stage.png[Pipeline overview with Deliver stage,width=100%]
 
 . Select the *Deliver* stage. You will then see a green part displaying *tar -czf casino_game.tar.gz build/casino_game*, which represents the successful execution of the `tar` command.
 +
 [.boxshadow]
-image::tutorials/cpp/pipeline-console-deliver-stage.png[Deliver stage output,width=100%]
+image::tutorials:ROOT:cpp/pipeline-console-deliver-stage.png[Deliver stage output,width=100%]
 
 . You can see the full stage view by clicking on the "Full Stage View" in the left menu.
 +
 [.boxshadow]
-image::tutorials/cpp/full-stage-view.png[Deliver stage output,width=100%]
+image::tutorials:ROOT:cpp/full-stage-view.png[Deliver stage output,width=100%]
 
 == Wrapping up
 
