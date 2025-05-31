@@ -4,7 +4,7 @@ This tutorial shows you how to use LabVIEW to orchestrate building a simple http
 
 If you are a LabVIEW developer who is new to CI/CD concepts, or you might be familiar with these concepts but don't know how to implement building your application using Jenkins, then this tutorial is for you.
 
-We’ll walk through setting up Jenkins as our CI server and using it to automate graphical diffing and testing of our project (which you'll obtain from http://www.ni.com/example/lv-ci[this example page] on ni.com). Jenkins will monitor GitHub Pull Requests for changes and will comment and check if the LabVIEW project can build successfully. Unit test results will be saved to a JUnit XML report.
+We'll walk through setting up Jenkins as our CI server and using it to automate graphical diffing and testing of our project (which you'll obtain from http://www.ni.com/example/lv-ci[this example page] on ni.com). Jenkins will monitor GitHub Pull Requests for changes and will comment and check if the LabVIEW project can build successfully. Unit test results will be saved to a JUnit XML report.
 
 *Duration:* This tutorial takes 20-40 minutes to complete (assuming you've
 already met the xref:#prerequisites[prerequisites] below). The exact duration will
