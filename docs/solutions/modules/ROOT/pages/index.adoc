@@ -133,7 +133,7 @@
 
 <div class="flex-container">
     <div class="card android">
-        <a href="https://docs.jenkins.io/solutions/2.504.x/android.html">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/android">
             <div class="data">
                 <p>
                     Android 
@@ -143,7 +143,7 @@
         </a>
     </div>
     <div class="card bit-bucket">
-        <a href="https://docs.jenkins.io/solutions/2.504.x/bitbucketserver.html">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/bitbucketserver">
             <div class="data ">
                 <p>
                     Bit Bucket 
@@ -153,7 +153,7 @@
         </a>
     </div>
     <div class="card c">
-        <a href="https://docs.jenkins.io/solutions/2.504.x/c.html">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/c">
             <div class="data ">
                 <p>
                     C/C++ 
@@ -163,7 +163,7 @@
         </a>
     </div>
     <div class="card docker">
-        <a href="https://docs.jenkins.io/solutions/2.504.x/docker.html">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/docker">
             <div class="data ">
                 <p>
                     Docker 
@@ -173,7 +173,7 @@
         </a>
     </div>
     <div class="card embedded">
-        <a href="https://docs.jenkins.io/solutions/2.504.x/embedded.html">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/embedded">
             <div class="data ">
                 <p>
                     Embedded 
@@ -183,7 +183,7 @@
         </a>
     </div>
     <div class="card github">
-        <a href="https://docs.jenkins.io/solutions/2.504.x/github.html">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/github">
             <div class="data">
                 <p>
                     Github 
@@ -193,7 +193,7 @@
         </a>
     </div>
     <div class="card java">
-        <a href="https://docs.jenkins.io/solutions/2.504.x/java.html">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/java">
             <div class="data ">
                 <p>
                     Java
@@ -203,7 +203,7 @@
         </a>
     </div>
     <div class="card php">
-        <a href="https://docs.jenkins.io/solutions/2.504.x/php.html">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/php">
             <div class="data ">
                 <p>
                     PHP 
@@ -213,7 +213,7 @@
         </a>
     </div>
     <div class="card pipeline">
-        <a href="https://docs.jenkins.io/solutions/2.504.x/pipeline.html">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/pipeline">
             <div class="data ">
                 <p>
                     Pipeline 
@@ -223,7 +223,7 @@
         </a>
     </div>
     <div class="card python">
-        <a href="https://docs.jenkins.io/solutions/2.504.x/python.html">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/python">
             <div class="data ">
                 <p>
                     Python 
@@ -233,7 +233,7 @@
         </a>
     </div>
     <div class="card ruby">
-        <a href="https://docs.jenkins.io/solutions/2.504.x/ruby.html">
+        <a href="https://docs.jenkins.io/solutions/2.504.x/ruby">
             <div class="data ">
                 <p>
                     Ruby 
