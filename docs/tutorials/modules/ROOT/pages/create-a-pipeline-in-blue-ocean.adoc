@@ -9,20 +9,20 @@ This tutorial uses the same application that the xref:build-a-node-js-and-react-
 Therefore, you're building the same application, but this time, completely through Blue Ocean.
 Since Blue Ocean provides a simplified Git-handling experience, you'll be interacting directly with the repository on GitHub, as opposed to a local clone.
 
-*Duration:* This tutorial takes 20-40 minutes to complete if you've already met the
-prerequisites given below.
+*Duration:* This tutorial takes 20-40 minutes to complete if you've already met the xref:#prerequisites[prerequisites] given below.
 
-The exact duration depends on the speed of your machine and whether or not you've already xref:create-a-pipeline-in-blue-ocean.adoc#run-jenkins-in-docker[run Jenkins in Docker] from another tutorial.
+The exact duration depends on the speed of your machine and whether or not you've already xref:ROOT:create-a-pipeline-in-blue-ocean.adoc#run-jenkins-in-docker[run Jenkins in Docker] from xref:index.adoc[another tutorial].
 
 include::user-docs:blueocean:partial$_blue-ocean-status.adoc[]
 
 You can stop this tutorial at any point in time and continue from where you left
 off.
 
-If you've already run through xref:index.adoc[another tutorial], you can skip the prerequisites and xref:create-a-pipeline-in-blue-ocean.adoc#run-jenkins-in-docker[run Jenkins in Docker] sections below and proceed to xref:#fork-sample-repository[forking the sample repository].
+If you've already run through xref:index.adoc[another tutorial], you can skip the xref:#prerequisites[prerequisites] and xref:create-a-pipeline-in-blue-ocean.adoc#run-jenkins-in-docker[run Jenkins in Docker] sections below and proceed to xref:#fork-sample-repository[forking the sample repository].
 
 If you need to restart Jenkins, follow the restart instructions in xref:create-a-pipeline-in-blue-ocean.adoc#run-jenkins-in-docker[run Jenkins in Docker] and then proceed.
 
+[#prerequisites]
 include::partial$_prerequisites.adoc[prerequisites]
 
 [#run-jenkins-in-docker]
