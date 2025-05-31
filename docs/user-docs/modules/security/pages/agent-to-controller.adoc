@@ -11,7 +11,7 @@ This should only be necessary when trying to run plugins that have not yet been 
 
 NOTE: For an introduction about the Agent → Controller Security system, see xref:security:controller-isolation.adoc#agent-controller-access-control[Isolating the Controller from Builds].
 
-image::security/configure-global-security-agent-controller-rules.png["Security - Enable Agent => Controller Access Control - Editing Rules", role=center]
+image::configure-global-security-agent-controller-rules.png["Security - Enable Agent => Controller Access Control - Editing Rules", role=center]
 
 By following the link highlighted above, an administrator may edit *Commands* and *File Access* agent-to-controller access control rules.
 
@@ -26,7 +26,7 @@ Plugins not yet updated for this subsystem may not classify which category each 
 
 In such cases, Jenkins administrators may allow certain commands as acceptable for execution on the controller.
 
-image::security/configure-global-security-whitelist-commands.png["Security - Enable Agent => Master Access Control - Editing Rules - Command Whitelisting", role=center]
+image::configure-global-security-whitelist-commands.png["Security - Enable Agent => Master Access Control - Editing Rules - Command Whitelisting", role=center]
 
 ==== Advanced
 
