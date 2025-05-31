@@ -21,7 +21,7 @@ ____
 https://en.wikipedia.org/wiki/Docker_%28software%29[Docker] is an
 open-source project that automates the deployment of applications inside
 software containers, by providing an additional layer of abstraction and
-automation of operating-system-level virtualization on Linux.*
+automation of operating-system-level virtualization on Linux.
 ____
 
 What this offers to Jenkins users is a means to isolate different jobs from one another, quickly clean a job's workspace or even dynamically deploy or schedule jobs with Docker containers to increase resource utilization and efficiency.
