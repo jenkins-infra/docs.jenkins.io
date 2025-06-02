@@ -236,7 +236,7 @@ your Pipeline, especially if it gains more complexity.
 and finally +
 `git push` to push your changes to your forked repository on GitHub, so it can be picked up by Jenkins.
 
-. In Jenkins, go back to *Dashboard* if necessary, then *simple-node-js-react-npm-app* and launch another build thanks to *Build Now*.
+. In Jenkins, go back to your *Dashboard* if necessary, then navigate to *simple-node-js-react-npm-app* and launch another build by selecting *Build Now*.
 . After a while, a new column *Test* appears in the *Stage View*.
 
 [.boxshadow]
