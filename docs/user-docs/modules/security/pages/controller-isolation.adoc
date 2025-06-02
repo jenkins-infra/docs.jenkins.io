@@ -1,4 +1,3 @@
-:page-aliases: user-docs:security:agent-to-controller.adoc
 = Controller Isolation
 
 What exactly happens during a build is often controlled by people less trusted than a Jenkins administrator:
