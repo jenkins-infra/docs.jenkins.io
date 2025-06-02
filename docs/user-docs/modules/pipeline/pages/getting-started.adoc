@@ -103,7 +103,7 @@ image:user-docs:pipeline:classic-ui-left-column.png[alt="Classic UI left column"
 +
 [.boxshadow]
 image:user-docs:pipeline:new-item-creation.png[alt="Enter a name, click *Pipeline* and then click *OK*",width=100%]
-. Click the *Pipeline* tab in the side panel of the page to scroll down to the
+. Select the *Pipeline* tab in the side panel of the page to scroll down to the
   *Pipeline* section. +
   *Note:* If instead you are defining your `Jenkinsfile` in source control,
   follow the instructions in xref:#defining-a-pipeline-in-scm[In SCM] below.
