@@ -6,7 +6,7 @@ A https://medium.com/@beygumer/setting-up-jenkins-on-google-compute-engine-insta
 
 Additional guidance is available from https://cloud.google.com/blog/products/gcp/using-jenkins-on-google-compute-engine-for-distributed-builds[Vic Iglesias' blog post].
 
-Darin Pope has created several video tutorials of various aspects of Google Cloud Platform.
+Darin Pope has created several video tutorials on various aspects of Google Cloud Platform.
 
 == Using the gcloud command line interface
 
