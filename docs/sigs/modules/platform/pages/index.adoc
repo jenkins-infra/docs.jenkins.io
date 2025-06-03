@@ -12,7 +12,9 @@
 --
 image:images:ROOT:logos/formal/256.png[Logo,width=192,float=right,role=float-gap]
 This special interest group offers a venue for all kinds of platform support discussions:
-Java, Operating Systems, Architectures, Docker, Packaging, Web Containers, etc. The SIG works on defining platform support policies, coordinating platform support efforts with contributors and external communities, and reviewing proposals in the area.
+Java, Operating Systems, Architectures, Docker, Packaging, Web Containers, etc. 
+
+The SIG works on defining platform support policies, coordinating platform support efforts with contributors and external communities, and reviewing proposals in the area.
 --
 
 xref:ROOT:index.adoc[(Back to List of Jenkins Special Interest Groups )]
@@ -48,11 +50,11 @@ Platform SIG cooperates with other groups like the xref:docs:index.adoc[Document
 == Topics
 
 * Defining platform support policies, including
-* xref:platform-information:support-policy-java.adoc[Java support policy]
-* xref:platform-information:support-policy-linux.adoc[Linux support policy] 
-* xref:platform-information:support-policy-windows.adoc[Windows support policy]
-* xref:platform-information:support-policy-web-browsers.adoc[Browser support policy]
-* xref:platform-information:support-policy-servlet-containers.adoc[Servlet container support policy]
+** xref:user-docs:platform-information:support-policy-java.adoc[Java support policy]
+** xref:user-docs:platform-information:support-policy-linux.adoc[Linux support policy] 
+** xref:user-docs:platform-information:support-policy-windows.adoc[Windows support policy]
+** xref:user-docs:platform-information:support-policy-web-browsers.adoc[Browser support policy]
+** xref:user-docs:platform-information:support-policy-servlet-containers.adoc[Servlet container support policy]
 * Coordinating effort on new platform support (e.g. {jep}211/README.adoc[Java 11 Support in Jenkins])
 * Working with external communities on better platform support and packaging
 (e.g. ARM architecture support, adapting RedHat packaging to best practices, using systemd, etc.)
@@ -106,6 +108,7 @@ We are interested to support modern Windows platforms and to offer official dist
 
 Scope of interest:
 
+* xref:user-docs:platform-information:support-policy-windows.adoc[Windows support policy]
 * Native Windows installers (MSI), including the ongoing link:https://www.jenkins.io/blog/2019/02/01/windows-installers/[rework of Windows installers]
 * Official Docker images for Windows controllers and agents
 * Installation of controllers and agents as Windows services
