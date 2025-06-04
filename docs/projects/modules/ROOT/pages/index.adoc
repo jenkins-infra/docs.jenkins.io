@@ -1,56 +1,9 @@
 = Jenkins Sub-projects
+---
 
-At the heart of the Jenkins project exists the automation engine's
-link:https://github.com/jenkinsci/jenkins[core] and hundreds of
-link:https://plugins.jenkins.io[plugins]. There are
-however other collaborative initiatives going on under the umbrella of the
+The Jenkins project includes Jenkins link:https://github.com/jenkinsci/jenkins[core] and over two thousand link:https://plugins.jenkins.io[plugins].
+There are other collaborative initiatives going on under the umbrella of the
 Jenkins project which grow or expand the project in new ways.
-
-== Blue Ocean
-
-image:images:ROOT:sunnyblueocean.png["Blue Ocean", width=128]
-
-Blue Ocean is a project that rethinks the user experience of Jenkins, modelling
-and presenting the process of software delivery by surfacing information that's
-important to development teams with as few clicks as possible, while still
-staying true to the extensibility that Jenkins always has had as a core value.
-
-
-Blue Ocean also incorporates "The Jenkins Design Language (JDL)" which is a
-standardized set of components and a style guide that help developers create
-plugins which effortlessly retain the look and feel of the Blue Ocean user
-experience.
-
-include::user-docs:blueocean:partial$_blue-ocean-status.adoc[]
-
-xref:user-docs:blueocean:getting-started.adoc[*Learn more*]
-
----
-
-
-== Document Jenkins on Kubernetes
-
-image:images:ROOT:gsod/gsod.png["Google Season of Docs", width=128]
-
-Kubernetes is a platform-agnostic container orchestration tool created 
-by Google and heavily supported by the open-source community as a project 
-of the Cloud Native Computing Foundation. Kubernetes is compatible with the 
-majority of CI/CD tools which allow developers to run tests, deploy builds 
-in Kubernetes and update applications with no downtime.
-
-
-Jenkins on Kubernetes is a popular theme for Jenkins users. There are a lot 
-of presentations and articles about running Jenkins on Kubernetes, however, 
-there's currently no central location for documentation describing Jenkins 
-on Kubernetes. This project would create a new Kubernetes Volume which would 
-describe the concepts, techniques, and choices for Kubernetes users running Jenkins.
-
-
-
-xref:other:document-jenkins-on-kubernetes.adoc[*Learn more*]
-
----
-
 
 == Google Summer of Code
 
@@ -69,7 +22,6 @@ in completing their summer projects.
 xref:gsoc:index.adoc[*Learn more*]
 
 ---
-
 
 == Infrastructure
 
@@ -119,7 +71,6 @@ It is also used for the Remoting-based CLI and the {plugin}maven-plugin[Maven In
 
 The Remoting sub-project includes the Remoting library itself, package for agents, and a number of Remoting-specific plugins and core modules.
 
-
 xref:remoting:index.adoc[*Learn more*]
 
 ---
@@ -149,5 +100,34 @@ This project enables community to run Jenkins in a cloud-native environments lik
 Also, supports most of the public cloud providers (AWS, Azure, GCP) in terms of additional capabilities like backups, observability and cloud security.
 
 xref:jenkins-operator:index.adoc[*Learn more*]
+
+---
+
+== Kubernetes Documentation (done)
+
+image:images:ROOT:gsod/gsod.png["Google Season of Docs", width=128]
+
+Kubernetes is a popular platform for Jenkins.
+The Jenkins project uses Kubernetes to provide agents for ci.jenkins.io.
+Many Jenkins users install their controllers on Kubernetes.
+
+The xref:user-docs:installing-jenkins:kubernetes.adoc[Kubernetes installation guide] provides detailed instructions for Jenkins on Kubernetes.
+A xref:sigs:docs:gsod/2020/projects/document-jenkins-on-kubernetes.adoc[Google Season of Docs project] created the Kubernetes installation guide. 
+Maintenance of the Kubernetes installation guide is now provided by the xref:sigs:docs:index.adoc[documentation special interest group].
+
+---
+
+== Blue Ocean (archived)
+
+image:images:ROOT:sunnyblueocean.png["Blue Ocean", width=128]
+
+Blue Ocean was a project to improve the user experience of Jenkins, modelling
+and presenting the process of software delivery by surfacing information that's
+important to development teams with as few clicks as possible, while still
+staying true to the extensibility that Jenkins always has had as a core value.
+
+include::user-docs:blueocean:partial$blue-ocean-status.adoc[]
+
+xref:user-docs:blueocean:getting-started.adoc[*Learn more*]
 
 ---
