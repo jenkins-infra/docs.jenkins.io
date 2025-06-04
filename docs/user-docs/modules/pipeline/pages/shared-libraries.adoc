@@ -87,13 +87,12 @@ image::user-docs:pipeline:add-global-pipeline-libraries.png["Add a Global Pipeli
 Since these libraries will be globally usable, any Pipeline in the system can
 utilize functionality implemented in these libraries.
 
-These libraries are considered "trusted:" they can run any methods in Java,
-Groovy, Jenkins internal APIs, Jenkins plugins, or third-party libraries.  This
-allows you to define libraries which encapsulate individually unsafe APIs in a
-higher-level wrapper safe for use from any Pipeline.  Beware that **anyone able to
-push commits to this SCM repository could obtain unlimited access to Jenkins**.
-You need the _Overall/RunScripts_ permission to configure these libraries
-(normally this will be granted to Jenkins administrators).
+These libraries may be marked “trusted“, meaning they can run any methods in Java, Groovy, Jenkins internal APIs, Jenkins plugins, or third-party libraries.
+This allows you to define libraries that encapsulate individually unsafe APIs in a higher-level wrapper that is safe for use from any pipeline.
+Beware that **anyone able to push commits to this SCM repository could obtain unlimited access to Jenkins**.
+You need the _Overall/RunScripts_ permission to configure these libraries (normally this will be granted to Jenkins administrators).
+
+If you only have _Overall/Manage_ permission, you can still configure global libraries, but only “untrusted” ones that run in the Groovy sandbox just like typical Pipeline scripts.
 
 [#folder-level-shared-libraries]
 === Folder-level Shared Libraries
@@ -102,8 +101,7 @@ Any Folder created can have Shared Libraries associated with it. This mechanism
 allows scoping of specific libraries to all the Pipelines inside of the folder
 or subfolder.
 
-Folder-based libraries are not considered "trusted:" they run in the Groovy
-sandbox just like typical Pipelines.
+Folder-scoped libraries are always “untrusted”.
 
 [#automatic-shared-libraries]
 ===  Automatic Shared Libraries
@@ -155,7 +153,7 @@ the symbol `_` is annotated.
 
 It is not recommended to `import` a global variable/function,
 since this will force the compiler to interpret fields and methods as `static`
-even if they were intended to be instance.
+even if they were intended to be customized.
 The Groovy compiler in this case can produce confusing error messages.
 ====
 
@@ -357,7 +355,6 @@ Which can then be called from a Scripted Pipeline:
 [source,groovy]
 ----
 def z = new org.foo.Zot()
-
 z.checkOutFrom(repo)
 ----
 
@@ -373,7 +370,6 @@ package org.foo
 class Utilities implements Serializable {
   def steps
   Utilities(steps) {this.steps = steps}
-
   def mvn(args) {
     steps.sh "${steps.tool 'Maven'}/bin/mvn -o ${args}"
   }
@@ -388,7 +384,6 @@ in the example below, can properly suspend and resume in Jenkins.
 ----
 @Library('utils') import org.foo.Utilities
 def utils = new Utilities(this)
-
 node {
   utils.mvn 'clean package'
 }
@@ -517,7 +512,6 @@ allows the global variable to be invoked in a manner similar to a step:
 ----
 // vars/sayHello.groovy
 def call(String name = 'human') {
-
     // Any valid steps can be called from this code, just like in other
     // Scripted Pipeline
     echo "Hello, ${name}."
@@ -634,7 +628,6 @@ resource loading:
 [source,groovy]
 ----
 def request = libraryResource 'com/mycorp/pipeline/somelib/request.json'
-
 ----
 
 The file is loaded as a string, suitable for passing to certain APIs or saving
@@ -672,7 +665,6 @@ build number is odd or even:
 // vars/evenOrOdd.groovy
 def call(int buildNumber) {
   if (buildNumber % 2 == 0) {
-
     pipeline {
       agent any
       stages {
@@ -732,8 +724,8 @@ By opening a pull request on https://github.com/jenkinsci/jenkins-infra-test-plu
   buildPlugin(
     useContainerAgent: true,
     configurations: [
-      [platform: 'linux', jdk: 17],
-      [platform: 'windows', jdk: 11],
+      [platform: 'linux', jdk: 21],
+      [platform: 'windows', jdk: 17],
   ])
 ----
 
