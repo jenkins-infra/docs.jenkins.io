@@ -180,8 +180,8 @@ Issue tracker::
 link:https://issues.jenkins.io/[Our primary bug tracker] is maintained by the Linux Foundation. This uses the LDAP server described above for access.
 
 Jenkins on Jenkins::
-We run a link:https://ci.jenkins.io/[Jenkins instance] for Jenkins core and plugin continuous integration.
-There are also other Jenkins instances which automate releases and infrastructure management.
+We run a link:https://ci.jenkins.io/[Jenkins controller] for Jenkins core and plugin continuous integration.
+There are also other Jenkins controllers which automate releases and infrastructure management.
 
 == Roadmap
 
@@ -198,8 +198,9 @@ and we invite all interested parties to join us and to contribute towards the ro
 == Decision making
 
 The Jenkins project uses xref:project:governance-meeting:index.adoc[biweekly project meetings] as the primary forum of decision-making for matters that need consensus.
-The meeting is conducted using a video call or xref:community:chat:index.adoc#irc[IRC].
-These meetings are open to anyone, and everyone is welcome to provide their feedback and vote on decisions at the meeting.
+The meeting is conducted using a video call.
+These meetings are open to anyone.
+Everyone is welcome to provide their feedback and vote on decisions at the meeting.
 Agenda items can be added by anyone by simply adding your topic to xref:project:governance-meeting:index.adoc[the Governance Meeting Agenda].
 
 The meeting minutes are public:
@@ -207,6 +208,7 @@ The meeting minutes are public:
 * xref:project:governance-meeting:index.adoc[Governance Meeting Agenda] for meetings held in as video calls
 * link:http://meetings.jenkins-ci.org/jenkins-meeting/[September 2015 to today]
 * link:http://meetings.jenkins-ci.org/jenkins/[2011 to September 2015]
+* link:https://www.youtube.com/playlist?list=PLN7ajX_VdyaMsOs5pRWGByvIcuJOpHpC6[Governance meeting YouTube playlist]
 
 The board serves as the ultimate decision-making body in case the meeting fails to reach a consensus on a particular topic.
 
@@ -234,10 +236,10 @@ They can be downloaded by users link:https://www.jenkins.io/download[here].
 Regular releases::
 Every week a new release is built from the master branch and released.
 This allows us to get new features and bug fixes into the hands of users relatively quickly.
-See the https://www.jenkins.io/download/weekly/[Regular (Weekly) Release Line] for more details.
+See the link:https://www.jenkins.io/download/weekly/[Regular (Weekly) Release Line] for more details.
 
 LTS Releases::
-Every three months or so we pick a prior release as the new long-term support (LTS) release and then create the ‘stable’ branch, from that release point. This branch gets important bug fixes backported from the master branch, and further patch releases are built roughly every two weeks until the next LTS baseline is chosen. See https://www.jenkins.io/download/lts[LTS Release Line] for more details.
+Every three months or so we pick a prior release as the new long-term support (LTS) release and then create the ‘stable’ branch, from that release point. This branch gets important bug fixes backported from the master branch, and further patch releases are built roughly every two weeks until the next LTS baseline is chosen. See link:https://www.jenkins.io/download/lts[LTS Release Line] for more details.
 
 === Modules
 
