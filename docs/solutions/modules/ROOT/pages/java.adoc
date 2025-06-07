@@ -14,7 +14,7 @@ dedicated step. One advantage is, as for all Jenkins tools, that you can select 
 Maven version and have Jenkins automatically install it on the build node it's going to run on.
 
 
-image::/images/solution-images/jenkins-maven-step.png['Jenkins Maven step', role=center]
+image::solutions:ROOT:jenkins-maven-step.png['Jenkins Maven step', role=center]
 
 == Gradle
 
@@ -23,4 +23,34 @@ plugin:gradle[Gradle plugin].
 Once done, you should be able to add a Gradle step.
 
 
-image::/images/solution-images/jenkins-gradle-step.png['Jenkins Gradle step', role=center]
+image::solutions:ROOT:jenkins-gradle-step.png['Jenkins Gradle step', role=center]
+
+.Jenkins ♥ Java Articles
+****
+* https://www.jenkins.io/doc/tutorials/build-a-java-app-with-maven/[Build a Java App with Maven – Jenkins Official Tutorial]
+* https://www.geeksforgeeks.org/how-to-build-java-application-in-jenkins/[How to Build Java Application in Jenkins – GeeksforGeeks]
+* https://cookbook.gradle.org/ci/jenkins/[Jenkins - Gradle Cookbook]
+****
+
+.Java plugins for Jenkins
+****
+* {plugin}junit[JUnit plugin]
+
+publishes JUnit XML formatted test reports for trending and analysis
+
+* {plugin}gradle[Gradle plugin]
+
+support invoking Gradle as a build step and listing executing tasks per build
+
+* {plugin}warnings-ng[Warnings Next Generation plugin]
+
+collects compiler warnings and issues from static analysis tools such as SpotBugs and PMD
+
+* {plugin}sonar[SonarQube plugin]
+
+integrate reporting from the SonarQube code quality/inspection platform
+
+* {plugin}repository-connector[Repository Connector plugin]
+
+adds features for resolving artifacts from a Maven repository such as Nexus or Artifactory
+****

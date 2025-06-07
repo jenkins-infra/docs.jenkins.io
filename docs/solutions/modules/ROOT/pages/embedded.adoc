@@ -118,11 +118,7 @@ https://www.cloudbees.com/blog/multi-stage-ci-jenkins-embedded-world[Multi-Stage
 
 www.cloudbees.com
 
-https://www.testandverification.com/VerificationFutures/2015/Alan_Fitch.pdf[CI for FPGA D&V]
-
-www.testandverification.com
-
-https://www.verilab.com/files/dvcon2012_ci_gray_mcgregor.pdf[A 30 Minute Project Makeover Using Continuous Integration]
+https://dvcon-proceedings.org/wp-content/uploads/a-30-minute-project-makeover-using-continuous-integration-presentation.pdf[A 30 Minute Project Makeover Using Continuous Integration]
 
 www.verilab.com
 

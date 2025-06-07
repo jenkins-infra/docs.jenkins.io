@@ -19,5 +19,6 @@ We'd love to hear any feedback you have about our integration. To share it with 
 .Bitbucket Server plugins for Jenkins
 ****
 * {plugin}atlassian-bitbucket-server-integration[Bitbucket Server integration]
+
 The easiest way to connect Bitbucket Server and Jenkins
 ****
