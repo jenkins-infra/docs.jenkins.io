@@ -6,13 +6,10 @@ This file is only meant to be included as a snippet in other documents.
 
 For this tutorial, you will require:
 
-* A macOS, Linux or Windows machine with:
-** 256 MB of RAM, although more than 2 GB is recommended.
-** 10 GB of drive space for Jenkins and your Docker images and containers.
+* A macOS, Linux, Windows, or Chromebook (with Linux) machine with:
+** 2 GB of RAM
+** 2 GB of drive space for Jenkins
 * The following software installed:
-** https://www.docker.com/[Docker] - Read more about installing Docker in the
-   xref:user-docs:installing-jenkins:index.adoc#installing-docker[Installing Docker] section of
-   the xref:user-docs:installing-jenkins:index.adoc[Installing Jenkins] page. +
-   *Note:* If you use Linux, this tutorial assumes that you are not running
-   Docker commands as the root user, but instead with a single user account that
-   also has access to the other tools used throughout this tutorial.
+** https://www.docker.com/[Docker]
+** https://docs.docker.com/compose/install/[Docker compose]
+** https://git-scm.com/downloads[Git], and optionally https://github.com/apps/desktop[GitHub Desktop]
