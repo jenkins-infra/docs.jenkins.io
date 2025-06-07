@@ -82,6 +82,7 @@ Useful links:
 * Presentation: Contributing to Jenkins (link:https://docs.google.com/presentation/d/1JHgVzWZAx95IsUAZp8OoyCQGGkrCjzUd7eblwd1Y-hA/edit?usp=sharing[slides])
 * xref:sigs:advocacy-and-outreach:outreach-programs/index.adoc[Outreach programs] - Google Summer of Code, Outreachy, Hacktoberfest may be a good opportunity to start contributing to the project
 
+Video:
 
 video::ivMBMuZXdBA[youtube,width=640,height=360]
 
