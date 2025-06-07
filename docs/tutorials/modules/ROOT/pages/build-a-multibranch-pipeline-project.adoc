@@ -524,7 +524,6 @@ and then
 Your browser is likely to continue running your application's content served by the link:https://www.npmjs.com/package/serve[npm `serve` module], which means that your browser will still show the content you viewed at `\http://localhost:5000` long after Jenkins has killed off the `serve` process.
 To clear the application and its content from your browser:
 
-
 ==== On Chrome
 
 . Enter the following into your browser's URL field: +
@@ -532,8 +531,7 @@ To clear the application and its content from your browser:
 . Locate the "ServiceWorker" entry for `\http://localhost:5000`
 . Click its *Unregister* button.
 
-
-=== On Firefox
+==== On Firefox
 
 . Enter the following into your browser's URL field: +
 `about:serviceworkers`
@@ -551,10 +549,10 @@ Because Jenkins is extremely extensible, it can be modified and configured to ha
 
 To learn more about what Jenkins can do, check out:
 
-* The xref:index.adoc[Tutorials overview] page for other introductory
-  tutorials.
-* The xref:user-docs:ROOT:index.adoc[User Handbook] for more detailed information about using
-  Jenkins, such as xref:user-docs:pipeline:index.adoc[Pipelines] (in particular
+* The xref:index.adoc[Tutorials overview] page for other introductory tutorials.
+* The xref:user-docs:ROOT:index.adoc[User Handbook] for more detailed information about using Jenkins, such as xref:user-docs:pipeline:index.adoc[Pipelines] (in particular xref:user-docs:pipeline:syntax.adoc[Pipeline syntax]) and the xref:user-docs:blueocean:index.adoc[Blue Ocean] interface.
+* The link:https://www.jenkins.io/node[Jenkins blog] for the latest events, other tutorials and updates.
+
 === Cleaning Up Your Environment
 
 After completing the tutorial, it's important to clean up your environment to prevent interference with other tutorials you might try later.
@@ -574,7 +572,3 @@ The `--remove-orphans` option instructs Docker Compose to remove any containers 
 This helps in cleaning up any services that might have been started independently but are considered part of the project.
 ====
 
-'''
-++++
-include::_partials/_feedback-footer.html[]
-++++
