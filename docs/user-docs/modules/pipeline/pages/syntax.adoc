@@ -331,14 +331,14 @@ pipeline {
     agent none // <1>
     stages {
         stage('Example Build') {
-            agent { docker 'maven:3.9.3-eclipse-temurin-17' } // <2>
+            agent { docker 'maven:3.9.9-eclipse-temurin-21' } // <2>
             steps {
                 echo 'Hello, Maven'
                 sh 'mvn --version'
             }
         }
         stage('Example Test') {
-            agent { docker 'openjdk:17-jre' } // <3>
+            agent { docker 'openjdk:21-jre' } // <3>
             steps {
                 echo 'Hello, JDK'
                 sh 'java -version'
@@ -535,13 +535,11 @@ pipeline {
     agent any
     environment { // <1>
         CC = 'clang'
-
     }
     stages {
         stage('Example') {
             environment { // <2>
                 AN_ACCESS_KEY = credentials('my-predefined-secret-text') // <3>
-
             }
             steps {
                 sh 'printenv'
@@ -565,7 +563,6 @@ pipeline {
         stage('Example Username/Password') {
             environment {
                 SERVICE_CREDS = credentials('my-predefined-username-password')
-
             }
             steps {
                 sh 'echo "Service user is $SERVICE_CREDS_USR"'
@@ -576,7 +573,6 @@ pipeline {
         stage('Example SSH Username with private key') {
             environment {
                 SSH_CREDS = credentials('my-predefined-ssh-creds')
-
             }
             steps {
                 sh 'echo "SSH private key is located at $SSH_CREDS"'
@@ -623,7 +619,7 @@ disableResume:: Do not allow the pipeline to resume if the controller restarts.
 For example: `options { disableResume() }`
 
 newContainerPerStage:: Used with `docker` or `dockerfile` top-level agent.
-When specified, each stage will run in a new container instance on the same node, rather than all stages running in the same container instance.
+When specified, each stage will run in a new container deployed on the same node, rather than all stages running in the same container deployment.
 
 overrideIndexTriggers:: Allows overriding default treatment of branch indexing triggers.
 If branch indexing triggers are disabled at the multibranch or organization label, `options { overrideIndexTriggers(true) }` will enable them for this job only.
@@ -859,7 +855,6 @@ pipeline {
 
 [#cron-syntax]
 ==== Jenkins cron syntax
-
 The Jenkins cron syntax follows the syntax of the link:https://en.wikipedia.org/wiki/Cron[cron utility] (with minor differences).
 Specifically, each line consists of 5 fields separated by TAB or whitespace:
 
@@ -962,7 +957,6 @@ pipeline {
 =====
 
 ==== tools
-
 ////
 XXX: This is intentionally light until https://issues.jenkins.io/browse/WEBSITE-193
 ////
@@ -1472,7 +1466,6 @@ pipeline {
             }
             environment {
                 FOR_SEQUENTIAL = "some-value"
-
             }
             stages {
                 stage('In Sequential 1') {
@@ -1932,9 +1925,7 @@ pipeline {
                 }
                 when { anyOf {
                     expression { params.PLATFORM_FILTER == 'all' }
-
                     expression { params.PLATFORM_FILTER == env.PLATFORM }
-
                 } }
                 axes {
                     axis {
@@ -2046,7 +2037,6 @@ Providing flow control, therefore, rests on Groovy expressions, such as the `if/
 node {
     stage('Example') {
         if (env.BRANCH_NAME == 'master') {
-
             echo 'I only execute on the master branch'
         } else {
             echo 'I execute elsewhere'

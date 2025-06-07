@@ -10,3 +10,6 @@
 * xref:environment-variables.adoc[]
 * xref:markup-formatter.adoc[]
 * xref:services.adoc[]
+* xref:securing-org-folders-and-multibranch-pipelines.adoc[]
+* xref:agent-to-controller.adoc[]
+* xref:credentials.adoc[]
