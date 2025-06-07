@@ -12,4 +12,3 @@ For this tutorial, you will require:
 * The following software installed:
 ** https://www.docker.com/[Docker]
 ** https://docs.docker.com/compose/install/[Docker compose]
-** https://git-scm.com/downloads[Git], and optionally https://github.com/apps/desktop[GitHub Desktop]
