@@ -13,7 +13,7 @@ Since Blue Ocean provides a simplified Git-handling experience, you'll be intera
 
 The exact duration depends on the speed of your machine and whether or not you've already xref:ROOT:create-a-pipeline-in-blue-ocean.adoc#run-jenkins-in-docker[run Jenkins in Docker] from xref:index.adoc[another tutorial].
 
-include::user-docs:blueocean:partial$_blue-ocean-status.adoc[]
+include::user-docs:blueocean:partial$blue-ocean-status.adoc[]
 
 You can stop this tutorial at any point in time and continue from where you left
 off.

@@ -341,9 +341,9 @@ Because Jenkins is extremely extensible, it can be modified and configured to ha
 
 To learn more about what Jenkins can do, check out:
 
-* The xref:tutorials:index.adoc[Tutorials overview] page for other introductory tutorials.
-* The xref:user-docs:index.adoc[User Handbook] for more detailed information about using Jenkins, such as xref:pipeline:index.adoc[Pipelines] (in particular xref:pipeline:syntax.adoc[Pipeline syntax]) and the xref:blueocean:index.adoc[Blue Ocean] interface.
-* The xref:/node[Jenkins blog] for the latest events, other tutorials and updates.
+* The xref:index.adoc[Tutorials overview] page for other introductory tutorials.
+* The xref:user-docs:ROOT:index.adoc[User Handbook] for more detailed information about using Jenkins, such as xref:user-docs:pipeline:index.adoc[Pipelines] (in particular xref:user-docs:pipeline:syntax.adoc[Pipeline syntax]) and the xref:user-docs:blueocean:index.adoc[Blue Ocean] interface.
+* The link:https://www.jenkins.io/node[Jenkins blog] for the latest events, other tutorials and updates.
 
 == Cleaning Up Your Environment
 
