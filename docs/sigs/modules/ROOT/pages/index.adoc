@@ -4,7 +4,7 @@
 This page lists active Jenkins Special Interest Groups (SIGs).
 See https://github.com/jenkinsci/jep/tree/master/jep/4[JEP-4] for more information about SiGs and the process for creating new ones.
 
-== Advocacy and Outreach
+== xref:advocacy-and-outreach:index.adoc[Advocacy and Outreach]
 
 [.float-group]
 --
@@ -13,12 +13,9 @@ This special interest group offers a venue for discussions around advocacy and o
 --
 
 * https://groups.google.com/g/jenkins-advocacy-and-outreach-sig[Mailist List]
+* https://gitter.im/jenkinsci/advocacy-and-outreach-sig[image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green[Gitter Chat]]
 
-* image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_gsoc-sig%3Agitter.im[Static Badge]
-
-xref:advocacy-and-outreach:index.adoc[*Learn More*]
-
-== Documentation
+== xref:docs:index.adoc[Documentation]
 
 [.float-group]
 --
@@ -26,11 +23,9 @@ image:images:ROOT:logos/needs-you/Jenkins_Needs_You-02.png[Logo,height=115,float
 This special interest group improves Jenkins use and adoption through documentation. The SIG encourages, creates, and reviews documentation contributions and improves documentation with contributors and external communities.
 --
 
-* image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkins%2Fdocs%3Amatrix.org[Static Badge]
+* https://gitter.im/jenkins/docs[image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green[Gitter Chat]]
 
-xref:docs:index.adoc[*Learn More*]
-
-== Google Summer of Code
+== xref:gsoc:index.adoc[Google Summer of Code]
 
 [.float-group]
 --
@@ -38,12 +33,9 @@ image:images:ROOT:gsoc/jenkins-gsoc-logo_small.png[Logo,height=115,float=right,r
 This special interest group organizes Google Summer of Code program within the Jenkins organization. The scope of work includes coordinating GSoC activities and working with potentials mentors and contributors in order to form GSoC project teams.
 --
 
-* image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_gsoc-sig%3Agitter.im[Static Badge]
+* https://gitter.im/jenkinsci/gsoc-sig[image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green[Gitter Chat]]
 
-
-xref:gsoc:index.adoc[*Learn More*]
-
-== Platform
+== xref:platform:index.adoc[Platform]
 
 [.float-group]
 --
@@ -51,12 +43,9 @@ image:images:ROOT:logos/formal/256.png[Logo,height=115,float=right,role=float-ga
 This special interest group offers a venue for all kinds of platform support discussions: Java, Operating Systems, Architectures, Docker, Packaging, Web Containers, etc. The SIG works on defining platform support policies, coordinating platform support efforts with contributors and external communities, and reviewing proposals in the area.
 --
 
-* image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci_platform-sig%3Agitter.im[Static Badge]
+* https://gitter.im/jenkinsci/platform-sig[image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green[Gitter Chat]]
 
-
-xref:platform:index.adoc[*Learn More*]
-
-== User Experience
+== xref:ux:index.adoc[User Experience]
 
 [.float-group]
 --
@@ -64,6 +53,4 @@ image:images:ROOT:sigs/ux/logo.svg[Logo,height=115,float=right,role=float-gap]
 The User Experience SIG focuses on improving the Jenkins' user interface and user experience. The SIG seeks regular feedback from the community on the current UI and UX and new designs proposed by SIG members and others. We will discuss alternatives, identify compromises, and test implementations to improve the Jenkins UI / UX.
 --
 
-* image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green?link=https%3A%2F%2Fapp.gitter.im%2F%23%2Froom%2F%23jenkinsci%2Fux-sig%3Amatrix.org[Static Badge]
-
-xref:ux:index.adoc[*Learn More*]
+* https://gitter.im/jenkinsci/ux-sig[image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green[Gitter Chat]]
