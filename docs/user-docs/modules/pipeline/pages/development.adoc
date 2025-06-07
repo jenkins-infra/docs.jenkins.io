@@ -109,9 +109,7 @@ The editor offers a structural view of all the stages, parallel branches, and st
 The editor validates Pipeline changes as they are made, eliminating many errors before they are even committed.  
 Behind the scenes it still generates Declarative Pipeline code.
 
-== There should be a partial here
-
-include::blueocean:partial$_blue-ocean-status.adoc[]
+include::blueocean:partial$blue-ocean-status.adoc[]
 
 [#replay]
 == "Replay" Pipeline Runs with Modifications
@@ -138,7 +136,7 @@ image::replay-left-bar.png[Replay Left-menu Button]
 +
 image::replay-modified.png[Replay Left-menu Button]
 +
-. Check the results of changes
+. Check the results of changes.
 
 Once you are satisfied with the changes,
 you can use Replay to view them again, copy them back to your Pipeline job
@@ -207,7 +205,7 @@ The extension adds four settings entries to VS Code which select the Jenkins ser
 
 The link:https://github.com/ckipp01/nvim-jenkinsfile-linter[nvim-jenkinsfile-linter]
 Neovim plugin allows you to validate a Jenkinsfile by using the Pipeline Linter API
-of your Jenkins instance and report any existing diagnostics in your editor.
+of your Jenkins controller and report any existing diagnostics in your editor.
 
 === Atom linter-jenkins package
 
@@ -219,7 +217,7 @@ link:https://atom.io/packages/language-jenkinsfile[Jenkinsfile language support 
 === Sublime Text Jenkinsfile package
 
 The link:https://github.com/june07/sublime-Jenkinsfile[Jenkinsfile] Sublime Text package allows 
-you to validate a Jenkinsfile by using the Pipeline Linter API of a running Jenkins instance over
+you to validate a Jenkinsfile by using the Pipeline Linter API of a running Jenkins controller over
 a secure channel (SSH).  You can install it directly from the Sublime Text package manager.
 
 ​You can find the package from within the Sublime Text interface via the Package Control package, at GitHub, or packagecontrol.io:
