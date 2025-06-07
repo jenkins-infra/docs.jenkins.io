@@ -32,7 +32,8 @@ image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Kristin Whetstone
 
 This SIG focuses on link:https://summerofcode.withgoogle.com/[Google Summer of Code] and other similar events.
 The group drives the xref:projects:gsoc:index.adoc[GSoC sub-project] within the Jenkins organization.
-The scope of work includes organizing the events and working with potentials mentors and contributors in order to organize GSoC teams.
+The scope of work includes organizing the events and working with potentials mentors and contributors in order
+to organize GSoC teams.
 
 You can find more info about GSoC in Jenkins xref:projects:gsoc:index.adoc[here].
 

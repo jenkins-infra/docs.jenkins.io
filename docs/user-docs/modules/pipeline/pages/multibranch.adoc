@@ -35,10 +35,11 @@ paths to contain spaces.
 
 image::new-item-multibranch-creation.png["Enter a name, select *Multibranch Pipeline*, and click *OK*", role=center]
 
-* Add a *Branch Source* (for example, Git) and enter the location of the
-  repository.
-
+* Add a *Branch Source* (for example, Git).
 image::multibranch-branch-source.png["Add a Branch Source", role=center]
+
+* Enter the location of the repository.
+
 image::multibranch-branch-source-configuration.png["Add the URL to the project repository", role=center]
 
 
