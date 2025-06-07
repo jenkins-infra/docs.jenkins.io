@@ -1,4 +1,4 @@
-= Mailist Lists
+= Mailing Lists
 
 The Jenkins project uses https://en.wikipedia.org/wiki/Electronic_mailing_list[mailing lists] to communicate. These mailing lists are organized by topic (see below). Posting to the wrong mailing list will just result in your message being ignored. Please strive to be clear and concise when sending messages. https://www.catb.org/esr/faqs/smart-questions.html[How to ask questions the smart way.]
 
@@ -45,7 +45,18 @@ https://groups.google.com/group/jenkins-advocacy-and-outreach-sig/topics[archive
 
 Mailing list for jenkins.io operations and https://www.jenkins.io/projects/infrastructure/[Jenkins Infrastructure].
 
-https://groups.google.com/group/jenkins-infra/topics[archive] | jenkins-infra+subscribe@googlegroups.com[subscribe] | mailto:jenkins-infra+unsubscribe@googlegroups.com[unsubscribe]
+https://groups.google.com/group/jenkins-infra/topics[archive] | mailto:jenkins-infra+subscribe@googlegroups.com[subscribe] | mailto:jenkins-infra+unsubscribe@googlegroups.com[unsubscribe]
+
+== Governance board mailing list
+
+=== mailto:jenkinsci-board@googlegroups.com[jenkinsci-board@googlegroups.com]
+
+Mailing list to contact https://www.jenkins.io/project/board/[Jenkins board members.]
+
+The subscription to this mailing list is reserved to Jenkins board members. Do not send messages to this list for support with your Jenkins instance or plugins.
+
+https://groups.google.com/group/jenkinsci-board/topics[archive] | mailto:jenkinsci-board+subscribe@googlegroups.com[subscribe] | mailto:jenkinsci-board+unsubscribe@googlegroups.com[unsubscribe]
+
 
 == Read-only lists
 
@@ -61,10 +72,10 @@ Automated core and plugin commit notifications.
 
 https://groups.google.com/group/jenkinsci-commits/topics[archive] | mailto:jenkinsci-commits+subscribe@googlegroups.com[subscribe] | mailto:jenkinsci-commits+unsubscribe@googlegroups.com[unsubscribe]
 
-=== Special Interest Groups Mailing Lists
+== Special Interest Groups Mailing Lists
 
 === mailto:jenkins-advocacy-and-outreach-sig@googlegroups.com[jenkins-advocacy-and-outreach-sig@googlegroups.com]
 
 Mailing list for xref:sigs:advocacy-and-outreach:index.adoc[Advocacy and Outreach] group.
 
-https://groups.google.com/group/jenkins-advocacy-and-outreach-sig/topics[archive] | mailto:jenkins-advocacy-and-outreach-sig+subscribe@googlegroups.com[subscribe] | mailto:jenkins-advocacy-and-outreach-sig+mailto:[unsubscribe]@googlegroups.com[mailto:[unsubscribe]]
+https://groups.google.com/group/jenkins-advocacy-and-outreach-sig/topics[archive] | mailto:jenkins-advocacy-and-outreach-sig+subscribe@googlegroups.com[subscribe] | mailto:jenkins-advocacy-and-outreach-sig+unsubscribe@googlegroups.com[unsubscribe]

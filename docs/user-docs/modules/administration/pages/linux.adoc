@@ -24,25 +24,27 @@ It can be installed from the link:https://pkg.jenkins.io/debian-stable/[`debian-
 
 [source,bash]
 ----
-sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
-echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
   https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt-get update
 sudo apt-get install jenkins
 ----
 
+[#debian-weekly]
 === Weekly release
 
+[#weekly-release]
 A new release is produced weekly to deliver bug fixes and features to users and plugin developers.
 It can be installed from the link:https://pkg.jenkins.io/debian/[`debian` apt repository].
 
 [source,bash]
 ----
-sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian/jenkins.io-2023.key
-echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
   https://pkg.jenkins.io/debian binary/ | sudo tee \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt-get update
@@ -82,15 +84,15 @@ Additionally, xref:platform-information:support-policy-java.adoc[not all Java ve
 There are multiple Java implementations which you can use.
 link:https://openjdk.java.net/[OpenJDK] is the most popular one at the moment, we will use it in this guide.
 
-Update the Debian apt repositories, install OpenJDK 17, and check the installation with the commands:
+Update the Debian apt repositories, install OpenJDK 21, and check the installation with the commands:
 [source,bash]
 ----
 sudo apt update
-sudo apt install fontconfig openjdk-17-jre
+sudo apt install fontconfig openjdk-21-jre
 java -version
-openjdk version "17.0.8" 2023-07-18
-OpenJDK Runtime Environment (build 17.0.8+7-Debian-1deb12u1)
-OpenJDK 64-Bit Server VM (build 17.0.8+7-Debian-1deb12u1, mixed mode, sharing)
+openjdk version "21.0.3" 2024-04-16
+OpenJDK Runtime Environment (build 21.0.3+11-Debian-2)
+OpenJDK 64-Bit Server VM (build 21.0.3+11-Debian-2, mixed mode, sharing)
 ----
 
 [NOTE]
@@ -135,7 +137,7 @@ sudo wget -O /etc/yum.repos.d/jenkins.repo \
 sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
 sudo dnf upgrade
 # Add required dependencies for the jenkins package
-sudo dnf install fontconfig java-17-openjdk
+sudo dnf install fontconfig java-21-openjdk
 sudo dnf install jenkins
 ----
 
@@ -194,9 +196,9 @@ firewall-cmd --reload
 ====
 
 [#red-hat-centos]
-== Red Hat/Alma/Rocky
+== Red Hat Enterprise Linux and derivatives
 
-You can install Jenkins through `yum` on Red Hat Enterprise Linux, Alma Linux, Rocky Linux, Oracle Linux, and other Red Hat based distributions.
+You can install Jenkins through `yum` on Red Hat Enterprise Linux, AlmaLinux, Rocky Linux, Oracle Linux, CentOS, and other Red Hat based distributions.
 
 .How To Install Jenkins on Rocky Linux 9
 video::2-L0WohfsqY[youtube, width=640, height=360]
@@ -215,7 +217,7 @@ sudo wget -O /etc/yum.repos.d/jenkins.repo \
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 sudo yum upgrade
 # Add required dependencies for the jenkins package
-sudo yum install fontconfig java-17-openjdk
+sudo yum install fontconfig java-21-openjdk
 sudo yum install jenkins
 sudo systemctl daemon-reload
 ----
@@ -232,7 +234,7 @@ sudo wget -O /etc/yum.repos.d/jenkins.repo \
 sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
 sudo yum upgrade
 # Add required dependencies for the jenkins package
-sudo yum install fontconfig java-17-openjdk
+sudo yum install fontconfig java-21-openjdk
 sudo yum install jenkins
 ----
 

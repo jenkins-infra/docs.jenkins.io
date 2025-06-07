@@ -103,7 +103,7 @@ image:user-docs:pipeline:classic-ui-left-column.png[alt="Classic UI left column"
 +
 [.boxshadow]
 image:user-docs:pipeline:new-item-creation.png[alt="Enter a name, click *Pipeline* and then click *OK*",width=100%]
-. Click the *Pipeline* tab at the top of the page to scroll down to the
+. Select the *Pipeline* tab in the side panel of the page to scroll down to the
   *Pipeline* section. +
   *Note:* If instead you are defining your `Jenkinsfile` in source control,
   follow the instructions in xref:#defining-a-pipeline-in-scm[In SCM] below.
@@ -170,7 +170,7 @@ image:user-docs:pipeline:hello-world-console-output.png[alt="*Console Output* fo
   above, unlike ``Jenkinsfile``s you define through Blue Ocean
   (xref:#through-blue-ocean[above]) or in source control
   (xref:#defining-a-pipeline-in-scm[below]), ``Jenkinsfile``s entered into
-  the *Script* text area area of Pipeline projects are stored by Jenkins itself,
+  the *Script* text area of Pipeline projects are stored by Jenkins itself,
   within the Jenkins home directory. Therefore, for greater control and
   flexibility over your Pipeline, particularly for projects in source control
   that are likely to gain complexity, it is recommended that you use
@@ -238,7 +238,7 @@ which may rectify the issue.
 Pipeline ships with built-in documentation features to make it
 easier to create Pipelines of varying complexities. This built-in documentation
 is automatically generated and updated based on the plugins installed in the
-Jenkins instance.
+Jenkins controller.
 
 The built-in documentation can be found globally at `$\{YOUR_JENKINS_URL}/pipeline-syntax`.
 The same documentation is also linked as *Pipeline Syntax* in the side-bar for any
@@ -256,7 +256,7 @@ code for individual steps, discovering new steps provided by plugins, or
 experimenting with different parameters for a particular step.
 
 The Snippet Generator is dynamically populated with a list of the steps
-available to the Jenkins instance. The number of steps available is dependent
+available to the Jenkins controller. The number of steps available is dependent
 on the plugins installed which explicitly expose steps for use in Pipeline.
 
 To generate a step snippet with the Snippet Generator:
