@@ -392,6 +392,7 @@ This metric is coming from https://github.com/jenkins-infra/plugin-health-scorin
 This service is gathering data from each plugin.
 
 The data can be related to:
+
 * The source code of the plugin
 * The content of the plugin repository
 * External metrics about the plugin (number of open pull requests, etc.)
