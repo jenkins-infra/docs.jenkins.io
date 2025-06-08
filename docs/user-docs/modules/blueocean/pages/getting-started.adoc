@@ -4,7 +4,7 @@ This section describes how to get started with Blue Ocean in Jenkins.
 It includes instructions for link:#installing-blue-ocean[setting up Blue Ocean] on
 your Jenkins controller, how to link:#accessing-blue-ocean[access the Blue Ocean UI], and link:#switching-to-the-classic-ui[returning to the Jenkins classic UI].
 
-include::partial$_blue-ocean-status.adoc[]
+include::partial$blue-ocean-status.adoc[]
 
 [#installing-blue-ocean]
 == Installing Blue Ocean

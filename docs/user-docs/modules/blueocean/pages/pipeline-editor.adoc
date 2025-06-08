@@ -3,7 +3,7 @@
 The Blue Ocean Pipeline Editor is an easy way for anyone to get started with creating Pipelines in Jenkins.
 It's also great for existing Jenkins users to start adopting Pipeline.
 
-include::partial$_blue-ocean-status.adoc[]
+include::partial$blue-ocean-status.adoc[]
 
 The editor allows users to create and edit Declarative Pipelines and perform actions such as adding stages or configuring parallel tasks, depending on their needs.
 When the user completes their configuration, the editor saves the Pipeline to a source code repository as a `Jenkinsfile`.
