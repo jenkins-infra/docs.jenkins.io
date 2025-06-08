@@ -29,7 +29,7 @@ image:images:ROOT:avatars/gounthar.png[,width=30,height=30] Bruno Verachten
 *Participants*:
 image:images:ROOT:avatars/dduportal.jpg[,width=30,height=30] Damien Duportal
 image:images:ROOT:avatars/kmartens27.jpeg[,width=30,height=30] Kevin Martens
-image:images:ROOT:avatars/no_image.svg[,width=30,height=30] ksalerno99
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Kenneth P. Salerno
 image:images:ROOT:avatars/hlemeur.jpg[,width=30,height=30] Hervé Le Meur
 image:images:ROOT:avatars/markewaite.jpg[,width=30,height=30] Mark Waite
 
