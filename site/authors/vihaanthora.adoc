@@ -2,9 +2,9 @@
 :page-layout: author
 :page-author_name: Vihaan Thora
 :page-github: vihaanthora
-:page-linkedin: vihaanthora
 :page-authoravatar: ../../images/images/avatars/vihaanthora.jpg
+:page-linkedin: vihaanthora
 
-
-
-Google Summer of Code 2022 contributor at Jenkins. Interested in learning new things through cool projects. Passionate about music and art.
+Google Summer of Code 2022 contributor at Jenkins. 
+Interested in learning new things through cool projects. 
+Passionate about music and art.

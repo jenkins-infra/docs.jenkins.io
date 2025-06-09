@@ -1,10 +1,8 @@
 = About the Author
 :page-layout: author
 :page-author_name: Tracy Miranda
-:page-twitter: tracymiranda
 :page-github: tracymiranda
-:page-blog: https://tracymiranda.com/
-:page-irc: tracymiranda
 :page-authoravatar: ../../images/images/avatars/tracymiranda.jpg
+:page-twitter: tracymiranda
 
-Tracy is the Director of Open Source Community at CloudBees, long time open source contributor and evangelist. 
+Tracy is the Director of Open Source Community at CloudBees, long time open source contributor and evangelist.

@@ -2,8 +2,7 @@
 :page-layout: author
 :page-author_name: Tomas Bjerre
 :page-github: tomasbjerre
-:page-linkedin: tomasbjerre
-:page-blog: https://bjurr.com/
 :page-authoravatar: ../../images/images/avatars/tomasbjerre.jpg
+:page-linkedin: tomasbjerre
 
 Tomas Bjerre is an experienced fullstack software developer. Been working full time since 2010 after graduating with a masters degree in computer science from Lund University (Faculty of Engineering, LTH). Is currently working full time and maintaining a bunch of Jenkins plugins on his spare time.

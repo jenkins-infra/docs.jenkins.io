@@ -1,0 +1,8 @@
+= About the Author
+:page-layout: author
+:page-author_name: Vutukuri Sreenivas
+:page-github: cnu1812
+:page-authoravatar: ../../images/images/avatars/no_image.svg
+:page-linkedin: v-sreenivas-985088203
+
+A professional with an ardent passion for cloud-native architectures, application modernization, and cloud computing.

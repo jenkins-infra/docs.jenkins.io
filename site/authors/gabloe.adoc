@@ -2,4 +2,4 @@
 :page-layout: author
 :page-author_name: Gabriel Loewen
 :page-github: gabloe
-
+:page-authoravatar: ../../images/images/avatars/no_image.svg

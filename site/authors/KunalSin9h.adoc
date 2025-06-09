@@ -2,8 +2,9 @@
 :page-layout: author
 :page-author_name: Kunal Singh
 :page-github: KunalSin9h
+:page-authoravatar: ../../images/images/avatars/KunalSin9h.jpg
 :page-twitter: KunalSin9h
 :page-linkedin: kunalsin9h
-:page-authoravatar: ../../images/images/avatars/KunalSin9h.jpg
 
+// descriptive text comes here
 My name is Kunal and I'm currently pursuing a degree in Computer Science and Engineering. I do Full Stack Web Development, using technologies like React, NextJS, TailwindCSS,TypeScript and Go. I'm also passionate about Cloud computing, Backend and Databases.
