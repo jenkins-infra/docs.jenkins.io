@@ -21,7 +21,7 @@ standardized set of components and a style guide that help developers create
 plugins which effortlessly retain the look and feel of the Blue Ocean user
 experience.
 
-include::user-docs:blueocean:partial$_blue-ocean-status.adoc[]
+include::user-docs:blueocean:partial$blue-ocean-status.adoc[]
 
 xref:user-docs:blueocean:getting-started.adoc[*Learn more*]
 
