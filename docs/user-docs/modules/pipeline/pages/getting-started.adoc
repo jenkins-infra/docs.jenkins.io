@@ -77,7 +77,7 @@ control.
 Read more about Blue Ocean in the xref:blueocean:index.adoc[Blue Ocean] chapter and
 xref:blueocean:getting-started.adoc[Getting started with Blue Ocean] page.
 
-include::user-docs:blueocean:partial$_blue-ocean-status.adoc
+include::blueocean:partial$blue-ocean-status.adoc[]
 
 [#through-the-classic-ui]
 === Through the classic UI
