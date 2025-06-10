@@ -5,5 +5,4 @@
 :page-authoravatar: ../../images/images/avatars/no_image.svg
 
 Software Engineer at VirtusLab, working in area of cloud-native technologies.
-
 Maintainer of Jenkins Kubernetes Operator.

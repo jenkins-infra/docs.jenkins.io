@@ -5,5 +5,5 @@
 :page-authoravatar: ../../images/images/avatars/romenrg.jpg
 :page-twitter: romenrg
 
-Romén is a lifelong learner, software engineer and former digital entrepreneur. He lives in the Canary Islands,
-from where he currently works as a Training Engineer at CloudBees.
+Romén is a lifelong learner, software engineer and former digital entrepreneur. 
+He lives in the Canary Islands, from where he currently works as a Training Engineer at CloudBees.

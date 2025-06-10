@@ -5,5 +5,4 @@
 :page-authoravatar: ../../images/images/avatars/abhyudayasharma.jpg
 
 Abhyudaya is a Computer Science student at Shiv Nadar University, India.
-He is participating in Google Summer of Code 2019 to improve the performance
-of the link:https://github.com/jenkinsci/role-strategy-plugin[Role Strategy Plugin].
+He is participating in Google Summer of Code 2019 to improve the performance of the link:https://github.com/jenkinsci/role-strategy-plugin[Role Strategy Plugin].
