@@ -2,7 +2,7 @@
 
 The Blue Ocean Activity view shows all activities related to one Pipeline.
 
-include::partial$_blue-ocean-status.adoc[]
+include::partial$blue-ocean-status.adoc[]
 
 == Navigation Bar
 
