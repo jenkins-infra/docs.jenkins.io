@@ -57,7 +57,7 @@ that stage.
 
 image::pipeline-restart-stages-blue-ocean.png[Click on Restart link for stage]
 
-include::blueocean:partial$_blue-ocean-status.adoc[]
+include::blueocean:partial$blue-ocean-status.adoc[]
 
 ==== Preserving `stash`es for Use with Restarted Stages
 
