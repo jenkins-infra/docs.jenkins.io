@@ -5,65 +5,15 @@ The Jenkins project includes Jenkins link:https://github.com/jenkinsci/jenkins[c
 There are other collaborative initiatives going on under the umbrella of the
 Jenkins project which grow or expand the project in new ways.
 
-== Blue Ocean
-
-image:images:ROOT:sunnyblueocean.png["Blue Ocean", width=128]
-
-Blue Ocean is a project that rethinks the user experience of Jenkins, modelling
-and presenting the process of software delivery by surfacing information that's
-important to development teams with as few clicks as possible, while still
-staying true to the extensibility that Jenkins always has had as a core value.
-
-
-Blue Ocean also incorporates "The Jenkins Design Language (JDL)" which is a
-standardized set of components and a style guide that help developers create
-plugins which effortlessly retain the look and feel of the Blue Ocean user
-experience.
-
-include::user-docs:blueocean:partial$blue-ocean-status.adoc[]
-
-xref:user-docs:blueocean:getting-started.adoc[*Learn more*]
-
 ---
-
-
-== Document Jenkins on Kubernetes
-
-image:images:ROOT:gsod/gsod.png["Google Season of Docs", width=128]
-
-Kubernetes is a platform-agnostic container orchestration tool created 
-by Google and heavily supported by the open-source community as a project 
-of the Cloud Native Computing Foundation. Kubernetes is compatible with the 
-majority of CI/CD tools which allow developers to run tests, deploy builds 
-in Kubernetes and update applications with no downtime.
-
-
-Jenkins on Kubernetes is a popular theme for Jenkins users. There are a lot 
-of presentations and articles about running Jenkins on Kubernetes, however, 
-there's currently no central location for documentation describing Jenkins 
-on Kubernetes. This project would create a new Kubernetes Volume which would 
-describe the concepts, techniques, and choices for Kubernetes users running Jenkins.
-
-
-
-xref:other:document-jenkins-on-kubernetes.adoc[*Learn more*]
-
----
-
 
 == Google Summer of Code
 
 image:images:ROOT:gsoc/jenkins-gsoc-logo_small.png["Summer of Code", width=128]
 
-The
-link:https://summerofcode.withgoogle.com/archive/[Google Summer of Code]
-(GSoC) project is an annual, international, program which encourages
-college-aged students to participate with open source projects during the summer
-break between classes. Students accepted into the program receive a stipend,
-paid by Google, to work well-defined projects to improve or enhance the Jenkins
-project.  In exchange, numerous Jenkins community members volunteer as "mentors"
-for students to help integrate them into the open source community and succeed
-in completing their summer projects.
+The link:https://summerofcode.withgoogle.com/archive/[Google Summer of Code](GSoC) project is an annual, international, program which encourages college-aged students to participate with open source projects during the summer break between classes.
+Students accepted into the program receive a stipend, paid by Google, to work well-defined projects to improve or enhance the Jenkins project.
+In exchange, numerous Jenkins community members volunteer as "mentors" for students to help integrate them into the open source community and succeed in completing their summer projects.
 
 xref:gsoc:index.adoc[*Learn more*]
 
