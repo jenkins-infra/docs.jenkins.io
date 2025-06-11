@@ -23,8 +23,8 @@ Valentin is an open source enthusiast and a DevOps engineer from Switzerland. He
 --
 image:images:ROOT:avatars/notmyfault.jpeg[,120,120,float=left]
 
-Alexander is a member of the Jenkins governing board, a core maintainer, and release team member, and actively involved in the process of releasing Jenkins weekly and Long-Term-Support builds.
-He maintains the Ionicons API plugin and several other plugins.
+Alexander is a member of the link:https://plugins.jenkins.io/ionicons-api/[Jenkins governing board], a core maintainer, and release team member, and actively involved in the process of releasing Jenkins weekly and Long-Term-Support builds.
+He maintains the Ionicons API plugin and several link:https://plugins.jenkins.io/ui/search/?query=notmyfault[other plugins].
 If he doesn't work on open source software, Alexander enjoys listening to music and going for a run.
 --
 
@@ -37,7 +37,7 @@ If he doesn't work on open source software, Alexander enjoys listening to music 
 --
 image:images:ROOT:avatars/no_image.svg[,120,120,float=left]
 
-Basil is a long-time Jenkins user and contributor, a Jenkins core maintainer, and the maintainer of the Email Extension, Timestamper, and Swarm plugins (among others). Basil enjoys working on open source software in his free time.
+Basil is a long-time Jenkins user and contributor, a Jenkins core maintainer, and the maintainer of the link:https://plugins.jenkins.io/email-ext/[Email Extension], link:https://plugins.jenkins.io/timestamper/[Timestamper], and link:https://plugins.jenkins.io/swarm/[Swarm plugins] (among others). Basil enjoys working on open source software in his free time.
 --
 
 *Term: 2023/12/11 - 2025/12/15*
@@ -61,7 +61,7 @@ Alex comes from a .NET background but likes to get his hands dirty in many diffe
 --
 image:images:ROOT:avatars/markewaite.jpg[,120,120,float=left]
 
-Mark is a member of the Jenkins governing board, a long-time Jenkins user and contributor, a core maintainer, and maintainer of the git plugin, the git client plugin, the platform labeler plugin, the embeddable build status plugin, and several others. He is one of the authors of the "Improve a plugin" tutorial.
+Mark is a member of the Jenkins governing board, a long-time Jenkins user and contributor, a core maintainer, and maintainer of the link:https://plugins.jenkins.io/git/[git plugin], the link:https://plugins.jenkins.io/git-client/[git client plugin], the link:https://plugins.jenkins.io/platformlabeler/[platform labeler plugin], the link:https://plugins.jenkins.io/embeddable-build-status/[embeddable build status plugin], and several others. He is one of the authors of the xref:dev-docs:tutorial-improve:index.adoc["Improve a plugin"] tutorial.
 --
 
 *Term: 2021/12/03 - 2025/12/15*
@@ -80,7 +80,7 @@ In accordance with the xref:team-leads.adoc[Team Leads] structure the following 
 --
 image:images:ROOT:avatars/wadeck.jpg[,120,120,float=left]
 
-Wadeck is the Jenkins security officer, leading the security team in improving Jenkins security. He likes to provide solutions that are both useful and easy to use.
+Wadeck is the Jenkins security officer, leading the xref:security:ROOT:index.adoc[security team] in improving Jenkins security. He likes to provide solutions that are both useful and easy to use.
 --
 
 *Term: 2021/12/03 - 2025/12/02*
@@ -108,7 +108,7 @@ Jenkins core maintainer, along with slack, azure-keyvault and configuration-as-c
 --
 image:images:ROOT:avatars/dduportal.jpg[,120,120,float=left]
 
-Damien is the Jenkins Infrastructure officer and a software engineer at CloudBees working as a Site Reliability Engineer for the Jenkins Infrastructure project. Not only he is a decade-old Hudson/Jenkins user but also an open-source citizen who participates in Updatecli, Asciidoctor, Traefik and many others.
+Damien is the xref:team-leads.adoc#infrastructure[Jenkins Infrastructure officer] and a software engineer at link:https://www.cloudbees.com/[CloudBees] working as a Site Reliability Engineer for the xref:projects:infrastructure:index.adoc[Jenkins Infrastructure project]. Not only he is a decade-old Hudson/Jenkins user but also an open-source citizen who participates in link:https://www.updatecli.io/[Updatecli], link:https://asciidoctor.org/[Asciidoctor], link:https://traefik.io/[Traefik] and many others.
 --
 
 *Term: 2021/12/03 - 2025/12/02*
@@ -122,7 +122,7 @@ Damien is the Jenkins Infrastructure officer and a software engineer at CloudBee
 --
 image:images:ROOT:avatars/alyssat.jpg[,120,120,float=left]
 
-Member of the Jenkins Advocacy and Outreach SIG. Alyssa drives and manages Jenkins participation in community events and conferences like FOSDEM, SCaLE, cdCON, and KubeCon. She is also responsible for Marketing & Community Programs at CloudBees, Inc.
+Member of the xref:sigs:advocacy-and-outreach:index.adoc[Jenkins Advocacy and Outreach SIG]. Alyssa drives and manages Jenkins participation in community events and conferences like link:https://fosdem.org/2025/[FOSDEM], link:https://www.socallinuxexpo.org/scale/22x[SCaLE], link:https://events.linuxfoundation.org/cdcon-gitopscon/[cdCON], and link:https://events19.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2019/[KubeCon]. She is also responsible for Marketing & Community Programs at link:https://www.cloudbees.com/[CloudBees, Inc.]
 --
 
 *Term: 2021/12/03 - 2025/12/02*
