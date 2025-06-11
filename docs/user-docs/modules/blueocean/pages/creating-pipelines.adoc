@@ -4,7 +4,7 @@ Blue Ocean makes it easy to create a Pipeline project in Jenkins.
 
 You can generate a Pipeline from an existing `Jenkinsfile` in source control, or you can use the xref:blueocean:pipeline-editor.adoc[Blue Ocean Pipeline editor] to create a Pipeline as a `Jenkinsfile` that is committed to source control.
 
-include::partial$_blue-ocean-status.adoc[]
+include::partial$blue-ocean-status.adoc[]
 
 == Setting up your Pipeline project
 

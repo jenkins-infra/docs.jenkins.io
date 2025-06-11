@@ -3,7 +3,7 @@
 The Blue Ocean Pipeline Run Details view shows the information related to a single Pipeline Run, and allows users to edit or replay that run.
 Below is a detailed overview of the parts of the Run Details view.
 
-include::partial$_blue-ocean-status.adoc[]
+include::partial$blue-ocean-status.adoc[]
 
 image::pipeline-run-details/overview.png[Overview of the Pipeline Run Details, role=center]
 
