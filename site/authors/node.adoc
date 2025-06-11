@@ -2,5 +2,5 @@
 :page-layout: author
 :page-author_name: Yang Zhentao
 :page-github: node
-
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 

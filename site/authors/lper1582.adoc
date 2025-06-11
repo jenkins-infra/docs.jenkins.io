@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Loghi Perinpanayagam
-:page-twitter: loghi5
-:page-github: lper1582
-:page-linkedin: loghi
-:page-authoravatar: ../../images/images/avatars/lper1582.jpeg
-
-He was a GSoC 2020 student, contributor and maintainer for plugin:machine-learning[Machine Learning] for Jenkins project. Highly interested and contributing on open source projects.

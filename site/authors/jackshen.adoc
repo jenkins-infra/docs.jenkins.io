@@ -1,0 +1,7 @@
+= About the Author
+:page-layout: author
+:page-author_name: Jack Shen
+:page-github: ShenJack
+:page-authoravatar: ../../images/images/avatars/jackshen.jpg
+
+Shen is a student from Beijing Forestry University. One of the students accepted to GSoC 2019.

@@ -2,6 +2,6 @@
 :page-layout: author
 :page-author_name: ZhaoYing
 :page-github: zhaoying818
-
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 
 ZhaoYing is a contributor of the Jenkins China community.
