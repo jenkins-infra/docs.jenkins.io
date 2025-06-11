@@ -15,7 +15,7 @@ This chapter is intended for Jenkins users of all skill levels, but beginners ma
 For an overview of content in the Jenkins User Handbook, refer to
 xref:user-docs:getting-started:index.adoc[user handbook overview].
 
-include::partial$_blue-ocean-status.adoc[]
+include::partial$blue-ocean-status.adoc[]
 
 [#blue-ocean-overview]
 == What is Blue Ocean?
