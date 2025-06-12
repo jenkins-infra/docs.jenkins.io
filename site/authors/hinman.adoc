@@ -1,6 +1,6 @@
 = About the Author
 :page-layout: author
 :page-author_name: Hannah Inman
-
-
+:page-github: hinman
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 

@@ -2,4 +2,4 @@
 :page-layout: author
 :page-author_name: Aleksei Besogonov
 :page-github: Cyberax
-
+:page-authoravatar: ../../images/images/avatars/no_image.svg

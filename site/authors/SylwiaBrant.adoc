@@ -2,6 +2,7 @@
 :page-layout: author
 :page-author_name: Sylwia Brant
 :page-github: SylwiaBrant
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 
-
-Software Engineer at VirtusLab, working in area of cloud-native technologies. Maintainer of Jenkins Kubernetes Operator.
+Software Engineer at VirtusLab, working in area of cloud-native technologies.
+Maintainer of Jenkins Kubernetes Operator.
