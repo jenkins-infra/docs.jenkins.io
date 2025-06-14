@@ -22,8 +22,8 @@ xref:ROOT:index.adoc[(Back to List of Jenkins Special Interest Groups )]
 [.avatar]
 *Leads*:
 image:images:ROOT:avatars/alyssat.jpg[,width=30,height=30] Alyssa Tong
-image:images:ROOT:avatars/jmMeessen.jpg[,width=30,height=30] Jean-Marc Meessen
 image:images:ROOT:avatars/krisstern.png[,width=30,height=30] Kris Stern
+image:images:ROOT:avatars/jmMeessen.jpg[,width=30,height=30] Jean-Marc Meessen
 
 [.avatar]
 *Participants*:
