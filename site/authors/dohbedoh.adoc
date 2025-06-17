@@ -2,8 +2,8 @@
 :page-layout: author
 :page-author_name: Allan Burdajewicz
 :page-github: dohbedoh
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 :page-twitter: Dohbedoh
 :page-linkedin: allan-burdajewicz-0122452b
-
 
 Systems/Software Engineer

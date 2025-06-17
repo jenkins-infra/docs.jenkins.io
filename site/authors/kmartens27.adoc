@@ -4,6 +4,4 @@
 :page-github: kmartens27
 :page-authoravatar: ../../images/images/avatars/kmartens27.jpeg
 
-
-
 Kevin Martens is part of the CloudBees Documentation team, helping with Jenkins documentation creation and maintenance.

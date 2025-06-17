@@ -2,5 +2,5 @@
 :page-layout: author
 :page-author_name: Martin Holeček
 :page-github: Darthholi
-
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 

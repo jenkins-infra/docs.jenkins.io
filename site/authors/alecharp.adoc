@@ -1,11 +1,9 @@
 = About the Author
 :page-layout: author
 :page-author_name: Adrien Lecharpentier
-:page-twitter: alecharp
 :page-github: alecharp
-:page-blog: https://alecharp.fr
 :page-authoravatar: ../../images/images/avatars/alecharp.jpg
+:page-twitter: alecharp
 
-
-
-Adrien is a Jenkins user and plugins developer since 2009 and maintains several plugins. Currently, Adrien works at link:https://www.cloudbees.com[CloudBees] as a software engineer, involved in open-source code development.
+Adrien is a Jenkins user and plugins developer since 2009 and maintains several plugins. 
+Currently, Adrien works at link:https://www.cloudbees.com[CloudBees] as a software engineer, involved in open-source code development.
