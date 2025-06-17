@@ -1,9 +1,9 @@
 = About the Author
 :page-layout: author
 :page-author_name: Brian Dawson
-:page-twitter: brianvdawson
 :page-github: bvdawson
-
+:page-authoravatar: ../../images/images/avatars/no_image.svg
+:page-twitter: brianvdawson
 
 DevOps dude at CloudBees.
 Jenkins Marketing Manager.

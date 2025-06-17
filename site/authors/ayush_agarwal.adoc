@@ -1,0 +1,9 @@
+= About the Author
+:page-layout: author
+:page-author_name: Ayush Agarwal
+:page-github: aagarwal1012
+:page-authoravatar: ../../images/images/avatars/ayush_agarwal.png
+:page-twitter: aagarwal1012
+:page-linkedin: aagarwal1012
+
+Ayush is a developer, speaker, blogger, and learner from Jaipur, India.

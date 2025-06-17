@@ -2,5 +2,5 @@
 :page-layout: author
 :page-author_name: Michael Werner
 :page-github: xaseron
-
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 
