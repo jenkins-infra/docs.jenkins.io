@@ -2,9 +2,8 @@
 :page-layout: author
 :page-author_name: Sagar Utekar
 :page-github: Sagar2366
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 :page-twitter: named_uttu
 :page-linkedin: sagar-utekar-b32750116
-:page-irc: Sagar2366
-
 
 Sagar is an open source enthusiast, developer, speaker, and learner from Maharashtra, India.

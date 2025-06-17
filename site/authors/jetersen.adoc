@@ -2,5 +2,5 @@
 :page-layout: author
 :page-author_name: Joseph Petersen
 :page-github: jetersen
-
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 

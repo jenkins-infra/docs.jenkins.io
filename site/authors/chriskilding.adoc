@@ -2,6 +2,6 @@
 :page-layout: author
 :page-author_name: Chris Kilding
 :page-github: chriskilding
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 :page-linkedin: chriskilding
-
 

@@ -2,7 +2,8 @@
 :page-layout: author
 :page-author_name: Ioannis Moutsatsos
 :page-github: imoutsatsos
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 :page-twitter: ioannismou
 
-
-Life scientist and software engineer. Interested in open source, research informatics, imaging, metadata, and reproducible data flows.
+Life scientist and software engineer.
+Interested in open source, research informatics, imaging, metadata, and reproducible data flows.
