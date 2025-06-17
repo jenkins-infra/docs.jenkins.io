@@ -1,0 +1,8 @@
+= About the Author
+:page-layout: author
+:page-author_name: Hervé Le Meur
+:page-github: lemeurherve
+:page-authoravatar: ../../images/images/avatars/hlemeur.jpg
+:page-linkedin: hervelemeur
+
+Hervé is a site reliability engineer working on the Jenkins project infrastructure.

@@ -1,0 +1,7 @@
+= About the Author
+:page-layout: author
+:page-author_name: Shenyu Zheng
+:page-github: cizezsy
+:page-authoravatar: ../../images/images/avatars/no_image.svg
+
+Shenyu comes from China. He is a third year student now, and his major is Computer Science and technology. He has participated in GSoC 2018 for link:/projects/gsoc/2018/code-coverage-api-plugin/[Code Coverage API Plugin]

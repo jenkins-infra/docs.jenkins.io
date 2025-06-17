@@ -4,6 +4,4 @@
 :page-github: runzexia
 :page-authoravatar: ../../images/images/avatars/runzexia.jpg
 
-
-
 Runze Xia is interested in cloud native and DevOps. Jenkins contributor.
