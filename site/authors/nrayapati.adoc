@@ -2,7 +2,8 @@
 :page-layout: author
 :page-author_name: Naresh Rayapati
 :page-github: nrayapati
-:page-twitter: nrayapati
 :page-authoravatar: ../../images/images/avatars/nrayapati.jpeg
+:page-twitter: nrayapati
 
-Software Architect at link:https://www.cerner.com/[Cerner Corporation]. Passionate about Agile, DevOps & Continuous Delivery, and all things Automation. OSS Contributor, he is maintaining couple of Jenkins plugins since past several years. link:https://plugins.jenkins.io/ssh-steps[SSH Steps] - link:https://plugins.jenkins.io/jira-steps[JIRA Steps] - link:https://plugins.jenkins.io/hubot-steps[Hubot Steps].
+Software Architect at link:https://www.cerner.com/[Cerner Corporation]. Passionate about Agile, DevOps & Continuous Delivery, and all things Automation. 
+OSS Contributor, he is maintaining couple of Jenkins plugins since past several years. link:https://plugins.jenkins.io/ssh-steps[SSH Steps] - link:https://plugins.jenkins.io/jira-steps[JIRA Steps] - link:https://plugins.jenkins.io/hubot-steps[Hubot Steps]

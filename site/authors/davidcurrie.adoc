@@ -2,5 +2,5 @@
 :page-layout: author
 :page-author_name: David Currie
 :page-github: davidcurrie
-
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 
