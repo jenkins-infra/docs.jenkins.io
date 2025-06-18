@@ -2,5 +2,5 @@
 :page-layout: author
 :page-author_name: Christian Chavez
 :page-github: x10an14
-
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 

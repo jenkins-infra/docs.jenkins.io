@@ -1,0 +1,8 @@
+= About the Author
+:page-layout: author
+:page-author_name: Rahul Somasunderam
+:page-github: rahulsom
+:page-authoravatar: ../../images/images/avatars/no_image.svg
+
+This is a GSoC Contributor bio placeholder.
+Please create one as soon as possible.
