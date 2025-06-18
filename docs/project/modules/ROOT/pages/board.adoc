@@ -1,72 +1,70 @@
 = Jenkins Board and Officers
 
-// TODO:add links to officers profiles 
-
 As per the Jenkins project https://www.jenkins.io/project/governance/#governance-board[governance document] the project has a board consisting of five members. The board can be contacted confidentially by emailing to mailto:jenkinsci-board@googlegroups.com[jenkinsci-board@googlegroups.com]
 
 == Current Board Members
 
-=== Kohusuke Kawaguchi
+=== Valentin Delaye
 
 [.float-group]
 [.avatar]
 --
-image:images:ROOT:avatars/kohsuke.jpeg[,128,128,float=left]
+image:images:ROOT:avatars/jonesbusy.png[,120,120,float=left]
 
-Kohsuke is the creator of Jenkins.
+Valentin is an open source enthusiast and a DevOps engineer from Switzerland. He's passionate about automation and infrastructure as code. He's currently maintainer of around 30 Jenkins plugins in different areas (APIs, cloud-native, pluggable storage, etc.).
 --
 
-=== Oleg Nenashev
-
-[.float-group]
-[.avatar]
---
-image:images:ROOT:avatars/oleg_nenashev.png[,128,128,float=left]
-
-Jenkins core maintainer and board member, open source software and open hardware advocate, TOC member in the Continuous Delivery Foundation. Oleg started using Hudson for Hardware/Embedded projects in 2008 and became an active Jenkins contributor in 2012. He maintains https://github.com/jenkinsci/jenkinsfile-runner/[Jenkinsfile Runner], contributes to several Jenkins xref:sigs:ROOT:index.adoc[SIGs] and outreach programs (xref:projects:gsoc:index.adoc[Google Summer of Code], xref:events:hacktoberfest:index.adoc[Hacktoberfest]) and organizes xref:projects:jam:index.adoc[Jenkins meetups] in Switzerland and online. Oleg works on the WireMock project and WireMock Cloud community at WireMock Inc.
-
-*Term: 2019/12/03 - 2023/12/03*
---
+*Term: 2024/12/03 - 2026/12/02*
 
 === Alexander Brandes
 
 [.float-group]
 [.avatar]
 --
-image:images:ROOT:avatars/no_image.svg[,128,128,float=left]
+image:images:ROOT:avatars/notmyfault.jpeg[,120,120,float=left]
 
-Alexander is a member of the Jenkins governing board, a core maintainer, and release team member, and actively involved in the process of releasing Jenkins weekly and Long-Term-Support builds.
-He maintains the {plugin}jobConfigHistory[Job Configuration History] and {plugin}ionicons-api[Ionicons API plugin].
-Alexander enjoys working on open source software in his spare time.
-
-*Term: 2022/12/03 - 2024/12/02*
+Alexander is a member of the link:https://plugins.jenkins.io/ionicons-api/[Jenkins governing board], a core maintainer, and release team member, and actively involved in the process of releasing Jenkins weekly and Long-Term-Support builds.
+He maintains the Ionicons API plugin and several link:https://plugins.jenkins.io/ui/search/?query=notmyfault[other plugins].
+If he doesn't work on open source software, Alexander enjoys listening to music and going for a run.
 --
 
-=== Ullrich Hafner
+*Term: 2022/12/03 - 2026/12/02*
+
+=== Basil Crow
 
 [.float-group]
 [.avatar]
 --
-image:images:ROOT:avatars/uhafner.jpg[,128,128,float=left]
+image:images:ROOT:avatars/no_image.svg[,120,120,float=left]
 
-Ullrich Hafner is an active contributor in the Jenkins project since 2007, mostly in the acceptance test harness and the static code analysis suite (which is now replaced by the Warnings Next Generation Plugin).
-
-He is a professor for Software Engineering at the University of Applied Sciences Munich. In his role as professor he tries to win new Jenkins contributors by letting students develop new features and test cases in their student projects and theses.
-
-*Term: 2022/12/03 - 2024/12/02*
+Basil is a long-time Jenkins user and contributor, a Jenkins core maintainer, and the maintainer of the link:https://plugins.jenkins.io/email-ext/[Email Extension], link:https://plugins.jenkins.io/timestamper/[Timestamper], and link:https://plugins.jenkins.io/swarm/[Swarm plugins] (among others). Basil enjoys working on open source software in his free time.
 --
+
+*Term: 2023/12/11 - 2025/12/15*
+
+=== Alex Earl
+
+[.float-group]
+[.avatar]
+--
+image:images:ROOT:avatars/slide_o_mix.jpg[,120,120,float=left]
+
+Alex comes from a .NET background but likes to get his hands dirty in many different languages and frameworks. He currently does embedded development in a silicon validation group. He is an internal evangelist for Jenkins at his company. Alex is a community contributor to Jenkins, working on plugin hosting and maintaining several plugins. He is also involved in a few SIGS. Alex enjoys working on open source software in his "free" time as well as spending time with his family.
+--
+
+*Term: 2024/12/03 - 2026/12/02*
 
 === Mark Waite
 
 [.float-group]
 [.avatar]
 --
-image:images:ROOT:avatars/markewaite.jpg[,128,128,float=left]
+image:images:ROOT:avatars/markewaite.jpg[,120,120,float=left]
 
-Mark is a member of the Jenkins governing board, a long-time Jenkins user and contributor, a core maintainer, and maintainer of the {plugin}git[git plugin], the {plugin}git-client[git client plugin], the {plugin}platformlabeler[platform labeler plugin], the {plugin}embeddable-build-status[embeddable build status plugin], and several others. He is one of the authors of the xref:dev-docs:tutorial-improve:index.adoc["Improve a plugin"] tutorial.
-
-*Term: 2022/12/03 - 2024/12/02*
+Mark is a member of the Jenkins governing board, a long-time Jenkins user and contributor, a core maintainer, and maintainer of the link:https://plugins.jenkins.io/git/[git plugin], the link:https://plugins.jenkins.io/git-client/[git client plugin], the link:https://plugins.jenkins.io/platformlabeler/[platform labeler plugin], the link:https://plugins.jenkins.io/embeddable-build-status/[embeddable build status plugin], and several others. He is one of the authors of the xref:dev-docs:tutorial-improve:index.adoc["Improve a plugin"] tutorial.
 --
+
+*Term: 2021/12/03 - 2025/12/15*
 
 == Officers
 
@@ -80,12 +78,12 @@ In accordance with the xref:team-leads.adoc[Team Leads] structure the following 
 [.float-group]
 [.avatar]
 --
-image:images:ROOT:avatars/wadeck.jpg[,128,128,float=left]
+image:images:ROOT:avatars/wadeck.jpg[,120,120,float=left]
 
-Wadeck is the Jenkins security officer, leading the xref:security:ROOT:team.adoc[security team] in improving Jenkins security. He likes to provide solutions that are both useful and easy to use.
+Wadeck is the Jenkins security officer, leading the xref:security:ROOT:index.adoc[security team] in improving Jenkins security. He likes to provide solutions that are both useful and easy to use.
 --
 
-*Term: 2021/12/03 - 2023/12/02*
+*Term: 2021/12/03 - 2025/12/02*
 
 == Release
 
@@ -94,59 +92,58 @@ Wadeck is the Jenkins security officer, leading the xref:security:ROOT:team.adoc
 [.float-group]
 [.avatar]
 --
-image:images:ROOT:avatars/timja.jpg[,128,128,float=left]
+image:images:ROOT:avatars/timja.jpg[,120,120,float=left]
 
-Jenkins core maintainer, along with slack, azure-keyvault and configuration-as-code plugins. Tim started using Jenkins in 2013 and became an active contributor in 2018. Tim enjoys working on open source software in his “free” time.
+Jenkins core maintainer, along with slack, azure-keyvault and configuration-as-code plugins. Tim started using Jenkins in 2013 and became an active contributor in 2018. Tim enjoys working on open source software in his "free" time.
 --
 
-*Term: 2020/12/03 - 2023/12/02*
+*Term: 2020/12/03 - 2025/12/02*
 
-== Infrastructure 
+== Infrastructure
 
 === Damien DUPORTAL
 
 [.float-group]
 [.avatar]
 --
-image:images:ROOT:avatars/dduportal.jpg[,128,128,float=left]
+image:images:ROOT:avatars/dduportal.jpg[,120,120,float=left]
 
-Damien is the xref:team-leads.adoc#infrastructure[Jenkins Infrastructure officer] and a software engineer at https://www.cloudbees.com/[CloudBees] working as a Site Reliability Engineer for the xref:projects:infrastructure:index[Jenkins Infrastructure project]. Not only he is a decade-old Hudson/Jenkins user but also an open-source citizen who participates in https://www.updatecli.io/[Updatecli], https://asciidoctor.org/[Asciidoctor], https://traefik.io/[Traefik] and many others.
+Damien is the xref:team-leads.adoc#infrastructure[Jenkins Infrastructure officer] and a software engineer at link:https://www.cloudbees.com/[CloudBees] working as a Site Reliability Engineer for the xref:projects:infrastructure:index.adoc[Jenkins Infrastructure project]. Not only he is a decade-old Hudson/Jenkins user but also an open-source citizen who participates in link:https://www.updatecli.io/[Updatecli], link:https://asciidoctor.org/[Asciidoctor], link:https://traefik.io/[Traefik] and many others.
 --
 
-*Term: 2021/12/03 - 2023/12/02*
+*Term: 2021/12/03 - 2025/12/02*
 
-== Events 
+== Events
 
 === Alyssa Tong
 
 [.float-group]
 [.avatar]
 --
-image:images:ROOT:avatars/alyssat.jpg[,128,128,float=left]
+image:images:ROOT:avatars/alyssat.jpg[,120,120,float=left]
 
-Member of the xref:sigs:advocacy-and-outreach:index.adoc[Jenkins Advocacy and Outreach SIG]. Alyssa drives and manages Jenkins participation in community events and conferences like https://fosdem.org/[FOSDEM], https://www.socallinuxexpo.org/[SCaLE], https://events.linuxfoundation.org/cdcon/[cdCON], and https://events19.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2019/[KubeCon]. She is also responsible for Marketing & Community Programs at https://cloudbees.com/[CloudBees, Inc].
+Member of the xref:sigs:advocacy-and-outreach:index.adoc[Jenkins Advocacy and Outreach SIG]. Alyssa drives and manages Jenkins participation in community events and conferences like link:https://fosdem.org/2025/[FOSDEM], link:https://www.socallinuxexpo.org/scale/22x[SCaLE], link:https://events.linuxfoundation.org/cdcon-gitopscon/[cdCON], and link:https://events19.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2019/[KubeCon]. She is also responsible for Marketing & Community Programs at link:https://www.cloudbees.com/[CloudBees, Inc.]
 --
 
-*Term: 2021/12/03 - 2023/12/02*
+*Term: 2021/12/03 - 2025/12/02*
 
-== Documentation 
+== Documentation
 
 === Kevin Martens
 
 [.float-group]
 [.avatar]
 --
-image:images:ROOT:avatars/kmartens27.jpeg[,128,128,float=left]
+image:images:ROOT:avatars/kmartens27.jpeg[,120,120,float=left]
 
 Kevin Martens is part of the CloudBees Documentation team, helping with Jenkins documentation creation and maintenance.
 --
 
-*Term: 2022/12/03 - 2023/12/02*
+*Term: 2022/12/03 - 2025/12/02*
 
 .References
 ****
 * xref:team-leads.adoc[Team Leads (officers)]
 * xref:board-election-process.adoc[Board Election process]
 * link:https://www.jenkins.io/blog/2019/11/08/board-elections/[2019 Board elections]
-
 ****
