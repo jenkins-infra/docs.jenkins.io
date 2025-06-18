@@ -32,8 +32,8 @@ Additional links:
 
 == How to become a mentor?
 
-During GSoC you can join an existing project at any time, including community bonding and coding periods.
-Just send an email to our GSoC mailing list.
+Prior to the start of GSoC you can join a project at any time.
+If you are interested, feel free to email us via our GSoC mailing list.
 You can also xref:projects:gsoc:proposing-project-ideas.adoc[propose your own project] for GSoC, see below.
 
 == Expectations from mentors
@@ -239,7 +239,7 @@ Then we send our slot request min and max numbers to Google.
 This phase is very short and starts immediately when Google sends us our final number of slots.
 
 We may get only the minimum of slots.
-Sometimes heart wrenching decisions need to be made.
+Sometimes heart-wrenching decisions need to be made.
 
 Org Admins and Mentors need to make an extra effort to devote time to this phase because it is very short and this does not leave us much time to make critical decisions, and it just as important as the other phases.
 
@@ -288,7 +288,7 @@ GSoC Contributors and mentors alike benefit from attending.
 
 *Expectation:* about 5 to 8 hours per week until the end of the program.
 
-See also: xref:gsoc:contributors.adoc#coding-periods[student coding periods].
+See also: xref:gsoc:contributors.adoc#coding-periods[contributor coding periods].
 
 You are mentoring now. Guide, coach, review pull-requests, unblock the GSoC Contributor,
 ensure GSoC Contributors use Jira for task, bug and feature tracking,
@@ -302,7 +302,7 @@ What if the GSoC Contributor is done early? GSoC Contributor and mentor must det
 
 *Expectation:* same as during the coding periods.
 
-See also: xref:gsoc:contributors.adoc#evaluations[student evaluations].
+See also: xref:gsoc:contributors.adoc#evaluations[contributor evaluations].
 
 Mentors are expected to evaluate their GSoC Contributor, while they continue to mentor them.
 Coding seldom completely stops during this period.
@@ -321,7 +321,7 @@ This period is a good time to review the Jira tickets and prepare the tickets fo
 If too little code is produced for reasons that cannot be understood,
 inform your GSoC Contributor of your concerns, and ask the GSoC Contributor why this is happening.
 Often GSoC Contributors are blocked on a technical problem and do not communicate with their mentors.
-As a rule of thumb, there should be code pushed to Github almost every day.
+As a rule of thumb, there should be code pushed to GitHub almost every day.
 If not, let the Org Admins know as soon as possible.
 
 [#after_the_program]
