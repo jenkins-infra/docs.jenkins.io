@@ -27,8 +27,8 @@ For example, the addition might look like:
   <dependencies>
     <dependency>
       <groupId>io.jenkins.tools.bom</groupId>
-      <artifactId>bom-2.452.x</artifactId>
-      <version>3080.vfa_b_e4a_a_39b_44</version>
+      <artifactId>bom-2.479.x</artifactId>
+      <version>4740.v75a_90f6fefb_7</version>
       <scope>import</scope>
       <type>pom</type>
     </dependency>

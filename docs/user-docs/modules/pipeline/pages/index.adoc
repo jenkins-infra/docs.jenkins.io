@@ -48,7 +48,7 @@ The definition of a Jenkins Pipeline is written into a text file (called a
 xref:pipeline:jenkinsfile.adoc[`Jenkinsfile`]) which in turn can be committed to a project's
 source control repository.
 footnote:scm[link:https://en.wikipedia.org/wiki/Version_control[Source control management]]
-This is the foundation of "Pipeline-as-code"; treating the CD pipeline a part of
+This is the foundation of "Pipeline-as-code"; treating the CD pipeline as a part of
 the application to be versioned and reviewed like any other code.
 
 Creating a `Jenkinsfile` and committing it to source control provides a number
@@ -70,14 +70,11 @@ the Pipeline in a `Jenkinsfile` and check that in to source control.
 [#declarative-versus-scripted-pipeline-syntax]
 === Declarative versus Scripted Pipeline syntax
 
-A `Jenkinsfile` can be written using two types of syntax - Declarative and
+A `Jenkinsfile` can be written using two types of syntax — Declarative and
 Scripted.
 
 Declarative and Scripted Pipelines are constructed fundamentally differently.
-Declarative Pipeline is a more recent feature of Jenkins Pipeline which:
-
-* provides richer syntactical features over Scripted Pipeline syntax, and
-* is designed to make writing and reading Pipeline code easier.
+Declarative Pipeline is designed to make writing and reading Pipeline code easier, and provides richer syntactical features over Scripted Pipeline syntax.
 
 Many of the individual syntactical components (or "steps") written into a
 `Jenkinsfile`, however, are common to both Declarative and Scripted Pipeline.
@@ -233,7 +230,7 @@ block does two things:
 . Creates a workspace (a directory specific to that particular
   Pipeline) where work can be done on files checked out from source control. +
   *Caution:* Depending on your Jenkins configuration, some workspaces may
-  not get automatically cleaned up after a period of inactivity. See tickets
+  not get automatically cleaned up after a period of inactivity. Refer to the tickets
   and discussion linked from
   https://issues.jenkins.io/browse/JENKINS-2111[JENKINS-2111] for more
   information.
@@ -257,7 +254,7 @@ node {  // <1>
 <1> Execute this Pipeline or any of its stages, on any available agent.
 <2> Defines the "Build" stage. `stage` blocks are optional in Scripted Pipeline
 syntax. However, implementing `stage` blocks in a Scripted Pipeline provides
-clearer visualization of each `stage`'s subset of tasks/steps in the Jenkins UI.
+clearer visualization of each ``stage``'s subset of tasks/steps in the Jenkins UI.
 <3> Perform some steps related to the "Build" stage.
 <4> Defines the "Test" stage.
 <5> Perform some steps related to the "Test" stage.
@@ -267,7 +264,7 @@ clearer visualization of each `stage`'s subset of tasks/steps in the Jenkins UI.
 
 == Pipeline example
 
-Here is an example of a `Jenkinsfile` using Declarative Pipeline syntax - its
+Here is an example of a `Jenkinsfile` using Declarative Pipeline syntax — its
 Scripted syntax equivalent can be accessed by clicking the *Toggle Scripted
 Pipeline* link below:
 
@@ -293,13 +290,13 @@ pipeline { // <1>
         }
         stage('Deploy') {
             steps {
-                sh 'make publish'
+                sh 'make publish' //
             }
         }
     }
 }
 // Script //
-node { // <7>
+node { //
     stage('Build') { // <3>
         sh 'make' // <5>
     }
@@ -308,9 +305,8 @@ node { // <7>
         junit 'reports/**/*.xml' // <6>
     }
     if (currentBuild.currentResult == 'SUCCESS') {
-
         stage('Deploy') {
-            sh 'make publish' // <7>
+            sh 'make publish' //
         }
     }
 }
@@ -333,8 +329,5 @@ describes the steps to be run in this `stage`.
 executes the given shell command.
 <6> `junit` is another Pipeline xref:pipeline:syntax.adoc#steps[step] (provided by the
 {plugin}junit[JUnit plugin]) for aggregating test reports.
-<7> `sh` is a Pipeline xref:pipeline:syntax.adoc#steps[step] (provided by the
-{plugin}workflow-durable-task-step[Pipeline: Nodes and Processes plugin]) that
-executes the given shell command.
 
 Read more about Pipeline syntax on the xref:pipeline:syntax.adoc[Pipeline Syntax] page.
