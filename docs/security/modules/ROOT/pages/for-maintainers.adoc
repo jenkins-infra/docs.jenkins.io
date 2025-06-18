@@ -110,7 +110,8 @@ The following is a rough approximation of the typical recommended lifecycle of a
 
 // TODO == Deciding For or Against Staging
 
-[#staging]
+
+[[staging]]
 == Staging Procedure
 
 Staging includes all the steps described below and is typically done a few days before the scheduled advisory.

@@ -34,7 +34,7 @@ The Jenkins security team then evaluates the report to see whether it's a real s
 We work with maintainers of affected components to address these issues.
 In case of Jenkins (core), security team members usually develop the fixes.
 
-Once fixes are ready, or xref:security:ROOT:plugins.adoc[we've determined that a component is not maintained actively enough], we announce the issues and fixes, if applicable, in a security advisory.
+Once fixes are ready or xref:security:ROOT:plugins.adoc[we've determined that a component is not maintained actively enough], we announce the issues and fixes, if applicable, in a security advisory.
 
 
 [#what-is-a-security-advisory]
@@ -63,7 +63,7 @@ Security advisories published by the Jenkins project contain the following secti
 
 . A list of components included in the advisory
 . Descriptions of the security issues and, if applicable, how they were addressed
-. A list of issue severities using the CVSS 3.0 model
+. A list of issue severities using the CVSS 3.1 model
 . A list of affected versions
 . A list of fix versions, and, if applicable, a list of components for which no fix is available
 . Credits for reporters xref:ROOT:reporting.adoc[who informed the Jenkins project]
