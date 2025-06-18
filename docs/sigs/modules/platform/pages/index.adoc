@@ -21,23 +21,15 @@ xref:ROOT:index.adoc[(Back to List of Jenkins Special Interest Groups )]
 
 [.avatar]
 *Leads*:
-image:images:ROOT:avatars/oleg_nenashev.png[,width=30,height=30] Oleg Nenashev
-image:images:ROOT:avatars/markewaite.jpg[,width=30,height=30] Mark Waite
-image:images:ROOT:avatars/batmat.jpg[,width=30,height=30] Baptiste Mathus
+image:images:ROOT:avatars/gounthar.png[,width=30,height=30] Bruno Verachten
 
 [.avatar]
 *Participants*:
-image:images:ROOT:avatars/alecharp.jpg[,width=30,height=30] Adrien Lecharpentier
-image:images:ROOT:avatars/slide_o_mix.jpg[,width=30,height=30] Alex Earl
-image:images:ROOT:avatars/no_image.svg[,width=30,height=30] David Currie
-image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Devin Nusbaum
-image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Durgadas Kamath
-image:images:ROOT:avatars/lnewman.jpeg[,width=30,height=30] Liam Newman\
-image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Nicolas De Loof
-image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Ramon Leon
-image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Robert Sandell
-image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Sam Van Oort
-image:images:ROOT:avatars/tracymiranda.jpg[,width=30,height=30] Tracy Miranda
+image:images:ROOT:avatars/dduportal.jpg[,width=30,height=30] Damien Duportal
+image:images:ROOT:avatars/kmartens27.jpeg[,width=30,height=30] Kevin Martens
+image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Kenneth P. Salerno
+image:images:ROOT:avatars/hlemeur.jpg[,width=30,height=30] Hervé Le Meur
+image:images:ROOT:avatars/markewaite.jpg[,width=30,height=30] Mark Waite
 
 == Description
 
@@ -55,7 +47,12 @@ Platform SIG cooperates with other groups like the xref:docs:index.adoc[Document
 
 == Topics
 
-* Defining platform support policies (e.g. “defining Windows support policy”)
+* Defining platform support policies, including
+* xref:platform-information:support-policy-java.adoc[Java support policy]
+* xref:platform-information:support-policy-linux.adoc[Linux support policy] 
+* xref:platform-information:support-policy-windows.adoc[Windows support policy]
+* xref:platform-information:support-policy-web-browsers.adoc[Browser support policy]
+* xref:platform-information:support-policy-servlet-containers.adoc[Servlet container support policy]
 * Coordinating effort on new platform support (e.g. {jep}211/README.adoc[Java 11 Support in Jenkins])
 * Working with external communities on better platform support and packaging
 (e.g. ARM architecture support, adapting RedHat packaging to best practices, using systemd, etc.)
@@ -70,12 +67,12 @@ See the link:https://www.jenkins.io/project/roadmap[Jenkins Project roadmap] for
 == Docker images
 
 Jenkins project ships official controller and agent images,
-and we would like to offer Wide support of platforms and architectures there.
+and we would like to offer wide support of platforms and architectures there.
 Scope of interest:
 
 * Enabling official images to run on Arm, IBM s390x, and other platforms
 * Official controller and agent images for Windows
-* Support Multi-architecture Docker images
+* Support multi-architecture Docker images
 * Enabling continuous delivery for Jenkins packaging
 ** Experimental DockerHub organization and deployments from ci.jenkins.io ( {jep}217/README.adoc[JEP-217] )
 
@@ -88,8 +85,6 @@ Scope of interest:
 * xref:user-docs:managing:plugins.adoc[Plugin management in Jenkins Web UI]
 * link:https://github.com/jenkinsci/docker#preinstalling-plugins[Plugin management in Jenkins Docker images]
 * link:https://github.com/jenkinsci/plugin-installation-manager-tool[Plugin Installation Manager CLI Tool]
-* link:https://github.com/jenkinsci/custom-war-packager[Custom Jenkins WAR/Docker packager]
-* xref:projects:gsoc:2020/project-ideas/jenkins-distribution-customize-service.adoc[Custom Jenkins distribution build service]
 * link:https://github.com/jenkinsci/bom[Bill of Materials for Jenkins plugins]
 
 == Java support
@@ -99,9 +94,9 @@ See the current list of supported versions xref:/doc/administration/requirements
 
 Scope of interest:
 
-* Maintaining Java 11 support in Jenkins and driving its adoption
+* Maintaining Java 17 and Java 21 support in Jenkins and driving adoption of new Java versions
 * Migration to link:https://adoptium.net/[Eclipse Temurin] in Docker images
-* Support for future mainstream JVM versions (Java 17)
+* Support for future mainstream JVM versions (Java 25, ...)
 * Support for perspective virtual machines like link:https://www.graalvm.org/[GraalVM] or link:https://quarkus.io/[Quarkus], including native executable packaging
 
 == Windows support
@@ -115,7 +110,6 @@ Scope of interest:
 * Official Docker images for Windows controllers and agents
 * Installation of controllers and agents as Windows services
 * Official link:https://chocolatey.org/packages/jenkins[Jenkins Chocolatey package]
-* {jira}JENKINS-61865[New Windows support policy]
 
 [#meetings]
 == Meetings

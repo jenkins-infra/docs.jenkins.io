@@ -2,6 +2,5 @@
 :page-layout: author
 :page-author_name: Supun Wanniarachchi
 :page-github: supun94
-:page-irc: Supun
-
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 

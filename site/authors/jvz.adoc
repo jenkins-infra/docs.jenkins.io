@@ -1,9 +1,10 @@
 = About the Author
 :page-layout: author
 :page-author_name: Matt Sicker
-:page-twitter: jvz
 :page-github: jvz
-:page-blog: https://musigma.blog/
+:page-authoravatar: ../../images/images/avatars/no_image.svg
+:page-twitter: jvz
 
-
-Mathematician, software engineer, and free software evangelist. Works for CloudBees on the link:/security/[Jenkins Security Team] along with other Jenkins community work since 2018. PMC Chair of the link:https://logging.apache.org/[Apache Logging Services project] and Secretary for the link:https://www.apache.org/[Apache Software Foundation].
+Mathematician, software engineer, and free software evangelist.
+Works for CloudBees on the link:/security/[Jenkins Security Team] along with other Jenkins community work since 2018.
+PMC Chair of the https://logging.apache.org/[Apache Logging Services project] and Secretary for the https://www.apache.org/[Apache Software Foundation].

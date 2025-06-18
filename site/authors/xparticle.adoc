@@ -4,6 +4,4 @@
 :page-github: xparticle
 :page-authoravatar: ../../images/images/avatars/xparticle.png
 
-
-
-Experienced speaker on various things AWS, Confidential computing, SaaS, and in this context EC2 Mac. Loves playing with drones and Astro photography buff otherwise. https://github.com/xparticle[GitHub.
+Experienced speaker on various things AWS, Confidential computing, SaaS, and in this context EC2 Mac. Loves playing with drones and Astro photography buff otherwise. https://github.com/xparticle[GitHub].

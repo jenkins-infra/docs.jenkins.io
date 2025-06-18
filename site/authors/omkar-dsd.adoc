@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Omkar Deshpande
-:page-twitter: omkar_dsd
-:page-github: omkar-dsd
-:page-authoravatar: ../../images/images/avatars/omkar-dsd.jpg
-
-Omkar is the User of Jenkins and is a co-mentor for the plugin:git[git plugin] and the plugin:git-client[git client plugin] (SME for Git) for GSoC'20

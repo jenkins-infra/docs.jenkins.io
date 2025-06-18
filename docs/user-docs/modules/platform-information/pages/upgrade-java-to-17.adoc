@@ -1,11 +1,11 @@
-= Upgrading to Java 17
+= Upgrade to Java 17
 
-When upgrading from JVM used to run Jenkins Java 11 to Java 17, there are some details you should know and precautions you should take.
+When upgrading the JVM used to run Jenkins from Java 11 to Java 17, there are some details you should know and precautions you should take.
 
 .Upgrading Jenkins Java Version From 11 to 17
 video::ZabUz6sl-8I[youtube,width=800,height=420]
 
-== Backing up Jenkins
+== Back up Jenkins
 
 As with any upgrade, we recommend:
 
@@ -13,12 +13,12 @@ As with any upgrade, we recommend:
 . Testing the upgrade with your backup.
 . Only after all required tests pass, performing the upgrade on your production instance.
 
-== Upgrading Jenkins
+== Upgrade Jenkins
 
 If you need to upgrade Jenkins, as well as the JVM, we recommend you:
 
 . xref:system-administration:backing-up.adoc#jenkins_home[Back up `JENKINS_HOME`].
-. Stop the Jenkins instance.
+. Stop the Jenkins controller.
 . Upgrade the JVM on which Jenkins is running.
 ** Use a package manager to install the new JVM.
 ** Ensure the default JVM is the newly installed version.

@@ -13,7 +13,7 @@
 </style>
 ++++
 
-Choose the kind of issue you'd like to report below. *Please be sure to follow the advice on xref:community:ROOT:index.adoc[how to report great issues]*.
+Choose the kind of issue you'd like to report below. *Please be sure to follow the advice on xref:community:ROOT:report-issue.adoc[how to report great issues]*.
 [.participate-connect]
 .Bug
 ****
