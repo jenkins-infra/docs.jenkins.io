@@ -1,11 +1,55 @@
 = Jenkins and Android
 
-[.youtube-videos]
-.Videos related to Android
-****
-video::AYoAEoOoYFE[youtube]
-video::zm6ntUt-vqY[youtube]
-****
+++++
+<style>
+.video-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.video-card {
+  background: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.video-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.video-card .title {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #24292e;
+}
+</style>
+
+<div class="video-card-grid">
+  <a class="video-card" href="https://www.youtube.com/watch?v=AYoAEoOoYFE" target="_blank" rel="noopener">
+    <img src="https://img.youtube.com/vi/AYoAEoOoYFE/0.jpg" alt="Building, Testing & Deploying Android Apps with Jenkins">
+    <div class="title">Building, Testing & Deploying Android Apps with Jenkins</div>
+  </a>
+
+  <a class="video-card" href="https://www.youtube.com/watch?v=zm6ntUt-vqY" target="_blank" rel="noopener">
+    <img src="https://img.youtube.com/vi/zm6ntUt-vqY/0.jpg" alt="Continuous Integration for Mobile Apps with Jenkins Android">
+    <div class="title">Continuous Integration for Mobile Apps with Jenkins Android</div>
+  </a>
+</div>
+++++
 
 As one of the predominant mobile platforms, Android is attractive to a number
 of developers, but it does bring it's own set of challenges with it. With an
@@ -22,9 +66,11 @@ further testing.
 
 .Jenkins ♥ Android Articles
 ****
-* http://blog.zuehlke.com/en/configure-your-android-project-on-jenkins/[Configure your Android project on Jenkins]
+* https://bugfender.com/blog/how-to-add-your-first-android-job-to-jenkins/[How to Add your First Android Job to Jenkins]
+* https://dev.to/dotdashnotdot/compiling-android-in-jenkins-in-docker-a-bitter-victory-1n4e[Compiling Android in Jenkins In Docker]
 * https://www.bignerdranch.com/blog/continuous-delivery-for-android/[Continuous Delivery for Android]
 * https://dzone.com/articles/automating-continuous[Automating Android Projects With Gradle using Jenkins on Windows]
+* https://www.cloudbees.com/blog/building-android-gradle-apps-jenkins[Building Android Gradle Apps with Jenkins]
 ****
 
 .Android plugins for Jenkins
