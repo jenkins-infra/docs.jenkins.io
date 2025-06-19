@@ -1,4 +1,4 @@
-= Jenkins in Google Summer of Code
+= Jenkins in Google Summer of Code 2025
 
 // image:/images/gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=left]
 
