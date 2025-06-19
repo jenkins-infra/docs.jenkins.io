@@ -1,13 +1,70 @@
 = Jenkins and Docker
 
-.Videos related to Docker
-****
-* https://www.youtube.com/watch?v=C00AmRN9BbU[Docker and Jenkins as Code]
-* https://www.youtube.com/watch?v=Pi2kJ2RJS50[Jenkins Minute - Using a Dockerfile with Jenkins Pipeline] 
-* https://www.youtube.com/watch?v=6tcoRIPBd8s[Jenkins - Build & Publish Docker Images]
-* https://www.youtube.com/watch?v=HxoF7x48Uvc[Dockerfile, docker-compose.yml and Jenkinsfile walkthrough for CI]
-* https://www.youtube.com/watch?v=e7N3jX2b1i0[JUC West 2015 - Scaling Jenkins with Docker and Kubernetes]
-****
+++++
+<style>
+.video-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1.5fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.video-card {
+  background: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.video-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.video-card .title {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #24292e;
+}
+</style>
+
+<div class="video-card-grid">
+  <a class="video-card" href="https://www.youtube.com/watch?v=C00AmRN9BbU" target="_blank" rel="noopener">
+    <img src="https://img.youtube.com/vi/C00AmRN9BbU/0.jpg" alt="Docker and Jenkins as Code">
+    <div class="title">Docker and Jenkins as Code</div>
+  </a>
+
+  <a class="video-card" href="https://www.youtube.com/watch?v=Pi2kJ2RJS50" target="_blank" rel="noopener">
+    <img src="https://img.youtube.com/vi/Pi2kJ2RJS50/0.jpg" alt="Jenkins Minute - Using a Dockerfile with Jenkins Pipeline">
+    <div class="title">Jenkins Minute - Using a Dockerfile with Jenkins Pipeline</div>
+  </a>
+
+  <a class="video-card" href="https://www.youtube.com/watch?v=6tcoRIPBd8s" target="_blank" rel="noopener">
+    <img src="https://img.youtube.com/vi/6tcoRIPBd8s/0.jpg" alt="Jenkins - Build & Publish Docker Images">
+    <div class="title">Jenkins - Build & Publish Docker Images</div>
+  </a>
+
+  <a class="video-card" href="https://www.youtube.com/watch?v=HxoF7x48Uvc" target="_blank" rel="noopener">
+    <img src="https://img.youtube.com/vi/HxoF7x48Uvc/0.jpg" alt="Dockerfile, docker-compose.yml and Jenkinsfile walkthrough">
+    <div class="title">Dockerfile, docker-compose.yml and Jenkinsfile walkthrough</div>
+  </a>
+
+  <a class="video-card" href="https://www.youtube.com/watch?v=e7N3jX2b1i0" target="_blank" rel="noopener">
+    <img src="https://img.youtube.com/vi/e7N3jX2b1i0/0.jpg" alt="JUC West 2015 - Scaling Jenkins with Docker and Kubernetes">
+    <div class="title">JUC West 2015 - Scaling Jenkins with Docker and Kubernetes</div>
+  </a>
+</div>
+++++
 
 Combining Jenkins and https://www.docker.io[Docker] together can bring
 improved speed and consistency to your automation tasks, which is why we've
