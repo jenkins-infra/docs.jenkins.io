@@ -1,10 +1,9 @@
 = Jenkins and Android
 
-[.youtube-videos]
 .Videos related to Android
 ****
-video::AYoAEoOoYFE[youtube]
-video::zm6ntUt-vqY[youtube]
+* https://www.youtube.com/watch?v=AYoAEoOoYFE[Building, Testing & Deploying Android Apps with Jenkins]
+* https://www.youtube.com/watch?v=zm6ntUt-vqY[Continuous Integration for Mobile Apps with Jenkins Android]
 ****
 
 As one of the predominant mobile platforms, Android is attractive to a number

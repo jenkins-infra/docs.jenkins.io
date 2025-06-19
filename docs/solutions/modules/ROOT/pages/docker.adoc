@@ -1,13 +1,12 @@
 = Jenkins and Docker
 
-[.youtube-videos]
 .Videos related to Docker
 ****
-video::C00AmRN9BbU[youtube]
-video::Pi2kJ2RJS50[youtube]
-video::6tcoRIPBd8s[youtube]
-video::HxoF7x48Uvc[youtube]
-video::e7N3jX2b1i0[youtube]
+* https://www.youtube.com/watch?v=C00AmRN9BbU[Docker and Jenkins as Code]
+* https://www.youtube.com/watch?v=Pi2kJ2RJS50[Jenkins Minute - Using a Dockerfile with Jenkins Pipeline] 
+* https://www.youtube.com/watch?v=6tcoRIPBd8s[Jenkins - Build & Publish Docker Images]
+* https://www.youtube.com/watch?v=HxoF7x48Uvc[Dockerfile, docker-compose.yml and Jenkinsfile walkthrough for CI]
+* https://www.youtube.com/watch?v=e7N3jX2b1i0[JUC West 2015 - Scaling Jenkins with Docker and Kubernetes]
 ****
 
 Combining Jenkins and https://www.docker.io[Docker] together can bring
