@@ -13,11 +13,11 @@ pipeline {
   stages {
     stage('Check for typos') {
       steps {
-        sh './typos --format json | ./typos-checkstyle - > checkstyle.xml || true'
+        sh 'typos --format sarif > typos.sarif || true'
       }
       post {
         always {
-          recordIssues(tools: [checkStyle(id: 'typos', name: 'Typos', pattern: 'checkstyle.xml')])
+          recordIssues(tools: [sarif(id: 'typos', name: 'Typos', pattern: 'typos.sarif')])
         }
       }
     }
