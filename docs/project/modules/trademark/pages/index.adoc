@@ -73,6 +73,13 @@ reasonable facsimile of these attributions may be used. In case of doubt as to
 the proper shortened form, examples may be submitted to the Jenkins project for
 approval.
 
+== References
+
+* link:https://trademarks.justia.com/854/47/jenkins-85447465.html[Jenkins - Trademark Details #4664929]
+* link:https://www.linuxfoundation.org/trademarks/[Linux Foundation Trademarks]
+* link:https://www.linuxfoundation.org/legal/trademark-usage/[Linux Foundation Trademark Usage Guidelines]
+* xref:approved-usage.adoc[Approved Trademark Usage (before Feb 24, 2021)]
+
 == Change History
 
 === Feb 24, 2021
