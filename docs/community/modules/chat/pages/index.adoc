@@ -1,10 +1,7 @@
 = Chat
 
-The Jenkins project meets to discuss various topics on Matrix, commonly referenced as “Gitter,” because most of our rooms live on the gitter.im server.
+The Jenkins project meets to discuss various topics on Matrix, commonly referenced as “Gitter”, because a majority of our rooms live on the gitter.im server.
 In addition to the general purpose rooms and channels listed below, xref:sigs:ROOT:index.adoc[special interest groups] and xref:projects:ROOT:index.adoc[sub-projects] have their own spaces, and you will see chat rooms linked from their pages.
-
-WARNING: The bridge that synced messages between Matrix and IRC has been link:https://matrix.org/blog/2023/08/libera-bridge-disabled/[suspended] indefinitely.
-Messages are not synchronized between the services. We recommend using the Gitter/Matrix rooms for accessibility.
 
 == Gitter
 
@@ -43,6 +40,9 @@ https://libera.chat/guides/clients[Find an IRC client].
 
 === `#jenkins`
 
+WARNING: The bridge that synced messages between Matrix and IRC has been link:https://matrix.org/blog/2023/08/libera-bridge-disabled/[suspended] indefinitely.
+Messages are not synchronized between the services. We recommend using the Gitter/Matrix rooms for accessibility.
+
 General discussions channel for Jenkins users and developers.
 It used to be the primary one until non-IRC communication options were introduced.
 
@@ -51,16 +51,6 @@ If you want to join the matrix room IRC messages were bridged to earlier, connec
 **Tip:** If you have a question about Jenkins, just ask it. Don't ask whether you can ask a question.
 It's common to not receive an answer for quite a while if no active contributors are currently checking IRC.
 In that case, just stick around, and periodically (every few hours) ask your question again.
-
-[#jenkins-infra]
-=== `#jenkins-infra`
-
-Discussions of the xref:projects:infrastructure:index.adoc[Jenkins project infrastructure], i.e. most services running on `jenkins.io`, `jenkins-ci.org`, and related domains.
-
-=== `#jenkins-release`
-
-Channel for coordinating the Jenkins https://www.jenkins.io/download/weekly/[weekly] and https://www.jenkins.io/download/lts/[LTS] releases.
-It is used by the Release Team when planning and rolling out the new releases and release candidates.
 
 === `#jenkins-hosting`
 
@@ -79,7 +69,6 @@ Example error:
 ----
 [10:28] -NickServ- my_nickname is not a registered nickname.
 [10:28] == #jenkins Cannot join channel (+r) - you need to be identified with services
-
 ----
 
 That means you basically need to create a reserved nick for you, link:https://libera.chat/guides/registration[following the official documentation].
