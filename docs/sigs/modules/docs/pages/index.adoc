@@ -48,15 +48,15 @@ xref:ROOT:index.adoc[(Back to List of Jenkins Special Interest Groups )]
 
 [.avatar]
 *Leads*:
+image:images:ROOT:avatars/kmartens27.jpeg[,width=30,height=30] Kevin Martens
 image:images:ROOT:avatars/markewaite.jpg[,width=30,height=30] Mark Waite
 
 [.avatar]
 *Participants*:
-image:images:ROOT:avatars/dheerajodha.jpg[,width=30,height=30] Dheeraj Singh Jodha
-image:images:ROOT:avatars/no_image.svg[,width=30,height=30] Kristin Whetstone
+image:images:ROOT:avatars/gounthar.png[,width=30,height=30] Bruno Verachten
+image:images:ROOT:avatars/krisstern.png[,width=30,height=30] Kris Stern
 image:images:ROOT:avatars/stackscribe.jpg[,width=30,height=30] Meg McRoberts
-image:images:ROOT:avatars/oleg_nenashev.png[,width=30,height=30] Oleg Nenashev
-image:images:ROOT:avatars/zaycodes.jpg[,width=30,height=30] Zainab Daodu
+image:images:ROOT:avatars/vandit1604.jpeg[,width=30,height=30] Vandit Singh
 
 The SIG offers a venue for all kinds of documentation creation, improvement, and delivery.
 
@@ -75,8 +75,8 @@ The group focuses on documentation for Jenkins including:
   Also, implementation solutions like xref:solutions:ROOT:pipeline.adoc[Pipeline]
 
 The Documentation SIG also collaborates with other groups.
-For example, we cooperate with the xref:platform:index.adoc[Platform SIG] on platform topics.
-s
+For example, we cooperate with the xref:platform:index.adoc[Platform SIG] on platform topics and the xref:advocacy-and-outreach:index.adoc[Advocacy and Outreach SIG] on community topics.
+
 == Topics
 
 * Reviewing link:https://www.jenkins.io/changelog/[weekly changelogs]
@@ -96,7 +96,7 @@ If you have any questions or ideas, please feel free to reach out to us using th
 [#ongoing-projects]
 == Projects
 
-This section lists some of the projects working under the direction of this SIG.
+This section lists some of the past projects completed under the direction of this SIG.
 See the link:https://docs.google.com/document/d/1ygRZnVtoIvuEKpwNeF_oVRVCV5NKcZD1_HMtWlUZguo/edit?usp=sharing[SIG meeting notes] for more information about ongoing projects.
 
 === Google Season of Docs
@@ -104,6 +104,10 @@ See the link:https://docs.google.com/document/d/1ygRZnVtoIvuEKpwNeF_oVRVCV5NKcZD
 Google Season of Docs brings together open source communities and technical writers for the benefit of both.
 The program raises awareness of open source, of documentation, and of technical writing.
 There are no current plans to participate in Google Season of Docs, but if you are curious, refer to our link:/sigs/docs/gsod[Google Season of Docs page] for past documentation project ideas and other information.
+
+As of May 2025, the Google Season of Docs has program concluded.
+This conclusion was originally announced in a Google Summer of Code user group and is currently displayed on the main link:https://developers.google.com/season-of-docs[GSoD page].
+More information will be made available at a later time via the link:https://opensource.googleblog.com/[Google Open Source Blog].
 
 [#plugin-documentation-on-github]
 === Plugin documentation on GitHub

@@ -2,7 +2,7 @@
 :page-layout: author
 :page-author_name: 史彦军(yJunS)
 :page-github: yJunS
+:page-authoravatar: ../../images/images/avatars/no_image.svg
 :page-twitter: yJun_S
-
 
 yJunS is one of the contributor managers of the Jenkins China community.

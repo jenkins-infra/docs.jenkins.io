@@ -1,9 +1,10 @@
 = About the Author
 :page-layout: author
 :page-author_name: Martin d'Anjou
-:page-twitter: martindanjou14
 :page-github: martinda
-:page-irc: martinda
 :page-authoravatar: ../../images/images/avatars/martinda.png
+:page-twitter: martindanjou14
 
-Martin is a Jenkins community member. He participates since 2016 in the Jenkins GSoC program as a mentor, and more recently as an organization admin. He currently works in ASIC/FPGA Development Automation, using Jenkins, Gradle, Make, Artifactory, and a million other tools and languages.
+Martin is a Jenkins community member. 
+He participates since 2016 in the Jenkins GSoC program as a mentor, and more recently as an organization admin.
+He currently works in ASIC/FPGA Development Automation, using Jenkins, Gradle, Make, Artifactory, and a million other tools and languages.
