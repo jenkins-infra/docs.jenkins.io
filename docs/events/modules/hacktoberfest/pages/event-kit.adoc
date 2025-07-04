@@ -1,5 +1,6 @@
 = Hacktoberfest - Jenkins Event Kit
 
+
 NOTE: This page is an extension of the standard link:https://hacktoberfest.com/events/#organizers[Hacktoberfest Event Kit].
 Please refer to this page for the base guidelines.
 
@@ -8,8 +9,7 @@ Please refer to this page for the base guidelines.
 Hacktoberfest is an online event,
 but there are many events being organized by open-source communities.
 You can join one of link:https://hacktoberfest.com/events/[these events].
-We encourage xref:projects:ROOT:index.adoc#jam[Jenkins Area Meetup (JAM)] organizers and contributors to
-run Jenkins-specific events in October (workshops, hackergartens, hackathons, etc.).
+We encourage xref:projects:ROOT:index.adoc#jam[Jenkins Area Meetup (JAM)] organizers and contributors to run Jenkins-specific events in October (workshops, hackergartens, hackathons, etc.).
 
 
 == How to organize an event?
