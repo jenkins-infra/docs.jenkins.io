@@ -86,7 +86,8 @@ stage('Unit Tests') {
             reportName: 'Coverage Report (HTML)',
             reportTitles: ''
         ])
-        publishCoverage adapters: [coberturaAdapter('build/logs/cobertura.xml')]
+        discoverGitReferenceBuild()
+        recordCoverage(tools: [[parser: 'COBERTURA', pattern: 'build/logs/cobertura.xml']])
     }
 }
 ----
@@ -160,7 +161,6 @@ Set the report location in CodeSniffers configuration file (`phpcs.xml`):
 ----
 
 ==== Ignoring tool run failures / tuning failure conditions
-
 If you want the build to pass regardless of the results of tools (ie. ignore
 the exit code), you can append `|| exit 0` to the end of the `sh` command.
 

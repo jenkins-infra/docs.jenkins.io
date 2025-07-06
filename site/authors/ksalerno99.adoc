@@ -1,0 +1,7 @@
+= About the Author
+:page-layout: author
+:page-author_name: Kenneth P. Salerno
+:page-github: ksalerno99
+:page-authoravatar: ../../images/images/avatars/no_image.svg
+
+Kenneth P. Salerno is a regular participant in the Jenkins Platform SIG and has contributed to the S390X and ppc64le platforms.

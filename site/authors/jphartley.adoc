@@ -1,8 +1,8 @@
 = About the Author
 :page-layout: author
 :page-author_name: Jeremy Hartley
-:page-twitter: hartleypm
 :page-github: jphartley
+:page-authoravatar: ../../images/images/avatars/no_image.svg
+:page-twitter: hartleypm
 
-
-Jeremy is the Jenkins Product Manager working at link:https://www.cloudbees.com[CloudBees]. He is especially interested in helping to create a new User Interface for Jenkins. 
+Jeremy is the Jenkins Product Manager working at link:https://www.cloudbees.com[CloudBees]. He is especially interested in helping to create a new User Interface for Jenkins.
