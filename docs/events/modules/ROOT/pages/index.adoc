@@ -8,6 +8,12 @@ There are many online and local Jenkins-related events: including conferences, m
 * xref:devops-world:index.adoc[DevOps World]. CloudBees organizes the DevOps World conference and includes Jenkins topics in the conference agenda.
 * xref:hacktoberfest:index.adoc[Hacktoberfest]. Jenkins project is participating to Hacktoberfest.
 
+[#major-events]
+== Major Events
+
+There are no upcoming major events registered in the database. If you see that your event is missing, please submit a change to our website.
+
+link:https://github.com/jenkins-infra/jenkins.io/blob/master/CONTRIBUTING.adoc#adding-an-event[> How to add an event to the Jenkins website?]
 
 [#event-calendar]
 == Event Calendar
