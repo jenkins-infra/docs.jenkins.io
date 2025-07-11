@@ -1,6 +1,0 @@
----
-:page-eventTitle: Los Angeles JAM
-:page-eventStartDate: 2016-08-31T19:00:00
-:page-eventLink: https://www.meetup.com/Los-Angeles-Jenkins-Area-Meetup/events/233412702/
----
-Scalable Jenkins at ZeroStack

@@ -1,6 +1,0 @@
----
-:page-eventTitle: Jenkins 2.0 vJAM
-:page-eventStartDate: 2016-05-04T9:00:00
-:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/230154841/
----
-Join Kohsuke Kawaguchi and other Jenkins contributors for the inaugural virtual JAM with sessions on Jenkins 2.0

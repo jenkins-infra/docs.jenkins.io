@@ -1,6 +1,0 @@
----
-:page-eventTitle: St.Petersburg, Russia JAM
-:page-eventStartDate: 2017-09-21T18:45:00
-:page-eventLink: https://www.meetup.com/St-Petersburg-Jenkins-Meetup/events/243044875/
----
-Jenkins and Infrastructure-as-Code. Ansible, Docker, Terraform and other tools

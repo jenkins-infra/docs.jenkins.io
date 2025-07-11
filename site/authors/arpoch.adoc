@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Harshit Chopra
-:page-github: arpoch
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-:page-twitter: Harshit14413301
-:page-linkedin: harshit-chopra-275269178
-
-Harshit Chopra is an open source enthusiast from India.

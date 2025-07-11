@@ -1,6 +1,0 @@
----
-:page-eventTitle: Day of Jenkins [as code], Copenhagen
-:page-eventStartDate: 2018-10-19T08:30:00
-:page-eventLink: https://www.code-conf.com/2018/day-of-jenkins-as-code/
----
-A full day of presentations and workshops on Jenkins Configuration as Code, and the latest around Jenkins.

@@ -1,6 +1,0 @@
----
-:page-eventTitle: Amsterdam JAM
-:page-eventStartDate: 2018-05-15T9:00:00
-:page-eventLink: https://www.meetup.com/Amsterdam-Jenkins-Area-Meetup/events/262439777/
----
-Cloud Native CI/CD with Jenkins X

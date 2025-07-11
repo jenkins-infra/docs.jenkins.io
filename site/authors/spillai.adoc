@@ -1,7 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Sanil Pillai
-:page-github: spillai
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-
-Director of Labs & Strategic Insights, Infostretch

@@ -1,6 +1,0 @@
----
-:page-eventTitle: Jenkins User Conference China
-:page-eventStartDate: 2017-11-19T9:00:00
-:page-eventLink: https://www.bagevent.com/event/jenkins-user-conference
----
-Come join the first Jenkins User Conference in China!

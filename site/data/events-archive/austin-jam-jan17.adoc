@@ -1,6 +1,0 @@
----
-:page-eventTitle: Austin JAM
-:page-eventStartDate: 2017-01-19T18:00:00
-:page-eventLink: https://www.meetup.com/Austin-Jenkins-Area-Meetup/events/236706375/
----
-Jenkins War Stories

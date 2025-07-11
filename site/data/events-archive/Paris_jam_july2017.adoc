@@ -1,6 +1,0 @@
----
-:page-eventTitle: Paris JAM
-:page-eventStartDate: 2017-07-11T09:00:00
-:page-eventLink: https://www.meetup.com/Paris-Jenkins-Area-Meetup/events/240232786/
----
-Jenkins Community Day Paris

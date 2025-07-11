@@ -1,6 +1,0 @@
----
-:page-eventTitle: Post FOSDEM Contributor Hackathon
-:page-eventStartDate: 2017-02-06T9:00:00
-:page-eventLink: https://www.meetup.com/jenkinsmeetup/events/236370750/
----
-Hackathon

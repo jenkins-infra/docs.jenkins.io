@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Christopher Orr
-:page-github: orrc
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-:page-twitter: orrc
-
-Chris has been hanging around the Jenkins project since 2008, working on plugins, helping out folk on IRC, and speaking to people at conferences about Jenkins. 
-He maintains several Android-related plugins, and contributes to a few others.
