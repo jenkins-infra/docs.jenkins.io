@@ -3,7 +3,7 @@
 .Connect
 ****
 * https://groups.google.com/g/jenkins-advocacy-and-outreach-sig[Mailing List]
-* https://gitter.im/jenkinsci/advocacy-and-outreach-sig[image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green[Gitter Chat]] 
+* https://gitter.im/jenkinsci/advocacy-and-outreach-sig[image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green[Gitter Chat]]
 * https://docs.google.com/document/d/1K5dTSqe56chFhDSGNfg_MCy-LmseUs_S3ys_tg60sTs/edit#heading=h.9jh09t587y90[Meetings]
 * https://community.jenkins.io/c/contributing/advocacy-and-outreach[Forum]
 ****
