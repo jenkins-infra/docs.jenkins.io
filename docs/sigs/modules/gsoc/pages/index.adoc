@@ -2,7 +2,7 @@
 
 .Connect
 ****
-* https://app.gitter.im/#/room/#jenkinsci_gsoc-sig:gitter.im[Gitter]
+* https://gitter.im/jenkinsci/gsoc-sig[image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green[Gitter Chat]]
 * https://community.jenkins.io/c/contributing/gsoc[Forum]
 ****
 

@@ -2,7 +2,7 @@
 
 .Connect
 ****
-* https://app.gitter.im/#/room/#jenkins/docs:matrix.org[Gitter]
+* https://gitter.im/jenkins/docs[image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green[Gitter Chat]]
 * https://docs.google.com/document/d/1ygRZnVtoIvuEKpwNeF_oVRVCV5NKcZD1_HMtWlUZguo/edit[Meetings]
 ****
 

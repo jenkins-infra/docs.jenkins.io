@@ -2,7 +2,7 @@
 
 .Connect
 ****
-* https://app.gitter.im/#/room/#jenkinsci/ux-sig:matrix.org[Gitter]
+* https://gitter.im/jenkinsci/ux-sig[image:https://img.shields.io/badge/gitter%20-%20join%20chat%20-%20Green[Gitter Chat]]
 * https://docs.google.com/document/d/1QttPwdimNP_120JukigKsRuBvMr34KZhVfsbgq1HFLM/edit?usp=sharing[Meetings]
 * https://community.jenkins.io/c/contributing/ux-sig[Forum]
 ****
