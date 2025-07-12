@@ -1,6 +1,0 @@
----
-:page-eventTitle: Jenkins in the Pub Sydney JAM
-:page-eventStartDate: 2018-07-09T18:00:00
-:page-eventLink: https://www.meetup.com/Sydney-Jenkins-Area-Meetup/events/252351106/
----
-Jenkins in the Pub

@@ -1,7 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Marc Heyries
-:page-github: mheyries
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-
-Marc is a cybersecurity engineer who participated in a hands on project related to Jenkins security during his last year of master.

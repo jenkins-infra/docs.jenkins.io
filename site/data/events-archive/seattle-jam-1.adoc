@@ -1,7 +1,0 @@
----
-:page-eventTitle: Seattle JAM
-:page-eventStartDate: 2016-06-22T18:00:00
-:page-eventLink: https://www.meetup.com/Seattle-Jenkins-Area-Meetup/events/231271904/
----
-Continuously Deploying Containers with Jenkins Pipeline to a Docker Swarm Cluster 
-by Viktor Farcic.

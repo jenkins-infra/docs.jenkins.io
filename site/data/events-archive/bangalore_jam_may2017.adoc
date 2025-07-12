@@ -1,6 +1,0 @@
----
-:page-eventTitle: Bangalore JAM
-:page-eventStartDate: 2017-05-13T14:45:00
-:page-eventLink: https://www.meetup.com/jenkinsBLR/events/239796580/
----
-Jenkins Architecture

@@ -1,7 +1,0 @@
----
-:page-eventTitle: Online JAM: Eclipse OpenJ9 and Jenkins
-:page-eventStartDate: 2018-08-23T17:00:00
-:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/253769950/
----
-What can Eclipse OpenJ9 do for Jenkins?
-The discussion will be led by Steve Poole and Tracy Miranda.

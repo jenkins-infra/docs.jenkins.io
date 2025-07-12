@@ -1,7 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Aliaksei Savanchuk
-:page-github: tempora-mutantur
-:page-authoravatar: ../../images/images/avatars/asavanchuk.jpg
-
-Software developer from Minsk, Belarus.

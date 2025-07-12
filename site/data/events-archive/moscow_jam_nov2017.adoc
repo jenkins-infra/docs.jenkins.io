@@ -1,6 +1,0 @@
----
-:page-eventTitle: Moscow JAM
-:page-eventStartDate: 2017-11-24T18:45:00
-:page-eventLink: https://www.meetup.com/Moscow-Jenkins-Meetup/events/244507783/
----
-Jenkins and DevOps: Ansible, Pipeline, Groovy, Config-as-Code, war stories...

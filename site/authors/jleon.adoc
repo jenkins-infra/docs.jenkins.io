@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Jake Leon
-:page-github: jleon
-:page-authoravatar: ../../images/images/avatars/jleon.jpg
-:page-linkedin: jake-leon-591a93146
-
-Senior Product Manager at CloudBees.
-Google Summer of Code 2022 Mentor for the Plugin Health Scoring Project.

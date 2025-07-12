@@ -1,7 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Prastik Gyawali
-:page-github: dernDren161
-:page-authoravatar: ../../images/images/avatars/dernDren161.jpg
-
-A Student at the National Institute of Technology(NIT) Jaipur, Prastik is currently working on a GSoC Project under Jenkins where he aims at building a new promotion plugin for the artifacts occurring in the pipelines.

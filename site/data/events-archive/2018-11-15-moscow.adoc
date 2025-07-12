@@ -1,8 +1,0 @@
----
-:page-eventTitle: Moscow JAM
-:page-eventStartDate: 2018-11-15T19:00:00
-:page-eventLink: https://www.meetup.com/Moscow-Jenkins-Meetup/events/256063970/
----
-
-Cloud Native Jenkins with Carlos Sanchez:
-Scaling Jenkins with Kubernetes

@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Sladyn Nunes
-:page-github: sladyn98
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-:page-twitter: SladynN
-
-Sladyn is a Computer Science student at Mumbai University, India.
-He is participating in Community Bridge 2019 to provide development tools to JCasC plugin in the form of IDE integrations, schema architecture improvements and configuration extension points link:https://github.com/jenkinsci/configuration-as-code-plugin[Configuration as Code Plugin].
