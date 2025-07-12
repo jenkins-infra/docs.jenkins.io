@@ -1,7 +1,0 @@
----
-:page-eventTitle: St.Petersburg, Russia JAM
-:page-eventStartDate: 2019-03-05T18:30:00
-:page-eventLink: https://www.meetup.com/St-Petersburg-Jenkins-Meetup/events/258988655/
----
-
-Jenkins Pipeline Development with JobDSL, PipelineUnit and Jenkins Test Harness

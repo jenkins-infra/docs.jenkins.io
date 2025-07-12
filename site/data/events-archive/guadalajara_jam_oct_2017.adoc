@@ -1,6 +1,0 @@
----
-:page-eventTitle: Guadalajara JAM
-:page-eventStartDate: 2017-10-11T19:00:00
-:page-eventLink: https://www.meetup.com/Guadalajara-Jenkins-Area-Meetup/events/243929456/
----
-Join us for a demonstration of the Blue Ocean UI/UX

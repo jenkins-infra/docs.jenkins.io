@@ -1,6 +1,0 @@
----
-:page-eventTitle: Tokyo JAM
-:page-eventStartDate: 2017-11-08T21:00:00
-:page-eventLink: https://www.meetup.com/Tokyo-Jenkins-Area-Meetup/events/244527397/
----
-第11回 Jenkins勉強会 懇親会

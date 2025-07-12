@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Julien Danjou
-:page-github: jd
-:page-authoravatar: ../../images/images/avatars/jd.jpg
-:page-twitter: juldanjou
-
-Mergify co-founder and CEO, ex-Red Hat and Datadog engineer, 20 years of contribution to 100+ open-source projects.

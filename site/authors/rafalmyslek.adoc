@@ -1,5 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Rafal Myslek
-:page-github: rafalmyslek
-:page-authoravatar: ../../images/images/avatars/no_image.svg

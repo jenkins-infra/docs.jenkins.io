@@ -1,4 +1,0 @@
----
-layout: redirect
-redirect_url: '/blog/2016/08/17/jenkins-world-speaker-blog-aquilent/'
----

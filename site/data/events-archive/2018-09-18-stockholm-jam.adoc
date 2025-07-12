@@ -1,6 +1,0 @@
----
-:page-eventTitle: Stockholm Jenkins meetup
-:page-eventStartDate: 2018-09-18T18:00:00
-:page-eventLink: https://www.meetup.com/Stockholm-Jenkins-Meetup/events/253986593/
----
-Jenkins September meetup

@@ -1,6 +1,0 @@
----
-:page-eventTitle: Edinburgh JAM
-:page-eventStartDate: 2017-11-30T18:00:00
-:page-eventLink: https://www.meetup.com/Edinburgh-Jenkins-Area-Meetup/events/244836517/
----
-Introduction to Jenkins Pipelines

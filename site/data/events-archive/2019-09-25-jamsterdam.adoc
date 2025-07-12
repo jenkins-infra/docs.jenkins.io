@@ -1,8 +1,0 @@
----
-:page-eventTitle: MATLAB Coders & Jenkins
-:page-eventLocation: Amsterdam
-:page-eventStartDate: 2019-09-25T17:45:00
-:page-eventLink: https://www.meetup.com/Amsterdam-Jenkins-Area-Meetup/events/264495858/
----
-Cloud Native CI/CD with Jenkins X and Continuous Integration with MATLAB.
-

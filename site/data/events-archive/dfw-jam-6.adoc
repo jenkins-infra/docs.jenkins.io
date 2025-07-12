@@ -1,6 +1,0 @@
----
-:page-eventTitle: DFW JAM
-:page-eventStartDate: 2016-10-06T19:00:00
-:page-eventLink: https://www.meetup.com/DFW-Jenkins-Area-Meetup/events/233563501/
----
-Blue Ocean: A New User Experience

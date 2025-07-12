@@ -1,8 +1,0 @@
----
-:page-eventTitle: Nizhny Novgorod JAM
-:page-eventStartDate: 2019-04-20T10:00:00
-:page-eventLink: https://www.meetup.com/Nizhny-Novgorod-Jenkins-Meetup/events/260143937/
----
-
-First Jenkins Area Meetup in the city.
-We will talk about state of Jenkins, Jenkins scalability and Jenkins war stories.

@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Pham Vu Tuan
-:page-github: pvtuan10
-:page-authoravatar: ../../images/images/avatars/pvtuan10.jpeg
-
-Pham Vu Tuan is a developer from Singapore. 
-He starts contributing to Jenkins from Google Summer of Code 2018 for link:/projects/gsoc/2018/remoting-over-message-bus/[Jenkins Remoting over Message Bus/Queue]

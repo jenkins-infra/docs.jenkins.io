@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Rajiv Ranjan Singh
-:page-github: iamrajiv
-:page-authoravatar: ../../images/images/avatars/iamrajiv.jpg
-:page-twitter: therajiv
-:page-linkedin: iamrajivranjansingh
-

@@ -1,7 +1,0 @@
----
-:page-eventTitle: Lima JAM 16/08
-:page-eventStartDate: 2016-08-16T19:00:00
-:page-eventLink: https://www.meetup.com/Lima-Jenkins-Area-Meetup/events/232700185/
----
-
-Continuous Delivery de Código, Infraestructura y Documentación con Jenkins
