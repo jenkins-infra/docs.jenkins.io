@@ -1,8 +1,0 @@
-
-= SCaLE 21X
-:page-eventLocation: Pasadena, CA
-:page-eventStartDate: 2024-03-15T10:00:00
-:page-eventLink: https://www.socallinuxexpo.org/scale/21x
- 
-
-Visit Jenkins at SCaLE!

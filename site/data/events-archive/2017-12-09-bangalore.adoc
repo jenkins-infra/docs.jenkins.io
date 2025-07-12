@@ -1,6 +1,0 @@
----
-:page-eventTitle: Bangalore JAM
-:page-eventStartDate: 2017-12-09T14:45:00
-:page-eventLink: https://www.meetup.com/jenkinsBLR/events/240212894/
----
-Jenkins Pipeline/BlueOcean Hackathon

@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Natasha Stopa
-:page-github: stopalopa
-:page-twitter: stopamine
-:page-authoravatar: ../../images/images/avatars/stopalopa.jpg
-
-Natasha is a Master's student at Penn State University. She was accepted to Google Summer of Code 2019 for a project on creating link:/projects/gsoc/2019/plugin-installation-manager-tool-cli/[a plugin management tool]. In her spare time she enjoys spending time outdoors, listening to podcasts and cuddling with her cat.

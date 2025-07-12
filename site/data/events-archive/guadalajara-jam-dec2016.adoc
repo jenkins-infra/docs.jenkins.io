@@ -1,7 +1,0 @@
----
-:page-eventTitle: Guadalajara JAM
-:page-eventStartDate: 2016-12-14T19:00:00
-:page-eventLink: https://www.meetup.com/Guadalajara-Jenkins-Area-Meetup/events/234929920/
----
-
-Jenkins and  Docker

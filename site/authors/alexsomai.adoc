@@ -1,7 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Alexandru Somai
-:page-twitter: alex_somai
-:page-github: alexsomai
-
-

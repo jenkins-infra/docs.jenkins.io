@@ -1,6 +1,0 @@
----
-:page-eventTitle: Guadalajara JAM
-:page-eventStartDate: 2017-11-16T19:00:00
-:page-eventLink: https://www.meetup.com/Guadalajara-Jenkins-Area-Meetup/events/243929456/
----
-Blue Ocean - A new user experience for Jenkins

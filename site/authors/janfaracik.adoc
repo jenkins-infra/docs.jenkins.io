@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Jan Faracik
-:page-github: janfaracik
-:page-twitter: janfaracik
-:page-linkedin: janfaracik
-:page-authoravatar: ../../images/images/avatars/janfaracik.jpg
-
-Developer. Loves design, walking and the occasional pizza.

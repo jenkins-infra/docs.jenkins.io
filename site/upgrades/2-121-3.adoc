@@ -1,2 +1,0 @@
-:page-layout: upgrades
-No notable changes requiring upgrade notes.

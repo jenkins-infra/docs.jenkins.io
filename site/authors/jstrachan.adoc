@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: James Strachan
-:page-twitter: jstrachan
-:page-github: jstrachan
-:page-authoravatar: ../../images/images/avatars/jstrachan.jpeg
-
-James is a long time open source contributor, created the Groovy programming language and Apache Camel integration framework. For the past few years he's been working on CI/CD with Kubernetes.

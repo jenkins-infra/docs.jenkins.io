@@ -1,7 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Jakub Al-Khalili
-:page-github: jakalkhalili
-
-
-Software Engineer at VirtusLab, working in area of cloud-native technologies. Maintainer of Jenkins Kubernetes Operator.

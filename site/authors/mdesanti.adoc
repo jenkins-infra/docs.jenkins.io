@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Matias De Santi
-:page-twitter: mdsanti
-:page-github: mdesanti
-
-
-Head of Infrastructure & Cloud at link:https://www.wolox.com.ar[Wolox]

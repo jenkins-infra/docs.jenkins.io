@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Andrew Bayer
-:page-twitter: abayer
-:page-github: abayer
-
-
-
-Andrew was a core committer to Hudson and the author of numerous plugins.

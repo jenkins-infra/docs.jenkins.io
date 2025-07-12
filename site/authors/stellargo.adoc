@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Sumit Sarin
-:page-github: stellargo
-:page-blog: https://medium.com/@sumitsarinofficial
-:page-linkedin: sumit-sarin
-:page-authoravatar: ../../images/images/avatars/stellargo.jpeg
-
-Jenkins Google Summer of Code 2020 student. Sumit is an engineering student (senior) at Netaji Subhas Institute of Technology, University of Delhi. He started his journey of contributing to Jenkins in December 2019. His tiny contribution revolved around the Jenkins Fingerprint engine. He is currently working on building link:/projects/gsoc/2020/projects/external-fingerprint-storage[External Fingerprint Storage for Jenkins].

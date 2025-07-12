@@ -1,6 +1,0 @@
----
-:page-eventTitle: Triangle Jenkins Area Meetup
-:page-eventStartDate: 2018-04-11T18:00:00
-:page-eventLink: https://www.meetup.com/Raleigh-Jenkins-Area-Meetup/events/248994252/
----
-We are currently looking for speakers for this Triangle Jenkins Area Meetup.

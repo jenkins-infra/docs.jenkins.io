@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Andrea Chiera
-:page-linkedin: andreachiera
-:page-github: andreachiera
-:page-authoravatar: ../../images/images/avatars/andreachiera.jpg
-
-Andrea is a cybersecurity engineer, with also experience in software development, who participated in an internship related to Jenkins security.

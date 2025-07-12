@@ -1,6 +1,0 @@
----
-:page-eventTitle: Jenkins Community Day Paris
-:page-eventStartDate: 2017-07-11T09:00:00
-:page-eventLink: https://jcd-paris.jfrog.com
----
-One Full Day of Jenkins
