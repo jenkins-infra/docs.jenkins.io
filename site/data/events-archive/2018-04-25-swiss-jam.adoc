@@ -1,6 +1,0 @@
----
-:page-eventTitle: GenevaJUG
-:page-eventStartDate: 2018-04-25T18:30:00
-:page-eventLink: https://www.meetup.com/Swiss-Jenkins-Area-Meetup/events/249970166/
----
-Pipeline as Code with Jenkins: intro and new features

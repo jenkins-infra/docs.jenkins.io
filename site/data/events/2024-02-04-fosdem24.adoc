@@ -1,8 +1,0 @@
-
-= FOSDEM'24
-:page-eventlocation: Brussels, Belgium
-:page-eventstartdate: 2024-02-04T09:00:00
-:page-eventlink: https://fosdem.org/2024/
-
-
-Day 2 of FOSDEM'24. Visit the Jenkins stand in building K, level 1 and take home some stickers!

@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Bervianto Leo Pratama
-:page-github: berviantoleo
-:page-authoravatar: ../../images/images/avatars/berviantoleo.jpg
-:page-twitter: berviantoleo
-:page-linkedin: bervianto-leo-pratama
-
-Bervianto Leo Pratama is a Software Engineer who loves to learn every day. He is interested in DevOps, Cyber Security, and DevSecOps. He usually shares his content in a blog.

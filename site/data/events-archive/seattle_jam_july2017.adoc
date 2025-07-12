@@ -1,6 +1,0 @@
----
-:page-eventTitle: Seattle JAM
-:page-eventStartDate: 2017-07-25T18:00:00
-:page-eventLink: https://www.meetup.com/Seattle-Jenkins-Area-Meetup/events/241815193/
----
-Pipelines for Microservices

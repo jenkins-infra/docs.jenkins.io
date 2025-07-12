@@ -1,7 +1,0 @@
----
-:page-eventTitle: Dublin JAM
-:page-eventStartDate: 2018-02-15T18:30:00
-:page-eventLink: https://www.meetup.com/Dublin-Jenkins-Meetup/events/246674870/
----
-
-Jenkins User and Developer Meetup - 2018 Q1

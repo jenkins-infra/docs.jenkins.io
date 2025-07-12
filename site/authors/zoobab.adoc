@@ -1,7 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Benjamin Henrion
-:page-github: zoobab
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-:page-twitter: zoobab
-

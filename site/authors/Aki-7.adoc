@@ -1,7 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Akihiro Kiuchi
-:page-github: Aki-7
-:page-authoravatar: ../../images/images/avatars/aki-7.jpg
-
-GSoC 2021 student (Jenkins Remoting Monitoring). Akihiro is a student in the Department of information and communication engineering at the University of Tokyo.

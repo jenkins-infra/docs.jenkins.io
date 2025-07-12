@@ -1,7 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Forest Jing
-:page-github: fjing
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-
-Forest runs the link:https://www.meetup.com/Shanghai-Jenkins-Area-Meetup/[Shanghai Jenkins Area Meetup] and link:https://www.bagevent.com/event/jenkins-user-conference[Jenkins User Conference China].

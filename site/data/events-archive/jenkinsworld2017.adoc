@@ -1,6 +1,0 @@
----
-:page-eventTitle: Jenkins World 2017
-:page-eventStartDate: 2017-08-28T8:00:00
-:page-eventLink: https://www.cloudbees.com/jenkinsworld/home
----
-The Largest Jenkins Event

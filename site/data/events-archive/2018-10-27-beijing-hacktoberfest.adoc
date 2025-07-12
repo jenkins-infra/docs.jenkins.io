@@ -1,6 +1,0 @@
----
-:page-eventTitle: Hacktoberfest, Beijing
-:page-eventStartDate: 2018-10-27T13:30:00
-:page-eventLink: https://www.meetup.com/Beijing-Jenkins-Area-Meetup/events/255607288/
----
-Hackathon and introduction to Jenkins development.

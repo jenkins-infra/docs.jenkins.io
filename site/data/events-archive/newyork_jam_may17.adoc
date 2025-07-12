@@ -1,6 +1,0 @@
----
-:page-eventTitle: New York, JAM
-:page-eventStartDate: 2017-05-25T18:00:00
-:page-eventLink: https://www.meetup.com/New-York-Jenkins-Area-Meetup/events/239545660/
----
-Jenkins Pipeline with Apache JMeterTM & Taurus

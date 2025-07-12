@@ -1,6 +1,0 @@
----
-:page-eventTitle: Jenkins World 2016
-:page-eventStartDate: 2016-09-13T09:00:00
-:page-eventLink: https://www.jenkinsworld.com
----
-The largest Jenkins gathering in 2016. Three full days of Jenkins learning and networking with heavy contributors from around the globe. CFP is CLOSED.

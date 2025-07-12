@@ -1,8 +1,0 @@
----
-:page-eventTitle: Triangle JAM
-:page-eventLocation: Raleigh, NC
-:page-eventStartDate: 2019-09-11T18:00:00
-:page-eventLink: https://www.meetup.com/Raleigh-Jenkins-Area-Meetup/events/knpjvqyzmbpb/
----
-We are currently looking for speakers for this Triangle Jenkins Area Meetup.
-Contact us!

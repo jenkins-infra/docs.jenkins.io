@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Oliver Gondža
-:page-github: olivergondza
-:page-authoravatar: ../../images/images/avatars/olivergondza.png
-:page-twitter: ogondza
-
-Engineer at Red Hat. Open Source enthusiast. Jenkins core member.
