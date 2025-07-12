@@ -7,7 +7,7 @@ infrastructure including services which help to keep the project running.
 The kind of things that fall into "infrastructure" can span from operating
 virtual machines, containers, configuring network or developing and maintaining project-specific applications to make the development of Jenkins core and plugins more efficient.
 
-Because we strongly believe in Open Source principles, we also apply them to our infrastructure. As such we consider ourselves as an open infrastructure project where everybody is invited to learn, share, contribute.
+Because we strongly believe in Open Source principles, we also apply them to our infrastructure. As such we consider ourself as an open infrastructure project where everybody is invited to learn, share, contribute.
 
 image:images:ROOT:projects/infrastructure/infra_overview.png[Overview, role=center, float=left]
 
@@ -32,9 +32,7 @@ You can find Infra team meeting agenda and meeting notes on
 link:https://github.com/jenkins-infra/documentation/tree/main/meetings[jenkins-infra/documentation].
 
 == Infrastructure
-
 === Provisioning
-
 The Jenkins project runs the most of its infrastructure on Azure, sponsored by link:https://cd.foundation/[Continuous Delivery Foundation].
 This infrastructure is provisioned from the repository https://github.com/jenkins-infra/azure[jenkins-infra/azure] using Terraform and using AKS link:https://github.com/jenkins-infra/charts/[charts].
 
@@ -43,13 +41,11 @@ While we try to stick to Azure, we still have machines sponsored by different or
 === Configuration Management
 
 ==== Infrastructure
-
 The Jenkins project's infrastructure is managed and orchestrated via a git repository named
 link:https://github.com/jenkins-infra/jenkins-infra[jenkins-infra/jenkins-infra] using Puppet.
 We are also using a Kubernetes cluster orchestrated with link:https://github.com/jenkins-infra/charts[jenkins-infra/charts] using Helm & Helmfiles.
 
 ==== Monitoring
-
 Infrastructure is monitored via Datadog.
 Datadog configuration is automated with Terraform on link:https://github.com/jenkins-infra/datadog[jenkins-infra/datadog]
 
@@ -60,12 +56,10 @@ We also provide different dashboards to share the health of our systems.
 |===
 
 ==== Reporting
-
 Pagerduty is used to report issues detected by Datadog,
 we have a follow the sun policy where we try to only be on call during our "available" hours.
 
 == Services
-
 Another major aspect of the Jenkins Infrastructure project, is the maintenance of all services either provided by us or third parties.
 Here is a non-exhaustive list of services that we provide and maintain.
 
@@ -160,7 +154,6 @@ Pick up a task => Communicate => Implement => Deploy => Review
 
 [#pick-up-a-task]
 === Pick Up A Task
-
 To keep track of the work that needs to be done on the Jenkins infrastructure project, we use the link:https://github.com/jenkins-infra/helpdesk/issues[Github help desk repository].
 If you want to contribute, the first step is to find the issue in this project that you want to work on, assign it to you,
 then communicate about it (see xref:#communicate[Communicate]).
@@ -171,7 +164,7 @@ If you can't find an appropriate issue, please create a new one with a clear des
 - What (what your proposal to solve the problem)?
 - How (what are the technical changes to do)?
 
-You may also specify components, and finally you can communicate about it, using the suggestions from the next section.
+You may also specify components and finally you can communicate about it, using the suggestions from the next section.
 
 [TIP]
 .Good First Issues
@@ -184,7 +177,6 @@ link:https://github.com/jenkins-infra/helpdesk/labels/good%20first%20issue[good 
 
 [#communicate]
 === Communicate
-
 Before any implementation, it's important to verify that first, there is (still) a need for some implementation and then that no work has been done in the past.
 The best way for that is to either look after similar issues, ask on IRC or on the mailing list.
 You can also join our weekly meetings to discuss and coordinate the changes.
@@ -238,7 +230,7 @@ So it's easier for everybody to find/review/audit changes and suggest improvemen
 Rule #2: All changes are validated by at least one regular infra contributor via Pull Request.::
 So we always have different people who understand infrastructure changes.
 
-Rem: Non-regular contributors are more than welcome to share their expertise or just ask question which also help to spot incoherences.
+Rem: Non regular contributors are more than welcome to share their expertise or just ask question which also help to spot incoherences.
 
 Code Reviews Purpose:
 
@@ -262,15 +254,13 @@ Fork project -> Create Feature Branch -> Open Pull Request -> Ask Review -> Merg
 ----
 
 === Deployment
-
-The deployment step is the only moment where we need approval from someone with elevated permission. As already mentioned, even if we try to be as open as possible, we don't want to share privileged accesses with every contributor even if we trust them and that mainly for security reasons.
+The deployment step is the only moment where we need approval from someone with elevated permission. As already mentioned, even if we try to be as open as possible, we don't want to share privileged accesses with every contributors even if we trust them and that mainly for security reasons.
 
 
 == Link
-
 Various link which can helpful when looking at the Jenkins infra project
 
-* https://github.com/orgs/jenkins-infra[GitHub Organization]
+* https://github.com/orgs/jenkins-infra[Github Organization]
 * https://github.com/orgs/jenkins-infra/teams[Github Teams]
 * https://github.com/jenkins-infra/helpdesk/issues[Reported Issues]
 * https://github.com/jenkins-infra/helpdesk/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22[Good first issues]
