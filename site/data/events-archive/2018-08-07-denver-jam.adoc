@@ -1,6 +1,0 @@
----
-:page-eventTitle: Jenkins 2 Pipeline as a Code
-:page-eventStartDate: 2018-08-07T17:30:00
-:page-eventLink: https://www.meetup.com/Denver-Jenkins-Area-Meetup/events/252746236/
----
-Denver JAM - Jenkins 2 Pipeline as a Code

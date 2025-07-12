@@ -1,6 +1,0 @@
----
-:page-eventTitle: Pre-FOSDEM Happy Hour
-:page-eventStartDate: 2017-02-03T18:00:00
-:page-eventLink: https://www.meetup.com/jenkinsmeetup/events/236370435/
----
-Beer Anyone?

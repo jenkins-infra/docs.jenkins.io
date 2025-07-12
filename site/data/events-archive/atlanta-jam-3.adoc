@@ -1,6 +1,0 @@
----
-:page-eventTitle: Atlanta JAM #3
-:page-eventStartDate: 2016-08-31T18:00:00
-:page-eventLink: https://www.meetup.com/Atlanta-Jenkins-Meetup/events/233093342/
----
-Using Jenkins & GitHub to build iOS/Mac Projects

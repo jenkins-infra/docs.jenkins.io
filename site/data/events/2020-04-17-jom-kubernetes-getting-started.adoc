@@ -1,8 +1,0 @@
-
-= Jenkins on Kubernetes: Getting started
-:page-eventLocation: Online Meetup
-:page-eventStartDate: 2020-04-17T14:00:00
-:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/269888701/
-
-
-Marky Jackson will show how to run Jenkins natively on Kubernetes and how to provision on-demand agents with the Kubernetes plugin.

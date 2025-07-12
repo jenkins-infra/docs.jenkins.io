@@ -1,6 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Ramon Leon
-:page-github: MRamonLeon
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-

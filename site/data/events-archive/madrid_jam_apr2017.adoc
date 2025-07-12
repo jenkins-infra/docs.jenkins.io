@@ -1,6 +1,0 @@
----
-:page-eventTitle: Madrid JAM
-:page-eventStartDate: 2017-04-27T19:00:00
-:page-eventLink: https://www.meetup.com/Madrid-Jenkins-Area-Meetup/events/237217570/
----
-Jenkins Pipelines: Limitations, Difficulties, Best Practices

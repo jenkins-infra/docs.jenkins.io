@@ -1,6 +1,0 @@
----
-:page-eventTitle: Washington DC JAM
-:page-eventStartDate: 2018-03-01T19:00:00
-:page-eventLink: https://www.meetup.com/Washington-DC-Jenkins-Area-Meetup/events/247847486/
----
-Happy New Year! We are kicking off 2018 with an Online Meetup on March 1st. 

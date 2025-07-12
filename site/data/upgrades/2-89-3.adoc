@@ -1,3 +1,0 @@
-==== Command Launcher Plugin
-
-Jenkins will now correctly install the Command Launcher Plugin when upgrading from before Jenkins 2.86.

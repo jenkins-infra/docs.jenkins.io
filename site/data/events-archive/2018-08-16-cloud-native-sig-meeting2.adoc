@@ -1,6 +1,0 @@
----
-:page-eventTitle: Cloud Native SIG: Status Meeting
-:page-eventStartDate: 2018-08-16T14:00:00
-:page-eventLink: https://www.youtube.com/watch?v=aoJn4AgAEdk
----
-Status updates and discussions: external build logs and configuration storage.

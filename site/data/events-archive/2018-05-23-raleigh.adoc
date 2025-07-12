@@ -1,6 +1,0 @@
----
-:page-eventTitle: Triangle Area Jam
-:page-eventStartDate: 2018-05-23T19:00:00
-:page-eventLink: https://www.meetup.com/Raleigh-Jenkins-Area-Meetup/events/249709599/
----
-DevOps - Philosophy vs Practice: PJ Hagerty, crate.io (Triangle DevOps group)

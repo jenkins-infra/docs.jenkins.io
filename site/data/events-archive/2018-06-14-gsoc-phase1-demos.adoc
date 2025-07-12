@@ -1,7 +1,0 @@
----
-:page-eventTitle: GSoC project demos
-:page-eventStartDate: 2018-06-14T13:00
-:page-eventLink: https://groups.google.com/forum/#!topic/jenkinsci-dev/0o_OYtYjraM
----
-Jenkins Google Summer of Code students will present
-their projects (phase 1 evaluation).

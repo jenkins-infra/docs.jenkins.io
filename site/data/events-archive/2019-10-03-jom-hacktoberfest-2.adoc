@@ -1,9 +1,0 @@
----
-:page-eventTitle: Hacktoberfest opening (2)
-:page-eventLocation: Online Meetup
-:page-eventStartDate: 2019-10-03T14:00:00
-:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/265130441/
----
-
-Introduction to Hacktoberfest in the Jenkins project, Americas and EMEA timezone.
-How to contribute, featured projects and Q&A.
