@@ -1,7 +1,0 @@
----
-:page-eventTitle: Vienna Jenkins Meetup
-:page-eventStartDate: 2016-04-29T17:00:00
-:page-eventLink: https://www.meetup.com/jenkinsmeetup/events/230391829/
----
-Meetup at the Linuxwochen conference.
-Jenkins 2.0, Openstack integration, Pipeline as Code. 

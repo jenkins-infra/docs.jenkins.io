@@ -1,6 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Arnab Banerjee
-:page-github: arnab1896
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-

@@ -1,6 +1,0 @@
----
-:page-eventTitle: Cologne JAM - Meetup #1
-:page-eventStartDate: 2017-10-17T18:00:00
-:page-eventLink: https://www.meetup.com/Cologne-Jenkins-Area-Meetup/events/242646842/
----
-Join us in Cologne for a presentation and Q&A by Andrew Bayer.

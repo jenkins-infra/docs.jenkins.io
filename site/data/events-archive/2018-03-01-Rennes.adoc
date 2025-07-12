@@ -1,6 +1,0 @@
----
-:page-eventTitle: Breizh JAM
-:page-eventStartDate: 2018-03-01T19:00:00
-:page-eventLink: https://www.meetup.com/Rennes-Jenkins-Area-Meetup/events/248027034/
----
-The as code paradigm is about being able to reproduce and/or restore a full environment within minutes based on recipes and automation, managed as code.

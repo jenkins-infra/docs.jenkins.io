@@ -1,6 +1,0 @@
----
-:page-eventTitle: Triangle Jenkins Area Meetup
-:page-eventStartDate: 2018-08-08T18:00:00
-:page-eventLink: https://www.meetup.com/Raleigh-Jenkins-Area-Meetup/events/252030050/
----
-Triangle Jenkins Area Meetup

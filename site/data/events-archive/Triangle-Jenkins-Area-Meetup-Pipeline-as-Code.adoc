@@ -1,7 +1,0 @@
----
-:page-eventTitle: Triangle Jenkins Area Meetup: Pipeline as Code
-:page-eventStartDate: 2017-10-11T18:00:00
-:page-eventLink: https://www.meetup.com/Raleigh-Jenkins-Area-Meetup/events/241684336/
----
-
-Learn how to take Jenkins to the next level with two informative sessions, followed by Q&A. 

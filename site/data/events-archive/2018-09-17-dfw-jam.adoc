@@ -1,6 +1,0 @@
----
-:page-eventTitle: Dallas/Fort Worth JAM
-:page-eventStartDate: 2018-09-17T19:30:00
-:page-eventLink: https://www.meetup.com/DFW-Jenkins-Area-Meetup/events/253978360/
----
-Plano JAM: Testing in the age of Agile / DevOps

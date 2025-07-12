@@ -1,8 +1,0 @@
----
-:page-eventTitle: St.Petersburg, Russia JAM
-:page-eventStartDate: 2019-04-18T18:30:00
-:page-eventLink: https://www.meetup.com/St-Petersburg-Jenkins-Meetup/events/260275158/
----
-
-Jenkins in the serverless world: Jenkinsfile Runner, Jenkins X and other topics.
-Also, there will be an AMA session.

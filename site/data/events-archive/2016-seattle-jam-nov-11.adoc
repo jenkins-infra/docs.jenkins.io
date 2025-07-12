@@ -1,6 +1,0 @@
----
-:page-eventTitle: Seattle JAM at SeaGL
-:page-eventStartDate: 2016-11-11
-:page-eventLink: https://www.meetup.com/Seattle-Jenkins-Area-Meetup/events/235189180/
----
-Jenkins Beer and Social
