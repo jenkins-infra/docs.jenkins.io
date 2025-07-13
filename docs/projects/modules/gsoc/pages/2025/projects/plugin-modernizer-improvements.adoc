@@ -6,7 +6,7 @@
 
 *Status:* Selected
 
-*Contributor:* CodexRaunak
+*Contributor:* image:images:ROOT:avatars/CodexRaunak.jpeg[,width=30,height=30] Raunak Madan
 
 [.avatar]
 *Mentor(s)*:

@@ -6,7 +6,7 @@
 
 *Status:* Selected
 
-*Contributor:* biru-codeastromer
+*Contributor:* image:images:ROOT:avatars/biru-codeastromer.png[,width=30,height=30] Birajit Saikia
 
 [.avatar]
 *Mentor(s)*:

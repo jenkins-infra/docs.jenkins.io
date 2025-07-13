@@ -6,7 +6,7 @@
 
 *Status:* Selected
 
-*Contributor:* maeveho25
+*Contributor:* image:images:ROOT:avatars/maeveho25.png[,width=30,height=30] Maeve Ho 
 
 [.avatar]
 *Mentor(s)*:

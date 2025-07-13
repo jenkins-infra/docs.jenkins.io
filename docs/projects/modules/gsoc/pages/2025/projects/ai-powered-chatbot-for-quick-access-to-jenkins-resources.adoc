@@ -6,7 +6,7 @@
 
 *Status:* Selected
 
-*Contributor:* giovanni-vaccarino
+*Contributor:* image:images:ROOT:avatars/giovanni-vaccarino.jpg[,width=30,height=30] Giovanni Vaccarino
 
 [.avatar]
 *Mentor(s)*:
