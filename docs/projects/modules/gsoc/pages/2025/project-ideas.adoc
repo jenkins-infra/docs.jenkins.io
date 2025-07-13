@@ -16,16 +16,88 @@ The following list contains the project ideas that fully match the Jenkins proje
 |===
 |Project |Category |Skills to study/improve
 
-// Published ideas would be listed here in the same format as the 2023 example
-// For example:
-|*Example Project Title*
-The goal of this project would be described here.
+|*AI-Powered Chatbot for Quick Access to Jenkins Resources*
+Develop an AI-based chatbot to provide users with quick and intuitive access to Jenkins documentation, plugins, and community resources.
 
 Potential Mentor(s): 
-Mentor Name 1
-Mentor Name 2
-|Category 
-|Skill 1, Skill 2, Skill 3
+Vutukuri Sreenivas
+Kris Stern
+Ashutosh Singh
+|Plugins
+|Natural Language Processing (NLP), Python, JavaScript/TypeScript, Jenkins Plugin Development, Machine Learning
+
+|*Backend code refactoring for Infra Statistics*
+To significantly refactor backend code for the Infra Statistics.
+
+Potential Mentor(s): 
+Kris Stern
+Bervianto Leo Pratama
+Phillipp Glanz
+|Infra
+|Groovy, Backend-frontend Integration, Code Refactoring, Infra / DevOps Processes
+
+|*Complete build retooling of jenkins.io*
+Using alternative tooling with Gatsby and Antora to build the Jenkins static site and provide versioned Jenkins documentation.
+
+Potential Mentor(s): 
+Kris Stern
+Bruno Verachten
+Kevin Martens
+Rajiv Ranjan Singh
+|Tools
+|Web development, AsciiDoc, Static website tooling, Documentation, Website retooling
+
+|*Domain-specific LLM based on actual Jenkins usage using ci.jenkins.io data*
+To develop a web app using an existing open-source LLM model with Jenkins usage data collected for domain-specific Jenkins knowledge to be fine-tuned.
+
+Potential Mentor(s): 
+Kris Stern
+Harsh Pratap Singh
+Shivay Lamba
+Vutukuri Sreenivas
+|Infra
+|Python, JavaScript/TypeScript, React.js, LLM, AI/ML, Jenkins, Ollama, LangChain, UI, Infra statistics, Data Analytics
+
+|*Improving Tekton Client Plugin for Jenkins*
+Enhance the Jenkins Tekton Client Plugin to improve cloud-native CI/CD interoperability and user experience.
+
+Potential Mentor(s): 
+Vibhav Bobade
+Kris Stern
+|Plugins
+|Java, Kubernetes, Tekton, Jenkins
+
+|*Improving Plugin Modernizer*
+Improving the Jenkins Plugin Modernizer tool and provide integrations with Jenkins ecosystem.
+
+Potential Mentor(s): 
+Bruno Verachten
+Valentin Delaye
+Sridhar Sivakumar
+Phillipp Glanz
+|Tools
+|OpenRewrite, Data structure (Trees) and visitor pattern, Java, Plugin hygiene and migration
+
+|*Revamping jenkins.io website Success Stories feature*
+To revamp jenkins.io website's Success Stories feature to update both tooling and UI/UX experience with new design.
+
+Potential Mentor(s): 
+Kris Stern
+Bervianto Leo Pratama
+|UI/UX
+|Website development, UI/UX design, Geospatial data visualization, Gatsby.js and React.js
+
+|*Swagger / OpenAPI standardization for Jenkins REST API*
+Standardizing Jenkins REST API documentation using Swagger or the OpenAPI specifications.
+
+Potential Mentor(s): 
+Kris Stern
+Bruno Verachten
+Rajiv Ranjan Singh
+Bervianto Leo Pratama
+Phillipp Glanz
+|Tools
+|Swagger / OpenAPI standardization, REST API, Documentation, Automation, Java
 |===
 
 == Draft project ideas 
@@ -36,7 +108,33 @@ In the following list, you can refer to draft project ideas, which are currently
 |===
 |Project |Category |Skills to study/improve
 
-// Draft ideas would be listed here
+|*Android and/or iOS tutorials in official documentation*
+Adding Android and/or iOS tutorials for Jenkins in the official documentation.
+
+Potential Mentor(s): 
+Bruno Verachten
+Kris Stern
+|Documentation
+|Documentation, Java, YAML, Android / iOS development, Command line tools
+
+|*Pipeline documentation improvements - Phase 2 and Phase 3*
+Improving the navigation and implementation of the Pipeline Steps Reference.
+
+Potential Mentor(s): 
+Kris Stern
+Bervianto Leo Pratama
+|Documentation
+|Documentation, Web development, Jenkins plugins
+
+|*Improving Jenkinsfile Runner abilities and GitHub Actions*
+To investigate the current state of the Jenkinsfile Runner project and to improve its abilities as well as those of GitHub Actions when used in conjunction.
+
+Potential Mentor(s): 
+Valentin Delaye
+Kris Stern
+Bervianto Leo Pratama
+|Tools
+|Java, Jenkinsfile Runner, Docker, GitHub Actions
 |===
 
 == Ongoing discussion 
@@ -47,5 +145,10 @@ These proposals are suggestions from the mailing list, which have not been publi
 |===
 |Project |Category
 
-// Discussion ideas would be listed here
+|*New Plugin for Jenkins Security Scanning*
+Exploring the feasibility of creating a security scanning plugin for Jenkins.
+
+Potential Mentor(s): 
+(Seeking mentors)
+|Security
 |===
