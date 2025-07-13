@@ -1,9 +1,0 @@
-
-= cdCon
-:page-eventLocation: Virtual
-:page-eventStartDate: 2020-10-07T00:00:00
-:page-eventEndDate: 2020-10-09T00:00:00
-:page-eventLink: https://events.linuxfoundation.org/cdcon/
-
-
-Two days focused on improving the world's capacity to deliver software with security and speed.

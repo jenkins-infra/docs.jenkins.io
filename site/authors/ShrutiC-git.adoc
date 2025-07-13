@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Shruti Chaturvedi
-:page-twitter: shruti_tech
-:page-github: ShrutiC-git
-:page-authoravatar: ../../images/images/avatars/ShrutiC-git.png
-
-Shruti Chaturvedi is the *Founding Engineer* for Klara, a startup to revolutionalize the shopping experience for beauty products.  She is an *Oracle Certified Cloud Practitioner*, and is developing solutions on Cloud where CI/CD is her primary focus. She has worked with Jenkins as a User, and is very excited to contribute to Jenkins and be a part of the community.

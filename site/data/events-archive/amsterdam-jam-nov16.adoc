@@ -1,6 +1,0 @@
----
-:page-eventTitle: Amsterdam JAM
-:page-eventStartDate: 2016-11-10T19:00:00
-:page-eventLink: https://www.meetup.com/Amsterdam-Jenkins-Area-Meetup/events/234471476/
----
-Everything Jenkins

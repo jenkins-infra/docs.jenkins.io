@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: R. Tyler Croy
-:page-twitter: agentdero
-:page-github: rtyler
-:page-blog: http://unethicalblogger.com
-:page-authoravatar: ../images/images/avatars/rtyler.jpeg
-
-R&#46; Tyler Croy has been part of the Jenkins project for the past seven years. While avoiding contributing any Java code, Tyler is involved in many of the other aspects of the project which keep it running, such as this website, infrastructure, governance, etc.

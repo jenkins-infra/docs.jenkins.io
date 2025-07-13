@@ -1,6 +1,0 @@
----
-:page-eventTitle: Online JAM
-:page-eventStartDate: 2017-02-15T08:00:00
-:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/237317346/
----
-Ways to Create Pipelines

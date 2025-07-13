@@ -1,6 +1,0 @@
----
-:page-eventTitle: Seattle JAM
-:page-eventStartDate: 2017-03-28T18:00:00
-:page-eventLink: https://www.meetup.com/Seattle-Jenkins-Area-Meetup/events/238465676/
----
-What I Wish I Had Known Before Migrating to Jenkins Pipelines

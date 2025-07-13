@@ -1,6 +1,0 @@
----
-:page-eventTitle: Vancouver JAM
-:page-eventStartDate: 2019-04-25T17:15:00
-:page-eventLink: https://www.meetup.com/Vancouver-CA-Jenkins-Area-Meetup/events/259267845/
----
-Vancouver JAM

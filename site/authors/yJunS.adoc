@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: 史彦军(yJunS)
-:page-github: yJunS
-:page-twitter: yJun_S
-
-
-yJunS is one of the contributor managers of the Jenkins China community.

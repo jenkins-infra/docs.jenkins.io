@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Shashank Awasthi
-:page-twitter: awashashank
-:page-github: shashankawasthi88
-:page-linkedin: awasthi-shashank
-:page-authoravatar: ../../images/images/avatars/shashankawasthi88.jpg
-
-Shashank is a Product Manager at Postman working on the Integrations domain.

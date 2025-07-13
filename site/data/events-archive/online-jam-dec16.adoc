@@ -1,6 +1,0 @@
----
-:page-eventTitle: Jenkins Online Meetup
-:page-eventStartDate: 2016-12-14T08:00:00
-:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/235898656/
----
-See Live Demos

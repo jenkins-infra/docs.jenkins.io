@@ -1,6 +1,0 @@
----
-:page-eventTitle: Boston JAM
-:page-eventStartDate: 2017-02-07T18:00:00
-:page-eventLink: https://www.meetup.com/Boston-Jenkins-Area-Meetup/events/236766736/
----
-Terraform, Ansible, Jenkins Integration

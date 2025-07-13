@@ -1,6 +1,0 @@
----
-:page-eventTitle: Seville JAM
-:page-eventStartDate: 2016-03-31T18:30:00
-:page-eventLink: https://www.meetup.com/Seville-Jenkins-Area-Meetup/events/229235998/
----
-Workshop: Jenkins Pipeline

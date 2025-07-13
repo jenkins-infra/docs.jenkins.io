@@ -1,7 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Abhyudaya Sharma
-:page-github: AbhyudayaSharma
-:page-authoravatar: ../../images/images/avatars/AbhyudayaSharma.jpg
-
-Abhyudaya is a Computer Science student at Shiv Nadar University, India. He is participating in Google Summer of Code 2019 to improve the performance of the link:https://github.com/jenkinsci/role-strategy-plugin[Role Strategy Plugin].

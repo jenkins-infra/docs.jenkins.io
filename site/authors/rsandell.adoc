@@ -1,6 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Robert Sandell
-:page-github: rsandell
-
-

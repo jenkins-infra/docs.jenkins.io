@@ -1,6 +1,0 @@
----
-:page-eventTitle: Jenkins Online Meetup (Pacific Time)
-:page-eventStartDate: 2017-11-07T08:00:00
-:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/244580981/
----
-We are back with a second set of 15 minute Jenkins demos.

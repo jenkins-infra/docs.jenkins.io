@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Sahil Kalra
-:page-twitter: sahilrkalra
-:page-github: sahilrkalra
-:page-linkedin: sahilrkalra
-:page-authoravatar: ../../images/images/avatars/sahilrkalra.png
-
-Sahil is a Certified Kubernetes Application Developer. He works as a DevOps Engineer for link:https://www.varian.com/[Varian] in Pune, India.

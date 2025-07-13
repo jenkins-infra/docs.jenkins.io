@@ -1,6 +1,47 @@
-= Jenkins and C/C++
+= Jenkins C/C++ Support
+:page-partial:
 
-.Bitbucket Server plugins for Jenkins
+Jenkins provides robust support for C and C++ projects, enabling efficient continuous integration and delivery pipelines for system software, embedded applications, and performance-critical solutions.
+
+== Building C/C++ Projects
+
+Jenkins integrates seamlessly with all major C/C++ build systems:
+
+* **Make/Ninja**: Execute builds through shell steps
+* **CMake**: Use the {plugin}cmakebuilder[CMake Plugin] for configured builds
+* **Autotools**: Run `./configure` scripts with environment customization
+* **Cross-compilation**: Manage toolchains with {plugin}custom-tools-plugin[Custom Tools Plugin]
+
+== Testing and Analysis
+
+* **Unit Testing**: Process results from Google Test, Catch2, and CppUnit with {plugin}xunit[xUnit Plugin]
+* **Static Analysis**: Integrate Clang-Tidy, Cppcheck with {plugin}warnings-ng[Warnings Next Generation Plugin]
+* **Code Coverage**: Generate reports using gcov and {plugin}cobertura[Cobertura Plugin]
+
+== Cross-Platform Support
+
+Jenkins supports matrix builds for multiple platforms (Linux, Windows, macOS) with consistent toolchains and environments.
+
+== Embedded Development
+
+Special considerations for firmware projects:
+
+* Hardware resource management with {plugin}throttle-concurrents[Throttle Concurrent Builds Plugin]
+* Build reliability with {plugin}build-timeout[Build Timeout Plugin]
+* Device flashing automation
+
+== Resources
+
+* xref:tutorials:build-a-cpp-app-with-jenkins.adoc[Build a C++ app with Jenkins tutorial]
+* https://github.com/jenkinsci/cmakebuilder-plugin[CMake Plugin documentation]
+
+== Presentations
+
+.Continuous Integration in C++
+[.text-center]
+video::FHPtchw-eHA[youtube, width=560, height=315]
+
+.C/C++ plugins for Jenkins
 ****
 * {plugin}warnings-ng[C/C++ plugins for Jenkins]
 Warnings Next Generation plugin

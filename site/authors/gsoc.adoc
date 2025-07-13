@@ -1,6 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: a GSoC mentor (to be defined)
-
-
-This is a placeholder GSoC Mentor.

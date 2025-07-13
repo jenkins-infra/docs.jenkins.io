@@ -1,6 +1,0 @@
----
-:page-eventTitle: Gotebor JAM
-:page-eventStartDate: 2017-05-29T18:00:00
-:page-eventLink: https://www.meetup.com/Goteborg-Jenkins-Area-Meetup/events/239006031/
----
-Jenkins Pipeline at Scale
