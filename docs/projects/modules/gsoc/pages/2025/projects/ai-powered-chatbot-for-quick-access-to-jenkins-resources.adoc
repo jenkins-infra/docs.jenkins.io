@@ -1,0 +1,53 @@
+= AI-Powered Chatbot for Quick Access to Jenkins Resources
+
+*Goal:* Develop an AI-based chatbot to provide users with quick and intuitive access to Jenkins documentation, plugins, and community resources.
+
+*Skills:* Javascript/Typescript, HTML, CSS, Dashboard, Data Visualization, UI/UX Design
+
+*Status:* Selected
+
+*Contributor:* giovanni-vaccarino
+
+[.avatar]
+*Mentor(s)*:
+image:images:ROOT:avatars/cnu1812.jpg[,width=30,height=30] cnu1812
+image:images:ROOT:avatars/krisstern.png[,width=30,height=30] Kris Stern
+image:images:ROOT:avatars/gounthar.jpg[,width=30,height=30] gounthar
+image:images:ROOT:avatars/berviantoleo.jpg[,width=30,height=30] berviantoleo
+
+== Details
+=== Abstract
+
+As Jenkins continues to evolve, users often seek efficient ways to navigate its extensive documentation, plugins, and community discussions. This project proposes the development of an AI-powered chatbot integrated into the Jenkins interface, enabling users to retrieve information swiftly through natural language queries.
+
+=== Rationale
+
+Navigating Jenkins documentation can be daunting, especially for newcomers. A contextual AI assistant embedded in Jenkins can significantly reduce friction by offering quick answers and plugin-related insights. This project aims to create a dedicated chatbot that understands user questions and provides accurate, fast responses using NLP and ML models. A previous community discussion and growing interest validate the need for such a plugin.
+
+=== Implementation
+
+The project will involve:
+
+- **Chatbot Plugin:** Build a Jenkins plugin that embeds the AI chatbot.
+- **NLP Integration:** Utilize NLP frameworks such as spaCy, NLTK, or LlamaIndex to process natural language queries.
+- **Data Sources:** Integrate official documentation, plugin data, and community resources for relevant answers.
+- **UI/UX:** Design a clean chat interface within the Jenkins UI.
+- **Performance:** Optimize inference time and resource usage.
+
+Potential tools and technologies:
+
+- Python + LLM integrations
+- TypeScript/JavaScript for UI
+- Jenkins Plugin Development Framework
+
+=== Office hours
+
+* Weekly office hours: Thursday 15:30 UTC (link:https://zoom.us/j/92722918940[Zoom]) — subject to update
+
+=== Links
+
+* xref:developer:tutorial:index.adoc[Jenkins Plugin Tutorial]
+* link:https://www.nltk.org/[NLTK]
+* link:https://spacy.io/[spaCy]
+* link:https://pytorch.org/tutorials/beginner/chatbot_tutorial.html[PyTorch Chatbot Tutorial]
+* link:https://docs.llamaindex.ai/en/stable/[LlamaIndex]

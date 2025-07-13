@@ -1,0 +1,51 @@
+= GSoC 2025 Project Ideas 
+
+[.float-group]
+--
+image:images:ROOT:gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=right,role=float-gap]
+This page aggregates project ideas for Google Summer of Code 2025. Refer to the xref:gsoc:index.adoc[Jenkins Google Summer of Code page] for more information about this project and applications.
+
+Below you can find project ideas that have been proposed for this year. New ideas may be proposed by interested mentors or GSoC contributors, such as new features in the core or "write a plugin for MY_TOOL_OR_SERVICE". Project ideas without potential mentors will be considered, though applicants may need to work with the community and GSoC org admins to find mentors. To add a new project idea, see: xref:gsoc:proposing-project-ideas.adoc[proposing project ideas].
+--
+
+== Accepted ideas 
+
+The following list contains the project ideas that fully match the Jenkins project idea standard. The scope of these ideas is understood and we don't normally expect deep changes. All ideas have quick-start guidelines and newbie-friendly issues referenced. We welcome contributors to join the mentor teams and invite GSoC contributors to submit project proposal applications related to these ideas.
+
+[cols="3,1,1", options="header"]
+|===
+|Project |Category |Skills to study/improve
+
+// Published ideas would be listed here in the same format as the 2023 example
+// For example:
+|*Example Project Title*
+The goal of this project would be described here.
+
+Potential Mentor(s): 
+Mentor Name 1
+Mentor Name 2
+|Category 
+|Skill 1, Skill 2, Skill 3
+|===
+
+== Draft project ideas 
+
+In the following list, you can refer to draft project ideas, which are currently under review. The scope of such ideas may change during the discussions, but the idea is accepted in principle. You are welcome to comment on the draft and join the project as a mentor. If you are a GSoC contributor, it is also fine to explore and apply to the draft project ideas.
+
+[cols="3,1,1", options="header"]
+|===
+|Project |Category |Skills to study/improve
+
+// Draft ideas would be listed here
+|===
+
+== Ongoing discussion 
+
+These proposals are suggestions from the mailing list, which have not been published as project ideas yet. The feasibility is yet to be defined, and the idea may be dismissed depending on the feedback. Everyone is welcome to participate in the discussion and join as a potential mentor.
+
+[cols="3,1", options="header"]
+|===
+|Project |Category
+
+// Discussion ideas would be listed here
+|===
