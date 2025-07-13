@@ -20,10 +20,21 @@ See our link:https://summerofcode.withgoogle.com/programs/2025/organizations/jen
 // Uncomment when application is worked on and submitted (Feb 2025)
 //(link:./2025/application[Jenkins GSoC Organisation Application Form])
 
-We have finalised a list of 11 project ideas, 8 of which are accepted ones.
 // Add your ideas by submitting an ad-hoc pull request as explained in our previous link:/blog/2022/11/16/gsoc-2023/[GSoC blog post].
 
-The 2025 GSoC project ideas link:./2025/project-ideas[can be found here].
+The five selected projects for 2025 are:
+
+* xref:projects:gsoc:2025/projects/ai-powered-chatbot-for-quick-access-to-jenkins-resources.adoc[AI-Powered Chatbot for Quick Access to Jenkins Resources] with link:https://github.com/giovanni-vaccarino/[Giovanni Vaccarino] as the GSoC contributor.
+
+* xref:projects:gsoc:2025/projects/complete-alternative-jenkins-io-build-retooling.adoc[Complete build retooling of jenkins.io] with link:https://github.com/biru-codeastromer/[Birajit Saikia] as the GSoC contributor.
+
+* xref:projects:gsoc:2025/projects/domain-specific-LLM-based-on-jenkins-usage-using-ci-jenkins-io-data.adoc[Domain-specific LLM based on actual Jenkins usage using ci.jenkins.io data] with link:https://github.com/chiruu12/[Chirag Gupta] as the GSoC contributor.
+
+* xref:projects:gsoc:2025/projects/improving-tekton-client-plugin.adoc[Improving Tekton Client Plugin for Jenkins] with link:https://github.com/maeveho25/[Maeve Ho] as the GSoC contributor.
+
+* xref:projects:gsoc:2025/projects/plugin-modernizer-improvements.adoc[Improving Plugin Modernizer] with link:https://github.com/CodexRaunak/[Raunak Madan] as the GSoC contributor.
+
+They were proposed and selected from these xref:gsoc:2025/project-ideas.adoc[project ideas].
 
 NOTE: Every year, there are changes in how GSoC is organized.
 Jenkins GSoC documentation may be outdated in some places, please refer to the https://summerofcode.withgoogle.com/[official GSoC website] as a source of truth.
