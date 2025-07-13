@@ -10,10 +10,10 @@
 
 [.avatar]
 *Mentor(s)*:
-image:images:ROOT:avatars/gounthar.jpg[,width=30,height=30] gounthar
-image:images:ROOT:avatars/jonesbusy.jpg[,width=30,height=30] jonesbusy
-image:images:ROOT:avatars/sridamul.jpg[,width=30,height=30] sridamul
-image:images:ROOT:avatars/TheMeinerLP.jpg[,width=30,height=30] TheMeinerLP
+image:images:ROOT:avatars/gounthar.png[,width=30,height=30] Bruno Verachten
+image:images:ROOT:avatars/jonesbusy.png[,width=30,height=30] Valentin Delaye
+image:images:ROOT:avatars/sridamul.jpg[,width=30,height=30] Sridhar Sivakumar
+image:images:ROOT:avatars/TheMeinerLP.jpg[,width=30,height=30] Phillipp Glanz
 
 == Details
 === Abstract
