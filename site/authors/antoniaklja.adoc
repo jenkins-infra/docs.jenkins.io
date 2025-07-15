@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Bartek Antoniak
-:page-github: antoniaklja
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-:page-twitter: antoniaklja
-
-Engineering Manager in a cloud-native world managing mid-sized cross-functional team and responsible for cloud-related initiatives at VirtusLab.

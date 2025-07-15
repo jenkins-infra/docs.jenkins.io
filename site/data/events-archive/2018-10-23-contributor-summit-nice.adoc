@@ -1,6 +1,0 @@
----
-:page-eventTitle: Jenkins Contributor Summit, Nice
-:page-eventStartDate: 2018-10-23T09:00:00
-:page-eventLink: https://www.meetup.com/jenkinsmeetup/events/253810578/
----
-Jenkins Contributor Summit at DevOps World | Jenkins World Europe

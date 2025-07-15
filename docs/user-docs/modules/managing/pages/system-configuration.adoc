@@ -55,6 +55,8 @@ JENKINS_HOME
      +- hudson.util.Secret   (used for encrypting some Jenkins data)
      +- master.key           (used for encrypting the hudson.util.Secret key)
      +- InstanceIdentity.KEY (used to identity this instance)
+     +- jenkins.model.Jenkins.crumbSalt   (used for encrypting some Jenkins data)
+     +- initialAdminPassword (used for initial login)
  +- userContent        (files served under your https://server/userContent/)
  +- workspace          (working directory for the version control system)
 ....

@@ -23,7 +23,6 @@ Board], which is the group with acting executive authority. While board members
 are available for comment, we encourage you to reach out to our xref:#press-contact[Press Contact]
 as an initial point of contact for press inquiries.
 
-
 === Trademark
 
 The name "Jenkins" is a registered trademark in the USA (link:https://trademarks.justia.com/854/47/jenkins-85447465.html[#4664929],

@@ -1,8 +1,0 @@
-
-= SLI/SLO validation with Keptn and Jenkins
-:page-eventLocation: Online Event
-:page-eventStartDate: 2020-06-04T14:00:00
-:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/270861119
-
-
-Andreas Grabner from Dynatrace will talk about automating Service Level Indicators / Service Level Objectives based build validation with Keptn and Jenkins.

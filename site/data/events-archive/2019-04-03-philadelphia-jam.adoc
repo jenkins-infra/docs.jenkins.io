@@ -1,6 +1,0 @@
----
-:page-eventTitle: Philadelphia JAM
-:page-eventStartDate: 2019-04-03T18:00:00
-:page-eventLink: https://www.meetup.com/Philadelphia-Jenkins-Area-Meetup/events/wlsptpyzgbfb/
----
-Philadelphia Jenkins Area Meetup

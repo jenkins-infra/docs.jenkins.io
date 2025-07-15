@@ -1,9 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Jesse Glick
-:page-github: jglick
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-:page-twitter: tyvole
-
-Jesse has been developing Jenkins core and plugins for years.
-He is the coauthor with Kohsuke of the core infrastructure of the Pipeline system.

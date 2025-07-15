@@ -1,6 +1,0 @@
----
-:page-eventTitle: Stockholm JAM
-:page-eventStartDate: 2017-03-15T17:30:00
-:page-eventLink: https://www.meetup.com/Stockholm-Jenkins-Meetup/events/237247833/
----
-Hacking Jenkins
