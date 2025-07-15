@@ -1,0 +1,22 @@
+= Backend code refactoring for Infra Statistics
+
+*Project goal:* To significantly refactor backend code for the Infra Statistics
+*Skills to study/improve:* Groovy, Backend-frontend Integration, Code Refactoring, Infra / DevOps Processes
+*Potential Mentors:* 
+krisstern
+berviantoleo
+TheMeinerLP
+
+== Background
+
+The project aims to refactor the code at https://github.com/jenkins-infra/infra-statistics[] as well as to audit and improve the infra processes used for collecting the infra statistics data.
+
+== Project Size
+175 hours
+
+== Project Difficulty
+Beginner to Intermediate
+
+== Expected Outcomes
+
+Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase.
