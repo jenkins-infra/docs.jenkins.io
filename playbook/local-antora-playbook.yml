@@ -15,12 +15,9 @@ content:
       branches: [HEAD]
       start_paths:
         [
-          docs/about,
-          docs/books,
           docs/community,
           docs/dev-docs,
           docs/download,
-          docs/events,
           docs/images,
           docs/project,
           docs/projects,
