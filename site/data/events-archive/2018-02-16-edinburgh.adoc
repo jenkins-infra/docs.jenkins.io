@@ -1,7 +1,0 @@
----
-:page-eventTitle: Edinburgh JAM
-:page-eventStartDate: 2018-02-16T18:00:00
-:page-eventLink: https://www.meetup.com/Edinburgh-Jenkins-Area-Meetup/events/246963812/
----
-
-Introduction to Jenkins.

@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Jan Jörke
-:page-github: janjoerke
-:page-authoravatar: ../../images/images/avatars/janjoerke.jpg
-:page-twitter: janjoerke
-
-Software Engineer from northern Germany.

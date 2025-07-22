@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Stéphane Merle
-:page-github: smerle33
-:page-authoravatar: ../../images/images/avatars/smerle33.png
-:page-twitter: Sbouli
-
-Stéphane is a Senior Virtualization and Cloud Architect for the Jenkins Project.

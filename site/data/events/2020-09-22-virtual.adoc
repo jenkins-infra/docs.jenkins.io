@@ -1,9 +1,0 @@
-
-= DevOps World 2020
-:page-eventLocation: Virtual
-:page-eventStartDate: 2020-09-22T06:00:00
-:page-eventEndDate: 2020-09-24T23:00:00
-:page-eventLink: https://www.cloudbees.com/devops-world
-
-
-DevOps World caters to the full DevOps ecosystem and brings together thought leaders, practitioners, and community contributors from around the world, providing attendees the opportunity to learn, explore, network virtually, and transform the future of software delivery.

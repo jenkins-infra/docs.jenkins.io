@@ -1,6 +1,0 @@
----
-:page-eventTitle: Austin JAM
-:page-eventStartDate: 2017-03-23T18:00:00
-:page-eventLink: https://www.meetup.com/Austin-Jenkins-Area-Meetup/events/238229331/
----
-Learn How Top SW Teams in Austin Use Jenkins

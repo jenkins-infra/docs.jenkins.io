@@ -1,6 +1,0 @@
-name: books
-title: Books
-version: ~
-display_version: 'latest'
-nav:
-  - modules/ROOT/nav.adoc

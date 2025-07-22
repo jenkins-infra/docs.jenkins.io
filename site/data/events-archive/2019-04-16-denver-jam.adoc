@@ -1,6 +1,0 @@
----
-:page-eventTitle: Denver JAM
-:page-eventStartDate: 2019-04-16T17:30:00
-:page-eventLink: https://www.meetup.com/Denver-Jenkins-Area-Meetup/events/259932183/
----
-Jenkins X Quiz Show!

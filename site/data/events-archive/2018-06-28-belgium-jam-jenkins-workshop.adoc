@@ -1,6 +1,0 @@
----
-:page-eventTitle: Belgium JAM Jenkins Workshop
-:page-eventStartDate: 2018-06-28T14:30:00
-:page-eventLink: https://www.meetup.com/Belgium-Jenkins-Area-Meetup/events/251710321/
----
-Jenkins Workshop Hosted by Belgium Jenkins Area Meetup

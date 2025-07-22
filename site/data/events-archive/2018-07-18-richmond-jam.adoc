@@ -1,6 +1,0 @@
----
-:page-eventTitle: Richmond JAM - Jenkins Configuration-as-Code
-:page-eventStartDate: 2018-07-18T18:00:00
-:page-eventLink: https://www.meetup.com/Richmond-Jenkins-Area-Meetup/events/252189580/
----
-Jenkins Configuration-as-Code

@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Viktor Gazdag
-:page-github: woodspeed
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-:page-twitter: wucpi
-
-Viktor is a security consultant and the 2019 Jenkins Security MVP.

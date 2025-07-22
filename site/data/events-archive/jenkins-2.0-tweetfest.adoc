@@ -1,6 +1,0 @@
----
-:page-eventTitle: Jenkins 2.0 TweetFest
-:page-eventStartDate: 2016-04-26T10:00:00
-:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/230553649/
----
-Get your Jenkins 2.0 questions answered by the experts

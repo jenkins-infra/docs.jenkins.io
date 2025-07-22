@@ -1,6 +1,0 @@
----
-:page-eventTitle: St. Petersburg, Russia JAM
-:page-eventStartDate: 2017-05-11T18:45:00
-:page-eventLink: https://www.meetup.com/St-Petersburg-Jenkins-Meetup/events/239304091/
----
-Jenkins War Stories

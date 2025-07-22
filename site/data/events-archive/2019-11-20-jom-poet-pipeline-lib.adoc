@@ -1,9 +1,0 @@
----
-:page-eventTitle: POET pipeline framework
-:page-eventLocation: Online Meetup
-:page-eventStartDate: 2019-11-20T16:00:00
-:page-eventLink: https://www.meetup.com/Jenkins-online-meetup/events/266238572/
----
-
-Ravi Sharma, Martin Krienke and Larry will present a Complete Concertized Pipeline Framework for CI/CD with Jenkins
-which was created at T-Mobile, aka POET pipeline.
