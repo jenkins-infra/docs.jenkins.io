@@ -1,7 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Petra Sargent
-:page-github: petra-sargent
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-:page-twitter: momsthatcode
-

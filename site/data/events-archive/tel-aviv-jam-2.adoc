@@ -1,6 +1,0 @@
----
-:page-eventTitle: Tel Aviv-Yafo JAM
-:page-eventStartDate: 2016-07-04T17:30:00
-:page-eventLink: https://www.meetup.com/Tel-Aviv-Jenkins-Area-Meetup/events/232116526/
----
-Meetup with Kohsuke Kawaguchi

@@ -1,6 +1,0 @@
----
-:page-eventTitle: June DFW-West JAM
-:page-eventStartDate: 2018-06-21T18:30:00
-:page-eventLink: https://www.meetup.com/DFW-Jenkins-Area-Meetup/events/250867312/
----
-June DFW-West JAM - Jenkins Area Meetup

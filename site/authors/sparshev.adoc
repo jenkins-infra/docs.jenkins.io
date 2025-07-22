@@ -1,8 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Sergei Parshev
-:page-github: sparshev
-:page-authoravatar: ../../images/images/avatars/sparshev.png
-
-Sergei is a DevOps engineer and using Jenkins as a main automation tool since 2011.
-Wants to automate everything to make sure that there no more room for boring tasks.

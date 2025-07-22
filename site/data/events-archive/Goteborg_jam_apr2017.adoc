@@ -1,6 +1,0 @@
----
-:page-eventTitle: Goteborg JAM
-:page-eventStartDate: 2017-04-03T18:00:00
-:page-eventLink: https://www.meetup.com/Goteborg-Jenkins-Area-Meetup/events/238462261/
----
-Intro to Jenkins Pipeline

@@ -1,6 +1,0 @@
----
-:page-eventTitle: Monterrey JAM
-:page-eventStartDate: 2019-06-01T9:00:00
-:page-eventLink: https://www.meetup.com/Monterrey-Jenkins-Meetup/events/261648737/
----
-Monterrey Jenkins Area Meetup

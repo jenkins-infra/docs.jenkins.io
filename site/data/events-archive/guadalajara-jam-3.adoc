@@ -1,6 +1,0 @@
----
-:page-eventTitle: Guadalajara JAM
-:page-eventStartDate: 2016-07-23T10:00:00
-:page-eventLink: https://www.meetup.com/Guadalajara-Jenkins-Area-Meetup/events/232239058/
----
-Pipeline Plugin Workshop

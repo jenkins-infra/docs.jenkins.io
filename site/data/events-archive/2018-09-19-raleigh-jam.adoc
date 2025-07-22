@@ -1,6 +1,0 @@
----
-:page-eventTitle: Triangle JAM / Triangle DevOps meetup
-:page-eventStartDate: 2018-09-19T19:00:00
-:page-eventLink: https://www.meetup.com/Raleigh-Jenkins-Area-Meetup/events/253581851/
----
-Triangle JAM together with Triangle DevOps

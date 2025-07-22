@@ -1,6 +1,0 @@
----
-:page-eventTitle: Cloud Native SIG: External logging
-:page-eventStartDate: 2018-07-31T15:00:00
-:page-eventLink: https://www.youtube.com/watch?v=9lTOtC9wA_I
----
-Oleg Nenashev and Jesse Glick will present the External Build Logging design drafts and prototypes.

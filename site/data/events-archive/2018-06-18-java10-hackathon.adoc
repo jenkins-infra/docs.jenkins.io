@@ -1,7 +1,0 @@
----
-:page-eventTitle: Java 10+ online hackathon
-:page-eventStartDate: 2018-06-18T16:00
-:page-eventLink: /blog/2018/06/08/jenkins-java10-hackathon/
----
-June 18-22.
-Work together to find/fix compatibility issues in Jenkins, share experiences and have fun.

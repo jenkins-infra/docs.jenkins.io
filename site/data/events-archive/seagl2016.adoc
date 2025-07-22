@@ -1,6 +1,0 @@
----
-:page-eventTitle: SeaGL
-:page-eventStartDate: 2016-11-11&12
-:page-eventLink: https://seagl.org/news/2016/05/13/CFP-Open.html
----
-Visit us in the exhibit hall

@@ -1,6 +1,0 @@
----
-:page-eventTitle: FOSDEM'17
-:page-eventStartDate: 2017-02-04T08:00:00
-:page-eventLink: https://fosdem.org/2017/
----
-Visit Jenkins in exhibit hall

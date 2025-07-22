@@ -1,2 +1,0 @@
-.xref:2020-uiux/index.adoc[]
-* xref:2020-uiux/faq.adoc[]

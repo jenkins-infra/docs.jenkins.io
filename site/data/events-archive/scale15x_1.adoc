@@ -1,6 +1,0 @@
----
-:page-eventTitle: SCaLE 15x Day 1
-:page-eventStartDate: 2017-03-03T14:00:00
-:page-eventLink: https://www.socallinuxexpo.org/scale/15x/schedule
----
-Visit Jenkins in the exhibit hall

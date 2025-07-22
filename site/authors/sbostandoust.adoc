@@ -1,7 +1,0 @@
-= About the Author
-:page-layout: author
-:page-author_name: Saeid Bostandoust
-:page-github: sbostandoust
-:page-authoravatar: ../../images/images/avatars/no_image.svg
-
-To be updated

@@ -1,6 +1,0 @@
----
-:page-eventTitle: Dublin JAM: Autumn Jenkins Talks
-:page-eventStartDate: 2018-09-12T19:00:00
-:page-eventLink: https://www.meetup.com/Dublin-Jenkins-Meetup
----
-Jenkins use cases, mistakes, success & failure stories, and pipelines.
