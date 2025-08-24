@@ -1,0 +1,35 @@
+= Complete build retooling of jenkins.io
+
+*Goal:* Using alternative tooling with Gatsby and Antora to build the Jenkins static site and provide versioned Jenkins documentation
+
+*Skills:* Web development, AsciiDoc, Static website tooling, Documentation, Website retooling
+
+*Status:* Selected
+
+*Contributor:* image:images:ROOT:avatars/biru-codeastromer.png[,width=30,height=30] Birajit Saikia
+
+[.avatar]
+*Mentor(s)*:
+image:images:ROOT:avatars/krisstern.png[,width=30,height=30] Kris Stern
+image:images:ROOT:avatars/gounthar.png[,width=30,height=30] Bruno Verachten
+image:images:ROOT:avatars/kmartens27.jpeg[,width=30,height=30] Kevin Martens
+image:images:ROOT:avatars/iamrajiv.jpg[,width=30,height=30] Rajiv Singh
+
+== Details
+=== Abstract
+This project aims to completely retool the Jenkins static site (https://jenkins.io) using alternative tooling, specifically Gatsby and Antora. The goal is to provide a more modern, efficient, and maintainable build process for the Jenkins documentation and website, while also enabling versioned documentation for different Jenkins releases.
+
+=== Rationale
+The current Jenkins static site is built using a Ruby-based `awestruct`, which does not offer a lot of the modern frontend features nowadays readily available to single-page applications like the ones made with React. By transitioning to Gatsby, a modern React-based framework, we can leverage its powerful features for static site generation, such as optimized performance, plugin ecosystem, and better developer experience. Antora will be used to manage versioned documentation, allowing users to access documentation for specific Jenkins versions easily.
+
+=== Implementation
+The project will involve the following key steps:
+
+* **Gatsby Migration**: Migrate the existing Jenkins static site from `awestruct` to Gatsby, ensuring that all existing content is preserved and enhanced with modern frontend capabilities.
+* **Antora Integration**: Integrate Antora to manage versioned documentation, allowing users to switch between different Jenkins versions seamlessly.
+* **Documentation Enhancement**: Improve the existing documentation structure and content, ensuring it is clear, concise, and easy to navigate.
+* **UI/UX Improvements**: Enhance the user interface and user experience of the Jenkins static site, making it more visually appealing and user-friendly.
+
+=== Office hours
+
+* Weekly project office hours: Tuesdays 14:30 UTC on Google Meet (link:https://meet.google.com/qvx-xuct-hxp/[Video call link])

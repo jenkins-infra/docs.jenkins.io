@@ -1,8 +1,7 @@
 = GSoC 2018 Project Ideas
 
 WARNING: This is an archived page about Jenkins project participation in Google Summer of Code 2018.
-
-See xref:gsoc:index.adoc[the main GSoC project] page of the information about the current and previous years.
+See link:/projects/gsoc[the main GSoC project] page of the information about the current and previous years.
 
 image:images:ROOT:gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=right,role=float-gap]
 
