@@ -1,7 +1,7 @@
 = Jenkins Remoting
 
-Jenkins Remoting is a library, and executable Java archive, which implements the communication layer in Jenkins. 
-This includes the TCP-based communication protocols, remote procedure calls, class loading, data streaming, etc. 
+Jenkins Remoting is a library, and executable Java archive, which implements the communication layer in Jenkins.
+This includes the TCP-based communication protocols, remote procedure calls, class loading, data streaming, etc.
 Currently Remoting is primarily used in communications between the Jenkins controller and Jenkins agents.
 
 The Remoting sub-project includes the Remoting library itself, package for agents, and a number of Remoting-specific plugins and core modules.
@@ -17,7 +17,7 @@ The Remoting sub-project includes the Remoting library itself, package for agent
 
 === Remoting Library
 
-Remoting Library is the main component of the the sub-project.
+Remoting Library is the main component of the sub-project.
 The code base is located in a link:https://github.com/jenkinsci/remoting[separate repository],
 which also contains Remoting developer and user documentation.
 This library also has an independent release cycle and LTS release lines.
@@ -29,7 +29,7 @@ Links:
 * https://github.com/jenkinsci/remoting/blob/master/docs/protocols.md[Remoting Protocols]
 * https://github.com/jenkinsci/remoting/blob/master/docs/troubleshooting.md[Troubleshooting] (under construction)
 
-===     
+=== Jenkins Core and Modules
 
 Although Remoting library is a standalone component, 
 Jenkins core includes some extensions and modules for working with Remoting.
