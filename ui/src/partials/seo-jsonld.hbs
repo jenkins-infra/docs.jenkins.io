@@ -1,0 +1,21 @@
+{{!-- Structured Data for SEO --}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{site.title}}",
+  "url": "{{site.url}}"
+}
+</script>
+
+{{#if page.canonicalUrl}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{#if page.title}}{{{detag page.title}}} :: {{/if}}{{site.title}}",
+  "url": "{{page.canonicalUrl}}",
+  "description": "{{{detag (or page.description page.attributes.description site.attributes.site-description)}}}"
+}
+</script>
+{{/if}}

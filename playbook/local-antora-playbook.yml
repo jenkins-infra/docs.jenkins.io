@@ -10,7 +10,6 @@ content:
     - url: ../
       branches: [HEAD]
       start_paths: [docs/solutions, docs/tutorials, docs/user-docs]
-      # developer docs are un-versioned that's why they're fetched individually
     - url: ../
       branches: [HEAD]
       start_paths:
@@ -33,11 +32,15 @@ runtime:
 asciidoc:
   attributes:
     page-pagination: ''
-    plugin: https://plugins.jenkins.io/
-    jira: https://issues.jenkins.io/browse/
-    jep: https://github.com/jenkinsci/jep/tree/master/jep/
-    matrix: https://matrix.to/#/#
-    email: jenkinsci-users@googlegroups.com
+    plugin: 'https://plugins.jenkins.io/'
+    jira: 'https://issues.jenkins.io/browse/'
+    jep: 'https://github.com/jenkinsci/jep/tree/master/jep/'
+    matrix: 'https://matrix.to/#/#'
+    email: 'jenkinsci-users@googlegroups.com'
+    site-description: 'Official Jenkins documentation: pipelines, plugins, admin guides, tutorials, and best practices.'
+    site-twitter: '@jenkinsci'
+    site-og-image: '/img/social/og-default.png'
+    site-name: 'Jenkins'
 
 ui:
   bundle:

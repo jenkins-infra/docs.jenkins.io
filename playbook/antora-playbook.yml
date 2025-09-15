@@ -1,9 +1,9 @@
 ---
 site:
   title: Jenkins Docs
-  url: https://docs.jenkins.com
+  url: https://docs.jenkins.io
   start_page: user-docs::index.adoc
-  robots: disallow
+  robots: allow
 
 content:
   sources:
@@ -33,13 +33,17 @@ runtime:
 asciidoc:
   attributes:
     page-pagination: ''
-    plugin: https://plugins.jenkins.io/
-    jira: https://issues.jenkins.io/browse/
-    jep: https://github.com/jenkinsci/jep/tree/master/jep/
-    matrix: https://matrix.to/#/#
-    email: jenkinsci-users@googlegroups.com
+    plugin: 'https://plugins.jenkins.io/'
+    jira: 'https://issues.jenkins.io/browse/'
+    jep: 'https://github.com/jenkinsci/jep/tree/master/jep/'
+    matrix: 'https://matrix.to/#/#'
+    email: 'jenkinsci-users@googlegroups.com'
+    site-description: 'Official Jenkins documentation: pipelines, plugins, admin guides, tutorials, and best practices.'
+    site-twitter: '@jenkinsci'
+    site-og-image: '/img/social/og-default.png'
+    site-name: 'Jenkins'
 
 ui:
   bundle:
-    url: https://github.com/jenkins-infra/docs.jenkins.io/blob/main/ui/build/ui-bundle.zip
+    url: https://raw.githubusercontent.com/jenkins-infra/docs.jenkins.io/main/ui/build/ui-bundle.zip
     snapshot: true

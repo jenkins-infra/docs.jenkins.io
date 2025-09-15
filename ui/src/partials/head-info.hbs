@@ -9,7 +9,7 @@
     <link rel="next" href="{{{relativize ./url}}}">
     {{/with}}
     {{/unless}}
-    {{#with page.description}}
+    {{#with (or page.description page.attributes.description site.attributes.site-description)}}
     <meta name="description" content="{{{detag this}}}">
     {{/with}}
     {{#with page.keywords}}

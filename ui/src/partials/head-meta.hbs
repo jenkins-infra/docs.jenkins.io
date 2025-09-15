@@ -1,1 +1,42 @@
 {{! Add additional meta tags here }}
+
+{{! --- Robots (only add noindex when explicitly disabled) ---}}
+{{#if (eq site.robots "disallow")}}
+<meta name="robots" content="noindex, nofollow">
+{{/if}}
+
+{{! --- Theme color (nice-to-have) ---}}
+<meta name="theme-color" content="#0096D6">
+
+{{! --- Open Graph ---}}
+<meta property="og:site_name" content="{{or site.attributes.site-name site.title}}">
+<meta property="og:type" content="website">
+{{#if page.canonicalUrl}}
+<meta property="og:url" content="{{{page.canonicalUrl}}}">
+{{/if}}
+<meta property="og:title" content="{{#if page.title}}{{{detag page.title}}} :: {{/if}}{{site.title}}">
+<meta property="og:description" content="{{{detag (or page.description page.attributes.description site.attributes.site-description)}}}">
+
+{{#if page.attributes.image}}
+<meta property="og:image" content="{{page.attributes.image}}">
+{{else}}
+  {{#if site.attributes.site-og-image}}
+  <meta property="og:image" content="{{site.attributes.site-og-image}}">
+  {{/if}}
+{{/if}}
+
+{{! --- Twitter Cards ---}}
+<meta name="twitter:card" content="summary_large_image">
+{{#with site.attributes.site-twitter}}
+<meta name="twitter:site" content="{{this}}">
+{{/with}}
+<meta name="twitter:title" content="{{#if page.title}}{{{detag page.title}}} :: {{/if}}{{site.title}}">
+<meta name="twitter:description" content="{{{detag (or page.description page.attributes.description site.attributes.site-description)}}}">
+
+{{#if page.attributes.image}}
+<meta name="twitter:image" content="{{page.attributes.image}}">
+{{else}}
+  {{#if site.attributes.site-og-image}}
+  <meta name="twitter:image" content="{{site.attributes.site-og-image}}">
+  {{/if}}
+{{/if}}

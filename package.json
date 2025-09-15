@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Provides a template Antora component file and directory structure, along with some other helpful command-line tools. Its aim is to make it as quick and painless as possible to get up and running with new Antora projects and to extend existing ones.",
   "devDependencies": {
+    "fs-extra": "^11.2.0",
     "prettier": "^3.2.5",
     "yaml-lint": "^1.2.4"
   },
