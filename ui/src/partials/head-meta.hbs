@@ -1,42 +1,53 @@
 {{! Add additional meta tags here }}
 
-{{! --- Robots (only add noindex when explicitly disabled) ---}}
 {{#if (eq site.robots "disallow")}}
 <meta name="robots" content="noindex, nofollow">
 {{/if}}
 
-{{! --- Theme color (nice-to-have) ---}}
+{{!-- Theme color --}}
 <meta name="theme-color" content="#0096D6">
 
-{{! --- Open Graph ---}}
-<meta property="og:site_name" content="{{or site.attributes.site-name site.title}}">
+{{!-- Open Graph --}}
+<meta property="og:site_name" content="{{or site.attributes.site-name site.title 'Jenkins Docs'}}">
 <meta property="og:type" content="website">
 {{#if page.canonicalUrl}}
 <meta property="og:url" content="{{{page.canonicalUrl}}}">
 {{/if}}
-<meta property="og:title" content="{{#if page.title}}{{{detag page.title}}} :: {{/if}}{{site.title}}">
-<meta property="og:description" content="{{{detag (or page.description page.attributes.description site.attributes.site-description)}}}">
+<meta property="og:title" content="{{#if page.title}}{{{detag page.title}}} :: {{/if}}{{or site.title 'Jenkins Docs'}}">
+
+{{#with (or page.description page.attributes.description site.attributes.site-description '') as |desc|}}
+  {{#if desc}}
+  <meta property="og:description" content="{{{detag desc}}}">
+  {{/if}}
+{{/with}}
 
 {{#if page.attributes.image}}
 <meta property="og:image" content="{{page.attributes.image}}">
-{{else}}
+{{/if}}
+{{#unless page.attributes.image}}
   {{#if site.attributes.site-og-image}}
   <meta property="og:image" content="{{site.attributes.site-og-image}}">
   {{/if}}
-{{/if}}
+{{/unless}}
 
-{{! --- Twitter Cards ---}}
+{{!-- Twitter --}}
 <meta name="twitter:card" content="summary_large_image">
 {{#with site.attributes.site-twitter}}
 <meta name="twitter:site" content="{{this}}">
 {{/with}}
-<meta name="twitter:title" content="{{#if page.title}}{{{detag page.title}}} :: {{/if}}{{site.title}}">
-<meta name="twitter:description" content="{{{detag (or page.description page.attributes.description site.attributes.site-description)}}}">
+<meta name="twitter:title" content="{{#if page.title}}{{{detag page.title}}} :: {{/if}}{{or site.title 'Jenkins Docs'}}">
+
+{{#with (or page.description page.attributes.description site.attributes.site-description '') as |desc|}}
+  {{#if desc}}
+  <meta name="twitter:description" content="{{{detag desc}}}">
+  {{/if}}
+{{/with}}
 
 {{#if page.attributes.image}}
 <meta name="twitter:image" content="{{page.attributes.image}}">
-{{else}}
+{{/if}}
+{{#unless page.attributes.image}}
   {{#if site.attributes.site-og-image}}
   <meta name="twitter:image" content="{{site.attributes.site-og-image}}">
   {{/if}}
-{{/if}}
+{{/unless}}

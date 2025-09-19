@@ -3,19 +3,21 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "{{site.title}}",
+  "name": "{{or site.title 'Jenkins Docs'}}",
   "url": "{{site.url}}"
 }
 </script>
 
 {{#if page.canonicalUrl}}
+{{#with (or page.description page.attributes.description site.attributes.site-description '') as |desc|}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "{{#if page.title}}{{{detag page.title}}} :: {{/if}}{{site.title}}",
-  "url": "{{page.canonicalUrl}}",
-  "description": "{{{detag (or page.description page.attributes.description site.attributes.site-description)}}}"
+  "name": "{{#if page.title}}{{{detag page.title}}} :: {{/if}}{{or site.title 'Jenkins Docs'}}",
+  "url": "{{page.canonicalUrl}}"{{#if desc}},
+  "description": "{{{detag desc}}}"{{/if}}
 }
 </script>
+{{/with}}
 {{/if}}
