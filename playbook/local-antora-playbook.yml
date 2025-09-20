@@ -22,12 +22,6 @@ content:
           docs/security,
           docs/sigs,
         ]
-    - url: https://github.com/jenkins-infra/jenkins.io.git
-      branches: [HEAD]
-      start_paths:
-        [
-          content/images
-        ]
 
 runtime:
   cache_dir: ./.cache/antora
