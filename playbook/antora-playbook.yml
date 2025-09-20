@@ -27,7 +27,6 @@ content:
       branches: [HEAD]
       start_paths:
         [
-          content/events,
           content/images
         ]
 
