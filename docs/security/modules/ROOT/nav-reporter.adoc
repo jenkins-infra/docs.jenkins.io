@@ -1,3 +1,0 @@
-.For Reporters
-* xref:reporting.adoc[Reporting Vulnerabilities]
-* xref:cna.adoc[Jenkins CNA]
