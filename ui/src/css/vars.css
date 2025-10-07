@@ -1,43 +1,106 @@
 :root {
-  /* colors */
-  --color-white: #fff;
+  /* Jenkins color palette - Light mode */
+  --jenkins-primary-blue: #1a73e8;
+  --jenkins-primary-red: #d33833;
+  --jenkins-background: #f9f9f9;
+  --jenkins-text: #212529;
+  --jenkins-text-secondary: #495057;
+  --jenkins-light-gray: #f8f9fa;
+  --jenkins-medium-gray: #e9ecef;
+  --jenkins-dark-gray: #6c757d;
+  --jenkins-white: #fff;
+  --jenkins-black: #212529;
+  --jenkins-border: #dee2e6;
+  --jenkins-success-green: #1aab40;
+  --jenkins-warning-orange: #efc663;
+  --jenkins-future-purple: #9677df;
+  --jenkins-future-blue: #2c97de;
+  --jenkins-error-red: #e16070;
+
+  /* Status colors */
+  --jenkins-rating-positive: #4caf50;
+  --jenkins-rating-neutral: #ffc107;
+  --jenkins-rating-negative: #f44336;
+
+  /* Cloud provider colors */
+  --jenkins-aws-orange: #f90;
+  --jenkins-azure-blue: #0b61ca;
+  --jenkins-google-green: #34a853;
+  --jenkins-civo-blue: #239dff;
+  --jenkins-oracle-red: #c74634;
+  --jenkins-bitnami-blue: #00577b;
+
+  /* Release tag colors */
+  --jenkins-tag-bug: #fce7e9;
+  --jenkins-tag-bug-color: #b3261e;
+  --jenkins-tag-majorbug: #fbd1d6;
+  --jenkins-tag-majorbug-color: #92261f;
+  --jenkins-tag-enhancement: #e6f4ea;
+  --jenkins-tag-enhancement-color: #137333;
+  --jenkins-tag-majorrfe: #d9efe0;
+  --jenkins-tag-majorrfe-color: #0e5a28;
+  --jenkins-tag-security: #fbe7f1;
+  --jenkins-tag-security-color: #a51b63;
+
+  /* Application variables mapped to Jenkins colors */
+  --background-color: var(--jenkins-background);
+  --text-color: var(--jenkins-text);
+  --text-secondary: var(--jenkins-text-secondary);
+  --banner-bg: var(--jenkins-light-gray);
+  --banner-border: var(--jenkins-dark-gray);
+  --link-color: var(--jenkins-primary-blue);
+  --download-box-bg: var(--jenkins-light-gray);
+  --download-box-border: var(--jenkins-medium-gray);
+  --download-box-hover: var(--jenkins-medium-gray);
+  --table-header-bg: var(--jenkins-light-gray);
+  --table-border: var(--jenkins-medium-gray);
+  --filter-bg: var(--jenkins-light-gray);
+  --filter-border: var(--jenkins-medium-gray);
+
+  /* ===== EXISTING ANTORA VARIABLES (UPDATED WITH JENKINS COLORS) ===== */
+
+  /* Legacy color system - mapped to Jenkins colors */
+  --color-white: var(--jenkins-white);
   --color-smoke-10: #fefefe;
   --color-smoke-30: rgba(51, 113, 227, 3%);
   --color-smoke-50: #0a2463;
-  --color-smoke-70: #f0f0f0;
+  --color-smoke-70: var(--jenkins-light-gray);
   --color-smoke-90: #e1e1e1;
   --color-gray-10: #c1c1c1;
   --color-gray-30: #9c9c9c;
   --color-gray-40: #8e8e8e;
   --color-gray-50: #808080;
-  --color-gray-70: #5d5d5d;
+  --color-gray-70: var(--jenkins-dark-gray);
   --color-jet-20: #4a4a4a;
   --color-jet-30: #424242;
-  --color-jet-50: #333;
+  --color-jet-50: var(--jenkins-text);
   --color-jet-70: #222;
   --color-jet-80: #191919;
-  --color-black: #000;
+  --color-black: var(--jenkins-black);
+
   /* fonts */
-  --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
+  --rem-base: 18;
   --body-font-size: 1.0625em; /* 17px */
   --body-font-size--desktop: 1.125em; /* 18px */
   --body-font-size--print: 0.9375em; /* 15px */
-  --body-line-height: 1.15;
-  --body-font-color: var(--color-jet-70);
-  --body-font-family: system-ui, "Segoe UI", roboto, "Noto Sans", oxygen, ubuntu, cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --body-font-weight-bold: 500;
-  --monospace-font-family: "Roboto Mono", monospace;
-  --monospace-font-weight-bold: 500;
+  --body-line-height: 1.65; /* Updated to match Vite site exactly */
+  --body-font-color: var(--jenkins-text);
+  --body-font-family: "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
+  --body-font-weight-bold: 800; /* Updated to match Vite site font weights */
+  --monospace-font-family: ui-monospace, sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
+  --monospace-font-weight-bold: 600;
+
   /* base */
-  --body-background: var(--color-white);
+  --body-background: var(--jenkins-background);
   --panel-background: var(--color-smoke-30);
   --panel-border-color: var(--color-smoke-90);
   --scrollbar-track-color: var(--color-smoke-30);
   --scrollbar-thumb-color: var(--color-gray-10);
   --scrollbar_hover-thumb-color: var(--color-gray-30);
+
   /* navbar */
-  --navbar-background: var(--color-jet-80);
-  --navbar-font-color: var(--color-white);
+  --navbar-background: var(--jenkins-primary-blue); /* Updated to Jenkins blue */
+  --navbar-font-color: var(--jenkins-white);
   --navbar_hover-background: var(--color-black);
   --navbar-button-background: var(--color-white);
   --navbar-button-border-color: var(--panel-border-color);
@@ -46,16 +109,18 @@
   --navbar-menu-background: var(--color-white);
   --navbar-menu-font-color: var(--body-font-color);
   --navbar-menu_hover-background: var(--color-smoke-50);
+
   /* nav */
   --nav-background: var(--panel-background);
   --nav-border-color: var(--color-gray-10);
-  --nav-link-color: hsl(212, 100%, 35%);
+  --nav-link-color: var(--jenkins-primary-blue); /* Updated to Jenkins blue */
   --nav-link-active: hsl(212, 100%, 42%);
   --nav-line-height: 1.35;
   --nav-heading-font-color: var(--color-jet-30);
   --nav-muted-color: var(--color-gray-70);
   --nav-panel-divider-color: var(--color-smoke-90);
   --nav-secondary-background: var(--color-smoke-70);
+
   /* toolbar */
   --toolbar-background: var(--color-white);
   --toolbar-border-color: var(--panel-border-color);
@@ -63,7 +128,8 @@
   --toolbar-muted-color: var(--color-gray-40);
   --page-version-menu-background: var(--color-smoke-70);
   --page-version-missing-font-color: var(--color-gray-40);
-  /* admonitions */
+
+  /* admonitions - keeping existing Antora colors */
   --caution-color: #a0439c;
   --caution-on-color: var(--color-white);
   --important-color: #d32f2f;
@@ -74,18 +140,19 @@
   --tip-on-color: var(--color-white);
   --warning-color: #e18114;
   --warning-on-color: var(--color-white);
+
   /* doc */
-  --doc-font-color: var(--color-jet-50);
+  --doc-font-color: var(--jenkins-text);
   --doc-font-size: inherit;
   --doc-font-size--desktop: calc(17 / var(--rem-base) * 1rem);
-  --doc-line-height: 1.6;
+  --doc-line-height: 1.65; /* Updated to match Vite site exactly */
   --doc-margin: 0 auto;
   --doc-margin--desktop: 0 2rem;
-  --heading-font-color: var(--color-jet-80);
-  --heading-font-weight: 400px;
+  --heading-font-color: var(--jenkins-text);
+  --heading-font-weight: 800; /* Updated to match Vite site font weights */
   --alt-heading-font-weight: var(--body-font-weight-bold);
   --section-divider-color: var(--panel-border-color);
-  --link-font-color: #1565c0;
+  --link-font-color: var(--jenkins-primary-blue); /* Updated to Jenkins blue */
   --link_hover-font-color: #104d92;
   --link_unresolved-font-color: var(--important-color);
   --abstract-background: var(--color-smoke-70);
@@ -119,11 +186,13 @@
   --toc-heading-font-color: var(--doc-font-color);
   --toc-border-color: var(--panel-border-color);
   --toc-line-height: 1.2;
+
   /* footer */
   --footer-line-height: var(--doc-line-height);
   --footer-background: var(--color-smoke-90);
   --footer-font-color: var(--color-gray-70);
   --footer-link-font-color: var(--color-jet-80);
+
   /* dimensions and positioning */
   --navbar-height: calc(63 / var(--rem-base) * 1rem);
   --toolbar-height: calc(45 / var(--rem-base) * 1rem);
@@ -141,20 +210,56 @@
   --toc-width--widescreen: calc(216 / var(--rem-base) * 1rem);
   --doc-max-width: calc(720 / var(--rem-base) * 1rem);
   --doc-max-width--desktop: calc(990 / var(--rem-base) * 1rem);
+
   /* stacking */
   --z-index-toolbar: 5;
   --z-index-nav: 2;
   --z-index-page-version-menu: 3;
   --z-index-navbar: 4;
-  /* Doc */
-  --caution-color: #a0439c;
-  --caution-on-color: var(--color-white);
-  --important-color: #d32f2f;
-  --important-on-color: var(--color-white);
-  --note-color: #217ee7;
-  --note-on-color: var(--color-white);
-  --tip-color: #41af46;
-  --tip-on-color: var(--color-white);
-  --warning-color: #e18114;
-  --warning-on-color: var(--color-white);
+
+  /* Typography additions for Vite site compatibility */
+  --heading-font-family: "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Jenkins dark mode colors */
+    --jenkins-background: #1a1a1a;
+    --jenkins-text: #f8f9fa;
+    --jenkins-text-secondary: #e9ecef;
+    --jenkins-light-gray: #2a2a2a;
+    --jenkins-medium-gray: #3a3a3a;
+    --jenkins-dark-gray: #adb5bd;
+    --jenkins-border: #495057;
+    --jenkins-primary-blue: #5d9eff;
+    --jenkins-primary-red: #ff6b67;
+
+    /* Application variables for dark mode */
+    --background-color: var(--jenkins-background);
+    --text-color: var(--jenkins-text);
+    --text-secondary: var(--jenkins-text-secondary);
+    --banner-bg: var(--jenkins-light-gray);
+    --banner-border: var(--jenkins-border);
+    --link-color: var(--jenkins-primary-blue);
+    --download-box-bg: var(--jenkins-light-gray);
+    --download-box-border: var(--jenkins-medium-gray);
+    --download-box-hover: var(--jenkins-medium-gray);
+    --table-header-bg: var(--jenkins-light-gray);
+    --table-border: var(--jenkins-medium-gray);
+    --filter-bg: var(--jenkins-light-gray);
+    --filter-border: var(--jenkins-medium-gray);
+
+    /* Update existing Antora variables for dark mode */
+    --body-background: var(--jenkins-background);
+    --body-font-color: var(--jenkins-text);
+    --doc-font-color: var(--jenkins-text);
+    --heading-font-color: var(--jenkins-text);
+    --navbar-background: var(--jenkins-primary-blue);
+    --link-font-color: var(--jenkins-primary-blue);
+
+    /* Legacy color mappings for dark mode */
+    --color-jet-50: var(--jenkins-text);
+    --color-gray-70: var(--jenkins-dark-gray);
+  }
 }
