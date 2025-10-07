@@ -103,7 +103,7 @@ summary {
 
 table {
   border-collapse: collapse;
-  word-wrap: normal; /* table widths aren't computed as expected when word-wrap is enabled */
+  word-wrap: normal;
 }
 
 object[type="image/svg+xml"]:not([width]) {

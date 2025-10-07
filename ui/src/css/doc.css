@@ -318,7 +318,6 @@
   border-top-width: 0;
 }
 
-/* NOTE let the grid win in case of frame-none */
 .doc table.frame-sides > :last-child > :last-child > * {
   border-bottom-width: 0;
 }
@@ -920,7 +919,6 @@
   margin-top: 0;
 }
 
-/* NEEDS REVIEW prevent pre in table from causing article to exceed bounds */
 .doc .tableblock pre,
 .doc .listingblock.wrap pre {
   white-space: pre-wrap;
@@ -1119,7 +1117,6 @@
 
 .doc b.button {
   white-space: nowrap;
-  /* effectively ignores hyphens setting */
 }
 
 .doc b.button::before {
@@ -1144,7 +1141,6 @@
   padding: 0.25em 0.5em;
   vertical-align: text-bottom;
   white-space: nowrap;
-  /* effectively ignores hyphens setting */
 }
 
 .doc kbd,

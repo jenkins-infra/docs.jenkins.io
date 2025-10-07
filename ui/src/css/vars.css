@@ -57,8 +57,6 @@
   --filter-bg: var(--jenkins-light-gray);
   --filter-border: var(--jenkins-medium-gray);
 
-  /* ===== EXISTING ANTORA VARIABLES (UPDATED WITH JENKINS COLORS) ===== */
-
   /* Legacy color system - mapped to Jenkins colors */
   --color-white: var(--jenkins-white);
   --color-smoke-10: #fefefe;
@@ -80,13 +78,13 @@
 
   /* fonts */
   --rem-base: 18;
-  --body-font-size: 1.0625em; /* 17px */
-  --body-font-size--desktop: 1.125em; /* 18px */
-  --body-font-size--print: 0.9375em; /* 15px */
-  --body-line-height: 1.65; /* Updated to match Vite site exactly */
+  --body-font-size: 1.0625em;
+  --body-font-size--desktop: 1.125em;
+  --body-font-size--print: 0.9375em;
+  --body-line-height: 1.65;
   --body-font-color: var(--jenkins-text);
   --body-font-family: "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
-  --body-font-weight-bold: 800; /* Updated to match Vite site font weights */
+  --body-font-weight-bold: 800;
   --monospace-font-family: ui-monospace, sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
   --monospace-font-weight-bold: 600;
 
@@ -99,7 +97,7 @@
   --scrollbar_hover-thumb-color: var(--color-gray-30);
 
   /* navbar */
-  --navbar-background: var(--jenkins-primary-blue); /* Updated to Jenkins blue */
+  --navbar-background: var(--jenkins-primary-blue);
   --navbar-font-color: var(--jenkins-white);
   --navbar_hover-background: var(--color-black);
   --navbar-button-background: var(--color-white);
@@ -113,7 +111,7 @@
   /* nav */
   --nav-background: var(--panel-background);
   --nav-border-color: var(--color-gray-10);
-  --nav-link-color: var(--jenkins-primary-blue); /* Updated to Jenkins blue */
+  --nav-link-color: var(--jenkins-primary-blue);
   --nav-link-active: hsl(212, 100%, 42%);
   --nav-line-height: 1.35;
   --nav-heading-font-color: var(--color-jet-30);
@@ -145,14 +143,14 @@
   --doc-font-color: var(--jenkins-text);
   --doc-font-size: inherit;
   --doc-font-size--desktop: calc(17 / var(--rem-base) * 1rem);
-  --doc-line-height: 1.65; /* Updated to match Vite site exactly */
+  --doc-line-height: 1.65;
   --doc-margin: 0 auto;
   --doc-margin--desktop: 0 2rem;
   --heading-font-color: var(--jenkins-text);
-  --heading-font-weight: 800; /* Updated to match Vite site font weights */
+  --heading-font-weight: 800;
   --alt-heading-font-weight: var(--body-font-weight-bold);
   --section-divider-color: var(--panel-border-color);
-  --link-font-color: var(--jenkins-primary-blue); /* Updated to Jenkins blue */
+  --link-font-color: var(--jenkins-primary-blue);
   --link_hover-font-color: #104d92;
   --link_unresolved-font-color: var(--important-color);
   --abstract-background: var(--color-smoke-70);
