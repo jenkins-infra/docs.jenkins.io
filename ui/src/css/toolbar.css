@@ -8,7 +8,7 @@
   height: var(--toolbar-height);
   justify-content: flex-start;
   position: sticky;
-  top: 57px;
+  top: 50px;
   z-index: var(--z-index-toolbar);
 }
 
