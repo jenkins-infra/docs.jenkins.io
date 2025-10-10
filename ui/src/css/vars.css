@@ -222,7 +222,6 @@
 /* Dark mode variables */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Jenkins dark mode colors */
     --jenkins-background: #1a1a1a;
     --jenkins-text: #f8f9fa;
     --jenkins-text-secondary: #e9ecef;
@@ -231,9 +230,7 @@
     --jenkins-dark-gray: #adb5bd;
     --jenkins-border: #495057;
     --jenkins-primary-blue: #5d9eff;
-    --jenkins-primary-red: #ff6b67;
 
-    /* Application variables for dark mode */
     --background-color: var(--jenkins-background);
     --text-color: var(--jenkins-text);
     --text-secondary: var(--jenkins-text-secondary);
@@ -247,17 +244,5 @@
     --table-border: var(--jenkins-medium-gray);
     --filter-bg: var(--jenkins-light-gray);
     --filter-border: var(--jenkins-medium-gray);
-
-    /* Update existing Antora variables for dark mode */
-    --body-background: var(--jenkins-background);
-    --body-font-color: var(--jenkins-text);
-    --doc-font-color: var(--jenkins-text);
-    --heading-font-color: var(--jenkins-text);
-    --navbar-background: var(--jenkins-primary-blue);
-    --link-font-color: var(--jenkins-primary-blue);
-
-    /* Legacy color mappings for dark mode */
-    --color-jet-50: var(--jenkins-text);
-    --color-gray-70: var(--jenkins-dark-gray);
   }
 }
