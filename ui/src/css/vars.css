@@ -222,6 +222,7 @@
 /* Dark mode variables */
 @media (prefers-color-scheme: dark) {
   :root {
+
     --jenkins-background: #1a1a1a;
     --jenkins-text: #f8f9fa;
     --jenkins-text-secondary: #e9ecef;
