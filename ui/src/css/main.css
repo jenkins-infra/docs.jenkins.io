@@ -34,3 +34,7 @@
     flex-basis: var(--toc-width--widescreen);
   }
 }
+
+center > iframe {
+  max-width: 100%;
+}
