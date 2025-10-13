@@ -1,9 +1,0 @@
-.xref:index.adoc[Jenkins Security Home]
-
-.For Administrators
-* xref:for-administrators.adoc[Overview]
-* https://www.jenkins.io/security/advisories/[Security Advisories]
-* https://www.jenkins.io/security/issues[Security Issues]
-* xref:scheduling.adoc[Advisory Schedule]
-* xref:plugins.adoc[Vulnerabilities in Plugins]
-* xref:fixing.adoc[How We Fix Security Issues]

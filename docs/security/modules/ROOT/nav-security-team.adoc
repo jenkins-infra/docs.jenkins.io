@@ -1,3 +1,0 @@
-.Jenkins Security Team
-* xref:team.adoc[About]
-* xref:improvements.adoc[Contributions]
