@@ -20,19 +20,23 @@ html {
 body {
   background: var(--body-background);
   color: var(--body-font-color);
-  font-family: var(--body-font-family), serif;
+  font-family: var(--body-font-family);
   line-height: var(--body-line-height);
   margin: 0;
   tab-size: 4;
-  word-wrap: anywhere; /* aka overflow-wrap; used when hyphens are disabled or aren't sufficient */
+  word-wrap: anywhere;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  color: var(--link-font-color);
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  color: var(--link_hover-font-color);
 }
 
 a:active {
@@ -42,7 +46,7 @@ a:active {
 code,
 kbd,
 pre {
-  font-family: var(--monospace-font-family), serif;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 b,
@@ -99,7 +103,7 @@ summary {
 
 table {
   border-collapse: collapse;
-  word-wrap: normal; /* table widths aren't computed as expected when word-wrap is enabled */
+  word-wrap: normal;
 }
 
 object[type="image/svg+xml"]:not([width]) {
