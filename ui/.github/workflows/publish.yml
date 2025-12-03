@@ -11,7 +11,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: "22"
+          node-version: "24"
       - name: Install Antora
         run: npm i antora
       - name: Generate Site
