@@ -1,14 +1,14 @@
 /*! Adapted from the GitHub style by Vasily Polovnyov <vast@whiteants.net> */
 .hljs-comment,
 .hljs-quote {
-  color: #998;
+  color: #d14;
   font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
-  color: #333;
+  color: #008080;
   font-weight: var(--monospace-font-weight-bold);
 }
 
@@ -38,7 +38,7 @@
 
 .hljs-type,
 .hljs-class .hljs-title {
-  color: #458;
+  color: #000080;
   font-weight: var(--monospace-font-weight-bold);
 }
 
@@ -65,16 +65,16 @@
 }
 
 .hljs-meta {
-  color: #999;
+  color: #d14;
   font-weight: var(--monospace-font-weight-bold);
 }
 
 .hljs-deletion {
-  background: #fdd;
+  background: #990073;
 }
 
 .hljs-addition {
-  background: #dfd;
+  background: #009926;
 }
 
 .hljs-emphasis {
