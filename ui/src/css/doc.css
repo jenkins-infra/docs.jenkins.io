@@ -1303,6 +1303,11 @@
     border-left: 4px solid color(display-p3 0.205 0.538 1);
   }
 
+  .doc .admonitionblock.warning {
+    color: hsl(3, 90%, 51%);
+    border-left: 4px solid color(display-p3 0.205 0.538 1);
+  }
+
   #preamble .abstract blockquote {
     background: #191919;
     color: #f0f0f0;
