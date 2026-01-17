@@ -1,14 +1,14 @@
 /*! Adapted from the GitHub style by Vasily Polovnyov <vast@whiteants.net> */
 .hljs-comment,
 .hljs-quote {
-  color: #ff5555;
+  color: #f55;
   font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
-  color: #44aaff;
+  color: #4af;
   font-weight: var(--monospace-font-weight-bold);
 }
 
