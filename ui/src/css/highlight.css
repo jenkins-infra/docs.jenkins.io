@@ -1,14 +1,14 @@
 /*! Adapted from the GitHub style by Vasily Polovnyov <vast@whiteants.net> */
 .hljs-comment,
 .hljs-quote {
-  color: #f55;
+  color: #666769; 
   font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
-  color: #4af;
+  color: white;
   font-weight: var(--monospace-font-weight-bold);
 }
 
@@ -17,18 +17,18 @@
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag .hljs-attr {
-  color: #008080;
+  color: #36eee0; 
 }
 
 .hljs-string,
 .hljs-doctag {
-  color: #d14;
+  color: #f88; 
 }
 
 .hljs-title,
 .hljs-section,
 .hljs-selector-id {
-  color: #900;
+  color: #f94;  
   font-weight: var(--monospace-font-weight-bold);
 }
 
@@ -38,14 +38,14 @@
 
 .hljs-type,
 .hljs-class .hljs-title {
-  color: #000080;
+  color: #0081cc;
   font-weight: var(--monospace-font-weight-bold);
 }
 
 .hljs-tag,
 .hljs-name,
 .hljs-attribute {
-  color: #000080;
+  color: #0081cc;
   font-weight: normal;
 }
 
