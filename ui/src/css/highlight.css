@@ -1,7 +1,7 @@
 /*! Adapted from the GitHub style by Vasily Polovnyov <vast@whiteants.net> */
 .hljs-comment,
 .hljs-quote {
-  color: #666769; 
+  color: #666769;
   font-style: italic;
 }
 
@@ -16,19 +16,20 @@
 .hljs-literal,
 .hljs-variable,
 .hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #36eee0; 
+.hljs-tag,
+.hljs-attr {
+  color: #36eee0;
 }
 
 .hljs-string,
 .hljs-doctag {
-  color: #f88; 
+  color: #f88;
 }
 
 .hljs-title,
 .hljs-section,
 .hljs-selector-id {
-  color: #f94;  
+  color: #f94;
   font-weight: var(--monospace-font-weight-bold);
 }
 
