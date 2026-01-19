@@ -24,7 +24,7 @@
 
 .hljs-string,
 .hljs-doctag {
-  color: #116329; 
+  color: #116329;
 }
 
 .hljs-title,
@@ -58,7 +58,7 @@
 
 .hljs-symbol,
 .hljs-bullet {
-  color: #0550ae; 
+  color: #0550ae;
 }
 
 .hljs-built_in,
@@ -67,7 +67,7 @@
 }
 
 .hljs-meta {
-  color: #6f42c1; 
+  color: #6f42c1;
   font-weight: var(--monospace-font-weight-bold);
 }
 
@@ -88,7 +88,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hljs-comment,
   .hljs-quote {
     color: #8b949e;
@@ -111,7 +110,7 @@
 
   .hljs-string,
   .hljs-doctag {
-    color: #7ee787; 
+    color: #7ee787;
   }
 
   .hljs-title,
