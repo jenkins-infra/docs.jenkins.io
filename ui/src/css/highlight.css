@@ -1,14 +1,15 @@
 /*! Adapted from the GitHub style by Vasily Polovnyov <vast@whiteants.net> */
+
 .hljs-comment,
 .hljs-quote {
-  color: #998;
+  color: #6a737d;
   font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
-  color: #333;
+  color: #24292f;
   font-weight: var(--monospace-font-weight-bold);
 }
 
@@ -16,19 +17,20 @@
 .hljs-literal,
 .hljs-variable,
 .hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
+.hljs-tag,
+.hljs-attr {
+  color: #0550ae;
 }
 
 .hljs-string,
 .hljs-doctag {
-  color: #d14;
+  color: #116329;
 }
 
 .hljs-title,
 .hljs-section,
 .hljs-selector-id {
-  color: #900;
+  color: #8250df;
   font-weight: var(--monospace-font-weight-bold);
 }
 
@@ -38,43 +40,43 @@
 
 .hljs-type,
 .hljs-class .hljs-title {
-  color: #458;
+  color: #0a3069;
   font-weight: var(--monospace-font-weight-bold);
 }
 
 .hljs-tag,
 .hljs-name,
 .hljs-attribute {
-  color: #000080;
+  color: #0a3069;
   font-weight: normal;
 }
 
 .hljs-regexp,
 .hljs-link {
-  color: #009926;
+  color: #116329;
 }
 
 .hljs-symbol,
 .hljs-bullet {
-  color: #990073;
+  color: #0550ae;
 }
 
 .hljs-built_in,
 .hljs-builtin-name {
-  color: #0086b3;
+  color: #0550ae;
 }
 
 .hljs-meta {
-  color: #999;
+  color: #6f42c1;
   font-weight: var(--monospace-font-weight-bold);
 }
 
 .hljs-deletion {
-  background: #fdd;
+  background: #ffdcd7;
 }
 
 .hljs-addition {
-  background: #dfd;
+  background: #dafbe1;
 }
 
 .hljs-emphasis {
@@ -83,4 +85,75 @@
 
 .hljs-strong {
   font-weight: var(--monospace-font-weight-bold);
+}
+
+@media (prefers-color-scheme: dark) {
+  .hljs-comment,
+  .hljs-quote {
+    color: #8b949e;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-subst {
+    color: #fff;
+  }
+
+  .hljs-number,
+  .hljs-literal,
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-tag,
+  .hljs-attr {
+    color: #79c0ff;
+  }
+
+  .hljs-string,
+  .hljs-doctag {
+    color: #7ee787;
+  }
+
+  .hljs-title,
+  .hljs-section,
+  .hljs-selector-id {
+    color: #d2a8ff;
+  }
+
+  .hljs-type,
+  .hljs-class .hljs-title {
+    color: #79c0ff;
+  }
+
+  .hljs-tag,
+  .hljs-name,
+  .hljs-attribute {
+    color: #79c0ff;
+  }
+
+  .hljs-regexp,
+  .hljs-link {
+    color: #7ee787;
+  }
+
+  .hljs-symbol,
+  .hljs-bullet {
+    color: #79c0ff;
+  }
+
+  .hljs-built_in,
+  .hljs-builtin-name {
+    color: #79c0ff;
+  }
+
+  .hljs-meta {
+    color: #d2a8ff;
+  }
+
+  .hljs-deletion {
+    background: #da3633;
+  }
+
+  .hljs-addition {
+    background: #238636;
+  }
 }
