@@ -78,9 +78,8 @@
 
   /* fonts */
   --rem-base: 16;
-  /* Slightly smaller than browser default (16px) */
-  --body-font-size: 0.9375em; /* ~15px */
-  --body-font-size--desktop: 0.9375em; /* ~15px */
+  --body-font-size: 0.9375em;
+  --body-font-size--desktop: 0.9375em;
   --body-font-size--print: 0.9375em;
   --body-line-height: 1.65;
   --body-font-color: var(--jenkins-text);
