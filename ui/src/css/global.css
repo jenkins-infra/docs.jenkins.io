@@ -87,7 +87,7 @@ p {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.65;
 }
 
@@ -127,7 +127,7 @@ p {
   margin-bottom: 1.5rem;
   font-size: 1rem;
   color: var(--text-secondary);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.65;
 }
 
