@@ -21,6 +21,7 @@ body {
   background: var(--body-background);
   color: var(--body-font-color);
   font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
   line-height: var(--body-line-height);
   margin: 0;
   tab-size: 4;
