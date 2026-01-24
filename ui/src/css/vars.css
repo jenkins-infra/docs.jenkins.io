@@ -77,14 +77,15 @@
   --color-black: var(--jenkins-black);
 
   /* fonts */
-  --rem-base: 18;
-  --body-font-size: 1.0625em;
-  --body-font-size--desktop: 1.125em;
+  --rem-base: 16;
+  --body-font-size: 0.9375em;
+  --body-font-size--desktop: 0.9375em;
   --body-font-size--print: 0.9375em;
   --body-line-height: 1.65;
   --body-font-color: var(--jenkins-text);
   --body-font-family: "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
-  --body-font-weight-bold: 800;
+  --body-font-weight: 400;
+  --body-font-weight-bold: 700;
   --monospace-font-family: ui-monospace, sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
   --monospace-font-weight-bold: 600;
 
@@ -142,7 +143,7 @@
   /* doc */
   --doc-font-color: var(--jenkins-text);
   --doc-font-size: inherit;
-  --doc-font-size--desktop: calc(17 / var(--rem-base) * 1rem);
+  --doc-font-size--desktop: calc(16 / var(--rem-base) * 1rem);
   --doc-line-height: 1.65;
   --doc-margin: 0 auto;
   --doc-margin--desktop: 0 2rem;
