@@ -15,13 +15,11 @@ content:
       branches: [HEAD]
       start_paths:
         [
-          docs/community,
           docs/dev-docs,
           docs/download,
           docs/images,
           docs/project,
           docs/projects,
-          docs/security,
           docs/sigs,
         ]
 

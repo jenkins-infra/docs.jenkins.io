@@ -56,14 +56,14 @@ pipeline {
         NETLIFY_AUTH_TOKEN = credentials('netlify-auth-token')
       }
       steps {
-        sh 'netlify-deploy --draft=true --siteName "docs-jenkins-io" --title "Preview deploy for ${CHANGE_ID}" --alias "deploy-preview-${CHANGE_ID}" -d ./playbook/build/site'
+        sh 'netlify-deploy --draft=true --siteName "docs-jenkins-io-pr" --title "Preview deploy for ${CHANGE_ID}" --alias "deploy-preview-${CHANGE_ID}" -d ./playbook/build/site'
       }
       post {
         success {
-          recordDeployment('jenkins-infra', 'docs.jenkins.io', pullRequest.head, 'success', "https://deploy-preview-${CHANGE_ID}--docs-jenkins-io.netlify.app")
+          recordDeployment('jenkins-infra', 'docs.jenkins.io', pullRequest.head, 'success', "https://deploy-preview-${CHANGE_ID}--docs-jenkins-io-pr.netlify.app")
         }
         failure {
-          recordDeployment('jenkins-infra', 'docs.jenkins.io', pullRequest.head, 'failure', "https://deploy-preview-${CHANGE_ID}--docs-jenkins-io.netlify.app")
+          recordDeployment('jenkins-infra', 'docs.jenkins.io', pullRequest.head, 'failure', "https://deploy-preview-${CHANGE_ID}--docs-jenkins-io-pr.netlify.app")
         }
       }
     }
