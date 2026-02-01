@@ -1,10 +1,49 @@
-{{#with page.navigation}}
+{{#if page.navigation}}
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    {{#with @root.page.componentVersion}}
-    <h3 class="title"><a href="{{{relativize ./url}}}">{{./title}}</a></h3>
-    {{/with}}
-{{> nav-tree navigation=this}}
+    <ul class="nav-list">
+      <li class="nav-item nav-component-card{{#if (eq @root.page.component.name 'images')}} is-active{{/if}}"
+        data-depth="0">
+        <span class="nav-menu-icon" aria-hidden="true"></span>
+        <span class="nav-text">{{@root.page.componentVersion.title}}</span>
+        <button class="nav-item-toggle"></button>
+        <ul class="nav-list">
+          {{#each @root.site.components}}
+          {{#unless (and (eq this @root.page.component) (ne @root.page.component.name 'images'))}}
+          <li
+            class="nav-item{{#if (and (eq ./name 'images') (eq @root.page.component.name 'images'))}} is-current-page{{/if}}"
+            data-depth="1">
+            <a class="nav-link" href="{{{relativize ./url}}}">{{{./title}}}</a>
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </li>
+    </ul>
+    {{> nav-tree navigation=page.navigation}}
   </nav>
 </div>
-{{/with}}
+{{else}}
+{{#if (eq @root.page.component.name 'images')}}
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <ul class="nav-list">
+      <li class="nav-item nav-component-card is-active" data-depth="0">
+        <span class="nav-menu-icon" aria-hidden="true"></span>
+        <span class="nav-text">{{@root.page.componentVersion.title}}</span>
+        <button class="nav-item-toggle"></button>
+        <ul class="nav-list">
+          {{#each @root.site.components}}
+          {{#unless (and (eq this @root.page.component) (ne @root.page.component.name 'images'))}}
+          <li class="nav-item{{#if (eq ./name 'images')}} is-current-page{{/if}}" data-depth="1">
+            <a class="nav-link" href="{{{relativize ./url}}}">{{{./title}}}</a>
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+{{/if}}
+{{/if}}
