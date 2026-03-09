@@ -1,0 +1,218 @@
+= Upgrading to Jenkins LTS 2.263.x
+
+Each section covers the upgrade from the previous LTS release, the section on 2.263.1 covers the upgrade from 2.249.3.
+
+== Upgrading to Jenkins 2.263.4
+
+=== Docker image update
+
+The Jenkins 2.263.4 Docker images labeled `jenkins/jenkins:2.263.4-lts`, `jenkins/jenkins:2.263.4`, and `jenkins/jenkins:lts` use the AdoptOpenJDK 8u282 release instead of using the OpenJDK 8u242 release from previous images.
+Those images also use Debian 10 (link:https://www.debian.org/releases/buster/["Buster"]) instead of the Debian 9 (link:https://www.debian.org/releases/stretch/["Stretch"]) release that was used in previous images.
+See the link:/blog/2021/02/08/docker-base-os-upgrade/[blog post] for a more detailed description of the change.
+
+The update from OpenJDK 8u242 on Debian 9 to AdoptOpenJDK 8u282 on Debian 10 includes a change in the management of certificate authority (CA) data.
+Please consult link:https://github.com/AdoptOpenJDK/openjdk-installer/issues/105[AdoptOpenJDK issue 105] for the most recent certificate management status if you're encountering SSL certificate issues with AdoptOpenJDK 8u282.
+
+The change from Debian 9 to Debian 10 removes several packages from the base Docker image.
+The `subversion`, `mercurial`, `bzr`, and `python` packages have been removed from the base images, along with other packages.
+The Dockerfile definitions of Jenkins installations that depend on specific operating system packages may need to be updated to use Jenkins 2.263.4 and later.
+
+Example Dockerfile definitions are provided below for:
+
+* link:/doc/upgrade-guide/2.263/#subversion[Subversion]
+* link:/doc/upgrade-guide/2.263/#mercurial[Mercurial]
+* link:/doc/upgrade-guide/2.263/#bazaar[Bazaar]
+* link:/doc/upgrade-guide/2.263/#python[Python]
+
+==== Subversion
+
+The following Docker image definition uses Jenkins 2.263.4 with the link:https://plugins.jenkins.io/subversion[subversion plugin] and the operating system `subversion` package:
+
+[source,dockerfile]
+----
+FROM jenkins/jenkins:2.263.4-lts
+USER root
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends subversion
+USER jenkins
+RUN jenkins-plugin-cli --plugins subversion:2.14.0
+----
+
+==== Mercurial
+
+The following Docker image definition uses Jenkins 2.263.4 with the link:https://plugins.jenkins.io/mercurial[mercurial plugin] and the operating system `mercurial` package:
+
+[source,dockerfile]
+----
+FROM jenkins/jenkins:2.263.4
+USER root
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends mercurial
+USER jenkins
+RUN jenkins-plugin-cli --plugins mercurial:2.12
+----
+
+==== Bazaar
+
+The following Docker image definition uses Jenkins 2.263.4 with the link:https://plugins.jenkins.io/bazaar[bazaar plugin] and the operating system `bzr` package:
+
+[source,dockerfile]
+----
+FROM jenkins/jenkins:2.263.4-lts
+USER root
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends bzr
+USER jenkins
+RUN jenkins-plugin-cli --plugins bazaar:1.22
+----
+
+==== Python
+
+The following Docker image definition uses Jenkins 2.263.4 with the operating system `python3` package (since Python 2 support ended in January 2020):
+
+[source,dockerfile]
+----
+FROM jenkins/jenkins:2.263.4
+USER root
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends python3
+USER jenkins
+----
+
+If your Jenkins installation requires other operating system packages (like bzip2 or certain libraries), those packages can be installed from your Dockerfile with the `apt-get install` command.
+
+== Upgrading to Jenkins 2.263.3
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.263.2
+
+=== Multiple security fixes with potential side effects
+
+Jenkins 2.275 and LTS 2.263.2 contain link:/security/advisory/2021-01-13/[multiple security fixes] that restrict certain features.
+Most of them allow administrators to opt out of (parts of) the security fixes if needed by setting link:/doc/book/managing/system-properties/[Java system properties].
+
+==== Symlink support in file browsers has been removed
+
+link:https://www.jenkins.io/security/advisory/2021-01-13/#SECURITY-1452[SECURITY-1452]
+
+Directory browsers on the classic Jenkins UI no longer support symlinks.
+While they may still exist on disk, and would be archived by (post) build steps, they will no longer appear on the web UI.
+
+If you rely on the previous behavior, this security fix can be disabled by setting the link:/doc/book/managing/system-properties/#hudson-model-directorybrowsersupport-allowsymlinkescape[Java system property `hudson.model.DirectoryBrowserSupport.allowSymlinkEscape`] to `true`.
+Doing so is strongly discouraged.
+
+==== Old Data Monitor no longer includes user-submitted configuration data
+
+link:/security/advisory/2021-01-13/#SECURITY-1923[SECURITY-1923]
+
+Old Data Monitor will no longer report user submitted configuration data (e.g. from `POST config.xml` requests).
+
+Note that error messages related to invalid configuration data submissions are already logged at the level `FINE` in the logger `hudson.util.RobustReflectionConverter` and you do not need Old Data Monitor just to troubleshoot configuration submissions.
+See link:/doc/book/system-administration/viewing-logs/[Viewing Logs].
+
+If you rely on the previous behavior, the following link:/doc/book/managing/system-properties/[Java system properties] can be used to disable part or all of this fix:
+
+* link:/doc/book/managing/system-properties/#jenkins-model-jenkins-additionalreadablepaths[`hudson.util.RobustReflectionConverter.recordFailuresForAllAuthentications`] will completely disable the additional protection. This is unsafe and strongly discouraged.
+
+* link:/doc/book/managing/system-properties/#hudson-util-robustreflectionconverter-recordfailuresforadmins[`hudson.util.RobustReflectionConverter.recordFailuresForAdmins`] will record invalid data submissions by users with Overall/Administer permission.
+
+==== New restrictions on which URLs are always accessible
+
+link:/security/advisory/2021-01-13/#SECURITY-2047[SECURITY-2047]
+
+A security fix in Jenkins 2.275 and LTS 2.263.2 corrects a check that determines whether a URL in Jenkins should be accessible to users without Overall/Read permission.
+
+While we do not expect this to cause problems, the link:/doc/book/managing/system-properties/#jenkins-model-jenkins-additionalreadablepaths[Java system property `jenkins.model.Jenkins.additionalReadablePaths`] can be used to add additional URLs that should always be accessible. For example, if the `/loginFoo/` and `/loginBar/` URLs exists in your Jenkins instance, and were accessible before this fix, and should be accessible now, set `jenkins.model.Jenkins.additionalReadablePaths` to `loginFoo`,`loginBar`.
+
+NOTE: Any plugins introducing such URLs and expecting them to be accessible by users without Overall/Read permission should be changed, e.g. to implement `UnprotectedRootAction` instead of `RootAction`.
+
+==== Security fixes for markup formatter previews
+
+link:/security/advisory/2021-01-13/#SECURITY-2153[SECURITY-2153]
+
+A security fix in Jenkins 2.275 and LTS 2.263.2 limits how markup formatter preview URLs can be accessed, and restricts how their output can be rendered.
+
+If you encounter problems with markup formatter previews, make sure you're not sending `GET` requests, and that you're not rendering these pages standalone.
+
+The additional safeguards can be disabled by setting the following link:/doc/book/managing/system-properties/[Java system properties]:
+
+* link:/doc/book/managing/system-properties/#hudson-markup-markupformatter-previewsallowget[`hudson.markup.MarkupFormatter.previewsAllowGET`] can be set to `true` so the markup formatter preview URL is accessible via `GET` instead of limited to `POST`.
+
+* link:/doc/book/managing/system-properties/#hudson-markup-markupformatter-previewssetcsp[`hudson.markup.MarkupFormatter.previewsSetCSP`] can be set to `false` to not set restrictive Content-Security-Policy headers on responses from markup formatter preview URLs.
+
+Doing so is discouraged, especially if you use a markup formatter that allows the output to contain unsafe content, like JavaScript.
+
+==== Graph size limits
+
+link:/security/advisory/2021-01-13/#SECURITY-2025[SECURITY-2025]
+
+A security fix in Jenkins 2.275 and LTS 2.263.2 limits the maximum size of various graphs rendered by Jenkins.
+A total area of 10 million pixels is now allowed by default (e.g. 4000 x 2500), if a larger size is requested, it will instead render the default size.
+
+This limit can be changed by setting the link:/doc/book/managing/system-properties/#hudson-util-graph-maxarea[Java system property `hudson.util.Graph.maxArea`] to the desired integer value.
+
+==== Security fix for agent names
+
+link:https://www.jenkins.io/security/advisory/2021-01-13/#SECURITY-2021[SECURITY-2021]
+
+A security fix in Jenkins 2.275 and LTS 2.263.2 disallows agent names that could cause Jenkins to override unrelated `config.xml` files.
+
+Cloud plugins (like link:https://plugins.jenkins.io/mesos[Mesos cloud]) allow unsafe characters (like ':') in agent name templates.
+Those plugins may fail to provision an agent due to the unsafe character in the agent name as reported in link:https://issues.jenkins.io/browse/JENKINS-65169[JENKINS-65169].
+
+It is recommended to change the agent name template in the plugin configuration to avoid unsafe characters.
+Administrators can disable this fix by setting the link:/doc/book/managing/system-properties/#jenkins-model-nodes-enforcenamerestrictions[Java system property `jenkins.model.Nodes.enforceNameRestrictions`] to `false`.
+
+Doing so is discouraged, as this will reintroduce a security issue.
+
+=== Security hardenings
+
+In addition to the security fixes listed above, multiple features of Jenkins received security improvements that are not considered fixes.
+
+==== Security hardening for form validation responses
+
+Form validation implemented using standard Jenkins APIs now sets restrictive Content-Security-Policy headers on responses.\
+
+This will prevent cross-site scripting vulnerabilities in form validation responses from being exploitable as reflected XSS.
+
+NOTE: While this does not mean that these vulnerabilities are no longer a problem, exploitation will be more difficult, e.g., they may require need additional permissions to set up.
+
+In case of problems, this hardening can be disabled by setting the link:/doc/book/managing/system-properties/#hudson-util-graph-maxarea[Java system property `hudson.util.FormValidation.applyContentSecurityPolicyHeaders`] to `false`.
+
+==== Security hardening for Digester2
+
+Jenkins provides a slightly modified implementation of `Digester` from the Apache Commons project as `hudson.util.Digester2`.
+It is used in many plugins as an easy way to parse simple XML files.
+
+Starting in Jenkins 2.275 and LTS 2.263.2, `Digester2` will have XML External Entity (XXE) processing disabled by default.
+
+Plugin maintainers can choose to opt out of that protection by using the new constructor overloads.
+
+In case of problems, administrators can disable this hardening by setting the link:https://www.jenkins.io/doc/book/managing/system-properties/#hudson-util-digester2-unsafe[Java system property `hudson.util.Digester2.UNSAFE`] to `true`.
+As this is a global option, it must not be set by plugins, and care needs to be taken to only set this when appropriate.
+
+==== Security hardening for label names
+
+Jenkins allows using labels to connect jobs and the agents they can run on.
+Labels are only created in memory unless their configuration is saved.
+
+Starting in Jenkins 2.275 and LTS 2.263.2, it is not possible to save the configuration of labels with unsafe names.
+Given how labels are stored on disk, some label names would allow overriding unrelated configuration files.
+
+This is not considered to be a security vulnerability as Overall/Administer permission is required to save label configurations, and users with that permission can use the script console and have access to the Jenkins controller file system anyway.
+
+In case of problems, administrators can disable this hardening by setting the link:/doc/book/managing/system-properties/#hudson-model-labelatom-allowfoldertraversal[Java system property `hudson.model.LabelAtom.allowFolderTraversal`] to `true`.
+
+== Upgrading to Jenkins 2.263.1
+
+=== SSHD key exchange and MAC algorithms
+
+The link:https://github.com/jenkinsci/sshd-module/blob/master/README.adoc[Jenkins SSHD module] has been upgraded in this release.
+The upgrade disables deprecated key exchange algorithms and deprecated MAC algorithms by default.
+
+If an administrator requires one or more of the deprecated algorithms, they may be enabled using link:/doc/book/managing/system-properties/[System properties].
+Note that these system properties are generally considered unsupported and may be removed at any time.
+
+* `org.jenkinsci.main.modules.sshd.SSHD.excludedKeyExchanges` is a comma-separated string of key exchange algorithms to disable. By default, this disables SHA-1 based algorithms as they're no longer considered safe. Use an empty string to disable no algorithms. The names of supported, enabled, and disabled algorithms can be viewed using the link:/doc/book/system-administration/viewing-logs/[logger] `org.jenkinsci.main.modules.sshd.SSHD` during initialization on the level `FINE`.
+* `org.jenkinsci.main.modules.sshd.SSHD.excludedMacs` is a comma-separated string of HMAC algorithms to disable. By default, this disables MD5 and truncated SHA-1 based algorithms as they're no longer considered safe. Use an empty string to disable no algorithms. The names of supported, enabled, and disabled algorithms can be viewed using the link:/doc/book/system-administration/viewing-logs/[logger] `org.jenkinsci.main.modules.sshd.SSHD` during initialization on the level `FINE`.
