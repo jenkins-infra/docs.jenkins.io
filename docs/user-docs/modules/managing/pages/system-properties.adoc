@@ -1885,7 +1885,7 @@ mv $JENKINS_HOME/jobs/[ORG_NAME]/jobs/[REPO_NAME]/branches/[BRANCH_NAME]/builds 
 
 ===== name: jenkins.model.Jenkins.crumbIssuerProxyCompatibility
 
-`escape hatch` `feature`
+`escape hatch` `obsolete`
 
 *Default*: `false`
 
@@ -1893,6 +1893,7 @@ mv $JENKINS_HOME/jobs/[ORG_NAME]/jobs/[REPO_NAME]/branches/[BRANCH_NAME]/builds 
 
 *Description*::
 `true` to enable crumb proxy compatibility when running the Setup Wizard for the first time.
+Removed in Jenkins 2.543. The client IP address is no longer used in crumb validation.
 
 ===== name: jenkins.model.Jenkins.disableExceptionOnNullInstance
 
