@@ -37,7 +37,7 @@ pipeline {
       }
       steps {
         sh '''
-        npm install
+        npm ci
         npm run install-subfolders
         '''
       }
