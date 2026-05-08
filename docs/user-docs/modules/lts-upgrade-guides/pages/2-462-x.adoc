@@ -1,0 +1,43 @@
+= Upgrading to Jenkins LTS 2.462.x
+
+Each section covers the upgrade from the previous LTS release, the section on 2.462.1 covers the upgrade from 2.452.4.
+
+== Upgrading to Jenkins 2.462.3
+
+=== Adding an escape hatch for authenticated users
+
+Access to the Resource URL for authenticated users was previously removed in link:https://issue-redirect.jenkins.io/issue/72636[JENKINS-72636].
+However, with the release of 2.462.3, this functionality has been restored.
+To allow an authenticated user to access the Resource URL, add the system property `jenkins.security.ResourceDomainRootAction.allowAuthenticatedUser=true` on startup.
+This can also be done live by executing the groovy script `jenkins.security.ResourceDomainRootAction.ALLOW_AUTHENTICATED_USER = true`.
+
+== Upgrading to Jenkins 2.462.2
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.462.1
+
+=== Upgrade Commons FileUpload from 1.5 to 2.0
+
+The Apache Commons FileUpload library that Jenkins uses for file upload has been upgraded from 1.5 to 2.0 in preparation for the Spring Security 6.x upgrade.
+
+Users of the SAML Single Sign On (SSO) (`miniorange-saml-sp`) plugin should upgrade to a compatible version in lockstep with upgrading Jenkins core.
+Users of the OpenText Application Automation Tools (`hp-application-automation-tools-plugin`) plugin should wait for a compatible version before upgrading Jenkins core.
+
+=== Remove disable project from project view
+
+The "Disable project" link has been removed from the project (job) page.
+A project can be disabled from its "Configure" page.
+
+Users that need frequent access to the "Disable project" button can restore it on the project page with the link:https://plugins.jenkins.io/disable-job-button/[disable job button plugin].
+
+=== Remove Windows path traversal escape hatch
+
+The `hudson.model.DirectoryBrowserSupport.allowAbsolutePath` system property that allows the Windows path traversal vulnerability escape hatch has been removed.
+Users that rely on it will need to adapt their usage to no longer require the Windows path traversal vulnerability.
+No other workaround is planned.
+Refer to link:https://www.jenkins.io/security/advisory/2021-10-06/#SECURITY-2481[SECURITY-2481] for details.
+
+=== Remove Winstone support for multiple WAR files
+
+The `webappsDir` argument to run Winstone with a directory full of WAR files has been removed without replacement.

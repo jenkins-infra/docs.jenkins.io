@@ -1,0 +1,67 @@
+= Upgrading to Jenkins LTS 2.387.x
+
+Each section covers the upgrade from the previous LTS release, the section on 2.387.1 covers the upgrade from 2.375.4.
+
+== Upgrading to Jenkins 2.387.3
+
+=== XStream2 unable to round-trip ASCII NUL
+
+Jenkins has switched from using `KXm12Driver` to `StandardStaxDriver`.
+Due to this change, Jenkins XML files can no longer save text content with the ASCII NUL character (U+0000).
+In particular, if you are using the https://plugins.jenkins.io/junit[JUnit plugin] to publish test results, be sure to update it to https://plugins.jenkins.io/junit/releases/[the latest version] to avoid problems with new builds.
+Test results published with older versions of the plugin will remain unreadable.
+
+NOTE: If you experience this issue with any other plugins, raise a bug report within the plugin repository.
+
+== Upgrading to Jenkins 2.387.2
+
+=== Repository Signing Key Update
+
+Beginning with Jenkins LTS release https://www.jenkins.io/changelog-stable/#v2.387.2[2.387.2], stable repositories will be signed with the same GPG keys that sign the weekly repositories.
+Administrators of Linux systems must install the new signing keys on their Linux servers before installing Jenkins 2.387.2.
+
+==== Debian/Ubuntu
+
+Update Debian compatible operating systems (Debian, Ubuntu, etc.) with the command:
+
+[source,bash]
+----
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+----
+
+==== Red Hat/CentOS
+
+Update Red Hat compatible operating systems (Red Hat Enterprise Linux, CentOS, Fedora, Oracle Linux, Scientific Linux, etc.) with the command:
+
+[source,bash]
+----
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+----
+
+See the https://www.jenkins.io/blog/2023/03/27/repository-signing-keys-changing/[blog post] for more details.
+
+== Upgrading to Jenkins 2.387.1
+
+=== De-duplicate logging implementations
+
+Support for log rotation via `SIGALRM` has been removed.
+The command-line argument `--daemon` has been removed.
+Users of the official Jenkins OS packages, which rely on the `copytruncate` option, are not affected.
+Users of the `--logfile` argument who have their own `logrotate` configuration should ensure they are using the `copytruncate` option rather than relying on `SIGALRM`.
+
+=== Set a default file size rotation of AsyncPeriodicWork/AsyncAperiodicWork
+
+Periodic task log files are now rotated based on the file size, with a default size of 10 MB.
+Previously, they were not rotated based on the file size.
+To revert to the previous behavior and disable the file size rotation, the system properties https://www.jenkins.io/doc/book/managing/system-properties/#hudson-model-asyncaperiodicwork-logrotatesize[hudson.model.AsyncAperiodicWork.logRotateSize=-1] and https://www.jenkins.io/doc/book/managing/system-properties/#hudson-model-asyncperiodicwork-logrotatesize[hudson.model.AsyncPeriodicWork.logRotateSize=-1] can be used.
+
+=== Upgrade required Remoting version from 4.2.1 to 4.7
+
+The minimum required Remoting version has been increased to 4.7, which released on February 16, 2021.
+When an agent with a Remoting version older than 4.7 connects to the Jenkins controller, the agent connection is rejected.
+Ensure that all agents are running a recent version of Remoting prior to upgrading.
+Agents with unsupported Remoting versions can be allowed to connect to the controller by setting the `hudson.slaves.SlaveComputer.allowUnsupportedRemotingVersions` system property to `true`.
