@@ -22,14 +22,22 @@ pipeline {
       }
     }
 
+    stage('Check Tooling') {
+      steps {
+        sh '''
+        node --version
+        npm --version
+        '''
+      }
+    }
+
     stage('Install dependencies') {
       environment {
         NODE_ENV = 'development'
       }
       steps {
         sh '''
-        asdf install
-        npm install
+        npm ci
         npm run install-subfolders
         '''
       }
