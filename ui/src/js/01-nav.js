@@ -12,7 +12,6 @@
 
   var menuPanel = navContainer.querySelector('[data-panel=menu]')
   if (!menuPanel) return
-  var explorePanel = navContainer.querySelector('[data-panel=explore]')
 
   var currentPageItem = menuPanel.querySelector('.is-current-page')
   var originalPageItem = currentPageItem
@@ -33,12 +32,24 @@
     }
   })
 
-  if (explorePanel) {
-    explorePanel.querySelector('.context').addEventListener('click', function () {
-      // NOTE logic assumes there are only two panels
-      find(nav, '[data-panel]').forEach(function (panel) {
-        panel.classList.toggle('is-active')
-      })
+  var versionSelector = navContainer.querySelector('.nav-version-selector')
+  if (versionSelector) {
+    var versionToggle = versionSelector.querySelector('.nav-version-selector-toggle')
+    versionToggle.addEventListener('click', function (e) {
+      var expanded = versionSelector.classList.toggle('is-active')
+      versionToggle.setAttribute('aria-expanded', String(expanded))
+      e.stopPropagation()
+    })
+    document.addEventListener('click', function () {
+      versionSelector.classList.remove('is-active')
+      versionToggle.setAttribute('aria-expanded', 'false')
+    })
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        versionSelector.classList.remove('is-active')
+        versionToggle.setAttribute('aria-expanded', 'false')
+        versionToggle.focus()
+      }
     })
   }
 
