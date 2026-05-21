@@ -6,7 +6,7 @@ install:
     paths:
       - .cache/npm
   script:
-    - &npm_install npm install --quiet --no-progress --cache=.cache/npm
+    - &npm_install npm ci --quiet --no-progress --cache=.cache/npm
 lint:
   stage: verify
   cache: &pull_cache
