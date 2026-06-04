@@ -106,6 +106,10 @@ pipeline {
     }
 
     stage('Publish build report') {
+      when {
+        // Only report from infra.ci.jenkins.io
+        expression { infra.isInfra() }
+      }
       steps {
         publishBuildStatusReport()
       }
