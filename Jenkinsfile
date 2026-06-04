@@ -109,7 +109,7 @@ pipeline {
       when {
         allOf{
           expression { env.BRANCH_IS_PRIMARY }
-          // Only deploy from infra.ci.jenkins.io
+          // Only report from infra.ci.jenkins.io
           expression { infra.isInfra() }
         }
       }
