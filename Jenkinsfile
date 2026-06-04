@@ -104,5 +104,14 @@ pipeline {
         }
       }
     }
+
+    stage('Publish build report') {
+      when {
+        expression { env.BRANCH_IS_PRIMARY }
+      }
+      steps {
+        publishBuildStatusReport()
+      }
+    }
   }
 }
