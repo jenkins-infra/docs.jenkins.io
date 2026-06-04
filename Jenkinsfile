@@ -107,10 +107,8 @@ pipeline {
 
     stage('Publish build report') {
       when {
-        allOf{
-          // Only report from infra.ci.jenkins.io
-          expression { infra.isInfra() }
-        }
+        // Only report from infra.ci.jenkins.io
+        expression { infra.isInfra() }
       }
       steps {
         publishBuildStatusReport()
