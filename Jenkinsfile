@@ -108,7 +108,6 @@ pipeline {
     stage('Publish build report') {
       when {
         allOf{
-          expression { env.BRANCH_IS_PRIMARY }
           // Only report from infra.ci.jenkins.io
           expression { infra.isInfra() }
         }
