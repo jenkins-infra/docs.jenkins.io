@@ -1,0 +1,24 @@
+= Upgrading to Jenkins LTS 2.190.x
+
+Each section covers the upgrade from the previous LTS release, the section on 2.190.1 covers the upgrade from 2.176.4.
+
+== Upgrading to Jenkins 2.190.3
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.190.2
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.190.1
+
+=== Jenkins no longer creates symbolic links inside project or build directories
+
+link:https://issue-redirect.jenkins.io/issue/37862[JENKINS-37862]
+
+There were a lot of bugs and limitations with use of symbolic links for build directories, especially on platforms like Windows.
+Additionally, this functionality was not widely used.
+
+Starting from Jenkins LTS 2.190.1 Jenkins no longer creates symbolic links inside project or build directories.
+The link:https://plugins.jenkins.io/build-symlink[Build Symlink] plugin may be installed to restore this functionality if desired.
+URLs such as `/job/…/lastStableBuild/` are not affected, only tools which directly access the `$JENKINS_HOME` filesystem.

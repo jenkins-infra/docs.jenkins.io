@@ -1,0 +1,116 @@
+= Upgrading to Jenkins LTS 2.346.x
+
+Each section covers the upgrade from the previous LTS release, the section on 2.346.1 covers the upgrade from 2.332.4.
+
+== Upgrading to Jenkins 2.346.3
+
+=== OpenJDK 11.0.16/17.0.4 and the C2 JIT compiler
+
+OpenJDK 11.0.16 and 17.0.4 are susceptible to https://bugs.openjdk.org/browse/JDK-8292260[JDK-8292260], a regression in the C2 JIT compiler which https://mail.openjdk.org/pipermail/jdk-updates-dev/2022-August/016460.html[may cause the JVM to crash unpredictably].
+The OpenJDK project has released fixes in 11.0.16.1 and 17.0.4.1.
+As of August 26, 2022, the official Jenkins Docker images have been updated with OpenJDK 11.0.16.1 and 17.0.4.1 in version 2.346.3-2.
+
+=== OpenJDK 11.0.16/17.0.4 and the metaspace
+
+The version of OpenJDK in the official Docker image has been upgraded from 11.0.15 to 11.0.16 and from 17.0.3 to 17.0.4.
+This exposes a metaspace memory leak in Pipeline: Groovy 2692.v76b_089ccd026 and earlier and in Script Security 1172.v35f6a_0b_8207e and earlier.
+After upgrading Jenkins to 2.346.3, upgrade Pipeline: Groovy to 2705.v0449852ee36f or later and upgrade Script Security to 1175.v4b_d517d6db_f0 or later.
+It is generally recommended to upgrade all plugins after upgrading Jenkins core.
+
+For more information about recent JVM metaspace changes, see link:https://www.youtube.com/watch?v=XqaQ-z70sQs[Taming Metaspace: a look at the machinery, and a proposal for a better one | FOSDEM 2020] and the following blog posts:
+
+* link:https://stuefe.de/posts/metaspace/what-is-metaspace/[What is Metaspace?]
+
+* link:https://stuefe.de/posts/metaspace/metaspace-architecture/[Metaspace Architecture]
+
+* link:https://stuefe.de/posts/metaspace/what-is-compressed-class-space/[What is Compressed Class Space?]
+
+* link:https://stuefe.de/posts/metaspace/sizing-metaspace/[Sizing Metaspace]
+
+* link:https://stuefe.de/posts/metaspace/analyze-metaspace-with-jcmd/[Analyze Metaspace with jcmd VM.metaspace]
+
+
+=== OpenJDK 11.0.16 and container awareness for cgroups v2
+
+OpenJDK 11.0.16 contains a fix for https://bugs.openjdk.org/browse/JDK-8230305[JDK-8230305]; i.e., container awareness for https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html[cgroups v2].
+
+Previously, there would be no container detection when running OpenJDK 11.0.15 on cgroups v2, and the limits from the container host would be used.
+As of OpenJDK 11.0.16, OpenJDK detects container limits via cgroups v2.
+These limits affect, for example, the garbage collection (GC) algorithm selected by the JVM, the default size of the heap, the sizes of thread pools, and how default parallelism is determined for `ForkJoinPool`.
+
+For more information, refer to link:https://developers.redhat.com/articles/2022/04/19/java-17-whats-new-openjdks-container-awareness#tuning_defaults_for_containers[Java 17: What’s new in OpenJDK’s container awareness] and link:https://www.youtube.com/watch?v=ZmTUBKvSWzs[OpenJDK 17 | Container Detection Demo].
+
+== Upgrading to Jenkins 2.346.2
+
+=== Docker script `install-plugins.sh` removed
+
+The `install-plugins.sh` script in the Docker image of the controller has been deprecated for over 18 months.
+It has been replaced in the Docker image with a script that directs the user to use the plugin installation manager tool.
+The plugin installation manager tool is available in the image as `jenkins-plugin-cli`.
+
+The plugin installation manager tool provides more information about the plugins they are downloading, such as available updates and security warnings.
+The plugin installation manager tool handles Jenkins version requirements and dependency management better than the `install-plugins.sh` script did.
+
+See the https://github.com/jenkinsci/plugin-installation-manager-tool/#readme[plugin installation manager documentation] for more details.
+
+== Upgrading to Jenkins 2.346.1
+
+=== PNG and GIF icons replaced with SVG icons
+
+Scalable vector graphics images are used in Jenkins instead of the GIF and PNG images that were used previously.
+SVG images provide a better user experience and improve the Jenkins user experience.
+
+The GIF and PNG images have been removed from Jenkins core.
+
+Ensure all your plugins are the most recent release before updating core, otherwise images may be missing.
+Check for new plugin versions immediately after the core update and install available updates.
+
+=== Java Native Runtime library removed
+
+The Java Native Runtime (JNR) library has been removed from Jenkins core.
+Users of https://plugins.jenkins.io/pam-auth/[PAM Authentication] must upgrade to at least version 1.7.
+Users of https://plugins.jenkins.io/file-leak-detector/[CloudBees File Leak Detector] must upgrade to at least version 1.7.
+Users of https://plugins.jenkins.io/maven-repo-cleaner/[Maven Repository Scheduled Cleanup] do not have a compatible upgrade. They should remove the plugin.
+
+
+
+=== Self-signed certificate not provided automatically
+
+In previous versions of Jenkins, a self-signed certificate was used if no HTTPS keystore was specified when processing HTTPS inside the Jenkins java process.
+This feature has been removed.
+
+If HTTPS or HTTP/2 is being processed directly by the Jenkins java process, an HTTPS keystore must be configured by adding the `--httpsKeyStore=path/to/keystore` and `--httpsKeyStorePassword=keystorePassword` arguments.
+This change does not affect HTTPS processing that is performed in link:/doc/book/system-administration/reverse-proxy-configuration-with-jenkins/[reverse proxies] like Nginx and Apache HTTP Server.
+
+See link:/doc/book/installing/initial-settings/#https-with-an-existing-certificate[HTTPS with an existing certificate] and link:/doc/book/installing/initial-settings/#https-certificates-with-windows[HTTPS certificates with Windows] for more information on creating a key store.
+
+=== Reject connections from unsupported agent versions
+
+Jenkins now rejects connections from agents with unsupported Remoting versions.
+When an agent with a Remoting version older than 3.14 connects to the Jenkins controller, the agent connection is rejected.
+The agent status page will show the message:
+
+`This agent is offline because Jenkins failed to launch the agent process on it.`
+
+Agents with unsupported Remoting versions can be allowed to connect to the controller by setting the `hudson.slaves.SlaveComputer.allowUnsupportedRemotingVersions` system property to true.
+
+Administrators that want more information about agent versions can install the https://plugins.jenkins.io/versioncolumn/[Version Node Monitors] plugin. It displays the remoting version of the connected agent in the "Nodes" page and can be configured to require matching Remoting versions, matching Java versions, and more.
+
+=== GNU C Library removed from Alpine Docker images
+
+Alpine Linux is not a GNU/Linux distribution; unlike GNU/Linux distributions, Alpine uses https://musl.libc.org/[musl] and https://busybox.net/[BusyBox] instead of the more commonly used https://www.gnu.org/software/libc/[GNU C Library] and https://www.gnu.org/software/coreutils/[GNU Core Utilities].
+Previous versions of Java required the GNU C Library; therefore, the Jenkins project previously delivered Alpine images with the GNU C Library.
+Recent versions of Eclipse Temurin for Alpine do not require the GNU C Library; therefore, the Jenkins project has removed the now-unused GNU C Library from its Alpine images.
+
+Users who run jobs on the controller, which is link:/doc/book/security/controller-isolation/[not recommended], may experience issues if they were running binaries linked against the GNU C Library.In particular, the use of a Global Tool Configuration (e.g., Node.js or Java) downloading binaries linked against the GNU C Library will result in errors like the following on the controller:
+
+[source]
+----
+env: 'node': No such file or directory
+----
+
+The recommended solutions are, in order of preference:
+
+* Do not run jobs on the controller's built-in node (recommended); instead, run them on an agent.
+* If you must run jobs on the controller and want to use generic third-party binaries that require the GNU C Library, use the Debian or Debian Slim Docker images rather than the Alpine image.
+* If you must run jobs on the controller and want to keep using the Alpine Docker image, build a custom Docker image that extends from the official Alpine Docker image, then either (a) install the packages you want from Alpine's repositories with `apk(1)` or (b) install the GNU C Library and use Global Tool Configuration to download and run binaries linked against the GNU C Library.

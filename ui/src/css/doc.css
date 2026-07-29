@@ -213,7 +213,7 @@
 }
 
 .doc .float-gap.left {
-  margin: 0 0 1rem 1rem;
+  margin: 0 1rem 1rem 0;
 }
 
 .doc .float-group::after {
@@ -485,7 +485,7 @@
 .doc .imageblock.text-left,
 .doc .videoblock.text-left {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .doc .imageblock.text-right,
@@ -512,6 +512,25 @@
 
 .doc .avatar .image > img {
   border-radius: 50%;
+}
+
+.doc table.image-row {
+  border: 0;
+  margin-left: 0;
+}
+
+.doc table.image-row > * > tr > * {
+  border: 0;
+  padding: 0.05rem;
+  vertical-align: top;
+}
+
+.doc table.image-row > * > tr > :first-child {
+  padding-left: 0;
+}
+
+.doc table.image-row .imageblock {
+  align-items: flex-start;
 }
 
 .doc .videoblock iframe {
