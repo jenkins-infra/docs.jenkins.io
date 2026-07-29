@@ -1,0 +1,6 @@
+# Jenkins Documentation Versions
+# Format: version|label|url (url is optional, defaults to /version/)
+
+2.504.x|Stable|/2.504.x/
+2.516.x|Latest|/2.516.x/
+main|Development|/main/
