@@ -1,8 +1,7 @@
 @Library('pipeline-library@pull/1055/head') _
 
 buildWebsite([
-  websiteName: 'docs-jenkins-io-pr',
-  publishDir: './playbook/build/site',
+  deployFolder: 'playbook/build/site',
   // TODO: lint all YAML files
   lint: false,
 ])
