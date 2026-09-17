@@ -1,0 +1,141 @@
+= Upgrading to Jenkins LTS 2.176.x
+
+Each section covers the upgrade from the previous LTS release, the section on 2.176.1 covers the upgrade from 2.164.3.
+
+== Upgrading to Jenkins 2.176.4
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.176.3
+
+=== Improved CSRF protection
+
+link:https://www.jenkins.io/security/advisory/2019-08-28/#SECURITY-1491[SECURITY-1491]
+
+Jenkins 2.176.3 and 2.192 introduce further improvements to link:https://en.wikipedia.org/wiki/Cross-site_request_forgery[CSRF] protection.
+This increases the likelihood of using CSRF tokens in a way that is no longer supported.
+The previous upgrade advice for <<SECURITY-626,SECURITY-626>> in 2.176.2 applies.
+
+== Upgrading to Jenkins 2.176.2
+
+[[SECURITY-626]]
+=== Improved CSRF protection
+
+link:https://www.jenkins.io/security/advisory/2019-07-17/#SECURITY-626[SECURITY-626]
+
+link:https://en.wikipedia.org/wiki/Cross-site_request_forgery[CSRF] tokens (crumbs) are now only valid for the web session they were created in to limit the impact of attackers obtaining them.
+Scripts that obtain a crumb using the `/crumbIssuer/api` URL will now fail to perform actions protected from CSRF unless the scripts retain the web session ID in subsequent requests.
+
+NOTE: Scripts could instead use an API token, which has not required a CSRF token (crumb) since link:/changelog/#v2.96[Jenkins 2.96].
+
+To disable this improvement you can set the system property `hudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID` to `true`.
+Alternatively, you can install the link:https://plugins.jenkins.io/strict-crumb-issuer[Strict Crumb Issuer Plugin] which provides more options to customize the crumb validation.
+It allows excluding the web session ID from the validation criteria, and instead e.g. replacing it with time-based expiration for similar (or even better) protection from CSRF.
+
+=== New restrictions for view dispatching
+
+link:/security/advisory/2019-07-17/#SECURITY-534[SECURITY-534]
+
+A design flaw in the Stapler web framework used by Jenkins allowed attackers in some cases to bypass permission checks and access view fragments disclosing sensitive information.
+link:/security/advisory/2019-07-17/#SECURITY-534[For further details, see the security advisory].
+
+As a side effect of this security fix, some views may no longer be accessible.
+This typically results in `HTTP 404 Not Found` responses.
+Whenever this happens, Jenkins writes a message similar to the following to the Jenkins system log:
+
+----
+WARNING: New Stapler dispatch rules result in the URL "/example" no longer being
+allowed. If you consider it safe to use, add the following to the whitelist:
+"jenkins.model.Jenkins example". Learn more:
+https://jenkins.io/redirect/stapler-facet-restrictions
+----
+
+If this happens due to legitimate use of the Jenkins UI, the affected view can be added to the list of approved views.
+By default, a file named `stapler-views-whitelist.txt` in the `JENKINS_HOME` directory can be modified to add these signatures.
+The location of this file can be overridden by the system property `jenkins.security.stapler.StaplerDispatchValidator.whitelist`.
+Each line of this file contains a model class name followed by a space-delimited list of view names to allow.
+Lines beginning with `#` are ignored.
+For example:
+
+----
+# allow dispatch to 'example' from the 'jenkins.model.Jenkins' class
+jenkins.model.Jenkins example
+
+# allow some other views
+com.example.FooBar foo bar
+----
+
+When making changes to this whitelist, Jenkins will not automatically detect changes to the file.
+To make Jenkins reload its cache of these whitelist entries, execute the following command in the Jenkins script console as an administrator:
+
+[source,groovy]
+----
+jenkins.security.stapler.StaplerDispatchValidator.getInstance(Jenkins.instance.servletContext).cache.load()
+----
+
+Alternatively, individual line entries can be directly added in memory to the cache.
+These will not be persisted on disk, so they're only active until Jenkins is restarted.
+This can be useful for iteratively enabling views without directly modifying the filesystem.
+An administrator can add these entries using the following Jenkins script console command:
+
+[source,groovy]
+----
+jenkins.security.stapler.StaplerDispatchValidator.getInstance(Jenkins.instance.servletContext).cache.loadWhitelist([
+    'jenkins.model.Example example',
+    'com.example.FooBar foo bar'
+])
+----
+
+These entries must be manually saved into the whitelist file in order to persist between restarts of Jenkins.
+
+We track known affected plugins and their status in https://wiki.jenkins.io/display/JENKINS/Plugins+affected+by+the+SECURITY-534+fix[the Jenkins wiki].
+
+== Upgrading to Jenkins 2.176.1
+
+=== Remoting-mode of CLI removed
+
+link:https://www.jenkins.io/blog/2019/02/17/remoting-cli-removed/[Announcement blog post]
+
+Support for the remoting mode of the CLI has been removed (previously available using the `-remoting` argument to `java -jar jenkins-cli.jar`).
+This includes related features and commands only available in that mode.
+Most CLI features are still available via HTTP transport, or the builtin SSH server.
+
+=== Symbol `nonStoredPasswordParam` removed
+
+link:https://issue-redirect.jenkins.io/issue/56776[JENKINS-56776]
+
+The password parameter type offered an alternative symbol `nonStoredPasswordParam` for use in pipelines and scripts.
+It implied that the password value would not be stored.
+As this is false — it is stored encrypted — the symbol has been removed.
+Pipelines and other scripts using the symbol need to be changed to use the symbol `password` instead.
+
+=== Mailer plugin resources removed
+
+link:https://issue-redirect.jenkins.io/issue/55292[JENKINS-55292]
+
+link:https://plugins.jenkins.io/mailer[Mailer Plugin] used to be a feature of Jenkins core that was split off into a plugin.
+Some resources were accidentally left in core.
+These have now been removed.
+
+It is recommended to update to Mailer Plugin 1.23, the first plugin release to contain the resources, or newer, to prevent errors.
+
+=== New security warning related to build authorization
+
+link:https://issue-redirect.jenkins.io/issue/24513[JENKINS-24513]
+
+Builds in Jenkins run as the internal SYSTEM pseudo-user with full privileges by default.
+This means that one build can e.g. trigger builds of any other project, unless the specific feature implementation performs some additional permission checks.
+
+Jenkins now informs administrators if they have a potentially insecure configuration of Jenkins due to lack of installed or configured build authenticators.
+Additionally, if builds run as the internal SYSTEM pseudo-user, build logs will include a message with that information.
+
+=== Built-in support for CCtray (cc.xml) files removed
+
+link:https://issue-redirect.jenkins.io/issue/40750[JENKINS-40750]
+
+Built-in support for offering build information in the CCtray (cc.xml) format has been removed.
+To restore this feature, install the link:https://plugins.jenkins.io/cctray-xml[CCtray XML Plugin].
+
+=== Chinese translations removed
+
+All Chinese translations not required for the setup wizard have been migrated into the link:https://plugins.jenkins.io/localization-zh-cn[Localization: Chinese (Simplified) plugin].

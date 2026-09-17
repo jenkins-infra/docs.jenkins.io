@@ -1,0 +1,48 @@
+= Upgrading to Jenkins LTS 2.414.x
+
+Each section covers the upgrade from the previous LTS release, the section on 2.414.1 covers the upgrade from 2.401.3.
+
+== Upgrading to Jenkins 2.414.3
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.414.2
+
+=== Jenkins sign-in page update
+
+The Jenkins sign-in page was updated with enhanced visuals and support for browser-native themes.
+Unfortunately, this has created an issue with the https://plugins.jenkins.io/login-theme[Login Theme] plugin.
+A fix has been developed and merged in the 2.414.2 LTS release.
+After updating your Jenkins LTS version, users of this plugin will need to update to the https://github.com/jenkinsci/login-theme-plugin/releases/tag/46.v36f624efb_23d[latest version].
+
+== Upgrading to Jenkins 2.414.1
+
+=== Input name prefix added
+
+When creating or saving a view where "elements" was used for the name of something such as a freestyle job, folder, or even pipeline, the `elements` property was being overloaded.
+To resolve this, the prefix `item_` has been added to the name of input elements of ListView to prevent form submission issues when an Item (job) is named "elements".
+The following plugins must be upgraded when updating Jenkins:
+
+* https://plugins.jenkins.io/categorized-view[Categorized view] version 1.13 or newer
+* https://plugins.jenkins.io/build-monitor-plugin[Build Monitor View] version 1.14-745.ve2023a_305f40 or newer
+
+The https://plugins.jenkins.io/calendar-view[Calendar View] plugin also has an issue relating to this update, but does not have a pull request intended to fix the issue at this time.
+
+=== Remove dependency on jenkins-js-modules
+
+The `jenkins-js-modules` dependency has been removed to simplify the loading of JavaScript and CSS.
+This dependency was removed for core, where usage was limited to the new job, plugin manager, and system information pages.
+Additionally, the only plugins that were using the dependency are https://plugins.jenkins.io/dependency-track[OWASP Dependency-Track] and https://plugins.jenkins.io/servicenow-cicd[ServiceNow CI/CD].
+The plugins have been updated accordingly and users of OWASP Dependency-Track must upgrade to 4.3.1 or later, while users of ServiceNow CI/CD must upgrade to 2.1 or later.
+
+=== Jenkins sign-in page update
+
+The Jenkins sign-in page was updated with enhanced visuals and support for browser-native themes.
+Unfortunately, this has created an issue with the https://plugins.jenkins.io/login-theme[Login Theme] plugin.
+A fix is being developed and will be delivered in the 2.414.2 LTS release.
+Once this is released, users of this plugin will need to update to the latest version.
+
+=== Global build stats plugin
+
+As part of the initiative to https://www.jenkins.io/blog/2023/05/12/removing-prototype-from-jenkins/[remove Prototype from Jenkins], the https://plugins.jenkins.io/global-build-stats[global build stats] plugin's usage of Prototype has been removed.
+Be sure to update the plugin to version https://github.com/jenkinsci/global-build-stats-plugin/releases/tag/282.v79ca_e079d1b_1[282.v79ca_e079d1b_1] or later to ensure proper functionality.

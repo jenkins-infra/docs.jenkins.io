@@ -1,0 +1,150 @@
+= Upgrading to Jenkins LTS 2.204.x
+
+Each section covers the upgrade from the previous LTS release, the section on 2.204.1 covers the upgrade from 2.190.3.
+
+== Upgrading to Jenkins 2.204.6
+
+=== Changes to CSRF protection
+
+link:/security/advisory/2020-03-25/#SECURITY-1774[SECURITY-1774]
+
+Changes in Jenkins 2.228, 2.204.6, and 2.222.1 affect CSRF protection in multiple ways:
+
+* Responses to `POST` requests that do not set a CSRF crumb/token may in very rare cases change in unexpected ways due to the fix for SECURITY-1774. In case of problems with such requests, administrators can disable this security fix by setting the system property `hudson.security.csrf.CrumbFilter.UNPROCESSED_PATHINFO` to `true`.
+* As an additional safeguard, semicolon (`;`) characters in the path part of a URL are now banned by default. Administrators can disable this protection by setting the system property `jenkins.security.SuspiciousRequestFilter.allowSemicolonsInPath` to `true`.
+
+These features overlap, so both may need to be disabled in case of problems.
+Doing so is strongly discouraged, as that re-opens the SECURITY-1774 general CSRF vulnerability.
+
+We expect neither of these changes to result in problems.
+If they do, please link:https://wiki.jenkins.io/display/JENKINS/How+to+report+an+issue[file a bug] and use the labels `security-1774` and `regression`.
+
+== Upgrading to Jenkins 2.204.5
+
+=== Custom System Logging Formats Ignored
+
+Custom system logging formats are ignored in Jenkins 2.204.5 as a result of link:https://issue-redirect.jenkins.io/issue/57888[JENKINS-57888].
+Fixes for the high default maximum form size limit and reverse proxy redirection are included in Jenkins 2.204.5, and they required downgrade of the Jetty dependency.
+
+There is no workaround available for this issue in the 2.204.5 release.
+We plan to fix it in the next LTS release (2.222.1).
+
+== Upgrading to Jenkins 2.204.4
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.204.3
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.204.2
+
+=== Removal of Inbound TCP Agent Protocol/3
+
+link:https://www.jenkins.io/security/advisory/2020-01-29/#SECURITY-1682[SECURITY-1682]
+
+It is no longer possible to enable Inbound TCP Agent Protocol/3 through the UI.
+Instances upgrading from previous releases of Jenkins, which had this protocol enabled, will have it disabled.
+
+The system property `jenkins.slaves.JnlpSlaveAgentProtocol3.ALLOW_UNSAFE` can be set to `true` to allow enabling this protocol again if necessary.
+We strongly discourage doing this.
+
+NOTE: This only applies to Jenkins 2.204.2 and subsequent releases in that LTS line; the protocol has been removed entirely from Jenkins 2.214 and newer.
+
+=== Disabled network auto-discovery services
+
+link:https://www.jenkins.io/security/advisory/2020-01-29/#SECURITY-1641[SECURITY-1641]
+
+Jenkins no longer enables DNS multicast and UDP multicast/broadcast by default.
+
+To re-enable these services, set the system property `hudson.DNSMultiCast.disabled` to `false` (for DNS multicast) or the system property `hudson.udp` to `33848`, or another port (for UDP broadcast/multicast).
+These are the same system properties that controlled whether these features were enabled in the past, so any instances explicitly enabling these features by setting these system properties will continue to have them enabled.
+
+=== Stapler security hardening
+
+Access to URLs processed by the `Computer` and `Plugin` types (or subtypes) now requires users to have Overall/Read permission.
+
+These new restrictions can be disabled by setting the system properties `hudson.Plugin.skipPermissionCheck` or `hudson.model.Computer.skipPermissionCheck` to `true` if this change causes problems.
+
+== Upgrading to Jenkins 2.204.1
+
+=== Global configuration save and configuration as code plugin
+
+Jenkins 2.199 introduced a link:https://github.com/jenkinsci/jenkins/pull/4171[check to prevent saving global configuration before loading the configuration has occurred].
+Configuration As Code needs to apply global configuration before Jenkins loads jobs (so they can load and correctly reference any global state) and as such until JENKINS-51856 is implemented there exists a race condition where by Jenkins may fail to start when used with this plugin.
+
+If you encounter the race condition Jenkins will fail to start with an exception message similar to the following:
+
+[source]
+----
+SEVERE	jenkins.InitReactorRunner$1#onTaskFailed: Failed ConfigurationAsCode.init
+java.lang.IllegalStateException: An attempt to save the global configuration
+  was made before it was loaded
+----
+
+If you encounter this, you can tell the plugin to delay configuration for an amount of time to give Jenkins time to load the global configuration before the configuration is applied by the plugin.
+
+To enable this set the `io.jenkins.plugins.casc.ConfigurationAsCode.initialDelay` system property to a number of milliseconds to delay the initialisation.
+The required value will be dependant on aspects of your system (cpu/disk) and configuration, and how it can be found is mostly a trial and error.
+A suggestion would be to start with 5000 (5 Seconds) and then increment by 2000 (2 seconds) until you no longer exhibit the issue and finally add 1000 (1 second) for some extra safety.
+For example, to delay the configuration by 9 seconds you would use something like the following command `java -Dio.jenkins.plugins.casc.ConfigurationAsCode.initialDelay=9000 -jar jenkins.war`.
+Exactly how and where you specify this option depends on the installation method used to install Jenkins.
+
+=== Remove browser-based metadata download settings
+
+The ability to download update center metadata using the user's browser was removed from Jenkins.
+Jenkins will no longer inform administrators about available updates without an internet connection.
+We recommend the use of a local mirror of our update sites or a self-hosted update center like https://github.com/jenkinsci/juseppe[Juseppe] in such situations.
+
+An administrative monitor has warned users that browser-based metadata download is deprecated.
+This release removes the capability and the administrative monitor.
+
+Users maintaining Jenkins with the link:https://plugins.jenkins.io/configuration-as-code[configuration as code plugin] will need to remove the `downloadSettings` entry from the configuration file:
+
+[source,yaml]
+----
+security:
+  downloadSettings:
+    useBrowser: false
+----
+
+If that section is not removed, Jenkins will fail to start.
+When it fails to start, the message in the logfile will look something like this:
+
+[source]
+----
+SEVERE jenkins.InitReactorRunner$1#onTaskFailed: Failed ConfigurationAsCode.init
+io.jenkins.plugins.casc.ConfiguratorException: Invalid configuration elements
+  for type class jenkins.model.GlobalConfigurationCategory$Security : downloadSettings.
+----
+
+The Jenkins web page may also display a message like this:
+
+[source]
+----
+java.lang.IllegalStateException: Expected 1 instance of jenkins.security.ResourceDomainConfiguration
+  but got 0
+----
+
+Remove the `downloadSettings` and `useBrowser` lines from the configuration as code file to resolve those errors.
+
+=== Resource domain support
+
+link:https://issue-redirect.jenkins.io/issue/41891[JENKINS-41891]
+
+Static resources (HTML pages, workspace files, images, etc.) served from Jenkins are protected by default using a content security policy.
+Many Jenkins plugins need to serve static resources but have not been updated to support content security policy.
+Previously, administrators were required to define custom content security policies in order to display those pages correctly.
+
+Administrators may now choose to define a Resource Root URL that Jenkins will use to serve static pages without adding content security policy headers.
+
+=== Stop bundling Maven plugin and Subversion plugin with Jenkins
+
+Certain key Jenkins capabilities were initially created inside the Jenkins core.
+As Jenkins has developed further, capabilities moved from inside Jenkins core to dedicated Jenkins plugins, like the maven and subversion plugins.
+When those plugins were created, the plugins were "bundled" inside the jenkins.war file to retain compatibility for plugins that depended on their functionality to be inside Jenkins core.
+The Jenkins project is no longer publishing any plugins that require the "bundled" versions of the maven and subversion plugins.
+The Maven and Subversion plugins are no longer bundled with Jenkins.
+
+In very rare cases, this could result in problems when attempting to install plugins compatible with Jenkins before 1.310.
+In those cases, the best path forward is usually to modify the plugin that has the problem so that it requires a newer version of Jenkins core.

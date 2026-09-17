@@ -1,0 +1,45 @@
+= Upgrading to Jenkins LTS 2.375.x
+
+Each section covers the upgrade from the previous LTS release, the section on 2.375.1 covers the upgrade from 2.361.4.
+
+== Upgrading to Jenkins 2.375.4
+
+=== Request part count limit for `multipart/form-data` requests
+
+A https://www.jenkins.io/security/advisory/2023-03-08/#SECURITY-3030[security fix] for a DoS vulnerability when parsing `multipart/form-data` request bodies introduces limits for the number of request parts that can be processed.
+By default, these limits are 1000.
+
+Some Jenkins forms can be very complex, and these limits apply to all fields and not just fields representing uploaded files.
+As a result, legitimate submissions of complex forms that include (possible) file uploads may be affected by these limits.
+If that happens, these limits can be changed by setting the Java system properties https://www.jenkins.io/doc/book/managing/system-properties/#hudson-util-multipartformdataparser-fileupload_max_files[hudson.util.MultipartFormDataParser.FILEUPLOAD_MAX_FILES] and https://www.jenkins.io/doc/book/managing/system-properties/#org-kohsuke-stapler-requestimpl-fileupload_max_files[org.kohsuke.stapler.RequestImpl.FILEUPLOAD_MAX_FILES] to a bigger value, or to `-1` to completely disable them.
+
+== Upgrading to Jenkins 2.375.3
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.375.2
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.375.1
+
+=== Winstone 6.6 and Jetty 10.0.12
+
+Since Jenkins 2.361.1, there have been several Winstone and Jetty updates.
+Jenkins has updated its Winstone version all the way from 6.1 to 6.6, and the Jetty version has been updated from 9.4.46.v20220331 to 10.0.12.
+
+The Winstone and Jetty updates include upgrades that users should perform.
+
+When upgrading Winstone to 6.1 and Jetty to 10.0.11, some flags have been modified.
+Support for OpenSSL-style PEM-encoded RSA private keys has been removed when running Jenkins with the embedded Jetty (Winstone) container and TLS.
+
+Specifically, the `--httpsPrivateKey` and `--httpsCertificate` flags have been removed in favor of the `--httpsKeyStore` flag.
+The removed flags have printed deprecation warnings since 2016 and were implemented with non-standard APIs that have since been removed from Java 17.
+The recommendation is to migrate to the `--httpsKeyStore` option, which takes a keystore as described in the documentation.
+As of https://openjdk.org/jeps/229[JEP 229], https://en.wikipedia.org/wiki/PKCS_12[PKCS12] is the recommended keystore type.
+
+Additionally, the `--toolsJar` and `--useJasper` flags have been removed, because they no longer serve a purpose with Java 11 or newer.
+`--ajp13Port` and `--ajp13ListenAddress` have been removed, they are obsolete since Jetty 9, which has been released 6 years ago.
+Finally, the handler count flags `--handlerCountMax` and `--handlerCountMaxIdle` have been removed, after being deprecated for 4 years doing nothing.
+
+The Winstone 6.6 and Jetty 10.0.12 update makes it so that a previously added `--extraLibFolder` option for use with HTTP/2, can now be removed.
