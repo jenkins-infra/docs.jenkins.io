@@ -11,8 +11,8 @@
     "postinstall": "npm run install-subfolders",
     "install-subfolders": "cd ui && npm ci --include=dev && cd ../playbook && npm ci --include=dev",
     "build": "npm run build-ui && npm run build-antora",
-    "build-ui": "cd ui && npm install && npx gulp bundle",
-    "build-antora": "cd playbook && npm install && npx antora --fetch local-antora-playbook.yml",
+    "build-ui": "cd ui && npm ci --include=dev && npx gulp bundle",
+    "build-antora": "cd playbook && npm ci --include=dev && npx antora --fetch local-antora-playbook.yml",
     "clean": "rm -rf ui/build && rm -rf playbook/build",
     "format": "prettier --write ."
   },
