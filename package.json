@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "yamllint .",
     "postinstall": "npm run install-subfolders",
-    "install-subfolders": "cd ui && npm install && cd ../playbook && npm install",
+    "install-subfolders": "cd ui && npm ci --include=dev && cd ../playbook && npm ci --include=dev",
     "build": "npm run build-ui && npm run build-antora",
     "build-ui": "cd ui && npm install && npx gulp bundle",
     "build-antora": "cd playbook && npm install && npx antora --fetch local-antora-playbook.yml",
