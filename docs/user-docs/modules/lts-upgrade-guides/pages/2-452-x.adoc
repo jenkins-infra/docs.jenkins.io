@@ -1,0 +1,24 @@
+= Upgrading to Jenkins LTS 2.452.x
+
+Each section covers the upgrade from the previous LTS release, the section on 2.452.1 covers the upgrade from 2.440.3.
+
+== Upgrading to Jenkins 2.452.4
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.452.3
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.452.2
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.452.1
+
+=== People view removed from Jenkins
+
+The People view in Jenkins has been removed.
+This is the result of work done by community reporters and the Jenkins Security team.
+Administrators who want to have this functionality must install the link:https://plugins.jenkins.io/people-view[People View] plugin.
+For more information and background on the work done, please refer to the link:https://github.com/jenkinsci/jenkins/pull/9060[GitHub pull request].
