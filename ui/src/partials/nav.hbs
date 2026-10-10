@@ -1,8 +1,43 @@
 <div class="nav-container"{{#if page.component}} data-component="{{page.component.name}}" data-version="{{page.version}}"{{/if}}>
   <aside class="nav">
     <div class="panels">
+      {{#if page.component}}
+      <div class="nav-version-selector">
+        <button class="nav-version-selector-toggle" aria-expanded="false" aria-haspopup="true">{{page.componentVersion.displayVersion}}</button>
+        <div class="nav-version-menu">
+          {{#if page.component.versions}}
+          <div class="nav-version-group">
+            <span class="nav-version-group-label">Versions</span>
+            <ul>
+              {{#each page.component.versions}}
+              <li class="nav-version-item{{#if (eq this.version @root.page.version)}} is-current{{/if}}">
+                <a href="{{{relativize ./url}}}">{{./displayVersion}}</a>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+          {{/if}}
+          <div class="nav-version-group">
+            <span class="nav-version-group-label">Sections</span>
+            <ul>
+              {{#each site.components}}
+              <li class="nav-version-item{{#if (eq this.name @root.page.component.name)}} is-current{{/if}}">
+                {{#if this.latest}}
+                {{#with this.latest}}
+                <a href="{{{relativize ./url}}}">
+                  {{{../title}}}
+                  <span class="nav-version-badge">{{displayVersion}}</span>
+                </a>
+                {{/with}}
+                {{/if}}
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{/if}}
 {{> nav-menu}}
-{{> nav-explore}}
     </div>
   </aside>
 </div>
