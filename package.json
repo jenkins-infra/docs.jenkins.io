@@ -7,7 +7,7 @@
     "yaml-lint": "^1.2.4"
   },
   "scripts": {
-    "lint": "yamllint .",
+    "lint": "yamllint '**/*.{yml,yaml}'",
     "postinstall": "npm run install-subfolders",
     "install-subfolders": "cd ui && npm ci --include=dev && cd ../playbook && npm ci --include=dev",
     "build": "npm run build-ui && npm run build-antora",
