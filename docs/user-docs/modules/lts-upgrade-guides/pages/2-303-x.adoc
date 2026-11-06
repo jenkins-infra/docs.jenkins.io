@@ -1,0 +1,290 @@
+= Upgrading to Jenkins LTS 2.303.x
+
+Each section covers the upgrade from the previous LTS release, the section on 2.303.1 covers the upgrade from 2.289.3.
+
+== Upgrading to Jenkins 2.303.3
+
+Multiple changes related to the agent-to-controller security subsystem may result in problems.
+
+=== Agent-to-controller security hardening (role checks)
+
+Jenkins agents communicate with the controller using the link:https://github.com/jenkinsci/remoting/[remoting library].
+Individual messages (implementations of the `Callable` interface) instruct the other side to perform operations and/or provide information.
+To restrict what agents can instruct controllers to do, `Callable` implementations are expected to implement a role check, i.e. a declaration on which side of the communication channel they can be executed.
+
+To prevent plugins from (unintentionally) not implementing an effective role check, Jenkins will reject `Callables` with unimplemented role checks starting with 2.319 and LTS 2.303.3.
+See link:https://www.jenkins.io/doc/book/security/controller-isolation/required-role-check/[the Required Role Check page for more details, including a list of known affected plugins and workarounds].
+
+The link:https://www.jenkins.io/doc/developer/security/remoting-callables/[developer documentation] contains guidelines for the safe and correct implementation of the `Callable` interface.
+
+=== Agent-to-controller file path filter security fixes
+
+link:https://www.jenkins.io/security/advisory/2021-11-04/#SECURITY-2455[SECURITY-2455]
+
+Jenkins agents communicate with the controller using the link:https://github.com/jenkinsci/remoting/[remoting library].
+For compatibility with existing plugins, agents are allowed some limited access to files on the Jenkins controller file system.
+Jenkins 2.303.3 and 2.319 fix multiple vulnerabilities that resulted in incomplete access control enforcement.
+
+Any plugins that access files on the Jenkins controller from code running on agents may be affected by these security fixes.
+Beyond previously allowed operations now being prohibited, the newly introduced path canonicalization means that instances using a custom builds directory (link:https://www.jenkins.io/doc/book/managing/system-properties/#jenkins-model-jenkins-buildsdir[Java system property jenkins.model.Jenkins.buildsDir]) or partitioning `JENKINS_HOME` using symbolic links may fail access control checks to files that are intended to be accessible.
+
+If access to a file is rejected, an exception with the following message is made available to agents;this is typically what also will show up in build logs and similar output:
+
+----
+Agent may not access a file path. See the system log for more details about
+the error ID '<UUID here>' and https://www.jenkins.io/redirect/security-144
+for more information
+----
+
+The link:https://www.jenkins.io/doc/book/system-administration/viewing-logs/[Jenkins system log] will contain more details.
+
+In case of problems, you can temporarily link:https://www.jenkins.io/doc/book/security/controller-isolation/agent-to-controller/#file-access-rules[customize the file access rules] to allow specific, intended agent-to-controller file path accesses to pass.
+Applying custom rules is also the recommended workaround when using a custom builds directory or using symbolic links to distribute `JENKINS_HOME` across multiple volumes.
+
+NOTE: Due to a bug in current releases of Jenkins discovered only shortly before release of Jenkins 2.319 and 2.303.3 (JENKINS-67061), Jenkins will only consider the additional rules defined through the UI from the time that the form is submitted until Jenkins is restarted.
+To work around this bug and load both bundled and custom rules, run the following script in the script console after submitting rules through the UI:
+
+[source,groovy]
+----
+ExtensionList.lookupSingleton(jenkins.security.s2m.AdminWhitelistRule.class).filePathRules.load()
+----
+
+WARNING: If you are unable to immediately upgrade Jenkins, you can install the Remoting Security Workaround Plugin.
+It will prevent all agent-to-controller file access using FilePath APIs.
+Because it is more restrictive than the Jenkins security fixes, more plugins are incompatible with it.
+Make sure to read the plugin documentation before installing it.
+
+=== Agent-to-controller security fix related to build directory access
+
+Jenkins agents communicate with the controller using the link:https://github.com/jenkinsci/remoting/[remoting library].
+For compatibility with existing plugins, agents are allowed some limited access to files on the Jenkins controller file system.
+The directories agents are allowed to access include the directories storing build-related information, intended to allow agents to store build-related metadata during build execution.
+As a consequence, this allowed any agent to read and write the contents of any build directory on the Jenkins controller file system with very few restrictions (`build.xml` and some Pipeline-related metadata).
+
+Since Jenkins 2.319 and LTS 2.303.3, agents are only allowed to access contents of build directories related to builds currently running on the agent attempting to access the directory.
+
+Plugins that implement functionality executing on agents that accesses build directories on the Jenkins controller file system may be impacted by this change.
+Plugins accessing directories of builds not currently running on the agent accessing the directory will need to be adapted to no longer do that.
+Jenkins will not associate Pipeline `node` blocks with the agents they're running on unless link:https://plugins.jenkins.io/workflow-durable-task-step/[Pipeline: Nodes and Processes] has been updated to version 2.40 or newer.
+
+If access to a file by an agent is rejected, an exception with the following message is thrown instead:
+
+----
+Agent tried to access build directory of a build not currently running on
+this system. Learn more: https://www.jenkins.io/redirect/security-144/
+----
+
+Additionally, plugins opening a direct channel between the controller and a process, like link:https://plugins.jenkins.io/maven-plugin/[Maven Integration Plugin], are completely prohibited from accessing build directories.
+
+If access to a file by a process is rejected, an exception with the following message is thrown instead:
+
+----
+Failed to discover context of access to build directory
+----
+
+The link:/doc/book/system-administration/viewing-logs/[Jenkins system log] will contain more detailed information.
+
+Additionally, plugins opening a direct channel between the controller and a process, like Maven Integration Plugin, are completely prohibited from accessing build directories.
+
+If access to a file by a process is rejected, an exception with the following message is thrown instead; this is typically what also will show up in build logs and similar output:
+
+As of 2021-11-08, no plugins are known to be affected by this security fix.
+
+This security fix can be disabled by setting the Java system property link:https://www.jenkins.io/doc/book/managing/system-properties/#jenkins-security-s2m-runningbuildfilepathfilter-skip[`jenkins.security.s2m.RunningBuildFilePathFilter.SKIP`] to `true`.
+
+NOTE: If you are unable to immediately upgrade Jenkins, you can install the link:/redirect/remoting-security-workaround/[Remoting Security Workaround Plugin]. It will prevent all agent-to-controller file access using `FilePath` APIs. Because it is more restrictive than the Jenkins security fixes, more plugins are incompatible with it. Make sure to read the plugin documentation before installing it.
+
+== Upgrading to Jenkins 2.303.2
+
+=== Redefinition of build cause description property
+
+The short description of build causes was defined as a short snippet of HTML in Jenkins 2.314 and earlier, LTS 2.303.1 and earlier.
+It is exposed as the `shortDescription` field of build causes in the link:/doc/book/using/remote-access-api/[Remote Access API] of Jenkins, and rendered on the UI on the overview page of builds, unless a build cause provides a custom UI.
+
+To prevent further security vulnerabilities like link:/security/advisory/2021-10-06/#SECURITY-2499[SECURITY-2499] from having an impact on Jenkins users, the method has been redefined to return plain text in Jenkins 2.315 and LTS 2.303.2, and its output is no longer rendered as HTML on the UI.
+
+Users of the remote API who are currently rendering this field as HTML on their custom dashboards or similar API clients are advised to no longer do so.
+With the redefinition, any content that could be interpreted as HTML would be unsafe to render that way, as plugins may no longer escape it.
+
+Advice for maintainers has been added to the link:/doc/developer/security/xss-prevention/Cause-getShortDescription/[developer documentation].
+
+== Upgrading to Jenkins 2.303.1
+
+=== Default Docker images use Java 11
+
+The Jenkins Docker images with tags that do not specify a Java version now use Java 11 instead of Java 8.
+Jenkins controller images with the following tags will use Java 11 beginning with 2.303.1:
+
+* `jenkins/jenkins:lts`
+* `jenkins/jenkins:lts-alpine`
+* `jenkins/jenkins:lts-centos7`
+* `jenkins/jenkins:lts-slim`
+* `jenkins/jenkins:2.303.1`
+* `jenkins/jenkins:2.303.1-alpine`
+* `jenkins/jenkins:2.303.1-centos7`
+* `jenkins/jenkins:2.303.1-slim`
+
+Additional controller images and tags have been added for those users who need to remain on Java 8.
+The new Java 8 tags include:
+
+* `jenkins/jenkins:lts-jdk8`
+* `jenkins/jenkins:lts-alpine-jdk8`
+* `jenkins/jenkins:lts-centos7-jdk8`
+* `jenkins/jenkins:lts-slim-jdk8`
+* `jenkins/jenkins:2.303.1-jdk8`
+* `jenkins/jenkins:2.303.1-alpine-jdk8`
+* `jenkins/jenkins:2.303.1-centos7-jdk8`
+* `jenkins/jenkins:2.303.1-slim-jdk8`
+
+Jenkins agents should be run with the same Java version as the controller.
+With the controller upgrade from Java 8 to Java 11, Jenkins agents need to be updated to run with Java 11.
+When using Docker images for the agent, that can generally be done by appending the `-jdk11` suffix to the agent tag.
+Cloud agents and static agents will need to be configured to launch with Java 11 instead of Java 8.
+
+=== Obsolete Docker images and tags no longer published
+
+Jenkins Docker images for new releases are not published for `centos`.
+The `centos` images use CentOS 8 as a baseline and CentOS 8 is no longer receiving updates from the Red Hat Enterprise Linux upstream.
+
+Jenkins Docker Windows images for new releases are not published for the `1809` images.
+Microsoft has ended mainstream support for `1809`.
+
+Jenkins Docker tags that include a version number are no longer published with the redundant `-lts` tag.
+The transition looks like this:
+
+* `2.303.1-lts` is replaced with `2.303.1`
+* `2.303.1-lts-alpine` is replaced with `2.303.1-alpine`
+* `2.303.1-lts-centos7` is replaced with `2.303.1-centos7`
+* `2.303.1-lts-slim` is replaced with `2.303.1-slim`
+
+=== Multi-architecture Docker images
+
+Jenkins Docker images now support multiple architectures, including `amd64` and `arm64` from selected images.
+The images with support for multiple architectures include:
+
+* `2.303.1` and `2.303.1-jdk11`
+* `2.303.1-rhel-ubi8-jdk11`
+* `2.303.1-almalinux`
+
+=== Plugins that do not support Java 11
+
+Some Jenkins plugins do not support Java 11.
+Plugins that do not support Java 11 also tend to be unmaintained.
+Users should remove those plugins before running Jenkins with Java 11.
+
+The link:https://plugins.jenkins.io/ruby-runtime[ruby runtime plugin] is not supported with Java 11.
+Plugins that depend on the ruby runtime plugin do not load in Jenkins running with Java 11.
+
+Plugins that depend on the ruby runtime include:
+
+Ruby runtime plugins with more than 1000 installations:
+
+* link:https://plugins.jenkins.io/gitlab-hook[Gitlab Hook] (multiple security vulnerabilities)
+* link:https://plugins.jenkins.io/cucumber[Cucumber]
+* link:https://plugins.jenkins.io/rvm[Rvm]
+* link:https://plugins.jenkins.io/pyenv[pyenv]
+
+Ruby runtime plugins with less than 700 installations:
+
+* link:https://plugins.jenkins.io/capitomcat[Capitomcat]
+* link:https://plugins.jenkins.io/chef[Chef]
+* link:https://plugins.jenkins.io/ci-skip[Ci Skip]
+* link:https://plugins.jenkins.io/commit-message-trigger-plugin[Commit Message Trigger]
+* link:https://plugins.jenkins.io/git-notes[git-notes]
+* link:https://plugins.jenkins.io/mysql-job-databases[MySQL Job Databases]
+* link:https://plugins.jenkins.io/Pathignore[Pathignore]
+* link:https://plugins.jenkins.io/perl[Perl]
+* link:https://plugins.jenkins.io/rbenv[rbenv]
+* link:https://plugins.jenkins.io/singleuseslave[Single Use Agent]
+* link:https://plugins.jenkins.io/travis-yml[Travis YML]
+
+=== New RPM package manager dependency
+
+The Jenkins 2.303.1 RPM package has been made more consistent with the Debian Jenkins packaging.
+It uses the `daemonize` program to run the Java process of the Jenkins controller as a daemon.
+The `daemonize` program is available from the `epel-release` repository for most RPM based distributions.
+
+Some distributions based on the RPM package manager do not enable the `epel-release` repository by default.
+Instructions to enable the epel-release repository are included in the Jenkins installation guide instructions for link:/doc/book/installing/linux/#red-hat-centos[Red Hat Enterprise Linux / CentOS].
+
+Before updating to Jenkins 2.303.1, run the command:
+
+[source,bash]
+----
+Red Hat Enterprise Linux / CentOS
+# yum install epel-release
+----
+
+=== Debian upgrade in Docker images
+
+Docker controller images based on Debian, including `jenkins/jenkins:lts`, `jenkins/jenkins:lts-slim`, `jenkins/jenkins:2.303.1`, and `jenkins/jenkins:2.303.1-slim` are now based on link:https://www.debian.org/releases/bullseye/[Debian bullseye], the most recent Debian release.
+Debian bullseye was released August 14, 2021 after a long period of stabilization and testing.
+
+Some packages that had been included in the Debian buster images may not be installed in these images.
+If your installation needs one of those packages, you'll need to install it from inside your custom Dockerfile.
+
+=== Removed Apache Commons Digester from the Jenkins core
+
+The Apache Commons Digester v2.1 has been removed from Jenkins core.
+The library was last released in 2010.
+Plugins that depend on the library need to be updated to remove that dependency.
+
+Plugins that are affected include:
+
+* link:https://plugins.jenkins.io/vs-code-metrics/[Visual Studio Code Metrics]
+* link:https://plugins.jenkins.io/BlameSubversion/[Blame Subversion]
+* link:https://plugins.jenkins.io/javatest-report/[JavaTest report]
+* link:https://plugins.jenkins.io/vss/[Visual SourceSafe]
+* link:https://plugins.jenkins.io/synergy/[Synergy]
+* link:https://plugins.jenkins.io/config-rotator/[Config Rotator]
+* link:https://plugins.jenkins.io/harvest/[Harvest SCM]
+* link:https://plugins.jenkins.io/cmvc/[CMVC]
+
+Suspended plugins (no longer distributed by the Jenkins update center) that are affected include: 
+
+* link:https://plugins.jenkins.io/tfs/[TFS]
+* link:https://issues.jenkins-ci.org/browse/INFRA-2487[svn-release-mgr]
+* link:https://plugins.jenkins.io/cpptest/[cpptest]
+* link:https://plugins.jenkins.io/CFLint/[CFLint]
+
+=== Stop bundling External Monitor Job Type, LDAP, and PAM plugins with Jenkins
+
+Certain key Jenkins capabilities were initially created inside the Jenkins core.
+As Jenkins has developed further, capabilities moved from inside Jenkins core to dedicated Jenkins plugins, like the link:https://plugins.jenkins.io/external-monitor-job[External Monitor Job plugin], the link:https://plugins.jenkins.io/ldap[LDAP plugin], and the link:https://plugins.jenkins.io/pam[PAM authentication plugin].
+When those plugins were created, the plugins were "bundled" inside the jenkins.war file to retain compatibility for plugins that depended on their functionality to be inside Jenkins core.
+The link:https://plugins.jenkins.io/external-monitor-job[External Monitor Job plugin], the link:https://plugins.jenkins.io/ldap[LDAP plugin], and the link:https://plugins.jenkins.io/pam[PAM authentication plugin] are no longer bundled with Jenkins.
+
+In very rare cases, this could result in problems when attempting to install plugins compatible with Jenkins before 1.467.
+If you use a plugin that relies on the functionality provided by the link:https://plugins.jenkins.io/external-monitor-job[External Monitor Job plugin], the link:https://plugins.jenkins.io/ldap[LDAP plugin], or the link:https://plugins.jenkins.io/pam[PAM authentication plugin] and manage plugins outside the Jenkins plugin manager, you will now need to ensure yourself that a recent release of those plugins are installed.
+Jenkins will attempt to load such plugins but may fail at any time during startup or afterwards with `ClassNotFoundException` or similar.
+In these cases, the best path forward is usually to modify the plugin that has the problem so that it requires a newer version of Jenkins core.
+
+=== Removed JEP-200 compatibility workarounds
+
+Workarounds that assured older plugin compatibility with the link:https://www.jenkins.io/blog/2018/03/15/jep-200-lts/[security hardening improvements] of link:https://github.com/jenkinsci/jep/blob/master/jep/200/README.adoc[JEP-200] have been removed.
+If you are using any of the following plugins, make sure you use at least the versions specified:
+
+* Maven Integration 3.1 (released Jan 2018)
+* Job DSL 1.67 (released Jan 2018)
+* Monitoring 1.71.0 (released Feb 2018)
+* Git Client 2.7.1 (released Jan 2018)
+* Pipeline: Supporting APIs 2.17 (released Jan 2018)
+* OWASP Dependency-Check 3.1.1 (released Jan 2018)
+
+=== Removed `jna-posix` from Jenkins core
+
+The `jna-posix` dependency has been removed from Jenkins core.
+Plugins that use `jna-posix` functionality, including link:https://plugins.jenkins.io/maven-repo-cleaner[Maven Repository Scheduled Cleanup], link:https://plugins.jenkins.io/sicci_for_xcode[SICCI for Xcode], and link:https://plugins.jenkins.io/tmpcleaner[java.io.tmpdir cleaner] are no longer supported and must be removed.
+
+=== Removed `JTidy` from Jenkins core
+
+The `JTidy` dependency has been removed from Jenkins core.
+Users of the link:https://plugins.jenkins.io/jdepend[JDepend plugin] must upgrade to the latest version.
+Other plugins that use JTidy functionality, including link:https://plugins.jenkins.io/nis-notification-lamp[NIS notification lamp], must be updated to explicitly declare a dependency on JTidy rather than relying on Jenkins core to provide this library.
+
+=== Removed Bytecode Compatibility Transformer from Jenkins core
+
+Support for plugins that rely on the `hudson.model.Queue$Item#id` or `hudson.model.AbstractProject#triggers` fields, including link:https://plugins.jenkins.io/slave-prerequisites[Slave Prerequisites plugin] and link:https://plugins.jenkins.io/vertx[vertx plugin], has been dropped.
+Any such plugins must be removed prior to upgrading Jenkins.
+
+If you have customized the `hudson.ClassicPluginStrategy.noBytecodeTransformer` system property, you should remove this customization.
