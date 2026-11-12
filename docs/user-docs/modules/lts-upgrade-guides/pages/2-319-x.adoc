@@ -1,0 +1,76 @@
+= Upgrading to Jenkins LTS 2.319.x
+
+Each section covers the upgrade from the previous LTS release, the section on 2.319.1 covers the upgrade from 2.303.3.
+
+== Upgrading to Jenkins 2.319.3
+
+No notable changes requiring upgrade notes.
+
+== Upgrading to Jenkins 2.319.2
+
+=== Triggering builds in scripted clients without a security realm
+
+Jenkins used to allow triggering builds using HTTP GET requests when no security realm and authorization strategy are defined.
+This is newly prohibited since Jenkins 2.319.2 and 2.330 as this could be abused via CSRF even when Jenkins is operated on a private network.
+
+HTTP POST requests to Jenkins need to provide a CSRF token (crumb) unless they authenticate using a user-specific API token.
+When Jenkins is configured without security realm, there is no way to authenticate using an API token, so any scripted clients triggering builds first need to obtain a CSRF crumb from the crumb issuer as described link:https://www.jenkins.io/doc/book/security/csrf-protection/#working-with-scripted-clients[in the documentation].
+
+== Upgrading to Jenkins 2.319.1
+
+=== Built-in node name and label migration
+
+As part of the link:https://groups.google.com/g/jenkinsci-dev/c/x5vdlJDvntw[terminology cleanup effort], the built-in node was renamed from "master node" to "built-in node" in Jenkins 2.307 and in Jenkins 2.319.1.
+This is not just a change affecting the UI and documentation: The node name affects the implicitly assigned label of the node (and consequently the `NODE_LABELS` environment variable), as well as the `NODE_NAME` environment variable.
+
+NOTE: The `NODE_NAME` environment variable in Pipelines is set by the link:https://plugins.jenkins.io/workflow-durable-task-step[Pipeline: Nodes and Processes] plugin.
+In plugin version 2.39 and earlier, this value is always `master`.
+Update to version 2.40 or newer to get consistent behavior between job types.
+
+==== Affected features
+
+Jenkins features using node labels are therefore potentially impacted by any such changes.
+These features include:
+
+* Label assignments of various project types, both on the top level (e.g. Freestyle jobs) and within jobs (e.g. `node` statements in Scripted Pipeline, `label` parameters to `agent` sections in Declarative Pipeline, or link:https://plugins.jenkins.io/matrix-project[Matrix Project] axes).
+* Label assignments of features like custom tool auto-installers, typically used to distinguish OS platforms.
+* Any custom build scripts whose behavior is different based on the `NODE_NAME` or `NODE_LABELS` environment variables (or their `env` global variable equivalent in Pipeline).
+* Any similar features in plugins.
+
+==== Migration
+
+Due to the potential impact to build behavior, deployments upgrading Jenkins to version 2.307 or newer do not automatically get these behavior changes applied.
+Instead, an administrative monitor informs administrators about this change and allows them to apply it.
+
+Before applying the built-in node name and label migration, administrators are advised to review their configuration and build scripts to assess the impact to their controller and jobs.
+
+Most problems with label assignments can likely be worked around by manually assigning the label `master` to the built-in node and then migrating affected configuration incrementally to not need this workaround.
+
+==== Plugin compatibility
+
+===== Known incompatible plugins
+
+* link:https://plugins.jenkins.io/workflow-durable-task-step[Pipeline: Nodes and Processes] always sets the `NODE_NAME` to `master` in Pipelines before link:https://github.com/jenkinsci/workflow-durable-task-step-plugin/releases/tag/workflow-durable-task-step-2.40[version 2.40].
+* link:https://plugins.jenkins.io/nodelabelparameter[Node and Label Parameter plugin] displays the controller node as `master` in releases before link:https://github.com/jenkinsci/nodelabelparameter-plugin/releases/tag/nodelabelparameter-1.10.0[version 1.10.0].
+
+Use link:https://issues.jenkins.io/issues/?jql=labels%3Dbuilt-in-node-migration-regression[this Jira query] to find compatibility issues tracked in the Jenkins Jira.
+
+Use link:[this GitHub query] to find compatibility issues tracked on GitHub.
+
+===== Reporting incompatible plugins
+
+Please report problems in the respective plugin's issue tracker.
+
+If the affected plugin uses the Jenkins Jira to track issues, please add the label `built-in-node-migration-regression`.
+
+If the affected plugin tracks issues on GitHub, please make sure to mention the link:https://github.com/jenkinsci/jenkins/pull/5425[Jenkins pull request] that implemented the change in your issue.
+
+=== Woodstox implementation removed
+
+The Woodstox implementation of the StAX API from Jenkins core has been removed from Jenkins core.
+Users of the Azure Artifact Manager, Azure Container Agents, Azure Storage, and Azure SDK API plugins must upgrade those plugins to the latest versions prior to this core upgrade.
+
+=== Ant deprecated classes removed
+
+Deprecated, unsafe classes that had been previously copied from Apache Ant to Jenkins core have been removed.
+The unmaintained link:https://plugins.jenkins.io/docker-slaves[Docker slaves] plugin is incompatible with this change.
