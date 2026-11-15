@@ -205,7 +205,7 @@ node {
 ----
 
 ---
-**xref:running-multiple-steps.adoc[Continue to "Running multiple steps"]**
+**xref:./running-multiple-steps.adoc[Continue to "Running multiple steps"]**
 
 == Additional Resources
 

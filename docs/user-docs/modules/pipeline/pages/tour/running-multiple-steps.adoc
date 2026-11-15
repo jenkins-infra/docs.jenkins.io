@@ -239,7 +239,7 @@ node {
 ---
 
 With the basics of defining multiple steps finished, let's
-**xref:agents.adoc[continue to "Defining execution environments"]**
+**xref:./agents.adoc[continue to "Defining execution environments"]**
 
 '''
 ////

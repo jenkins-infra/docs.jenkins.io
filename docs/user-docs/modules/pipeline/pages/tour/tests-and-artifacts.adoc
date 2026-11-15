@@ -109,7 +109,7 @@ surfacing information to various members of the team. In the next section we'll
 talk about how to *tell* those members of the team what's been happening in our
 Pipeline.
 
-**xref:post.adoc[Continue to "Cleaning up and notifications"]**
+**xref:./post.adoc[Continue to "Cleaning up and notifications"]**
 
 '''
 ////
